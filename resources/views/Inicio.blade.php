@@ -50,16 +50,16 @@
 <div class="uk-padding">
 <div class="uk-grid-medium uk-child-width-expand@s uk-text-center" uk-grid>
     <div>
-    <img uk-margin data-src="/img/Logo_sericolor.png" width="150" height="1200" alt="" uk-img>
+    <img uk-margin data-src="https://scontent.fmga3-2.fna.fbcdn.net/v/t1.6435-9/121227300_2813504495536082_1459712056728424058_n.jpg?_nc_cat=103&ccb=1-3&_nc_sid=973b4a&_nc_ohc=t0qfbE7ZCawAX9AK2k2&_nc_ht=scontent.fmga3-2.fna&oh=4410b21d8b3ead2874d69e57df3aef1a&oe=60FC894C" width="200" height="1200" alt="" uk-img>
     </div>
     <div>
-    <img uk-margin data-src="/img/Logo_sericolor.png" width="150" height="1200" alt="" uk-img>
+    <img uk-margin data-src="https://scontent.fmga3-2.fna.fbcdn.net/v/t1.6435-9/134836437_2884756008410930_9004445252582939649_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=973b4a&_nc_ohc=npiajFRoKXIAX_4v3qY&_nc_ht=scontent.fmga3-2.fna&oh=141a22cef37074f1ab2f385012252a2a&oe=60FC9BFC" width="200" height="1200" alt="" uk-img>
     </div>
     <div>
-    <img uk-margin data-src="/img/Logo_sericolor.png" width="150" height="1200" alt="" uk-img>
+    <img uk-margin data-src="https://scontent.fmga3-2.fna.fbcdn.net/v/t1.6435-9/133955814_2884758445077353_1677420560834558913_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=973b4a&_nc_ohc=cpMDhlfoWBkAX-TBp0e&_nc_ht=scontent.fmga3-2.fna&oh=0e28f5a4dee3ca1e6da97f13aa1eda20&oe=60FE4872" width="190" height="1200" alt="" uk-img>
     </div>
     <div>
-    <img uk-margin data-src="/img/Logo_sericolor.png" width="150" height="1200" alt="" uk-img>
+    <img uk-margin data-src="https://scontent.fmga3-1.fna.fbcdn.net/v/t1.6435-9/159648811_2941025609450636_1818003300651554884_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=973b4a&_nc_ohc=laXsYnkf6o8AX_ASvmt&_nc_ht=scontent.fmga3-1.fna&oh=39f8915d83cfa6e4fc927c9f0af7431f&oe=60FCEC83" width="200" height="1200" alt="" uk-img>
     </div>
     
 </div>
@@ -118,7 +118,7 @@
     </div>
     <div>
             <a href="https://www.instagram.com/sericolorpublicidad/?hl=es-la" uk-icon="icon: instagram ; ratio: 3.5"></a>
-            <a href="https://es-la.facebook.com/pg/sericolorpublicidad/services/?service_id=1800097760043283" uk-icon="icon: facebook ; ratio: 3.5"></a>
+            <a href="https://es-la.facebook.com/pg/sericolorpublicidad" uk-icon="icon: facebook ; ratio: 3.5"></a>
     </div>
 </div>
 
