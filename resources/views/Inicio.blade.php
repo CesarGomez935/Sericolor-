@@ -19,23 +19,23 @@
 <header>
     
 </header>
-<body  >
+<body style="background-color:bisque" >
 
 
 <div uk-margin-right class="uk-position-right uk-padding">
 
     <div uk-margin-right class="uk-padding" >
 
-        <button class="uk-button uk-button-default uk-button-large">Revisa tu pedido</button>
+        <button class="uk-button uk-button-primary uk-button-large">Revisa tu pedido</button>
         
     </div>  
 
     <div uk-margin-right class=".uk-margin-left uk-padding" >
 
-        <button class="uk-button uk-button-default uk-button-small ">Inicio</button>
-        <button class="uk-button uk-button-default uk-button-small">Servicios</button>
-        <button class="uk-button uk-button-default uk-button-small">Acerca de</button>
-        <button class="uk-button uk-button-default uk-button-small">Contáctanos</button>
+        <button class="uk-button uk-button-primary uk-button-small ">Inicio</button>
+        <button class="uk-button uk-button-primary uk-button-small">Servicios</button>
+        <button class="uk-button uk-button-primary uk-button-small">Acerca de</button>
+        <button class="uk-button uk-button-primary uk-button-small">Contáctanos</button>
     </div> 
     
 </div>
