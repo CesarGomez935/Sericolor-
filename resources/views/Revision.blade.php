@@ -23,29 +23,21 @@
 <body style="background-color:palegreen" >
 
 
-<div uk-margin-right class="uk-position-right  uk-padding">
+<div uk-margin-right class="uk-padding" >
 
-    <div uk-margin-right class="" >
-
-        <button class="uk-button uk-button-primary uk-button-large  ">Revisa tu pedido</button>
+    <img class="uk-float-left" uk-margin data-src="/img/Logo_sericolor.png" width="100" height="1200" alt="" uk-img>  
+        <div class="uk-padding" >
+        <a class="uk-button uk-button-primary uk-button-large  uk-float-right">Revisa tu pedido</a>
+        </div>
+        <div class="uk-padding">
+            <a href="/Inicio"><button class="uk-button uk-button-primary uk-button-small uk-float-right" >Inicio</button></a>   
+            <a href="/servicio"> <button class="uk-button uk-button-primary uk-button-small uk-float-right">Servicios</button></a>  
+            <a href="/Acerca"><button class="uk-button uk-button-primary uk-button-small uk-float-right">Acerca de</button></a>    
+            <a href="/contacto"><button class="uk-button uk-button-primary uk-button-small uk-float-right">Contáctanos</button></a> 
+        </div>
+       
         
     </div>  
-
-    <div uk-margin-right class=".uk-margin-left uk-padding " >
-
-    <a href="http://127.0.0.1:8000/Inicio"><button class="uk-button uk-button-primary uk-button-small" >Inicio</button></a>   
-     <a href="http://127.0.0.1:8000/servicio"> <button class="uk-button uk-button-primary uk-button-small">Servicios</button></a>  
-    <a href="http://127.0.0.1:8000/Acerca"><button class="uk-button uk-button-primary uk-button-small">Acerca de</button></a>    
-    <a href="http://127.0.0.1:8000/contacto"><button class="uk-button uk-button-primary uk-button-small">Contáctanos</button></a>       
-    </div> 
-    
-</div>
-
-<div uk-margin class=".uk-margin-left uk-padding">
-
-        <img uk-margin data-src="/img/Logo_sericolor.png" width="100" height="1200" alt="" uk-img>  
-    
-</div>
 
 
 

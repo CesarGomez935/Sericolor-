@@ -23,65 +23,62 @@
 <body style="background-color:bisque" >
 
 
-<div uk-margin-right class="uk-position-right  uk-padding">
+    <div uk-margin-right class="uk-padding" >
 
-    <div uk-margin-right class="" >
-
-        <button class="uk-button uk-button-primary uk-button-large  ">Revisa tu pedido</button>
+    <img class="uk-float-left" uk-margin data-src="/img/Logo_sericolor.png" width="100" height="1200" alt="" uk-img>  
+        <div class="uk-padding" >
+        <a class="uk-button uk-button-primary uk-button-large  uk-float-right">Revisa tu pedido</a>
+        </div>
+        <div class="uk-padding">
+            <a href="/Inicio"><button class="uk-button uk-button-primary uk-button-small uk-float-right" >Inicio</button></a>   
+            <a href="/servicio"> <button class="uk-button uk-button-primary uk-button-small uk-float-right">Servicios</button></a>  
+            <a href="/Acerca"><button class="uk-button uk-button-primary uk-button-small uk-float-right">Acerca de</button></a>    
+            <a href="/contacto"><button class="uk-button uk-button-primary uk-button-small uk-float-right">Contáctanos</button></a> 
+        </div>
+       
         
     </div>  
 
-    <div uk-margin-right class=".uk-margin-left uk-padding " >
-
-     <a href="http://127.0.0.1:8000/Inicio"><button class="uk-button uk-button-primary uk-button-small" >Inicio</button></a>   
-     <a href="http://127.0.0.1:8000/servicio"> <button class="uk-button uk-button-primary uk-button-small">Servicios</button></a>  
-    <a href="http://127.0.0.1:8000/Acerca"><button class="uk-button uk-button-primary uk-button-small">Acerca de</button></a>    
-    <a href="http://127.0.0.1:8000/contacto"><button class="uk-button uk-button-primary uk-button-small">Contáctanos</button></a>      
-    </div> 
     
-</div>
-<div uk-margin class=".uk-margin-left uk-padding">
 
-        <img uk-margin data-src="/img/Logo_sericolor.png" width="100" height="1200" alt="" uk-img>  
-    
-</div>
+
 
 
 <div class="uk-padding">
 <div class="uk-grid-medium uk-child-width-expand@s uk-text-center" uk-grid>
     <div>
-    <img class="img-thumbnail rounded mx-auto d-block" uk-margin data-src="https://scontent.fmga3-2.fna.fbcdn.net/v/t1.6435-9/121227300_2813504495536082_1459712056728424058_n.jpg?_nc_cat=103&ccb=1-3&_nc_sid=973b4a&_nc_ohc=t0qfbE7ZCawAX9AK2k2&_nc_ht=scontent.fmga3-2.fna&oh=4410b21d8b3ead2874d69e57df3aef1a&oe=60FC894C" width="200" height="1200" alt="" uk-img>
+    <img class="img-thumbnail rounded mx-auto d-block" uk-margin data-src="/img/bordado1.jpg" width="250" height="1200" alt="" uk-img>
     </div>
     <div>
-    <img class="img-thumbnail rounded mx-auto d-block" uk-margin data-src="https://scontent.fmga3-2.fna.fbcdn.net/v/t1.6435-9/134836437_2884756008410930_9004445252582939649_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=973b4a&_nc_ohc=npiajFRoKXIAX_4v3qY&_nc_ht=scontent.fmga3-2.fna&oh=141a22cef37074f1ab2f385012252a2a&oe=60FC9BFC" width="200" height="1200" alt="" uk-img>
+    <img class="img-thumbnail rounded mx-auto d-block" uk-margin data-src="/img/sublimacion1.jpg" width="200" height="1200" alt="" uk-img>
     </div>
     <div>
-    <img class="img-thumbnail rounded mx-auto d-block" uk-margin data-src="https://scontent.fmga3-2.fna.fbcdn.net/v/t1.6435-9/133955814_2884758445077353_1677420560834558913_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=973b4a&_nc_ohc=cpMDhlfoWBkAX-TBp0e&_nc_ht=scontent.fmga3-2.fna&oh=0e28f5a4dee3ca1e6da97f13aa1eda20&oe=60FE4872" width="190" height="1200" alt="" uk-img>
+    <img class="img-thumbnail rounded mx-auto d-block" uk-margin data-src="/img/serigrafia.jpg" width="190" height="1200" alt="" uk-img>
     </div>
     <div>
-    <img class="img-thumbnail rounded mx-auto d-block"  uk-margin data-src="https://scontent.fmga3-1.fna.fbcdn.net/v/t1.6435-9/159648811_2941025609450636_1818003300651554884_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=973b4a&_nc_ohc=laXsYnkf6o8AX_ASvmt&_nc_ht=scontent.fmga3-1.fna&oh=39f8915d83cfa6e4fc927c9f0af7431f&oe=60FCEC83" width="200" height="1200" alt="" uk-img>
+    <img class="img-thumbnail rounded mx-auto d-block"  uk-margin data-src="/img/impresiondigital1.jpg" width="200" height="1200" alt="" uk-img>
     </div>
     
 </div>
 <div class="uk-grid-medium uk-child-width-expand@s uk-text-center" uk-grid>
 
-    <div>
-        <button class="uk-button uk-button-primary uk-button-small ">Bordado</button>
+     <div>
+        <a href="/servicio#bordado" class="uk-button uk-button-primary uk-button-small ">Bordado</a>
     </div>
 
     <div>
-        <button class="uk-button uk-button-primary uk-button-small ">Sublimación</button>
+        <a href="/servicio#sublimacion" class="uk-button uk-button-primary uk-button-small ">Sublimación</a>
     </div>
 
     <div>
-        <button class="uk-button uk-button-primary uk-button-small ">Serigrafía</button>
+        <a href="/servicio#serigrafia" class="uk-button uk-button-primary uk-button-small ">Serigrafía</a>
     </div>
 
     <div>
-        <button class="uk-button uk-button-primary uk-button-small ">Impresión digital</button>
+        <a href="/servicio#impresion_digital" class="uk-button uk-button-primary uk-button-small ">Impresión digital</a>
     </div>
     
-</div>
+    </div>
 </div>
 
 
