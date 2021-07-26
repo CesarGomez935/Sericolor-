@@ -31,3 +31,7 @@ Route::get('servicio', function () {
 Route::get('revision', function () {
     return view('Revision');
 });
+
+Route::get('form_bordado', function () {
+    return view('formBordado');
+});

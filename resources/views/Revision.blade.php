@@ -27,7 +27,7 @@
 
     <img class="uk-float-left" uk-margin data-src="/img/Logo_sericolor.png" width="100" height="1200" alt="" uk-img>  
         <div class="uk-padding" >
-        <a class="uk-button uk-button-primary uk-button-large  uk-float-right">Revisa tu pedido</a>
+        <a href="/revision" class="uk-button uk-button-primary uk-button-large  uk-float-right">Revisa tu pedido</a>
         </div>
         <div class="uk-padding">
             <a href="/Inicio"><button class="uk-button uk-button-primary uk-button-small uk-float-right" >Inicio</button></a>   
