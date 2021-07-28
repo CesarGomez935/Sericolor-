@@ -51,4 +51,8 @@ Route::get('form_serigrafia', function () {
     return view('formSerigrafia');
 });
 
+Route::get('form_impresion_digital', function () {
+    return view('formImpresion');
+});
+
 
