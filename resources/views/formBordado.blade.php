@@ -20,7 +20,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     
 </head>
-<body>
+<body >
 
 <nav class="uk-navbar uk-navbar-container uk-margin">
     <div class="uk-navbar-left">
@@ -69,7 +69,8 @@
     </div>
 </nav>
 
-
+    <img class="uk-float-right uk-padding" uk-margin data-src="/img/Logo_sericolor.png" width="200" height="1200" alt="" uk-img>  
+    
 
 <div class="uk-padding uk-background-muted">
 
@@ -115,33 +116,33 @@
     <form class="uk-form-horizontal uk-margin-large">
 
     <div class="uk-margin">
-        <label class="uk-form-label" for="form-horizontal-text">Pechi Izquierdo</label>
+        <label class="uk-form-label" for="form-horizontal-text">Pecho Izquierdo</label>
         <div class="uk-form-controls">
-            <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+            <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
         </div>
     </div>
     <div class="uk-margin">
         <label class="uk-form-label" for="form-horizontal-text">Pecho Derecho</label>
         <div class="uk-form-controls">
-            <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+            <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
         </div>
     </div>
     <div class="uk-margin">
         <label class="uk-form-label" for="form-horizontal-text">Manga Izquierda</label>
         <div class="uk-form-controls">
-            <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+            <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
         </div>
     </div>
     <div class="uk-margin">
         <label class="uk-form-label" for="form-horizontal-text">Manga Derecha</label>
         <div class="uk-form-controls">
-            <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+            <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
         </div>
     </div>
     <div class="uk-margin">
         <label class="uk-form-label" for="form-horizontal-text">Espalda</label>
         <div class="uk-form-controls">
-            <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+            <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
         </div>
     </div>  
 
@@ -160,39 +161,39 @@
                         <label class="uk-form-label" for="form-horizontal-text">|   Dama   |</label>
                         <div class="uk-form-controls">
                             <label for="form-horizontal-text">S</label>
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
+                        <input class="uk-input uk-form-width-small" id="form-horizontal-text" type="text" placeholder="">
+                        <input class="uk-input uk-form-width-small" id="form-horizontal-text" type="text" placeholder="">
                        </div>
                        <div class="uk-form-controls">
                             <label for="form-horizontal-text">M</label>
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
                        </div>
                        <div class="uk-form-controls">
                             <label for="form-horizontal-text">L</label>
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
                        </div>
                        <div class="uk-form-controls">
                             <label for="form-horizontal-text">XL</label>
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
                        </div>
 
                        <div class="uk-form-controls">
                             <label for="form-horizontal-text">2XL</label>
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
                        </div>
                        <div class="uk-form-controls">
                             <label for="form-horizontal-text">3XL</label>
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
                        </div>
                        <div class="uk-form-controls">
                             <label for="form-horizontal-text">5XL</label>
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
                        </div>
                        
                     </div>
@@ -206,40 +207,40 @@
                         <label class="uk-form-label" for="form-horizontal-text">|   Cantidad   |</label>
                         <div class="uk-form-controls">
                             <label for="form-horizontal-text">18</label>
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
                         </div>
                        
                         <div class="uk-form-controls">
                             <label for="form-horizontal-text">16</label>
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
                         </div>
                         <div class="uk-form-controls">
                             <label for="form-horizontal-text">14</label>
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
                         </div>
                         <div class="uk-form-controls">
                             <label for="form-horizontal-text">12</label>
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
                         </div>
                         <div class="uk-form-controls">
                             <label for="form-horizontal-text">10</label>
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
                         </div>
                         <div class="uk-form-controls">
                             <label for="form-horizontal-text">8</label>
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
                         </div>
                         <div class="uk-form-controls">
                             <label for="form-horizontal-text">6</label>
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
                         </div>
                         <div class="uk-form-controls">
                             <label for="form-horizontal-text">4</label>
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
                         </div>
                         <div class="uk-form-controls">
                             <label for="form-horizontal-text">2</label>
-                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="Some text...">
+                        <input class="uk-input uk-form-width-small  " id="form-horizontal-text" type="text" placeholder="">
                         </div>
                         </div>
                     </div>
@@ -256,7 +257,24 @@
     <form>
     
     <textarea class="uk-textarea" placeholder="Notas"></textarea>
-    
+    <table class="uk-table uk-table-hover uk-table-divider">
+    <div class="uk-container">
+
+ <!--Tablas de precios-->
+<table class="uk-table uk-table-hover uk-table-divider">
+<thead>
+    <tr>
+        <th>Cantidad</th>
+        <th>Especificaciones</th>
+        <th>Precio</th>
+        <th>Precio Unitario</th>
+        <th coldspan="2">Opciones</th>
+    </tr>
+</thead>
+<tbody id="tablatrabajadores">
+</tbody>
+</table>
+</div>
 </form>
 </div>
 

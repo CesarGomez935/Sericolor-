@@ -35,3 +35,12 @@ Route::get('revision', function () {
 Route::get('form_bordado', function () {
     return view('formBordado');
 });
+Route::get('login', function () {
+    return view('iniciodesesion');
+});
+Route::get('registro', function () {
+    return view('registro');
+});
+Route::get('menu', function () {
+    return view('menu');
+});

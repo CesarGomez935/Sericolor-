@@ -18,27 +18,57 @@
 </head>
 
 <header>
-    
+<div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+    <!-- Copyright -->
+    <div class="text-white mb-3 mb-md-0">
+      Copyright © 2021. All rights reserved.
+    </div>
 </header>
-<body style="background-color:palegreen" >
-
-
-<div uk-margin-right class="uk-padding" >
-
-    <img class="uk-float-left" uk-margin data-src="/img/Logo_sericolor.png" width="100" height="1200" alt="" uk-img>  
-        <div class="uk-padding" >
-        <a href="/revision" class="uk-button uk-button-primary uk-button-large  uk-float-right">Revisa tu pedido</a>
-        </div>
-        <div class="uk-padding">
-            <a href="/Inicio"><button class="uk-button uk-button-primary uk-button-small uk-float-right" >Inicio</button></a>   
-            <a href="/servicio"> <button class="uk-button uk-button-primary uk-button-small uk-float-right">Servicios</button></a>  
-            <a href="/Acerca"><button class="uk-button uk-button-primary uk-button-small uk-float-right">Acerca de</button></a>    
-            <a href="/contacto"><button class="uk-button uk-button-primary uk-button-small uk-float-right">Contáctanos</button></a> 
-        </div>
-       
-        
+<body style="background-color:white" >
+<div uk-margin-right class="" >       
     </div>  
+    <section class="vh-100" style="background-color:white">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem ;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img
+                src="/img/Logo_sericolor.png"
+                alt="login form"
+                class="img-fluid uk-padding" style="border-radius: 1rem 0 0 1rem;"
+              />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
 
+                <form  >
+
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fas fa-cubes fa-2x me-3" style="color:palegreen"></i>
+                    <span class="h1 fw-bold mb-0">Sericolor</span>
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Ingrese el codigo que esta en su factura</h5>
+
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form2Example17" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example17">codigo</label>
+                  </div>
+                  <div class="pt-1 mb-4">
+                    <button class="btn btn-dark btn-lg btn-block" type="button">Revisa</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
