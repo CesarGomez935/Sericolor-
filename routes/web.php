@@ -44,3 +44,11 @@ Route::get('registro', function () {
 Route::get('menu', function () {
     return view('menu');
 });
+Route::get('form_sublimacion', function () {
+    return view('formSublimacion');
+});
+Route::get('form_serigrafia', function () {
+    return view('formSerigrafia');
+});
+
+
