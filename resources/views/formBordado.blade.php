@@ -110,7 +110,7 @@
     </div>
 
 
-    <div class="uk-child-width-1-2 uk-text-center uk-background-muted" uk-grid>
+    <div class="uk-child-width-1-2 uk-text-center uk-background-muted uk-padding" uk-grid>
         <div>
 
 
@@ -302,7 +302,7 @@
         </form>
     </div>
 
-    <div class="uk-child-width-1-2 uk-text-center uk-background-muted" uk-grid>
+    <div class="uk-child-width-1-2 uk-text-center uk-background-muted uk-padding" uk-grid>
         <div>
 
 
@@ -369,10 +369,19 @@
                 </div>
         </div>
 
-
-
-
-
+        
+        
+   
+</div>
+<div class="uk-padding uk-background-muted uk-padding  ">
+    <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
+        <button class="uk-button uk-button-primary "style="margin-left: 100px">Atrás</button>
+        <button class="uk-button uk-button-secondary"style="margin-left: 100px">Guardar</button> 
+              
+    </div>
+</div>
 </body>
+
+
 
 </html>
