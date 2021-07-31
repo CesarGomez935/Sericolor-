@@ -45,7 +45,7 @@
                                                 <span class="icon">
                                                     <i class="fa fa-universal-access"></i>
                                                 </span>
-                                                <span class="title">Pedidos Serigrafía</span>
+                                                <span class="title">Serigrafía</span>
                                             </span>
                                             <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
                                         </a>
@@ -66,7 +66,7 @@
                                                 <span class="icon">
                                                     <i class="fa fa-bullseye"></i>
                                                 </span>
-                                                <span class="title">Pedidos Sublimación</span>
+                                                <span class="title">Sublimación</span>
                                             </span>
                                             <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
                                         </a>
@@ -87,7 +87,7 @@
                                                 <span class="icon">
                                                     <i class="fa fa-braille"></i>
                                                 </span>
-                                                <span class="title">Pedidos Bordado</span>
+                                                <span class="title">Bordado</span>
                                             </span>
                                             <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
                                         </a>    
@@ -108,7 +108,7 @@
                                                 <span class="icon">
                                                     <i class="fa fa-id-badge"></i>
                                                 </span>
-                                                <span class="title">Pedidos Impresión Digital</span>
+                                                <span class="title">Impresión Digital</span>
                                             </span>
                                             <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
                                         </a>
