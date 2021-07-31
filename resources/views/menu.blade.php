@@ -23,7 +23,7 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
                                 <div class="page-title  home text-center">
-                                  <span class="heading-page"> Menú empresa Sericolor
+                                  <span class="heading-page"> Menú Sericolor
                                   </span>
                                     <p class="mt20"> </p>
                                 </div>

@@ -78,4 +78,18 @@ Route::get('pedidos_serigrafia', function () {
     return view('pedidosSerigrafia');
 });
 
+Route::get('personal', function () {
+    return view('personal');
+});
 
+Route::get('agregar_personal', function () {
+    return view('agregarPersonal');
+});
+
+Route::get('cliente', function () {
+    return view('cliente');
+});
+
+Route::get('agregar_cliente', function () {
+    return view('agregarCliente');
+});
