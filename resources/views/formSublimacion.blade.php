@@ -319,7 +319,7 @@
 
                         <div class="uk-margin">
 
-                            <h3>Lapicieros</h3>
+                            <h3>Lapiceros</h3>
 
                             <table class="uk-table uk-table-small uk-table-divider">
                                
