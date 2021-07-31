@@ -57,5 +57,8 @@ Route::get('form_impresion_digital', function () {
 Route::get('menu2', function () {
     return view('menufacturacion');
 });
+Route::get('bd', function () {
+    return view('basededatos');
+});
 
 
