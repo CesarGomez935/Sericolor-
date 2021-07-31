@@ -54,11 +54,28 @@ Route::get('form_serigrafia', function () {
 Route::get('form_impresion_digital', function () {
     return view('formImpresion');
 });
-Route::get('menu2', function () {
+
+Route::get('menu_facturacion', function () {
     return view('menufacturacion');
 });
 Route::get('bd', function () {
     return view('basededatos');
+});
+
+Route::get('pedidos_bordado', function () {
+    return view('pedidosBordado');
+});
+
+Route::get('pedidos_sublimacion', function () {
+    return view('pedidosSublimacion');
+});
+
+Route::get('pedidos_impresion_digital', function () {
+    return view('pedidosImpresionDigital');
+});
+
+Route::get('pedidos_serigrafia', function () {
+    return view('pedidosSerigrafia');
 });
 
 
