@@ -150,10 +150,11 @@
             </form>
 
         </div>
+
         <div>
-            <div class="uk-child-width-1-2 uk-text-center" uk-grid>
-                <div>
-                    <form class="uk-grid-small" uk-grid>
+            <div class="uk-child-width-1-3 uk-text-center uk-margin-large" uk-grid>
+                <div class="uk-margin-large">
+                    <form class="uk-grid-small uk-margin" uk-grid>
                         <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
                             <thead>
                                 <tr>
@@ -202,71 +203,162 @@
                         </table>
                     </form>
                 </div>
-                <div>
-                    <form class="uk-grid-small" uk-grid>
-                    <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
-                            <thead>
-                                <tr>
-                                    <th>Talla Juvenil</th>
-                                    <th>Cantidad</th>
-                                   
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>18</td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                   
-                                </tr>
-                                <tr>
-                                    <td>16</td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                <div class="" >
+                    <form class="uk-grid-small uk-margin" uk-grid>
+                        <table class="uk-table uk-table-hover uk-table-divider uk-table-small uk-margin uk-padding">
+                                <thead>
+                                    <tr>
+                                        <th>Talla Juvenil</th>
+                                        <th>Cantidad</th>
                                     
-                                </tr>
-                                <tr>
-                                    <td>14</td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>18</td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
                                     
-                                </tr>
-                                <tr>
-                                    <td>12</td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    
-                                </tr>
-                            </tbody>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                        
+                                    </tr>
+                                </tbody>
                         </table>
+                    </form>
                 </div>
 
-                </form>
-            </div>
+                <div class="" >
+
+                    <form class="uk-form-horizontal uk-margin-large">
+                        <div class="uk-margin">
+
+                            <h3>Tazas</h3>
+
+                            <table class="uk-table uk-table-small uk-table-divider">
+                               
+                                <tbody>
+                                    <tr>
+                                        <td>Frente</td>
+                                        <td><input type="text" class="uk-input"></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>Atrás	</td>
+                                        <td><input type="text" class="uk-input"></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>Cantidad</td>
+                                        <td><input type="number" class="uk-input"></td>
+                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </div>
+
+                        <div class="uk-margin">
+
+                            <h3>Llaveros MDF</h3>
+
+                            <table class="uk-table uk-table-small uk-table-divider">
+                               
+                                <tbody>
+                                    <tr>
+                                        <td>Detalle</td>
+                                        <td><input type="text" class="uk-input"></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>Cantidad</td>
+                                        <td><input type="number" class="uk-input"></td>
+                                        
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                            
+                        </div>
+
+                        <div class="uk-margin">
+
+                            <h3>Lapicieros</h3>
+
+                            <table class="uk-table uk-table-small uk-table-divider">
+                               
+                                <tbody>
+                                    <tr>
+                                        <td>Detalle</td>
+                                        <td><input type="text" class="uk-input"></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>Cantidad</td>
+                                        <td><input type="number" class="uk-input"></td>
+                                        
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                    </form>
+                </div>
+
+                
+            </div>            
         </div>
+
+        
+
+        
+
+       
+
+      
     </div>
-    </div>
+
+    
+
+    
+</div>
 
     <div class="uk-background-muted uk-padding">
         <h1 class="uk-text-center">Notas</h1>
