@@ -93,3 +93,8 @@ Route::get('cliente', function () {
 Route::get('agregar_cliente', function () {
     return view('agregarCliente');
 });
+
+Route::get('reportes', function () {
+    return view('Reportes');
+});
+
