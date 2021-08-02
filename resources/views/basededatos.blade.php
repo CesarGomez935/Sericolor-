@@ -41,22 +41,18 @@
         </h1></button>
             </div>
         </div></div>
- <div>
- <h3 class="uk-padding">
-            Restaurar Base de datos
-        </h3>
- <div class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-middle uk-flex-left uk-padding BorderedButton: UIButton " style="background-color:white">
- <button class="uk-button  uk-padding uk-button-primary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:push;ratio: 4">
-            <h1 style="color:white">
-          Subir Base de datos
-        </h1>
-    </button>
- </div>
- </div>
- <div >
- <button class="uk-button uk-button-secondary uk-button-large" uk-icon="icon:database;ratio: 4">Restaurar</button>
-
- </div>
+    <div class="uk-div uk-padding">
+        <div class="uk-section-secondary uk-margin uk-padding" style="text-align: center;">
+            <h1>Restaurar Base de datos</h1>
+            <div class="uk-margin" uk-margin>
+                <div uk-form-custom="target: true">
+                    <input type="file">
+                    <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+                </div>
+                <button class="uk-button uk-button-default">Submit</button>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 </body>
