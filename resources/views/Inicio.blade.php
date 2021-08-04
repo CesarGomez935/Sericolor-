@@ -24,7 +24,7 @@
 
 <body style="background-color:bisque">
 
-
+<!-- Sección que contiene los botones de navegación-->
     <div uk-margin-right class="uk-padding">
 
         <img class="uk-float-left" uk-margin data-src="/img/Logo_sericolor.png" width="100" height="1200" alt="" uk-img>
@@ -45,7 +45,7 @@
 
 
 
-
+<!-- Tarjetas que muestran imagenes e hipervinculo hacia los distintos servicios en la vista de servicios -->
     <div class="uk-padding">
         <div class="uk-grid-medium uk-child-width-expand@s uk-text-center" uk-grid>
             <div>
@@ -87,6 +87,7 @@
 
 
 </body>
+<!-- Footer -->
 <footer style="background-color: #AEC6CF">
 
     <div class="uk-grid-divider uk-child-width-expand@s uk-padding" uk-grid>
