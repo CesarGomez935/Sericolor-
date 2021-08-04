@@ -23,7 +23,7 @@
 </head>
 
 <body>
-
+    <!-- NavBar que muestra los distintos elementos de la apliaciión web -->
     <nav class="uk-navbar uk-navbar-container ">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
@@ -33,7 +33,7 @@
 
         <a href="#my-id" uk-toggle></a>
 
-        <!-- This is the off-canvas -->
+        <!-- Off Canvas, Elemento desplegabe de uiKit -->
         <div id="my-id" uk-offcanvas>
             <div class="uk-offcanvas-bar">
 
@@ -71,6 +71,7 @@
         </div>
     </nav>
 
+    <!-- Formulario para agregar cliente -->
 
     <div class="uk-padding-small uk-background-muted" style="padding-left: 300px;">
 

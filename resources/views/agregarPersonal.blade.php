@@ -23,7 +23,7 @@
 </head>
 
 <body>
-
+        <!-- NavBar -->
     <nav class="uk-navbar uk-navbar-container ">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
@@ -33,7 +33,7 @@
 
         <a href="#my-id" uk-toggle></a>
 
-        <!-- This is the off-canvas -->
+        <!-- Off Canvas, elemento desplegable de UiKit -->
         <div id="my-id" uk-offcanvas>
             <div class="uk-offcanvas-bar">
 
@@ -71,7 +71,7 @@
         </div>
     </nav>
 
-
+        <!-- Formulario de Insercion de personal -->
     <div class="uk-padding-small uk-background-muted" style="padding-left: 300px;">
 
         <div style="text-align: center;" class="uk-padding">
@@ -160,7 +160,7 @@
 
 
 
-
+    <!-- Botones de atrás y guardar -->
     <div class="uk-padding-small uk-background-muted uk-padding">
         <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 

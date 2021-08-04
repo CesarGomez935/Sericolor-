@@ -25,6 +25,7 @@
 
 <body style="background-color:bisque">
 
+    <!-- Seccion que muestra los botones que permiten la navegacion por las estañas de la pagina-->
 
     <div uk-margin-right class="uk-padding">
 
@@ -42,7 +43,7 @@
 
     </div>
 
-
+    <!-- Seccion que muestra Una tarjeta con los datos de el prpietario de Sericolor-->
     <div>
         <div class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-middle uk-flex-left uk-padding " style="background-color:bisque">
             <div class=".uk-margin-left ">
@@ -66,6 +67,8 @@
         </div>
 
 </body>
+
+<!-- Footer-->
 <footer style="background-color: #AEC6CF">
 
     <div class="uk-grid-divider uk-child-width-expand@s uk-padding" uk-grid>
@@ -99,13 +102,6 @@
             <a href="https://es-la.facebook.com/pg/sericolorpublicidad" uk-icon="icon: facebook ; ratio: 3.5"></a>
         </div>
     </div>
-
-
-
-
-
-
-
 
 
 </footer>
