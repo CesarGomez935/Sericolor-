@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -25,9 +26,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.xx.x/js/uikit.min.js"></script>
 
 </head>
+
 <body>
 
-<nav class="uk-navbar uk-navbar-container">
+    <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
                 <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Reportes</span>
@@ -73,15 +75,15 @@
             </div>
         </div>
     </nav>
-    
+
     <div class="uk-div uk-padding">
         <div class="uk-section uk-section-primary uk-padding">
             <div class="uk-container">
-                
+
                 <form action="">
 
                     <table class="uk-table">
-                        <h1  class="uk-heading-line uk-text-center uk-padding-small">Rango</h1>
+                        <h1 class="uk-heading-line uk-text-center uk-padding-small">Rango</h1>
 
                         <thead>
                             <tr>
@@ -90,21 +92,21 @@
                                 <th>Fecha Inicio</th>
                                 <th>Cliente</th>
                             </tr>
-                        </thead>                        
+                        </thead>
                         <tbody>
                             <tr>
                                 <td>
                                     <select class="uk-select uk-form-width-small" type="select" aria-placeholder="Ingresar categoria">
-                                            <option>Sublimación</option>
-                                            <option>Impresión digital</option>
-                                            <option>Bordado</option>
-                                            <option>Serigrafía</option>
+                                        <option>Sublimación</option>
+                                        <option>Impresión digital</option>
+                                        <option>Bordado</option>
+                                        <option>Serigrafía</option>
                                     </select>
                                 </td>
                                 <td><select class="uk-select uk-form-width-small" type="select" aria-placeholder="Ingresar estado">
-                                            <option>Completado</option>
-                                            <option>No completado</option>
-                                            
+                                        <option>Completado</option>
+                                        <option>No completado</option>
+
                                     </select>
                                 </td>
                                 <td>
@@ -131,13 +133,13 @@
                                 </td>
                                 <td>
                                     <label for="">Ejecutar consulta</label>
-                                    <button class="uk-button uk-button-secondary" uk-icon="search" ></button>
+                                    <button class="uk-button uk-button-secondary" uk-icon="search"></button>
                                     <label for="">Descargar reporte</label>
                                     <button class="uk-button uk-button-secondary" uk-icon="download"></button>
-                                    
+
                                 </td>
                             </tr>
-                           
+
                         </tbody>
                     </table>
                 </form>
@@ -147,30 +149,31 @@
 
     <div class="uk-div uk-margin uk-padding-small">
 
-            <table class="uk-table uk-table-hover uk-table-divider uk-table-striped">
-                
-                <thead>
-                    <tr>
-                        <th>Cliente</th>
-                        <th>N° Factura</th>
-                        <th>Categoria</th>
-                        <th>Fecha de recibido</th>
-                        <th>Estado</th>
-                        <th>Fecha de entrega</th>
-                    </tr>
-                </thead>
-               
-                <tbody>
-                   
-                </tbody>
-            </table>
+        <table class="uk-table uk-table-hover uk-table-divider uk-table-striped">
+
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>N° Factura</th>
+                    <th>Categoria</th>
+                    <th>Fecha de recibido</th>
+                    <th>Estado</th>
+                    <th>Fecha de entrega</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+        </table>
 
 
     </div>
 
-    <div style="text-align: center;" class="uk-div" >
+    <div style="text-align: center;" class="uk-div">
         <a class="uk-button uk-button-secondary" href="/menu_administracion">Atrás</a>
     </div>
 
 </body>
+
 </html>

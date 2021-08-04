@@ -72,19 +72,19 @@
     </nav>
 
 
-    
+
 
     <div class="uk-div uk-margin uk-padding">
 
         <form>
 
-            
+
 
             <div class="uk-margin">
 
                 <label for="form-stacked-text" class="uk-form-label">Buscar Cliente</label>
                 <div class="uk-inline">
-                    
+
                     <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
                     <input class="uk-input" type="text">
                 </div>
@@ -92,32 +92,33 @@
 
         </form>
 
-    <table class="uk-table uk-table-divider uk-table-striped uk-table-hover">
-    <thead>
-        <tr>
-            <th>Cliente</th>
-                       
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <u>
+        <table class="uk-table uk-table-divider uk-table-striped uk-table-hover">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
 
-            </u>            
-        </tr>
-        
-    </tbody>
-</table>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <u>
+
+                    </u>
+                </tr>
+
+            </tbody>
+        </table>
 
     </div>
 
-    
+
     <div class="uk-padding uk-background-muted uk-padding  ">
         <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-            <button class="uk-button uk-button-primary "style="margin-left: 100px">Atrás</button>
-            <button class="uk-button uk-button-secondary"style="margin-left: 100px">Guardar</button> 
-                
+            <button class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</button>
+            <button class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</button>
+
         </div>
-</div>
+    </div>
 </body>
+
 </html>
