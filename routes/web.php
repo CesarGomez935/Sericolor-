@@ -97,4 +97,7 @@ Route::get('agregar_cliente', function () {
 Route::get('reportes', function () {
     return view('Reportes');
 });
+Route::get('menuadmon', function () {
+    return view('menuadministracion');
+});
 

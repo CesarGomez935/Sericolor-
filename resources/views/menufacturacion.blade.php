@@ -1,139 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu | Facturación</title>
-
+    <title>Sericolor</title>
     <link rel="icon" href="/img/Icono.ico" type="image/ico" />
-    <link rel="stylesheet" type="text/css" href="{{ URL::to('css/menu.css') }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
+    <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+        <!-- Copyright -->
+        <div class="text-white mb-3 mb-md-0">
+            Copyright © 2021. All rights reserved.
+        </div>
+        <!-- Copyright -->
+
+        <!-- Right -->
+        <div>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="#!" class="text-white">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <!-- Right -->
+    </div>
 </head>
 
 <body>
 
-    <main class="site-wrapper">
-        <div class="pt-table desktop-768">
-            <div class="pt-tablecell page-home relative" style="background-image: url(https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);background-position: center;     background-size: cover;">
-                <div class="overlay"></div>
+    <form class="uk-padding">
+        <table class="uk-table uk-padding uk-position-center uk-margin">
+            <tbody>
+                <tr>
+                    <td style="padding-left: 100px;"><button class="btn btn-lg uk-padding " style="background-color:transparent">
+                            <div style="text-align:center"><svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" class="bi bi-droplet-half " viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0c.109.363.234.708.371 1.038.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8zm.413 1.021A31.25 31.25 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10c0 0 2.5 1.5 5 .5s5-.5 5-.5c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z" />
+                                    <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448z" />
+                                </svg></div>
+                            Sublimación
+                        </button></td>
+                    <td style="padding-left: 100px;">
+                        <button class="btn btn-lg" style="background-color:transparent">
+                            <div style="text-align:center"><svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" class="bi bi-printer-fill" viewBox="0 0 16 16">
+                                    <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z" />
+                                    <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
+                                </svg></div>
+                            Impresión Digital
+                        </button>
+                    </td>
+                    <td style="padding-left: 100px;"> <button class="btn btn-lg" style="background-color:transparent">
+                            <div style="text-align:center"><svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" class="bi bi-eyedropper" viewBox="0 0 16 16">
+                                    <path d="M13.354.646a1.207 1.207 0 0 0-1.708 0L8.5 3.793l-.646-.647a.5.5 0 1 0-.708.708L8.293 5l-7.147 7.146A.5.5 0 0 0 1 12.5v1.793l-.854.853a.5.5 0 1 0 .708.707L1.707 15H3.5a.5.5 0 0 0 .354-.146L11 7.707l1.146 1.147a.5.5 0 0 0 .708-.708l-.647-.646 3.147-3.146a1.207 1.207 0 0 0 0-1.708l-2-2zM2 12.707l7-7L10.293 7l-7 7H2v-1.293z" />
+                                </svg></div>
+                            Serigrafía
+                        </button></td>
+                    <td style="padding-left: 100px;">
+                        <button class="btn btn-lg" style="background-color:transparent">
+                            <div style="text-align:center"><svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z" />
+                                    <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z" />
+                                </svg></div>
+                            Bordado
+                        </button>
+                    </td>
+                </tr>
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-offset-2 col-lg-8">
-                            <div class="page-title  home text-center">
-                                <span class="heading-page"> Menú Facturación
-                                </span>
-                                <p class="mt20"> </p>
-                            </div>
+            </tbody>
+        </table>
+    </form>
 
-                            <div class="hexagon-menu clear">
-                                <div class="hexagon-item">
-                                    <div class="hex-item">
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <div class="hex-item">
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <a href="/form_serigrafia" target="_blank" class="hex-content">
-                                        <span class="hex-content-inner">
-                                            <span class="icon">
-                                                <i class="fa fa-universal-access"></i>
-                                            </span>
-                                            <span class="title">Serigrafía</span>
-                                        </span>
-                                        <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="hexagon-item">
-                                    <div class="hex-item">
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <div class="hex-item">
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <a href="https://enationalelectronics.com" target="_blank" class="hex-content">
-                                        <span class="hex-content-inner">
-                                            <span class="icon">
-                                                <i class="fa fa-bullseye"></i>
-                                            </span>
-                                            <span class="title">Sublimación</span>
-                                        </span>
-                                        <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="hexagon-item">
-                                    <div class="hex-item">
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <div class="hex-item">
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <a href="https://enationalelectronics.com" target="_blank" class="hex-content">
-                                        <span class="hex-content-inner">
-                                            <span class="icon">
-                                                <i class="fa fa-braille"></i>
-                                            </span>
-                                            <span class="title">Bordado</span>
-                                        </span>
-                                        <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="hexagon-item">
-                                    <div class="hex-item">
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <div class="hex-item">
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <a href="https://enationalelectronics.com" target="_blank" class="hex-content">
-                                        <span class="hex-content-inner">
-                                            <span class="icon">
-                                                <i class="fa fa-id-badge"></i>
-                                            </span>
-                                            <span class="title">Impresión Digital</span>
-                                        </span>
-                                        <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path>
-                                        </svg>
-                                    </a>
-                                </div>
+    <div class="uk-padding uk-background-muted uk-position-bottom uk-padding  ">
+        <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
+            <button class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</button>
 
 
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-    </main>
-
-
-
+    </div>
 </body>
-
-</html>
