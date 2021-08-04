@@ -72,37 +72,38 @@
     </nav>
 
 
-    
+
 
     <div class="uk-div uk-margin uk-padding">
 
-    <table class="uk-table uk-table-divider uk-table-striped uk-table-hover">
-    <thead>
-        <tr>
-            <th>Pedidos y Clientes</th>
-            <th>Estado</th>
-           
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <u>
+        <table class="uk-table uk-table-divider uk-table-striped uk-table-hover">
+            <thead>
+                <tr>
+                    <th>Pedidos y Clientes</th>
+                    <th>Estado</th>
 
-            </u>            
-        </tr>
-        
-    </tbody>
-</table>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <u>
+
+                    </u>
+                </tr>
+
+            </tbody>
+        </table>
 
     </div>
 
-    
+
     <div class="uk-padding uk-background-muted uk-padding  ">
         <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-            <button class="uk-button uk-button-primary "style="margin-left: 100px">Atrás</button>
-            <button class="uk-button uk-button-secondary"style="margin-left: 100px">Guardar</button> 
-                
+            <button class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</button>
+            <button class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</button>
+
         </div>
     </div>
 </body>
+
 </html>

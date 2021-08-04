@@ -23,7 +23,7 @@
 </head>
 
 <body>
-
+        <!-- NavBar -->
     <nav class="uk-navbar uk-navbar-container ">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
@@ -33,7 +33,7 @@
 
         <a href="#my-id" uk-toggle></a>
 
-        <!-- This is the off-canvas -->
+        <!-- Off Canvas, elemento desplegable de UiKit -->
         <div id="my-id" uk-offcanvas>
             <div class="uk-offcanvas-bar">
 
@@ -71,14 +71,14 @@
         </div>
     </nav>
 
-
-    <div class="uk-padding-small uk-background-muted" style="padding-left: 300px;"  >
+        <!-- Formulario de Insercion de personal -->
+    <div class="uk-padding-small uk-background-muted" style="padding-left: 300px;">
 
         <div style="text-align: center;" class="uk-padding">
-             <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png" alt="" width="300" height="300">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png" alt="" width="300" height="300">
         </div>
 
-        <div style="text-align: center; " class="" >
+        <div style="text-align: center; " class="">
             <form class="uk-form-horizontal uk-margin-large">
 
                 <div class="uk-margin">
@@ -94,7 +94,7 @@
                         <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
                     </div>
                 </div>
-                
+
                 <div class="uk-margin">
                     <label class="uk-form-label" for="form-horizontal-text">Primer Apellido</label>
                     <div class="uk-form-controls">
@@ -129,45 +129,46 @@
                         <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
                     </div>
                 </div>
-                
+
                 <div class="uk-margin">
                     <label class="uk-form-label" for="form-horizontal-text">Rol Asignado</label>
                     <div class="uk-margin">
                         <div uk-form-custom="target: > * > span:first-child">
-                                <select>
-                                    <option value="">Seleccionar</option>
-                                    <option value="1">Impresión Digital</option>
-                                    <option value="2">Sublimación</option>
-                                    <option value="3">Bordado</option>
-                                    <option value="4">Serigrafía</option>
-                                    <option value="4">Recepcion</option>
-                                </select>
-                                <button class="uk-button uk-button-default" type="button" tabindex="-1">
-                                    <span></span>
-                                    <span uk-icon="icon: chevron-down"></span>
-                                </button>
-                            </div>
+                            <select>
+                                <option value="">Seleccionar</option>
+                                <option value="1">Impresión Digital</option>
+                                <option value="2">Sublimación</option>
+                                <option value="3">Bordado</option>
+                                <option value="4">Serigrafía</option>
+                                <option value="4">Recepcion</option>
+                            </select>
+                            <button class="uk-button uk-button-default" type="button" tabindex="-1">
+                                <span></span>
+                                <span uk-icon="icon: chevron-down"></span>
+                            </button>
                         </div>
+                    </div>
                 </div>
 
-                
+
             </form>
         </div>
     </div>
 
-    
 
 
 
 
-    
+
+    <!-- Botones de atrás y guardar -->
     <div class="uk-padding-small uk-background-muted uk-padding">
         <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 
             <button class="uk-button uk-button-primary  " uk-icon="check" style="margin-left: 100px">Atrás </button>
-            <button class="uk-button uk-button-secondary" uk-icon="close" style="margin-left: 100px">Guardar </button> 
-                
+            <button class="uk-button uk-button-secondary" uk-icon="close" style="margin-left: 100px">Guardar </button>
+
         </div>
-</div>
+    </div>
 </body>
+
 </html>

@@ -23,7 +23,7 @@
 </head>
 
 <body>
-
+ <!-- Nav Bar-->
     <nav class="uk-navbar uk-navbar-container uk-margin">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
@@ -33,7 +33,7 @@
 
         <a href="#my-id" uk-toggle></a>
 
-        <!-- This is the off-canvas -->
+        <!-- Off canvas, Elemento desplegable de UiKit -->
         <div id="my-id" uk-offcanvas>
             <div class="uk-offcanvas-bar">
 
@@ -75,7 +75,7 @@
 
     <div class="uk-padding uk-background-muted">
 
-
+        <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
         <form class="uk-grid-small" uk-grid>
 
             <div class="uk-inline uk-width-1-2 ">
@@ -113,7 +113,7 @@
     <div class="uk-child-width-1-2 uk-text-center uk-background-muted" uk-grid>
         <div>
 
-
+<!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
             <form class="uk-form-horizontal uk-margin-large">
 
                 <div class="uk-margin">
@@ -153,6 +153,8 @@
         <div>
             <div class="uk-child-width-1-2 uk-text-center" uk-grid>
                 <div>
+
+                <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
                     <form class="uk-grid-small" uk-grid>
                         <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
                             <thead>
@@ -203,60 +205,61 @@
                     </form>
                 </div>
                 <div>
+                    <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
                     <form class="uk-grid-small" uk-grid>
-                    <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
+                        <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
                             <thead>
                                 <tr>
                                     <th>Talla Juvenil</th>
                                     <th>Cantidad</th>
-                                   
+
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>18</td>
                                     <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                   
+
                                 </tr>
                                 <tr>
                                     <td>16</td>
                                     <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    
+
                                 </tr>
                                 <tr>
                                     <td>14</td>
                                     <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    
+
                                 </tr>
                                 <tr>
                                     <td>12</td>
                                     <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    
+
                                 </tr>
                                 <tr>
                                     <td>10</td>
                                     <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    
+
                                 </tr>
                                 <tr>
                                     <td>8</td>
                                     <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    
+
                                 </tr>
                                 <tr>
                                     <td>6</td>
                                     <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    
+
                                 </tr>
                                 <tr>
                                     <td>4</td>
                                     <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    
+
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    
+
                                 </tr>
                             </tbody>
                         </table>
@@ -266,11 +269,11 @@
             </div>
         </div>
     </div>
-    
+
 
     <div class="uk-background-muted uk-padding">
         <h1 class="uk-text-center">Notas</h1>
-
+        <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
         <form>
 
             <textarea class="uk-textarea" placeholder="Notas"></textarea>
@@ -305,7 +308,7 @@
     <div class="uk-child-width-1-2 uk-text-center uk-background-muted" uk-grid>
         <div>
 
-
+<!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
             <form class="uk-form-horizontal uk-margin-large">
 
                 <div class="uk-margin">
@@ -340,7 +343,7 @@
         </div>
         <div>
 
-
+<!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
             <form class="uk-form-horizontal uk-margin-large">
 
                 <div class="uk-margin">
@@ -369,13 +372,15 @@
                 </div>
         </div>
     </div>
-    
+
+    <!-- botones de atrás y guardar-->
     <div class="uk-padding uk-background-muted uk-padding  ">
-    <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-        <button class="uk-button uk-button-primary "style="margin-left: 100px">Atrás</button>
-        <button class="uk-button uk-button-secondary"style="margin-left: 100px">Guardar</button> 
-              
+        <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
+            <button class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</button>
+            <button class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</button>
+
+        </div>
     </div>
-</div>
 </body>
+
 </html>

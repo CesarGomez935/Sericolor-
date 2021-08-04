@@ -24,16 +24,17 @@
 
 <body>
 
+    <!-- Nav Bar -->
     <nav class="uk-navbar uk-navbar-container uk-margin">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Facturación Sublimación</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Clientes</span>
             </a>
         </div>
 
         <a href="#my-id" uk-toggle></a>
 
-        <!-- This is the off-canvas -->
+        <!-- Off Canvas, elemento desplegable de UiKit -->
         <div id="my-id" uk-offcanvas>
             <div class="uk-offcanvas-bar">
 
@@ -72,7 +73,7 @@
     </nav>
 
 
-
+        <!-- Input para realizar busqueda de un cliente por nombre -->
 
     <div class="uk-div uk-margin uk-padding">
 
@@ -82,16 +83,16 @@
 
             <div class="uk-margin">
 
-                <label for="form-stacked-text" class="uk-form-label">Buscar Cliente</label>
-                <div class="uk-inline">
+               <b> <label for="form-stacked-text" class="uk-form-label">Buscar Cliente</label> </b>
+                <div class="uk-inline uk-padding">
 
                     <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
-                    <input class="uk-input" type="text">
+                    <input class="uk-input uk-form-width-large" type="text">
                 </div>
             </div>
 
         </form>
-
+                <!-- Tabla que muestra el listado de clientes con un hipervinculo a su detalle -->
         <table class="uk-table uk-table-divider uk-table-striped uk-table-hover">
             <thead>
                 <tr>
