@@ -86,8 +86,8 @@ Route::get('agregar_personal', function () {
     return view('agregarPersonal');
 });
 
-Route::get('cliente', function () {
-    return view('clientes');
+Route::get('clientes', function () {
+    return view('cliente');
 });
 
 Route::get('agregar_cliente', function () {

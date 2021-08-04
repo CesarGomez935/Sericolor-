@@ -171,7 +171,7 @@
     </div>
 
     <div style="text-align: center;" class="uk-div">
-        <a class="uk-button uk-button-secondary" href="/menu_administracion">Atrás</a>
+        <a class="uk-button uk-button-secondary" href="/menuadmon">Atrás</a>
     </div>
 
 </body>
