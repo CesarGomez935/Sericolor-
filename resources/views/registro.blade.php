@@ -37,10 +37,10 @@
           <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Contraseña" aria-describedby="defaultRegisterFormPasswordHelpBlock">
           <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
           </small>
-          Introduzca su cedula sin guiones
+          Introduzca su cédula sin guiones
           <div> <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Cedula"></div>
           <!-- Phone number -->
-          Introduzca su Numero celular
+          Introduzca su Número celular
           <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Celular" aria-describedby="defaultRegisterFormPhoneHelpBlock">
           <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
           </small>

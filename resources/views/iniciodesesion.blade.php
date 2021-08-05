@@ -24,7 +24,7 @@
           <!-- Password input -->
           <div class="form-outline mb-3">
             <input type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Ingresa tu contraseña" />
-            <label class="form-label" for="form3Example4">contraseña</label>
+            <label class="form-label" for="form3Example4">Contraseña</label>
           </div>
           <div class="d-flex justify-content-between align-items-center">
             <!-- Checkbox -->

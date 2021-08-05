@@ -50,7 +50,7 @@
 
             <h1 class="uk-padding">Impresión Digital
                 <div>
-                    <h3 class="uk-text-justify">La impresión digital es el proceso por el que se transfiere una información digital directamente al formato impreso sin pasos intermedios analógicos. Es decir, por ejemplo, imprimir una fotografía que se tiene en el ordenador directamente sobre una hoja de papel. </h3>
+                    <h3 class="uk-text-justify">La impresión digital es el proceso por el que se transfiere una información digital directamente al formato impreso sin pasos intermedios analógicos. Es decir, imprimir una fotografía que se tiene en el ordenador directamente sobre una hoja de papel. </h3>
 
             </h1>
 
@@ -80,7 +80,7 @@
 
                     <h1 class="uk-padding">Sublimación
                         <div>
-                            <h3 class="uk-text-justify">La sublimación es una novedosa técnica de impresión digital -y de nueva generación- con la que es posible personalizar diferentes tipos de prendas y objetos mediante la transferencia de una imagen impresa. Se puede hacer sobre prendas textiles o sobre superficies de madera, lienzo tratado, cartón o ceramicas.</h3>
+                            <h3 class="uk-text-justify">La sublimación es una novedosa técnica de impresión digital y de nueva generación con la que es posible personalizar diferentes tipos de prendas y objetos mediante la transferencia de una imagen impresa. Se puede hacer sobre prendas textiles o sobre superficies de madera, lienzo tratado, cartón o ceramicas.</h3>
 
                     </h1>
 
@@ -112,7 +112,7 @@
         <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6598222185626!2d-85.92170308581036!3d12.929572019298973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f7249d2987e4149%3A0x1e72bbacc5e03499!2sSERICOLOR%20PUBLICIDAD!5e0!3m2!1ses!2sni!4v1626899274980!5m2!1ses!2sni" width="400" height="100" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
         <div>
             <p>
-                <B> Ubicados frente a donde fue metales de matagalpa
+                <B> Ubicados frente a donde fue metales de Matagalpa
                 </B>
             </p>
             <p>
