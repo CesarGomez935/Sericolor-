@@ -27,7 +27,7 @@
     <nav class="uk-navbar uk-navbar-container uk-margin">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Personal</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Resumen de  Pedidos</span>
             </a>
         </div>
 
@@ -76,28 +76,20 @@
 
     <div class="uk-div uk-margin uk-padding">
 
-        <div class="uk-div uk-padding" >
-            <a href="/menu/menuadmon/personal/agregar_personal" class="uk-button uk-button-primary">Agregar personal</a>
-        </div>
-
         <table class="uk-table uk-table-divider uk-table-striped uk-table-hover">
             <thead>
                 <tr>
-                    <th>Personal</th>
-                    <th>Rol</th>
+                    <th>Pedidos y Clientes</th>
+                    <th>Estado</th>
+                    <th>Categoria</th>
 
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
-                        <u>
+                    <u>
 
-                        </u>
-                    </td>
-                    <td>
-                        
-                    </td>
+                    </u>
                 </tr>
 
             </tbody>
@@ -109,7 +101,7 @@
     <div class="uk-padding uk-background-muted uk-padding  ">
         <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
             <a href="/menu/menuadmon" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
-            
+            <button class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</button>
 
         </div>
     </div>

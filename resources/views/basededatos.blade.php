@@ -40,33 +40,34 @@
                 <hr class="uk-divider-icon">
 
                 <ul class="uk-nav uk-parent">
-                    <li class="uk-parent"> <a href=""> Facturación </a></li>
+                    <li class="uk-parent"> <a href="/menu/menu_facturacion"> Facturación </a></li>
                     <ul class="uk-nav-sub">
-                        <li> <a href="">Bordado </a></li>
-                        <li> <a href="">Sublimación </a></li>
-                        <li> <a href="">Serigrafía </a></li>
-                        <li> <a href="">Impresión digital </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_bordado">Bordado </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_sublimacion">Sublimación </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_serigrafia">Serigrafía </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_impresion_digital">Impresión digital </a></li>
                     </ul>
                     <hr class="uk-divider-icon">
-                    <li class="uk-active"> <a href=""> Pedidos Bordado </a></li>
-                    <li class="uk-active"> <a href=""> Pedidos Sublimación </a></li>
-                    <li class="uk-active"> <a href=""> Pedidos Serigrafía </a></li>
-                    <li class="uk-active"> <a href=""> Pedidos Impresión digital </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_serigrafia"> Pedidos Serigrafía </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital </a></li>
                     <hr class="uk-divider-icon">
-                    <li class="uk-parent"> <a href=""> Administración </a></li>
+                    <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
 
                     <ul class="uk-nav-sub">
-                        <li> <a href="">Resumen de pedidos</a></li>
-                        <li> <a href="">Personal</a></li>
-                        <li> <a href="">Reportes</a></li>
-                        <li> <a href="">Restaurar y generar Back-up</a></li>
-                        <li> <a href="">Clientes</a></li>
+                        <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
+                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                        <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
+                        <li> <a href="/menu/menuadmon/bd">Restaurar y generar Back-up</a></li>
+                        <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
                     </ul>
 
                 </ul>
 
             </div>
         </div>
+
     </nav>
     <!-- Botones para descargar, subir y restaurar la base de datos -->
     <div>
@@ -103,7 +104,7 @@
     <div class="uk-padding-small uk-background-muted uk-padding">
         <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 
-            <button class="uk-button uk-button-primary  "  style="margin-left: 100px">Atrás</button>
+            <a href="/menu/menuadmon" class="uk-button uk-button-primary  "  style="margin-left: 100px">Atrás</a>
            
 
         </div>
