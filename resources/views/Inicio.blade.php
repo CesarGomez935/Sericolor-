@@ -103,8 +103,8 @@
             <p>
                 <B>
 
-                    Telefono: 2773-2011
-                    Whatsapp: 5504-8894
+                     <a href="https://web.whatsapp.com/send?phone=+505+55038173">Whatsapp: 5503-8173</a> 
+                    <!-- Revisar estos datos-->
 
 
                 </B>
@@ -117,8 +117,10 @@
             </p>
         </div>
         <div>
-            <a href="https://www.instagram.com/sericolorpublicidad/?hl=es-la" uk-icon="icon: instagram ; ratio: 3.5"></a>
+            
+            <a href="https://api.whatsapp.com/send?phone=+505 55038173" uk-icon="icon: whatsapp ; ratio: 3.5"></a>
             <a href="https://es-la.facebook.com/pg/sericolorpublicidad" uk-icon="icon: facebook ; ratio: 3.5"></a>
+            <a href="https://www.instagram.com/sericolorpublicidad/?hl=es-la" uk-icon="icon: instagram ; ratio: 3.5"></a>
         </div>
     </div>
 

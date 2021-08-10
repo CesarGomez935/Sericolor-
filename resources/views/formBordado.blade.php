@@ -71,7 +71,7 @@
         </div>
     </nav>
 
-    <form action="post">
+    <form action="" method="POST">
 
         <div class="uk-padding uk-background-muted">
 
@@ -177,13 +177,13 @@
                                     </tr>
                                     <tr>
                                         <td>L</td>
-                                        <td><input id="talla_l_caballero" class="uk-input  uk-form-width-xsmall" type="Number"></td>
+                                        <td><input id="talla_l_caballero" class="uk-input uk-form-width-xsmall" type="Number"></td>
                                         <td><input id="talla_l_dama" class="uk-input uk-form-width-xsmall" type="Number"></td>
                                     </tr>
                                     <tr>
                                         <td>XL</td>
                                         <td><input id="talla_xl_caballero" class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                        <td><input id="talla_l_dama" class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                        <td><input id="talla_xl_dama" class="uk-input uk-form-width-xsmall" type="Number"></td>
                                     </tr>
                                     <tr>
                                         <td>2XL</td>
@@ -293,7 +293,7 @@
                                 </tr>
                                
                             </thead>
-                            <tbody id="tablatrabajadores">
+                            <tbody id="tabladetalle">
                                 <tr>
 
                                     <td></td>

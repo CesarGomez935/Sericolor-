@@ -73,81 +73,83 @@
 
     <!-- Formulario para agregar cliente -->
 
-    <div class="uk-padding-small uk-background-muted" style="padding-left: 300px;">
+    <form action="" method="post">
 
-        <div style="text-align: center;" class="uk-padding">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png" alt="" width="300" height="300">
-        </div>
+        <div class="uk-padding-small uk-background-muted" style="padding-left: 300px;">
 
-        <div style="text-align: center; " class="">
-            <form class="uk-form-horizontal uk-margin-large">
+            <div style="text-align: center;" class="uk-padding">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png" alt="" width="300" height="300">
+            </div>
 
-                <div class="uk-margin">
-                    <label class="uk-form-label" for="form-horizontal-text">Primer Nombre</label>
-                    <div class="uk-form-controls">
-                        <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
-                    </div>
-                </div>
+            <div style="text-align: center; " class="">
+                <div class="uk-form-horizontal uk-margin-large">
 
-                <div class="uk-margin">
-                    <label class="uk-form-label" for="form-horizontal-text">Segundo Nombre</label>
-                    <div class="uk-form-controls">
-                        <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
-                    </div>
-                </div>
-
-                <div class="uk-margin">
-                    <label class="uk-form-label" for="form-horizontal-text">Primer Apellido</label>
-                    <div class="uk-form-controls">
-                        <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
-                    </div>
-                </div>
-
-                <div class="uk-margin">
-                    <label class="uk-form-label" for="form-horizontal-text">Segundo Apellido</label>
-                    <div class="uk-form-controls">
-                        <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
-                    </div>
-                </div>
-
-
-
-                <div class="uk-margin">
-                    <label class="uk-form-label" for="form-horizontal-text">Teléfono</label>
-                    <div class="uk-form-controls">
-                        <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
-                    </div>
-                </div>
-
-                <div class="uk-margin">
-                    <label class="uk-form-label" for="form-horizontal-text">Cédula</label>
-                    <div class="uk-form-controls">
-                        <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
-                    </div>
-                </div>
-
-                <div class="uk-margin">
-                    <label class="uk-form-label" for="form-horizontal-text">Tipo de Cliente</label>
                     <div class="uk-margin">
-                        <div uk-form-custom="target: > * > span:first-child">
-                            <select>
-                                <option value="">Seleccionar</option>
-                                <option value="1">Persona Natural</option>
-                                <option value="2">Empresa</option>
-
-                            </select>
-                            <button class="uk-button uk-button-default" type="button" tabindex="-1">
-                                <span></span>
-                                <span uk-icon="icon: chevron-down"></span>
-                            </button>
+                        <label for="primer_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Primer Nombre</label>
+                        <div class="uk-form-controls">
+                            <input id="primer_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
                         </div>
                     </div>
+
+                    <div class="uk-margin">
+                        <label for="segundo_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Segundo Nombre</label>
+                        <div class="uk-form-controls">
+                            <input id="segundo_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="primer_apellido_cliente" class="uk-form-label" for="form-horizontal-text">Primer Apellido</label>
+                        <div class="uk-form-controls">
+                            <input id="primer_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="segundo_apellido_cliente" class="uk-form-label" for="form-horizontal-text">Segundo Apellido</label>
+                        <div class="uk-form-controls">
+                            <input id="segundo_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                        </div>
+                    </div>
+
+
+
+                    <div class="uk-margin">
+                        <label for="telefono_cliente" class="uk-form-label" for="form-horizontal-text">Teléfono</label>
+                        <div class="uk-form-controls">
+                            <input id="telefono_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="cedula_cliente" class="uk-form-label" for="form-horizontal-text">Cédula</label>
+                        <div class="uk-form-controls">
+                            <input id="cedula_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="tipo_cliente" class="uk-form-label" for="form-horizontal-text">Tipo de Cliente</label>
+                        <div class="uk-margin">
+                            <div uk-form-custom="target: > * > span:first-child">
+                                <select id="tipo_cliente" >
+                                    <option value="">Seleccionar</option>
+                                    <option value="1">Persona Natural</option>
+                                    <option value="2">Empresa</option>
+
+                                </select>
+                                <button class="uk-button uk-button-default" type="button" tabindex="-1">
+                                    <span></span>
+                                    <span uk-icon="icon: chevron-down"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
-
-
-            </form>
+            </div>
         </div>
-    </div>
 
 
 
@@ -155,14 +157,17 @@
 
 
 
-    <div class="uk-padding-small uk-background-muted uk-padding">
-        <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
+        <div class="uk-padding-small uk-background-muted uk-padding">
+            <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 
-            <a href="/menu/menuadmon/clientes" class="uk-button uk-button-primary  "  style="margin-left: 100px">Atrás </a>
-            <button class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
+                <a href="/menu/menuadmon/clientes" class="uk-button uk-button-primary  "  style="margin-left: 100px">Atrás </a>
+                <button type="submit" class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
 
+            </div>
         </div>
-    </div>
+
+    </form>
+
 </body>
 
 </html>

@@ -73,7 +73,7 @@
     </nav>
 
 
-    <form action="post">
+    <form action="" method="post">
 
             <div class="uk-padding uk-background-muted">
 
@@ -187,7 +187,7 @@
                                     
                                 </tr>                               
                             </thead>
-                            <tbody id="tablatrabajadores">
+                            <tbody id="tabladetalle">
                                 <tr>
 
                                     <td></td>

@@ -57,7 +57,8 @@
 
         </div>
         <div class="uk-padding">
-            <h1 class="uk-grid-medium uk-child-width-expand@s uk-text-center">Quienes Somos?</h1>
+            <h1 class="uk-grid-medium uk-child-width-expand@s uk-text-center">¿Quienes Somos?</h1>
+            <p></p>
             <h3 class="uk-text-justify">Hace 8 años comenzo este proyecto, estabamos llenos de muchas dudas y miedos, pero era mas fuerte las ganas de crear una empresa, hubieron obstaculos, personas que decian: "no creo que puedan", pero seguimos lo que nuestro corazón dictaba y obedecimos, aqui estamos son tantas historias buenas y malas que contar pero lo mejor ha sido el propósito que Dios tiene con nosotros, hoy damos Gracias al Eterno PADRE por este tiempo.</h3>
         </div>
     <div>
@@ -79,8 +80,8 @@
             <p>
                 <B>
 
-                    Telefono: 2773-2011
-                    Whatsapp: 5504-8894
+                    
+                   <a href="https://web.whatsapp.com/send?phone=+505+55038173">Whatsapp: 5503-8173</a> 
 
 
                 </B>
@@ -93,8 +94,9 @@
             </p>
         </div>
         <div>
-            <a href="https://www.instagram.com/sericolorpublicidad/?hl=es-la" uk-icon="icon: instagram ; ratio: 3.5"></a>
+            <a href="https://api.whatsapp.com/send?phone=+505 55038173" uk-icon="icon: whatsapp ; ratio: 3.5"></a>
             <a href="https://es-la.facebook.com/pg/sericolorpublicidad" uk-icon="icon: facebook ; ratio: 3.5"></a>
+            <a href="https://www.instagram.com/sericolorpublicidad/?hl=es-la" uk-icon="icon: instagram ; ratio: 3.5"></a>
         </div>
     </div>
 
