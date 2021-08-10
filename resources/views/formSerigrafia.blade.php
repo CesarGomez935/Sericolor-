@@ -23,16 +23,13 @@
 </head>
 
 <body>
- <!-- Nav Bar-->
+    <!-- Nav Bar-->
     <nav class="uk-navbar uk-navbar-container uk-margin">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
                 <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Facturación Serigrafía</span>
             </a>
         </div>
-<div>
-    uwu
-</div>
         <a href="#my-id" uk-toggle></a>
 
         <!-- Off canvas, Elemento desplegable de UiKit -->
@@ -115,7 +112,7 @@
     <div class="uk-child-width-1-2 uk-text-center uk-background-muted" uk-grid>
         <div>
 
-<!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+            <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
             <form class="uk-form-horizontal uk-margin-large">
 
                 <div class="uk-margin">
@@ -156,7 +153,7 @@
             <div class="uk-child-width-1-2 uk-text-center" uk-grid>
                 <div>
 
-                <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+                    <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
                     <form class="uk-grid-small" uk-grid>
                         <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
                             <thead>
@@ -310,7 +307,7 @@
     <div class="uk-child-width-1-2 uk-text-center uk-background-muted" uk-grid>
         <div>
 
-<!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+            <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
             <form class="uk-form-horizontal uk-margin-large">
 
                 <div class="uk-margin">
@@ -345,7 +342,7 @@
         </div>
         <div>
 
-<!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+            <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
             <form class="uk-form-horizontal uk-margin-large">
 
                 <div class="uk-margin">
