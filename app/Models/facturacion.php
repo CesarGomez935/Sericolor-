@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class facturacion extends Model
 {
-    use HasFactory;
+    protected $table='facturea';
+    protected $primarykey='IDfactura';
 }

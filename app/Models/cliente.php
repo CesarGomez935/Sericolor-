@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class cliente extends Model
 {
-    use HasFactory;
+    protected $table='persona';
+    protected $primarykey='IDpersona';
+    protected $secondarykey='Rol';
+    
 }
