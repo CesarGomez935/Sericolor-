@@ -18,19 +18,19 @@
           <h1>Inicio de sesión</h1>
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <input type="email" id="form3Example3" class="form-control form-control-lg" placeholder="Introduce tu usuario" />
-            <label class="form-label" for="form3Example3">Usuario</label>
+            <input type="email" id="usuario" class="form-control form-control-lg" placeholder="Introduce tu usuario" />
+            <label class="form-label" for="usuario">Usuario</label>
           </div>
           <!-- Password input -->
           <div class="form-outline mb-3">
-            <input type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Ingresa tu contraseña" />
-            <label class="form-label" for="form3Example4">Contraseña</label>
+            <input type="password" id="password" class="form-control form-control-lg" placeholder="Ingresa tu contraseña" />
+            <label class="form-label" for="password">Contraseña</label>
           </div>
           <div class="d-flex justify-content-between align-items-center">
             <!-- Checkbox -->
             <div class="form-check mb-0">
-              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-              <label class="form-check-label" for="form2Example3">
+              <input class="form-check-input me-2" type="checkbox" value="" id="recuerdame" />
+              <label class="form-check-label" for="recuerdame">
                 Recuerdame
               </label>
             </div>

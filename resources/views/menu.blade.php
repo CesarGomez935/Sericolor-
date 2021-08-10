@@ -1,5 +1,5 @@
 <head>
-    <title>Sericolor</title>
+    <title>Sericolor | Menú</title>
     <link rel="icon" href="/img/Icono.ico" type="image/ico" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
