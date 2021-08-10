@@ -42,19 +42,19 @@
                 
             <div class="uk-grid-small" uk-grid>
                 
-            <div class="uk-width-1-2@s">
-                <input id="primer_nombre_personal" class="uk-input" type="text" placeholder="Primer Nombre">
-            </div>
-            <div class="uk-width-1-2@s">
-                <input id="segundo_nombre_personal" class="uk-input" type="text" placeholder="Segundo Nombre">
-            </div>
+              <div class="uk-width-1-2@s">
+                  <input id="primer_nombre_personal" class="uk-input" type="text" placeholder="Primer Nombre">
+              </div>
+              <div class="uk-width-1-2@s">
+                  <input id="segundo_nombre_personal" class="uk-input" type="text" placeholder="Segundo Nombre">
+              </div>
 
-            <div class="uk-width-1-2@s">
-                <input id="primer_apellido_personal" class="uk-input" type="text" placeholder="Primer Apellido">
-            </div>
-            <div class="uk-width-1-2@s">
-                <input id="segundo_apellido_personal" class="uk-input" type="text" placeholder="Segundo Apellido">
-            </div>
+              <div class="uk-width-1-2@s">
+                  <input id="primer_apellido_personal" class="uk-input" type="text" placeholder="Primer Apellido">
+              </div>
+              <div class="uk-width-1-2@s">
+                  <input id="segundo_apellido_personal" class="uk-input" type="text" placeholder="Segundo Apellido">
+              </div>
             </div>
                 <div class="uk-margin">
                     <input id="correo_personal" class="uk-input" type="email" placeholder="Correo">

@@ -8,36 +8,13 @@
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
-    <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-        <!-- Copyright -->
-        <div class="text-white mb-3 mb-md-0">
-            Copyright © 2021. All rights reserved.
-        </div>
-        <!-- Copyright -->
-
-        <!-- Right -->
-        <div>
-            <a href="/form_" href="#!" class="text-white me-4">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="/form_" href="#!" class="text-white me-4">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="/form_" href="#!" class="text-white me-4">
-                <i class="fab fa-google"></i>
-            </a>
-            <a href="/form_" href="#!" class="text-white">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-        </div>
-        <!-- Right -->
-    </div>
+   
 </head>
 
 <body>
 
     <form class="uk-padding">
-        <table class="uk-table uk-padding uk-position-center uk-margin">
+        <table class="uk-table uk-padding  uk-margin">
             <tbody>
                 <tr>
                     <td style="padding-left: 100px;">
@@ -80,11 +57,37 @@
         </table>
     </form>
 
-    <div class="uk-padding uk-background-muted uk-position-bottom uk-padding  ">
-        <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
+    <div class="   uk-padding-large  ">
+        <div class="uk-div  position-relative " style="text-align: center;">
             <a href="/menu" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
 
 
         </div>
     </div>
 </body>
+<footer>
+    <div class="d-flex flex-column flex-md-row text-center uk-flex-bottom uk-position-bottom text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+        <!-- Copyright -->
+        <div class="text-white mb-3 mb-md-0">
+            Copyright © 2021. All rights reserved.
+        </div>
+        <!-- Copyright -->
+
+        <!-- Right -->
+        <div>
+            <a href="/form_" href="#!" class="text-white me-4">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="/form_" href="#!" class="text-white me-4">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="/form_" href="#!" class="text-white me-4">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="/form_" href="#!" class="text-white">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <!-- Right -->
+    </div>
+</footer>
