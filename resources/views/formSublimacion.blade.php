@@ -382,7 +382,7 @@
                                         <td></td>
                                     </tr>
                                 </thead>
-                                <tbody id="tablatrabajadores">
+                                <tbody id="tabladetalles">
                                 </tbody>
                             </table>
                         </div>
