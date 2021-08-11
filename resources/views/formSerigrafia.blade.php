@@ -359,75 +359,76 @@
             </div>
         </div>
 
-        <div class="uk-child-width-1-2 uk-text-center uk-background-muted uk-padding" uk-grid>
-            <div>
+        <div class="uk-child-width-1-2 uk-text-center uk-background-muted" uk-grid>
 
-            <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
-            <form class="uk-form-horizontal uk-margin-large">
+                <div>
 
-                    <div class="uk-margin">
-                        <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
-                        <div class="uk-form-controls">
-                            <input id="abono" name="Abono" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
-                        <div class="uk-form-controls">
-                            <input id="saldo" name="Saldo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
-                    </div>
-                    <div class="uk-margin">
+                    <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+                    <div class="uk-form-horizontal uk-margin-large">
 
-                        <div class="uk-form-controls">
-                            
-                                <input class="uk-checkbox" id="form-horizontal-text" type="checkbox"> Transferencia</label>
+                        <div class="uk-margin">
+                            <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
+                            <div class="uk-form-controls">
+                                <input id="abono" name="Abono" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            </div>
                         </div>
+                        <div class="uk-margin">
+                            <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
+                            <div class="uk-form-controls">
+                                <input id="saldo" name="Saldo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+
+                            <div class="uk-form-controls">
+                                
+                                    <input class="uk-checkbox" id="form-horizontal-text" type="checkbox"> Transferencia</label>
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label for="banco" class="uk-form-label" for="form-horizontal-text">Banco</label>
+                            <div class="uk-form-controls">
+                                <input id="banco" name="Banco" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            </div>
+                        </div>
+
+
                     </div>
-                    <div class="uk-margin">
-                        <label for="banco" class="uk-form-label" for="form-horizontal-text">Banco</label>
-                        <div class="uk-form-controls">
-                            <input id="banco" name="Banco" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+
+                </div>
+                <div>
+
+                    <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+                    <div class="uk-form-horizontal uk-margin-large">
+
+                        <div class="uk-margin">
+                            <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza Pedido</label>
+                            <div class="uk-form-controls">
+                                <input id="autoriza" name="Autoriza_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
+                            <div class="uk-form-controls">
+                                <input id="recibe" name="recibe_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
+                            <div class="uk-form-controls">
+                                <input id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
+                            <div class="uk-form-controls">
+                                <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            </div>
                         </div>
                     </div>
 
 
                 </div>
-
-            </div>
-            <div>
-
-            <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
-            <form class="uk-form-horizontal uk-margin-large">
-
-                    <div class="uk-margin">
-                        <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza Pedido</label>
-                        <div class="uk-form-controls">
-                            <input id="autoriza" name="Autoriza_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
-                        <div class="uk-form-controls">
-                            <input id="recibe" name="recibe_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
-                        <div class="uk-form-controls">
-                            <input id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
-                        <div class="uk-form-controls">
-                            <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
 
         </div>
 
@@ -438,7 +439,7 @@
                     <button type="submit" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</button>
 
                 </div>
-            </div>}
+            </div>
     </form>
 </body>
 
