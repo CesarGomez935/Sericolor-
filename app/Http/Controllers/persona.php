@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\cliente;
+use App\Models\trabajador;
 use Illuminate\Http\Request;
 
 class persona extends Controller
@@ -35,6 +37,19 @@ class persona extends Controller
     public function store(Request $request)
     {
         //
+
+        $model = new persona();
+        $model = new cliente();
+        $model = new trabajador();
+        $model->rol = $request->input('rol');
+        $model->nombre1 = $request->input('primer_nombre');
+        $model->nombre2 = $request->input('segundo_nombre');
+        $model->apellido1 = $request->input('primer_apellido');
+        $model->apellido2 = $request->input('segundo_apellido');
+        $model->sexo = $request->input('cedula');
+        $model->Direccion = $request->input('fecha_de_nacimiento');
+        $model->telefono = $request->input('telefono');
+        return $model->save();
     }
 
     /**
@@ -69,6 +84,25 @@ class persona extends Controller
     public function update(Request $request, $id)
     {
         //
+        $model = cliente::find($id);
+        $model->rol = $request->input('rol');
+        $model->nombre1 = $request->input('primer_nombre');
+        $model->nombre2 = $request->input('segundo_nombre');
+        $model->apellido1 = $request->input('primer_apellido');
+        $model->apellido2 = $request->input('segundo_apellido');
+        $model->sexo = $request->input('cedula');
+        $model->Direccion = $request->input('fecha_de_nacimiento');
+        $model->telefono = $request->input('telefono');
+        return $model->save();
+
+
+
+
+
+
+
+
+
     }
 
     /**
@@ -80,5 +114,10 @@ class persona extends Controller
     public function destroy($id)
     {
         //
+
+        $model=cliente::find($id);
+        $model=trabajador::find($id);
+        return $model->delete();
+
     }
 }
