@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\detalledelpedidocontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -124,3 +125,4 @@ Route::get('menu/menuadmon/resumen_pedidos', function () {
     return view('ResumenPedidos');
 });
 
+Route::resource('Detalledelpedido',detalledelpedidocontroller::class);

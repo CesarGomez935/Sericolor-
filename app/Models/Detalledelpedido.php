@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Detalledelpedido extends Model
 {
-    use HasFactory;
+    protected $table='detalle_de_pedido';
+    protected $primarykey='IDdetalledelpedido';
+    
 }
