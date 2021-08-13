@@ -296,13 +296,48 @@
                             <tbody id="tabladetalle">
                                 <tr>
 
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><input id="cantidad_pedido_1" class="uk-input" type="number"></td>
+                                    <td><input id="especificaciones_pedido_1" class="uk-input" type="text"></td>
+                                    <td><input id="precio_und_pedido_1" class="uk-input" type="number"></td>
+                                    <td><input id="precio_pedido_1" class="uk-input" type="number"></td>
                                     
                                 </tr>
+                                 <tr>
+
+                                    <td><input id="cantidad_pedido_2" class="uk-input" type="number"></td>
+                                    <td><input id="especificaciones_pedido_2" class="uk-input" type="text"></td>
+                                    <td><input id="precio_und_pedido_2" class="uk-input" type="number"></td>
+                                    <td><input id="precio_pedido_2" class="uk-input" type="number"></td>
+                                    
+                                </tr>
+                                 <tr>
+
+                                    <td><input id="cantidad_pedido_3" class="uk-input" type="number"></td>
+                                    <td><input id="especificaciones_pedido_3" class="uk-input" type="text"></td>
+                                    <td><input id="precio_und_pedido_3" class="uk-input" type="number"></td>
+                                    <td><input id="precio_pedido_3" class="uk-input" type="number"></td>
+                                    
+                                </tr>
+                                 <tr>
+
+                                    <td><input id="cantidad_pedido_4" class="uk-input" type="number"></td>
+                                    <td><input id="especificaciones_pedido_4" class="uk-input" type="text"></td>
+                                    <td><input id="precio_und_pedido_4" class="uk-input" type="number"></td>
+                                    <td><input id="precio_pedido_4" class="uk-input" type="number"></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td><div class="uk-div" style="text-align: center; " > <h1 class="uk-label"  for="total_pedido">Total</h1></div></td>
+                                    <td><input type="number" class="uk-input" disabled></td>
+                                </tr>
                             </tbody>
+
+
+                            <script type="text/javascript">
+                            
+                            </script>
                         </table>
                     </div>
             </div>
