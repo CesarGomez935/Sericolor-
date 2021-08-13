@@ -118,50 +118,268 @@
         <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
 
         <div class="uk-div uk-background-muted uk-padding">
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" >
+                            
+            </script>
+
             <h1 class="uk-text-center">Especificaciones</h1>
             <table class="uk-table uk-table-divider">
                 <thead>
                     <tr>
                         <th>Alto</th>
                         <th>Ancho</th>
+                        <th>Metros cuadrados</th>
                         <th>Precio por metro cuadrado</th>
+                        <th>costo</th>
                         <th>cantidad</th>
                         <th>Total</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input id="alto_1" class="uk-input" min="0" type="number"></td>
-                        <td><input id="ancho_1" class="uk-input" min="0" type="number"></td>
-                        <td><input id="precio_mt2_1" class="uk-input" min="0" type="number"></td>
-                        <td><input id="cantidad_1" class="uk-input" min="0" type="number"></td>
-                        <td><input id="total_1" class="uk-input" min="0" type="number"></td>
+                        <td><input id="alto_1" oninput="area1();" class="uk-input area1" min="0" type="number"></td>
+                        <td><input id="ancho_1" oninput="area1();" class="uk-input area1" min="0" type="number"></td>
+                        <td><input id="mt2_1" oninput="costo1();" class="uk-input costo1" min="0" type="number"></td>
+                        <td><input id="costo_1" oninput="costo1();" class="uk-input costo1" min="0" type="number"></td>
+                        <td><input id="precio_mt2_1" oninput="multi1();" class="uk-input monto1" min="0" type="number"></td>
+                        <td><input id="cantidad_1" oninput="multi1();" class="uk-input monto1" min="0" type="number"></td>
+                        <td><input id="total_1" name="total_1" class="uk-input" min="0" value="" type="number"></td>
                     </tr>
                     <tr>
-                        <td><input id="alto_2" class="uk-input" min="0" type="number"></td>
-                        <td><input id="ancho_2" class="uk-input" min="0" type="number"></td>
-                        <td><input id="precio_mt2_2" class="uk-input" min="0" type="number"></td>
-                        <td><input id="cantidad_2" class="uk-input" min="0" type="number"></td>
-                        <td><input id="total_2" class="uk-input" min="0" type="number"></td>
+                        <td><input id="alto_2" oninput="area2();" class="uk-input area2" min="0" type="number"></td>
+                        <td><input id="ancho_2" oninput="area2();" class="uk-input area2" min="0" type="number"></td>
+                        <td><input id="mt2_2" oninput="costo2();" class="uk-input costo2" min="0" type="number"></td>
+                        <td><input id="costo_2" oninput="costo2();" class="uk-input costo2" min="0" type="number"></td>
+                        <td><input id="precio_mt2_2" oninput="multi2();" class="uk-input monto2" min="0" type="number"></td>
+                        <td><input id="cantidad_2" oninput="multi2();" class="uk-input monto2" min="0" type="number"></td>
+                        <td><input id="total_2" name="total_2" class="uk-input" min="0" value="" type="number"></td>
                     </tr>
                     <tr>
-                        <td><input id="alto_3" class="uk-input" min="0" type="number"></td>
-                        <td><input id="ancho_3" class="uk-input" min="0" type="number"></td>
-                        <td><input id="precio_mt2_3" class="uk-input" min="0" type="number"></td>
-                        <td><input id="cantidad_3" class="uk-input" min="0" type="number"></td>
-                        <td><input id="total_3" class="uk-input" min="0" type="number"></td>
+                        <td><input id="alto_3" oninput="area3();" class="uk-input area3" min="0" type="number"></td>
+                        <td><input id="ancho_3" oninput="area3();" class="uk-input area3" min="0" type="number"></td>
+                        <td><input id="mt2_3" oninput="costo3();" class="uk-input costo3" min="0" type="number"></td>
+                        <td><input id="costo_3" oninput="costo3();" class="uk-input costo3" min="0" type="number"></td>
+                        <td><input id="precio_mt2_3" oninput="multi3();" class="uk-input monto3" min="0" type="number"></td>
+                        <td><input id="cantidad_3" oninput="multi3();" class="uk-input monto3" min="0" type="number"></td>
+                        <td><input id="total_3" name="total_1" class="uk-input" min="0" value="" type="number"></td>
                     </tr>
                     <tr>
                     
-                        <td><input id="alto_4" class="uk-input" min="0" type="number"></td>
-                        <td><input id="ancho_4" class="uk-input" min="0" type="number"></td>
-                        <td><input id="precio_mt2_4" class="uk-input" min="0" type="number"></td>
-                        <td><input id="cantidad_4" class="uk-input" min="0" type="number"></td>
-                        <td><input id="total_4" class="uk-input" min="0" type="number"></td>
+                        <td><input id="alto_4" oninput="area4();" class="uk-input area4" min="0" type="number"></td>
+                        <td><input id="ancho_4" oninput="area4();" class="uk-input area4" min="0" type="number"></td>
+                        <td><input id="mt2_4" oninput="costo4();" class="uk-input costo4" min="0" type="number"></td>
+                        <td><input id="costo_4" oninput="costo4();" class="uk-input costo4" min="0" type="number"></td>
+                        <td><input id="precio_mt2_4" oninput="multi4();" class="uk-input monto4" min="0" type="number"></td>
+                        <td><input id="cantidad_4" oninput="multi4();" class="uk-input monto4" min="0" type="number"></td>
+                        <td><input id="total_4" name="total_4" class="uk-input" min="0" value="" type="number"></td>
                     </tr>
 
                 </tbody>
             </table>
+
+            <script type="text/javascript">
+
+                function area1(){
+                                    var mt2_1 = 1;
+                                    var change= false; //
+                                    $(".area1").each(function(){
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change= true;
+                                            mt2_1 *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    mt2_1 = (change)? mt2_1:0;
+                                    document.getElementById('mt2_1').value = mt2_1;
+                                    
+                                    
+                                }
+                function costo1(){
+                                    var costo1 = 1;
+                                    var change= false; //
+                                    $(".costo1").each(function(){
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change= true;
+                                            costo1 *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    costo1 = (change)? costo1:0;
+                                    document.getElementById('precio_mt2_1').value = costo1;
+                                    
+                                    
+                                }
+                
+                function area2(){
+                                    var mt2_2 = 1;
+                                    var change= false; //
+                                    $(".area2").each(function(){
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change= true;
+                                            mt2_2 *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    mt2_2 = (change)? mt2_2:0;
+                                    document.getElementById('mt2_2').value = mt2_2;
+                                    
+                                    
+                                }
+                function costo2(){
+                                    var costo2 = 1;
+                                    var change= false; //
+                                    $(".costo2").each(function(){
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change= true;
+                                            costo2 *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    costo2 = (change)? costo2:0;
+                                    document.getElementById('precio_mt2_2').value = costo2;
+                                    
+                                    
+                                }
+
+                function area3(){
+                                    var mt2_3 = 1;
+                                    var change= false; //
+                                    $(".area3").each(function(){
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change= true;
+                                            mt2_3 *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    mt2_3 = (change)? mt2_3:0;
+                                    document.getElementById('mt2_3').value = mt2_3;
+                                    
+                                    
+                                }
+                function costo3(){
+                                    var costo3 = 1;
+                                    var change= false; //
+                                    $(".costo3").each(function(){
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change= true;
+                                            costo3 *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    costo3 = (change)? costo3:0;
+                                    document.getElementById('precio_mt2_3').value = costo3;
+                                    
+                                    
+                                }
+
+                function area4(){
+                                    var mt2_4 = 1;
+                                    var change= false; //
+                                    $(".area4").each(function(){
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change= true;
+                                            mt2_4 *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    mt2_4 = (change)? mt2_4:0;
+                                    document.getElementById('mt2_4').value = mt2_4;
+                                    
+                                    
+                                }
+                function costo4(){
+                                    var costo4 = 1;
+                                    var change= false; //
+                                    $(".costo4").each(function(){
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change= true;
+                                            costo4 *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    costo4 = (change)? costo4:0;
+                                    document.getElementById('precio_mt2_4').value = costo4;
+                                    
+                                    
+                                }
+                
+
+
+                function multi1(){
+                                    var total1 = 1;
+                                    var change= false; //
+                                    $(".monto1").each(function(){
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change= true;
+                                            total1 *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    total1 = (change)? total1:0;
+                                    document.getElementById('total_1').value = total1;
+                                    
+                                    
+                                }
+
+                function multi2(){
+                                    var total2 = 1;
+                                    var change= false; //
+                                    $(".monto2").each(function(){
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change= true;
+                                            total2 *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    total2 = (change)? total2:0;
+                                    document.getElementById('total_2').value = total2;
+                                    
+                                    
+                                }
+                function multi3(){
+                                    var total3 = 1;
+                                    var change= false; //
+                                    $(".monto3").each(function(){
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change= true;
+                                            total3 *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    total3 = (change)? total3:0;
+                                    document.getElementById('total_3').value = total3;
+                                    
+                                    
+                                }
+                function multi4(){
+                                    var total4 = 1;
+                                    var change= false; //
+                                    $(".monto4").each(function(){
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change= true;
+                                            total4 *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    total4 = (change)? total4:0;
+                                    document.getElementById('total_4').value = total4;
+                                    
+                                    
+                                }
+            </script>
         </div>
 
 
