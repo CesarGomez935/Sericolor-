@@ -71,144 +71,144 @@
     </nav>
 
 
-    <form action="" method="post">
+    <form  action="" method="post">
 
-        <div class="uk-padding uk-background-muted">
+        <div  class="uk-padding uk-background-muted">
 
             <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
             <div class="uk-grid-small" uk-grid>
 
-                    <div class="uk-inline uk-width-1-2 ">
-                        <label for="fecha_fact">Fecha de Facturación</label>
-                        <input id="fecha_fact" name="fecha_factiracion" type="date" class="uk-input">
-                    </div>
-                    <div class="uk-inline uk-width-1-2 ">
-                        <label for="fecha_ent">Fecha de entrega</label>
-                        <input id="fecha_ent" name="fecha_entrega" type="date" class="uk-input">
-                    </div>
+                <div class="uk-inline uk-width-1-2 ">
+                    <label for="fecha_fact">Fecha de Facturación</label>
+                    <input id="fecha_fact" name="fecha_factiracion" type="date" class="uk-input">
+                </div>
+                <div class="uk-inline uk-width-1-2 ">
+                    <label for="fecha_ent">Fecha de entrega</label>
+                    <input id="fecha_ent" name="fecha_entrega" type="date" class="uk-input">
+                </div>
 
 
-                    <div class="uk-inline uk-width-1-2">
-                        <button class="uk-form-icon uk-form-icon-flip" uk-icon="icon: search"></button>
-                        <input id="cliente" name="nombre_cliente" class="uk-input" placeholder="Cliente">
-                    </div>
+                <div class="uk-inline uk-width-1-2">
+                    <button class="uk-form-icon uk-form-icon-flip" uk-icon="icon: search"></button>
+                    <input id="cliente" name="nombre_cliente" class="uk-input" placeholder="Cliente">
+                </div>
 
-                    <div class="uk-inline uk-width-1-2">
-                        <input id="RUC" name="Num_ruc" class="uk-input" placeholder="N° RUC">
-                    </div>
+                <div class="uk-inline uk-width-1-2">
+                    <input id="RUC" name="Num_ruc" class="uk-input" placeholder="N° RUC">
+                </div>
 
-                    <div class="uk-inline uk-width-1-2">
-                        <button class="uk-form-icon uk-form-icon-flip" href="" uk-icon="icon: search"></button>
-                        <input class="uk-input" id="nombre" name="nombre_emp" placeholder="Nombre">
-                    </div>
+                <div class="uk-inline uk-width-1-2">
+                    <button class="uk-form-icon uk-form-icon-flip" href="" uk-icon="icon: search"></button>
+                    <input class="uk-input" id="nombre" name="nombre_emp" placeholder="Nombre">
+                </div>
 
-                    <div class="uk-inline uk-width-1-2">
-                        <input id="telefono" name="Num_telefono" class="uk-input" placeholder="N° Telefono">
-                    </div>
+                <div class="uk-inline uk-width-1-2">
+                    <input id="telefono" name="Num_telefono" class="uk-input" placeholder="N° Telefono">
+                </div>
 
             </div>
 
         </div>
-        
+
 
 
         <div class="uk-child-width-1-2 uk-text-center uk-background-muted" uk-grid>
-            
+
             <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
             <div>
 
-            <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
-            <form class="uk-form-horizontal uk-margin-large">
+                <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+                <form class="uk-form-horizontal uk-margin-large">
 
-                <div class="uk-form-horizontal uk-margin-large">
+                    <div class="uk-form-horizontal uk-margin-large">
 
-                    <div class="uk-margin">
-                        <label for="pecho_izq" class="uk-form-label" for="form-horizontal-text">Pecho Izquierdo</label>
-                        <div class="uk-form-controls">
-                            <input id="pecho_izq" name="pecho_izquierdo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                        <div class="uk-margin">
+                            <label for="pecho_izq" class="uk-form-label" for="form-horizontal-text">Pecho Izquierdo</label>
+                            <div class="uk-form-controls">
+                                <input id="pecho_izq" name="pecho_izquierdo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label for="pecho_der" class="uk-form-label" for="form-horizontal-text">Pecho Derecho</label>
-                        <div class="uk-form-controls">
-                            <input id="pecho_der" name="pecho_derecho" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                        <div class="uk-margin">
+                            <label for="pecho_der" class="uk-form-label" for="form-horizontal-text">Pecho Derecho</label>
+                            <div class="uk-form-controls">
+                                <input id="pecho_der" name="pecho_derecho" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label for="manga_izq" class="uk-form-label" for="form-horizontal-text">Manga Izquierda</label>
-                        <div class="uk-form-controls">
-                            <input id="manga_izq" name="manga_izquierda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                        <div class="uk-margin">
+                            <label for="manga_izq" class="uk-form-label" for="form-horizontal-text">Manga Izquierda</label>
+                            <div class="uk-form-controls">
+                                <input id="manga_izq" name="manga_izquierda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label for="manga_der" class="uk-form-label" for="form-horizontal-text">Manga Derecha</label>
-                        <div class="uk-form-controls">
-                            <input id="manga_der" name="manga_derecha" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                        <div class="uk-margin">
+                            <label for="manga_der" class="uk-form-label" for="form-horizontal-text">Manga Derecha</label>
+                            <div class="uk-form-controls">
+                                <input id="manga_der" name="manga_derecha" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label for="espalda" class="uk-form-label" for="form-horizontal-text">Espalda</label>
-                        <div class="uk-form-controls">
-                            <input id="espalda" name="espalda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                        <div class="uk-margin">
+                            <label for="espalda" class="uk-form-label" for="form-horizontal-text">Espalda</label>
+                            <div class="uk-form-controls">
+                                <input id="espalda" name="espalda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
-                    <form class="uk-grid-small" uk-grid>
-                        <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
-                            <thead>
-                                <tr>
-                                    <th>Talla</th>
-                                    <th>Caballero</th>
-                                    <th>Dama</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>S</td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                </tr>
-                                <tr>
-                                    <td>M</td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                </tr>
-                                <tr>
-                                    <td>L</td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                </tr>
-                                <tr>
-                                    <td>XL</td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                </tr>
-                                <tr>
-                                    <td>2XL</td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                </tr>
-                                <tr>
-                                    <td>3XL</td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                </tr>
-                                <tr>
-                                    <td>5XL</td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                    <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </form>
-                </div>
+                        <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+                        <form class="uk-grid-small" uk-grid>
+                            <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
+                                <thead>
+                                    <tr>
+                                        <th>Talla</th>
+                                        <th>Caballero</th>
+                                        <th>Dama</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>S</td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>M</td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>L</td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>XL</td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2XL</td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3XL</td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5XL</td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                        <td><input class="uk-input uk-form-width-xsmall" type="Number"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
 
             </div>
             <div>
                 <div class="uk-child-width-1-2 uk-text-center" uk-grid>
                     <div>
-                    <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+                        <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
                         <div class="uk-grid-small" uk-grid>
                             <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
                                 <thead>
@@ -343,7 +343,7 @@
                                     <th>Precio Unitario</th>
                                     <th>Precio</th>
                                 </tr>
-                                
+
                             </thead>
                             <tbody id="tabladetalle">
                                 <tr>
@@ -361,86 +361,85 @@
 
         <div class="uk-child-width-1-2 uk-text-center uk-background-muted" uk-grid>
 
-                <div>
+            <div>
 
-                    <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
-                    <div class="uk-form-horizontal uk-margin-large">
+                <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+                <div class="uk-form-horizontal uk-margin-large">
 
-                        <div class="uk-margin">
-                            <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
-                            <div class="uk-form-controls">
-                                <input id="abono" name="Abono" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                            </div>
+                    <div class="uk-margin">
+                        <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
+                        <div class="uk-form-controls">
+                            <input id="abono" name="Abono" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
-                        <div class="uk-margin">
-                            <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
-                            <div class="uk-form-controls">
-                                <input id="saldo" name="Saldo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                            </div>
-                        </div>
-                        <div class="uk-margin">
-
-                            <div class="uk-form-controls">
-                                
-                                    <input class="uk-checkbox" id="form-horizontal-text" type="checkbox"> Transferencia</label>
-                            </div>
-                        </div>
-                        <div class="uk-margin">
-                            <label for="banco" class="uk-form-label" for="form-horizontal-text">Banco</label>
-                            <div class="uk-form-controls">
-                                <input id="banco" name="Banco" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                            </div>
-                        </div>
-
-
                     </div>
-
-                </div>
-                <div>
-
-                    <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
-                    <div class="uk-form-horizontal uk-margin-large">
-
-                        <div class="uk-margin">
-                            <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza Pedido</label>
-                            <div class="uk-form-controls">
-                                <input id="autoriza" name="Autoriza_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                            </div>
+                    <div class="uk-margin">
+                        <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
+                        <div class="uk-form-controls">
+                            <input id="saldo" name="Saldo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
-                        <div class="uk-margin">
-                            <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
-                            <div class="uk-form-controls">
-                                <input id="recibe" name="recibe_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                            </div>
+                    </div>
+                    <div class="uk-margin">
+
+                        <div class="uk-form-controls">
+
+                            <input class="uk-checkbox" id="form-horizontal-text" type="checkbox"> Transferencia</label>
                         </div>
-                        <div class="uk-margin">
-                            <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
-                            <div class="uk-form-controls">
-                                <input id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                            </div>
-                        </div>
-                        <div class="uk-margin">
-                            <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
-                            <div class="uk-form-controls">
-                                <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                            </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label for="banco" class="uk-form-label" for="form-horizontal-text">Banco</label>
+                        <div class="uk-form-controls">
+                            <input id="banco" name="Banco" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
 
 
                 </div>
+
+            </div>
+            <div>
+
+                <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+                <div class="uk-form-horizontal uk-margin-large">
+
+                    <div class="uk-margin">
+                        <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza Pedido</label>
+                        <div class="uk-form-controls">
+                            <input id="autoriza" name="Autoriza_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
+                        <div class="uk-form-controls">
+                            <input id="recibe" name="recibe_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
+                        <div class="uk-form-controls">
+                            <input id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
+                        <div class="uk-form-controls">
+                            <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
 
         </div>
 
-            <!-- botones de atrás y guardar-->
-            <div class="uk-padding uk-background-muted uk-padding  " style="text-align: center;">
-                <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-                    <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
-                    <button type="submit" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</button>
+        <!-- botones de atrás y guardar-->
+        <div class="uk-padding uk-background-muted uk-padding  " style="text-align: center;">
+            <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
+                <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
+                <button type="submit" id="guardar" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</button>
 
-                </div>
             </div>
+        </div>
     </form>
 </body>
-
 </html>

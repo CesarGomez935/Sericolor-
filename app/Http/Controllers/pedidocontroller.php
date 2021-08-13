@@ -14,6 +14,7 @@ class pedidocontroller extends Controller
     public function index()
     {
         //
+        return pedidos::all();
     }
 
     /**
