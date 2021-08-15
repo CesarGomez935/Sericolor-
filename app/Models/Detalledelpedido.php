@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Detalledelpedido extends Model
 {
-    protected $table='detalle_de_pedido';
+    protected $table='detalledelpedido';
     protected $primarykey='IDdetalledelpedido';
-    
+    public $timestamps = false;
 }
