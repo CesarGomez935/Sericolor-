@@ -72,7 +72,7 @@
 
 
     <form action="" method="POST">
-        @csrf
+        
         <div class="uk-padding uk-background-muted">
 
             <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->

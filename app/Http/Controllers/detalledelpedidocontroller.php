@@ -14,9 +14,7 @@ class detalledelpedidocontroller extends Controller
     public function index()
     {
         //
-       $Detalledelpedido=Detalledelpedido::all();
-       return view('formSerigrafia',compact('Detalledelpedido'));
-
+      return Detalledelpedido::all();
     }
 
     /**
