@@ -421,20 +421,20 @@
 
             </div>
         </div>
+        <!-- Seccion que contiene los botones de atrás y guardar-->
+        <div class="uk-padding uk-background-muted uk-padding " style="text-align: center;">
+            <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
+                <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
+                <a id="guardar" href="/menu/menu_facturacion/form_serigrafia"  class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
 
-    </form>
-    <!-- Seccion que contiene los botones de atrás y guardar-->
-    <div class="uk-padding uk-background-muted uk-padding " style="text-align: center;">
-        <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-            <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
-            <button id="guardar" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</button>
-
+            </div>
+            <select class="uk-select" id="tipo_de_pedido" disabled hidden>
+                <option value='Serigrafía'>serigrafia</option>
+            </select>
         </div>
-        <select class="uk-select" id="tipo_de_pedido" disabled hidden>
-            <option value='Serigrafía'>serigrafia</option>
-        </select>
-    </div>
-    </div>
+        </div>
+    </form>
+
 </body>
 <script>
     let detallesdepedido = [];
@@ -444,6 +444,7 @@
     $('#guardar').click(function(res) {
         guardarpedido();
         alert("Se agrego su orden");
+
     });
 
     function peticionapi(data, method, onSucess) {
