@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\cliente;
-use App\Models\trabajador;
+use App\Models\detalledelpago;
 use Illuminate\Http\Request;
 
-class persona extends Controller
+class detalledelpagocontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,7 @@ class persona extends Controller
     public function index()
     {
         //
-        return cliente::all();
+        return detalledelpago::all();
     }
 
     /**
@@ -38,15 +36,10 @@ class persona extends Controller
     public function store(Request $request)
     {
         //
-        $model = new cliente();
-        $model->Rol = $request->input('Rol');
-        $model->primer_nombre = $request->input('primer_nombre');
-        $model->segundo_nombre = $request->input('segundo_nombre');
-        $model->primer_apellido = $request->input('primer_apellido');
-        $model->segundo_apellido = $request->input('segundo_apellido');
-        $model->cedula = $request->input('cedula');
-        $model->tipodepersona = $request->input('tipodepersona');
-        $model->telefono = $request->input('telefono');
+        $model= new detalledelpago();
+        $model->saldo=$request->input('saldo');
+        $model->banco=$request->input('banco');
+        $model->abono=$request->input('abono');
         return $model->save();
     }
 
@@ -81,16 +74,7 @@ class persona extends Controller
      */
     public function update(Request $request, $id)
     {
-    
-
-
-
-
-
-
-
-
-
+        //
     }
 
     /**
@@ -102,8 +86,5 @@ class persona extends Controller
     public function destroy($id)
     {
         //
-
-    
-
     }
 }

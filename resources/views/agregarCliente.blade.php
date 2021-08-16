@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedidos | Bordado</title>
+    <title>Agregar Cliente</title>
     <link rel="icon" href="/img/Icono.ico" type="image/ico" />
 
     <!-- UIkit CSS -->
@@ -19,7 +19,8 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+    <!-- JQuery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -73,7 +74,7 @@
 
     <!-- Formulario para agregar cliente -->
 
-    <form action="" method="post">
+    <form>
 
         <div class="uk-padding-small uk-background-muted" style="padding-left: 300px;">
 
@@ -83,7 +84,9 @@
 
             <div style="text-align: center; " class="">
                 <div class="uk-form-horizontal uk-margin-large">
-
+                    <select class="uk-select" id="Rol" disabled hidden>
+                        <option value='Cliente'>Cliente</option>
+                    </select>
                     <div class="uk-margin">
                         <label for="primer_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Primer Nombre</label>
                         <div class="uk-form-controls">
@@ -132,10 +135,10 @@
                         <label for="tipo_cliente" class="uk-form-label" for="form-horizontal-text">Tipo de Cliente</label>
                         <div class="uk-margin">
                             <div uk-form-custom="target: > * > span:first-child">
-                                <select id="tipo_cliente" >
+                                <select id="tipo_cliente">
                                     <option value="">Seleccionar</option>
-                                    <option value="1">Persona Natural</option>
-                                    <option value="2">Empresa</option>
+                                    <option value="Persona_Natural">Persona Natural</option>
+                                    <option value="Empresa">Empresa</option>
 
                                 </select>
                                 <button class="uk-button uk-button-default" type="button" tabindex="-1">
@@ -160,8 +163,8 @@
         <div class="uk-padding-small uk-background-muted uk-padding">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 
-                <a href="/menu/menuadmon/clientes" class="uk-button uk-button-primary  "  style="margin-left: 100px">Atrás </a>
-                <button type="submit" class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
+                <a href="/menu/menuadmon/clientes" class="uk-button uk-button-primary  " style="margin-left: 100px">Atrás </a>
+                <button id="guardar" class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
 
             </div>
         </div>
@@ -169,5 +172,60 @@
     </form>
 
 </body>
+<script>
+    let detallesdepedido = [];
+
+    cargarcliente();
+
+    $('#guardar').click(function(res) {
+        guardarpedido();
+        alert("Se agrego correctamente al trabajador");
+
+    });
+
+    function peticionapi(data, method, onSucess) {
+        let url = '/api/cliente';
+        if (method == 'PUT' || method == 'DELETE') {
+            url += '/' + data.IDpersona;
+        }
+        $.ajax({
+            url: url,
+            method: method,
+            data: data,
+            error(ext) {
+                let error = e.responseJSON.errors;
+                let msj = error[Object.keys(error)[0]][0];
+                alert(msj);
+            },
+            success(res) {
+
+            }
+        })
+    }
+
+    function guardarpedido() {
+        let data = {
+            Rol:$("#Rol").val(),
+            primer_nombre: $("#primer_nombre_cliente").val(),
+            segundo_nombre: $("#segundo_nombre_cliente").val(),
+            primer_apellido: $("#primer_apellido_cliente").val(),
+            segundo_apellido: $("#segundo_apellido_cliente").val(),
+            tipodepersona: $("#tipo_cliente").val(),
+            telefono: $("#telefono_cliente").val(),
+            cedula: $("#cedula_cliente").val(),
+        };
+        peticionapi(data, 'POST', function(res) {
+            alert('Guardado con exito')
+        });
+    }
+
+    function cargarcliente() {
+        peticionapi({}, 'GET', function(res) {
+            console.log(res);
+            alert('respuesta satisfactoria');
+        });
+
+    }
+</script>
 
 </html>

@@ -45,7 +45,7 @@ class detalledelpedidocontroller extends Controller
         $model->mangaderecha = $request->input('mangaderecha');
         $model->espalda = $request->input('espalda');
         $model->talla = $request->input('talla');
-        $model->caballerodama = $request->input('caballero/dama');
+        $model->caballerodama = $request->input('caballerodama');
         $model->tallainfantil = $request->input('tallainfantil');
         $model->alto = $request->input('alto');
         $model->ancho = $request->input('ancho');
