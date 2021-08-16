@@ -4,8 +4,10 @@ use App\Http\Controllers\administracion;
 use App\Http\Controllers\detalledelpagocontroller;
 use App\Http\Controllers\detalledelpedidocontroller;
 use App\Http\Controllers\persona;
+use App\Http\Controllers\reporteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------

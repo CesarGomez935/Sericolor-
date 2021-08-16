@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\detalledelpedidocontroller;
+use App\Http\Controllers\reporteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,7 +34,7 @@ Route::get('revision', function () {
     return view('Revision');
 });
 
-/* Back-End */
+/* Back-En */
 Route::get('menu', function () {
     return view('menu');
 });
@@ -126,3 +127,4 @@ Route::get('menu/menuadmon/resumen_pedidos', function () {
 });
 
 Route::resource('Detalledelpedido',detalledelpedidocontroller::class);
+
