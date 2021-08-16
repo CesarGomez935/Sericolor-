@@ -433,7 +433,6 @@
 
     $('#guardar').click(function(res) {
         guardarpedido();
-        guardardetalledelpago();
     });
 
     function peticionapi(data, method, onSucess) {
@@ -502,46 +501,6 @@
             alert('respuesta satisfactoria');
         });
 
-    }
-    let detallesdepago = [];
-    cargardetallepago();
-
-    function cargardetallepago() {
-        peticioapi2({}, 'GET', function(res) {
-            console.log(res);
-            alert('respuesta satisfactoria');
-        });
-    }
-
-    function guardardetalledelpago() {
-        let data = {
-            abono: $("#abono").val(),
-            saldo: $("#saldo").val(),
-            banco: $("#banco").val(),
-        };
-        peticioapi2(data, 'POST', function(res) {
-            alert('Guardado con exito')
-        });
-    }
-
-    function peticioapi2(data, method, onSucess) {
-        let url = '/api/detalledelpago';
-        if (method == 'PUT' || method == 'DELETE') {
-            url += '/' + data.IDdetallesdelpago;
-        }
-        $.ajax({
-            url: url,
-            method: method,
-            data: data,
-            error(ext) {
-                let error = e.responseJSON.errors;
-                let msj = error[Object.keys(error)[0]][0];
-                alert(msj);
-            },
-            success(res) {
-
-            }
-        })
     }
 </script>
 
