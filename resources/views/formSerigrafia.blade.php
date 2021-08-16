@@ -420,6 +420,7 @@
 
 
             </div>
+        </div>
 
     </form>
     <!-- Seccion que contiene los botones de atrás y guardar-->
