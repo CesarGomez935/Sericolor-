@@ -409,33 +409,33 @@
                             <tbody id="tabladetalle">
                                 <tr>
                                     <!--Agregar correcta impresión de datos-->
-                                    <td><input id="cantidad_pedido_1" oninput="calculo_pedido1();" class="uk-input calculo_pedido1" type="number"></td>
+                                    <td><input id="cantidad_pedido_1" min="0" oninput="calculo_pedido1();" class="uk-input calculo_pedido1" type="number"></td>
                                     <td><input id="especificaciones_pedido_1" class="uk-input" type="text"></td>
-                                    <td><input id="precio_und_pedido_1" oninput="calculo_pedido1();" class="uk-input calculo_pedido1" type="number"></td>
+                                    <td><input id="precio_und_pedido_1" min="0" oninput="calculo_pedido1();" class="uk-input calculo_pedido1" type="number"></td>
                                     <td><input id="precio_pedido_1" onchange="pedido();" onclick="pedido();"  min="0" class="uk-input pedido" type="number"></td>
 
                                 </tr>
                                  <tr>
 
-                                    <td><input id="cantidad_pedido_2" oninput="calculo_pedido2();" class="uk-input calculo_pedido2" type="number"></td>
+                                    <td><input id="cantidad_pedido_2" min="0" oninput="calculo_pedido2();" class="uk-input calculo_pedido2" type="number"></td>
                                     <td><input id="especificaciones_pedido_2" class="uk-input" type="text"></td>
-                                    <td><input id="precio_und_pedido_2" oninput="calculo_pedido2();" class="uk-input calculo_pedido2" type="number"></td>
+                                    <td><input id="precio_und_pedido_2" min="0" oninput="calculo_pedido2();" class="uk-input calculo_pedido2" type="number"></td>
                                     <td><input id="precio_pedido_2" onchange="pedido();" onclick="pedido();"  min="0" class="uk-input pedido" type="number"></td>
 
                                 </tr>
                                  <tr>
 
-                                    <td><input id="cantidad_pedido_3" oninput="calculo_pedido3();" class="uk-input calculo_pedido3" type="number"></td>
+                                    <td><input id="cantidad_pedido_3" min="0" oninput="calculo_pedido3();" class="uk-input calculo_pedido3" type="number"></td>
                                     <td><input id="especificaciones_pedido_3" class="uk-input" type="text"></td>
-                                    <td><input id="precio_und_pedido_3" oninput="calculo_pedido3();" class="uk-input calculo_pedido3" type="number"></td>
+                                    <td><input id="precio_und_pedido_3" min="0" oninput="calculo_pedido3();" class="uk-input calculo_pedido3" type="number"></td>
                                     <td><input id="precio_pedido_3" onchange="pedido();" onclick="pedido();"  min="0" class="uk-input pedido" type="number"></td>
 
                                 </tr>
                                  <tr>
 
-                                    <td><input id="cantidad_pedido_4" oninput="calculo_pedido4();" class="uk-input calculo_pedido4" type="number"></td>
+                                    <td><input id="cantidad_pedido_4" min="0" oninput="calculo_pedido4();" class="uk-input calculo_pedido4" type="number"></td>
                                     <td><input id="especificaciones_pedido_4" class="uk-input" type="text"></td>
-                                    <td><input id="precio_und_pedido_4" oninput="calculo_pedido4();" class="uk-input calculo_pedido4" type="number"></td>
+                                    <td><input id="precio_und_pedido_4" min="0" oninput="calculo_pedido4();" class="uk-input calculo_pedido4" type="number"></td>
                                     <td><input id="precio_pedido_4" onchange="pedido();" onclick="pedido();"  min="0" class="uk-input pedido" type="number"></td>
 
                                 </tr>
