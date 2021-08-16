@@ -433,6 +433,7 @@
 
     $('#guardar').click(function(res) {
         guardarpedido();
+        alert("Se agrego su orden");
     });
 
     function peticionapi(data, method, onSucess) {
