@@ -9,5 +9,5 @@ class trabajador extends Model
 {
     protected $table='persona';
     protected $primarykey='IDpersona';
-    protected $secondarykey='Rol';
+    public $timestamps = false;
 }
