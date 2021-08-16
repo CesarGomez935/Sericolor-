@@ -25,7 +25,7 @@
 
 <body>
     <!-- Nav Bar-->
-    <nav class="uk-navbar uk-navbar-container uk-margin">
+    <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
                 <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Facturación Serigrafía</span>
@@ -103,6 +103,8 @@
                 <div class="uk-inline uk-width-1-2">
                     <input id="telefono" name="Num_telefono" class="uk-input" placeholder="N° Telefono">
                 </div>
+
+
             </div>
         </div>
     </div>
@@ -142,6 +144,13 @@
                     <label for="espalda" class="uk-form-label" for="form-horizontal-text">Espalda</label>
                     <div class="uk-form-controls">
                         <input id="espalda" name="espalda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                    </div>
+                </div>
+
+                <div class="uk-margin">
+                    <label for="tipo_producto" class="uk-form-label" for="form-horizontal-text">Tipo de producto</label>
+                    <div class="uk-form-controls">
+                        <input id="tipo_producto" name="tipo_producto" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                     </div>
                 </div>
 
