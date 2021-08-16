@@ -37,15 +37,27 @@ class detalledelpedidocontroller extends Controller
     {
  
         $model = new Detalledelpedido();
-        $model->tipo_de_pedido = $request->input('Tipo_de_pedido');
+        $model->Tipo_de_pedido = $request->input('Tipo_de_pedido');
         $model->tipo_de_producto = $request->input('tipo_de_producto');
         $model->pechoizquierdo = $request->input('pechoizquierdo');
         $model->pechoderecho = $request->input('pechoderecho');
         $model->mangaizquierda = $request->input('mangaizquierda');
         $model->mangaderecha = $request->input('mangaderecha');
         $model->espalda = $request->input('espalda');
-        $model->talla = $request->input('talla');
-        $model->caballerodama = $request->input('caballerodama');
+        $model->tallasCaballero = $request->input('tallasCaballero');
+        $model->tallamCaballero = $request->input('tallamCaballero');
+        $model->tallalCaballero = $request->input('tallalCaballero');
+        $model->tallaxlCaballero = $request->input('tallaxlCaballero');
+        $model->talla2xlCaballero = $request->input('talla2xlCaballero');
+        $model->talla3xlCaballero = $request->input('talla3xlCaballero');
+        $model->talla5xlCaballero = $request->input('talla5xlCaballero');
+        $model->tallasDama = $request->input('tallasDama');
+        $model->tallamDama = $request->input('tallamDama');
+        $model->tallalDama = $request->input('tallalDama');
+        $model->tallaxlDama = $request->input('tallaxlDama');
+        $model->talla2xlDama = $request->input('talla2xlDama');
+        $model->talla3xlDama = $request->input('talla3xlDama');
+        $model->talla5xlDama = $request->input('talla5xlDama');
         $model->tallainfantil = $request->input('tallainfantil');
         $model->alto = $request->input('alto');
         $model->ancho = $request->input('ancho');

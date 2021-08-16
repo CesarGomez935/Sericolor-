@@ -163,8 +163,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td id="tallas">S</td>
-                                    <td><input id="talla_s_caballero" name="talla_s" class="uk-input uk-form-width-xsmall" type="text" placeholder=""></td>
+                                    <td id="tallas" >S</td>
+                                    <td><input id="talla_s_caballero" name="talla_s" class="uk-input uk-form-width-xsmall" type="Number"></td>
                                     <td><input id="talla_s_dama" class="uk-input uk-form-width-xsmall" type="Number"></td>
                                 </tr>
                                 <tr>
@@ -215,7 +215,7 @@
                             <tbody>
                                 <tr>
                                     <td id="18">18</td>
-                                    <td><input id="talla_18" class="uk-input uk-form-width-xsmall" type="Number" placeholder=""></td>
+                                    <td><input id="talla_18" class="uk-input uk-form-width-xsmall" type="Number"></td>
 
                                 </tr>
                                 <tr>
@@ -420,6 +420,9 @@
             <button id="guardar" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</button>
 
         </div>
+        <select class="uk-select" id="tipo_de_pedido" disabled hidden>
+            <option value='Serigrafía'>serigrafia</option>
+        </select>
     </div>
     </div>
 </body>
@@ -455,13 +458,37 @@
 
     function guardarpedido() {
         let data = {
-            tipo_de_pedido: $("#tipodepedido").val(),
+            Tipo_de_pedido: $("#tipo_de_pedido").val(),
             pechoizquierdo: $("#pecho_izq").val(),
             pechoderecho: $("#pecho_der").val(),
             mangaizquierda: $("#manga_izq").val(),
             mangaderecha: $("#manga_der").val(),
             espalda: $("#espalda").val(),
-            tallas: $("#talla_s_caballero").val(),
+            tallasCaballero: $("#talla_s_caballero").val(),
+            tallasDama: $("#talla_s_dama").val(),
+            tallamCaballero: $("#talla_m_caballero").val(),
+            tallamDama: $("#talla_m_dama").val(),
+            tallalCaballero: $("#talla_l_caballero").val(),
+            tallalDama: $("#talla_l_dama").val(),
+            tallaxlCaballero: $("#talla_xl_caballero").val(),
+            tallaxlDama: $("#talla_xl_dama").val(),
+            talla2xlCaballero: $("#talla_2xl_caballero").val(),
+            talla2xlDama: $("#talla_2xl_dama").val(),
+            talla3xlCaballero: $("#talla_3xl_caballero").val(),
+            talla3xlDama: $("#talla_3xl_dama").val(),
+            talla5xlCaballero: $("#talla_5xl_caballero").val(),
+            talla5xlDama: $("#talla_5xl_dama").val(),
+            tallainfantil:$("#talla_18").val(),
+            tallainfantil:$("#talla_16").val(),
+            tallainfantil:$("#talla_14").val(),
+            tallainfantil:$("#talla_12").val(),
+            tallainfantil:$("#talla_10").val(),
+            tallainfantil:$("#talla_8").val(),
+            tallainfantil:$("#talla_6").val(),
+            tallainfantil:$("#talla_4").val(),
+            tallainfantil:$("#talla_2").val(),
+            cantidad:$("#cantidad_pedido_1").val(),
+            precio_cantidad:$("#preciosa_cantidad1").val(),
             nota: $("#notas").val(),
         };
         peticionapi(data, 'POST', function(res) {
