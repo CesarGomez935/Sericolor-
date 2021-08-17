@@ -378,9 +378,12 @@
                     </div>
                     <div class="uk-margin">
                         <label for="banco" class="uk-form-label" for="form-horizontal-text">Banco</label>
-                        <div class="uk-form-controls">
-                            <input id="banco" name="Banco" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
+                        <select class="uk-select uk-form-width-large" id="Banco" >
+                            <option value='BAC'>BAC</option>
+                            <option value='BDF'>BDF</option>
+                            <option value='BANPRO'>BANPRO</option>
+                            <option value='BANCENTRO'>LAFISE BANCENTRO</option>
+                        </select>
                     </div>
 
 
@@ -425,7 +428,7 @@
         <div class="uk-padding uk-background-muted uk-padding " style="text-align: center;">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
                 <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
-                <a id="guardar" href="/menu/menu_facturacion/form_serigrafia"  class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
+                <a id="guardar" href="/menu/menu_facturacion/form_serigrafia" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
 
             </div>
             <select class="uk-select" id="tipo_de_pedido" disabled hidden>
