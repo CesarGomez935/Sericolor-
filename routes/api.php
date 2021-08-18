@@ -28,4 +28,4 @@ Route::resource('administraciones',administracion::class);
 //Route::resource('trabajador',persona::class);
 Route::resource('cliente',persona::class);
 Route::resource('detalledelpago',detalledelpagocontroller::class);
-Route::resource('trabajador', persona::class)->only(['getalltrabajador',"show"]);
+Route::get('trabajador', [persona::class,"getalltrabajador"]);

@@ -20,7 +20,7 @@ class persona extends Controller
 
        // return trabajador::where("rol","trabajador")->get();
 
-        return cliente::all();
+        //return cliente::all();
     }
 
     /**
@@ -36,7 +36,7 @@ class persona extends Controller
     public function getalltrabajador()
     {
 
-        return trabajador::table('persona')->where('name', 'John')->first();
+        return trabajador::where("rol","trabajador")->get();
 
     }
 
