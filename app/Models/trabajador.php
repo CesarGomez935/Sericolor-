@@ -10,4 +10,6 @@ class trabajador extends Model
     protected $table='persona';
     protected $primarykey='IDpersona';
     public $timestamps = false;
+
+
 }

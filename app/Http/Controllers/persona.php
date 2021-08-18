@@ -16,6 +16,10 @@ class persona extends Controller
     public function index()
     {
         //
+        //$trabajador= trabajador::where("rol","trabajador")->get();
+
+       // return trabajador::where("rol","trabajador")->get();
+
         return cliente::all();
     }
 
@@ -27,6 +31,13 @@ class persona extends Controller
     public function create()
     {
         //
+    }
+
+    public function getalltrabajador()
+    {
+
+        return trabajador::table('persona')->where('name', 'John')->first();
+
     }
 
     /**
@@ -84,7 +95,7 @@ class persona extends Controller
      */
     public function update(Request $request, $id)
     {
-    
+
 
 
 
@@ -106,7 +117,7 @@ class persona extends Controller
     {
         //
 
-    
+
 
     }
 }

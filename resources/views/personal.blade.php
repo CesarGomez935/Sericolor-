@@ -19,10 +19,11 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
 </head>
 
-<body>
+<body onpageshow="cargarproductos();">
 
     <nav class="uk-navbar uk-navbar-container uk-margin">
         <div class="uk-navbar-left">
@@ -88,15 +89,13 @@
 
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tablatrabajadores">
                 <tr>
                     <td>
-                        <u>
 
-                        </u>
                     </td>
                     <td>
-                        
+
                     </td>
                 </tr>
 
@@ -109,10 +108,54 @@
     <div class="uk-padding uk-background-muted uk-padding  ">
         <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
             <a href="/menu/menuadmon" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
-            
+
 
         </div>
     </div>
+
+    <script>
+        let trabajadores=[];
+
+
+        function peticionapi(data,method,onSuccess){
+
+
+            let url='/api/trabajador';
+            if(method=='PUT'||method=='DELETE'){
+                url+='/'+data.id;
+            }
+            $.ajax({
+            url:url,
+            method:method,
+            data:data,
+
+             success(res){
+            onSuccess(res);
+
+        }
+
+        })
+        }
+        function cargarproductos(){
+                                    peticionapi({},'GET',function(res){
+                                        trabajadores=res;
+                                    let html='';
+                                    res.forEach(trabajadores=>{
+                                        html+=
+                                        '<tr>'+ '<a href="">'+
+
+                                            '<td>'+trabajadores.primer_nombre+'</td>'+
+                                            '</a>'+
+                                            '<td>'+trabajadores.Rol+'</td>'+
+
+                                        '</tr>'
+                                    });
+                                    $("#tablatrabajadores").html(html);
+            });
+        }
+
+
+    </script>
 </body>
 
 </html>
