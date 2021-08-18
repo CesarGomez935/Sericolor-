@@ -29,3 +29,8 @@ Route::resource('administraciones',administracion::class);
 Route::resource('cliente',persona::class);
 Route::resource('detalledelpago',detalledelpagocontroller::class);
 Route::get('gettrabajador', [persona::class,"getalltrabajador"]);
+Route::get('getcliente', [persona::class,"getallcliente"]);
+Route::get('getclientebusqueda', [persona::class,"getcliente"]);
+Route::get('getpedidobordado', [detalledelpedidocontroller::class,"getallpedidobordado"]);
+Route::get('getpedidosublimacion', [detalledelpedidocontroller::class,"getallpedidosublimacion"]);
+Route::get('getpedidoserigrafia', [detalledelpedidocontroller::class,"getallpedidoserigrafia"]);

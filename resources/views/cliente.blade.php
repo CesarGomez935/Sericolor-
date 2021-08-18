@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedidos | Sublimación</title>
+    <title>Clientes</title>
     <link rel="icon" href="/img/Icono.ico" type="image/ico" />
 
     <!-- UIkit CSS -->
@@ -23,7 +23,7 @@
 
 </head>
 
-<body>
+<body onpageshow="cargarproductos();">
 
     <!-- Nav Bar -->
     <nav class="uk-navbar uk-navbar-container uk-margin">
@@ -84,7 +84,7 @@
 
             <div class="uk-margin">
 
-               <b> <label for="form-stacked-text" class="uk-form-label">Buscar Cliente</label> </b>
+               <b> <label id="buscar_cliente" for="form-stacked-text" oninput="cargarproductosbusqueda(buscar_cliente.value);" class="uk-form-label">Buscar Cliente</label> </b>
                 <div class="uk-inline uk-padding">
 
                     <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
@@ -104,7 +104,7 @@
 
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tablaclientes">
                 <tr>
                     <u>
 
@@ -124,6 +124,49 @@
 
         </div>
     </div>
+
+    <script>
+        let trabajadores=[];
+
+
+        function peticionapi(data,method,onSuccess){
+
+
+            let url='/api/getcliente';
+            if(method=='PUT'||method=='DELETE'){
+                url+='/'+data.id;
+            }
+            $.ajax({
+            url:url,
+            method:method,
+            data:data,
+
+             success(res){
+            onSuccess(res);
+
+        }
+
+        })
+        }
+        function cargarproductos(){
+                                    peticionapi({},'GET',function(res){
+                                        trabajadores=res;
+                                    let html='';
+                                    res.forEach(trabajadores=>{
+                                        html+=
+                                        '<tr>'+
+
+                                            '<td>'+'<a class="uk-button" href="/menu/menuadmon/clientes/agregar_cliente?'+trabajadores.IDpersona+'">'+trabajadores.primer_nombre+" "+trabajadores.segundo_nombre+" "+trabajadores.primer_apellido+" "+trabajadores.segundo_apellido+'</td>'+'</a>'+
+
+                                            '<td>'+trabajadores.Rol+'</td>'+
+
+                                        '</tr>'
+                                    });
+                                    $("#tablaclientes").html(html);
+            });
+        }
+
+    </script>
 
 
 

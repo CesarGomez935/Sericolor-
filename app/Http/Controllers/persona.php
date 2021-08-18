@@ -40,6 +40,20 @@ class persona extends Controller
 
     }
 
+    public function getallcliente()
+    {
+
+        return trabajador::where("rol","cliente")->get();
+
+    }
+
+    public function getcliente($nombre)
+    {
+
+        return trabajador::where("Primer_nombre",$nombre)->get();
+
+    }
+
     /**
      * Store a newly created resource in storage.
      *

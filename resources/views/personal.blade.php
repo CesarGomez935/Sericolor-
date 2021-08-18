@@ -142,10 +142,10 @@
                                     let html='';
                                     res.forEach(trabajadores=>{
                                         html+=
-                                        '<tr>'+ '<a href="">'+
+                                        '<tr>'+
 
-                                            '<td>'+trabajadores.primer_nombre+'</td>'+
-                                            '</a>'+
+                                            '<td>'+'<a class="uk-button" href="/menu/menuadmon/personal/agregar_personal?'+trabajadores.IDpersona+'">'+trabajadores.primer_nombre+" "+trabajadores.segundo_nombre+" "+trabajadores.primer_apellido+" "+trabajadores.segundo_apellido+'</td>'+'</a>'+
+
                                             '<td>'+trabajadores.Rol+'</td>'+
 
                                         '</tr>'

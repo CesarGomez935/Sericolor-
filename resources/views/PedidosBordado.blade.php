@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body onshow="cargarproductos();">
 
     <nav class="uk-navbar uk-navbar-container uk-margin">
         <div class="uk-navbar-left">
@@ -84,7 +84,7 @@
 
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tablapedidos">
                 <tr>
                     <u>
 
@@ -104,6 +104,54 @@
 
         </div>
     </div>
+
+
+
+
+    <script>
+        let pedido=[];
+
+
+        function peticionapi(data,method,onSuccess){
+
+
+            let url='/api/getpedidobordado';
+            if(method=='PUT'||method=='DELETE'){
+                url+='/'+data.id;
+            }
+            $.ajax({
+            url:url,
+            method:method,
+            data:data,
+
+             success(res){
+            onSuccess(res);
+
+        }
+
+        })
+        }
+        function cargarproductos(){
+                                    peticionapi({},'GET',function(res){
+                                        pedido=res;
+                                    let html='';
+                                    res.forEach(pedido=>{
+                                        html+=
+                                        '<tr>'+
+
+                                            '<td>'+'<a class="uk-button" href="/menu/menuadmon/clientes/agregar_cliente?'+pedido.IDpedido+'">'+pedido.primer_nombre+" "+pedido.segundo_nombre+" "+pedido.primer_apellido+" "+pedido.segundo_apellido+'</td>'+'</a>'+
+
+                                            '<td>'+pedido.Rol+'</td>'+
+
+                                        '</tr>'
+                                    });
+                                    $("#tablapedidos").html(html);
+            });
+        }
+
+    </script>
+
+
 </body>
 
 </html>

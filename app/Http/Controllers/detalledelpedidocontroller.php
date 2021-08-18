@@ -27,6 +27,33 @@ class detalledelpedidocontroller extends Controller
         //
     }
 
+    public function getallpedidobordado()
+    {
+        //
+      return Detalledelpedido::where("Tipo_de_pedido","bordado")->get();
+    }
+
+    public function getallpedidoserigrafia()
+    {
+        //
+      //return Detalledelpedido::where("Tipo_de_pedido","serigrafia")->get();
+      return Detalledelpedido::select("*")->join("persona","persona.IDpersona","=","Detalledelpedido.IDdetalledelpedido")->get();
+
+
+    }
+
+    public function getallpedidoimpresion()
+    {
+        //
+      return Detalledelpedido::where("Tipo_de_pedido","impresion digital")->get();
+    }
+
+    public function getallpedidosublimacion()
+    {
+        //
+      return Detalledelpedido::where("Tipo_de_pedido","sublimacion")->get();
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -35,7 +62,7 @@ class detalledelpedidocontroller extends Controller
      */
     public function store(Request $request)
     {
- 
+
         $model = new Detalledelpedido();
         $model->Tipo_de_pedido = $request->input('Tipo_de_pedido');
         $model->tipo_de_producto = $request->input('tipo_de_producto');
@@ -63,7 +90,7 @@ class detalledelpedidocontroller extends Controller
         $model->ancho = $request->input('ancho');
         $model->precio_cantidad = $request->input('precio_cantidad');
         $model->cantidad = $request->input('cantidad');
-        $model->nota = $request->input('nota');     
+        $model->nota = $request->input('nota');
         return $model->save();
     }
 
