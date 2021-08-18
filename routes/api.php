@@ -25,7 +25,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::resource('detalledelpedido',detalledelpedidocontroller::class);
 Route::resource('administraciones',administracion::class);
-//Route::resource('trabajador',persona::class);
+Route::resource('trabajador',persona::class);
 Route::resource('cliente',persona::class);
 Route::resource('detalledelpago',detalledelpagocontroller::class);
 Route::get('gettrabajador', [persona::class,"getalltrabajador"]);
