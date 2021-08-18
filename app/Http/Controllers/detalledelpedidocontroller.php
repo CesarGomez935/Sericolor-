@@ -91,6 +91,11 @@ class detalledelpedidocontroller extends Controller
         $model->precio_cantidad = $request->input('precio_cantidad');
         $model->cantidad = $request->input('cantidad');
         $model->nota = $request->input('nota');
+        $model->ancho = $request->input('ancho');
+        $model->Nombredelcomprador = $request->input('Nombredelcomprador');
+        $model->Telefono = $request->input('Telefono');
+        $model->NumeroRuc = $request->input('NumeroRuc');
+        $model->fechadepedido=$request->input('fechadepedido');
         return $model->save();
     }
 

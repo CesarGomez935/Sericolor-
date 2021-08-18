@@ -78,7 +78,7 @@
             <div class="uk-grid-small" uk-grid>
                 <div class="uk-inline uk-width-1-2 ">
                     <label for="fecha_fact">Fecha de Facturación</label>
-                    <input id="fecha_fact" name="fecha_factiracion" type="date" class="uk-input">
+                    <input id="fecha_fact" name="fecha_facturacion" type="date" class="uk-input">
                 </div>
                 <div class="uk-inline uk-width-1-2 ">
                     <label for="fecha_ent">Fecha de entrega</label>
@@ -505,6 +505,10 @@
             cantidad: $("#cantidad_pedido_1").val(),
             precio_cantidad: $("#preciosa_cantidad_1").val(),
             nota: $("#notas").val(),
+            Nombredelcomprador:$("#nombre").val(),
+            Telefono:$("#telefono").val(),
+            NumeroRuc:$("#Ruc").val(),
+            fechadepedido:$("#fecha_fact").val(),
         };
         peticionapi(data, 'POST', function(res) {
             alert('Guardado con exito')
