@@ -104,8 +104,6 @@
                 <B>
 
                      <a href="https://web.whatsapp.com/send?phone=+505+55038173" target="_blank">Whatsapp: 5503-8173</a>
-                    <!-- Revisar estos datos-->
-
 
                 </B>
             </p>

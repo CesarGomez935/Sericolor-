@@ -19,7 +19,7 @@
 </head>
 
 <header>
-  
+
 </header>
 
 <body style="background-color:white">
@@ -78,7 +78,7 @@
       </p>
       <p>
         <B>
-          <a href="https://web.whatsapp.com/send?phone=+505+55038173">Whatsapp: 5503-8173</a> 
+          <a href="https://web.whatsapp.com/send?phone=+505+55038173 " target="_blank" >Whatsapp: 5503-8173</a>
         </B>
       </p>
       <p>
@@ -88,9 +88,9 @@
       </p>
     </div>
     <div>
-            <a href="https://api.whatsapp.com/send?phone=+505 55038173" uk-icon="icon: whatsapp ; ratio: 3.5"></a>
-            <a href="https://es-la.facebook.com/pg/sericolorpublicidad" uk-icon="icon: facebook ; ratio: 3.5"></a>
-            <a href="https://www.instagram.com/sericolorpublicidad/?hl=es-la" uk-icon="icon: instagram ; ratio: 3.5"></a>
+            <a href="https://api.whatsapp.com/send?phone=+505 55038173" target="_blank" uk-icon="icon: whatsapp ; ratio: 3.5"></a>
+            <a href="https://es-la.facebook.com/pg/sericolorpublicidad" target="_blank" uk-icon="icon: facebook ; ratio: 3.5"></a>
+            <a href="https://www.instagram.com/sericolorpublicidad/?hl=es-la" target="_blank" uk-icon="icon: instagram ; ratio: 3.5"></a>
     </div>
   </div>
   <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
