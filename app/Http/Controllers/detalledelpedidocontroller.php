@@ -37,6 +37,7 @@ class detalledelpedidocontroller extends Controller
     {
         //
       //return Detalledelpedido::where("Tipo_de_pedido","serigrafia")->get();
+      //agregar idpersona en detalle del pedido
       return Detalledelpedido::select("*")->join("persona","persona.IDpersona","=","Detalledelpedido.IDdetalledelpedido")->get();
 
 
