@@ -120,7 +120,7 @@
         function peticionapi(data,method,onSuccess){
 
 
-            let url='/api/trabajador';
+            let url='/api/gettrabajador';
             if(method=='PUT'||method=='DELETE'){
                 url+='/'+data.id;
             }
