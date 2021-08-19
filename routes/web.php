@@ -128,3 +128,6 @@ Route::get('menu/menuadmon/resumen_pedidos', function () {
 
 Route::resource('Detalledelpedido',detalledelpedidocontroller::class);
 
+Route::get('Inicio2', function () {
+    return view('Inicio2');
+});

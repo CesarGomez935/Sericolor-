@@ -8,7 +8,7 @@
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
-   
+
 </head>
 <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
         <!-- Copyright -->
@@ -35,7 +35,7 @@
             </a>
         </div>
         <!-- Right -->
-    </div>
+</div>
 <body>
     <div style="text-align: center;">
         <form class="uk-padding">
@@ -73,7 +73,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding-left: 100px;"> 
+                        <td style="padding-left: 100px;">
                             <a href="/menu/pedidos_serigrafia" class="btn btn-lg" style="background-color:transparent">
                                 <div style="text-align:center"><svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" class="bi bi-eyedropper" viewBox="0 0 16 16">
                                         <path d="M13.354.646a1.207 1.207 0 0 0-1.708 0L8.5 3.793l-.646-.647a.5.5 0 1 0-.708.708L8.293 5l-7.147 7.146A.5.5 0 0 0 1 12.5v1.793l-.854.853a.5.5 0 1 0 .708.707L1.707 15H3.5a.5.5 0 0 0 .354-.146L11 7.707l1.146 1.147a.5.5 0 0 0 .708-.708l-.647-.646 3.147-3.146a1.207 1.207 0 0 0 0-1.708l-2-2zM2 12.707l7-7L10.293 7l-7 7H2v-1.293z" />
@@ -106,7 +106,7 @@
             </table>
         </form>
     </div>
-    
+
     <div class="uk-padding uk-background-muted uk-padding ">
         <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
             <a href="/Inicio" class="uk-button uk-button-primary "style="">Salir</a>
