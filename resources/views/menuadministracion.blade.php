@@ -8,8 +8,37 @@
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
-   
+
 </head>
+<div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+    <!-- Copyright -->
+    <div class="text-white mb-3 mb-md-0">
+        Y me dijo: Tú eres mi siervo, Israel, en quien yo mostraré mi gloria.
+
+
+
+    </div>
+    <!-- Copyright -->
+
+    <!-- Right -->
+    <div>
+        <a href="https://www.biblegateway.com/passage/?search=+Isa%C3%ADas+49%3A3&version=RVR1960" class="text-white me-4">
+            <i class="fab fa-facebook-f"></i>
+            Isaías 49:3
+
+        </a>
+        <a href="#!" class="text-white me-4">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#!" class="text-white me-4">
+            <i class="fab fa-google"></i>
+        </a>
+        <a href="#!" class="text-white">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
+    <!-- Right -->
+</div>
 
 <body>
 
@@ -35,7 +64,7 @@
                             Clientes
                         </a>
                     </td>
-                    <td style="padding-left: 100px;"> 
+                    <td style="padding-left: 100px;">
                         <a href="/menu/menuadmon/reportes" class="btn btn-lg" style="background-color:transparent">
                             <div style="text-align:center"><svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" class="bi bi-file-earmark-pdf-fill" viewBox="0 0 16 16">
                                     <path d="M5.523 12.424c.14-.082.293-.162.459-.238a7.878 7.878 0 0 1-.45.606c-.28.337-.498.516-.635.572a.266.266 0 0 1-.035.012.282.282 0 0 1-.026-.044c-.056-.11-.054-.216.04-.36.106-.165.319-.354.647-.548zm2.455-1.647c-.119.025-.237.05-.356.078a21.148 21.148 0 0 0 .5-1.05 12.045 12.045 0 0 0 .51.858c-.217.032-.436.07-.654.114zm2.525.939a3.881 3.881 0 0 1-.435-.41c.228.005.434.022.612.054.317.057.466.147.518.209a.095.095 0 0 1 .026.064.436.436 0 0 1-.06.2.307.307 0 0 1-.094.124.107.107 0 0 1-.069.015c-.09-.003-.258-.066-.498-.256zM8.278 6.97c-.04.244-.108.524-.2.829a4.86 4.86 0 0 1-.089-.346c-.076-.353-.087-.63-.046-.822.038-.177.11-.248.196-.283a.517.517 0 0 1 .145-.04c.013.03.028.092.032.198.005.122-.007.277-.038.465z" />
@@ -76,28 +105,28 @@
     </div>
 </body>
 <footer>
-        <div class="d-flex flex-column flex-md-row text-center uk-position-bottom text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-            <!-- Copyright -->
-            <div class="text-white mb-3 mb-md-0">
-                Copyright © 2021. All rights reserved.
-            </div>
-            <!-- Copyright -->
-
-            <!-- Right -->
-            <div>
-                <a href="/" href="#!" class="text-white me-4">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="/" href="#!" class="text-white me-4">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="/" href="#!" class="text-white me-4">
-                    <i class="fab fa-google"></i>
-                </a>
-                <a href="/" href="#!" class="text-white">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </div>
-            <!-- Right -->
+    <div class="d-flex flex-column flex-md-row text-center uk-position-bottom text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+        <!-- Copyright -->
+        <div class="text-white mb-3 mb-md-0">
+            Copyright © 2021. All rights reserved.
         </div>
+        <!-- Copyright -->
+
+        <!-- Right -->
+        <div>
+            <a href="/" href="#!" class="text-white me-4">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="/" href="#!" class="text-white me-4">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="/" href="#!" class="text-white me-4">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="/" href="#!" class="text-white">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <!-- Right -->
+    </div>
 </footer>
