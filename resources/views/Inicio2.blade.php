@@ -53,6 +53,7 @@
         <div class="container-fluid">
 
           <img src="\img\Sericolor_ Logo.png" width="200" alt="">
+          <div class="navbar-collapse collapse" ></div>
           <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
