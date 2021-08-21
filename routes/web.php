@@ -131,3 +131,7 @@ Route::resource('Detalledelpedido',detalledelpedidocontroller::class);
 Route::get('Inicio2', function () {
     return view('Inicio2');
 });
+
+Route::get('catalogo', function () {
+    return view('catalogo');
+});
