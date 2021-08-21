@@ -58,7 +58,7 @@
 
 
 
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #d9d9d9;">
+    <nav class="navbar navbar-expand-lg navbar-light p-3" style="background-color: #d9d9d9;">
 
           <img src="\img\Sericolor_ Logo.png" width="250px"  class="img-fluid">
         </div>
@@ -224,6 +224,7 @@
                 <div class="map-responsive" height="150" width="200" style="text-align: center">
                     <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6598222185626!2d-85.92170308581036!3d12.929572019298973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f7249d2987e4149%3A0x1e72bbacc5e03499!2sSERICOLOR%20PUBLICIDAD!5e0!3m2!1ses!2sni!4v1629494741812!5m2!1ses!2sni" ></iframe>
 
+
                 </div>
 
             </div>
@@ -232,6 +233,26 @@
                     <img class="img-fluid" src="/img/promocion.jpg" alt="">
                 </div>
             </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class=""   style="text-align: center">
+
+
+
+                    <p style="text-align: center" style="font-size: 10" class="text-primary"> <b> Frente a donde fue metales de matagalpa </b></p>
+
+                </div>
+
+            </div>
+             <div class="col">
+                <div class=""  style="text-align: center">
+
+                </div>
+
+            </div>
+
         </div>
 
     </div>

@@ -133,7 +133,7 @@
             <div class="col">
                 <div class="map-responsive" height="150" width="200" style="text-align: center">
                     <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6598222185626!2d-85.92170308581036!3d12.929572019298973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f7249d2987e4149%3A0x1e72bbacc5e03499!2sSERICOLOR%20PUBLICIDAD!5e0!3m2!1ses!2sni!4v1629494741812!5m2!1ses!2sni" ></iframe>
-
+                    <h3 style="text-align: center" class="text-primary"> <b> Frente a donde fue metales de matagalpa </b></h3>
                 </div>
 
             </div>
