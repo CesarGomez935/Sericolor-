@@ -19,3 +19,16 @@
     background-color: transparent;
     z-index: 1030;
 }
+
+@font-face {
+    font-family: bahamas;
+    src: url(/resources/03467_Bahamas.ttf);
+}
+
+body,h1,h2,h3,p,a,label,h5{
+    font-family: bahamas;
+}
+
+.fuente{
+    font-family: bahamas;
+}

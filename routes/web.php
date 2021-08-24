@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::get('Inicio', function () {
     return view('Inicio');
 });
-Route::get('Acerca', function () {
+Route::get('acerca', function () {
     return view('Acerca');
 });
 Route::get('contacto', function () {
@@ -34,7 +34,9 @@ Route::get('revision', function () {
     return view('Revision');
 });
 
-/* Back-En */
+
+
+/* Back-End */
 Route::get('menu', function () {
     return view('menu');
 });
@@ -128,10 +130,6 @@ Route::get('menu/menuadmon/resumen_pedidos', function () {
 
 Route::resource('Detalledelpedido',detalledelpedidocontroller::class);
 
-Route::get('Inicio2', function () {
-    return view('Inicio2');
-});
 
-Route::get('catalogo', function () {
-    return view('catalogo');
-});
+
+
