@@ -138,7 +138,7 @@
         <div class="card mb-3 text-center">
             <img src="/img/FrenteSericolor.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title" style="font-size: 20px;"><b>¿Quienes somos?</b></h5>
+                <h5 class="card-title" style="font-size: 20px;"><b>¿Quiénes somos?</b></h5>
                 <p class="card-text" style="font-size: 18px;">Hace 8 años comenzó este proyecto, estábamos llenos de
                     muchas dudas y miedos, pero era mas fuerte las ganas de crear una empresa, hubieron obstaculos,
                     personas que decían: "no creo que puedan", pero seguimos lo que nuestro corazón dictaba y
