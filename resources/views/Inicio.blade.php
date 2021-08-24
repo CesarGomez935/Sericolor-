@@ -53,17 +53,6 @@
     </div>
 
 
-
-
-
-
-
-</header>
-
-<body>
-
-
-
     <nav class="navbar navbar-expand-lg navbar-light p-3" style="background-color: #d9d9d9;">
 
         <img src="\img\Sericolor_ Logo.png" width="250px" class="img-fluid">
@@ -91,11 +80,28 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/contacto"><b> Contacto</b></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/revision"><b>Revisión</b></a>
+                </li>
             </ul>
 
         </div>
         </div>
     </nav>
+
+
+
+
+
+
+
+</header>
+
+<body>
+
+
+
+
 
 
 

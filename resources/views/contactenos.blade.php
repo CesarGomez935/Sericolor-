@@ -91,6 +91,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/contacto"><b> Contacto</b></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/revision"><b>Revisión</b></a>
+                </li>
             </ul>
 
         </div>
