@@ -33,6 +33,9 @@ Route::get('servicio', function () {
 Route::get('revision', function () {
     return view('Revision');
 });
+Route::get('galeria', function () {
+    return view('galeria');
+});
 
 
 
