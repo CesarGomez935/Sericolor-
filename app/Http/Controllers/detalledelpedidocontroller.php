@@ -30,7 +30,7 @@ class detalledelpedidocontroller extends Controller
     public function getallpedidobordado()
     {
         //
-      return Detalledelpedido::where("Tipo_de_pedido","bordado")->get();
+        return Detalledelpedido::select("*")->where("Tipo_de_pedido","bordado")->join("persona","persona.IDpersona","=","Detalledelpedido.IDdetalledelpedido")->get();
     }
 
     public function getallpedidoserigrafia()
@@ -38,7 +38,7 @@ class detalledelpedidocontroller extends Controller
         //
       //return Detalledelpedido::where("Tipo_de_pedido","serigrafia")->get();
       //agregar idpersona en detalle del pedido
-      return Detalledelpedido::select("*")->join("persona","persona.IDpersona","=","Detalledelpedido.IDdetalledelpedido")->get();
+      return Detalledelpedido::select("*")->where("Tipo_de_pedido","Serigrafia")->join("persona","persona.IDpersona","=","Detalledelpedido.IDdetalledelpedido")->get();
 
 
     }
@@ -46,13 +46,13 @@ class detalledelpedidocontroller extends Controller
     public function getallpedidoimpresion()
     {
         //
-      return Detalledelpedido::where("Tipo_de_pedido","impresion digital")->get();
+        return Detalledelpedido::select("*")->where("Tipo_de_pedido","impresion_digital")->join("persona","persona.IDpersona","=","Detalledelpedido.IDdetalledelpedido")->get();
     }
 
     public function getallpedidosublimacion()
     {
         //
-      return Detalledelpedido::where("Tipo_de_pedido","sublimacion")->get();
+        return Detalledelpedido::select("*")->where("Tipo_de_pedido","Sublimacion")->join("persona","persona.IDpersona","=","Detalledelpedido.IDdetalledelpedido")->get();
     }
 
     /**

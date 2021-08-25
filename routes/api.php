@@ -34,3 +34,4 @@ Route::get('getclientebusqueda', [persona::class,"getcliente"]);
 Route::get('getpedidobordado', [detalledelpedidocontroller::class,"getallpedidobordado"]);
 Route::get('getpedidosublimacion', [detalledelpedidocontroller::class,"getallpedidosublimacion"]);
 Route::get('getpedidoserigrafia', [detalledelpedidocontroller::class,"getallpedidoserigrafia"]);
+Route::get('getpedidoimpresion', [detalledelpedidocontroller::class,"getallpedidoimpresion"]);

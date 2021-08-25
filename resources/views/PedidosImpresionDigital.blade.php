@@ -10,24 +10,31 @@
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
 </head>
 
-<body>
+<body onpageshow="cargarproductos();">
 
     <nav class="uk-navbar uk-navbar-container uk-margin">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Pedidos impresión digital</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span
+                    class="uk-margin-small-left">Pedidos impresión digital</span>
             </a>
         </div>
 
@@ -42,27 +49,28 @@
                 <hr class="uk-divider-icon">
 
                 <ul class="uk-nav uk-parent">
-                    <li class="uk-parent"> <a href=""> Facturación </a></li>
+                    <li class="uk-parent"> <a href="/menu/menu_facturacion"> Facturación </a></li>
                     <ul class="uk-nav-sub">
-                        <li> <a href="">Bordado </a></li>
-                        <li> <a href="">Sublimación </a></li>
-                        <li> <a href="">Serigrafía </a></li>
-                        <li> <a href="">Impresión digital </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_bordado">Bordado </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_sublimacion">Sublimación </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_serigrafia">Serigrafía </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_impresion_digital">Impresión digital </a></li>
                     </ul>
                     <hr class="uk-divider-icon">
-                    <li class="uk-active"> <a href=""> Pedidos Bordado </a></li>
-                    <li class="uk-active"> <a href=""> Pedidos Sublimación </a></li>
-                    <li class="uk-active"> <a href=""> Pedidos Serigrafía </a></li>
-                    <li class="uk-active"> <a href=""> Pedidos Impresión digital </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_serigrafia"> Pedidos Serigrafía </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital </a>
+                    </li>
                     <hr class="uk-divider-icon">
-                    <li class="uk-parent"> <a href=""> Administración </a></li>
+                    <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
 
                     <ul class="uk-nav-sub">
-                        <li> <a href="">Resumen de pedidos</a></li>
-                        <li> <a href="">Personal</a></li>
-                        <li> <a href="">Reportes</a></li>
-                        <li> <a href="">Restaurar y generar Back-up</a></li>
-                        <li> <a href="">Clientes</a></li>
+                        <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
+                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                        <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
+                        <li> <a href="/menu/menuadmon/bd">Restaurar y generar Back-up</a></li>
+                        <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
                     </ul>
 
                 </ul>
@@ -84,7 +92,7 @@
 
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tablapedidos">
                 <tr>
                     <u>
 
@@ -104,6 +112,51 @@
 
         </div>
     </div>
+
+    <script>
+        let pedido = [];
+
+
+        function peticionapi(data, method, onSuccess) {
+
+
+            let url = '/api/getpedidoimpresion';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.id;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+        }
+
+        function cargarproductos() {
+            peticionapi({}, 'GET', function(res) {
+                pedido = res;
+                let html = '';
+                res.forEach(pedido => {
+                    html +=
+                        '<tr>' +
+
+                        '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_impresion?' +
+                        pedido.IDdetalledelpedido + '">' + pedido.primer_nombre + '</td>' + '</a>' +
+
+                        '<td>' + pedido.estado + '</td>' +
+
+                        '</tr>'
+                });
+                $("#tablapedidos").html(html);
+            });
+        }
+    </script>
+
 </body>
 
 </html>
