@@ -138,41 +138,41 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input id="alto_1" oninput="area1();" class="uk-input area1" min="0" type="number" placeholder="0"></td>
-                        <td><input id="ancho_1" oninput="area1();" class="uk-input area1" min="0" type="number" placeholder="0"></td>
-                        <td><input id="mt2_1" oninput="costo1();" class="uk-input costo1" min="0" type="number" placeholder="0"></td>
-                        <td><input id="costo_1" oninput="costo1();" class="uk-input costo1" min="0" type="number" placeholder="0"></td>
-                        <td><input id="precio_mt2_1" oninput="multi1();" class="uk-input monto1" min="0" type="number" placeholder="0"></td>
-                        <td><input id="cantidad_1" oninput="multi1();" class="uk-input monto1" min="0" type="number" placeholder="0"></td>
-                        <td><input id="total_1" name="total_1" class="uk-input" min="0" value="" type="number" placeholder="0"></td>
+                        <td><input id="alto_1" oninput="area1();" class="uk-input area1" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="ancho_1" oninput="area1();" class="uk-input area1" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="mt2_1" oninput="costo1();" class="uk-input costo1" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="costo_1" oninput="costo1();" class="uk-input costo1" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="precio_mt2_1" oninput="multi1();" class="uk-input monto1" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="cantidad_1" oninput="multi1();" class="uk-input monto1" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="total_1" name="total_1" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"></td>
                     </tr>
                     <tr>
-                        <td><input id="alto_2" oninput="area2();" class="uk-input area2" min="0" type="number" placeholder="0"></td>
-                        <td><input id="ancho_2" oninput="area2();" class="uk-input area2" min="0" type="number" placeholder="0"></td>
-                        <td><input id="mt2_2" oninput="costo2();" class="uk-input costo2" min="0" type="number" placeholder="0"></td>
-                        <td><input id="costo_2" oninput="costo2();" class="uk-input costo2" min="0" type="number" placeholder="0"></td>
-                        <td><input id="precio_mt2_2" oninput="multi2();" class="uk-input monto2" min="0" type="number" placeholder="0"></td>
-                        <td><input id="cantidad_2" oninput="multi2();" class="uk-input monto2" min="0" type="number" placeholder="0"></td>
-                        <td><input id="total_2" name="total_2" class="uk-input" min="0" value="" type="number" placeholder="0"></td>
+                        <td><input id="alto_2" oninput="area2();" class="uk-input area2" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="ancho_2" oninput="area2();" class="uk-input area2" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="mt2_2" oninput="costo2();" class="uk-input costo2" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="costo_2" oninput="costo2();" class="uk-input costo2" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="precio_mt2_2" oninput="multi2();" class="uk-input monto2" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="cantidad_2" oninput="multi2();" class="uk-input monto2" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="total_2" name="total_2" class="uk-input" min="0" value="" type="number" placeholder="0"value="0"></td>
                     </tr>
                     <tr>
-                        <td><input id="alto_3" oninput="area3();" class="uk-input area3" min="0" type="number" placeholder="0"></td>
-                        <td><input id="ancho_3" oninput="area3();" class="uk-input area3" min="0" type="number" placeholder="0"></td>
-                        <td><input id="mt2_3" oninput="costo3();" class="uk-input costo3" min="0" type="number" placeholder="0"></td>
-                        <td><input id="costo_3" oninput="costo3();" class="uk-input costo3" min="0" type="number" placeholder="0"></td>
-                        <td><input id="precio_mt2_3" oninput="multi3();" class="uk-input monto3" min="0" type="number" placeholder="0"></td>
-                        <td><input id="cantidad_3" oninput="multi3();" class="uk-input monto3" min="0" type="number" placeholder="0"></td>
-                        <td><input id="total_3" name="total_1" class="uk-input" min="0" value="" type="number" placeholder="0"></td>
+                        <td><input id="alto_3" oninput="area3();" class="uk-input area3" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="ancho_3" oninput="area3();" class="uk-input area3" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="mt2_3" oninput="costo3();" class="uk-input costo3" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="costo_3" oninput="costo3();" class="uk-input costo3" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="precio_mt2_3" oninput="multi3();" class="uk-input monto3" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="cantidad_3" oninput="multi3();" class="uk-input monto3" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="total_3" name="total_1" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"></td>
                     </tr>
                     <tr>
 
-                        <td><input id="alto_4" oninput="area4();" class="uk-input area4" min="0" type="number" placeholder="0"></td>
-                        <td><input id="ancho_4" oninput="area4();" class="uk-input area4" min="0" type="number" placeholder="0"></td>
-                        <td><input id="mt2_4" oninput="costo4();" class="uk-input costo4" min="0" type="number" placeholder="0"></td>
-                        <td><input id="costo_4" oninput="costo4();" class="uk-input costo4" min="0" type="number" placeholder="0"></td>
-                        <td><input id="precio_mt2_4" oninput="multi4();" class="uk-input monto4" min="0" type="number" placeholder="0" </td>
-                        <td><input id="cantidad_4" oninput="multi4();" class="uk-input monto4" min="0" type="number" placeholder="0"></td>
-                        <td><input id="total_4" name="total_4" class="uk-input" min="0" value="" type="number" placeholder="0"></td>
+                        <td><input id="alto_4" oninput="area4();" class="uk-input area4" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="ancho_4" oninput="area4();" class="uk-input area4" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="mt2_4" oninput="costo4();" class="uk-input costo4" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="costo_4" oninput="costo4();" class="uk-input costo4" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="precio_mt2_4" oninput="multi4();" class="uk-input monto4" min="0" type="number" placeholder="0" value="0" ></td>
+                        <td><input id="cantidad_4" oninput="multi4();" class="uk-input monto4" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="total_4" name="total_4" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"></td>
                     </tr>
 
                 </tbody>
@@ -414,35 +414,35 @@
                             <tbody id="tabladetalle">
                                 <tr>
                                     <!--Agregar correcta impresión de datos-->
-                                    <td><input id="cantidad_pedido_1" min="0" oninput="calculo_pedido1();" placeholder="0" class="uk-input calculo_pedido1" type="number"></td>
+                                    <td><input id="cantidad_pedido_1" min="0" oninput="calculo_pedido1();" placeholder="0" class="uk-input calculo_pedido1" type="number" value="0"></td>
                                     <td><input id="especificaciones_pedido_1" class="uk-input" type="text"></td>
-                                    <td><input id="precio_und_pedido_1" min="0" oninput="calculo_pedido1();" placeholder="0" class="uk-input calculo_pedido1" type="number"></td>
-                                    <td><input id="precio_pedido_1" onchange="pedido();" onclick="pedido();" placeholder="0" min="0" class="uk-input pedido" type="number"></td>
+                                    <td><input id="precio_und_pedido_1" min="0" oninput="calculo_pedido1();" placeholder="0" class="uk-input calculo_pedido1" type="number" value="0"></td>
+                                    <td><input id="precio_pedido_1" onchange="pedido();" onclick="pedido();" placeholder="0" min="0" class="uk-input pedido" type="number" value="0"></td>
 
                                 </tr>
                                 <tr>
 
-                                    <td><input id="cantidad_pedido_2" min="0" oninput="calculo_pedido2();" placeholder="0" class="uk-input calculo_pedido2" type="number"></td>
+                                    <td><input id="cantidad_pedido_2" min="0" oninput="calculo_pedido2();" placeholder="0" class="uk-input calculo_pedido2" type="number" value="0"></td>
                                     <td><input id="especificaciones_pedido_2" class="uk-input" type="text"></td>
-                                    <td><input id="precio_und_pedido_2" min="0" oninput="calculo_pedido2();" placeholder="0" class="uk-input calculo_pedido2" type="number"></td>
-                                    <td><input id="precio_pedido_2" onchange="pedido();" onclick="pedido();" placeholder="0" min="0" class="uk-input pedido" type="number"></td>
+                                    <td><input id="precio_und_pedido_2" min="0" oninput="calculo_pedido2();" placeholder="0" class="uk-input calculo_pedido2" type="number" value="0"></td>
+                                    <td><input id="precio_pedido_2" onchange="pedido();" onclick="pedido();" placeholder="0" min="0" class="uk-input pedido" type="number" value="0"></td>
 
                                 </tr>
                                 <tr>
 
-                                    <td><input id="cantidad_pedido_3" min="0" oninput="calculo_pedido3();" placeholder="0" class="uk-input calculo_pedido3" type="number"></td>
+                                    <td><input id="cantidad_pedido_3" min="0" oninput="calculo_pedido3();" placeholder="0" class="uk-input calculo_pedido3" type="number" value="0"></td>
                                     <td><input id="especificaciones_pedido_3" class="uk-input" type="text"></td>
-                                    <td><input id="precio_und_pedido_3" min="0" oninput="calculo_pedido3();" placeholder="0" class="uk-input calculo_pedido3" type="number"></td>
-                                    <td><input id="precio_pedido_3" onchange="pedido();" onclick="pedido();" placeholder="0" min="0" class="uk-input pedido" type="number"></td>
+                                    <td><input id="precio_und_pedido_3" min="0" oninput="calculo_pedido3();" placeholder="0" class="uk-input calculo_pedido3" type="number" value="0"></td>
+                                    <td><input id="precio_pedido_3" onchange="pedido();" onclick="pedido();" placeholder="0" min="0" class="uk-input pedido" type="number" value="0"></td>
 
                                 </tr>
                                 <tr>
 
 
-                                    <td><input id="cantidad_pedido_4" min="0" oninput="calculo_pedido4();" placeholder="0" class="uk-input calculo_pedido4" type="number"></td>
+                                    <td><input id="cantidad_pedido_4" min="0" oninput="calculo_pedido4();" placeholder="0" class="uk-input calculo_pedido4" type="number" value="0"></td>
                                     <td><input id="especificaciones_pedido_4" class="uk-input" type="text"></td>
-                                    <td><input id="precio_und_pedido_4" min="0" oninput="calculo_pedido4();" placeholder="0" class="uk-input calculo_pedido4" type="number"></td>
-                                    <td><input id="precio_pedido_4" onchange="pedido();" onclick="pedido();" placeholder="0" min="0" class="uk-input pedido" type="number"></td>
+                                    <td><input id="precio_und_pedido_4" min="0" oninput="calculo_pedido4();" placeholder="0" class="uk-input calculo_pedido4" type="number" value="0"></td>
+                                    <td><input id="precio_pedido_4" onchange="pedido();" onclick="pedido();" placeholder="0" min="0" class="uk-input pedido" type="number" value="0"></td>
 
 
 
@@ -455,7 +455,7 @@
                                             <h1 class="uk-label" for="total_pedido">Total</h1>
                                         </div>
                                     </td>
-                                    <td><input id="total_pedido" type="number" class="uk-input" disabled></td>
+                                    <td><input id="total_pedido" type="number" value="0" class="uk-input" disabled></td>
                                 </tr>
                             </tbody>
 
@@ -638,7 +638,7 @@
         <div class="uk-padding uk-background-muted uk-padding  ">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
                 <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
-                <button type="submit" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</button>
+                <a type="submit" id="guardar" href="/menu/menu_facturacion/form_impresion_digital"  class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
 
             </div>
         </div>
