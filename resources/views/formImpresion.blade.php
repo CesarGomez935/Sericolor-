@@ -75,42 +75,42 @@
 
     <form action="" method="post">
 
-            <div class="uk-padding uk-background-muted">
+        <div class="uk-padding uk-background-muted">
 
-                <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
-                <div class="uk-grid-small" uk-grid>
+            <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+            <div class="uk-grid-small" uk-grid>
 
-                    <div class="uk-inline uk-width-1-2 ">
-                        <label for="fecha_fact">Fecha de Facturación</label>
-                        <input id="fecha_fact" name="fecha_factiracion" type="date" class="uk-input">
-                    </div>
-                    <div class="uk-inline uk-width-1-2 ">
-                        <label for="fecha_ent">Fecha de entrega</label>
-                        <input id="fecha_ent" name="fecha_entrega" type="date" class="uk-input">
-                    </div>
+                <div class="uk-inline uk-width-1-2 ">
+                    <label for="fecha_fact">Fecha de Facturación</label>
+                    <input id="fecha_fact" name="fecha_factiracion" type="date" class="uk-input">
+                </div>
+                <div class="uk-inline uk-width-1-2 ">
+                    <label for="fecha_ent">Fecha de entrega</label>
+                    <input id="fecha_ent" name="fecha_entrega" type="date" class="uk-input">
+                </div>
 
 
-                    <div class="uk-inline uk-width-1-2">
-                        <button class="uk-form-icon uk-form-icon-flip" uk-icon="icon: search"></button>
-                        <input id="cliente" name="nombre_cliente" class="uk-input" placeholder="Cliente">
-                    </div>
+                <div class="uk-inline uk-width-1-2">
+                    <button class="uk-form-icon uk-form-icon-flip" uk-icon="icon: search"></button>
+                    <input id="cliente" name="nombre_cliente" class="uk-input" placeholder="Cliente">
+                </div>
 
-                    <div class="uk-inline uk-width-1-2">
-                        <input id="RUC" name="Num_ruc" class="uk-input" placeholder="N° RUC">
-                    </div>
+                <div class="uk-inline uk-width-1-2">
+                    <input id="RUC" name="Num_ruc" class="uk-input" placeholder="N° RUC">
+                </div>
 
-                    <div class="uk-inline uk-width-1-2">
-                        <button class="uk-form-icon uk-form-icon-flip" href="" uk-icon="icon: search"></button>
-                        <input class="uk-input" id="nombre" name="nombre_emp" placeholder="Nombre">
-                    </div>
+                <div class="uk-inline uk-width-1-2">
+                    <button class="uk-form-icon uk-form-icon-flip" href="" uk-icon="icon: search"></button>
+                    <input class="uk-input" id="nombre" name="nombre_emp" placeholder="Nombre">
+                </div>
 
-                    <div class="uk-inline uk-width-1-2">
-                        <input id="telefono" name="Num_telefono" class="uk-input" placeholder="N° Telefono">
-                    </div>
-
+                <div class="uk-inline uk-width-1-2">
+                    <input id="telefono" name="Num_telefono" class="uk-input" placeholder="N° Telefono">
                 </div>
 
             </div>
+
+        </div>
 
 
 
@@ -119,7 +119,7 @@
 
         <div class="uk-div uk-background-muted uk-padding">
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" >
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
 
             </script>
 
@@ -170,7 +170,7 @@
                         <td><input id="ancho_4" oninput="area4();" class="uk-input area4" min="0" type="number" placeholder="0"></td>
                         <td><input id="mt2_4" oninput="costo4();" class="uk-input costo4" min="0" type="number" placeholder="0"></td>
                         <td><input id="costo_4" oninput="costo4();" class="uk-input costo4" min="0" type="number" placeholder="0"></td>
-                        <td><input id="precio_mt2_4" oninput="multi4();" class="uk-input monto4" min="0" type="number" placeholder="0"</td>
+                        <td><input id="precio_mt2_4" oninput="multi4();" class="uk-input monto4" min="0" type="number" placeholder="0" </td>
                         <td><input id="cantidad_4" oninput="multi4();" class="uk-input monto4" min="0" type="number" placeholder="0"></td>
                         <td><input id="total_4" name="total_4" class="uk-input" min="0" value="" type="number" placeholder="0"></td>
                     </tr>
@@ -179,206 +179,211 @@
             </table>
 
             <script type="text/javascript">
-
-                function area1(){
-                                    var mt2_1 = 1;
-                                    var change= false; //
-                                    $(".area1").each(function(){
-                                        if (!isNaN(parseFloat($(this).val()))) {
-                                            change= true;
-                                            mt2_1 *= parseFloat($(this).val());
-                                        }
-                                    });
-                                    // Si se modifico el valor , retornamos la multiplicación
-                                    // caso contrario 0
-                                    mt2_1 = (change)? mt2_1:0;
-                                    document.getElementById('mt2_1').value = mt2_1;
-
-
-                                }
-                function costo1(){
-                                    var costo1 = 1;
-                                    var change= false; //
-                                    $(".costo1").each(function(){
-                                        if (!isNaN(parseFloat($(this).val()))) {
-                                            change= true;
-                                            costo1 *= parseFloat($(this).val());
-                                        }
-                                    });
-                                    // Si se modifico el valor , retornamos la multiplicación
-                                    // caso contrario 0
-                                    costo1 = (change)? costo1:0;
-                                    document.getElementById('precio_mt2_1').value = costo1;
+                function area1() {
+                    var mt2_1 = 1;
+                    var change = false; //
+                    $(".area1").each(function() {
+                        if (!isNaN(parseFloat($(this).val()))) {
+                            change = true;
+                            mt2_1 *= parseFloat($(this).val());
+                        }
+                    });
+                    // Si se modifico el valor , retornamos la multiplicación
+                    // caso contrario 0
+                    mt2_1 = (change) ? mt2_1 : 0;
+                    document.getElementById('mt2_1').value = mt2_1;
 
 
-                                }
+                }
 
-                function area2(){
-                                    var mt2_2 = 1;
-                                    var change= false; //
-                                    $(".area2").each(function(){
-                                        if (!isNaN(parseFloat($(this).val()))) {
-                                            change= true;
-                                            mt2_2 *= parseFloat($(this).val());
-                                        }
-                                    });
-                                    // Si se modifico el valor , retornamos la multiplicación
-                                    // caso contrario 0
-                                    mt2_2 = (change)? mt2_2:0;
-                                    document.getElementById('mt2_2').value = mt2_2;
-
-
-                                }
-                function costo2(){
-                                    var costo2 = 1;
-                                    var change= false; //
-                                    $(".costo2").each(function(){
-                                        if (!isNaN(parseFloat($(this).val()))) {
-                                            change= true;
-                                            costo2 *= parseFloat($(this).val());
-                                        }
-                                    });
-                                    // Si se modifico el valor , retornamos la multiplicación
-                                    // caso contrario 0
-                                    costo2 = (change)? costo2:0;
-                                    document.getElementById('precio_mt2_2').value = costo2;
+                function costo1() {
+                    var costo1 = 1;
+                    var change = false; //
+                    $(".costo1").each(function() {
+                        if (!isNaN(parseFloat($(this).val()))) {
+                            change = true;
+                            costo1 *= parseFloat($(this).val());
+                        }
+                    });
+                    // Si se modifico el valor , retornamos la multiplicación
+                    // caso contrario 0
+                    costo1 = (change) ? costo1 : 0;
+                    document.getElementById('precio_mt2_1').value = costo1;
 
 
-                                }
+                }
 
-                function area3(){
-                                    var mt2_3 = 1;
-                                    var change= false; //
-                                    $(".area3").each(function(){
-                                        if (!isNaN(parseFloat($(this).val()))) {
-                                            change= true;
-                                            mt2_3 *= parseFloat($(this).val());
-                                        }
-                                    });
-                                    // Si se modifico el valor , retornamos la multiplicación
-                                    // caso contrario 0
-                                    mt2_3 = (change)? mt2_3:0;
-                                    document.getElementById('mt2_3').value = mt2_3;
-
-
-                                }
-                function costo3(){
-                                    var costo3 = 1;
-                                    var change= false; //
-                                    $(".costo3").each(function(){
-                                        if (!isNaN(parseFloat($(this).val()))) {
-                                            change= true;
-                                            costo3 *= parseFloat($(this).val());
-                                        }
-                                    });
-                                    // Si se modifico el valor , retornamos la multiplicación
-                                    // caso contrario 0
-                                    costo3 = (change)? costo3:0;
-                                    document.getElementById('precio_mt2_3').value = costo3;
+                function area2() {
+                    var mt2_2 = 1;
+                    var change = false; //
+                    $(".area2").each(function() {
+                        if (!isNaN(parseFloat($(this).val()))) {
+                            change = true;
+                            mt2_2 *= parseFloat($(this).val());
+                        }
+                    });
+                    // Si se modifico el valor , retornamos la multiplicación
+                    // caso contrario 0
+                    mt2_2 = (change) ? mt2_2 : 0;
+                    document.getElementById('mt2_2').value = mt2_2;
 
 
-                                }
+                }
 
-                function area4(){
-                                    var mt2_4 = 1;
-                                    var change= false; //
-                                    $(".area4").each(function(){
-                                        if (!isNaN(parseFloat($(this).val()))) {
-                                            change= true;
-                                            mt2_4 *= parseFloat($(this).val());
-                                        }
-                                    });
-                                    // Si se modifico el valor , retornamos la multiplicación
-                                    // caso contrario 0
-                                    mt2_4 = (change)? mt2_4:0;
-                                    document.getElementById('mt2_4').value = mt2_4;
-
-
-                                }
-                function costo4(){
-                                    var costo4 = 1;
-                                    var change= false; //
-                                    $(".costo4").each(function(){
-                                        if (!isNaN(parseFloat($(this).val()))) {
-                                            change= true;
-                                            costo4 *= parseFloat($(this).val());
-                                        }
-                                    });
-                                    // Si se modifico el valor , retornamos la multiplicación
-                                    // caso contrario 0
-                                    costo4 = (change)? costo4:0;
-                                    document.getElementById('precio_mt2_4').value = costo4;
+                function costo2() {
+                    var costo2 = 1;
+                    var change = false; //
+                    $(".costo2").each(function() {
+                        if (!isNaN(parseFloat($(this).val()))) {
+                            change = true;
+                            costo2 *= parseFloat($(this).val());
+                        }
+                    });
+                    // Si se modifico el valor , retornamos la multiplicación
+                    // caso contrario 0
+                    costo2 = (change) ? costo2 : 0;
+                    document.getElementById('precio_mt2_2').value = costo2;
 
 
-                                }
+                }
+
+                function area3() {
+                    var mt2_3 = 1;
+                    var change = false; //
+                    $(".area3").each(function() {
+                        if (!isNaN(parseFloat($(this).val()))) {
+                            change = true;
+                            mt2_3 *= parseFloat($(this).val());
+                        }
+                    });
+                    // Si se modifico el valor , retornamos la multiplicación
+                    // caso contrario 0
+                    mt2_3 = (change) ? mt2_3 : 0;
+                    document.getElementById('mt2_3').value = mt2_3;
+
+
+                }
+
+                function costo3() {
+                    var costo3 = 1;
+                    var change = false; //
+                    $(".costo3").each(function() {
+                        if (!isNaN(parseFloat($(this).val()))) {
+                            change = true;
+                            costo3 *= parseFloat($(this).val());
+                        }
+                    });
+                    // Si se modifico el valor , retornamos la multiplicación
+                    // caso contrario 0
+                    costo3 = (change) ? costo3 : 0;
+                    document.getElementById('precio_mt2_3').value = costo3;
+
+
+                }
+
+                function area4() {
+                    var mt2_4 = 1;
+                    var change = false; //
+                    $(".area4").each(function() {
+                        if (!isNaN(parseFloat($(this).val()))) {
+                            change = true;
+                            mt2_4 *= parseFloat($(this).val());
+                        }
+                    });
+                    // Si se modifico el valor , retornamos la multiplicación
+                    // caso contrario 0
+                    mt2_4 = (change) ? mt2_4 : 0;
+                    document.getElementById('mt2_4').value = mt2_4;
+
+
+                }
+
+                function costo4() {
+                    var costo4 = 1;
+                    var change = false; //
+                    $(".costo4").each(function() {
+                        if (!isNaN(parseFloat($(this).val()))) {
+                            change = true;
+                            costo4 *= parseFloat($(this).val());
+                        }
+                    });
+                    // Si se modifico el valor , retornamos la multiplicación
+                    // caso contrario 0
+                    costo4 = (change) ? costo4 : 0;
+                    document.getElementById('precio_mt2_4').value = costo4;
+
+
+                }
 
 
 
-                function multi1(){
-                                    var total1 = 1;
-                                    var change= false; //
-                                    $(".monto1").each(function(){
-                                        if (!isNaN(parseFloat($(this).val()))) {
-                                            change= true;
-                                            total1 *= parseFloat($(this).val());
-                                        }
-                                    });
-                                    // Si se modifico el valor , retornamos la multiplicación
-                                    // caso contrario 0
-                                    total1 = (change)? total1:0;
-                                    document.getElementById('total_1').value = total1;
+                function multi1() {
+                    var total1 = 1;
+                    var change = false; //
+                    $(".monto1").each(function() {
+                        if (!isNaN(parseFloat($(this).val()))) {
+                            change = true;
+                            total1 *= parseFloat($(this).val());
+                        }
+                    });
+                    // Si se modifico el valor , retornamos la multiplicación
+                    // caso contrario 0
+                    total1 = (change) ? total1 : 0;
+                    document.getElementById('total_1').value = total1;
 
 
-                                }
+                }
 
-                function multi2(){
-                                    var total2 = 1;
-                                    var change= false; //
-                                    $(".monto2").each(function(){
-                                        if (!isNaN(parseFloat($(this).val()))) {
-                                            change= true;
-                                            total2 *= parseFloat($(this).val());
-                                        }
-                                    });
-                                    // Si se modifico el valor , retornamos la multiplicación
-                                    // caso contrario 0
-                                    total2 = (change)? total2:0;
-                                    document.getElementById('total_2').value = total2;
-
-
-                                }
-                function multi3(){
-                                    var total3 = 1;
-                                    var change= false; //
-                                    $(".monto3").each(function(){
-                                        if (!isNaN(parseFloat($(this).val()))) {
-                                            change= true;
-                                            total3 *= parseFloat($(this).val());
-                                        }
-                                    });
-                                    // Si se modifico el valor , retornamos la multiplicación
-                                    // caso contrario 0
-                                    total3 = (change)? total3:0;
-                                    document.getElementById('total_3').value = total3;
+                function multi2() {
+                    var total2 = 1;
+                    var change = false; //
+                    $(".monto2").each(function() {
+                        if (!isNaN(parseFloat($(this).val()))) {
+                            change = true;
+                            total2 *= parseFloat($(this).val());
+                        }
+                    });
+                    // Si se modifico el valor , retornamos la multiplicación
+                    // caso contrario 0
+                    total2 = (change) ? total2 : 0;
+                    document.getElementById('total_2').value = total2;
 
 
-                                }
-                function multi4(){
-                                    var total4 = 1;
-                                    var change= false; //
-                                    $(".monto4").each(function(){
-                                        if (!isNaN(parseFloat($(this).val()))) {
-                                            change= true;
-                                            total4 *= parseFloat($(this).val());
-                                        }
-                                    });
-                                    // Si se modifico el valor , retornamos la multiplicación
-                                    // caso contrario 0
-                                    total4 = (change)? total4:0;
-                                    document.getElementById('total_4').value = total4;
+                }
+
+                function multi3() {
+                    var total3 = 1;
+                    var change = false; //
+                    $(".monto3").each(function() {
+                        if (!isNaN(parseFloat($(this).val()))) {
+                            change = true;
+                            total3 *= parseFloat($(this).val());
+                        }
+                    });
+                    // Si se modifico el valor , retornamos la multiplicación
+                    // caso contrario 0
+                    total3 = (change) ? total3 : 0;
+                    document.getElementById('total_3').value = total3;
 
 
-                                }
+                }
+
+                function multi4() {
+                    var total4 = 1;
+                    var change = false; //
+                    $(".monto4").each(function() {
+                        if (!isNaN(parseFloat($(this).val()))) {
+                            change = true;
+                            total4 *= parseFloat($(this).val());
+                        }
+                    });
+                    // Si se modifico el valor , retornamos la multiplicación
+                    // caso contrario 0
+                    total4 = (change) ? total4 : 0;
+                    document.getElementById('total_4').value = total4;
+
+
+                }
             </script>
         </div>
 
@@ -411,19 +416,19 @@
                                     <!--Agregar correcta impresión de datos-->
                                     <td><input id="cantidad_pedido_1" min="0" oninput="calculo_pedido1();" placeholder="0" class="uk-input calculo_pedido1" type="number"></td>
                                     <td><input id="especificaciones_pedido_1" class="uk-input" type="text"></td>
-                                    <td><input id="precio_und_pedido_1" min="0" oninput="calculo_pedido1();"  placeholder="0" class="uk-input calculo_pedido1" type="number"></td>
-                                    <td><input id="precio_pedido_1" onchange="pedido();" onclick="pedido();" placeholder="0"  min="0" class="uk-input pedido" type="number"></td>
+                                    <td><input id="precio_und_pedido_1" min="0" oninput="calculo_pedido1();" placeholder="0" class="uk-input calculo_pedido1" type="number"></td>
+                                    <td><input id="precio_pedido_1" onchange="pedido();" onclick="pedido();" placeholder="0" min="0" class="uk-input pedido" type="number"></td>
 
                                 </tr>
-                                 <tr>
+                                <tr>
 
                                     <td><input id="cantidad_pedido_2" min="0" oninput="calculo_pedido2();" placeholder="0" class="uk-input calculo_pedido2" type="number"></td>
                                     <td><input id="especificaciones_pedido_2" class="uk-input" type="text"></td>
                                     <td><input id="precio_und_pedido_2" min="0" oninput="calculo_pedido2();" placeholder="0" class="uk-input calculo_pedido2" type="number"></td>
-                                    <td><input id="precio_pedido_2" onchange="pedido();" onclick="pedido();" placeholder="0"  min="0" class="uk-input pedido" type="number"></td>
+                                    <td><input id="precio_pedido_2" onchange="pedido();" onclick="pedido();" placeholder="0" min="0" class="uk-input pedido" type="number"></td>
 
                                 </tr>
-                                 <tr>
+                                <tr>
 
                                     <td><input id="cantidad_pedido_3" min="0" oninput="calculo_pedido3();" placeholder="0" class="uk-input calculo_pedido3" type="number"></td>
                                     <td><input id="especificaciones_pedido_3" class="uk-input" type="text"></td>
@@ -431,117 +436,121 @@
                                     <td><input id="precio_pedido_3" onchange="pedido();" onclick="pedido();" placeholder="0" min="0" class="uk-input pedido" type="number"></td>
 
                                 </tr>
-                                 <tr>
-                                     
+                                <tr>
 
-                                    <td><input id="cantidad_pedido_4" min="0" oninput="calculo_pedido4();"placeholder="0" class="uk-input calculo_pedido4" type="number"></td>
+
+                                    <td><input id="cantidad_pedido_4" min="0" oninput="calculo_pedido4();" placeholder="0" class="uk-input calculo_pedido4" type="number"></td>
                                     <td><input id="especificaciones_pedido_4" class="uk-input" type="text"></td>
-                                    <td><input id="precio_und_pedido_4" min="0" oninput="calculo_pedido4();"  placeholder="0" class="uk-input calculo_pedido4" type="number"></td>
-                                    <td><input id="precio_pedido_4" onchange="pedido();" onclick="pedido();"  placeholder="0" min="0" class="uk-input pedido" type="number"></td>
+                                    <td><input id="precio_und_pedido_4" min="0" oninput="calculo_pedido4();" placeholder="0" class="uk-input calculo_pedido4" type="number"></td>
+                                    <td><input id="precio_pedido_4" onchange="pedido();" onclick="pedido();" placeholder="0" min="0" class="uk-input pedido" type="number"></td>
 
 
-                                    
+
                                 </tr>
                                 <tr>
                                     <td></td>
                                     <td></td>
-                                    <td><div class="uk-div" style="text-align: center; " > <h1 class="uk-label"  for="total_pedido">Total</h1></div></td>
+                                    <td>
+                                        <div class="uk-div" style="text-align: center; ">
+                                            <h1 class="uk-label" for="total_pedido">Total</h1>
+                                        </div>
+                                    </td>
                                     <td><input id="total_pedido" type="number" class="uk-input" disabled></td>
                                 </tr>
                             </tbody>
 
 
                             <script type="text/javascript">
-
-                                function pedido(){
+                                function pedido() {
 
                                     var total_pedido = 0;
-                                    var change= false; //
-                                    $(".pedido").each(function(){
+                                    var change = false; //
+                                    $(".pedido").each(function() {
                                         if (!isNaN(parseFloat($(this).val()))) {
-                                            change= true;
+                                            change = true;
                                             total_pedido += parseFloat($(this).val());
                                         }
                                     });
                                     // Si se modifico el valor , retornamos la multiplicación
                                     // caso contrario 0
-                                    total_pedido = (change)? total_pedido:0;
+                                    total_pedido = (change) ? total_pedido : 0;
                                     document.getElementById('total_pedido').value = total_pedido;
 
 
 
                                 }
 
-                                function calculo_pedido1(){
+                                function calculo_pedido1() {
 
-                                                    var calculo_total_pedido1 = 1;
-                                                    var change= false; //
-                                                    $(".calculo_pedido1").each(function(){
-                                                        if (!isNaN(parseFloat($(this).val()))) {
-                                                            change= true;
-                                                            calculo_total_pedido1 *= parseFloat($(this).val());
-                                                        }
-                                                    });
-                                                    // Si se modifico el valor , retornamos la multiplicación
-                                                    // caso contrario 0
-                                                    calculo_total_pedido1 = (change)? calculo_total_pedido1:0;
-                                                    document.getElementById('precio_pedido_1').value = calculo_total_pedido1;
-
-
-                                }
-                                function calculo_pedido2(){
-
-                                                    var calculo_total_pedido2 = 1;
-                                                    var change= false; //
-                                                    $(".calculo_pedido2").each(function(){
-                                                        if (!isNaN(parseFloat($(this).val()))) {
-                                                            change= true;
-                                                            calculo_total_pedido2 *= parseFloat($(this).val());
-                                                        }
-                                                    });
-                                                    // Si se modifico el valor , retornamos la multiplicación
-                                                    // caso contrario 0
-                                                    calculo_total_pedido2 = (change)? calculo_total_pedido2:0;
-                                                    document.getElementById('precio_pedido_2').value = calculo_total_pedido2;
-
-
-                                }
-                                function calculo_pedido3(){
-
-                                                    var calculo_total_pedido3= 1;
-                                                    var change= false; //
-                                                    $(".calculo_pedido3").each(function(){
-                                                        if (!isNaN(parseFloat($(this).val()))) {
-                                                            change= true;
-                                                            calculo_total_pedido3 *= parseFloat($(this).val());
-                                                        }
-                                                    });
-                                                    // Si se modifico el valor , retornamos la multiplicación
-                                                    // caso contrario 0
-                                                    calculo_total_pedido3 = (change)? calculo_total_pedido3:0;
-                                                    document.getElementById('precio_pedido_3').value = calculo_total_pedido3;
-
-
-                                }
-                                function calculo_pedido4(){
-
-                                                    var calculo_total_pedido4 = 1;
-                                                    var change= false; //
-                                                    $(".calculo_pedido4").each(function(){
-                                                        if (!isNaN(parseFloat($(this).val()))) {
-                                                            change= true;
-                                                            calculo_total_pedido4 *= parseFloat($(this).val());
-                                                        }
-                                                    });
-                                                    // Si se modifico el valor , retornamos la multiplicación
-                                                    // caso contrario 0
-                                                    calculo_total_pedido4 = (change)? calculo_total_pedido4:0;
-                                                    document.getElementById('precio_pedido_4').value = calculo_total_pedido4;
+                                    var calculo_total_pedido1 = 1;
+                                    var change = false; //
+                                    $(".calculo_pedido1").each(function() {
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change = true;
+                                            calculo_total_pedido1 *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    calculo_total_pedido1 = (change) ? calculo_total_pedido1 : 0;
+                                    document.getElementById('precio_pedido_1').value = calculo_total_pedido1;
 
 
                                 }
 
+                                function calculo_pedido2() {
 
+                                    var calculo_total_pedido2 = 1;
+                                    var change = false; //
+                                    $(".calculo_pedido2").each(function() {
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change = true;
+                                            calculo_total_pedido2 *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    calculo_total_pedido2 = (change) ? calculo_total_pedido2 : 0;
+                                    document.getElementById('precio_pedido_2').value = calculo_total_pedido2;
+
+
+                                }
+
+                                function calculo_pedido3() {
+
+                                    var calculo_total_pedido3 = 1;
+                                    var change = false; //
+                                    $(".calculo_pedido3").each(function() {
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change = true;
+                                            calculo_total_pedido3 *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    calculo_total_pedido3 = (change) ? calculo_total_pedido3 : 0;
+                                    document.getElementById('precio_pedido_3').value = calculo_total_pedido3;
+
+
+                                }
+
+                                function calculo_pedido4() {
+
+                                    var calculo_total_pedido4 = 1;
+                                    var change = false; //
+                                    $(".calculo_pedido4").each(function() {
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change = true;
+                                            calculo_total_pedido4 *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    calculo_total_pedido4 = (change) ? calculo_total_pedido4 : 0;
+                                    document.getElementById('precio_pedido_4').value = calculo_total_pedido4;
+
+
+                                }
                             </script>
                         </table>
                     </div>
@@ -550,7 +559,7 @@
             </div>
         </div>
 
-         <div class="uk-child-width-1-2 uk-text-center uk-background-muted uk-padding" uk-grid>
+        <div class="uk-child-width-1-2 uk-text-center uk-background-muted uk-padding" uk-grid>
             <div>
 
                 <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
@@ -572,7 +581,7 @@
 
                         <div class="uk-form-controls">
 
-                                <input class="uk-checkbox" id="form-horizontal-text" type="checkbox"> Transferencia</label>
+                            <input class="uk-checkbox" id="form-horizontal-text" type="checkbox"> Transferencia</label>
                         </div>
                     </div>
                     <div class="uk-margin">
@@ -588,7 +597,7 @@
             </div>
             <div>
 
-                    <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+                <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
                 <div class="uk-form-horizontal uk-margin-large">
 
                     <div class="uk-margin">
@@ -664,15 +673,40 @@
     }
 
     function guardarpedido() {
-        let data = {
-            tipo_de_pedido: $("#tipodepedido").val(),
-            pechoizquierdo: $("#pecho_izq").val(),
-            pechoderecho: $("#pecho_der").val(),
-            mangaizquierda: $("#manga_izq").val(),
-            mangaderecha: $("#manga_der").val(),
-            espalda: $("#espalda").val(),
-            tallas: $("#talla_s_caballero").val(),
-            nota: $("#notas").val(),
+        let data = {    
+            alto1:$("#alto_1").val(),
+            ancho1:$("#ancho_1").val(),
+            mtscuadrados1:$("#mt2_1").val(),
+            precioxmtscuadrados1:$("#").val(),
+            costo1:$("#").val(),
+            cantidad1:$("#").val(),
+            total1:$("#").val(),
+            alto2:$("#alto_1").val(),
+            ancho2:$("#ancho_1").val(),
+            mtscuadrados2:$("#mt2_1").val(),
+            precioxmtscuadrados2:$("#").val(),
+            costo2:$("#").val(),
+            cantidad2:$("#").val(),
+            total2:$("#").val(),
+            alto3:$("#alto_1").val(),
+            ancho3:$("#ancho_1").val(),
+            mtscuadrados3:$("#mt2_1").val(),
+            precioxmtscuadrados3:$("#").val(),
+            costo3:$("#").val(),
+            cantidad3:$("#").val(),
+            total3:$("#").val(),
+            alto4:$("#alto_1").val(),
+            ancho4:$("#ancho_1").val(),
+            mtscuadrados4:$("#mt2_1").val(),
+            precioxmtscuadrados4:$("#").val(),
+            costo4:$("#").val(),
+            cantidad4:$("#").val(),
+            total4:$("#").val(),
+
+
+
+
+
         };
         peticionapi(data, 'POST', function(res) {
             alert('Guardado con exito')
@@ -687,4 +721,5 @@
 
     }
 </script>
+
 </html>
