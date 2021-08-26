@@ -28,31 +28,7 @@ class detalledelpedidocontroller extends Controller
         //
     }
 
-    public function getallpedidobordado()
-    {
-        //
-        return Detalledelpedido::select("*")->where("Tipo_de_pedido", "bordado")->join("persona", "persona.IDpersona", "=", "Detalledelpedido.IDdetalledelpedido")->get();
-    }
-
-    public function getallpedidoserigrafia()
-    {
-        //
-        //return Detalledelpedido::where("Tipo_de_pedido","serigrafia")->get();
-        //agregar idpersona en detalle del pedido
-        return Detalledelpedido::select("*")->where("Tipo_de_pedido", "Serigrafia")->join("persona", "persona.IDpersona", "=", "Detalledelpedido.IDdetalledelpedido")->get();
-    }
-
-    public function getallpedidoimpresion()
-    {
-        //
-        return Detalledelpedido::select("*")->where("Tipo_de_pedido", "impresion_digital")->join("persona", "persona.IDpersona", "=", "Detalledelpedido.IDdetalledelpedido")->get();
-    }
-
-    public function getallpedidosublimacion()
-    {
-        //
-        return Detalledelpedido::select("*")->where("Tipo_de_pedido", "Sublimacion")->join("persona", "persona.IDpersona", "=", "Detalledelpedido.IDdetalledelpedido")->get();
-    }
+   
 
     /**
      * Store a newly created resource in storage.
@@ -190,5 +166,36 @@ class detalledelpedidocontroller extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+
+
+    public function getallpedidobordado()
+    {
+        //
+        return Detalledelpedido::select("*")->where("Tipo_de_pedido","bordado")->join("persona","persona.IDpersona","=","Detalledelpedido.IDdetalledelpedido")->get();
+    }
+
+    public function getallpedidoserigrafia()
+    {
+        //
+      //return Detalledelpedido::where("Tipo_de_pedido","serigrafia")->get();
+      //agregar idpersona en detalle del pedido
+      return Detalledelpedido::select("*")->where("Tipo_de_pedido","Serigrafia")->join("persona","persona.IDpersona","=","Detalledelpedido.IDdetalledelpedido")->get();
+
+
+    }
+
+    public function getallpedidoimpresion()
+    {
+        //
+        return Detalledelpedido::select("*")->where("Tipo_de_pedido","impresion_digital")->join("persona","persona.IDpersona","=","Detalledelpedido.IDdetalledelpedido")->get();
+    }
+
+    public function getallpedidosublimacion()
+    {
+        //
+        return Detalledelpedido::select("*")->where("Tipo_de_pedido","Sublimacion")->join("persona","persona.IDpersona","=","Detalledelpedido.IDdetalledelpedido")->get();
     }
 }

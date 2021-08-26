@@ -55,16 +55,6 @@
 
     </div>
 
-
-
-
-
-
-
-</header>
-
-<body style="background-color:white">
-
     <nav class="navbar navbar-expand-lg navbar-light p-3" style="background-color: #d9d9d9;">
 
         <img src="\img\Sericolor_ Logo.png" width="250px" class="img-fluid">
@@ -91,6 +81,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/contacto"><b> Contacto</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/servicio"><b>Servicios</b></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/revision"><b>Revisión</b></a>
@@ -136,6 +129,16 @@
 
 
 
+</header>
+
+<body style="background-color:white">
+
+
+
+
+
+
+
     <div>
 
         <div data-mc-src="a8873b7a-ce14-47f9-bce4-96115b62ef48#instagram"></div>
@@ -153,14 +156,13 @@
 
     </div>
 
-    <div>
+    <div data-mc-src="a9f89b01-28e3-4104-9661-b0c3c17c5af6#instagram"></div>
 
-        <div data-mc-src="a9f89b01-28e3-4104-9661-b0c3c17c5af6#instagram"></div>
+    <script src="https://cdn2.woxo.tech/a.js#612679f14b32b700160285be" async data-usrc>
 
-        <script src="https://cdn2.woxo.tech/a.js#612679f14b32b700160285be" async data-usrc>
-        </script>
+    </script>
 
-    </div>
+
 
 
 </body>
