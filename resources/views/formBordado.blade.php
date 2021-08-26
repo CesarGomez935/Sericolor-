@@ -70,7 +70,7 @@
             </div>
         </div>
     </nav>
-    <form method="">
+    <div>
 
         <div class="uk-padding uk-background-muted">
 
@@ -107,421 +107,425 @@
 
             </div>
         </div>
-        </div>
+    </div>
 
 
-        <div class="uk-child-width-1-2 uk-text-center uk-background-muted uk-padding" uk-grid>
-            <div>
+    <div class="uk-child-width-1-2 uk-text-center uk-background-muted uk-padding" uk-grid>
+        <div>
 
-                <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
-
-                <div class="uk-form-horizontal uk-margin-large">
-                    <div class="uk-margin">
-                        <label for="pecho_izq" class="uk-form-label" for="form-horizontal-text">Pecho Izquierdo</label>
-                        <div class="uk-form-controls">
-                            <input id="pecho_izq" name="pecho_izquierdo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label for="pecho_der" class="uk-form-label" for="form-horizontal-text">Pecho Derecho</label>
-                        <div class="uk-form-controls">
-                            <input id="pecho_der" name="pecho_derecho" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label for="manga_izq" class="uk-form-label" for="form-horizontal-text">Manga Izquierda</label>
-                        <div class="uk-form-controls">
-                            <input id="manga_izq" name="manga_izquierda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label for="manga_der" class="uk-form-label" for="form-horizontal-text">Manga Derecha</label>
-                        <div class="uk-form-controls">
-                            <input id="manga_der" name="manga_derecha" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label for="espalda" class="uk-form-label" for="form-horizontal-text">Espalda</label>
-                        <div class="uk-form-controls">
-                            <input id="espalda" name="espalda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
-                    </div>
-
-                    <div class="uk-margin">
-                        <label for="tipo_producto" class="uk-form-label" for="form-horizontal-text">Tipo de producto</label>
-                        <div class="uk-form-controls">
-                            <input id="tipo_producto" name="tipo_producto" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-            <div>
-                <div class="uk-child-width-1-2 uk-text-center" uk-grid>
-                    <div>
-                        <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
-                        <div class="uk-grid-small" uk-grid>
-                            <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
-                                <thead>
-                                    <tr>
-                                        <th>Talla</th>
-                                        <th>Caballero</th>
-                                        <th>Dama</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td id="tallas">S</td>
-                                        <td><input id="talla_s_caballero" name="talla_s" class="uk-input uk-form-width-xsmall" type="Number"  placeholder="0"></td>
-                                        <td><input id="talla_s_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-                                    </tr>
-                                    <tr>
-                                        <td id="tallam">M</td>
-                                        <td><input id="talla_m_caballero" name="" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-                                        <td><input id="talla_m_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-                                    </tr>
-                                    <tr>
-                                        <td id="tallal">L</td>
-                                        <td><input id="talla_l_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-                                        <td><input id="talla_l_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-                                    </tr>
-                                    <tr>
-                                        <td id="tallaxl">XL</td>
-                                        <td><input id="talla_xl_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-                                        <td><input id="talla_xl_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-                                    </tr>
-                                    <tr>
-                                        <td id="talla2xl">2XL</td>
-                                        <td><input id="talla_2xl_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-                                        <td><input id="talla_2xl_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-                                    </tr>
-                                    <tr>
-                                        <td id="talla3xl">3XL</td>
-                                        <td><input id="talla_3xl_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-                                        <td><input id="talla_3xl_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-                                    </tr>
-                                    <tr>
-                                        <td id="talla5xl">5XL</td>
-                                        <td><input id="talla_5xl_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-                                        <td><input id="talla_5xl_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div>
-                        <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
-                        <div class="uk-grid-small" uk-grid>
-                            <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
-                                <thead>
-                                    <tr>
-                                        <th>Talla Juvenil</th>
-                                        <th>Cantidad</th>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td id="18">18</td>
-                                        <td><input id="talla_18" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td id="16">16</td>
-                                        <td><input id="talla_16" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td id="14">14</td>
-                                        <td><input id="talla_14" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td id="12">12</td>
-                                        <td><input id="talla_12" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td id="10">10</td>
-                                        <td><input id="talla_10" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td id="8">8</td>
-                                        <td><input id="talla_8" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td id="6">6</td>
-                                        <td><input id="talla_6" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td id="4">4</td>
-                                        <td><input id="talla_4" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td id="2">2</td>
-                                        <td><input id="talla_2" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
-
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="uk-background-muted uk-padding">
-            <h1 class="uk-text-center">Notas</h1>
             <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
-            <div>
 
-                <textarea rows="5" name="notas" id="notas" class="uk-textarea" placeholder="Notas"></textarea>
-
-
-                <div class="uk-container">
-
-                    <!--Tablas de precios-->
-                    <table class="uk-table uk-table-hover uk-table-divider">
-                        <thead>
-                            <tr>
-                                <th>Cantidad</th>
-                                <th>Especificaciones</th>
-                                <th>Precio Unitario</th>
-                                <th>Precio</th>
-
-                            </tr>
-
-                        </thead>
-                        <tbody id="tabladetalle">
-                            <tr>
-                                <!--Agregar correcta impresión de datos-->
-                                <td><input id="cantidad_pedido_1" min="0" oninput="calculo_pedido1();" class="uk-input calculo_pedido1" type="number"></td>
-                                <td><input id="especificaciones_pedido_1" class="uk-input" type="text"></td>
-                                <td><input id="precio_und_pedido_1" min="0" oninput="calculo_pedido1();" class="uk-input calculo_pedido1" type="number"></td>
-                                <td><input id="precio_pedido_1" onchange="pedido();" onclick="pedido();"  min="0" class="uk-input pedido" type="number"></td>
-
-                            </tr>
-                             <tr>
-
-                                <td><input id="cantidad_pedido_2" min="0" oninput="calculo_pedido2();" class="uk-input calculo_pedido2" type="number"></td>
-                                <td><input id="especificaciones_pedido_2" class="uk-input" type="text"></td>
-                                <td><input id="precio_und_pedido_2" min="0" oninput="calculo_pedido2();" class="uk-input calculo_pedido2" type="number"></td>
-                                <td><input id="precio_pedido_2" onchange="pedido();" onclick="pedido();"  min="0" class="uk-input pedido" type="number"></td>
-
-                            </tr>
-                             <tr>
-
-                                <td><input id="cantidad_pedido_3" min="0" oninput="calculo_pedido3();" class="uk-input calculo_pedido3" type="number"></td>
-                                <td><input id="especificaciones_pedido_3" class="uk-input" type="text"></td>
-                                <td><input id="precio_und_pedido_3" min="0" oninput="calculo_pedido3();" class="uk-input calculo_pedido3" type="number"></td>
-                                <td><input id="precio_pedido_3" onchange="pedido();" onclick="pedido();"  min="0" class="uk-input pedido" type="number"></td>
-
-                            </tr>
-                             <tr>
-
-                                <td><input id="cantidad_pedido_4" min="0" oninput="calculo_pedido4();" class="uk-input calculo_pedido4" type="number"></td>
-                                <td><input id="especificaciones_pedido_4" class="uk-input" type="text"></td>
-                                <td><input id="precio_und_pedido_4" min="0" oninput="calculo_pedido4();" class="uk-input calculo_pedido4" type="number"></td>
-                                <td><input id="precio_pedido_4" onchange="pedido();" onclick="pedido();"  min="0" class="uk-input pedido" type="number"></td>
-
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td><div class="uk-div" style="text-align: center; " > <h1 class="uk-label"  for="total_pedido">Total</h1></div></td>
-                                <td><input id="total_pedido" type="number" class="uk-input" disabled></td>
-                            </tr>
-                        </tbody>
-
-
-                        <script type="text/javascript">
-
-                            function pedido(){
-
-                                var total_pedido = 0;
-                                var change= false; //
-                                $(".pedido").each(function(){
-                                    if (!isNaN(parseFloat($(this).val()))) {
-                                        change= true;
-                                        total_pedido += parseFloat($(this).val());
-                                    }
-                                });
-                                // Si se modifico el valor , retornamos la multiplicación
-                                // caso contrario 0
-                                total_pedido = (change)? total_pedido:0;
-                                document.getElementById('total_pedido').value = total_pedido;
-
-
-
-                            }
-
-                            function calculo_pedido1(){
-
-                                                var calculo_total_pedido1 = 1;
-                                                var change= false; //
-                                                $(".calculo_pedido1").each(function(){
-                                                    if (!isNaN(parseFloat($(this).val()))) {
-                                                        change= true;
-                                                        calculo_total_pedido1 *= parseFloat($(this).val());
-                                                    }
-                                                });
-                                                // Si se modifico el valor , retornamos la multiplicación
-                                                // caso contrario 0
-                                                calculo_total_pedido1 = (change)? calculo_total_pedido1:0;
-                                                document.getElementById('precio_pedido_1').value = calculo_total_pedido1;
-
-
-                            }
-                            function calculo_pedido2(){
-
-                                                var calculo_total_pedido2 = 1;
-                                                var change= false; //
-                                                $(".calculo_pedido2").each(function(){
-                                                    if (!isNaN(parseFloat($(this).val()))) {
-                                                        change= true;
-                                                        calculo_total_pedido2 *= parseFloat($(this).val());
-                                                    }
-                                                });
-                                                // Si se modifico el valor , retornamos la multiplicación
-                                                // caso contrario 0
-                                                calculo_total_pedido2 = (change)? calculo_total_pedido2:0;
-                                                document.getElementById('precio_pedido_2').value = calculo_total_pedido2;
-
-
-                            }
-                            function calculo_pedido3(){
-
-                                                var calculo_total_pedido3= 1;
-                                                var change= false; //
-                                                $(".calculo_pedido3").each(function(){
-                                                    if (!isNaN(parseFloat($(this).val()))) {
-                                                        change= true;
-                                                        calculo_total_pedido3 *= parseFloat($(this).val());
-                                                    }
-                                                });
-                                                // Si se modifico el valor , retornamos la multiplicación
-                                                // caso contrario 0
-                                                calculo_total_pedido3 = (change)? calculo_total_pedido3:0;
-                                                document.getElementById('precio_pedido_3').value = calculo_total_pedido3;
-
-
-                            }
-                            function calculo_pedido4(){
-
-                                                var calculo_total_pedido4 = 1;
-                                                var change= false; //
-                                                $(".calculo_pedido4").each(function(){
-                                                    if (!isNaN(parseFloat($(this).val()))) {
-                                                        change= true;
-                                                        calculo_total_pedido4 *= parseFloat($(this).val());
-                                                    }
-                                                });
-                                                // Si se modifico el valor , retornamos la multiplicación
-                                                // caso contrario 0
-                                                calculo_total_pedido4 = (change)? calculo_total_pedido4:0;
-                                                document.getElementById('precio_pedido_4').value = calculo_total_pedido4;
-
-
-                            }
-
-
-                        </script>
-                    </table>
+            <div class="uk-form-horizontal uk-margin-large">
+                <div class="uk-margin">
+                    <label for="pecho_izq" class="uk-form-label" for="form-horizontal-text">Pecho Izquierdo</label>
+                    <div class="uk-form-controls">
+                        <input id="pecho_izq" name="pecho_izquierdo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="uk-child-width-1-2 uk-text-center uk-background-muted uk-padding" uk-grid>
-            <div>
-
-                <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
-                <div class="uk-form-horizontal uk-margin-large">
-
-                    <div class="uk-margin">
-                        <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
-                        <div class="uk-form-controls">
-                            <input id="abono" name="Abono" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
+                <div class="uk-margin">
+                    <label for="pecho_der" class="uk-form-label" for="form-horizontal-text">Pecho Derecho</label>
+                    <div class="uk-form-controls">
+                        <input id="pecho_der" name="pecho_derecho" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                     </div>
-                    <div class="uk-margin">
-                        <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
-                        <div class="uk-form-controls">
-                            <input id="saldo" name="Saldo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
-                    </div>
-                    <div class="uk-margin">
-
-                        <div class="uk-form-controls">
-
-                            <input class="uk-checkbox" id="form-horizontal-text" type="checkbox"> Transferencia</label>
-                        </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label for="banco" class="uk-form-label" for="form-horizontal-text">Banco</label>
-                        <select class="uk-select uk-form-width-large" id="Banco" >
-                            <option value='BAC'>BAC</option>
-                            <option value='BDF'>BDF</option>
-                            <option value='BANPRO'>BANPRO</option>
-                            <option value='BANCENTRO'>LAFISE BANCENTRO</option>
-                        </select>
-                    </div>
-
-
                 </div>
-
-            </div>
-            <div>
-
-                <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
-                <div class="uk-form-horizontal uk-margin-large">
-
-                    <div class="uk-margin">
-                        <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza Pedido</label>
-                        <div class="uk-form-controls">
-                            <input id="autoriza" name="Autoriza_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
+                <div class="uk-margin">
+                    <label for="manga_izq" class="uk-form-label" for="form-horizontal-text">Manga Izquierda</label>
+                    <div class="uk-form-controls">
+                        <input id="manga_izq" name="manga_izquierda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                     </div>
-                    <div class="uk-margin">
-                        <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
-                        <div class="uk-form-controls">
-                            <input id="recibe" name="recibe_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
+                </div>
+                <div class="uk-margin">
+                    <label for="manga_der" class="uk-form-label" for="form-horizontal-text">Manga Derecha</label>
+                    <div class="uk-form-controls">
+                        <input id="manga_der" name="manga_derecha" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                     </div>
-                    <div class="uk-margin">
-                        <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
-                        <div class="uk-form-controls">
-                            <input id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
-                        <div class="uk-form-controls">
-                            <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                        </div>
+                </div>
+                <div class="uk-margin">
+                    <label for="espalda" class="uk-form-label" for="form-horizontal-text">Espalda</label>
+                    <div class="uk-form-controls">
+                        <input id="espalda" name="espalda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                     </div>
                 </div>
 
+                <div class="uk-margin">
+                    <label for="tipo_producto" class="uk-form-label" for="form-horizontal-text">Tipo de producto</label>
+                    <div class="uk-form-controls">
+                        <input id="tipo_producto" name="tipo_producto" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                    </div>
+                </div>
 
             </div>
+
         </div>
-        <!-- Seccion que contiene los botones de atrás y guardar-->
-        <div class="uk-padding uk-background-muted uk-padding " style="text-align: center;">
-            <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-                <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
-                <a id="guardar" href="/menu/menu_facturacion/form_serigrafia" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
+        <div>
+            <div class="uk-child-width-1-2 uk-text-center" uk-grid>
+                <div>
+                    <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+                    <div class="uk-grid-small" uk-grid>
+                        <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
+                            <thead>
+                                <tr>
+                                    <th>Talla</th>
+                                    <th>Caballero</th>
+                                    <th>Dama</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="tallas">S</td>
+                                    <td><input id="talla_s_caballero" name="talla_s" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+                                    <td><input id="talla_s_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+                                </tr>
+                                <tr>
+                                    <td id="tallam">M</td>
+                                    <td><input id="talla_m_caballero" name="" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+                                    <td><input id="talla_m_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+                                </tr>
+                                <tr>
+                                    <td id="tallal">L</td>
+                                    <td><input id="talla_l_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+                                    <td><input id="talla_l_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+                                </tr>
+                                <tr>
+                                    <td id="tallaxl">XL</td>
+                                    <td><input id="talla_xl_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+                                    <td><input id="talla_xl_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+                                </tr>
+                                <tr>
+                                    <td id="talla2xl">2XL</td>
+                                    <td><input id="talla_2xl_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+                                    <td><input id="talla_2xl_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+                                </tr>
+                                <tr>
+                                    <td id="talla3xl">3XL</td>
+                                    <td><input id="talla_3xl_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+                                    <td><input id="talla_3xl_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+                                </tr>
+                                <tr>
+                                    <td id="talla5xl">5XL</td>
+                                    <td><input id="talla_5xl_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+                                    <td><input id="talla_5xl_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+                    <div class="uk-grid-small" uk-grid>
+                        <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
+                            <thead>
+                                <tr>
+                                    <th>Talla Juvenil</th>
+                                    <th>Cantidad</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="18">18</td>
+                                    <td><input id="talla_18" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+
+                                </tr>
+                                <tr>
+                                    <td id="16">16</td>
+                                    <td><input id="talla_16" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+
+                                </tr>
+                                <tr>
+                                    <td id="14">14</td>
+                                    <td><input id="talla_14" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+
+                                </tr>
+                                <tr>
+                                    <td id="12">12</td>
+                                    <td><input id="talla_12" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+
+                                </tr>
+                                <tr>
+                                    <td id="10">10</td>
+                                    <td><input id="talla_10" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+
+                                </tr>
+                                <tr>
+                                    <td id="8">8</td>
+                                    <td><input id="talla_8" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+
+                                </tr>
+                                <tr>
+                                    <td id="6">6</td>
+                                    <td><input id="talla_6" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+
+                                </tr>
+                                <tr>
+                                    <td id="4">4</td>
+                                    <td><input id="talla_4" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+
+                                </tr>
+                                <tr>
+                                    <td id="2">2</td>
+                                    <td><input id="talla_2" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="uk-background-muted uk-padding">
+        <h1 class="uk-text-center">Notas</h1>
+        <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+        <div>
+
+            <textarea rows="5" name="notas" id="notas" class="uk-textarea" placeholder="Notas"></textarea>
+
+
+            <div class="uk-container">
+
+                <!--Tablas de precios-->
+                <table class="uk-table uk-table-hover uk-table-divider">
+                    <thead>
+                        <tr>
+                            <th>Cantidad</th>
+                            <th>Especificaciones</th>
+                            <th>Precio Unitario</th>
+                            <th>Precio</th>
+
+                        </tr>
+
+                    </thead>
+                    <tbody id="tabladetalle">
+                        <tr>
+                            <!--Agregar correcta impresión de datos-->
+                            <td><input id="cantidad_pedido_1" min="0" oninput="calculo_pedido1();" class="uk-input calculo_pedido1" type="number"></td>
+                            <td><input id="especificaciones_pedido_1" class="uk-input" type="text"></td>
+                            <td><input id="precio_und_pedido_1" min="0" oninput="calculo_pedido1();" class="uk-input calculo_pedido1" type="number"></td>
+                            <td><input id="precio_pedido_1" onchange="pedido();" onclick="pedido();" min="0" class="uk-input pedido" type="number"></td>
+
+                        </tr>
+                        <tr>
+
+                            <td><input id="cantidad_pedido_2" min="0" oninput="calculo_pedido2();" class="uk-input calculo_pedido2" type="number"></td>
+                            <td><input id="especificaciones_pedido_2" class="uk-input" type="text"></td>
+                            <td><input id="precio_und_pedido_2" min="0" oninput="calculo_pedido2();" class="uk-input calculo_pedido2" type="number"></td>
+                            <td><input id="precio_pedido_2" onchange="pedido();" onclick="pedido();" min="0" class="uk-input pedido" type="number"></td>
+
+                        </tr>
+                        <tr>
+
+                            <td><input id="cantidad_pedido_3" min="0" oninput="calculo_pedido3();" class="uk-input calculo_pedido3" type="number"></td>
+                            <td><input id="especificaciones_pedido_3" class="uk-input" type="text"></td>
+                            <td><input id="precio_und_pedido_3" min="0" oninput="calculo_pedido3();" class="uk-input calculo_pedido3" type="number"></td>
+                            <td><input id="precio_pedido_3" onchange="pedido();" onclick="pedido();" min="0" class="uk-input pedido" type="number"></td>
+
+                        </tr>
+                        <tr>
+
+                            <td><input id="cantidad_pedido_4" min="0" oninput="calculo_pedido4();" class="uk-input calculo_pedido4" type="number"></td>
+                            <td><input id="especificaciones_pedido_4" class="uk-input" type="text"></td>
+                            <td><input id="precio_und_pedido_4" min="0" oninput="calculo_pedido4();" class="uk-input calculo_pedido4" type="number"></td>
+                            <td><input id="precio_pedido_4" onchange="pedido();" onclick="pedido();" min="0" class="uk-input pedido" type="number"></td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class="uk-div" style="text-align: center; ">
+                                    <h1 class="uk-label" for="total_pedido">Total</h1>
+                                </div>
+                            </td>
+                            <td><input id="total_pedido" type="number" class="uk-input" disabled></td>
+                        </tr>
+                    </tbody>
+
+
+                    <script type="text/javascript">
+                        function pedido() {
+
+                            var total_pedido = 0;
+                            var change = false; //
+                            $(".pedido").each(function() {
+                                if (!isNaN(parseFloat($(this).val()))) {
+                                    change = true;
+                                    total_pedido += parseFloat($(this).val());
+                                }
+                            });
+                            // Si se modifico el valor , retornamos la multiplicación
+                            // caso contrario 0
+                            total_pedido = (change) ? total_pedido : 0;
+                            document.getElementById('total_pedido').value = total_pedido;
+
+
+
+                        }
+
+                        function calculo_pedido1() {
+
+                            var calculo_total_pedido1 = 1;
+                            var change = false; //
+                            $(".calculo_pedido1").each(function() {
+                                if (!isNaN(parseFloat($(this).val()))) {
+                                    change = true;
+                                    calculo_total_pedido1 *= parseFloat($(this).val());
+                                }
+                            });
+                            // Si se modifico el valor , retornamos la multiplicación
+                            // caso contrario 0
+                            calculo_total_pedido1 = (change) ? calculo_total_pedido1 : 0;
+                            document.getElementById('precio_pedido_1').value = calculo_total_pedido1;
+
+
+                        }
+
+                        function calculo_pedido2() {
+
+                            var calculo_total_pedido2 = 1;
+                            var change = false; //
+                            $(".calculo_pedido2").each(function() {
+                                if (!isNaN(parseFloat($(this).val()))) {
+                                    change = true;
+                                    calculo_total_pedido2 *= parseFloat($(this).val());
+                                }
+                            });
+                            // Si se modifico el valor , retornamos la multiplicación
+                            // caso contrario 0
+                            calculo_total_pedido2 = (change) ? calculo_total_pedido2 : 0;
+                            document.getElementById('precio_pedido_2').value = calculo_total_pedido2;
+
+
+                        }
+
+                        function calculo_pedido3() {
+
+                            var calculo_total_pedido3 = 1;
+                            var change = false; //
+                            $(".calculo_pedido3").each(function() {
+                                if (!isNaN(parseFloat($(this).val()))) {
+                                    change = true;
+                                    calculo_total_pedido3 *= parseFloat($(this).val());
+                                }
+                            });
+                            // Si se modifico el valor , retornamos la multiplicación
+                            // caso contrario 0
+                            calculo_total_pedido3 = (change) ? calculo_total_pedido3 : 0;
+                            document.getElementById('precio_pedido_3').value = calculo_total_pedido3;
+
+
+                        }
+
+                        function calculo_pedido4() {
+
+                            var calculo_total_pedido4 = 1;
+                            var change = false; //
+                            $(".calculo_pedido4").each(function() {
+                                if (!isNaN(parseFloat($(this).val()))) {
+                                    change = true;
+                                    calculo_total_pedido4 *= parseFloat($(this).val());
+                                }
+                            });
+                            // Si se modifico el valor , retornamos la multiplicación
+                            // caso contrario 0
+                            calculo_total_pedido4 = (change) ? calculo_total_pedido4 : 0;
+                            document.getElementById('precio_pedido_4').value = calculo_total_pedido4;
+
+
+                        }
+                    </script>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-child-width-1-2 uk-text-center uk-background-muted uk-padding" uk-grid>
+        <div>
+
+            <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+            <div class="uk-form-horizontal uk-margin-large">
+
+                <div class="uk-margin">
+                    <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
+                    <div class="uk-form-controls">
+                        <input id="abono" name="Abono" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="uk-margin">
+                    <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
+                    <div class="uk-form-controls">
+                        <input id="saldo" name="Saldo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="uk-margin">
+
+                    <div class="uk-form-controls">
+
+                        <input class="uk-checkbox" id="form-horizontal-text" type="checkbox"> Transferencia</label>
+                    </div>
+                </div>
+                <div class="uk-margin">
+                    <label for="banco" class="uk-form-label" for="form-horizontal-text">Banco</label>
+                    <select class="uk-select uk-form-width-large" id="Banco">
+                        <option value='BAC'>BAC</option>
+                        <option value='BDF'>BDF</option>
+                        <option value='BANPRO'>BANPRO</option>
+                        <option value='BANCENTRO'>LAFISE BANCENTRO</option>
+                    </select>
+                </div>
+
 
             </div>
-            <select class="uk-select" id="tipo_de_pedido" disabled hidden>
-                <option value='Bordado'>serigrafia</option>
-            </select>
+
         </div>
+        <div>
+
+            <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+            <div class="uk-form-horizontal uk-margin-large">
+
+                <div class="uk-margin">
+                    <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza Pedido</label>
+                    <div class="uk-form-controls">
+                        <input id="autoriza" name="Autoriza_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="uk-margin">
+                    <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
+                    <div class="uk-form-controls">
+                        <input id="recibe" name="recibe_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="uk-margin">
+                    <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
+                    <div class="uk-form-controls">
+                        <input id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="uk-margin">
+                    <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
+                    <div class="uk-form-controls">
+                        <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                    </div>
+                </div>
+            </div>
+
+
         </div>
-    </form>
+    </div>
+    <!-- Seccion que contiene los botones de atrás y guardar-->
+    <div class="uk-padding uk-background-muted uk-padding " style="text-align: center;">
+        <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
+            <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
+            <a id="guardar" href="/menu/menu_facturacion/form_bordado" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
+
+        </div>
+        <select class="uk-select" id="tipo_de_pedido" disabled hidden>
+            <option value='Bordado'>serigrafia</option>
+        </select>
+    </div>
+    </div>
+    </div>
 
 </body>
 <script>
@@ -587,13 +591,28 @@
             tallainfantil: $("#talla_6").val(),
             tallainfantil: $("#talla_4").val(),
             tallainfantil: $("#talla_2").val(),
-            cantidad: $("#cantidad_pedido_1").val(),
-            precio_cantidad: $("#preciosa_cantidad_1").val(),
+            preciounitario1: $("#precio_und_pedido_1").val(),
+            preciounitario2: $("#precio_und_pedido_2").val(),
+            preciounitario3: $("#precio_und_pedido_3").val(),
+            preciounitario4: $("#precio_und_pedido_4").val(),
+            cantidadespe1: $("#cantidad_pedido_1").val(),
+            cantidadespe2: $("#cantidad_pedido_2").val(),
+            cantidadespe3: $("#cantidad_pedido_3").val(),
+            cantidadespe4: $("#cantidad_pedido_4").val(),
+            especifaciones1: $("#especifaciones_pedido_1").val(),
+            especifaciones2: $("#especifaciones_pedido_2").val(),
+            especifaciones3: $("#especifaciones_pedido_3").val(),
+            especifaciones4: $("#especifaciones_pedido_4").val(),
+            preciototal1: $("#precio_pedido_1").val(),
+            preciototal2: $("#precio_pedido_2").val(),
+            preciototal3: $("#precio_pedido_3").val(),
+            preciototal4: $("#precio_pedido_4").val(),
+            cantidadtotal: $("#total_pedido").val(),
             nota: $("#notas").val(),
-            Nombredelcomprador:$("#nombre").val(),
-            Telefono:$("#telefono").val(),
-            NumeroRuc:$("#Ruc").val(),
-            fechadepedido:$("#fecha_fact").val(),
+            Nombredelcomprador: $("#nombre").val(),
+            Telefono: $("#telefono").val(),
+            NumeroRuc: $("#Ruc").val(),
+            fechadepedido: $("#fecha_fact").val(),
         };
         peticionapi(data, 'POST', function(res) {
             alert('Guardado con exito')

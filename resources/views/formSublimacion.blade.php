@@ -74,7 +74,7 @@
     </nav>
 
 
-    <form action="" method="post">
+    <div>
 
         <div class="uk-padding uk-background-muted">
 
@@ -177,7 +177,7 @@
                                     <tbody>
                                         <tr>
                                             <td>S</td>
-                                            <td><input id="talla_s_caballero" class="uk-input uk-form-width-xsmall" type="Number"  placeholder="0"></td>
+                                            <td><input id="talla_s_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
                                             <td><input id="talla_s_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0"></td>
                                         </tr>
                                         <tr>
@@ -395,133 +395,137 @@
                                             <td><input id="cantidad_pedido_1" min="0" oninput="calculo_pedido1();" class="uk-input calculo_pedido1" type="number"></td>
                                             <td><input id="especificaciones_pedido_1" class="uk-input" type="text"></td>
                                             <td><input id="precio_und_pedido_1" min="0" oninput="calculo_pedido1();" class="uk-input calculo_pedido1" type="number"></td>
-                                            <td><input id="precio_pedido_1" onchange="pedido();" onclick="pedido();"  min="0" class="uk-input pedido" type="number"></td>
+                                            <td><input id="precio_pedido_1" onchange="pedido();" onclick="pedido();" min="0" class="uk-input pedido" type="number"></td>
 
                                         </tr>
-                                         <tr>
+                                        <tr>
 
                                             <td><input id="cantidad_pedido_2" min="0" oninput="calculo_pedido2();" class="uk-input calculo_pedido2" type="number"></td>
                                             <td><input id="especificaciones_pedido_2" class="uk-input" type="text"></td>
                                             <td><input id="precio_und_pedido_2" min="0" oninput="calculo_pedido2();" class="uk-input calculo_pedido2" type="number"></td>
-                                            <td><input id="precio_pedido_2" onchange="pedido();" onclick="pedido();"  min="0" class="uk-input pedido" type="number"></td>
+                                            <td><input id="precio_pedido_2" onchange="pedido();" onclick="pedido();" min="0" class="uk-input pedido" type="number"></td>
 
                                         </tr>
-                                         <tr>
+                                        <tr>
 
                                             <td><input id="cantidad_pedido_3" min="0" oninput="calculo_pedido3();" class="uk-input calculo_pedido3" type="number"></td>
                                             <td><input id="especificaciones_pedido_3" class="uk-input" type="text"></td>
                                             <td><input id="precio_und_pedido_3" min="0" oninput="calculo_pedido3();" class="uk-input calculo_pedido3" type="number"></td>
-                                            <td><input id="precio_pedido_3" onchange="pedido();" onclick="pedido();"  min="0" class="uk-input pedido" type="number"></td>
+                                            <td><input id="precio_pedido_3" onchange="pedido();" onclick="pedido();" min="0" class="uk-input pedido" type="number"></td>
 
                                         </tr>
-                                         <tr>
+                                        <tr>
 
                                             <td><input id="cantidad_pedido_4" min="0" oninput="calculo_pedido4();" class="uk-input calculo_pedido4" type="number"></td>
                                             <td><input id="especificaciones_pedido_4" class="uk-input" type="text"></td>
                                             <td><input id="precio_und_pedido_4" min="0" oninput="calculo_pedido4();" class="uk-input calculo_pedido4" type="number"></td>
-                                            <td><input id="precio_pedido_4" onchange="pedido();" onclick="pedido();"  min="0" class="uk-input pedido" type="number"></td>
+                                            <td><input id="precio_pedido_4" onchange="pedido();" onclick="pedido();" min="0" class="uk-input pedido" type="number"></td>
 
                                         </tr>
                                         <tr>
                                             <td></td>
                                             <td></td>
-                                            <td><div class="uk-div" style="text-align: center; " > <h1 class="uk-label"  for="total_pedido">Total</h1></div></td>
+                                            <td>
+                                                <div class="uk-div" style="text-align: center; ">
+                                                    <h1 class="uk-label" for="total_pedido">Total</h1>
+                                                </div>
+                                            </td>
                                             <td><input id="total_pedido" type="number" class="uk-input" disabled></td>
                                         </tr>
                                     </tbody>
 
 
                                     <script type="text/javascript">
-
-                                        function pedido(){
+                                        function pedido() {
 
                                             var total_pedido = 0;
-                                            var change= false; //
-                                            $(".pedido").each(function(){
+                                            var change = false; //
+                                            $(".pedido").each(function() {
                                                 if (!isNaN(parseFloat($(this).val()))) {
-                                                    change= true;
+                                                    change = true;
                                                     total_pedido += parseFloat($(this).val());
                                                 }
                                             });
                                             // Si se modifico el valor , retornamos la multiplicación
                                             // caso contrario 0
-                                            total_pedido = (change)? total_pedido:0;
+                                            total_pedido = (change) ? total_pedido : 0;
                                             document.getElementById('total_pedido').value = total_pedido;
 
 
 
                                         }
 
-                                        function calculo_pedido1(){
+                                        function calculo_pedido1() {
 
-                                                            var calculo_total_pedido1 = 1;
-                                                            var change= false; //
-                                                            $(".calculo_pedido1").each(function(){
-                                                                if (!isNaN(parseFloat($(this).val()))) {
-                                                                    change= true;
-                                                                    calculo_total_pedido1 *= parseFloat($(this).val());
-                                                                }
-                                                            });
-                                                            // Si se modifico el valor , retornamos la multiplicación
-                                                            // caso contrario 0
-                                                            calculo_total_pedido1 = (change)? calculo_total_pedido1:0;
-                                                            document.getElementById('precio_pedido_1').value = calculo_total_pedido1;
-
-
-                                        }
-                                        function calculo_pedido2(){
-
-                                                            var calculo_total_pedido2 = 1;
-                                                            var change= false; //
-                                                            $(".calculo_pedido2").each(function(){
-                                                                if (!isNaN(parseFloat($(this).val()))) {
-                                                                    change= true;
-                                                                    calculo_total_pedido2 *= parseFloat($(this).val());
-                                                                }
-                                                            });
-                                                            // Si se modifico el valor , retornamos la multiplicación
-                                                            // caso contrario 0
-                                                            calculo_total_pedido2 = (change)? calculo_total_pedido2:0;
-                                                            document.getElementById('precio_pedido_2').value = calculo_total_pedido2;
-
-
-                                        }
-                                        function calculo_pedido3(){
-
-                                                            var calculo_total_pedido3= 1;
-                                                            var change= false; //
-                                                            $(".calculo_pedido3").each(function(){
-                                                                if (!isNaN(parseFloat($(this).val()))) {
-                                                                    change= true;
-                                                                    calculo_total_pedido3 *= parseFloat($(this).val());
-                                                                }
-                                                            });
-                                                            // Si se modifico el valor , retornamos la multiplicación
-                                                            // caso contrario 0
-                                                            calculo_total_pedido3 = (change)? calculo_total_pedido3:0;
-                                                            document.getElementById('precio_pedido_3').value = calculo_total_pedido3;
-
-
-                                        }
-                                        function calculo_pedido4(){
-
-                                                            var calculo_total_pedido4 = 1;
-                                                            var change= false; //
-                                                            $(".calculo_pedido4").each(function(){
-                                                                if (!isNaN(parseFloat($(this).val()))) {
-                                                                    change= true;
-                                                                    calculo_total_pedido4 *= parseFloat($(this).val());
-                                                                }
-                                                            });
-                                                            // Si se modifico el valor , retornamos la multiplicación
-                                                            // caso contrario 0
-                                                            calculo_total_pedido4 = (change)? calculo_total_pedido4:0;
-                                                            document.getElementById('precio_pedido_4').value = calculo_total_pedido4;
+                                            var calculo_total_pedido1 = 1;
+                                            var change = false; //
+                                            $(".calculo_pedido1").each(function() {
+                                                if (!isNaN(parseFloat($(this).val()))) {
+                                                    change = true;
+                                                    calculo_total_pedido1 *= parseFloat($(this).val());
+                                                }
+                                            });
+                                            // Si se modifico el valor , retornamos la multiplicación
+                                            // caso contrario 0
+                                            calculo_total_pedido1 = (change) ? calculo_total_pedido1 : 0;
+                                            document.getElementById('precio_pedido_1').value = calculo_total_pedido1;
 
 
                                         }
 
+                                        function calculo_pedido2() {
 
+                                            var calculo_total_pedido2 = 1;
+                                            var change = false; //
+                                            $(".calculo_pedido2").each(function() {
+                                                if (!isNaN(parseFloat($(this).val()))) {
+                                                    change = true;
+                                                    calculo_total_pedido2 *= parseFloat($(this).val());
+                                                }
+                                            });
+                                            // Si se modifico el valor , retornamos la multiplicación
+                                            // caso contrario 0
+                                            calculo_total_pedido2 = (change) ? calculo_total_pedido2 : 0;
+                                            document.getElementById('precio_pedido_2').value = calculo_total_pedido2;
+
+
+                                        }
+
+                                        function calculo_pedido3() {
+
+                                            var calculo_total_pedido3 = 1;
+                                            var change = false; //
+                                            $(".calculo_pedido3").each(function() {
+                                                if (!isNaN(parseFloat($(this).val()))) {
+                                                    change = true;
+                                                    calculo_total_pedido3 *= parseFloat($(this).val());
+                                                }
+                                            });
+                                            // Si se modifico el valor , retornamos la multiplicación
+                                            // caso contrario 0
+                                            calculo_total_pedido3 = (change) ? calculo_total_pedido3 : 0;
+                                            document.getElementById('precio_pedido_3').value = calculo_total_pedido3;
+
+
+                                        }
+
+                                        function calculo_pedido4() {
+
+                                            var calculo_total_pedido4 = 1;
+                                            var change = false; //
+                                            $(".calculo_pedido4").each(function() {
+                                                if (!isNaN(parseFloat($(this).val()))) {
+                                                    change = true;
+                                                    calculo_total_pedido4 *= parseFloat($(this).val());
+                                                }
+                                            });
+                                            // Si se modifico el valor , retornamos la multiplicación
+                                            // caso contrario 0
+                                            calculo_total_pedido4 = (change) ? calculo_total_pedido4 : 0;
+                                            document.getElementById('precio_pedido_4').value = calculo_total_pedido4;
+
+
+                                        }
                                     </script>
                                 </table>
                             </div>
@@ -613,8 +617,8 @@
                 <option value='Sublimación'>serigrafia</option>
             </select>
         </div>
-        </div>
-    </form>
+    </div>
+    </div>
 
 </body>
 <script>
@@ -680,20 +684,35 @@
             tallainfantil: $("#talla_6").val(),
             tallainfantil: $("#talla_4").val(),
             tallainfantil: $("#talla_2").val(),
-            cantidad: $("#cantidad_pedido_1").val(),
-            precio_cantidad: $("#preciosa_cantidad_1").val(),
+            preciounitario1: $("#precio_und_pedido_1").val(),
+            preciounitario2: $("#precio_und_pedido_2").val(),
+            preciounitario3: $("#precio_und_pedido_3").val(),
+            preciounitario4: $("#precio_und_pedido_4").val(),
+            cantidadespe1: $("#cantidad_pedido_1").val(),
+            cantidadespe2: $("#cantidad_pedido_2").val(),
+            cantidadespe3: $("#cantidad_pedido_3").val(),
+            cantidadespe4: $("#cantidad_pedido_4").val(),
+            especifaciones1: $("#especifaciones_pedido_1").val(),
+            especifaciones2: $("#especifaciones_pedido_2").val(),
+            especifaciones3: $("#especifaciones_pedido_3").val(),
+            especifaciones4: $("#especifaciones_pedido_4").val(),
+            preciototal1: $("#precio_pedido_1").val(),
+            preciototal2: $("#precio_pedido_2").val(),
+            preciototal3: $("#precio_pedido_3").val(),
+            preciototal4: $("#precio_pedido_4").val(),
+            cantidadtotal: $("#total_pedido").val(),
             nota: $("#notas").val(),
             Nombredelcomprador: $("#nombre").val(),
             Telefono: $("#telefono").val(),
             NumeroRuc: $("#Ruc").val(),
             fechadepedido: $("#fecha_fact").val(),
-            TazasFrente:$("#taza_frente").val(),
-            TazasAtras:$("#taza_atras").val(),
-            TazasCantidad:$("#taza_cantidad").val(),
-            LLaverosDetalles:$("#detalle_llavero").val(),
-            LLaveroCantidad:$("#cantidad_llavero").val(),
-            LapiceroDetalles:$("#detalle_lapiz").val(),
-            LapiceroCantidad:$("#cantidad_lapiz").val(),
+            TazasFrente: $("#taza_frente").val(),
+            TazasAtras: $("#taza_atras").val(),
+            TazasCantidad: $("#taza_cantidad").val(),
+            LLaverosDetalles: $("#detalle_llavero").val(),
+            LLaveroCantidad: $("#cantidad_llavero").val(),
+            LapiceroDetalles: $("#detalle_lapiz").val(),
+            LapiceroCantidad: $("#cantidad_lapiz").val(),
         };
         peticionapi(data, 'POST', function(res) {
             alert('Guardado con exito')

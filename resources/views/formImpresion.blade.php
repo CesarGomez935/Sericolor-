@@ -73,7 +73,7 @@
     </nav>
 
 
-    <form action="" method="post">
+    <form>
 
         <div class="uk-padding uk-background-muted">
 
@@ -561,6 +561,9 @@
 
         <div class="uk-child-width-1-2 uk-text-center uk-background-muted uk-padding" uk-grid>
             <div>
+                <select class="uk-select" id="tipo_de_pedido" disabled hidden>
+                    <option value='Impresion_Digital'>serigrafia</option>
+                </select>
 
                 <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
                 <div class="uk-form-horizontal uk-margin-large">
@@ -635,7 +638,7 @@
         <div class="uk-padding uk-background-muted uk-padding  ">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
                 <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
-                <button type="submit" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</button>
+                <button type="submit" href="/menu/menu_facturacion/form_impresion_digital" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</button>
 
             </div>
         </div>
@@ -673,39 +676,58 @@
     }
 
     function guardarpedido() {
-        let data = {    
-            alto1:$("#alto_1").val(),
-            ancho1:$("#ancho_1").val(),
-            mtscuadrados1:$("#mt2_1").val(),
-            precioxmtscuadrados1:$("#").val(),
-            costo1:$("#").val(),
-            cantidad1:$("#").val(),
-            total1:$("#").val(),
-            alto2:$("#alto_1").val(),
-            ancho2:$("#ancho_1").val(),
-            mtscuadrados2:$("#mt2_1").val(),
-            precioxmtscuadrados2:$("#").val(),
-            costo2:$("#").val(),
-            cantidad2:$("#").val(),
-            total2:$("#").val(),
-            alto3:$("#alto_1").val(),
-            ancho3:$("#ancho_1").val(),
-            mtscuadrados3:$("#mt2_1").val(),
-            precioxmtscuadrados3:$("#").val(),
-            costo3:$("#").val(),
-            cantidad3:$("#").val(),
-            total3:$("#").val(),
-            alto4:$("#alto_1").val(),
-            ancho4:$("#ancho_1").val(),
-            mtscuadrados4:$("#mt2_1").val(),
-            precioxmtscuadrados4:$("#").val(),
-            costo4:$("#").val(),
-            cantidad4:$("#").val(),
-            total4:$("#").val(),
-
-
-
-
+        let data = {
+            Tipo_de_pedido: $("#tipo_de_pedido").val(),
+            alto1: $("#alto_1").val(),
+            ancho1: $("#ancho_1").val(),
+            mtscuadrados1: $("#mt2_1").val(),
+            precioxmtscuadrados1: $("#costo_1").val(),
+            costo1: $("#precio_mt2_1").val(),
+            cantidad1: $("#cantidad_1").val(),
+            total1: $("#total_1").val(),
+            alto2: $("#alto_2").val(),
+            ancho2: $("#ancho_2").val(),
+            mtscuadrados2: $("#mt2_2").val(),
+            precioxmtscuadrados2: $("#costo_1").val(),
+            costo2: $("#precio_mt2_1").val(),
+            cantidad2: $("#cantidad_2").val(),
+            total2: $("#total_2").val(),
+            alto3: $("#alto_3").val(),
+            ancho3: $("#ancho_3").val(),
+            mtscuadrados3: $("#mt2_3").val(),
+            precioxmtscuadrados3: $("#costo_3").val(),
+            costo3: $("#precio_mt2_3").val(),
+            cantidad3: $("#cantidad_3").val(),
+            total3: $("#total_3").val(),
+            alto4: $("#alto_4").val(),
+            ancho4: $("#ancho_4").val(),
+            mtscuadrados4: $("#mt2_4").val(),
+            precioxmtscuadrados4: $("#costo_4").val(),
+            costo4: $("#precio_mt2_4").val(),
+            cantidad4: $("#cantidad_4").val(),
+            total4: $("#total_4").val(),
+            preciounitario1: $("#precio_und_pedido_1").val(),
+            preciounitario2: $("#precio_und_pedido_2").val(),
+            preciounitario3: $("#precio_und_pedido_3").val(),
+            preciounitario4: $("#precio_und_pedido_4").val(),
+            cantidadespe1: $("#cantidad_pedido_1").val(),
+            cantidadespe2: $("#cantidad_pedido_2").val(),
+            cantidadespe3: $("#cantidad_pedido_3").val(),
+            cantidadespe4: $("#cantidad_pedido_4").val(),
+            especifaciones1: $("#especifaciones_pedido_1").val(),
+            especifaciones2: $("#especifaciones_pedido_2").val(),
+            especifaciones3: $("#especifaciones_pedido_3").val(),
+            especifaciones4: $("#especifaciones_pedido_4").val(),
+            preciototal1: $("#precio_pedido_1").val(),
+            preciototal2: $("#precio_pedido_2").val(),
+            preciototal3: $("#precio_pedido_3").val(),
+            preciototal4: $("#precio_pedido_4").val(),
+            cantidadtotal: $("#total_pedido").val(),
+            nota: $("#notas").val(),
+            Nombredelcomprador: $("#nombre").val(),
+            Telefono: $("#telefono").val(),
+            NumeroRuc: $("#Ruc").val(),
+            fechadepedido: $("#fecha_fact").val(),
 
         };
         peticionapi(data, 'POST', function(res) {
