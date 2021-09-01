@@ -65,7 +65,7 @@
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="navbar-collapse collapse" id="navbarColor02" style="">
+        <div class="navbar-collapse collapse" id="navbarColor02" >
             <ul class="navbar-nav me-auto mb-3 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/Inicio"><b> Inicio </b></a>
@@ -143,24 +143,12 @@
 
         <div data-mc-src="a8873b7a-ce14-47f9-bce4-96115b62ef48#instagram"></div>
 
-        <script src="https://cdn2.woxo.tech/a.js#612679f14b32b700160285be" async data-usrc>
+        <script src="https://cdn2.woxo.tech/a.js#612679f14b32b700160285be" async data-usrc >
+        
         </script>
+        
     </div>
 
-    <div>
-
-        <div data-mc-src="cedf480e-5068-49aa-8ec1-4dd46a341fb3#instagram"></div>
-
-        <script src="https://cdn2.woxo.tech/a.js#612679f14b32b700160285be" async data-usrc>
-        </script>
-
-    </div>
-
-    <div data-mc-src="a9f89b01-28e3-4104-9661-b0c3c17c5af6#instagram"></div>
-
-    <script src="https://cdn2.woxo.tech/a.js#612679f14b32b700160285be" async data-usrc>
-
-    </script>
 
 
 
