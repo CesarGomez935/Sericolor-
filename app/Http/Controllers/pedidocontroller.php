@@ -37,21 +37,7 @@ class pedidocontroller extends Controller
     {
         //
         $model = new pedidos();
-        $model->tipo_de_pedido = $request->input('Tipo_de_pedido');
-        $model->tipo_de_producto = $request->input('tipo_de_producto');
-        $model->pecho_izquierdo = $request->input('pechoizquierdo');
-        $model->pecho_derecho = $request->input('pechoderecho');
-        $model->manga_izquierda = $request->input('mangaizquierda');
-        $model->manga_derecha = $request->input('mangaderecha');
-        $model->espalda = $request->input('espalda');
-        $model->talla = $request->input('talla');
-        $model->caballero_dama = $request->input('caballero/dama');
-        $model->tallainfantil = $request->input('tallainfantil');
-        $model->alto = $request->input('alto');
-        $model->ancho = $request->input('ancho');
-        $model->precio_cantidad = $request->input('precio_cantidad');
-        $model->cantidad = $request->input('cantidad');
-        $model->nota = $request->input('nota');     
+        $model->fechadelpedido	 = $request->input('fechadelpedido');
         return $model->save();
     }
 

@@ -10,22 +10,18 @@
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
     <!-- JQuery-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -33,8 +29,7 @@
     <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span
-                    class="uk-margin-small-left">Facturación Serigrafía</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Facturación Serigrafía</span>
             </a>
         </div>
         <a href="#my-id" uk-toggle></a>
@@ -126,36 +121,31 @@
                     <div class="uk-margin">
                         <label for="pecho_izq" class="uk-form-label" for="form-horizontal-text">Pecho Izquierdo</label>
                         <div class="uk-form-controls">
-                            <input id="pecho_izq" name="pecho_izquierdo" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="pecho_izq" name="pecho_izquierdo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="pecho_der" class="uk-form-label" for="form-horizontal-text">Pecho Derecho</label>
                         <div class="uk-form-controls">
-                            <input id="pecho_der" name="pecho_derecho" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="pecho_der" name="pecho_derecho" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="manga_izq" class="uk-form-label" for="form-horizontal-text">Manga Izquierda</label>
                         <div class="uk-form-controls">
-                            <input id="manga_izq" name="manga_izquierda" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="manga_izq" name="manga_izquierda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="manga_der" class="uk-form-label" for="form-horizontal-text">Manga Derecha</label>
                         <div class="uk-form-controls">
-                            <input id="manga_der" name="manga_derecha" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="manga_der" name="manga_derecha" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="espalda" class="uk-form-label" for="form-horizontal-text">Espalda</label>
                         <div class="uk-form-controls">
-                            <input id="espalda" name="espalda" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="espalda" name="espalda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
 
@@ -163,8 +153,7 @@
                         <label for="tipo_producto" class="uk-form-label" for="form-horizontal-text">Tipo de
                             producto</label>
                         <div class="uk-form-controls">
-                            <input id="tipo_producto" name="tipo_producto" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="tipo_producto" name="tipo_producto" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
 
@@ -187,13 +176,13 @@
                                 <tbody>
                                     <tr>
                                         <td id="tallas">S</td>
-                                        <td><input id="talla_s_caballero" name="talla_s" class="uk-input uk-form-width-xsmall"type="Number" value="0"  placeholder="0"></td>
+                                        <td><input id="talla_s_caballero" name="talla_s" class="uk-input uk-form-width-xsmall" type="Number" value="0" placeholder="0"></td>
                                         <td><input id="talla_s_dama" class="uk-input uk-form-width-xsmall" type="Number" value="0" placeholder="0"></td>
                                     </tr>
                                     <tr>
                                         <td id="tallam">M</td>
-                                        <td><input id="talla_m_caballero" name="" class="uk-input uk-form-width-xsmall" value="0" type="Number"  placeholder="0"></td>
-                                        <td><input id="talla_m_dama" class="uk-input uk-form-width-xsmall" type="Number" value="0"  placeholder="0"></td>
+                                        <td><input id="talla_m_caballero" name="" class="uk-input uk-form-width-xsmall" value="0" type="Number" placeholder="0"></td>
+                                        <td><input id="talla_m_dama" class="uk-input uk-form-width-xsmall" type="Number" value="0" placeholder="0"></td>
                                     </tr>
                                     <tr>
                                         <td id="tallal">L</td>
@@ -258,12 +247,12 @@
                                     </tr>
                                     <tr>
                                         <td id="10">10</td>
-                                        <td><input id="talla_10" class="uk-input uk-form-width-xsmall" type="Number"  value="0" placeholder="0"></td>
+                                        <td><input id="talla_10" class="uk-input uk-form-width-xsmall" type="Number" value="0" placeholder="0"></td>
 
                                     </tr>
                                     <tr>
                                         <td id="8">8</td>
-                                        <td><input id="talla_8" class="uk-input uk-form-width-xsmall" type="Number" value="0"  placeholder="0"></td>
+                                        <td><input id="talla_8" class="uk-input uk-form-width-xsmall" type="Number" value="0" placeholder="0"></td>
 
                                     </tr>
                                     <tr>
@@ -317,12 +306,12 @@
                                 <td><input id="cantidad_pedido_1" min="0" oninput="calculo_pedido1();" placeholder="0" value="0" class="uk-input calculo_pedido1" type="number"></td>
                                 <td><input id="especificaciones_pedido_1" class="uk-input" type="text"></td>
                                 <td><input id="precio_und_pedido_1" min="0" oninput="calculo_pedido1();" placeholder="0" value="0" class="uk-input calculo_pedido1" type="number"></td>
-                                <td><input id="precio_pedido_1" onchange="pedido();" onclick="pedido();" placeholder="0"value="0"  min="0" class="uk-input pedido" type="number"></td>
+                                <td><input id="precio_pedido_1" onchange="pedido();" onclick="pedido();" placeholder="0" value="0" min="0" class="uk-input pedido" type="number"></td>
 
                             </tr>
                             <tr>
 
-                                <td><input id="cantidad_pedido_2" min="0" oninput="calculo_pedido2();"placeholder="0" value="0" class="uk-input calculo_pedido2" type="number"></td>
+                                <td><input id="cantidad_pedido_2" min="0" oninput="calculo_pedido2();" placeholder="0" value="0" class="uk-input calculo_pedido2" type="number"></td>
                                 <td><input id="especificaciones_pedido_2" class="uk-input" type="text"></td>
                                 <td><input id="precio_und_pedido_2" min="0" oninput="calculo_pedido2();" placeholder="0" value="0" class="uk-input calculo_pedido2" type="number"></td>
                                 <td><input id="precio_pedido_2" onchange="pedido();" onclick="pedido();" placeholder="0" value="0" min="0" class="uk-input pedido" type="number"></td>
@@ -330,24 +319,28 @@
                             </tr>
                             <tr>
 
-                                <td><input id="cantidad_pedido_3" min="0" oninput="calculo_pedido3();"placeholder="0" value="0"   class="uk-input calculo_pedido3" type="number"></td>
+                                <td><input id="cantidad_pedido_3" min="0" oninput="calculo_pedido3();" placeholder="0" value="0" class="uk-input calculo_pedido3" type="number"></td>
                                 <td><input id="especificaciones_pedido_3" class="uk-input" type="text"></td>
-                                <td><input id="precio_und_pedido_3" min="0" oninput="calculo_pedido3();"placeholder="0" value="0" class="uk-input calculo_pedido3" type="number"></td>
+                                <td><input id="precio_und_pedido_3" min="0" oninput="calculo_pedido3();" placeholder="0" value="0" class="uk-input calculo_pedido3" type="number"></td>
                                 <td><input id="precio_pedido_3" onchange="pedido();" onclick="pedido();" placeholder="0" value="0" min="0" class="uk-input pedido" type="number"></td>
 
                             </tr>
                             <tr>
 
-                                <td><input id="cantidad_pedido_4" min="0" oninput="calculo_pedido4();"placeholder="0" value="0" class="uk-input calculo_pedido4" type="number"></td>
+                                <td><input id="cantidad_pedido_4" min="0" oninput="calculo_pedido4();" placeholder="0" value="0" class="uk-input calculo_pedido4" type="number"></td>
                                 <td><input id="especificaciones_pedido_4" class="uk-input" type="text"></td>
                                 <td><input id="precio_und_pedido_4" min="0" oninput="calculo_pedido4();" placeholder="0" value="0" class="uk-input calculo_pedido4" type="number"></td>
-                                <td><input id="precio_pedido_4" onchange="pedido();" onclick="pedido();"placeholder="0" value="0" min="0" class="uk-input pedido" type="number"></td>
+                                <td><input id="precio_pedido_4" onchange="pedido();" onclick="pedido();" placeholder="0" value="0" min="0" class="uk-input pedido" type="number"></td>
 
                             </tr>
                             <tr>
                                 <td></td>
                                 <td></td>
-                                <td><div class="uk-div" style="text-align: center; " > <h1 class="uk-label"  for="total_pedido">Total</h1></div></td>
+                                <td>
+                                    <div class="uk-div" style="text-align: center; ">
+                                        <h1 class="uk-label" for="total_pedido">Total</h1>
+                                    </div>
+                                </td>
                                 <td><input id="total_pedido" type="number" placeholder="0" value="0" class="uk-input" disabled></td>
                             </tr>
                         </tbody>
@@ -373,7 +366,7 @@
 
                             }
 
-                            function calculo_pedido1 (){
+                            function calculo_pedido1() {
 
                                 var calculo_total_pedido1 = 1;
                                 var change = false; //
@@ -459,15 +452,13 @@
                     <div class="uk-margin">
                         <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                         <div class="uk-form-controls">
-                            <input id="abono" name="Abono" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="abono" name="Abono" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
                         <div class="uk-form-controls">
-                            <input id="saldo" name="Saldo" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="saldo" name="Saldo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
@@ -499,29 +490,25 @@
                     <div class="uk-margin">
                         <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza Pedido</label>
                         <div class="uk-form-controls">
-                            <input id="autoriza" name="Autoriza_pedido" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="autoriza" name="Autoriza_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
                         <div class="uk-form-controls">
-                            <input id="recibe" name="recibe_pedido" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="recibe" name="recibe_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
                         <div class="uk-form-controls">
-                            <input id="factura" name="num_factura" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
                         <div class="uk-form-controls">
-                            <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                 </div>
@@ -532,8 +519,7 @@
         <!-- Seccion que contiene los botones de atrás y guardar-->
         <div class="uk-padding uk-background-muted uk-padding " style="text-align: center;">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-                <a href="/menu/menu_facturacion" class="uk-button uk-button-primary "
-                    style="margin-left: 100px">Atrás</a>
+                <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
                 <a id="guardar" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
 
             </div>
@@ -549,9 +535,10 @@
     let detallesdepedido = [];
 
     cargarpedido();
-
+    cargarpedido2();
     $('#guardar').click(function(res) {
         guardarpedido();
+        guardarpedido2();
         alert("Se agrego su orden");
 
     });
@@ -574,6 +561,37 @@
 
             }
         })
+    }
+
+    function peticionapi2(data, method, onSucess) {
+        let url = '/api/pedido';
+        if (method == 'PUT' || method == 'DELETE') {
+            url += '/' + data.IDpedido;
+        }
+        $.ajax({
+            url: url,
+            method: method,
+            data: data,
+            error(ext) {
+                let error = e.responseJSON.errors;
+                let msj = error[Object.keys(error)[0]][0];
+                alert(msj);
+            },
+            success(res) {
+
+            }
+        })
+    }
+
+    function guardarpedido2() {
+
+        let data = {
+            fechadelpedido: $("#fecha_fact").val(),
+
+        };
+        peticionapi2(data, 'POST', function(res) {
+            alert('Guardado con exito')
+        });
     }
 
     function guardarpedido() {
@@ -638,6 +656,14 @@
 
     function cargarpedido() {
         peticionapi({}, 'GET', function(res) {
+            console.log(res);
+            alert('respuesta satisfactoria');
+        });
+
+    }
+
+    function cargarpedido2() {
+        peticionapi2({}, 'GET', function(res) {
             console.log(res);
             alert('respuesta satisfactoria');
         });
