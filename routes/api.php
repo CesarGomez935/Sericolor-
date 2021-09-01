@@ -3,9 +3,11 @@
 use App\Http\Controllers\administracion;
 use App\Http\Controllers\detalledelpagocontroller;
 use App\Http\Controllers\detalledelpedidocontroller;
+use App\Http\Controllers\pedidocontroller;
 use App\Http\Controllers\persona;
 use App\Http\Controllers\reporteController;
 use App\Http\Controllers\dbcontroller;
+use App\Models\pedidos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +30,7 @@ Route::resource('detalledelpedido',detalledelpedidocontroller::class);
 Route::resource('administraciones',administracion::class);
 Route::resource('trabajador',persona::class);
 Route::resource('cliente',persona::class);
+Route::resource('pedido',pedidocontroller::class);
 Route::resource('detalledelpago',detalledelpagocontroller::class);
 Route::get('gettrabajador', [persona::class,"getalltrabajador"]);
 Route::get('getcliente', [persona::class,"getallcliente"]);
