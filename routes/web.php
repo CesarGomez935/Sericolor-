@@ -3,6 +3,8 @@
 use App\Http\Controllers\detalledelpedidocontroller;
 use App\Http\Controllers\reporteController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\dbcontroller;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +26,7 @@ Route::get('Inicio', function () {
 Route::get('acerca', function () {
     return view('Acerca');
 });
-Route::get('contacto', function () {
-    return view('Contactenos');
-});
+
 Route::get('servicio', function () {
     return view('Servicios');
 });
@@ -133,6 +133,4 @@ Route::get('menu/menuadmon/resumen_pedidos', function () {
 
 Route::resource('Detalledelpedido',detalledelpedidocontroller::class);
 
-
-
-
+Route::get('/descargarbasededatos', [dbcontroller::class,"descargar"]);

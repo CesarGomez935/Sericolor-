@@ -5,6 +5,7 @@ use App\Http\Controllers\detalledelpagocontroller;
 use App\Http\Controllers\detalledelpedidocontroller;
 use App\Http\Controllers\persona;
 use App\Http\Controllers\reporteController;
+use App\Http\Controllers\dbcontroller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -35,3 +36,4 @@ Route::get('getpedidobordado', [detalledelpedidocontroller::class,"getallpedidob
 Route::get('getpedidosublimacion', [detalledelpedidocontroller::class,"getallpedidosublimacion"]);
 Route::get('getpedidoserigrafia', [detalledelpedidocontroller::class,"getallpedidoserigrafia"]);
 Route::get('getpedidoimpresion', [detalledelpedidocontroller::class,"getallpedidoimpresion"]);
+Route::get('descargarbasededatos', [dbcontroller::class,"descargar"]);

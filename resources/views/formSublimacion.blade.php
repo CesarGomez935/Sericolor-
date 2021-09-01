@@ -401,7 +401,7 @@
                                             <!--Agregar correcta impresión de datos-->
                                             <td><input id="cantidad_pedido_1" min="0" value="0" oninput="calculo_pedido1();" class="uk-input calculo_pedido1" type="number"></td>
                                             <td><input id="especificaciones_pedido_1" class="uk-input" type="text"></td>
-                                            <td><input id="precio_und_pedido_1" min="0"  value="0" oninput="calculo_pedido1();" class="uk-input calculo_pedido1" type="number"></td>
+                                            <td><input id="precio_und_pedido_1" min="0" value="0" oninput="calculo_pedido1();" class="uk-input calculo_pedido1" type="number"></td>
                                             <td><input id="precio_pedido_1" onchange="pedido();" onclick="pedido();" min="0" value="0" class="uk-input pedido" type="number"></td>
 
                                         </tr>
@@ -410,23 +410,23 @@
                                             <td><input id="cantidad_pedido_2" min="0" oninput="calculo_pedido2();" value="0" class="uk-input calculo_pedido2" type="number"></td>
                                             <td><input id="especificaciones_pedido_2" class="uk-input" type="text"></td>
                                             <td><input id="precio_und_pedido_2" min="0" oninput="calculo_pedido2();" value="0" class="uk-input calculo_pedido2" type="number"></td>
-                                            <td><input id="precio_pedido_2" onchange="pedido();" onclick="pedido();"  value="0" min="0" class="uk-input pedido" type="number"></td>
+                                            <td><input id="precio_pedido_2" onchange="pedido();" onclick="pedido();" value="0" min="0" class="uk-input pedido" type="number"></td>
 
                                         </tr>
                                         <tr>
 
-                                            <td><input id="cantidad_pedido_3" min="0" oninput="calculo_pedido3();"  value="0" class="uk-input calculo_pedido3" type="number"></td>
+                                            <td><input id="cantidad_pedido_3" min="0" oninput="calculo_pedido3();" value="0" class="uk-input calculo_pedido3" type="number"></td>
                                             <td><input id="especificaciones_pedido_3" class="uk-input" type="text"></td>
-                                            <td><input id="precio_und_pedido_3" min="0" oninput="calculo_pedido3();"  value="0" class="uk-input calculo_pedido3" type="number"></td>
-                                            <td><input id="precio_pedido_3" onchange="pedido();" onclick="pedido();"  value="0" min="0" class="uk-input pedido" type="number"></td>
+                                            <td><input id="precio_und_pedido_3" min="0" oninput="calculo_pedido3();" value="0" class="uk-input calculo_pedido3" type="number"></td>
+                                            <td><input id="precio_pedido_3" onchange="pedido();" onclick="pedido();" value="0" min="0" class="uk-input pedido" type="number"></td>
 
                                         </tr>
                                         <tr>
 
-                                            <td><input id="cantidad_pedido_4" min="0" oninput="calculo_pedido4();" value="0"  class="uk-input calculo_pedido4" type="number"></td>
+                                            <td><input id="cantidad_pedido_4" min="0" oninput="calculo_pedido4();" value="0" class="uk-input calculo_pedido4" type="number"></td>
                                             <td><input id="especificaciones_pedido_4" class="uk-input" type="text"></td>
                                             <td><input id="precio_und_pedido_4" min="0" oninput="calculo_pedido4();" value="0" class="uk-input calculo_pedido4" type="number"></td>
-                                            <td><input id="precio_pedido_4" onchange="pedido();" onclick="pedido();"  value="0" min="0" class="uk-input pedido" type="number"></td>
+                                            <td><input id="precio_pedido_4" onchange="pedido();" onclick="pedido();" value="0" min="0" class="uk-input pedido" type="number"></td>
 
                                         </tr>
                                         <tr>
@@ -533,6 +533,7 @@
 
 
                                         }
+
                                     </script>
                                 </table>
                             </div>
@@ -645,15 +646,15 @@
             url += '/' + data.IDdetalledelpedido;
         }
         $.ajax({
-            url: url,
-            method: method,
-            data: data,
-            error(ext) {
+            url: url
+            , method: method
+            , data: data
+            , error(ext) {
                 let error = e.responseJSON.errors;
                 let msj = error[Object.keys(error)[0]][0];
                 alert(msj);
-            },
-            success(res) {
+            }
+            , success(res) {
 
             }
         })
@@ -661,66 +662,66 @@
 
     function guardarpedido() {
         let data = {
-            Tipo_de_pedido: $("#tipo_de_pedido").val(),
-            tipo_de_producto: $("#tipo_producto").val(),
-            pechoizquierdo: $("#pecho_izq").val(),
-            pechoderecho: $("#pecho_der").val(),
-            mangaizquierda: $("#manga_izq").val(),
-            mangaderecha: $("#manga_der").val(),
-            espalda: $("#espalda").val(),
-            tallasCaballero: $("#talla_s_caballero").val(),
-            tallasDama: $("#talla_s_dama").val(),
-            tallamCaballero: $("#talla_m_caballero").val(),
-            tallamDama: $("#talla_m_dama").val(),
-            tallalCaballero: $("#talla_l_caballero").val(),
-            tallalDama: $("#talla_l_dama").val(),
-            tallaxlCaballero: $("#talla_xl_caballero").val(),
-            tallaxlDama: $("#talla_xl_dama").val(),
-            talla2xlCaballero: $("#talla_2xl_caballero").val(),
-            talla2xlDama: $("#talla_2xl_dama").val(),
-            talla3xlCaballero: $("#talla_3xl_caballero").val(),
-            talla3xlDama: $("#talla_3xl_dama").val(),
-            talla5xlCaballero: $("#talla_5xl_caballero").val(),
-            talla5xlDama: $("#talla_5xl_dama").val(),
-            tallainfantil: $("#talla_18").val(),
-            tallainfantil: $("#talla_16").val(),
-            tallainfantil: $("#talla_14").val(),
-            tallainfantil: $("#talla_12").val(),
-            tallainfantil: $("#talla_10").val(),
-            tallainfantil: $("#talla_8").val(),
-            tallainfantil: $("#talla_6").val(),
-            tallainfantil: $("#talla_4").val(),
-            tallainfantil: $("#talla_2").val(),
-            preciounitario1: $("#precio_und_pedido_1").val(),
-            preciounitario2: $("#precio_und_pedido_2").val(),
-            preciounitario3: $("#precio_und_pedido_3").val(),
-            preciounitario4: $("#precio_und_pedido_4").val(),
-            cantidadespe1: $("#cantidad_pedido_1").val(),
-            cantidadespe2: $("#cantidad_pedido_2").val(),
-            cantidadespe3: $("#cantidad_pedido_3").val(),
-            cantidadespe4: $("#cantidad_pedido_4").val(),
-            especifaciones1: $("#especifaciones_pedido_1").val(),
-            especifaciones2: $("#especifaciones_pedido_2").val(),
-            especifaciones3: $("#especifaciones_pedido_3").val(),
-            especifaciones4: $("#especifaciones_pedido_4").val(),
-            preciototal1: $("#precio_pedido_1").val(),
-            preciototal2: $("#precio_pedido_2").val(),
-            preciototal3: $("#precio_pedido_3").val(),
-            preciototal4: $("#precio_pedido_4").val(),
-            cantidadtotal: $("#total_pedido").val(),
-            nota: $("#notas").val(),
-            Nombredelcomprador: $("#nombre").val(),
-            Telefono: $("#telefono").val(),
-            NumeroRuc: $("#Ruc").val(),
-            fechadepedido: $("#fecha_fact").val(),
-            TazasFrente: $("#taza_frente").val(),
-            TazasAtras: $("#taza_atras").val(),
-            TazasCantidad: $("#taza_cantidad").val(),
-            LLaverosDetalles: $("#detalle_llavero").val(),
-            LLaveroCantidad: $("#cantidad_llavero").val(),
-            LapiceroDetalles: $("#detalle_lapiz").val(),
-            LapiceroCantidad: $("#cantidad_lapiz").val(),
-        };
+            Tipo_de_pedido: $("#tipo_de_pedido").val()
+            , tipo_de_producto: $("#tipo_producto").val()
+            , pechoizquierdo: $("#pecho_izq").val()
+            , pechoderecho: $("#pecho_der").val()
+            , mangaizquierda: $("#manga_izq").val()
+            , mangaderecha: $("#manga_der").val()
+            , espalda: $("#espalda").val()
+            , tallasCaballero: $("#talla_s_caballero").val()
+            , tallasDama: $("#talla_s_dama").val()
+            , tallamCaballero: $("#talla_m_caballero").val()
+            , tallamDama: $("#talla_m_dama").val()
+            , tallalCaballero: $("#talla_l_caballero").val()
+            , tallalDama: $("#talla_l_dama").val()
+            , tallaxlCaballero: $("#talla_xl_caballero").val()
+            , tallaxlDama: $("#talla_xl_dama").val()
+            , talla2xlCaballero: $("#talla_2xl_caballero").val()
+            , talla2xlDama: $("#talla_2xl_dama").val()
+            , talla3xlCaballero: $("#talla_3xl_caballero").val()
+            , talla3xlDama: $("#talla_3xl_dama").val()
+            , talla5xlCaballero: $("#talla_5xl_caballero").val()
+            , talla5xlDama: $("#talla_5xl_dama").val()
+            , tallainfantil: $("#talla_18").val()
+            , tallainfantil: $("#talla_16").val()
+            , tallainfantil: $("#talla_14").val()
+            , tallainfantil: $("#talla_12").val()
+            , tallainfantil: $("#talla_10").val()
+            , tallainfantil: $("#talla_8").val()
+            , tallainfantil: $("#talla_6").val()
+            , tallainfantil: $("#talla_4").val()
+            , tallainfantil: $("#talla_2").val()
+            , preciounitario1: $("#precio_und_pedido_1").val()
+            , preciounitario2: $("#precio_und_pedido_2").val()
+            , preciounitario3: $("#precio_und_pedido_3").val()
+            , preciounitario4: $("#precio_und_pedido_4").val()
+            , cantidadespe1: $("#cantidad_pedido_1").val()
+            , cantidadespe2: $("#cantidad_pedido_2").val()
+            , cantidadespe3: $("#cantidad_pedido_3").val()
+            , cantidadespe4: $("#cantidad_pedido_4").val()
+            , especifaciones1: $("#especifaciones_pedido_1").val()
+            , especifaciones2: $("#especifaciones_pedido_2").val()
+            , especifaciones3: $("#especifaciones_pedido_3").val()
+            , especifaciones4: $("#especifaciones_pedido_4").val()
+            , preciototal1: $("#precio_pedido_1").val()
+            , preciototal2: $("#precio_pedido_2").val()
+            , preciototal3: $("#precio_pedido_3").val()
+            , preciototal4: $("#precio_pedido_4").val()
+            , cantidadtotal: $("#total_pedido").val()
+            , nota: $("#notas").val()
+            , Nombredelcomprador: $("#nombre").val()
+            , Telefono: $("#telefono").val()
+            , NumeroRuc: $("#Ruc").val()
+            , fechadepedido: $("#fecha_fact").val()
+            , TazasFrente: $("#taza_frente").val()
+            , TazasAtras: $("#taza_atras").val()
+            , TazasCantidad: $("#taza_cantidad").val()
+            , LLaverosDetalles: $("#detalle_llavero").val()
+            , LLaveroCantidad: $("#cantidad_llavero").val()
+            , LapiceroDetalles: $("#detalle_lapiz").val()
+            , LapiceroCantidad: $("#cantidad_lapiz").val()
+        , };
         peticionapi(data, 'POST', function(res) {
             alert('Guardado con exito')
         });
@@ -733,6 +734,7 @@
         });
 
     }
+
 </script>
 
 </html>
