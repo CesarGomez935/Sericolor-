@@ -6,11 +6,8 @@ use App\Http\Controllers\detalledelpedidocontroller;
 use App\Http\Controllers\pedidocontroller;
 use App\Http\Controllers\persona;
 use App\Http\Controllers\reporteController;
-<<<<<<< Updated upstream
 use App\Http\Controllers\dbcontroller;
-=======
 use App\Models\pedidos;
->>>>>>> Stashed changes
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
