@@ -77,7 +77,7 @@
 
     <div class="uk-div uk-margin uk-padding">
 
-        <div class="uk-div uk-padding" >
+        <div class="uk-div uk-padding">
             <a href="/menu/menuadmon/personal/agregar_personal" class="uk-button uk-button-primary">Agregar personal</a>
         </div>
 
@@ -86,17 +86,14 @@
                 <tr>
                     <th>Personal</th>
                     <th>Rol</th>
+                    <th>Opciones</th>
 
                 </tr>
             </thead>
             <tbody id="tablatrabajadores">
                 <tr>
-                    <td>
 
-                    </td>
-                    <td>
 
-                    </td>
                 </tr>
 
             </tbody>
@@ -114,46 +111,56 @@
     </div>
 
     <script>
-        let trabajadores=[];
+        let trabajadores = [];
 
 
-        function peticionapi(data,method,onSuccess){
+        function peticionapi(data, method, onSuccess) {
 
 
-            let url='/api/gettrabajador';
-            if(method=='PUT'||method=='DELETE'){
-                url+='/'+data.id;
+            let url = '/api/gettrabajador';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.id;
             }
             $.ajax({
-            url:url,
-            method:method,
-            data:data,
+                url: url
+                , method: method
+                , data: data,
 
-             success(res){
-            onSuccess(res);
+                success(res) {
+                    onSuccess(res);
 
+                }
+
+            })
         }
 
-        })
-        }
-        function cargarproductos(){
-                                    peticionapi({},'GET',function(res){
-                                        trabajadores=res;
-                                    let html='';
-                                    res.forEach(trabajadores=>{
-                                        html+=
-                                        '<tr>'+
+        function cargarproductos() {
+            peticionapi({}, 'GET', function(res) {
+                trabajadores = res;
+                let html = '';
+                res.forEach(trabajadores => {
+                    html +=
+                        '<tr>' +
 
-                                            '<td>'+'<a class="uk-button" href="/menu/menuadmon/personal/agregar_personal?'+trabajadores.IDpersona+'">'+trabajadores.primer_nombre+" "+trabajadores.segundo_nombre+" "+trabajadores.primer_apellido+" "+trabajadores.segundo_apellido+'</td>'+'</a>'+
+                        '<td>' + '<a class="uk-button" href="/menu/menuadmon/personal/agregar_personal?"' + trabajadores.IDpersona + '">' + trabajadores.primer_nombre + " " + trabajadores.segundo_nombre + " " + trabajadores.primer_apellido + " " + trabajadores.segundo_apellido + '</td>' + '</a>' +
 
-                                            '<td>'+trabajadores.Rol+'</td>'+
+                        '<td>' + trabajadores.Rol + '</td>' +
 
-                                        '</tr>'
-                                    });
-                                    $("#tablatrabajadores").html(html);
+                        '<td>' + '<a href="/menu/menuadmon/personal/agregar_personal?" class="uk-padding-small" uk-icon="pencil"></a> <span></> <button class=" " uk-icon="trash"></button>' + '</td>' +
+
+
+
+
+
+
+
+
+
+                        '</tr>'
+                });
+                $("#tablatrabajadores").html(html);
             });
         }
-
 
     </script>
 </body>

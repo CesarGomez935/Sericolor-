@@ -11,30 +11,32 @@
 
 </head>
 <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-        <!-- Copyright -->
-        <div class="text-white mb-3 mb-md-0">
-        Yo soy el buen pastor, y conozco mis ovejas y las mías me conocen,
+    <!-- Copyright -->
+    <div class="text-white mb-3 mb-md-0">
 
-        </div>
-        <!-- Copyright -->
+        <label style="font-style: italic " for="">"Yo soy el buen pastor, y conozco mis ovejas y las mías me conocen"</label>
 
-        <!-- Right -->
-        <div>
-            <a href="https://www.biblegateway.com/passage/?search=Juan%2010%3A14&version=RVR1960" class="text-white me-4">
-                <i class="fab fa-facebook-f"></i>
-                Juan 10:14
-            </a>
-            <a href="#!" class="text-white me-4">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#!" class="text-white me-4">
-                <i class="fab fa-google"></i>
-            </a>
-            <a href="#!" class="text-white">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-        </div>
-        <!-- Right -->
+
+    </div>
+    <!-- Copyright -->
+
+    <!-- Right -->
+    <div>
+        <a href="https://www.biblegateway.com/passage/?search=Juan%2010%3A14&version=RVR1960" class="text-white me-4">
+            <i class="fab fa-facebook-f"></i>
+            Juan 10:14
+        </a>
+        <a href="#!" class="text-white me-4">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#!" class="text-white me-4">
+            <i class="fab fa-google"></i>
+        </a>
+        <a href="#!" class="text-white">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
+    <!-- Right -->
 </div>
 <body>
     <div style="text-align: center;">
@@ -85,7 +87,7 @@
                             <a href="/menu/pedidos_bordado" class="btn btn-lg" style="background-color:transparent">
                                 <div style="text-align:center">
 
-                                <img width="200" height="200" src="https://www.pinclipart.com/picdir/big/208-2081930_advanced-cross-stitch-sewing-needle-transparent-background-clipart.png" alt="">
+                                    <img width="200" height="200" src="https://www.pinclipart.com/picdir/big/208-2081930_advanced-cross-stitch-sewing-needle-transparent-background-clipart.png" alt="">
                                 </div>
                                 Pedidos de Bordado
                             </a>
@@ -109,15 +111,16 @@
 
     <div class="uk-padding uk-background-muted uk-padding ">
         <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-            <a href="/Inicio" class="uk-button uk-button-primary "style="">Salir</a>
+            <a href="/Inicio" class="uk-button uk-button-primary " style="">Salir</a>
         </div>
     </div>
 </body>
 <footer>
-<div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+    <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
         <!-- Copyright -->
         <div class="text-white mb-3 mb-md-0">
-            Copyright © 2021. All rights reserved.
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />Esta obra está bajo una <a rel="license" style="color: black" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Licencia Creative Commons Atribución-NoComercial-SinDerivadas 4.0 Internacional</a>.
+
         </div>
         <!-- Copyright -->
 

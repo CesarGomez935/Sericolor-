@@ -88,7 +88,7 @@ class dbcontroller extends Controller
         $mysqlUserName      = env('DB_USERNAME');
         $mysqlPassword      = env('DB_PASSWORD');
         $DbName             = env('DB_DATABASE');
-        $file_name = 'Respando_sericolor_en_' . date('y-m-d') . '.sql';
+        $file_name = 'Respando_sericolor_en_' . date('d-m-y') . '.sql';
 
 
         $queryTables = \DB::select(\DB::raw('SHOW TABLES'));
@@ -157,7 +157,7 @@ class dbcontroller extends Controller
         $mysqlUserName      = env('DB_USERNAME');
         $mysqlPassword      = env('DB_PASSWORD');
         $DbName             = env('DB_DATABASE');
-        $file_name = 'Respando_sericolor_en_' . date('y-m-d') . '.sql';
+        $file_name = 'Respando_sericolor_en_' . date('d-m-y') . '.sql';
 
 
         $queryTables = \DB::select(\DB::raw('SHOW TABLES'));

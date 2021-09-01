@@ -13,8 +13,11 @@
 <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
     <!-- Copyright -->
     <div class="text-white mb-3 mb-md-0">
-        Y me dijo: Tú eres mi siervo, Israel, en quien yo mostraré mi gloria.
 
+        <label style="font-style: italic " for="">
+
+            "Y me dijo: Tú eres mi siervo, Israel, en quien yo mostraré mi gloria."
+        </label>
 
 
     </div>
@@ -108,7 +111,9 @@
     <div class="d-flex flex-column flex-md-row text-center uk-position-bottom text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
         <!-- Copyright -->
         <div class="text-white mb-3 mb-md-0">
-            Copyright © 2021. All rights reserved.
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />Esta obra está bajo una <a rel="license" style="color: black" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Licencia Creative Commons Atribución-NoComercial-SinDerivadas 4.0 Internacional</a>.
+
+
         </div>
         <!-- Copyright -->
 
