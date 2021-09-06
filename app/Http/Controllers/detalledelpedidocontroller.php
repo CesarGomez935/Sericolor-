@@ -174,7 +174,7 @@ class detalledelpedidocontroller extends Controller
     public function getallpedidobordado()
     {
         //
-        return Detalledelpedido::select("*")->where("Tipo_de_pedido","bordado")->join("persona","persona.IDpersona","=","Detalledelpedido.IDdetalledelpedido")->get();
+        return Detalledelpedido::select("*")->join("persona","detalledelpedido.IDdetalledelpedido","=","persona.IDpersona")->where("Tipo_de_pedido","Bordado")->orderBy("IDdetalledelpedido","DESC")->get(); 
     }
 
     public function getallpedidoserigrafia()
@@ -182,20 +182,19 @@ class detalledelpedidocontroller extends Controller
         //
       //return Detalledelpedido::where("Tipo_de_pedido","serigrafia")->get();
       //agregar idpersona en detalle del pedido
-      return Detalledelpedido::select("*")->where("Tipo_de_pedido","Serigrafia")->join("persona","persona.IDpersona","=","Detalledelpedido.IDdetalledelpedido")->get();
-
+        return Detalledelpedido::select("*")->join("persona","detalledelpedido.IDdetalledelpedido","=","persona.IDpersona")->where("Tipo_de_pedido","Serigrafia")->orderBy("IDdetalledelpedido","DESC")->get(); 
 
     }
 
     public function getallpedidoimpresion()
     {
         //
-        return Detalledelpedido::select("*")->where("Tipo_de_pedido","impresion_digital")->join("persona","persona.IDpersona","=","Detalledelpedido.IDdetalledelpedido")->get();
+        return Detalledelpedido::select("*")->join("persona","detalledelpedido.IDdetalledelpedido","=","persona.IDpersona")->where("Tipo_de_pedido","Impresion_digital")->orderBy("IDdetalledelpedido","DESC")->get(); 
     }
 
     public function getallpedidosublimacion()
     {
         //
-        return Detalledelpedido::select("*")->where("Tipo_de_pedido","Sublimacion")->join("persona","persona.IDpersona","=","Detalledelpedido.IDdetalledelpedido")->get();
+        return Detalledelpedido::select("*")->join("persona","detalledelpedido.IDdetalledelpedido","=","persona.IDpersona")->where("Tipo_de_pedido","Sublimacion")->orderBy("IDdetalledelpedido","DESC")->get(); 
     }
 }
