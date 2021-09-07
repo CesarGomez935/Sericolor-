@@ -134,4 +134,37 @@ class persona extends Controller
 
 
     }
+
+    public function edittrabajador($id)
+    {
+        $trabajador = trabajador::find($id);
+
+        return view("editarPersonal",compact("trabajador"));
+        //return $trabajador;
+    }
+
+    public function updatetrabajador(Request $request, $id)
+    {
+        $trabajador = trabajador::find($id);
+
+
+
+        
+        $trabajador->primer_nombre = $request->primer_nombre_personal;
+        $trabajador->segundo_nombre = $request->segundo_nombre_personal;
+        $trabajador->primer_apellido = $request->primer_apellido_personal;
+        $trabajador->segundo_apellido = $request->segundo_apellido_personal;
+        $trabajador->cedula = $request->cedula_trabajador;
+        $trabajador->tipodepersona = $request->tipodepersona_personal;
+        $trabajador->correo = $request->correo_personal;
+        $trabajador->telefono = $request->telefono_trabajador;
+        $trabajador->RolAsignado = $request->rol_asignado_trabajador;
+        
+        //return $trabajador;
+
+        $trabajador->save();
+
+        return redirect("/menu/menuadmon/personal");
+    }
+
 }

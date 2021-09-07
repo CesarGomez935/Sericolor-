@@ -4,6 +4,7 @@ use App\Http\Controllers\detalledelpedidocontroller;
 use App\Http\Controllers\reporteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dbcontroller;
+use App\Http\Controllers\persona;
 
 
 /*
@@ -134,3 +135,7 @@ Route::get('menu/menuadmon/resumen_pedidos', function () {
 Route::resource('Detalledelpedido',detalledelpedidocontroller::class);
 
 Route::get('/descargarbasededatos', [dbcontroller::class,"descargar"]);
+
+Route::get('/menu/menuadmon/personal/agregar_personal/{id}/edit', [persona::class,"edittrabajador"])->name("trabajador.edit");
+
+Route::put('/menu/menuadmon/personal/agregar_personal/{id}', [persona::class,"updatetrabajador"])->name("trabajador.update");

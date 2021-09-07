@@ -142,11 +142,13 @@
                     html +=
                         '<tr>' +
 
-                        '<td>' + '<a class="uk-button" href="/menu/menuadmon/personal/agregar_personal?"' + trabajadores.IDpersona + '">' + trabajadores.primer_nombre + " " + trabajadores.segundo_nombre + " " + trabajadores.primer_apellido + " " + trabajadores.segundo_apellido + '</td>' + '</a>' +
+                        '<td>' + '<a class="uk-button" href="/menu/menuadmon/personal/agregar_personal/' + trabajadores.IDpersona + '/edit">' + trabajadores.primer_nombre + " " + trabajadores.segundo_nombre + " " + trabajadores.primer_apellido + " " + trabajadores.segundo_apellido + '</td>' + '</a>' +
+
 
                         '<td>' + trabajadores.Rol + '</td>' +
 
-                        '<td>' + '<a href="/menu/menuadmon/personal/agregar_personal?" class="uk-padding-small" uk-icon="pencil"></a> <span></> <button class=" " uk-icon="trash"></button>' + '</td>' +
+                        '<td>' + '<a href="/menu/menuadmon/personal/agregar_personal/' + trabajadores.IDpersona + '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <button class=" " uk-icon="trash"></button>' + '</td>' +
+
 
 
 
@@ -162,7 +164,26 @@
             });
         }
 
+        function editar(id) {
+
+            let data = trabajadores.filter(trabajadores => {
+                return trabajadores.id == id;
+            })
+            $("#Id_trabajadores").val(data[0].id)
+                , $("#1Nombre").val(data[0].nombre1)
+                , $("#2Nombre").val(data[0].nombre2)
+                , $("#Apellidos").val(data[0].apellidos)
+                , $("#sexo").val(data[0].sexo)
+                , $("#direccion").val(data[0].direccion)
+                , $("#telefono").val(data[0].Telefono)
+                , $("#Cargo").val(data[0].Cargo);
+
+        }
+
     </script>
+
+
+
 </body>
 
 </html>
