@@ -139,3 +139,5 @@ Route::get('/descargarbasededatos', [dbcontroller::class,"descargar"]);
 Route::get('/menu/menuadmon/personal/agregar_personal/{id}/edit', [persona::class,"edittrabajador"])->name("trabajador.edit");
 
 Route::put('/menu/menuadmon/personal/agregar_personal/{id}', [persona::class,"updatetrabajador"])->name("trabajador.update");
+
+Route::get('/menu/menuadmon/personal/{id}', [persona::class,"destroytrabajador"])->name("trabajador.destroy");

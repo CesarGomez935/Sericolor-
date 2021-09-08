@@ -83,6 +83,8 @@
 
         <table class="uk-table uk-table-divider uk-table-striped uk-table-hover">
             <thead>
+                @method('delete')
+                @csrf
                 <tr>
                     <th>Personal</th>
                     <th>Rol</th>
@@ -147,7 +149,9 @@
 
                         '<td>' + trabajadores.Rol + '</td>' +
 
-                        '<td>' + '<a href="/menu/menuadmon/personal/agregar_personal/' + trabajadores.IDpersona + '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <button class=" " uk-icon="trash"></button>' + '</td>' +
+                        '<td>' + '<a href="/menu/menuadmon/personal/agregar_personal/' + trabajadores.IDpersona + '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a href="/menu/menuadmon/personal/' + trabajadores.IDpersona + '" action="" class=" " uk-icon="trash"></a>' + '</td>' +
+
+
 
 
 
