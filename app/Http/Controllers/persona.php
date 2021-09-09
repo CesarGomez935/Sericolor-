@@ -198,4 +198,47 @@ class persona extends Controller
         return redirect("/menu/menuadmon/personal");
     }
 
+
+    public function editcliente($id)
+    {
+        $cliente = cliente::find($id);
+
+        return view("editarcliente",compact("cliente"));
+        //return $trabajador;
+    }
+
+    public function updatecliente(Request $request, $id)
+    {
+        $cliente = cliente::find($id);
+
+
+
+        
+        $cliente->primer_nombre = $request->primer_nombre_cliente;
+        $cliente->segundo_nombre = $request->segundo_nombre_cliente;
+        $cliente->primer_apellido = $request->primer_apellido_cliente;
+        $cliente->segundo_apellido = $request->segundo_apellido_cliente;
+        $cliente->cedula = $request->cedula_cliente;
+        $cliente->tipodepersona = $request->tipo_cliente;
+        $cliente->correo = $request->correo_cliente;
+        $cliente->telefono = $request->telefono_cliente;
+        
+        //return $trabajador;
+
+        $cliente->save();
+
+        return redirect("/menu/menuadmon/clientes");
+    }
+
+    public function destroycliente($id)
+    {
+
+
+        $cliente = cliente::find($id);
+
+        $cliente->delete();
+
+        return redirect("/menu/menuadmon/clientes");
+    }
+
 }

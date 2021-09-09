@@ -141,3 +141,9 @@ Route::get('/menu/menuadmon/personal/agregar_personal/{id}/edit', [persona::clas
 Route::put('/menu/menuadmon/personal/agregar_personal/{id}', [persona::class,"updatetrabajador"])->name("trabajador.update");
 
 Route::get('/menu/menuadmon/personal/{id}', [persona::class,"destroytrabajador"])->name("trabajador.destroy");
+
+Route::get('/menu/menuadmon/clientes/agregar_cliente/{id}/edit', [persona::class,"editcliente"])->name("cliente.edit");
+
+Route::put('/menu/menuadmon/clientes/agregar_clientes/{id}', [persona::class,"updatecliente"])->name("cliente.update");
+
+Route::get('/menu/menuadmon/clientes/{id}', [persona::class,"destroycliente"])->name("cliente.destroy");

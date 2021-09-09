@@ -61,7 +61,7 @@
 
                     <ul class="uk-nav-sub">
                         <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
-                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                        <li> <a href="/menu/menuadmon/clientes">clientes</a></li>
                         <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
                         <li> <a href="/menu/menuadmon/bd">Restaurar y generar Back-up</a></li>
                         <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
@@ -78,24 +78,24 @@
 
     <div class="uk-div uk-margin uk-padding">
 
-        <form>
 
 
 
-            <div class="uk-margin">
 
-                <b> <label id="buscar_cliente" for="form-stacked-text" oninput="cargarproductosbusqueda(buscar_cliente.value);" class="uk-form-label">Buscar Cliente</label> </b>
-                <div class="uk-inline uk-padding">
+        <div class="uk-margin">
 
-                    <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
-                    <input class="uk-input uk-form-width-large" type="text">
-                </div>
-                <a href="/menu/menuadmon/clientes/agregar_cliente" class="uk-button-primary uk-button uk-margin uk-padding ">agregar Cliente</a>
+            <b> <label id="buscar_cliente" for="form-stacked-text" oninput="cargarproductosbusqueda(buscar_cliente.value);" class="uk-form-label">Buscar Cliente</label> </b>
+            <div class="uk-inline uk-padding">
+
+                <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
+                <input class="uk-input uk-form-width-large" type="text">
             </div>
+            <a href="/menu/menuadmon/clientes/agregar_cliente" class="uk-button-primary uk-button uk-margin uk-padding ">agregar Cliente</a>
+        </div>
 
 
 
-        </form>
+
         <!-- Tabla que muestra el listado de clientes con un hipervinculo a su detalle -->
         <table class="uk-table uk-table-divider uk-table-striped uk-table-hover">
             <thead>
@@ -115,6 +115,26 @@
 
             </tbody>
         </table>
+        <table class="uk-table uk-table-divider uk-table-striped uk-table-hover">
+            <thead>
+                @method('delete')
+                @csrf
+                <tr>
+                    <th>Personal</th>
+                    <th>Rol</th>
+                    <th>Opciones</th>
+
+                </tr>
+            </thead>
+            <tbody id="tablatrabajadores">
+                <tr>
+
+
+                </tr>
+
+            </tbody>
+        </table>
+
 
     </div>
 
@@ -159,15 +179,27 @@
                     html +=
                         '<tr>' +
 
-                        '<td>' + '<a class="uk-button" href="/menu/menuadmon/clientes/agregar_cliente?' + trabajadores.IDpersona + '">' + trabajadores.primer_nombre + " " + trabajadores.segundo_nombre + " " + trabajadores.primer_apellido + " " + trabajadores.segundo_apellido + '</td>' + '</a>' +
+                        '<td>' + '<a class="uk-button" href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IDpersona + '/edit">' + trabajadores.primer_nombre + " " + trabajadores.segundo_nombre + " " + trabajadores.primer_apellido + " " + trabajadores.segundo_apellido + '</td>' + '</a>' +
+
 
                         '<td>' + trabajadores.Rol + '</td>' +
 
-                        '<td>' + '<a href="/menu/menuadmon/clientes/agregar_cliente?" class="uk-padding-small" uk-icon="pencil"></a> <span></> <button class=" " uk-icon="trash"></button>' + '</td>' +
+                        '<td>' + '<a href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IDpersona + '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a href="/menu/menuadmon/clientes/' + trabajadores.IDpersona + '" action="" class=" " uk-icon="trash"></a>' + '</td>' +
+
+
+
+
+
+
+
+
+
+
 
 
                         '</tr>'
                 });
+
                 $("#tablaclientes").html(html);
             });
         }

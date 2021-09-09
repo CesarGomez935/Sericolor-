@@ -5,11 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal</title>
+    <title>Agregar Cliente</title>
     <link rel="icon" href="/img/Icono.ico" type="image/ico" />
-
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
@@ -20,34 +17,32 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- JQuery-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
-<body onpageshow="cambiarselect();">
+<body>
 
-
-    <form action="{{route("trabajador.update",$trabajador)}}" method="POST">
+    <form action="{{route("cliente.update",$cliente)}}" method="POST">
 
         @csrf
 
         @method('put')
 
 
-        <!-- NavBar -->
+        <!-- NavBar que muestra los distintos elementos de la apliaciión web -->
         <nav class="uk-navbar uk-navbar-container ">
             <div class="uk-navbar-left">
                 <a class="uk-navbar-toggle" href="#">
-                    <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Personal</span>
+                    <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Agregar Clientes</span>
                 </a>
             </div>
 
             <a href="#my-id" uk-toggle></a>
 
-            <!-- Off Canvas, elemento desplegable de UiKit -->
+            <!-- Off Canvas, Elemento desplegabe de uiKit -->
             <div id="my-id" uk-offcanvas>
                 <div class="uk-offcanvas-bar">
 
@@ -85,98 +80,86 @@
             </div>
         </nav>
 
-        <!-- Formulario de Insercion de personal -->
+        <!-- Formulario para agregar cliente -->
+
 
 
         <div class="uk-padding-small uk-background-muted" style="padding-left: 300px;">
-            <select class="uk-select" id="Rol" disabled hidden>
-                <option value='Trabajador'>Trabajador</option>
-            </select>
+
             <div style="text-align: center;" class="uk-padding">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png" alt="" width="300" height="300">
             </div>
 
             <div style="text-align: center; " class="">
                 <div class="uk-form-horizontal uk-margin-large">
-
+                    <select class="uk-select" id="Rol" disabled hidden>
+                        <option value='Cliente'>Cliente</option>
+                    </select>
                     <div class="uk-margin">
-                        <label for="primer_nombre_personal" class="uk-form-label" for="form-horizontal-text">Primer Nombre</label>
+                        <label for="primer_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Primer Nombre</label>
                         <div class="uk-form-controls">
-                            <input name="primer_nombre_personal" value="{{$trabajador->primer_nombre}}" id="primer_nombre_personal" class="uk-input name="" uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
-
-                        </div>
-                    </div>
-
-                    <div class="uk-margin">
-                        <label for="segundo_nombre_peronal" class="uk-form-label" for="form-horizontal-text">Segundo Nombre</label>
-                        <div class="uk-form-controls">
-                            <input name="segundo_nombre_personal" value="{{$trabajador->segundo_nombre}}" id="segundo_nombre_personal" class="uk-input name="" uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input name="primer_nombre_cliente" value="{{$cliente->primer_nombre}}" id="primer_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
 
 
                         </div>
                     </div>
 
                     <div class="uk-margin">
-                        <label for="primer_apellido_personal" class="uk-form-label" for="form-horizontal-text">Primer Apellido</label>
+                        <label for="segundo_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Segundo Nombre</label>
                         <div class="uk-form-controls">
-                            <input name="primer_apellido_personal" value="{{$trabajador->primer_apellido}}" id="primer_apellido_personal" class="uk-input name="" uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input name="segundo_nombre_cliente" value="{{$cliente->segundo_nombre}}" id="segundo_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
 
 
                         </div>
                     </div>
 
                     <div class="uk-margin">
-                        <label for="segundo_apellido_personal" class="uk-form-label" for="form-horizontal-text">Segundo Apellido</label>
+                        <label for="primer_apellido_cliente" class="uk-form-label" for="form-horizontal-text">Primer Apellido</label>
                         <div class="uk-form-controls">
-                            <input name="segundo_apellido_personal" value="{{$trabajador->segundo_apellido}}" id="segundo_apellido_personal" class="uk-input name="" uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input name="primer_apellido_cliente" value="{{$cliente->primer_apellido}}" id="primer_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
 
 
                         </div>
                     </div>
 
                     <div class="uk-margin">
-                        <label for="correo_personal" class="uk-form-label" for="form-horizontal-text">Correo</label>
+                        <label for="segundo_apellido_cliente" class="uk-form-label" for="form-horizontal-text">Segundo Apellido</label>
                         <div class="uk-form-controls">
-                            <input name="correo_personal" value="{{$trabajador->Correo}}" t id="correo_personal" class="uk-input name="" uk-form-width-large" id="form-horizontal-text" type="e-mail" placeholder="Some text...">
+                            <input name="segundo_apellido_cliente" value="{{$cliente->segundo_apellido}}" id="segundo_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="uk-margin">
+                        <label for="telefono_cliente" class="uk-form-label" for="form-horizontal-text">Teléfono</label>
+                        <div class="uk-form-controls">
+                            <input name="telefono_cliente" value="{{$cliente->telefono}}" id="telefono_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
 
 
                         </div>
                     </div>
 
                     <div class="uk-margin">
-                        <label for="telefono_trabajador" class="uk-form-label" for="form-horizontal-text">Teléfono</label>
+                        <label for="cedula_cliente" class="uk-form-label" for="form-horizontal-text">Cédula</label>
                         <div class="uk-form-controls">
-                            <input name="telefono_trabajador" value="{{$trabajador->telefono}}" id="telefono_trabajador" class="uk-input name="" uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input name="cedula_cliente" value="{{$cliente->cedula}}" id="cedula_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
 
 
                         </div>
                     </div>
 
                     <div class="uk-margin">
-                        <label for="cedula_trabajador" class="uk-form-label" for="form-horizontal-text">Cédula</label>
-                        <div class="uk-form-controls">
-                            <input name="cedula_trabajador" value="{{$trabajador->cedula}}" id="cedula_trabajador" class="uk-input name="" uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
-
-
-                        </div>
-                    </div>
-
-                    <div class="uk-margin">
-                        <label for="rol_asignado_trabajador" class="uk-form-label" for="form-horizontal-text">Rol Asignado</label>
+                        <label for="tipo_cliente" class="uk-form-label" for="form-horizontal-text">Tipo de Cliente</label>
                         <div class="uk-margin">
                             <div uk-form-custom="target: > * > span:first-child">
-
-                                <select name=" rol_asignado_trabajador" id="rol_asignado_trabajador">
-
-
-
-
+                                <select name="tipo_cliente" id="tipo_cliente">
                                     <option value="">Seleccionar</option>
-                                    <option value="ID">Impresión Digital</option>
-                                    <option value="Su">Sublimación</option>
-                                    <option value="B">Bordado</option>
-                                    <option value="Se">Serigrafía</option>
-                                    <option value="R">Recepcion</option>
+                                    <option value="Persona_Natural">Persona Natural</option>
+                                    <option value="Empresa">Empresa</option>
+
                                 </select>
                                 <button class="uk-button uk-button-default" type="button" tabindex="-1">
                                     <span></span>
@@ -196,54 +179,74 @@
 
 
 
-        <!-- Botones de atrás y guardar -->
+
         <div class="uk-padding-small uk-background-muted uk-padding">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 
-                <a href="/menu/menuadmon/personal" class="uk-button uk-button-primary" style="margin-left: 100px">Atrás </a>
-                <button type="submit" id="guardar" class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
+                <a href="/menu/menuadmon/clientes" class="uk-button uk-button-primary  " style="margin-left: 100px">Atrás </a>
+                <button id="guardar" class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
 
             </div>
         </div>
 
-
-
     </form>
 
-
 </body>
-
-
-
 <script>
-    function cambiarselect() {
+    let detallesdepedido = [];
 
-        var val = "{{$trabajador->RolAsignado}}";
+    cargarcliente();
 
-        // document.querySelector('#rol_asignado_trabajador [value="' + val + '"]').selected = true;
+    $('#guardar').click(function(res) {
+        guardarpedido();
+        alert("Se agrego correctamente al cliente");
 
-        $('#rol_asignado_trabajador').val(val).change();
+    });
 
+    function peticionapi(data, method, onSucess) {
+        let url = '/api/cliente';
+        if (method == 'PUT' || method == 'DELETE') {
+            url += '/' + data.IDpersona;
+        }
+        $.ajax({
+            url: url
+            , method: method
+            , data: data
+            , error(ext) {
+                let error = e.responseJSON.errors;
+                let msj = error[Object.keys(error)[0]][0];
+                alert(msj);
+            }
+            , success(res) {
 
+            }
+        })
+    }
 
+    function guardarpedido() {
+        let data = {
+            Rol: $("#Rol").val()
+            , primer_nombre: $("#primer_nombre_cliente").val()
+            , segundo_nombre: $("#segundo_nombre_cliente").val()
+            , primer_apellido: $("#primer_apellido_cliente").val()
+            , segundo_apellido: $("#segundo_apellido_cliente").val()
+            , tipodepersona: $("#tipo_cliente").val()
+            , telefono: $("#telefono_cliente").val()
+            , cedula: $("#cedula_cliente").val()
+        , };
+        peticionapi(data, 'POST', function(res) {
+            alert('Guardado con exito')
+        });
+    }
 
-
-
-
-
-        // $('#rol_asignado_trabajador option:contains(' + val + ')').prop({
-        //     selected: true
-        // });
-
-
-
-
-
-
+    function cargarcliente() {
+        peticionapi({}, 'GET', function(res) {
+            console.log(res);
+            alert('respuesta satisfactoria');
+        });
 
     }
 
 </script>
-
 
 </html>
