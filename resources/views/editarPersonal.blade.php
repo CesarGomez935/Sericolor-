@@ -201,7 +201,8 @@
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 
                 <a href="/menu/menuadmon/personal" class="uk-button uk-button-primary" style="margin-left: 100px">Atrás </a>
-                <button type="submit" id="guardar" class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
+                <button onclick="return confirm('¿Está seguro que desea continuar?')" type="submit" id="guardar" class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
+
 
             </div>
         </div>

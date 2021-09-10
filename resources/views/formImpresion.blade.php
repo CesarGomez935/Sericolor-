@@ -153,7 +153,7 @@
                         <td><input id="costo_2" oninput="costo2();" class="uk-input costo2" min="0" type="number" placeholder="0" value="0"></td>
                         <td><input id="precio_mt2_2" oninput="multi2();" class="uk-input monto2" min="0" type="number" placeholder="0" value="0"></td>
                         <td><input id="cantidad_2" oninput="multi2();" class="uk-input monto2" min="0" type="number" placeholder="0" value="0"></td>
-                        <td><input id="total_2" name="total_2" class="uk-input" min="0" value="" type="number" placeholder="0"value="0"></td>
+                        <td><input id="total_2" name="total_2" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"></td>
                     </tr>
                     <tr>
                         <td><input id="alto_3" oninput="area3();" class="uk-input area3" min="0" type="number" placeholder="0" value="0"></td>
@@ -170,7 +170,7 @@
                         <td><input id="ancho_4" oninput="area4();" class="uk-input area4" min="0" type="number" placeholder="0" value="0"></td>
                         <td><input id="mt2_4" oninput="costo4();" class="uk-input costo4" min="0" type="number" placeholder="0" value="0"></td>
                         <td><input id="costo_4" oninput="costo4();" class="uk-input costo4" min="0" type="number" placeholder="0" value="0"></td>
-                        <td><input id="precio_mt2_4" oninput="multi4();" class="uk-input monto4" min="0" type="number" placeholder="0" value="0" ></td>
+                        <td><input id="precio_mt2_4" oninput="multi4();" class="uk-input monto4" min="0" type="number" placeholder="0" value="0"></td>
                         <td><input id="cantidad_4" oninput="multi4();" class="uk-input monto4" min="0" type="number" placeholder="0" value="0"></td>
                         <td><input id="total_4" name="total_4" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"></td>
                     </tr>
@@ -384,6 +384,7 @@
 
 
                 }
+
             </script>
         </div>
 
@@ -551,6 +552,7 @@
 
 
                                 }
+
                             </script>
                         </table>
                     </div>
@@ -638,7 +640,8 @@
         <div class="uk-padding uk-background-muted uk-padding  ">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
                 <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
-                <a type="submit" id="guardar" href="/menu/menu_facturacion/form_impresion_digital"  class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
+                <a onclick="return confirm('¿Está seguro que desea continuar?')" type="submit" id="guardar" href="/menu/menu_facturacion/form_impresion_digital" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
+
 
             </div>
         </div>
@@ -661,15 +664,15 @@
             url += '/' + data.IDdetalledelpedido;
         }
         $.ajax({
-            url: url,
-            method: method,
-            data: data,
-            error(ext) {
+            url: url
+            , method: method
+            , data: data
+            , error(ext) {
                 let error = e.responseJSON.errors;
                 let msj = error[Object.keys(error)[0]][0];
                 alert(msj);
-            },
-            success(res) {
+            }
+            , success(res) {
 
             }
         })
@@ -677,57 +680,57 @@
 
     function guardarpedido() {
         let data = {
-            Tipo_de_pedido: $("#tipo_de_pedido").val(),
-            alto1: $("#alto_1").val(),
-            ancho1: $("#ancho_1").val(),
-            mtscuadrados1: $("#mt2_1").val(),
-            precioxmtscuadrados1: $("#costo_1").val(),
-            costo1: $("#precio_mt2_1").val(),
-            cantidad1: $("#cantidad_1").val(),
-            total1: $("#total_1").val(),
-            alto2: $("#alto_2").val(),
-            ancho2: $("#ancho_2").val(),
-            mtscuadrados2: $("#mt2_2").val(),
-            precioxmtscuadrados2: $("#costo_1").val(),
-            costo2: $("#precio_mt2_1").val(),
-            cantidad2: $("#cantidad_2").val(),
-            total2: $("#total_2").val(),
-            alto3: $("#alto_3").val(),
-            ancho3: $("#ancho_3").val(),
-            mtscuadrados3: $("#mt2_3").val(),
-            precioxmtscuadrados3: $("#costo_3").val(),
-            costo3: $("#precio_mt2_3").val(),
-            cantidad3: $("#cantidad_3").val(),
-            total3: $("#total_3").val(),
-            alto4: $("#alto_4").val(),
-            ancho4: $("#ancho_4").val(),
-            mtscuadrados4: $("#mt2_4").val(),
-            precioxmtscuadrados4: $("#costo_4").val(),
-            costo4: $("#precio_mt2_4").val(),
-            cantidad4: $("#cantidad_4").val(),
-            total4: $("#total_4").val(),
-            preciounitario1: $("#precio_und_pedido_1").val(),
-            preciounitario2: $("#precio_und_pedido_2").val(),
-            preciounitario3: $("#precio_und_pedido_3").val(),
-            preciounitario4: $("#precio_und_pedido_4").val(),
-            cantidadespe1: $("#cantidad_pedido_1").val(),
-            cantidadespe2: $("#cantidad_pedido_2").val(),
-            cantidadespe3: $("#cantidad_pedido_3").val(),
-            cantidadespe4: $("#cantidad_pedido_4").val(),
-            especifaciones1: $("#especifaciones_pedido_1").val(),
-            especifaciones2: $("#especifaciones_pedido_2").val(),
-            especifaciones3: $("#especifaciones_pedido_3").val(),
-            especifaciones4: $("#especifaciones_pedido_4").val(),
-            preciototal1: $("#precio_pedido_1").val(),
-            preciototal2: $("#precio_pedido_2").val(),
-            preciototal3: $("#precio_pedido_3").val(),
-            preciototal4: $("#precio_pedido_4").val(),
-            cantidadtotal: $("#total_pedido").val(),
-            nota: $("#notas").val(),
-            Nombredelcomprador: $("#nombre").val(),
-            Telefono: $("#telefono").val(),
-            NumeroRuc: $("#Ruc").val(),
-            fechadepedido: $("#fecha_fact").val(),
+            Tipo_de_pedido: $("#tipo_de_pedido").val()
+            , alto1: $("#alto_1").val()
+            , ancho1: $("#ancho_1").val()
+            , mtscuadrados1: $("#mt2_1").val()
+            , precioxmtscuadrados1: $("#costo_1").val()
+            , costo1: $("#precio_mt2_1").val()
+            , cantidad1: $("#cantidad_1").val()
+            , total1: $("#total_1").val()
+            , alto2: $("#alto_2").val()
+            , ancho2: $("#ancho_2").val()
+            , mtscuadrados2: $("#mt2_2").val()
+            , precioxmtscuadrados2: $("#costo_1").val()
+            , costo2: $("#precio_mt2_1").val()
+            , cantidad2: $("#cantidad_2").val()
+            , total2: $("#total_2").val()
+            , alto3: $("#alto_3").val()
+            , ancho3: $("#ancho_3").val()
+            , mtscuadrados3: $("#mt2_3").val()
+            , precioxmtscuadrados3: $("#costo_3").val()
+            , costo3: $("#precio_mt2_3").val()
+            , cantidad3: $("#cantidad_3").val()
+            , total3: $("#total_3").val()
+            , alto4: $("#alto_4").val()
+            , ancho4: $("#ancho_4").val()
+            , mtscuadrados4: $("#mt2_4").val()
+            , precioxmtscuadrados4: $("#costo_4").val()
+            , costo4: $("#precio_mt2_4").val()
+            , cantidad4: $("#cantidad_4").val()
+            , total4: $("#total_4").val()
+            , preciounitario1: $("#precio_und_pedido_1").val()
+            , preciounitario2: $("#precio_und_pedido_2").val()
+            , preciounitario3: $("#precio_und_pedido_3").val()
+            , preciounitario4: $("#precio_und_pedido_4").val()
+            , cantidadespe1: $("#cantidad_pedido_1").val()
+            , cantidadespe2: $("#cantidad_pedido_2").val()
+            , cantidadespe3: $("#cantidad_pedido_3").val()
+            , cantidadespe4: $("#cantidad_pedido_4").val()
+            , especifaciones1: $("#especifaciones_pedido_1").val()
+            , especifaciones2: $("#especifaciones_pedido_2").val()
+            , especifaciones3: $("#especifaciones_pedido_3").val()
+            , especifaciones4: $("#especifaciones_pedido_4").val()
+            , preciototal1: $("#precio_pedido_1").val()
+            , preciototal2: $("#precio_pedido_2").val()
+            , preciototal3: $("#precio_pedido_3").val()
+            , preciototal4: $("#precio_pedido_4").val()
+            , cantidadtotal: $("#total_pedido").val()
+            , nota: $("#notas").val()
+            , Nombredelcomprador: $("#nombre").val()
+            , Telefono: $("#telefono").val()
+            , NumeroRuc: $("#Ruc").val()
+            , fechadepedido: $("#fecha_fact").val(),
 
         };
         peticionapi(data, 'POST', function(res) {
@@ -742,6 +745,7 @@
         });
 
     }
+
 </script>
 
 </html>

@@ -82,7 +82,8 @@
             </h3>
             <div class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-middle uk-flex-left uk-padding " style="background-color:white">
 
-                <a href="/api/descargarbasededatos" class="uk-button  uk-padding uk-button-primary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:pull;ratio: 4">
+                <a onclick="return confirm('¿Está seguro que desea continuar?')" href="/api/descargarbasededatos" class="uk-button  uk-padding uk-button-primary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:pull;ratio: 4">
+
                     <h1 style="color:white">
                         Descargar Base de Datos
                     </h1>

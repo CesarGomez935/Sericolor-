@@ -437,6 +437,7 @@
 
 
                             }
+
                         </script>
                     </table>
                 </div>
@@ -520,7 +521,8 @@
         <div class="uk-padding uk-background-muted uk-padding " style="text-align: center;">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
                 <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
-                <a id="guardar" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
+                <a onclick="return confirm('¿Está seguro que desea continuar?')" id="guardar" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
+
 
             </div>
             <select class="uk-select" id="tipo_de_pedido" disabled hidden>
@@ -549,15 +551,15 @@
             url += '/' + data.IDdetalledelpedido;
         }
         $.ajax({
-            url: url,
-            method: method,
-            data: data,
-            error(ext) {
+            url: url
+            , method: method
+            , data: data
+            , error(ext) {
                 let error = e.responseJSON.errors;
                 let msj = error[Object.keys(error)[0]][0];
                 alert(msj);
-            },
-            success(res) {
+            }
+            , success(res) {
 
             }
         })
@@ -569,15 +571,15 @@
             url += '/' + data.IDpedido;
         }
         $.ajax({
-            url: url,
-            method: method,
-            data: data,
-            error(ext) {
+            url: url
+            , method: method
+            , data: data
+            , error(ext) {
                 let error = e.responseJSON.errors;
                 let msj = error[Object.keys(error)[0]][0];
                 alert(msj);
-            },
-            success(res) {
+            }
+            , success(res) {
 
             }
         })
@@ -596,59 +598,59 @@
 
     function guardarpedido() {
         let data = {
-            Tipo_de_pedido: $("#tipo_de_pedido").val(),
-            tipo_de_producto: $("#tipo_producto").val(),
-            pechoizquierdo: $("#pecho_izq").val(),
-            pechoderecho: $("#pecho_der").val(),
-            mangaizquierda: $("#manga_izq").val(),
-            mangaderecha: $("#manga_der").val(),
-            espalda: $("#espalda").val(),
-            tallasCaballero: $("#talla_s_caballero").val(),
-            tallasDama: $("#talla_s_dama").val(),
-            tallamCaballero: $("#talla_m_caballero").val(),
-            tallamDama: $("#talla_m_dama").val(),
-            tallalCaballero: $("#talla_l_caballero").val(),
-            tallalDama: $("#talla_l_dama").val(),
-            tallaxlCaballero: $("#talla_xl_caballero").val(),
-            tallaxlDama: $("#talla_xl_dama").val(),
-            talla2xlCaballero: $("#talla_2xl_caballero").val(),
-            talla2xlDama: $("#talla_2xl_dama").val(),
-            talla3xlCaballero: $("#talla_3xl_caballero").val(),
-            talla3xlDama: $("#talla_3xl_dama").val(),
-            talla5xlCaballero: $("#talla_5xl_caballero").val(),
-            talla5xlDama: $("#talla_5xl_dama").val(),
-            talla18: $("#talla_18").val(),
-            talla16: $("#talla_16").val(),
-            talla14: $("#talla_14").val(),
-            talla12: $("#talla_12").val(),
-            talla10: $("#talla_10").val(),
-            talla8: $("#talla_8").val(),
-            talla6: $("#talla_6").val(),
-            talla4: $("#talla_4").val(),
-            talla2: $("#talla_2").val(),
-            preciounitario1: $("#precio_und_pedido_1").val(),
-            preciounitario2: $("#precio_und_pedido_2").val(),
-            preciounitario3: $("#precio_und_pedido_3").val(),
-            preciounitario4: $("#precio_und_pedido_4").val(),
-            cantidadespe1: $("#cantidad_pedido_1").val(),
-            cantidadespe2: $("#cantidad_pedido_2").val(),
-            cantidadespe3: $("#cantidad_pedido_3").val(),
-            cantidadespe4: $("#cantidad_pedido_4").val(),
-            especificaciones1: $("#especifaciones_pedido_1").val(),
-            especificaciones2: $("#especifaciones_pedido_2").val(),
-            especificaciones3: $("#especifaciones_pedido_3").val(),
-            especificaciones4: $("#especifaciones_pedido_4").val(),
-            preciototal1: $("#precio_pedido_1").val(),
-            preciototal2: $("#precio_pedido_2").val(),
-            preciototal3: $("#precio_pedido_3").val(),
-            preciototal4: $("#precio_pedido_4").val(),
-            cantidadtotal: $("#total_pedido").val(),
-            nota: $("#notas").val(),
-            Nombredelcomprador: $("#nombre").val(),
-            Telefono: $("#telefono").val(),
-            NumeroRuc: $("#Ruc").val(),
-            fechadepedido: $("#fecha_fact").val(),
-        };
+            Tipo_de_pedido: $("#tipo_de_pedido").val()
+            , tipo_de_producto: $("#tipo_producto").val()
+            , pechoizquierdo: $("#pecho_izq").val()
+            , pechoderecho: $("#pecho_der").val()
+            , mangaizquierda: $("#manga_izq").val()
+            , mangaderecha: $("#manga_der").val()
+            , espalda: $("#espalda").val()
+            , tallasCaballero: $("#talla_s_caballero").val()
+            , tallasDama: $("#talla_s_dama").val()
+            , tallamCaballero: $("#talla_m_caballero").val()
+            , tallamDama: $("#talla_m_dama").val()
+            , tallalCaballero: $("#talla_l_caballero").val()
+            , tallalDama: $("#talla_l_dama").val()
+            , tallaxlCaballero: $("#talla_xl_caballero").val()
+            , tallaxlDama: $("#talla_xl_dama").val()
+            , talla2xlCaballero: $("#talla_2xl_caballero").val()
+            , talla2xlDama: $("#talla_2xl_dama").val()
+            , talla3xlCaballero: $("#talla_3xl_caballero").val()
+            , talla3xlDama: $("#talla_3xl_dama").val()
+            , talla5xlCaballero: $("#talla_5xl_caballero").val()
+            , talla5xlDama: $("#talla_5xl_dama").val()
+            , talla18: $("#talla_18").val()
+            , talla16: $("#talla_16").val()
+            , talla14: $("#talla_14").val()
+            , talla12: $("#talla_12").val()
+            , talla10: $("#talla_10").val()
+            , talla8: $("#talla_8").val()
+            , talla6: $("#talla_6").val()
+            , talla4: $("#talla_4").val()
+            , talla2: $("#talla_2").val()
+            , preciounitario1: $("#precio_und_pedido_1").val()
+            , preciounitario2: $("#precio_und_pedido_2").val()
+            , preciounitario3: $("#precio_und_pedido_3").val()
+            , preciounitario4: $("#precio_und_pedido_4").val()
+            , cantidadespe1: $("#cantidad_pedido_1").val()
+            , cantidadespe2: $("#cantidad_pedido_2").val()
+            , cantidadespe3: $("#cantidad_pedido_3").val()
+            , cantidadespe4: $("#cantidad_pedido_4").val()
+            , especificaciones1: $("#especifaciones_pedido_1").val()
+            , especificaciones2: $("#especifaciones_pedido_2").val()
+            , especificaciones3: $("#especifaciones_pedido_3").val()
+            , especificaciones4: $("#especifaciones_pedido_4").val()
+            , preciototal1: $("#precio_pedido_1").val()
+            , preciototal2: $("#precio_pedido_2").val()
+            , preciototal3: $("#precio_pedido_3").val()
+            , preciototal4: $("#precio_pedido_4").val()
+            , cantidadtotal: $("#total_pedido").val()
+            , nota: $("#notas").val()
+            , Nombredelcomprador: $("#nombre").val()
+            , Telefono: $("#telefono").val()
+            , NumeroRuc: $("#Ruc").val()
+            , fechadepedido: $("#fecha_fact").val()
+        , };
         peticionapi(data, 'POST', function(res) {
             alert('Guardado con exito')
         });
@@ -669,6 +671,7 @@
         });
 
     }
+
 </script>
 
 </html>

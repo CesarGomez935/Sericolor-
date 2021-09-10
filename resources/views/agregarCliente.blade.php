@@ -164,7 +164,8 @@
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 
                 <a href="/menu/menuadmon/clientes" class="uk-button uk-button-primary  " style="margin-left: 100px">Atrás </a>
-                <button id="guardar" class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
+                <button id="guardar" onclick="return confirm('¿Está seguro que desea continuar?')" class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
+
 
             </div>
         </div>
@@ -189,15 +190,15 @@
             url += '/' + data.IDpersona;
         }
         $.ajax({
-            url: url,
-            method: method,
-            data: data,
-            error(ext) {
+            url: url
+            , method: method
+            , data: data
+            , error(ext) {
                 let error = e.responseJSON.errors;
                 let msj = error[Object.keys(error)[0]][0];
                 alert(msj);
-            },
-            success(res) {
+            }
+            , success(res) {
 
             }
         })
@@ -205,15 +206,15 @@
 
     function guardarpedido() {
         let data = {
-            Rol:$("#Rol").val(),
-            primer_nombre: $("#primer_nombre_cliente").val(),
-            segundo_nombre: $("#segundo_nombre_cliente").val(),
-            primer_apellido: $("#primer_apellido_cliente").val(),
-            segundo_apellido: $("#segundo_apellido_cliente").val(),
-            tipodepersona: $("#tipo_cliente").val(),
-            telefono: $("#telefono_cliente").val(),
-            cedula: $("#cedula_cliente").val(),
-        };
+            Rol: $("#Rol").val()
+            , primer_nombre: $("#primer_nombre_cliente").val()
+            , segundo_nombre: $("#segundo_nombre_cliente").val()
+            , primer_apellido: $("#primer_apellido_cliente").val()
+            , segundo_apellido: $("#segundo_apellido_cliente").val()
+            , tipodepersona: $("#tipo_cliente").val()
+            , telefono: $("#telefono_cliente").val()
+            , cedula: $("#cedula_cliente").val()
+        , };
         peticionapi(data, 'POST', function(res) {
             alert('Guardado con exito')
         });
@@ -226,6 +227,7 @@
         });
 
     }
+
 </script>
 
 </html>
