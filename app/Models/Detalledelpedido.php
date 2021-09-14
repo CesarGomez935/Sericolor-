@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Detalledelpedido extends Model
 {
     protected $table='detalledelpedido';
-    protected $primarykey='IDdetalledelpedido';
     public $timestamps = false;
+    public function pedido()
+    {
+        return $this->hasMany(pedidos::class);
+    }
+
 }

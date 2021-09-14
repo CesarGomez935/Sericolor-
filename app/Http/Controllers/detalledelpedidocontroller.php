@@ -69,7 +69,7 @@ class detalledelpedidocontroller extends Controller
         $model->talla8 = $request->input('talla8');
         $model->talla6 = $request->input('talla6');
         $model->talla4 = $request->input('talla4');
-        $model->talla2 = $request->input('talla8');
+        $model->talla2 = $request->input('talla2');
         $model->nota = $request->input('nota');
         $model->Nombredelcomprador = $request->input('Nombredelcomprador');
         $model->Telefono = $request->input('Telefono');
