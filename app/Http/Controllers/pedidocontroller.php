@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Models\pedidos;
+use App\Models\Detalledelpedido;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Validation\Rules;
-use Detalledelpedido;
+use Illuminate\Support\Facades\DB;
 class pedidocontroller extends Controller
 {
     /**
@@ -17,6 +18,7 @@ class pedidocontroller extends Controller
     {
         //
         return pedidos::all();
+        return Detalledelpedido::all();
     }
 
     /**
@@ -38,24 +40,99 @@ class pedidocontroller extends Controller
     public function store(Request $request)
     {
         //
-        $model = new pedidos();
-        $detalles=json_decode($request->input('detalledelpedido'));
-        try{
-            Db::beginTransaction('detalledelpedido');
-            $model->save();
-            $this->detalle($model,$detalles);
-            DB::commit();
-        }catch(\Exception $e)
-        {
-
-        }
-        return $model;
-    }
-    private function detalle($model,$detalles){
+        $model = new  pedidos();
+        $detalle=new Detalledelpedido();
+        $model->Fecha_de_pedido = $request->input('Fecha_de_pedido');
+        $detalle->Tipo_de_pedido = $request->input('Tipo_de_pedido');
+        $detalle->tipo_de_producto = $request->input('tipo_de_producto');
+        $detalle->pechoizquierdo = $request->input('pechoizquierdo');
+        $detalle->pechoderecho = $request->input('pechoderecho');
+        $detalle->mangaizquierda = $request->input('mangaizquierda');
+        $detalle->mangaderecha = $request->input('mangaderecha');
+        $detalle->espalda = $request->input('espalda');
+        $detalle->tallasCaballero = $request->input('tallasCaballero');
+        $detalle->tallamCaballero = $request->input('tallamCaballero');
+        $detalle->tallalCaballero = $request->input('tallalCaballero');
+        $detalle->tallaxlCaballero = $request->input('tallaxlCaballero');
+        $detalle->talla2xlCaballero = $request->input('talla2xlCaballero');
+        $detalle->talla3xlCaballero = $request->input('talla3xlCaballero');
+        $detalle->talla5xlCaballero = $request->input('talla5xlCaballero');
+        $detalle->tallasDama = $request->input('tallasDama');
+        $detalle->tallamDama = $request->input('tallamDama');
+        $detalle->tallalDama = $request->input('tallalDama');
+        $detalle->tallaxlDama = $request->input('tallaxlDama');
+        $detalle->talla2xlDama = $request->input('talla2xlDama');
+        $detalle->talla3xlDama = $request->input('talla3xlDama');
+        $detalle->talla5xlDama = $request->input('talla5xlDama');
+        $detalle->talla18 = $request->input('talla18');
+        $detalle->talla16 = $request->input('talla16');
+        $detalle->talla14 = $request->input('talla14');
+        $detalle->talla12 = $request->input('talla12');
+        $detalle->talla10 = $request->input('talla10');
+        $detalle->talla8 = $request->input('talla8');
+        $detalle->talla6 = $request->input('talla6');
+        $detalle->talla4 = $request->input('talla4');
+        $detalle->talla2 = $request->input('talla2');
+        $detalle->nota = $request->input('nota');
+        $detalle->Nombredelcomprador = $request->input('Nombredelcomprador');
+        $detalle->Telefono = $request->input('Telefono');
+        $detalle->alto1 = $request->input('alto1');
+        $detalle->ancho1 = $request->input('ancho1');
+        $detalle->alto2 = $request->input('alto2');
+        $detalle->ancho2 = $request->input('ancho2');
+        $detalle->alto3 = $request->input('alto3');
+        $detalle->ancho3 = $request->input('ancho3');
+        $detalle->alto4 = $request->input('alto4');
+        $detalle->ancho4 = $request->input('ancho4');
+        $detalle->mtscuadrados1 = $request->input('mtscuadrados1');
+        $detalle->mtscuadrados2 = $request->input('mtscuadrados2');
+        $detalle->mtscuadrados3 = $request->input('mtscuadrados3');
+        $detalle->mtscuadrados4 = $request->input('mtscuadrados4');
+        $detalle->precioxmtscuadrados1 = $request->input('costo1');
+        $detalle->precioxmtscuadrados2 = $request->input('costo2');
+        $detalle->precioxmtscuadrados3 = $request->input('costo3');
+        $detalle->precioxmtscuadrados4 = $request->input('costo4');
+        $detalle->costo1 = $request->input('precioxmtscuadrados1');
+        $detalle->costo2 = $request->input('precioxmtscuadrados2');
+        $detalle->costo3 = $request->input('precioxmtscuadrados3');
+        $detalle->costo4 = $request->input('precioxmtscuadrados4');
+        $detalle->cantidad1 = $request->input('cantidad1');
+        $detalle->cantidad2 = $request->input('cantidad2');
+        $detalle->cantidad3 = $request->input('cantidad3');
+        $detalle->cantidad4 = $request->input('cantidad4');
+        $detalle->total1 = $request->input('total1');
+        $detalle->total2 = $request->input('total2');
+        $detalle->total3 = $request->input('total3');
+        $detalle->total4 = $request->input('total4');
+        $detalle->preciounitario1    = $request->input('preciounitario1');
+        $detalle->preciounitario2    = $request->input('preciounitario2');
+        $detalle->preciounitario3    = $request->input('preciounitario3');
+        $detalle->preciounitario4    = $request->input('preciounitario4');
+        $detalle->cantidadespe1    = $request->input('cantidadespe1');
+        $detalle->cantidadespe2    = $request->input('cantidadespe2');
+        $detalle->cantidadespe3    = $request->input('cantidadespe3');
+        $detalle->cantidadespe4    = $request->input('cantidadespe4');
+        $detalle->especificaciones1   = $request->input('especificaciones1');
+        $detalle->especificaciones2   = $request->input('especificaciones2');
+        $detalle->especificaciones3   = $request->input('especificaciones3');
+        $detalle->especificaciones4   = $request->input('especificaciones4');
+        $detalle->preciototal1=$request->input('preciototal1');
+        $detalle->preciototal2=$request->input('preciototal2');
+        $detalle->preciototal3=$request->input('preciototal3');
+        $detalle->preciototal4=$request->input('preciototal4');
+        $detalle->cantidadtotal=$request->input('cantidadtotal');
+        $detalle->NumeroRuc = $request->input('NumeroRuc');
+        $detalle->fechadepedido = $request->input('fechadepedido');
+        return $detalle->save();
+        return $model->save();
         
-        foreach($detalles as $detalle){
-            $model->detalle()->insert([
-            'IDpedido'=>$detalle->IDpedido,
+    
+    }
+    private function insertardetalles($model,$detalles){
+        
+       
+            $model->detalledelpedido()->insert([
+            'IDpedido'=>$model->IDpedido,
             'Tipo_de_pedido'=>$detalle->Tipo_de_pedido,
             'tipo_de_producto'=>$detalle->tipo_de_producto,
             'pechoizquierdo'=>$detalle->pechoizquierdo,
@@ -138,7 +215,6 @@ class pedidocontroller extends Controller
             'NumeroRuc'=>$detalle->NumeroRuc,
             'fechadepedido'=>$detalle->fechadepedido,
             ]);
-        }
 
 
 
@@ -187,7 +263,7 @@ class pedidocontroller extends Controller
     public function update(Request $request, $id)
     {
         //
-        $model = pedidos::find($id);
+        $model = pedidos::find($IDpedido);
         $model->tipo_de_pedido = $request->input('Tipo_de_pedido');
         $model->tipo_de_producto = $request->input('tipo_de_producto');
         $model->pecho_izquierdo = $request->input('pechoizquierdo');

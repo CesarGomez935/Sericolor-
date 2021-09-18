@@ -12,9 +12,6 @@ class pedidos extends Model
     protected $table='pedido';
     protected $primarykey='IDpedido';
     public $timestamps = false;
-    public function detalledelpedidos()
-    {
-        return $this->belongsto(Detalledelpedido::class);
-    }
     
+
 }

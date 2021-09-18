@@ -9,9 +9,6 @@ class Detalledelpedido extends Model
 {
     protected $table='detalledelpedido';
     public $timestamps = false;
-    public function pedido()
-    {
-        return $this->hasMany(pedidos::class);
-    }
+    
 
 }
