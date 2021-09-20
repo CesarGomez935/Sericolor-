@@ -19,6 +19,7 @@ class pedidocontroller extends Controller
         //
         return pedidos::all();
         return Detalledelpedido::all();
+        
     }
 
     /**
@@ -40,10 +41,7 @@ class pedidocontroller extends Controller
     public function store(Request $request)
     {
         //
-        $model = new  pedidos();
         $detalle=new Detalledelpedido();
-        $model->Fecha_de_pedido = $request->input('Fecha_de_pedido');
-        $detalle->Tipo_de_pedido = $request->input('Tipo_de_pedido');
         $detalle->tipo_de_producto = $request->input('tipo_de_producto');
         $detalle->pechoizquierdo = $request->input('pechoizquierdo');
         $detalle->pechoderecho = $request->input('pechoderecho');
@@ -123,9 +121,8 @@ class pedidocontroller extends Controller
         $detalle->cantidadtotal=$request->input('cantidadtotal');
         $detalle->NumeroRuc = $request->input('NumeroRuc');
         $detalle->fechadepedido = $request->input('fechadepedido');
-        return $detalle->save();
-        return $model->save();
-        
+         $model->save(); 
+        $detalle->save();
     
     }
     private function insertardetalles($model,$detalles){

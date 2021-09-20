@@ -9,9 +9,11 @@ use Illuminate\Database\Schema\ForeignKeyDefinition;
 
 class pedidos extends Model
 {
-    protected $table='pedido';
-    protected $primarykey='IDpedido';
+    protected $table='categoria';
+    protected $primarykey='idcategoria';
     public $timestamps = false;
-    
-
+   public function Detalledelpedido()
+  {
+    return $this->HasMany(Detalledelpedido::class, 'pedido','IDpedido');
+  }
 }

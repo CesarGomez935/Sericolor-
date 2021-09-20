@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Detalledelpedido extends Model
 {
-    protected $table='detalledelpedido';
+    protected $table='pedido';
     public $timestamps = false;
-    
+    public function pedido()
+    {
+      return $this->BelongsTo(pedidos::class, 'pedido','IDpedido');
+    }
 
 }
