@@ -116,7 +116,7 @@
 
 
 
-            <div class="uk-child-width-1-2 uk-text-center uk-background-muted" uk-grid>
+            <div class="uk-child-width-1-1 uk-text-center uk-background-muted" uk-grid>
                 <div>
 
 
@@ -169,62 +169,78 @@
                 </div>
 
                 <div>
-                    <div class="uk-child-width-1-3 uk-text-center uk-margin-small" uk-grid>
+                    <div class="uk-child-width-1-2  uk-margin-small" uk-grid>
                         <div class="">
                             <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
                             <div class="uk-grid-small" uk-grid>
                                 <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
                                     <thead>
                                         <tr>
-                                            <th style="padding-left:1px">Talla</th>
-                                            <th style="padding-left:1px">Caballero</th>
-                                            <th style="padding-left:1px"> Dama</th>
+                                            <th>Talla</th>
+                                            <th>Caballero</th>
+                                            <th>Dama</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>S</td>
-                                            <td><input id="talla_s_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
-                                            <td><input id="talla_s_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
+                                            <td id="tallas">S</td>
+                                            <td><input id="talla_s_caballero" name="talla_s" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"> <textarea id="s_caballero_desc" name="s_caballero_desc" class="uk-input uk-form-width-small" type="text"> </textarea></td>
+
+                                            <td><input id="talla_s_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"> <textarea id="s_dama_desc" name="s_dama_desc" class="uk-input uk-form-width-small" type="text"> </textarea></td>
+
+
                                         </tr>
                                         <tr>
-                                            <td>M</td>
-                                            <td><input id="talla_m_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
-                                            <td><input id="talla_m_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
+                                            <td id="tallam">M</td>
+                                            <td><input id="talla_m_caballero" name="" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"> <textarea id="m_caballero_desc" name="m_caballero_desc" class="uk-input uk-form-width-small" type="text"> </textarea></td>
+
+                                            <td><input id="talla_m_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="m_dama_desc" name="m_dama_desc" class="uk-input uk-form-width-small" type="text"> </textarea></td>
+
                                         </tr>
                                         <tr>
-                                            <td>L</td>
-                                            <td><input id="talla_l_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
-                                            <td><input id="talla_l_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
+                                            <td id="tallal">L</td>
+                                            <td><input id="talla_l_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"> <textarea id="l_caballero_desc" name="l_caballero_desc" class="uk-input uk-form-width-small" type="text"> </textarea></td>
+
+                                            <td><input id="talla_l_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="l_dama_desc" name="l_dama_desc" class="uk-input uk-form-width-small" type="text"> </textarea></td>
+
                                         </tr>
                                         <tr>
-                                            <td>XL</td>
-                                            <td><input id="talla_xl_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
-                                            <td><input id="talla_xl_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
+                                            <td id="tallaxl">XL</td>
+                                            <td><input id="talla_xl_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"> <textarea id="xl_caballero_desc" name="xl_caballero_desc" class="uk-input uk-form-width-small" type="text"> </textarea></td>
+
+                                            <td><input id="talla_xl_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="xl_dama_desc" name="xl_dama_desc" class="uk-input uk-form-width-small" type="text"> </textarea></td>
+
                                         </tr>
                                         <tr>
-                                            <td>2XL</td>
-                                            <td><input id="talla_2xl_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
-                                            <td><input id="talla_2xl_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
+                                            <td id="talla2xl">2XL</td>
+                                            <td><input id="talla_2xl_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="2xl_caballero_desc" name="2xl_caballero_desc" class="uk-input uk-form-width-small" type="text"> </textarea></td>
+
+                                            <td><input id="talla_2xl_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="2xl_dama_desc" name="2xl_dama_desc" class="uk-input uk-form-width-small" type="text"> </textarea></td>
+
                                         </tr>
                                         <tr>
-                                            <td>3XL</td>
-                                            <td><input id="talla_3xl_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
-                                            <td><input id="talla_3xl_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
+                                            <td id="talla3xl">3XL</td>
+                                            <td><input id="talla_3xl_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="3xl_caballero_desc" name="3xl_caballero_desc" class="uk-input uk-form-width-small" type="text"> </textarea></td>
+
+                                            <td><input id="talla_3xl_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="3xl_dama_desc" name="3xl_dama_desc" class="uk-input uk-form-width-small" type="text"> </textarea></td>
+
                                         </tr>
                                         <tr>
-                                            <td>5XL</td>
-                                            <td><input id="talla_5xl_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
-                                            <td><input id="talla_5xl_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
+                                            <td id="talla5xl">5XL</td>
+                                            <td><input id="talla_5xl_caballero" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="5xl_caballero_desc" name="5xl_caballero_desc" class="uk-input uk-form-width-small" type="text"> </textarea></td>
+
+                                            <td><input id="talla_5xl_dama" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="5xl_dama_desc" name="5xl_dama_desc" class="uk-input uk-form-width-small" type="text"> </textarea></td>
+
                                         </tr>
                                     </tbody>
                                 </table>
+
                             </div>
                         </div>
                         <div class="">
                             <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
                             <div class="uk-grid-small" uk-grid>
-                                <table class="uk-table uk-table-hover uk-table-divider uk-table-small uk-margin uk-padding-small">
+                                <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
                                     <thead>
                                         <tr>
                                             <th>Talla Juvenil</th>
@@ -234,138 +250,197 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>18</td>
-                                            <td><input id="talla_18" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
+                                            <td id="18">18</td>
+                                            <td><input id="talla_18" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="18_desc" name="18_desc" class="uk-input uk-form-width-small" type="text"> </textarea></td>
+
 
                                         </tr>
                                         <tr>
-                                            <td>16</td>
-                                            <td><input id="talla_16" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
+                                            <td id="16">16</td>
+                                            <td><input id="talla_16" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="16_desc" name="16_desc" class="uk-input uk-form-width-small" type="text"></textarea></td>
+
+
 
                                         </tr>
                                         <tr>
-                                            <td>14</td>
-                                            <td><input id="talla_14" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
+                                            <td id="14">14</td>
+                                            <td><input id="talla_14" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="14_desc" name="14_desc" class="uk-input uk-form-width-small" type="text"></textarea></td>
+
+
 
                                         </tr>
                                         <tr>
-                                            <td>12</td>
-                                            <td><input id="talla_12" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
+                                            <td id="12">12</td>
+                                            <td><input id="talla_12" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="12_desc" name="12_desc" class="uk-input uk-form-width-small" type="text"></textarea></td>
+
 
                                         </tr>
                                         <tr>
-                                            <td>10</td>
-                                            <td><input id="talla_10" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
+                                            <td id="10">10</td>
+                                            <td><input id="talla_10" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="10_desc" name="10_desc" class="uk-input uk-form-width-small" type="text"></textarea></td>
+
 
                                         </tr>
                                         <tr>
-                                            <td>8</td>
-                                            <td><input id="talla_8" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
+                                            <td id="8">8</td>
+                                            <td><input id="talla_8" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="8_desc" name="8_desc" class="uk-input uk-form-width-small" type="text"></textarea></td>
+
 
                                         </tr>
                                         <tr>
-                                            <td>6</td>
-                                            <td><input id="talla_6" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
+                                            <td id="6">6</td>
+                                            <td><input id="talla_6" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="6_desc" name="6_desc" class="uk-input uk-form-width-small" type="text"></textarea></td>
+
 
                                         </tr>
                                         <tr>
-                                            <td>4</td>
-                                            <td><input id="talla_4" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
+                                            <td id="4">4</td>
+                                            <td><input id="talla_4" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="4_desc" name="4_desc" class="uk-input uk-form-width-small" type="text"></textarea></td>
+
 
                                         </tr>
                                         <tr>
-                                            <td>2</td>
-                                            <td><input id="talla_2" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"></td>
+                                            <td id="2">2</td>
+                                            <td><input id="talla_2" class="uk-input uk-form-width-xsmall" type="Number" placeholder="0" value="0"><textarea id="2_desc" name="2_desc" class="uk-input uk-form-width-small" type="text"></textarea></td>
+
 
                                         </tr>
                                     </tbody>
                                 </table>
+
                             </div>
                         </div>
 
-                        <div class="uk-padding-small">
-                            <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
-                            <div class="uk-form-horizontal uk-margin-large">
-                                <div class="uk-margin">
 
-                                    <h3>Tazas</h3>
-
-                                    <table class="uk-table uk-table-small uk-table-divider">
-
-                                        <tbody>
-                                            <tr>
-                                                <td>Frente</td>
-                                                <td><input id="taza_frente" type="text" class="uk-input"></td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Atrás </td>
-                                                <td><input id="taza_atras" type="text" class="uk-input"></td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Cantidad</td>
-                                                <td><input id="taza_cantidad" type="number" class="uk-input"></td>
-
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                </div>
-
-                                <div class="uk-margin">
-
-                                    <h3>Llaveros MDF</h3>
-
-                                    <table class="uk-table uk-table-small uk-table-divider">
-
-                                        <tbody>
-                                            <tr>
-                                                <td>Detalle</td>
-                                                <td><input id="detalle_llavero" type="text" class="uk-input"></td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Cantidad</td>
-                                                <td><input id="cantidad_llavero" type="number" class="uk-input"></td>
-
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-
-                                </div>
-
-                                <div class="uk-margin">
-
-                                    <h3>Lapiceros</h3>
-
-                                    <table class="uk-table uk-table-small uk-table-divider">
-
-                                        <tbody>
-                                            <tr>
-                                                <td>Detalle</td>
-                                                <td><input id="detalle_lapiz" type="text" class="uk-input"></td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Cantidad</td>
-                                                <td><input id="cantidad_lapiz" type="number" class="uk-input"></td>
-
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                            </div>
-                        </div>
 
 
                     </div>
+
                 </div>
 
+
+
             </div>
+
+            <table>
+                <thead>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="uk-padding-small uk-child-width-1-1  uk-margin-small">
+
+                                <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+                                <div class="uk-form-horizontal uk-margin-large">
+                                    <div class="uk-margin">
+
+                                        <h3>Tazas</h3>
+
+                                        <table class="uk-table uk-table-small uk-table-divider">
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>Frente</td>
+                                                    <td><input id="taza_frente" type="text" class="uk-input"></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>Atrás </td>
+                                                    <td><input id="taza_atras" type="text" class="uk-input"></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>Cantidad</td>
+                                                    <td><input id="taza_cantidad" type="number" class="uk-input"></td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </td>
+                        <td>
+                            <div class="uk-padding-small uk-child-width-1-1  uk-margin-small">
+
+                                <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+                                <div class="uk-form-horizontal uk-margin-large">
+
+
+                                    <div class="uk-margin">
+
+                                        <h3>Llaveros MDF</h3>
+
+                                        <table class="uk-table uk-table-small uk-table-divider">
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>Detalle</td>
+                                                    <td><input id="detalle_llavero" type="text" class="uk-input"></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>Cantidad</td>
+                                                    <td><input id="cantidad_llavero" type="number" class="uk-input"></td>
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </td>
+                        <td>
+                            <div class="uk-padding-small uk-child-width-1-1  uk-margin-small">
+
+                                <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
+                                <div class="uk-form-horizontal uk-margin-large">
+
+                                    <div class="uk-margin">
+
+                                        <h3>Lapiceros</h3>
+
+                                        <table class="uk-table uk-table-small uk-table-divider">
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>Detalle</td>
+                                                    <td><input id="detalle_lapiz" type="text" class="uk-input"></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>Cantidad</td>
+                                                    <td><input id="cantidad_lapiz" type="number" class="uk-input"></td>
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </td>
+
+
+
+
+                    </tr>
+                </tbody>
+            </table>
+
+
 
 
 
