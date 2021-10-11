@@ -89,30 +89,9 @@
                     <input id="fecha_fact" name="fecha_facturacion" type="date" class="uk-input">
                 </div>
                 <div class="uk-inline uk-width-1-2 ">
-                    <label for="fecha_ent">Fecha de entrega</label>
-                    <input id="fecha_ent" name="fecha_entrega" type="date" class="uk-input">
-                </div>
-
-
-                <div class="uk-inline uk-width-1-2">
-                    <button class="uk-form-icon uk-form-icon-flip" uk-icon="icon: search"></button>
+                    <label for="fecha_ent">Nombre del cliente</label>
                     <input id="cliente" name="nombre_cliente" class="uk-input" placeholder="Cliente">
                 </div>
-
-                <div class="uk-inline uk-width-1-2">
-                    <input id="RUC" name="Num_ruc" class="uk-input" placeholder="N° RUC">
-                </div>
-
-                <div class="uk-inline uk-width-1-2">
-                    <button class="uk-form-icon uk-form-icon-flip" href="" uk-icon="icon: search"></button>
-                    <input class="uk-input" id="nombre" name="nombre_emp" placeholder="Nombre">
-                </div>
-
-                <div class="uk-inline uk-width-1-2">
-                    <input id="telefono" name="Num_telefono" class="uk-input" placeholder="N° Telefono">
-                </div>
-
-
             </div>
         </div>
     </div>
@@ -159,16 +138,6 @@
                             id="form-horizontal-text" type="text" placeholder="">
                     </div>
                 </div>
-
-                <div class="uk-margin">
-                    <label for="tipo_producto" class="uk-form-label" for="form-horizontal-text">Tipo de
-                        producto</label>
-                    <div class="uk-form-controls">
-                        <input id="tipo_producto" name="tipo_producto" class="uk-input uk-form-width-large"
-                            id="form-horizontal-text" type="text" placeholder="">
-                    </div>
-                </div>
-
             </div>
 
         </div>
@@ -234,27 +203,17 @@
                                     <td>
                                         <textarea id="Observacion" name="Observacion"
                                             class="uk-input uk-form-width-medium" type="text"> </textarea>
-                                        <button class=" uk-icon-button" uk-icon="icon: plus-circle; ratio: 0.9"
+                                        <button class=" uk-icon-button" uk-icon="icon: plus; ratio: 1.0"
                                             onclick="insertar();"></button>
 
-
-
-
-
                                     </td>
-
-
-
-
                                 </tr>
-
                             </tbody>
                         </table>
                     </div>
                 </div>
                 <div>
                     <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
-
                 </div>
             </div>
         </div>
@@ -284,11 +243,7 @@
                 </tbody>
             </table>
         </div>
-
         <br>
-
-
-
         <script type="text/javascript">
             function insertar(pecho_izq, pecho_der, manga_izq, manga_der, espalda, talla, cant, obs) {
 
@@ -305,7 +260,6 @@
                 var cell9 = row.insertCell(8);
                 var cell10 = row.insertCell(9);
 
-
                 var pecho_izq = document.getElementById("pecho_izq").value;
                 var pecho_der = document.getElementById("pecho_der").value;
                 var manga_izq = document.getElementById("manga_izq").value;
@@ -315,9 +269,6 @@
                 var Genero = document.getElementById("Genero").value;
                 var cant = document.getElementById("cantidad").value;
                 var obs = document.getElementById("Observacion").value;
-
-
-
 
 
                 cell1.innerHTML = pecho_izq;
@@ -330,6 +281,7 @@
                 cell8.innerHTML = obs;
                 cell9.innerHTML = "<input type='number' class='uk-input uk-form-width-small '>";
                 cell10.innerHTML = "<button class=' uk-icon-button' uk-icon='icon: trash; ratio: 0.9' ></button>";
+
             }
         </script>
         </table>
@@ -436,105 +388,7 @@
     </div>
 
 </body>
-<script>
-    let detallesdepedido = [];
 
-    cargarpedido();
-
-    $('#guardar').click(function(res) {
-        guardarpedido();
-        alert("Se agrego su orden");
-
-    });
-
-    function peticionapi(data, method, onSucess) {
-        let url = '/api/detalledelpedido';
-        if (method == 'PUT' || method == 'DELETE') {
-            url += '/' + data.IDdetalledelpedido;
-        }
-        $.ajax({
-            url: url,
-            method: method,
-            data: data,
-            error(ext) {
-                let error = e.responseJSON.errors;
-                let msj = error[Object.keys(error)[0]][0];
-                alert(msj);
-            },
-            success(res) {
-
-            }
-        })
-    }
-
-    function guardarpedido() {
-        let data = {
-            Tipo_de_pedido: $("#tipo_de_pedido").val(),
-            tipo_de_producto: $("#tipo_producto").val(),
-            pechoizquierdo: $("#pecho_izq").val(),
-            pechoderecho: $("#pecho_der").val(),
-            mangaizquierda: $("#manga_izq").val(),
-            mangaderecha: $("#manga_der").val(),
-            espalda: $("#espalda").val(),
-            tallasCaballero: $("#talla_s_caballero").val(),
-            tallasDama: $("#talla_s_dama").val(),
-            tallamCaballero: $("#talla_m_caballero").val(),
-            tallamDama: $("#talla_m_dama").val(),
-            tallalCaballero: $("#talla_l_caballero").val(),
-            tallalDama: $("#talla_l_dama").val(),
-            tallaxlCaballero: $("#talla_xl_caballero").val(),
-            tallaxlDama: $("#talla_xl_dama").val(),
-            talla2xlCaballero: $("#talla_2xl_caballero").val(),
-            talla2xlDama: $("#talla_2xl_dama").val(),
-            talla3xlCaballero: $("#talla_3xl_caballero").val(),
-            talla3xlDama: $("#talla_3xl_dama").val(),
-            talla5xlCaballero: $("#talla_5xl_caballero").val(),
-            talla5xlDama: $("#talla_5xl_dama").val(),
-            tallainfantil: $("#talla_18").val(),
-            tallainfantil: $("#talla_16").val(),
-            tallainfantil: $("#talla_14").val(),
-            tallainfantil: $("#talla_12").val(),
-            tallainfantil: $("#talla_10").val(),
-            tallainfantil: $("#talla_8").val(),
-            tallainfantil: $("#talla_6").val(),
-            tallainfantil: $("#talla_4").val(),
-            tallainfantil: $("#talla_2").val(),
-            preciounitario1: $("#precio_und_pedido_1").val(),
-            preciounitario2: $("#precio_und_pedido_2").val(),
-            preciounitario3: $("#precio_und_pedido_3").val(),
-            preciounitario4: $("#precio_und_pedido_4").val(),
-            cantidadespe1: $("#cantidad_pedido_1").val(),
-            cantidadespe2: $("#cantidad_pedido_2").val(),
-            cantidadespe3: $("#cantidad_pedido_3").val(),
-            cantidadespe4: $("#cantidad_pedido_4").val(),
-            especifaciones1: $("#especifaciones_pedido_1").val(),
-            especifaciones2: $("#especifaciones_pedido_2").val(),
-            especifaciones3: $("#especifaciones_pedido_3").val(),
-            especifaciones4: $("#especifaciones_pedido_4").val(),
-            preciototal1: $("#precio_pedido_1").val(),
-            preciototal2: $("#precio_pedido_2").val(),
-            preciototal3: $("#precio_pedido_3").val(),
-            preciototal4: $("#precio_pedido_4").val(),
-            cantidadtotal: $("#total_pedido").val(),
-            nota: $("#notas").val(),
-            Nombredelcomprador: $("#nombre").val(),
-            Telefono: $("#telefono").val(),
-            NumeroRuc: $("#Ruc").val(),
-            fechadepedido: $("#fecha_fact").val(),
-        };
-        peticionapi(data, 'POST', function(res) {
-            alert('Guardado con exito')
-        });
-    }
-
-    function cargarpedido() {
-        peticionapi({}, 'GET', function(res) {
-            console.log(res);
-            alert('respuesta satisfactoria');
-        });
-
-    }
-</script>
 
 
 
