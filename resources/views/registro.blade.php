@@ -60,10 +60,10 @@
                     <input id="correo_personal" class="uk-input" type="email" placeholder="Correo">
                 </div>
                 <div class="uk-margin">
-                    <input id="telefono_personal" class="uk-input" type="number" placeholder="Telefono">
+                    <input id="telefono_personal" class="uk-input" type="number" placeholder="Teléfono">
                 </div>
                 <div class="uk-margin">
-                    <input id="cedula_personal" class="uk-input" type="text" placeholder="Cedula">
+                    <input id="cedula_personal" class="uk-input" type="text" placeholder="Cédula">
                 </div>
                 <div class="uk-margin">
                     <input id="password_personal" class="uk-input" type="password" placeholder="Contraseña">
