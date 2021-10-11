@@ -204,7 +204,7 @@
 
                     <p style="text-align: center" style="font-size: 10" class="text-primary fuente"> <b> Frente a donde
                             fue
-                            metales de matagalpa </b></p>
+                            metales de Matagalpa </b></p>
 
                 </div>
 
