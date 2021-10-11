@@ -65,7 +65,7 @@
                     <a class="nav-link active" aria-current="page" href="/Inicio"><b> Inicio </b></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/acerca"> <b> Conocenos </b></a>
+                    <a class="nav-link" href="/acerca"> <b> Conócenos </b></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/resources/catalogo_2021.pdf" target="_blank"><b> Catálogo </b></a>

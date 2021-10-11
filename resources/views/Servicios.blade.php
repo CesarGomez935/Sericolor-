@@ -75,7 +75,7 @@
                     <a class="nav-link active" aria-current="page" href="/Inicio"><b> Inicio </b></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/acerca"> <b> Conocenos </b></a>
+                    <a class="nav-link" href="/acerca"> <b> Conócenos </b></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/resources/catalogo_2021.pdf" target="_blank"><b> Catálogo </b></a>
@@ -168,7 +168,7 @@
                         <h5 style="font-size: 20px;" class="card-title"><b>Bordado Industrial</b></h5>
                         <p style="text-align: justify; font-size:18px;" class="card-text">El bordado es un arte que
                             consiste en la ornamentación de una superficie flexible, generalmente una tela, por medio de
-                            hebrastextiles. Los romanos llamaban a esta ornamentación plumarium opus, en virtud de la
+                            hebras textiles. Los romanos llamaban a esta ornamentación plumarium opus, en virtud de la
                             semejanza que tienen algunas de estas labores con la pluma del ave.</p>
 
                     </div>
@@ -183,7 +183,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 style="font-size: 20px;" class="card-title"><b>Serigrafia</b></h5>
+                        <h5 style="font-size: 20px;" class="card-title"><b>Serigrafía</b></h5>
                         <p style="text-align: justify; font-size:18px;" class="card-text">La serigrafía es una técnica
                             de impresión en el método de reproducción de documentos e imágenes sobre cualquier material,
                             y consiste en transferir una tinta a través de una malla tensada en un marco. El paso de la
@@ -192,12 +192,11 @@
 
 
 
-                            El sistema de impresión es repetitivo, esto es, una vez que el primer modelo se ha logrado,
-                            la impresión puede ser repetida cientos y hasta miles de veces sin perder resolución.
+                            
                         </p>
                         <p style="text-align: justify; font-size:18px;" class="card-text">
 
-                            El sistema de impresión es repetitivo, esto es, una vez que el primer modelo se ha logrado,
+                            El sistema de impresión es repetitivo una vez que el primer modelo se ha logrado,
                             la impresión puede ser repetida cientos y hasta miles de veces sin perder resolución.
                         </p>
 
