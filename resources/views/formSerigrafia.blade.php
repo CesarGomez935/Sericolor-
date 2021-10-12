@@ -151,6 +151,7 @@
                                     <td>
                                         <select onchange="Validacion();" name="Tallas" class="uk-select uk-form-width-xsmall" id="Tallas">
 
+
                                             <option value="2">2</option>
                                             <option value="4">4</option>
                                             <option value="6">6</option>
@@ -176,7 +177,7 @@
 
 
 
-                                        <select name="Genero" class="uk-select uk-form-width-small" id="Genero">
+                                        <select name="Genero" class="uk-select uk-form-width-xsmall" id="Genero">
                                             <option value="Dama">Dama</option>
                                             <option value="Caballero">Caballero</option>
                                         </select>
@@ -184,18 +185,43 @@
 
                                     </td>
                                     <td>
-                                        <input id="cantidad" type="number" min="0" class="uk-input uk-form-width-xsmall">
+                                        <input id="cantidad" onchange="monto();" type="number" min="0" class="uk-input uk-form-width-xsmall monto">
+
+
+                                        <input id="precio" onchange="monto();" type="number" min="0" class=" monto uk-input uk-form-width-small  ">
+
+
+
+
+
+
 
                                     </td>
 
                                     <td>
-                                        <textarea id="Observacion" name="Observacion" class="uk-input uk-form-width-medium" type="text"> </textarea>
-                                        <button class=" uk-icon-button" uk-icon="icon: plus; ratio: 1.0" onclick="insertar();"></button>
+                                        <textarea id="Observacion" name="Observacion" class="uk-input uk-form-width-1-1" type="text"> </textarea>
+
 
                                     </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="sub_total" class="uk-label">Total</label>
+                                    </td>
+                                    <td>
+                                        <input disabled id="sub_total" type="number" min="0" class="uk-input uk-form-width-small ">
+                                    </td>
+                                    <td>
+                                        <button class=" uk-button-primary" onclick="insertar();">Insertar Pedido</button>
+                                    </td>
+
+
                                 </tr>
                             </tbody>
                         </table>
+
 
                     </div>
                 </div>
@@ -221,26 +247,59 @@
             <table id="Tabla" class="uk-table uk-table-hover uk-table-divider uk-table-small">
                 <thead>
                     <tr>
-
                         <th>Pecho Izq.</th>
                         <th>Pecho Der.</th>
                         <th>Manga Izq.</th>
                         <th>Manga Der.</th>
                         <th>Espalda</th>
                         <th>Talla</th>
-                        <th>Insumo</th>
+
                         <th>Cantidad</th>
-                        <th>Observación</th>
                         <th>precio</th>
+                        <th>Sub-Total</th>
+                        <th>Observación</th>
                         <th>Opciones</th>
 
 
                     </tr>
                 </thead>
+
+
+                <tfoot>
+                    <tr>
+
+                        <td colspan="8"><label for="Total" class="uk-label">Total</label></td>
+                        <td><input class="uk-form-width-xsmall saldo" disabled id="total"></input></td>
+
+
+
+                    </tr>
+                </tfoot>
                 <tbody>
-                    <tr> </tr>
+                    {{-- <tr hidden>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+
+                    </tr> --}}
                 </tbody>
+
+
+
+
+
+
             </table>
+
         </div>
         <br>
         <script type="text/javascript">
@@ -273,18 +332,9 @@
 
             function insertar(pecho_izq, pecho_der, manga_izq, manga_der, espalda, talla, cant, obs) {
 
-                var table = document.getElementById("Tabla");
-                var row = table.insertRow(1);
-                var cell1 = row.insertCell(0);
-                var cell2 = row.insertCell(1);
-                var cell3 = row.insertCell(2);
-                var cell4 = row.insertCell(3);
-                var cell5 = row.insertCell(4);
-                var cell6 = row.insertCell(5);
-                var cell7 = row.insertCell(6);
-                var cell8 = row.insertCell(7);
-                var cell9 = row.insertCell(8);
-                var cell10 = row.insertCell(9);
+
+
+
 
                 var pecho_izq = document.getElementById("pecho_izq").value;
                 var pecho_der = document.getElementById("pecho_der").value;
@@ -294,23 +344,199 @@
                 var talla = document.getElementById("Tallas").value;
                 var Genero = document.getElementById("Genero").value;
                 var cant = document.getElementById("cantidad").value;
+                var precio = document.getElementById("precio").value;
+                var sub_total = document.getElementById("sub_total").value;
                 var obs = document.getElementById("Observacion").value;
 
 
-                cell1.innerHTML = pecho_izq;
-                cell2.innerHTML = pecho_der;
-                cell3.innerHTML = manga_izq;
-                cell4.innerHTML = manga_der;
-                cell5.innerHTML = espalda;
-                cell6.innerHTML = talla + " " + Genero;
-                cell7.innerHTML = cant;
-                cell8.innerHTML = obs;
-                cell9.innerHTML = "<input type='number' class='uk-input uk-form-width-small '>";
-                cell10.innerHTML = "<button class=' uk-icon-button' uk-icon='icon: trash; ratio: 0.9' ></button>";
+                var htmlTags = '<tr>' +
+                    '<td>' + pecho_izq + '</td>' +
+                    '<td>' + pecho_der + '</td>' +
+                    '<td>' + manga_izq + '</td>' +
+                    '<td>' + manga_der + '</td>' +
+                    '<td>' + espalda + '</td>' +
+                    '<td>' + talla + " " + Genero + '</td>' +
+
+                    '<td>' + cant + '</td>' +
+                    '<td>' + precio + '</td>' +
+                    '<td>' + sub_total + '</td>' +
+                    '<td>' + obs + '</td>' +
+                    '<td>' + '<button class=" uk-icon-button" uk-icon="icon: trash; ratio: 0.9"></button>' + '</td>' +
+
+
+
+                    '</tr>';
+
+                $('#Tabla tbody').append(htmlTags);
+
+                document.getElementById("pecho_izq").value = null;
+                document.getElementById("pecho_der").value = null;
+                document.getElementById("manga_izq").value = null;
+                document.getElementById("manga_der").value = null;
+                document.getElementById("espalda").value = null;
+                document.getElementById("Tallas").value = null;
+                document.getElementById("Genero").value = null;
+                document.getElementById("cantidad").value = null;
+                document.getElementById("precio").value = null;
+                document.getElementById("sub_total").value = null;
+                document.getElementById("Observacion").value = null;
+
+
+                calcular();
+
+
+            }
+
+
+
+            function monto() {
+                var total = 1;
+                var change = false; //
+                $(".monto").each(function() {
+                    if (!isNaN(parseFloat($(this).val()))) {
+                        change = true;
+                        total *= parseFloat($(this).val());
+                    }
+                });
+                // Si se modifico el valor , retornamos la multiplicación
+                // caso contrario 0
+                total = (change) ? total : 0;
+                document.getElementById('sub_total').value = total;
+
+
+            }
+
+            function monto_taza() {
+                var total = 1;
+                var change = false; //
+                $(".monto_taza").each(function() {
+                    if (!isNaN(parseFloat($(this).val()))) {
+                        change = true;
+                        total *= parseFloat($(this).val());
+                    }
+                });
+                // Si se modifico el valor , retornamos la multiplicación
+                // caso contrario 0
+                total = (change) ? total : 0;
+                document.getElementById('sub_total_taza').value = total;
+
+
+            }
+
+
+
+
+
+            function Validacion_taza() {
+                var Tallas = document.getElementById("Tallas");
+                var Genero = document.getElementById("Genero");
+
+
+                if (Tallas.value == "2" || Tallas.value == "4" || Tallas.value == "6" || Tallas.value == "8" || Tallas.value == "10" || Tallas.value == "12" || Tallas.value == "14" || Tallas.value == "16" || Tallas.value == "18") {
+
+
+
+
+
+
+
+
+                    Genero.style.visibility = "hidden";
+                    Genero.value = "";
+
+                } else {
+                    Genero.style.visibility = "visible";
+
+
+
+                }
+
+            }
+
+
+
+
+            function insertar_taza() {
+
+
+
+
+
+
+                var Insumo = document.getElementById("Insumos").value;
+                var cant = document.getElementById("cantidad_taza").value;
+                var sub_total = document.getElementById("sub_total_taza").value;
+                var obs = document.getElementById("Observacion_taza").value;
+                var precio = document.getElementById("precio_taza").value;
+
+
+                var htmlTags = '<tr>' +
+                    '<td>' + '</td>' +
+                    '<td>' + '</td>' +
+                    '<td>' + '</td>' +
+                    '<td>' + '</td>' +
+                    '<td>' + '</td>' +
+                    '<td>' + '</td>' +
+                    '<td>' + Insumo + '</td>' +
+                    '<td>' + cant + '</td>' +
+                    '<td>' + precio + '</td>' +
+                    '<td>' + sub_total + '</td>' +
+                    '<td>' + obs + '</td>' +
+                    '<td>' + '<button class=" uk-icon-button" uk-icon="icon: trash; ratio: 0.9"></button>' + '</td>' +
+
+
+
+                    '</tr>';
+
+                $('#Tabla tbody').append(htmlTags);
+
+                calcular();
+
+                document.getElementById("Insumos").value = null;
+                document.getElementById("cantidad_taza").value = null;
+                document.getElementById("sub_total_taza").value = null;
+                document.getElementById("Observacion_taza").value = null;
+                document.getElementById("precio_taza").value = null;
+
+
+            }
+
+
+            function calcular() {
+                // obtenemos todas las filas del tbody
+                var filas = document.querySelectorAll("#Tabla tbody tr");
+
+
+                var total = 0;
+                console.log(filas);
+
+
+                // recorremos cada una de las filas
+                filas.forEach(function(e) {
+
+                    // obtenemos las columnas de cada fila
+                    var columnas = e.querySelectorAll("td");
+                    console.log(columnas);
+
+
+
+                    var importe = parseFloat(columnas[8].textContent);
+
+                    // mostramos el total por fila
+                    // columnas[12].textContent = (cantidad * importe).toFixed(2);
+
+                    total += importe;
+                    console.log(total);
+                })
+                // mostramos la suma total
+                var filas = document.querySelectorAll("#Tabla tfoot tr td");
+                console.log(total);
+                document.getElementById("total").value = total;
 
             }
 
         </script>
+
         </table>
     </div>
     </div>
@@ -325,9 +551,29 @@
                 <div class="uk-margin">
                     <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                     <div class="uk-form-controls">
-                        <input id="abono" name="Abono" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                        <input id="abono" min="0" name="Abono" onchange="abono();" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
+
+                        <script>
+                            function abono() {
+                                var sub_total = document.getElementById("total").value;
+                                var abono = document.getElementById("abono").value;
+                                var total = 0;
+
+                                total = sub_total - abono;
+
+                                console.log(sub_total, abono, total); //
+
+
+                                document.getElementById('saldo').value = total;
+
+
+
+                            }
+
+                        </script>
                     </div>
                 </div>
+
                 <div class="uk-margin">
                     <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
                     <div class="uk-form-controls">

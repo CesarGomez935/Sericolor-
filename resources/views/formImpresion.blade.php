@@ -123,7 +123,7 @@
                         <td><input id="costo" oninput="costo();" class="uk-input costo" min="0" type="number" placeholder="0" value="0"></td>
                         <td><input id="precio_mt2" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></td>
                         <td><input id="cantidad" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></td>
-                        <td><input id="total" name="total" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"> </td>
+                        <td><input id="sub_total" name="sub_total" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"> </td>
                         <td> <button class=" uk-icon-button" uk-icon="icon: plus; ratio: 1.0" onclick="insertar();"></button></td>
 
                     </tr>
@@ -179,7 +179,7 @@
                     // Si se modifico el valor , retornamos la multiplicación
                     // caso contrario 0
                     total = (change) ? total : 0;
-                    document.getElementById('total').value = total;
+                    document.getElementById('sub_total').value = total;
 
 
                 }
@@ -195,7 +195,7 @@
 
                                 <th>m²</th>
                                 <th>Cantidad</th>
-                                <th>Total</th>
+                                <th>Sub-Total</th>
                                 <th>Observacion</th>
                                 <th>Opciones</th>
 
@@ -203,8 +203,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr> </tr>
+
                         </tbody>
+                        <tfoot>
+                            <tr>
+
+                                <td colspan="2"><label for="Total" class="uk-label">Total</label></td>
+                                <td><input class="uk-form-width-xsmall saldo" disabled id="total"></input></td>
+
+
+
+                            </tr>
+                        </tfoot>
+
                     </table>
                 </div>
                 <br>
@@ -238,29 +249,74 @@
 
                     function insertar() {
 
-                        var table = document.getElementById("Tabla");
-                        var row = table.insertRow(1);
-                        var cell1 = row.insertCell(0);
-                        var cell2 = row.insertCell(1);
-                        var cell3 = row.insertCell(2);
-                        var cell4 = row.insertCell(3);
-                        var cell5 = row.insertCell(4);
-
-
-
 
                         var mt2 = document.getElementById("mt2").value;
                         var cant = document.getElementById("cantidad").value;
-                        var total = document.getElementById("total").value;
+                        var sub_total = document.getElementById("sub_total").value;
 
 
 
 
-                        cell1.innerHTML = mt2;
-                        cell2.innerHTML = cant;
-                        cell3.innerHTML = total;
-                        cell4.innerHTML = "<textarea type='number' class='uk-input uk-form-width-large '>";
-                        cell5.innerHTML = "<button class=' uk-icon-button' uk-icon='icon: trash; ratio: 0.9' ></button>";
+                        var htmlTags = '<tr>' +
+                            '<td>' + mt2 + '</td>' +
+                            '<td>' + cant + '</td>' +
+                            '<td>' + sub_total + '</td>' +
+                            '<td>' + '<textarea type="number" class="uk-input uk-form-width-large "></textarea>' + '</td>' +
+                            '<td>' + '<button class=" uk-icon-button" uk-icon="icon: trash; ratio: 0.9"></button>' + '</td>' +
+
+
+
+                            '</tr>';
+
+                        $('#Tabla tbody').append(htmlTags);
+
+                        calcular();
+
+                        document.getElementById("mt2").value = null;
+                        document.getElementById("cantidad").value = null;
+                        document.getElementById("sub_total").value = null;
+                        document.getElementById("alto").value = null;
+                        document.getElementById("ancho").value = null;
+                        document.getElementById("costo").value = null;
+                        document.getElementById("precio_mt2").value = null;
+
+
+
+
+
+
+                    }
+
+                    function calcular() {
+                        // obtenemos todas las filas del tbody
+                        var filas = document.querySelectorAll("#Tabla tbody tr");
+
+
+                        var total = 0;
+                        console.log(filas);
+
+
+                        // recorremos cada una de las filas
+                        filas.forEach(function(e) {
+
+                            // obtenemos las columnas de cada fila
+                            var columnas = e.querySelectorAll("td");
+                            console.log(columnas);
+
+
+
+                            var importe = parseFloat(columnas[2].textContent);
+
+                            // mostramos el total por fila
+                            // columnas[12].textContent = (cantidad * importe).toFixed(2);
+
+                            total += importe;
+                            console.log(total);
+                        })
+                        // mostramos la suma total
+                        var filas = document.querySelectorAll("#Tabla tfoot tr td");
+                        console.log(total);
+                        document.getElementById("total").value = total;
 
                     }
 
@@ -294,9 +350,29 @@
                     <div class="uk-margin">
                         <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                         <div class="uk-form-controls">
-                            <input id="abono" name="Abono" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="abono" min="0" name="Abono" onchange="abono();" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
+
+                            <script>
+                                function abono() {
+                                    var sub_total = document.getElementById("total").value;
+                                    var abono = document.getElementById("abono").value;
+                                    var total = 0;
+
+                                    total = sub_total - abono;
+
+                                    console.log(sub_total, abono, total); //
+
+
+                                    document.getElementById('saldo').value = total;
+
+
+
+                                }
+
+                            </script>
                         </div>
                     </div>
+
                     <div class="uk-margin">
                         <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
                         <div class="uk-form-controls">
