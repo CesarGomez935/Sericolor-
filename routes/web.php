@@ -147,3 +147,7 @@ Route::get('/menu/menuadmon/clientes/agregar_cliente/{id}/edit', [persona::class
 Route::put('/menu/menuadmon/clientes/agregar_clientes/{id}', [persona::class,"updatecliente"])->name("cliente.update");
 
 Route::get('/menu/menuadmon/clientes/{id}', [persona::class,"destroycliente"])->name("cliente.destroy");
+
+Route::get('menu/menuadmon/promociones', function () {
+    return view('promociones');
+});

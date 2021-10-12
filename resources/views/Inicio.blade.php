@@ -135,31 +135,22 @@
                 <div class="carousel-item active">
                     <img src="/img/Ima 1.png" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block ">
-                        <h3 class="fs-3"><b> Acerca de Nosotros</b></h3>
-                        <p class="fs-5 fuente"><b> Con 8 años de experiencia en el mercado de la industria gráfica en
-                                Matagalpa, ofrecemos servicios de impresión digital pequeño formato, digital gran
-                                formato, bordados, sublimación y diseño gráfico, imprimimos desde una tarjeta de
-                                presentación hasta una valla publicitaria, todo en un solo lugar. </b></p>
+                        <h3 class="fs-3"><b> </b></h3>
+                        <p class="fs-5 fuente"><b></b></p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="/img/Ima 2.png" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <h3 class="fs-3"><b> Acerca de Nosotros</b></h3>
-                        <p class="fs-5 fuente"><b> Con 8 años de experiencia en el mercado de la industria gráfica en
-                                Matagalpa, ofrecemos servicios de impresión digital pequeño formato, digital gran
-                                formato, bordados, sublimación y diseño gráfico, imprimimos desde una tarjeta de
-                                presentación hasta una valla publicitaria, todo en un solo lugar. </b></p>
+                        <h3 class="fs-3"><b> </b></h3>
+                        <p class="fs-5 fuente"><b> </b></p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="/img/Ima 3.png" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <h3 class="fs-3"><b> Acerca de Nosotros</b></h3>
-                        <p class="fs-5 fuente"><b> Con 8 años de experiencia en el mercado de la industria gráfica en
-                                Matagalpa, ofrecemos servicios de impresión digital pequeño formato, digital gran
-                                formato, bordados, sublimación y diseño gráfico, imprimimos desde una tarjeta de
-                                presentación hasta una valla publicitaria, todo en un solo lugar. </b></p>
+                        <h3 class="fs-3"><b> </b></h3>
+                        <p class="fs-5 fuente"><b> </b></p>
                     </div>
                 </div>
             </div>
