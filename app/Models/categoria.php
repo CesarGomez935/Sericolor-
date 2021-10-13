@@ -5,24 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class cliente extends Model
+class categoria extends Model
 {
     use HasFactory;
-    protected $table='cliente';
-    protected $fillable='idCliente';
-
-
-    public function persona(){
-
-
-        return $this->belongsto(persona::class,'idpersona');
-    }
-
+    protected $table='categoria';
+    protected $fillable='idCategoria';
     public function maestro(){
 
         return $this->HasMany(maestro::class);
     }
-
-
 
 }

@@ -4,14 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use APP\Model\insumos;
 
 class Detalledelpedido extends Model
 {
-    protected $table='pedido';
-    public $timestamps = false;
-    public function pedido()
-    {
-      return $this->BelongsTo(pedidos::class, 'pedido','IDpedido');
-    }
+    protected $table='detalle-orden-sub,bor,ser';
+    protected $fillable='iddetalleordensu';
 
+
+    public function insumos(){
+        return $this->belongsto(insumos::class,'idInsumos');
+    }
+    public function maestro(){
+
+    return $this->belongsto(maestro::class,'idmaestro');
+
+    }
 }
