@@ -24,7 +24,8 @@
 </head>
 
 
-<body onpageshow="Validacion();">
+<body onpageshow="Validacion();fecha();">
+
     <!-- Nav Bar-->
     <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
@@ -86,7 +87,7 @@
                         <input id="fecha_fact" name="fecha_facturacion" type="date" class="uk-input">
                     </div>
                     <div class="uk-inline uk-width-1-2 ">
-                        <label for="fecha_ent">Nombre del cliente</label>
+                        <label for="">Nombre del cliente</label>
                         <input id="cliente" name="nombre_cliente" class="uk-input" placeholder="Cliente">
                     </div>
                 </div>
@@ -541,6 +542,25 @@
                     var filas = document.querySelectorAll("#Tabla tfoot tr td");
                     console.log(total);
                     document.getElementById("total").value = total;
+
+                }
+
+                function fecha() {
+                    $(document).ready(function() {
+                        var date = new Date();
+
+                        var day = date.getDate();
+                        var month = date.getMonth() + 1;
+                        var year = date.getFullYear();
+
+                        if (month < 10) month = "0" + month;
+                        if (day < 10) day = "0" + day;
+                        var today = year + "-" + month + "-" + day;
+                        $("#fecha_fact").attr("value", today);
+
+                    });
+
+
 
                 }
 

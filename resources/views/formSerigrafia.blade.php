@@ -24,7 +24,7 @@
 </head>
 
 
-<body onpageshow="Validacion();">
+<body onpageshow="Validacion(); fecha();">
     <!-- Nav Bar-->
     <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
@@ -455,7 +455,24 @@
 
                     }
 
+
                 }
+
+                function fecha() {
+                    $(document).ready(function() {
+                        var date = new Date();
+
+                        var day = date.getDate();
+                        var month = date.getMonth() + 1;
+                        var year = date.getFullYear();
+
+                        if (month < 10) month = "0" + month;
+                        if (day < 10) day = "0" + day;
+                        var today = year + "-" + month + "-" + day;
+                        $("#fecha_fact").attr("value", today);
+                    });
+                }
+
 
 
 
