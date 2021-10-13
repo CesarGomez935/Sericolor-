@@ -9,7 +9,7 @@ class persona extends Model
 {
     use HasFactory;
     protected $table='persona';
-    protected $fillable='idpersona';
+    protected $fillable='IdPersona';
     public function cliente(){
 
         return $this->HasMany(cliente::class);

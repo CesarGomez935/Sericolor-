@@ -10,5 +10,5 @@ class promocion extends Model
  
     use HasFactory;
     protected $table='promocion';
-    protected $fillable='idpromocion';
+    protected $fillable='IdPromocion';
 }

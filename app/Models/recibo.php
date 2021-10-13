@@ -12,6 +12,6 @@ class recibo extends Model
 
     public function maestro(){
 
-        return $this->belongsto(maestro::class,'idmaestro');
+        return $this->belongsto(maestro::class,'IdMaestro');
     }
 }

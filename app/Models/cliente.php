@@ -9,7 +9,7 @@ class cliente extends Model
 {
     use HasFactory;
     protected $table='cliente';
-    protected $fillable='idCliente';
+    protected $fillable='IdCliente';
 
 
     public function persona(){

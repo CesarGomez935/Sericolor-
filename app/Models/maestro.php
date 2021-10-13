@@ -16,10 +16,10 @@ class maestro extends Model
     }
     public function cliente(){
 
-        return $this->belongsto(cliente::class,'idCliente');
+        return $this->belongsto(cliente::class,'IdCliente');
     }
     public function usuario(){
 
-        return $this->belongsto(usuario::class,'idUsuario');
+        return $this->belongsto(usuario::class,'IdUsuario');
     }
 }

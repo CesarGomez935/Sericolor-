@@ -9,12 +9,12 @@ class usuario extends Model
 {
     use HasFactory;
     protected $table='usuario';
-    protected $fillable='idusuario';
+    protected $fillable='IdUsuario';
 
     public function persona(){
 
 
-        return $this->belongsto(persona::class,'idpersona');
+        return $this->belongsto(persona::class,'IdPersona');
     }
     public function maestro(){
 

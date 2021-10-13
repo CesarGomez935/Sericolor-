@@ -10,7 +10,7 @@ class insumos extends Model
     use HasFactory;
     
     protected $table='insumos';
-    protected $fillable='idInsumo';
+    protected $fillable='IdInsumo';
     
     public function detalle(){
 
