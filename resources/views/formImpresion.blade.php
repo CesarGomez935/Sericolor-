@@ -119,7 +119,7 @@
                             <td><input id="precio_mt2" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></td>
                             <td><input id="cantidad" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></td>
                             <td><input id="sub_total" name="sub_total" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"> </td>
-                            <td> <button class=" uk-icon-button" uk-icon="icon: plus; ratio: 1.0" onclick="insertar();"></button></td>
+                            <td> <a class=" uk-icon-button" uk-icon="icon: plus; ratio: 1.0" onclick="insertar();"></a></td>
 
                         </tr>
 
@@ -259,7 +259,7 @@
                                 '<td>' + cant + '</td>' +
                                 '<td>' + sub_total + '</td>' +
                                 '<td>' + '<textarea type="number" class="uk-input uk-form-width-large "></textarea>' + '</td>' +
-                                '<td>' + '<button class=" uk-icon-button" uk-icon="icon: trash; ratio: 0.9"></button>' + '</td>' +
+                                '<td>' + '<a class=" uk-icon-button" uk-icon="icon: trash; ratio: 0.9"></a>' + '</td>' +
 
 
 
