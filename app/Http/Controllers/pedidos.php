@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\administraciones;
 
-class administracion extends Controller
+class pedidos extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,9 +35,6 @@ class administracion extends Controller
     public function store(Request $request)
     {
         //
-        $model = new administraciones();
-        $model->detalles = $request->input('detalles_de_administracion');
-        return $model->save();
     }
 
     /**
@@ -73,11 +69,6 @@ class administracion extends Controller
     public function update(Request $request, $id)
     {
         //
-
-        $model = administraciones::find($id);
-        $model->detalles = $request->input('detalles_de_administracion');   
-        return $model->save();
-
     }
 
     /**
@@ -89,7 +80,5 @@ class administracion extends Controller
     public function destroy($id)
     {
         //
-        $model = administraciones::find($id);
-        return $model->delete();
     }
 }

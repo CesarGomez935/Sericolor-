@@ -132,7 +132,7 @@ Route::get('menu/menuadmon/resumen_pedidos', function () {
     return view('ResumenPedidos');
 });
 
-Route::resource('Detalledelpedido',detalledelpedidocontroller::class);
+//Route::resource('Detalledelpedido',detalledelpedidocontroller::class);
 
 Route::get('/descargarbasededatos', [dbcontroller::class,"descargar"]);
 

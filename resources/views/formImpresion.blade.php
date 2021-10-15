@@ -73,7 +73,7 @@
     </nav>
 
 
-    <form action="" method="post">
+    <form action="" method="">
         <div>
 
             <div class="uk-padding uk-background-muted">
@@ -90,13 +90,7 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
             <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
-
             <div class="uk-div uk-background-muted uk-padding">
 
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
