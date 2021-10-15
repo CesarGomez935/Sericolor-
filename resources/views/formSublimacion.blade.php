@@ -180,7 +180,7 @@
 
 
 
-                                            <select name="Genero" class="uk-select uk-form-width-xsmall" id="Genero">
+                                            <select name="Genero" class="uk-select uk-form-width-xsmall " id="Genero">
                                                 <option value="Dama">Dama</option>
                                                 <option value="Caballero">Caballero</option>
                                             </select>

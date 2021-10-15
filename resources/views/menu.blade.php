@@ -39,6 +39,19 @@
     <!-- Right -->
 </div>
 <body>
+    <div  style="text-align: right;">
+        <button class="uk-button uk-padding-remove-bottom uk-form-blank" type="button"> Bienvenido ~Usuario~! </button>
+        <div uk-dropdown="pos: bottom-justify">
+            <ul class="uk-nav uk-dropdown-nav">
+                <li class="uk-active"><a href="">Privilegios</li>
+                <li><a href="">~Privilegio~</a></li>
+                <li class="uk-nav-divider"></li>
+                
+                
+                <li><a href="#"><b> Cerrar Sesión </b></a></li>
+            </ul>
+        </div>
+    </div>
     <div style="text-align: center;">
         <form class="uk-padding">
             <table class="uk-table uk-padding  uk-margin">
@@ -140,5 +153,9 @@
             </a>
         </div>
         <!-- Right -->
+
+        
     </div>
+
+    
 </footer>
