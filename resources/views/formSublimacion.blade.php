@@ -360,6 +360,23 @@
             </div>
             <br>
             <script type="text/javascript">
+                function borrar() {
+
+
+                    $(document).on('click', '.borrar', function(event) {
+                        event.preventDefault();
+                        $(this).closest('tr').remove();
+
+                        calcular();
+                    });
+
+
+
+
+
+
+                }
+
                 function Validacion() {
                     var Tallas = document.getElementById("Tallas");
                     var Genero = document.getElementById("Genero");
@@ -436,7 +453,8 @@
                         '<td>' + precio + '</td>' +
                         '<td>' + sub_total + '</td>' +
                         '<td>' + obs + '</td>' +
-                        '<td>' + '<button class=" uk-icon-button" uk-icon="icon: trash; ratio: 0.9"></button>' + '</td>' +
+                        '<td>' + '<a class="borrar uk-icon-button" onclick="borrar();" uk-icon="icon: trash; ratio: 0.9"></a>' + '</td>' +
+
 
 
 
@@ -557,7 +575,8 @@
                         '<td>' + precio + '</td>' +
                         '<td>' + sub_total + '</td>' +
                         '<td>' + obs + '</td>' +
-                        '<td>' + '<button class=" uk-icon-button" uk-icon="icon: trash; ratio: 0.9"></button>' + '</td>' +
+                        '<td>' + '<a class="borrar uk-icon-button" onclick="borrar();" uk-icon="icon: trash; ratio: 0.9"></a>' + '</td>' +
+
 
 
 
@@ -608,6 +627,8 @@
                     console.log(total);
                     document.getElementById("total").value = total;
 
+
+
                 }
 
             </script>
@@ -624,17 +645,19 @@
                     <div class="uk-margin">
                         <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                         <div class="uk-form-controls">
-                            <input id="abono" min="0" name="Abono" onchange="abono();" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
+                            <input id="abono" min="0" onchange="abonos();" name="Abono" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
+
+
 
                             <script>
-                                function abono() {
+                                function abonos() {
                                     var sub_total = document.getElementById("total").value;
                                     var abono = document.getElementById("abono").value;
                                     var total = 0;
 
                                     total = sub_total - abono;
 
-                                    console.log(sub_total, abono, total); //
+                                    console.log(sub_total, abono, total);
 
 
                                     document.getElementById('saldo').value = total;

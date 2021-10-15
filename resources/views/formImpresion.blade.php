@@ -127,6 +127,24 @@
                 </table>
 
                 <script type="text/javascript">
+                    function borrar() {
+
+
+                        $(document).on('click', '.borrar', function(event) {
+                            event.preventDefault();
+                            $(this).closest('tr').remove();
+
+                            calcular();
+                        });
+
+
+
+
+
+
+                    }
+
+
                     function area() {
                         var mt2 = 1;
                         var change = false; //
@@ -259,7 +277,7 @@
                                 '<td>' + cant + '</td>' +
                                 '<td>' + sub_total + '</td>' +
                                 '<td>' + '<textarea type="number" class="uk-input uk-form-width-large "></textarea>' + '</td>' +
-                                '<td>' + '<a class=" uk-icon-button" uk-icon="icon: trash; ratio: 0.9"></a>' + '</td>' +
+                                '<td>' + '<a onclick="borrar();" class=" borrar uk-icon-button" uk-icon="icon: trash; ratio: 0.9"></a>' + '</td>' +
 
 
 
@@ -362,10 +380,10 @@
                         <div class="uk-margin">
                             <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                             <div class="uk-form-controls">
-                                <input id="abono" min="0" name="Abono" onchange="abono();" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
+                                <input id="abono" min="0" name="Abono" onchange="abonos();" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
 
                                 <script>
-                                    function abono() {
+                                    function abonos() {
                                         var sub_total = document.getElementById("total").value;
                                         var abono = document.getElementById("abono").value;
                                         var total = 0;
