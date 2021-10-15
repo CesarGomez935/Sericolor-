@@ -216,7 +216,7 @@
                                             <input disabled id="sub_total" type="number" min="0" class="uk-input uk-form-width-small ">
                                         </td>
                                         <td>
-                                            <button class=" uk-button-primary" onclick="insertar();">Insertar Pedido</button>
+                                            <a class="uk-button uk-button-primary" onclick="insertar();">Insertar Pedido</a>
                                         </td>
 
 
