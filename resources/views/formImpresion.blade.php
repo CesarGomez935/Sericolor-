@@ -114,8 +114,8 @@
                         <tr>
                             <td><input id="alto" oninput="area();" class="uk-input area" min="0" type="number" placeholder="0" value="0"></td>
                             <td><input id="ancho" oninput="area();" class="uk-input area" min="0" type="number" placeholder="0" value="0"></td>
-                            <td><input id="mt2" oninput="costo();" class="uk-input costo" min="0" type="number" placeholder="0" value="0"></td>
-                            <td><input id="costo" oninput="costo();" class="uk-input costo" min="0" type="number" placeholder="0" value="0"></td>
+                            <td><input id="mt2" oninput="costos();" class="uk-input costo" min="0" type="number" placeholder="0" value="0"></td>
+                            <td><input id="costo" oninput="costos();" class="uk-input costo" min="0" type="number" placeholder="0" value="0"></td>
                             <td><input id="precio_mt2" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></td>
                             <td><input id="cantidad" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></td>
                             <td><input id="sub_total" name="sub_total" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"> </td>
@@ -162,7 +162,7 @@
 
                     }
 
-                    function costo() {
+                    function costos() {
                         var costo = 1;
                         var change = false; //
                         $(".costo").each(function() {
