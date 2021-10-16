@@ -7,7 +7,8 @@ use App\Http\Controllers\pedidocontroller;
 use App\Http\Controllers\persona;
 use App\Http\Controllers\reporteController;
 use App\Http\Controllers\dbcontroller;
-use App\Models\pedidos;
+use App\Http\Controllers\maestrocontrolador;
+use App\Models\maestro;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::resource('pedido', maestrocontrolador::class);
+
 // Route::resource('detalledelpedido',detalledelpedidocontroller::class);
 // Route::resource('administraciones',administracion::class);
 // Route::resource('trabajador',persona::class);

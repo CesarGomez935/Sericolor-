@@ -550,7 +550,58 @@
 
     </form>
 
-</body>
+    <script>
 
+    cargarpedido();
+
+    $('#guardar').click(function(res) {
+        guardarpedido();
+        alert("Se agrego su orden");
+
+    });
+
+    function peticionapi(data, method, onSucess) {
+        let url = '/api/pedido';
+        if (method == 'PUT' || method == 'DELETE') {
+            url += '/' + data.IdMaestro;
+        }
+        $.ajax({
+            url: url,
+            method: method,
+            data: data,
+            error(ext) {
+                let error = e.responseJSON.errors;
+               let msj = error[Object.keys(error)[0]][0];
+              //  alert(msj);
+            },
+            success(res) {
+
+            }
+        })
+    }
+
+    function guardarpedido() {
+        let data = {
+            fecha:$("#fecha_fact").val(),
+            Notas:$("Notas").val(),
+            total_costo:$("#total").val(),
+            Saldo:("#saldo").val(),
+            abono:("#abono").val(),
+            codseguimiento:("#tipo_de_pedido").val(),
+        };
+        peticionapi(data, 'POST', function(res) {
+            alert('Guardado con exito')
+        });
+    }
+
+    function cargarpedido() {
+        peticionapi({}, 'GET', function(res) {
+            console.log(res);
+            alert('respuesta satisfactoria');
+        });
+
+    }
+    </script>
+</body>
 
 </html>

@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class maestro extends Model
 {
-    use HasFactory;
+    
     protected $table='maestro';
-    protected $fillable='idmaestro';
+    protected $primarykey='idmaestro';
     public function categoria(){
 
         return $this->belongsto(categoria::class,'idcategoria');

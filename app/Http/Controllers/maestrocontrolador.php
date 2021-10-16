@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use maestro;
+
+use App\Models\maestro;
 use insumos;
 use categoria;
 use detalleimpresion;
@@ -11,7 +12,7 @@ use Detalledelpedido;
 use recibo;
 use DB;
 
-class pedidos extends Controller
+class maestrocontrolador extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,13 +21,12 @@ class pedidos extends Controller
      */
     public function index()
     {
-        //
-        return categoria::all();
-        return insumos::all();
-        return detalleimpresion::all();
-        return Detalledelpedido::all();
-        return maestro::all();
-        return recibo::all();
+        
+            return maestro::all();
+            return Detalledelpedido::all();
+            return categoria::all();
+
+
     }
 
     /**
@@ -36,7 +36,7 @@ class pedidos extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -47,48 +47,38 @@ class pedidos extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::transaction(function() use ($request)
+        {
+            $maestro=new maestro();
+            $maestro=Maestro::create([
+                'IdCategoria'=>$request->IdCategoria,
+                'IdCliente'=>$request->IdCliente,
+                'IdUsuario'=>$request->IdUsuario,
+                'fecha'=>$request->fecha,
+                'notas'=>$request->notas,
+                'total_costo'=>$request->total_costo,
+                'saldo'=>$request->saldo,
+                'CodSeguimiento'=>$request->CodSeguimiento,
+                'abono'=>$request->abono,
+              
 
-        $maestro=new maestro();
-        $insumos=new insumos();
-        $detalle=new detalleimpresion;
-        $maestro->IdCategoria=$categoria->Idcategoria;
-        $maestro->IdCliente=$cliente->Idcliente;
-        $maestro->IdUsuario=$usuario->IdUsuario;
-        $maestro->fecha=$request->fecha;
-        $maestro->notas=$request->Notas;
-        $maestro->total_costo=$request->total_costo;
-        $maestro->saldo=$request->saldo;
-        $maestro->CodSeguimiento=$request->CodSeguimiento;
-        $detalles->IdInsumos=$insumos->IdInsumos;
-        $detalles->IdMaestro=$maestro->IdMaestro;
-        $detalles->pecho_izquierdo=$request->pecho_izquierdo;
-        $detalles->pecho_derecho=$request->pecho_derecho;
-        $detalles->manga_izquierdo=$request->manga_izquierdo;
-        $detalles->manga_derecha=$request->manga_derecha;
-        $detalles->espalda=$request->espalda;
-        $detalles->cantidad=$request->cantidad;
-        $detalles->observacion=$request->observacion;
-        
+            ]);
+            return $maestro->save();
+            
+            $detalle=Detalledelpedido::create([
 
+                'IdInsumos'=>$request->IdInsumos,
+                'IdMaestro'=>$request->IdMaestro,
+                'ancho'=>$request->ancho,
+                'alto'=>$request->alto,
+                'p/m'=>$request-> p_m, 
+                'cantidad'=>$request->cantidad,
+                'total'=>$request->total,
+                'observacion'=>$request->observacion,
 
+            ]);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+        });
     }
 
     /**
