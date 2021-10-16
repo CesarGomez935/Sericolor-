@@ -115,25 +115,10 @@
 
             </tbody>
         </table>
-        <table class="uk-table uk-table-divider uk-table-striped uk-table-hover">
-            <thead>
-                @method('delete')
-                @csrf
-                <tr>
-                    <th>Personal</th>
-                    <th>Rol</th>
-                    <th>Opciones</th>
 
-                </tr>
-            </thead>
-            <tbody id="tablatrabajadores">
-                <tr>
+        @method('delete')
+        @csrf
 
-
-                </tr>
-
-            </tbody>
-        </table>
 
 
     </div>

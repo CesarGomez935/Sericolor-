@@ -119,7 +119,13 @@
                             <td><input id="precio_mt2" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></td>
                             <td><input id="cantidad" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></td>
                             <td><input id="sub_total" name="sub_total" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"> </td>
-                            <td> <a class=" uk-icon-button" uk-icon="icon: plus; ratio: 1.0" onclick="insertar();"></a></td>
+
+
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td colspan="3"><textarea type="number" id="observacion" class="uk-input uk-form-width-large " placeholder="Observacion"></textarea></td>
+                            <td colspan="2"> <a class="uk-button uk-button-primary" onclick="insertar();">Ingresar Pedido</a></td>
 
                         </tr>
 
@@ -268,6 +274,7 @@
                             var mt2 = document.getElementById("mt2").value;
                             var cant = document.getElementById("cantidad").value;
                             var sub_total = document.getElementById("sub_total").value;
+                            var Observacion = document.getElementById("observacion").value;
 
 
 
@@ -276,7 +283,7 @@
                                 '<td>' + mt2 + '</td>' +
                                 '<td>' + cant + '</td>' +
                                 '<td>' + sub_total + '</td>' +
-                                '<td>' + '<textarea type="number" class="uk-input uk-form-width-large "></textarea>' + '</td>' +
+                                '<td>' + Observacion + '</td>' +
                                 '<td>' + '<a onclick="borrar();" class=" borrar uk-icon-button" uk-icon="icon: trash; ratio: 0.9"></a>' + '</td>' +
 
 
@@ -297,6 +304,61 @@
 
 
 
+
+
+
+                        }
+
+                        function Obtener_datos() {
+
+                            var filas = document.querySelectorAll("#Tabla tbody tr");
+
+                            var contador = 0;
+                            const mt2 = [];
+                            const cantidad = [];
+                            const sub_total = [];
+                            const Observacion = [];
+
+                            var total = document.getElementById("total").value;
+
+
+
+
+
+                            filas.forEach(function(e) {
+
+
+                                // obtenemos las columnas de cada fila
+                                var columnas = e.querySelectorAll("td");
+
+
+
+
+                                var mt2_ = columnas[0].textContent;
+                                var cantidad_ = parseFloat(columnas[1].textContent);
+                                var sub_total_ = parseFloat(columnas[2].textContent);
+                                var Observacion_ = columnas[3].textContent;
+
+
+                                mt2[contador] = mt2_;
+                                cantidad[contador] = cantidad_;
+                                sub_total[contador] = sub_total_;
+                                Observacion[contador] = Observacion_;
+
+
+
+
+                                contador = contador + 1;
+
+
+                                console.log(contador)
+
+
+
+
+                            })
+                            console.log(filas)
+                            console.log(mt2, cantidad, sub_total, Observacion);
 
 
 
