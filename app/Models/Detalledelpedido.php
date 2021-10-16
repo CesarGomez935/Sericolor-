@@ -9,7 +9,7 @@ use APP\Model\insumos;
 class Detalledelpedido extends Model
 {
     protected $table='detalle-orden-sub,bor,ser';
-    protected $fillable='iddetalleordensu';
+    protected $primarykey='iddetalleordensu';
 
 
     public function insumos(){
