@@ -4,15 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\maestro;
-use insumos;
-use categoria;
-use detalleimpresion;
-use Detalledelpedido;
-use recibo;
-use DB;
-
-class maestrocontrolador extends Controller
+class facturacion extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,12 +13,7 @@ class maestrocontrolador extends Controller
      */
     public function index()
     {
-        
-            return maestro::all();
-            return Detalledelpedido::all();
-            return categoria::all();
-
-
+        //
     }
 
     /**
@@ -36,7 +23,7 @@ class maestrocontrolador extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -47,41 +34,8 @@ class maestrocontrolador extends Controller
      */
     public function store(Request $request)
     {
-        DB::transaction(function() use ($request)
-        {
-            
-            $maestro=Maestro::create([
-                'IdCategoria'=>$request->IdCategoria,
-                'IdCliente'=>$request->IdCliente,
-                'IdUsuario'=>$request->IdUsuario,
-                'fecha'=>$request->fecha,
-                'Notas'=>$request->notas,
-                'total_costo'=>$request->total_costo,
-                'saldo'=>$request->Saldo,
-                'CodSeguimiento'=>$request->codseguimiento,
-                'abono'=>$request->abono,
-              
-
-            ]);
-          
-            
-            $detalle=Detalledelpedido::create([
-
-                'IdInsumos'=>$request->IdInsumos,
-                'IdMaestro'=>$request->IdMaestro,
-                'ancho'=>$request->ancho,
-                'alto'=>$request->alto,
-                'p/m'=>$request-> p_m, 
-                'cantidad'=>$request->cantidad,
-                'total'=>$request->total,
-                'observacion'=>$request->observacion,
-
-            ]);
-
-        });
+        //
     }
-
-  
 
     /**
      * Display the specified resource.

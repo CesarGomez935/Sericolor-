@@ -10,6 +10,8 @@ class Detalledelpedido extends Model
 {
     protected $table='detalle-orden-sub,bor,ser';
     protected $primarykey='iddetalleordensu';
+    
+    
 
 
     public function insumos(){

@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Models\maestro;
-use insumos;
-use categoria;
-use detalleimpresion;
-use Detalledelpedido;
-use recibo;
+use App\Models\insumos;
+use App\Models\categoria;
+use App\Models\detalleimpresion;
+use App\Models\Detalledelpedido;
+use App\Models\recibo;
 use DB;
+use App\Models\maestro;
 
-class maestrocontrolador extends Controller
+class maestrocontroladorImpresion extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,11 +20,8 @@ class maestrocontrolador extends Controller
      */
     public function index()
     {
-        
-            return maestro::all();
-            return Detalledelpedido::all();
-            return categoria::all();
-
+        return maestro::all();        
+        return categoria::all();
 
     }
 
@@ -47,6 +43,7 @@ class maestrocontrolador extends Controller
      */
     public function store(Request $request)
     {
+        
         DB::transaction(function() use ($request)
         {
             
@@ -65,10 +62,9 @@ class maestrocontrolador extends Controller
             ]);
           
             
-            $detalle=Detalledelpedido::create([
-
+            $detalle=detalleimpresion::create([
                 'IdInsumos'=>$request->IdInsumos,
-                'IdMaestro'=>$request->IdMaestro,
+                'IdMaestro'=>$maestro->IdMaestro,
                 'ancho'=>$request->ancho,
                 'alto'=>$request->alto,
                 'p/m'=>$request-> p_m, 
@@ -80,8 +76,6 @@ class maestrocontrolador extends Controller
 
         });
     }
-
-  
 
     /**
      * Display the specified resource.

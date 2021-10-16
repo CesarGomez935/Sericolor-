@@ -11,7 +11,9 @@ class detalleimpresion extends Model
 {
     use HasFactory;
     protected $table='detalle-orden-imp';
-    protected $fillable='iddetalleordenimp';
+    
+    protected $fillable=['IdInsumos','IdMaestro','ancho','alto','p/m','cantidad','total','observacion'];
+    public $timestamps = false;
 
 
     public function insumos(){

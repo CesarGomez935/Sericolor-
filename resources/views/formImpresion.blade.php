@@ -532,6 +532,10 @@
                 <select class="uk-select" id="tipo_de_pedido" disabled hidden>
                     <option value='Impresion_Digital'>Impresion_Digital</option>
                 </select>
+                <select class="uk-select" id="cat" disabled hidden>
+                    <option value='1'>Impresion_Digital</option>
+                </select>
+
 
 
             </div>
@@ -540,7 +544,7 @@
             <div class="uk-padding uk-background-muted uk-padding  ">
                 <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
                     <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
-                    <a onclick="return confirm('¿Está seguro que desea continuar?')" type="submit" id="guardar" href="/menu/menu_facturacion/form_impresion_digital" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
+                    <a id="guardar" class="uk-button uk-button-secondary guardar" style="margin-left: 100px">Guardar</a>
 
 
                 </div>
@@ -551,19 +555,20 @@
     </form>
 
     <script>
+        let pedido = [];
 
-    cargarpedido();
+        cargarpedido();
 
-    $('#guardar').click(function(res) {
+    $('#guardar').click(function(e) {
         guardarpedido();
         alert("Se agrego su orden");
 
     });
 
     function peticionapi(data, method, onSucess) {
-        let url = '/api/pedido';
+        let url = '/api/pedidoimp';
         if (method == 'PUT' || method == 'DELETE') {
-            url += '/' + data.IdMaestro;
+            url += '/' + data.idmaestro;
         }
         $.ajax({
             url: url,
@@ -572,7 +577,7 @@
             error(ext) {
                 let error = e.responseJSON.errors;
                let msj = error[Object.keys(error)[0]][0];
-              //  alert(msj);
+                alert(msj);
             },
             success(res) {
 
@@ -582,15 +587,33 @@
 
     function guardarpedido() {
         let data = {
+            IdCliente:$("#cat").val(),
+            IdUsuario:$("#cat").val(),
+            IdCategoria:$("#cat").val(),
             fecha:$("#fecha_fact").val(),
-            Notas:$("Notas").val(),
+            notas:$("#notas").val(),
             total_costo:$("#total").val(),
-            Saldo:("#saldo").val(),
-            abono:("#abono").val(),
-            codseguimiento:("#tipo_de_pedido").val(),
+            Saldo:$("#saldo").val(),
+            abono:$("#abono").val(),
+            codseguimiento:$("#tipo_de_pedido").val(),
         };
         peticionapi(data, 'POST', function(res) {
             alert('Guardado con exito')
+        });
+    }
+    function guardardetalle(){
+        let detalle={
+         
+         IdInsumos:$("#cat").val(),
+         
+
+
+
+
+
+        };
+        peticionapi(data,'POST',function(res){
+           
         });
     }
 

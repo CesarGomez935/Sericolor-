@@ -9,7 +9,7 @@ class categoria extends Model
 {
     use HasFactory;
     protected $table='categoria';
-    protected $fillable='idcategoria';
+    protected $primarykey='idcategoria';
     public function maestro(){
 
         return $this->HasMany(maestro::class);
