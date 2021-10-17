@@ -10,21 +10,17 @@
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
 <body onpageshow="fecha();">
@@ -33,8 +29,7 @@
     <nav class="uk-navbar uk-navbar-container ">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span
-                    class="uk-margin-small-left">Facturación Impresión Digital</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Facturación Impresión Digital</span>
             </a>
         </div>
 
@@ -119,27 +114,19 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input id="alto" oninput="area();" class="uk-input area" min="0" type="number"
-                                    placeholder="0" value="0"></td>
-                            <td><input id="ancho" oninput="area();" class="uk-input area" min="0" type="number"
-                                    placeholder="0" value="0"></td>
-                            <td><input id="mt2" oninput="costos();" class="uk-input costo" min="0" type="number"
-                                    placeholder="0" value="0"></td>
-                            <td><input id="precio_mt2" oninput="costos();" class="uk-input costo" min="0" type="number"
-                                    placeholder="0" value="0"></td>
-                            <td><input id="costo" oninput="multi();" class="uk-input monto" min="0" type="number"
-                                    placeholder="0" value="0"></td>
-                            <td><input id="cantidad" oninput="multi();" class="uk-input monto" min="0" type="number"
-                                    placeholder="0" value="0"></td>
-                            <td><input id="sub_total" name="sub_total" class="uk-input" min="0" value=""
-                                    type="number" placeholder="0" value="0"> </td>
+                            <td><input id="alto" oninput="area();" class="uk-input area" min="0" type="number" placeholder="0" value="0"></td>
+                            <td><input id="ancho" oninput="area();" class="uk-input area" min="0" type="number" placeholder="0" value="0"></td>
+                            <td><input id="mt2" oninput="costos();" class="uk-input costo" min="0" type="number" placeholder="0" value="0"></td>
+                            <td><input id="precio_mt2" oninput="costos();" class="uk-input costo" min="0" type="number" placeholder="0" value="0"></td>
+                            <td><input id="costo" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></td>
+                            <td><input id="cantidad" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></td>
+                            <td><input id="sub_total" name="sub_total" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"> </td>
 
 
                         </tr>
                         <tr>
                             <td colspan="2"></td>
-                            <td colspan="3"><textarea type="number" id="observacion"
-                                    class="uk-input uk-form-width-large " placeholder="Observacion"></textarea></td>
+                            <td colspan="3"><textarea type="number" id="observacion" class="uk-input uk-form-width-large " placeholder="Observacion"></textarea></td>
                             <td colspan="2"> <a class="uk-button uk-button-primary" onclick="insertar();">Ingresar
                                     Pedido</a></td>
 
@@ -218,6 +205,7 @@
 
 
                     }
+
                 </script>
 
                 <div class="uk-background-muted uk-padding">
@@ -448,6 +436,7 @@
                                 $("#fecha_fact").attr("value", today);
                             });
                         }
+
                     </script>
                     </table>
                 </div>
@@ -478,9 +467,7 @@
                         <div class="uk-margin">
                             <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                             <div class="uk-form-controls">
-                                <input id="abono" min="0" name="Abono" onchange="abonos();"
-                                    class="uk-input uk-form-width-large" id="form-horizontal-text" type="number"
-                                    placeholder="">
+                                <input id="abono" min="0" name="Abono" onchange="abonos();" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
 
                                 <script>
                                     function abonos() {
@@ -498,6 +485,7 @@
 
 
                                     }
+
                                 </script>
                             </div>
                         </div>
@@ -505,8 +493,7 @@
                         <div class="uk-margin">
                             <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
                             <div class="uk-form-controls">
-                                <input id="saldo" name="Saldo" class="uk-input uk-form-width-large"
-                                    id="form-horizontal-text" type="text" placeholder="">
+                                <input id="saldo" name="Saldo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                             </div>
                         </div>
                         <div class="uk-margin">
@@ -543,29 +530,25 @@
                             <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza
                                 Pedido</label>
                             <div class="uk-form-controls">
-                                <input id="autoriza" name="Autoriza_pedido" class="uk-input uk-form-width-large"
-                                    id="form-horizontal-text" type="text" placeholder="">
+                                <input id="autoriza" name="Autoriza_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                             </div>
                         </div>
                         <div class="uk-margin">
                             <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
                             <div class="uk-form-controls">
-                                <input id="recibe" name="recibe_pedido" class="uk-input uk-form-width-large"
-                                    id="form-horizontal-text" type="text" placeholder="">
+                                <input id="recibe" name="recibe_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                             </div>
                         </div>
                         <div class="uk-margin">
                             <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
                             <div class="uk-form-controls">
-                                <input id="factura" name="num_factura" class="uk-input uk-form-width-large"
-                                    id="form-horizontal-text" type="text" placeholder="">
+                                <input id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                             </div>
                         </div>
                         <div class="uk-margin">
                             <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
                             <div class="uk-form-controls">
-                                <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large"
-                                    id="form-horizontal-text" type="text" placeholder="">
+                                <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                             </div>
                         </div>
                     </div>
@@ -587,8 +570,7 @@
             <!-- Botones atrás y actualizar-->
             <div class="uk-padding uk-background-muted uk-padding  ">
                 <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-                    <a href="/menu/menu_facturacion" class="uk-button uk-button-primary "
-                        style="margin-left: 100px">Atrás</a>
+                    <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
                     <a id="guardar" class="uk-button uk-button-secondary guardar" style="margin-left: 100px">Guardar</a>
 
 
@@ -606,7 +588,7 @@
 
         $('#guardar').click(function(e) {
             guardarpedido();
-            
+
             alert("Se agrego su orden");
 
         });
@@ -617,15 +599,15 @@
                 url += '/' + data.idmaestro;
             }
             $.ajax({
-                url: url,
-                method: method,
-                data: data,
-                error(ext) {
+                url: url
+                , method: method
+                , data: data
+                , error(ext) {
                     let error = e.responseJSON.errors;
                     let msj = error[Object.keys(error)[0]][0];
                     alert(msj);
-                },
-                success(res) {
+                }
+                , success(res) {
 
                 }
             })
@@ -633,116 +615,129 @@
 
         function guardarpedido() {
             let data = {
-                IdCliente: $("#cat").val(),
-                IdUsuario: $("#cat").val(),
-                IdCategoria: $("#cat").val(),
-                fecha: $("#fecha_fact").val(),
-                notas: $("#notas").val(),
-                total_costo: $("#total").val(),
-                Saldo: $("#saldo").val(),
-                abono: $("#abono").val(),
-                codseguimiento: $("#tipo_de_pedido").val(),
-                IdInsumos: $("#cat").val(),
-                
-                ancho: $("#alto").val(),
-                alto: $("#ancho").val(),
-                mt2: $("#mt2").val(),
-                p_m: $("#precio_mt2").val(),
-                costo: $("#costo").val(),
-                cantidad: $("#cantidad").val(),
-                total: $("#sub_total").val(),
-                observacion: $("#observacion").val(),
-            };
-           
-            peticionapi(data, 'POST', function(res) {
-                alert('Guardado con exito')
-            });
-        }
+                IdCliente: $("#cat").val()
+                , IdUsuario: $("#cat").val()
+                , IdCategoria: $("#cat").val()
+                , fecha: $("#fecha_fact").val()
+                , notas: $("#notas").val()
+                , total_costo: $("#total").val()
+                , Saldo: $("#saldo").val()
+                , abono: $("#abono").val()
+                , codseguimiento: $("#tipo_de_pedido").val()
+                , IdInsumos: $("#cat").val(),
 
-        function guardardetalle() {
-            let detalle = {
+                guardardetalle();
 
+                //     ancho: $("#alto").val()
+                //     , alto: $("#ancho").val()
+                //     , mt2: $("#mt2").val()
+                //     , p_m: $("#precio_mt2").val()
+                //     , costo: $("#costo").val()
+                //     , cantidad: $("#cantidad").val()
+                //     , total: $("#sub_total").val()
+                //     , observacion: $("#observacion").val()
+                // , };
 
+                peticionapi(data, 'POST', function(res) {
+                    alert('Guardado con exito')
+                });
+            }
 
-
-
-                // var filas = document.querySelectorAll("#Tabla tbody tr");
-
-                // var contador = 0;
-
-                // const alto = [];
-                // const ancho = [];
-                // const mt2 = [];
-                // const prec_mt2 = [];
-                // const costo = [];
-                // const cantidad = [];
-                // const sub_total = [];
-                // const Observacion = [];
-
-                // var total = document.getElementById("total").value;
+            function guardardetalle() {
+                let detalle = {
 
 
 
 
 
-                // filas.forEach(function(e) {
+                    var filas = document.querySelectorAll("#Tabla tbody tr");
 
+                    var contador = 0;
 
-                //     // obtenemos las columnas de cada fila
-                //     var columnas = e.querySelectorAll("td");
+                    const alto = [];
+                    const ancho = [];
+                    const mt2 = [];
+                    const prec_mt2 = [];
+                    const costo = [];
+                    const cantidad = [];
+                    const sub_total = [];
+                    const Observacion = [];
 
-
-
-
-
-                //     var alto_ = columnas[0].textContent;
-                //     var ancho_ = columnas[1].textContent;
-                //     var mt2_ = columnas[2].textContent;
-                //     var Prec_mt2_ = columnas[3].textContent;
-                //     var costo_ = columnas[4].textContent;
-                //     var cantidad_ = parseFloat(columnas[5].textContent);
-                //     var sub_total_ = parseFloat(columnas[6].textContent);
-                //     var Observacion_ = columnas[7].textContent;
-
-                
-
-
-                //         mt2[contador] = mt2_;
-                //     cantidad[contador] = cantidad_;
-                //     sub_total[contador] = sub_total_;
-                //     Observacion[contador] = Observacion_;
-
-
-
-
-                //     contador = contador + 1;
-
-
-                //     console.log(contador)
-
-
-
-
-                // })
+                    var total = document.getElementById("total").value;
 
 
 
 
 
+                    filas.forEach(function(e) {
 
-            };
-            peticionapi(data, 'POST', function(res) {
 
-            });
-        }
+                        // obtenemos las columnas de cada fila
+                        var columnas = e.querySelectorAll("td");
 
-        function cargarpedido() {
-            peticionapi({}, 'GET', function(res) {
-                console.log(res);
-                alert('respuesta satisfactoria');
-            });
 
-        }
+
+
+
+                        var alto_ = columnas[0].textContent;
+                        var ancho_ = columnas[1].textContent;
+                        var mt2_ = columnas[2].textContent;
+                        var Prec_mt2_ = columnas[3].textContent;
+                        var costo_ = columnas[4].textContent;
+                        var cantidad_ = parseFloat(columnas[5].textContent);
+                        var sub_total_ = parseFloat(columnas[6].textContent);
+                        var Observacion_ = columnas[7].textContent;
+
+
+
+
+                        mt2[contador] = mt2_;
+                        cantidad[contador] = cantidad_;
+                        sub_total[contador] = sub_total_;
+                        Observacion[contador] = Observacion_;
+
+                        ancho: ancho_
+                            , alto: alto_
+                            , mt2: mt2_
+                            , p_m: Prec_mt2_
+                            , costo: costo_
+                            , cantidad: cantidad_
+                            , total: sub_total_
+                            , observacion: Observacion_,
+
+
+
+
+
+                            contador = contador + 1;
+
+
+                        console.log(contador)
+
+
+
+
+                    })
+
+
+
+
+
+
+                };
+                peticionapi(data, 'POST', function(res) {
+
+                });
+            }
+
+            function cargarpedido() {
+                peticionapi({}, 'GET', function(res) {
+                    console.log(res);
+                    alert('respuesta satisfactoria');
+                });
+
+            }
+
     </script>
 </body>
 
