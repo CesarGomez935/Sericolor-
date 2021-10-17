@@ -583,6 +583,7 @@
                 <select class="uk-select" id="tipo_de_pedido" disabled hidden>
                     <option value='Impresion_Digital'>Impresion_Digital</option>
                 </select>
+                
                 <select class="uk-select" id="cat" disabled hidden>
                     <option value='1'>Impresion_Digital</option>
                 </select>
@@ -664,6 +665,13 @@
                 cantidad: $("#cantidad").val(),
                 total: $("#sub_total").val(),
                 observacion: $("#observacion").val(),
+
+                idmetodo:$("#cat").val(),
+                cod:$("#saldo").val(),
+
+
+
+
             };
 
             console.log(data);

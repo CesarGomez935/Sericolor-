@@ -9,7 +9,7 @@ class recibo extends Model
 {
     use HasFactory;
     protected $table='recibo';
-    protected $fillable=['IdMaestro','Id_Metodo_de_pago','Fecha_de_pago','Cod-Recibo','Observaciones'];
+    protected $fillable=['IdMaestro','Id_Metodo_de_Pago','Fecha_de_pago','Cod-Recibo','Observaciones'];
     public $timestamps = false;
 
     public function maestro(){

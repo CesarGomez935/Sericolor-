@@ -88,12 +88,13 @@ class maestrocontroladorImpresion extends Controller
                     'observacion'=>$request->observacion,
     
                 ]);
+
                 $recibo=recibo::create([
 
                     'IdMaestro'=>$maestro->idmaestro,  
                     'Id_Metodo_de_Pago'=>$request->idmetodo,
                     'Fecha_de_pago'=>$request->fecha,
-                    'Cod-Recibo'=>$request->codseguimiento,
+                    'Cod-Recibo'=>$request->cod,
 
 
                 ]);
