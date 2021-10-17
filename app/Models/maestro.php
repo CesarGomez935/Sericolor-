@@ -9,7 +9,7 @@ class maestro extends Model
 {
     
     protected $table='maestro';
-    protected $primarykey='idmaestro';
+    protected $primaryKey='idmaestro';
     protected $fillable=['IdCategoria','IdCliente','IdUsuario','fecha','Notas','total_costo','saldo','CodSeguimiento','abono'];
     public $timestamps = false;
     public function categoria(){
@@ -23,5 +23,13 @@ class maestro extends Model
     public function usuario(){
 
         return $this->belongsto(usuario::class,'IdUsuario');
+    }
+    public function detalleimpresion(){
+
+        return $this->hasMany(detalleimpresion::class,'IdMaestro');
+    }
+    public function Detalledelpedido(){
+
+        return $this->hasMany(Detalledelpedido::class,'IdMaestro');
     }
 }

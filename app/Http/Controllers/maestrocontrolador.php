@@ -66,19 +66,24 @@ class maestrocontrolador extends Controller
             ]);
           
             
-            $detalle=Detalledelpedido::create([
+            $detalle=Detalledelpedido::insert($arreglos
 
-                'IdInsumos'=>$request->IdInsumos,
-                'IdMaestro'=>$maestro->id,
-                'pecho_izquierdo'=>$request->pecho_izq,
-                'pecho_derecho'=>$request->pecho_der,
-                'manga_izquierda'=>$request-> manga_izq, 
-                'manga_derecha'=>$request-> manga_der,
-                'espalda'=>$request->espalda,
-                'Cantidad'=>$request->abono,
-                'observacion'=>$request->observacion,
 
-            ]);
+                // [
+
+                //     'IdInsumos'=>$request->IdInsumos,
+                //     'IdMaestro'=>$maestro->idmaestro,
+                //     'pecho_izquierdo'=>$request->pecho_izq,
+                //     'pecho_derecho'=>$request->pecho_der,
+                //     'manga_izquierda'=>$request-> manga_izq, 
+                //     'manga_derecha'=>$request-> manga_der,
+                //     'espalda'=>$request->espalda,
+                //     'Cantidad'=>$request->abono,
+                //     'observacion'=>$request->observacion,
+    
+                // ]
+        
+        );
 
         });
     }

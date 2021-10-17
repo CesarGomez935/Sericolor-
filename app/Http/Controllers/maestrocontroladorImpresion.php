@@ -8,6 +8,7 @@ use App\Models\categoria;
 use App\Models\detalleimpresion;
 use App\Models\Detalledelpedido;
 use App\Models\recibo;
+
 use DB;
 use App\Models\maestro;
 
@@ -22,6 +23,7 @@ class maestrocontroladorImpresion extends Controller
     {
         return maestro::all();        
         return categoria::all();
+        return recibo::all();
 
     }
 
@@ -46,8 +48,9 @@ class maestrocontroladorImpresion extends Controller
         
         DB::transaction(function() use ($request)
         {
-            
+
             $maestro=Maestro::create([
+
                 'IdCategoria'=>$request->IdCategoria,
                 'IdCliente'=>$request->IdCliente,
                 'IdUsuario'=>$request->IdUsuario,
@@ -60,26 +63,70 @@ class maestrocontroladorImpresion extends Controller
               
 
             ]);
-          
-            
-            $detalle=detalleimpresion::create([
+
+            // foreach($request as $requests){
 
                 
-                'IdInsumos'=>$request->IdInsumos,
-                'IdMaestro'=>$maestro->id,                
-                'ancho'=>$request->ancho,
-                'alto'=>$request->alto,
-                'mt2'=>$request->mt2,
-                'p/m'=>$request-> p_m,
-                'costo'=>$request-> costo,  
-                'cantidad'=>$request->cantidad,
-                'total'=>$request->total,
-                'observacion'=>$request->observacion,
+    
+               // $maestro=Maestro::find($maestro->idmaestro);
+    
+                
+              
+                
+                $detalle=detalleimpresion::create([
+    
+                    
+                    'IdInsumos'=>$request->IdInsumos,
+                    'IdMaestro'=>$maestro->idmaestro,                
+                    'ancho'=>$request->ancho,
+                    'alto'=>$request->alto,
+                    'mt2'=>$request->mt2,
+                    'p/m'=>$request-> p_m,
+                    'costo'=>$request-> costo,  
+                    'cantidad'=>$request->cantidad,
+                    'total'=>$request->total,
+                    'observacion'=>$request->observacion,
+    
+                ]);
+                $recibo=recibo::create([
 
-            ]);
+                    'IdMaestro'=>$maestro->idmaestro,  
+                    'Id_Metodo_de_Pago'=>$request->idmetodo,
+                    'Fecha_de_pago'=>$request->fecha,
+                    'Cod-Recibo'=>$request->codseguimiento,
+
+
+                ]);
+
+            // }
+            
+            
 
         });
     }
+
+    // public function insertarDetalle($maestro,$detalle)
+    // {   
+    //     foreach($detalles as $detalle)
+    //     {
+    //         $maestro->detalles()->insert(
+    //             [
+
+    //             'IdInsumos'=>$detalle->IdInsumos,
+    //             'IdMaestro'=>$maestro->id,                
+    //             'ancho'=>$detalle->ancho,
+    //             'alto'=>$detalle->alto,
+    //             'mt2'=>$detalle->mt2,
+    //             'p/m'=>$detalle-> p_m,
+    //             'costo'=>$detalle-> costo,  
+    //             'cantidad'=>$detalle->cantidad,
+    //             'total'=>$detalle->total,
+    //             'observacion'=>$detalle->observacion,
+    //             ]
+    //             );
+    //     }
+
+    // }
 
     /**
      * Display the specified resource.
