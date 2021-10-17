@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\maestro;
-use insumos;
-use categoria;
-use detalleimpresion;
-use Detalledelpedido;
-use recibo;
+
+use App\Models\insumos;
+use App\Models\categoria;
+use App\Models\detalleimpresion;
+use App\Models\Detalledelpedido;
+use App\Models\recibo;
 use DB;
+use App\Models\maestro;
 
 class maestrocontrolador extends Controller
 {
@@ -68,12 +69,13 @@ class maestrocontrolador extends Controller
             $detalle=Detalledelpedido::create([
 
                 'IdInsumos'=>$request->IdInsumos,
-                'IdMaestro'=>$request->IdMaestro,
-                'ancho'=>$request->ancho,
-                'alto'=>$request->alto,
-                'p/m'=>$request-> p_m, 
-                'cantidad'=>$request->cantidad,
-                'total'=>$request->total,
+                'IdMaestro'=>$maestro->id,
+                'pecho_izquierdo'=>$request->pecho_izq,
+                'pecho_derecho'=>$request->pecho_der,
+                'manga_izquierda'=>$request-> manga_izq, 
+                'manga_derecha'=>$request-> manga_der,
+                'espalda'=>$request->espalda,
+                'Cantidad'=>$request->abono,
                 'observacion'=>$request->observacion,
 
             ]);

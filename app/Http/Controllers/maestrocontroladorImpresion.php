@@ -63,11 +63,15 @@ class maestrocontroladorImpresion extends Controller
           
             
             $detalle=detalleimpresion::create([
+
+                
                 'IdInsumos'=>$request->IdInsumos,
-                'IdMaestro'=>$maestro->IdMaestro,
+                'IdMaestro'=>$maestro->id,                
                 'ancho'=>$request->ancho,
                 'alto'=>$request->alto,
-                'p/m'=>$request-> p_m, 
+                'mt2'=>$request->mt2,
+                'p/m'=>$request-> p_m,
+                'costo'=>$request-> costo,  
                 'cantidad'=>$request->cantidad,
                 'total'=>$request->total,
                 'observacion'=>$request->observacion,

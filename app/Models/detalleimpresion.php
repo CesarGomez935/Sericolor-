@@ -12,7 +12,7 @@ class detalleimpresion extends Model
     use HasFactory;
     protected $table='detalle-orden-imp';
     
-    protected $fillable=['IdInsumos','IdMaestro','ancho','alto','p/m','cantidad','total','observacion'];
+    protected $fillable=['IdInsumos','IdMaestro','ancho','alto','mt2','p/m','costo','cantidad','total','observacion'];
     public $timestamps = false;
 
 
@@ -21,7 +21,7 @@ class detalleimpresion extends Model
     }
     public function maestro(){
 
-        return $this->belongsto(maestro::class,'idMaestro');
+        return $this->belongsto(maestro::class,'idmaestro');
 
     }
 }

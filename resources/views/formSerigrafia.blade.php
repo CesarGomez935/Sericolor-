@@ -680,15 +680,172 @@
         <div class="uk-padding uk-background-muted uk-padding " style="text-align: center;">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
                 <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
-                <a onclick="return confirm('¿Está seguro que desea continuar?')" id="guardar" href="/menu/menu_facturacion/form_bordado" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
+                <a  id="guardar" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
 
 
             </div>
             <select class="uk-select" id="tipo_de_pedido" disabled hidden>
                 <option value='Bordado'>serigrafia</option>
             </select>
+            <select class="uk-select" id="cat" disabled hidden>
+                <option value='1'>Impresion_Digital</option>
+            </select>
         </div>
     </form>
+    {{-- script para ingresar datos en los formularios --}}
+    <script>
+             let pedido = [];
+
+cargarpedido();
+
+$('#guardar').click(function(e) {
+    guardarpedido();
+    
+    alert("Se agrego su orden");
+
+});
+
+function peticionapi(data, method, onSucess) {
+    let url = '/api/pedido';
+    if (method == 'PUT' || method == 'DELETE') {
+        url += '/' + data.idmaestro;
+    }
+    $.ajax({
+        url: url,
+        method: method,
+        data: data,
+        error(ext) {
+            let error = e.responseJSON.errors;
+            let msj = error[Object.keys(error)[0]][0];
+            alert(msj);
+        },
+        success(res) {
+
+        }
+    })
+}
+
+function guardarpedido() {
+    let data = {
+        IdCliente: $("#cat").val(),
+        IdUsuario: $("#cat").val(),
+        IdCategoria: $("#cat").val(),
+        fecha: $("#fecha_fact").val(),
+        notas: $("#notas").val(),
+        total_costo: $("#total").val(),
+        Saldo: $("#saldo").val(),
+        abono: $("#abono").val(),
+        codseguimiento: $("#tipo_de_pedido").val(),
+        IdInsumos: $("#cat").val(),
+        
+        pecho_izq: $("#pecho_izq").val(),
+        pecho_der: $("#pecho_der").val(),
+        manga_izq: $("#manga_izq").val(),
+        manga_der: $("#manga_der").val(),
+        espalda: $("#espalda").val(),
+        cantidad: $("#cantidad").val(),
+        observacion: $("#Observacion").val(),
+    };
+   
+    peticionapi(data, 'POST', function(res) {
+        alert('Guardado con exito')
+    });
+}
+
+function guardardetalle() {
+    let detalle = {
+
+
+
+
+
+        // var filas = document.querySelectorAll("#Tabla tbody tr");
+
+        // var contador = 0;
+
+        // const alto = [];
+        // const ancho = [];
+        // const mt2 = [];
+        // const prec_mt2 = [];
+        // const costo = [];
+        // const cantidad = [];
+        // const sub_total = [];
+        // const Observacion = [];
+
+        // var total = document.getElementById("total").value;
+
+
+
+
+
+        // filas.forEach(function(e) {
+
+
+        //     // obtenemos las columnas de cada fila
+        //     var columnas = e.querySelectorAll("td");
+
+
+
+
+
+        //     var alto_ = columnas[0].textContent;
+        //     var ancho_ = columnas[1].textContent;
+        //     var mt2_ = columnas[2].textContent;
+        //     var Prec_mt2_ = columnas[3].textContent;
+        //     var costo_ = columnas[4].textContent;
+        //     var cantidad_ = parseFloat(columnas[5].textContent);
+        //     var sub_total_ = parseFloat(columnas[6].textContent);
+        //     var Observacion_ = columnas[7].textContent;
+
+        
+
+
+        //         mt2[contador] = mt2_;
+        //     cantidad[contador] = cantidad_;
+        //     sub_total[contador] = sub_total_;
+        //     Observacion[contador] = Observacion_;
+
+
+
+
+        //     contador = contador + 1;
+
+
+        //     console.log(contador)
+
+
+
+
+        // })
+
+
+
+
+
+
+    };
+    peticionapi(data, 'POST', function(res) {
+
+    });
+}
+
+function cargarpedido() {
+    peticionapi({}, 'GET', function(res) {
+        console.log(res);
+        alert('respuesta satisfactoria');
+    });
+
+}
+
+
+
+
+
+
+
+
+
+    </script>
 
 
 </body>
