@@ -624,119 +624,106 @@
                 , Saldo: $("#saldo").val()
                 , abono: $("#abono").val()
                 , codseguimiento: $("#tipo_de_pedido").val()
-                , IdInsumos: $("#cat").val(),
+                , IdInsumos: $("#cat").val()
+                , ancho: $("#alto").val()
+                , alto: $("#ancho").val()
+                , mt2: $("#mt2").val()
+                , p_m: $("#precio_mt2").val()
+                , costo: $("#costo").val()
+                , cantidad: $("#cantidad").val()
+                , total: $("#sub_total").val()
+                , observacion: $("#observacion").val()
+            , };
 
-                guardardetalle();
+            peticionapi(data, 'POST', function(res) {
+                alert('Guardado con exito')
+            });
+        }
 
-                //     ancho: $("#alto").val()
-                //     , alto: $("#ancho").val()
-                //     , mt2: $("#mt2").val()
-                //     , p_m: $("#precio_mt2").val()
-                //     , costo: $("#costo").val()
-                //     , cantidad: $("#cantidad").val()
-                //     , total: $("#sub_total").val()
-                //     , observacion: $("#observacion").val()
-                // , };
-
-                peticionapi(data, 'POST', function(res) {
-                    alert('Guardado con exito')
-                });
-            }
-
-            function guardardetalle() {
-                let detalle = {
+        function guardardetalle() {
+            let detalle = {
 
 
 
 
 
-                    var filas = document.querySelectorAll("#Tabla tbody tr");
+                // var filas = document.querySelectorAll("#Tabla tbody tr");
 
-                    var contador = 0;
+                // var contador = 0;
 
-                    const alto = [];
-                    const ancho = [];
-                    const mt2 = [];
-                    const prec_mt2 = [];
-                    const costo = [];
-                    const cantidad = [];
-                    const sub_total = [];
-                    const Observacion = [];
+                // const alto = [];
+                // const ancho = [];
+                // const mt2 = [];
+                // const prec_mt2 = [];
+                // const costo = [];
+                // const cantidad = [];
+                // const sub_total = [];
+                // const Observacion = [];
 
-                    var total = document.getElementById("total").value;
-
-
-
-
-
-                    filas.forEach(function(e) {
-
-
-                        // obtenemos las columnas de cada fila
-                        var columnas = e.querySelectorAll("td");
+                // var total = document.getElementById("total").value;
 
 
 
 
 
-                        var alto_ = columnas[0].textContent;
-                        var ancho_ = columnas[1].textContent;
-                        var mt2_ = columnas[2].textContent;
-                        var Prec_mt2_ = columnas[3].textContent;
-                        var costo_ = columnas[4].textContent;
-                        var cantidad_ = parseFloat(columnas[5].textContent);
-                        var sub_total_ = parseFloat(columnas[6].textContent);
-                        var Observacion_ = columnas[7].textContent;
+                // filas.forEach(function(e) {
 
 
-
-
-                        mt2[contador] = mt2_;
-                        cantidad[contador] = cantidad_;
-                        sub_total[contador] = sub_total_;
-                        Observacion[contador] = Observacion_;
-
-                        ancho: ancho_
-                            , alto: alto_
-                            , mt2: mt2_
-                            , p_m: Prec_mt2_
-                            , costo: costo_
-                            , cantidad: cantidad_
-                            , total: sub_total_
-                            , observacion: Observacion_,
+                //     // obtenemos las columnas de cada fila
+                //     var columnas = e.querySelectorAll("td");
 
 
 
 
 
-                            contador = contador + 1;
+                //     var alto_ = columnas[0].textContent;
+                //     var ancho_ = columnas[1].textContent;
+                //     var mt2_ = columnas[2].textContent;
+                //     var Prec_mt2_ = columnas[3].textContent;
+                //     var costo_ = columnas[4].textContent;
+                //     var cantidad_ = parseFloat(columnas[5].textContent);
+                //     var sub_total_ = parseFloat(columnas[6].textContent);
+                //     var Observacion_ = columnas[7].textContent;
 
 
-                        console.log(contador)
+
+
+                //         mt2[contador] = mt2_;
+                //     cantidad[contador] = cantidad_;
+                //     sub_total[contador] = sub_total_;
+                //     Observacion[contador] = Observacion_;
 
 
 
 
-                    })
+                //     contador = contador + 1;
+
+
+                //     console.log(contador)
+
+
+
+
+                // })
 
 
 
 
 
 
-                };
-                peticionapi(data, 'POST', function(res) {
+            };
+            peticionapi(data, 'POST', function(res) {
 
-                });
-            }
+            });
+        }
 
-            function cargarpedido() {
-                peticionapi({}, 'GET', function(res) {
-                    console.log(res);
-                    alert('respuesta satisfactoria');
-                });
+        function cargarpedido() {
+            peticionapi({}, 'GET', function(res) {
+                console.log(res);
+                alert('respuesta satisfactoria');
+            });
 
-            }
+        }
 
     </script>
 </body>
