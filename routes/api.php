@@ -36,8 +36,8 @@ Route::resource('promocion',slidercontroller::class);
 
 // Route::resource('detalledelpedido',detalledelpedidocontroller::class);
 // Route::resource('administraciones',administracion::class);
-// Route::resource('trabajador',persona::class);
-// Route::resource('cliente',persona::class);
+Route::resource('trabajador',persona::class);
+ Route::resource('cliente',persona::class);
 // Route::resource('pedido',pedidocontroller::class);
 // Route::resource('detalledelpago',detalledelpagocontroller::class);
 Route::get('gettrabajador', [persona::class,"getalltrabajador"]);
@@ -47,4 +47,4 @@ Route::get('getclientebusqueda', [persona::class,"getcliente"]);
 // Route::get('getpedidosublimacion', [detalledelpedidocontroller::class,"getallpedidosublimacion"]);
 // Route::get('getpedidoserigrafia', [detalledelpedidocontroller::class,"getallpedidoserigrafia"]);
 // Route::get('getpedidoimpresion', [detalledelpedidocontroller::class,"getallpedidoimpresion"]);
-// Route::get('descargarbasededatos', [dbcontroller::class,"descargar"]);
+ Route::get('descargarbasededatos', [dbcontroller::class,"descargar"]);

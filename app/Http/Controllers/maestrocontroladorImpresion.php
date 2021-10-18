@@ -65,7 +65,6 @@ class maestrocontroladorImpresion extends Controller
             ]);
                 $detalle=json_decode($request->detalle);
              foreach($detalle as $fila){
-                    
                  
                 $detalle=detalleimpresion::create([                    
                     'IdInsumos'=>$fila->IdInsumos,

@@ -63,8 +63,7 @@ class persona extends Controller
     public function store(Request $request)
     {
         //
-        $model = new trabajador();
-        $model = new cliente();
+        $model = new persona();
         $model->Rol = $request->input('Rol');
         $model->primer_nombre = $request->input('primer_nombre');
         $model->segundo_nombre = $request->input('segundo_nombre');
