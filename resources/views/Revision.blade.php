@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revisión</title>
+    <title>Sericolor | Revisión</title>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
     </script>
@@ -22,6 +22,10 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
     <link rel="stylesheet" href="/css/mapa.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+
 
 </head>
 
@@ -191,9 +195,29 @@
             </div>
             <div class="col">
                 <div class="">
-                    <img class="img-fluid" src="/img/promocion.jpg" alt="">
+
+                    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="min-height: 1; max-height: 200; animation: push; autoplay: true">
+
+
+
+
+                        <ul id="slider" class="uk-slideshow-items">
+                            {{-- <li>
+                                <img src="/img/promocion.jpg" alt="" uk-cover>
+
+                            </li> --}}
+
+                        </ul>
+
+                        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+                    </div>
+
+                    {{-- <img class="img-fluid" src="/img/promocion.jpg" alt=""> --}}
                 </div>
             </div>
+
         </div>
 
         <div class="row">
@@ -233,3 +257,79 @@
 </footer>
 
 </html>
+
+<script>
+    let pedido = [];
+
+    cargarpedido();
+
+    $('#guardar').click(function(e) {
+        guardarpedido();
+
+
+        alert("Se agrego su orden");
+
+    });
+
+    function peticionapi(data, method, onSucess) {
+        let url = '/api/promocion';
+        if (method == 'PUT' || method == 'DELETE') {
+            url += '/' + data.IdPromocion;
+        }
+        $.ajax({
+            url: url
+            , method: method
+            , data: data,
+            // error(ext) {
+            //     let error = e.responseJSON.errors;
+            //     let msj = error[Object.keys(error)[0]][0];
+            //     alert(msj);
+            // },
+            success(res) {
+                onSucess(res)
+
+            }
+        })
+    }
+
+    function guardarpedido() {
+
+        let data = {
+
+            imagen: $("#imagen").val()
+            , descripcion: $("#descripcion").val(),
+
+        };
+        peticionapi(data, 'POST', function(res) {
+            alert('Guardado con exito')
+        });
+    }
+
+
+
+
+
+    function cargarpedido() {
+        peticionapi({}, "GET", function(res) {
+            pedido = res;
+            console.log(pedido);
+            let html = '';
+            res.forEach(pedido => {
+                html += '<li>' + ' <img src="/uploads/promocion/' + pedido.Imagen + '" uk-cover>' +
+
+
+
+
+
+
+
+
+                    '</li>'
+
+
+            });
+            $("#slider").html(html);
+        });
+    }
+
+</script>
