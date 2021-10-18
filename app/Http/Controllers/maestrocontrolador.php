@@ -25,7 +25,7 @@ class maestrocontrolador extends Controller
         
             return maestro::all();
             return Detalledelpedido::all();
-            return categoria::all();
+            return recibo::all();
 
 
     }
@@ -50,8 +50,9 @@ class maestrocontrolador extends Controller
     {
         DB::transaction(function() use ($request)
         {
-            
+
             $maestro=Maestro::create([
+
                 'IdCategoria'=>$request->IdCategoria,
                 'IdCliente'=>$request->IdCliente,
                 'IdUsuario'=>$request->IdUsuario,
@@ -64,26 +65,31 @@ class maestrocontrolador extends Controller
               
 
             ]);
-          
-            
-            $detalle=Detalledelpedido::insert($arreglos
-
-
-                // [
-
-                //     'IdInsumos'=>$request->IdInsumos,
-                //     'IdMaestro'=>$maestro->idmaestro,
-                //     'pecho_izquierdo'=>$request->pecho_izq,
-                //     'pecho_derecho'=>$request->pecho_der,
-                //     'manga_izquierda'=>$request-> manga_izq, 
-                //     'manga_derecha'=>$request-> manga_der,
-                //     'espalda'=>$request->espalda,
-                //     'Cantidad'=>$request->abono,
-                //     'observacion'=>$request->observacion,
+                $detalle=json_decode($request->detalle);
+                foreach($detalle as $fila){
+                 
+                $detalle=Detalledelpedido::create([                    
+                    'IdInsumos'=>$fila->IdInsumos,
+                    'IdMaestro'=>$maestro->idmaestro,                
+                    'pecho_izquierdo'=>$fila->pecho_izq,
+                    'pecho_derecho'=>$fila->pecho_der,
+                    'manga_izquierda'=>$fila->manga_izq,
+                    'manga_derecha'=>$fila-> manga_der,
+                    'espalda'=>$fila-> espalda,  
+                    'cantidad'=>$fila->cantidad,
+                    'observacion'=>$fila->observacion,
+                    'precio'=>$fila->precio,
+                    'total'=>$fila->totaldetalle,
+                  
+                    
     
-                // ]
-        
-        );
+                ]);
+
+            }
+            
+                
+            
+            
 
         });
     }

@@ -721,11 +721,12 @@
     {{-- script para ingresar datos en los formularios --}}
     <script>
         let pedido = [];
-
+        const arreglo = [];
         cargarpedido();
-
         $('#guardar').click(function(e) {
+            cargar_detalle();
             guardarpedido();
+            
 
             alert("Se agrego su orden");
 
@@ -752,7 +753,12 @@
         }
 
         function guardarpedido() {
+
+
+
+
             let data = {
+
                 IdCliente: $("#cat").val(),
                 IdUsuario: $("#cat").val(),
                 IdCategoria: $("#cat").val(),
@@ -762,96 +768,25 @@
                 Saldo: $("#saldo").val(),
                 abono: $("#abono").val(),
                 codseguimiento: $("#tipo_de_pedido").val(),
-                IdInsumos: $("#cat").val(),
 
-                pecho_izq: $("#pecho_izq").val(),
-                pecho_der: $("#pecho_der").val(),
-                manga_izq: $("#manga_izq").val(),
-                manga_der: $("#manga_der").val(),
-                espalda: $("#espalda").val(),
-                cantidad: $("#cantidad").val(),
-                observacion: $("#Observacion").val(),
+
+                idmetodo: $("#cat").val(),
+                cod: $("#saldo").val(),
+
+                //funcion que llama al arreglo que toma los datos
+                detalle: JSON.stringify(arreglo)
+
+
+
+
             };
+
+            console.log(data);
+
+
 
             peticionapi(data, 'POST', function(res) {
                 alert('Guardado con exito')
-            });
-        }
-
-        function guardardetalle() {
-            let detalle = {
-
-
-
-
-
-                // var filas = document.querySelectorAll("#Tabla tbody tr");
-
-                // var contador = 0;
-
-                // const alto = [];
-                // const ancho = [];
-                // const mt2 = [];
-                // const prec_mt2 = [];
-                // const costo = [];
-                // const cantidad = [];
-                // const sub_total = [];
-                // const Observacion = [];
-
-                // var total = document.getElementById("total").value;
-
-
-
-
-
-                // filas.forEach(function(e) {
-
-
-                //     // obtenemos las columnas de cada fila
-                //     var columnas = e.querySelectorAll("td");
-
-
-
-
-
-                //     var alto_ = columnas[0].textContent;
-                //     var ancho_ = columnas[1].textContent;
-                //     var mt2_ = columnas[2].textContent;
-                //     var Prec_mt2_ = columnas[3].textContent;
-                //     var costo_ = columnas[4].textContent;
-                //     var cantidad_ = parseFloat(columnas[5].textContent);
-                //     var sub_total_ = parseFloat(columnas[6].textContent);
-                //     var Observacion_ = columnas[7].textContent;
-
-
-
-
-                //         mt2[contador] = mt2_;
-                //     cantidad[contador] = cantidad_;
-                //     sub_total[contador] = sub_total_;
-                //     Observacion[contador] = Observacion_;
-
-
-
-
-                //     contador = contador + 1;
-
-
-                //     console.log(contador)
-
-
-
-
-                // })
-
-
-
-
-
-
-            };
-            peticionapi(data, 'POST', function(res) {
-
             });
         }
 
@@ -860,6 +795,116 @@
                 console.log(res);
                 alert('respuesta satisfactoria');
             });
+
+        }
+
+        function cargar_detalle() {
+
+            var filas = document.querySelectorAll("#Tabla tbody tr");
+
+            var contador = 0;
+
+            const pecho_izq = [];
+            const pecho_der = [];
+            const manga_izq = [];
+            const manga_der = [];
+            const espalda = [];
+            const talla = [];
+            const insumo = [];
+            const cantidad = [];
+            const precio = [];
+            const totaldetalle = [];
+            const Observacion = [];
+
+            var total = document.getElementById("total").value;
+
+            console.log(filas);
+
+
+
+
+
+
+            filas.forEach(function(e) {
+
+
+                // obtenemos las columnas de cada fila
+                var columnas = e.querySelectorAll("td");
+
+
+
+                var pechoizq_ = columnas[0].textContent;
+                var pechoder_ = columnas[1].textContent;
+                var mangaizq_ = columnas[2].textContent;
+                var mangader_ = columnas[3].textContent;
+                var espalda_ = columnas[4].textContent;
+                var talla_ = columnas[5].textContent;
+                var cantidad_ = parseFloat(columnas[6].textContent);
+                var precio_ = parseFloat(columnas[7].textContent);
+                var totaldetalle_ = parseFloat(columnas[8].textContent);
+                var Observacion_ = columnas[9].textContent;
+
+
+
+
+
+                pecho_izq[contador] = pechoizq_;
+                pecho_der[contador] = pechoder_;
+                manga_izq[contador] = mangaizq_;
+                manga_der[contador] = mangader_;
+                espalda[contador] = espalda_;
+                talla[contador] = talla_;
+                cantidad[contador] = cantidad_;
+                precio[contador] = precio_;
+                totaldetalle[contador] = totaldetalle_;
+                Observacion[contador] = Observacion_;
+
+                arreglo[contador] = {
+
+                    IdCliente: $("#cat").val(),
+                    IdUsuario: $("#cat").val(),
+                    IdCategoria: $("#cat").val(),
+                    fecha: $("#fecha_fact").val(),
+                    notas: $("#notas").val(),
+                    total_costo: $("#total").val(),
+                    Saldo: $("#saldo").val(),
+                    abono: $("#abono").val(),
+                    codseguimiento: $("#tipo_de_pedido").val(),
+
+                    IdInsumos: $("#cat").val(),
+                    pecho_izq: pechoizq_,
+                    pecho_der: pechoder_,
+                    manga_izq: mangaizq_,
+                    manga_der: mangader_,
+                    espalda: espalda_,
+                    cantidad: cantidad_,
+                    precio: precio_,
+                    totaldetalle: totaldetalle_,
+                    observacion: Observacion_,
+
+
+                };
+
+
+
+
+                contador = contador + 1;
+
+
+                console.log(arreglo)
+
+
+
+
+            })
+
+
+            console.log(filas)
+
+
+
+
+
 
         }
     </script>

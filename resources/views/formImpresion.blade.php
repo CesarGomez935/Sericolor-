@@ -611,19 +611,20 @@
         let pedido = [];
 
         const arreglo = [];
+   
 
 
 
         $('#guardar').click(function(e) {
-            guardarpedido();
             cargar_detalle();
+            guardarpedido();
 
             alert("Se agrego su orden");
 
         });
 
         function peticionapi(data, method, onSucess) {
-            let url = '/api/pedidoimp';
+            let url = '/api/pedido';
             if (method == 'PUT' || method == 'DELETE') {
                 url += '/' + data.idmaestro;
             }
@@ -659,19 +660,11 @@
                 abono: $("#abono").val(),
                 codseguimiento: $("#tipo_de_pedido").val(),
 
-                // IdInsumos: $("#cat").val(),
-                // ancho: $("#alto").val(),
-                // alto: $("#ancho").val(),
-                // mt2: $("#mt2").val(),
-                // p_m: $("#precio_mt2").val(),
-                // costo: $("#costo").val(),
-                // cantidad: $("#cantidad").val(),
-                // total: $("#sub_total").val(),
-                // observacion: $("#observacion").val(),
 
                 idmetodo:$("#cat").val(),
                 cod:$("#saldo").val(),
 
+                //funcion que llama al ar
                 detalle:JSON.stringify(arreglo)
 
 
