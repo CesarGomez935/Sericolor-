@@ -10,5 +10,7 @@ class promocion extends Model
  
     use HasFactory;
     protected $table='promocion';
-    protected $fillable='IdPromocion';
+    protected $primaryKey='IdPromocion';
+    protected $fillable=['Imagen','descripcion'];
+    public $timestamps = false;
 }

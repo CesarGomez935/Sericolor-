@@ -9,6 +9,7 @@ use App\Http\Controllers\reporteController;
 use App\Http\Controllers\dbcontroller;
 use App\Http\Controllers\maestrocontrolador;
 use App\Models\maestro;
+use App\Http\Controllers\promocioncontroller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\maestrocontroladorImpresion;
@@ -31,7 +32,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resource('pedido', maestrocontrolador::class);
 Route::resource('pedidoimp', maestrocontroladorImpresion::class);
-
+Route::resource('promocion',promocioncontroller::class);
 
 // Route::resource('detalledelpedido',detalledelpedidocontroller::class);
 // Route::resource('administraciones',administracion::class);

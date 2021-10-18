@@ -10,18 +10,22 @@
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
 </head>
 
@@ -30,7 +34,8 @@
     <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Promociones</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span
+                    class="uk-margin-small-left">Promociones</span>
             </a>
         </div>
 
@@ -86,11 +91,17 @@
                     <h1>Cargar Imagen promocional</h1>
                     <div class="uk-margin" uk-margin>
                         <div uk-form-custom="target: true">
-                            <input type="file">
-                            <input class="uk-input uk-form-width-medium" type="text" placeholder="Subir Imagen" disabled>
+                            <input id="imagen" type="file">
+                            <input class="uk-input uk-form-width-medium" type="text" placeholder="Subir Imagen"
+                                disabled>
                         </div>
-                        <button class="uk-button uk-button-default">Cargar Imagen Promocional</button>
+                        <button id="guardar" class="uk-button uk-button-default">Cargar Imagen Promocional</button>
+
+                        <textarea class="form-control" id="descripcion" placeholder="Descripción" rows="3"></textarea>
+
+
                     </div>
+
                 </div>
             </div>
         </div>
@@ -104,9 +115,9 @@
                     <th>Id</th>
                     <th>Imagen</th>
                     <th>Descripción</th>
-                    <th>Opciones</th>
+
                 </thead>
-                <tbody>
+                <tbody id="datos">
 
                 </tbody>
             </table>
@@ -125,29 +136,79 @@
 
     </div>
 
+    {{-- insersion de las imagenes --}}
+    <script>
+        let pedido = [];
 
+        cargarpedido();
 
+        $('#guardar').click(function(e) {
+            guardarpedido();
+            
 
-    {{-- <script type="text/javascript">
+            alert("Se agrego su orden");
+
+        });
+
         function peticionapi(data, method, onSucess) {
-            let url = '/api/descargarbasededatos';
-
+            let url = '/api/promocion';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.IdPromocion;
+            }
             $.ajax({
-                url: url
-                , method: method
-                , data: data
-                , error(ext) {
+                url: url,
+                method: method,
+                data: data,
+                error(ext) {
                     let error = e.responseJSON.errors;
                     let msj = error[Object.keys(error)[0]][0];
                     alert(msj);
-                }
-                , success(res) {
+                },
+                success(res) {
 
                 }
             })
         }
 
-    </script> --}}
+        function guardarpedido() {
+
+            let data = {
+
+                imagen: $("#imagen").val(),
+                descripcion: $("#descripcion").val(),
+
+            };
+            peticionapi(data, 'POST', function(res) {
+                alert('Guardado con exito')
+            });
+        }
+
+        function cargarpedido() {
+            peticionapi({}, 'GET', function(res) {
+                pedido = res;
+  //              console.log(res);
+                let html = '';
+                res.forEach(pedido => {
+                    html += '<tr>' +
+                        '<td>' + pedido.IdPromocion + '</td>' +
+                        '<td>' + pedido.imagen + '</td>' +
+                        '<td>' + pedido.descripcion + '</td>' +
+                        '<td><button onclick="editar(' + pedido.IdPromocion +
+                        ')" class="uk-icon-button uk-margin-small-right" uk-icon="file-edit"></button></td>' +
+                        '<td><button onclick="eliminar(' + pedido.IdPromocion +
+                        ')"class="uk-icon-button uk-margin-small-right" uk-icon="trash"></button></td></td>' +
+                        '</tr>'
+                });
+                $("#datos").html(html);
+            });
+        }
+    </script>
+
+    
+
+
+
+
 
 </body>
 
