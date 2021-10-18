@@ -107,6 +107,7 @@ class personacontroller extends Controller
 
      public function getallcliente()
     {
+        
 
         return persona::select("*")->join("cliente","cliente.IdPersona","=","persona.IdPersona")->get();
 
