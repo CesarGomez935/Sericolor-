@@ -88,49 +88,49 @@
                     <div class="uk-margin">
                         <label for="primer_nombre_personal" class="uk-form-label" for="form-horizontal-text">Primer Nombre</label>
                         <div class="uk-form-controls">
-                            <input id="primer_nombre_personal" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input id="primer_nombre_personal" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="primer Nombre">
                         </div>
                     </div>
 
                     <div class="uk-margin">
                         <label for="segundo_nombre_peronal" class="uk-form-label" for="form-horizontal-text">Segundo Nombre</label>
                         <div class="uk-form-controls">
-                            <input id="segundo_nombre_personal" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input id="segundo_nombre_personal" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="segundo Nombre">
                         </div>
                     </div>
 
                     <div class="uk-margin">
                         <label for="primer_apellido_personal" class="uk-form-label" for="form-horizontal-text">Primer Apellido</label>
                         <div class="uk-form-controls">
-                            <input id="primer_apellido_personal" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input id="primer_apellido_personal" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="primer apellido">
                         </div>
                     </div>
 
                     <div class="uk-margin">
                         <label for="segundo_apellido_personal" class="uk-form-label" for="form-horizontal-text">Segundo Apellido</label>
                         <div class="uk-form-controls">
-                            <input id="segundo_apellido_personal" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input id="segundo_apellido_personal" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="segundo apellido">
                         </div>
                     </div>
 
                     <div class="uk-margin">
                         <label for="correo_personal" class="uk-form-label" for="form-horizontal-text">Correo</label>
                         <div class="uk-form-controls">
-                            <input id="correo_personal" class="uk-input uk-form-width-large" id="form-horizontal-text" type="e-mail" placeholder="Some text...">
+                            <input id="correo_personal" class="uk-input uk-form-width-large" id="form-horizontal-text" type="e-mail" placeholder="correo">
                         </div>
                     </div>
 
                     <div class="uk-margin">
                         <label for="telefono_trabajador" class="uk-form-label" for="form-horizontal-text">Teléfono</label>
                         <div class="uk-form-controls">
-                            <input id="telefono_trabajador" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input id="telefono_trabajador" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="telefono">
                         </div>
                     </div>
 
                     <div class="uk-margin">
                         <label for="cedula_trabajador" class="uk-form-label" for="form-horizontal-text">Cédula</label>
                         <div class="uk-form-controls">
-                            <input id="cedula_trabajador" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input id="cedula_trabajador" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="cedula">
                         </div>
                     </div>
 
@@ -169,7 +169,7 @@
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 
                 <a href="/menu/menuadmon/personal" class="uk-button uk-button-primary" style="margin-left: 100px">Atrás </a>
-                <button id="guardar" onclick="return confirm('¿Está seguro que desea continuar?')" class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
+                <a id="guardar"  class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </a>
 
 
             </div>
