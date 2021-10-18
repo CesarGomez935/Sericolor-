@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\persona;
 
+use App\Models\cliente;
+
+use App\Models\persona;
+use App\Models\usuario;
 use Illuminate\Http\Request;
 
 class personacontroller extends Controller
@@ -94,5 +97,18 @@ class personacontroller extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getalltrabajador()
+    {
+
+         return persona::select("*")->join("usuario","usuario.IdPersona","=","persona.IdPersona")->get();
+    }
+
+     public function getallcliente()
+    {
+
+        return persona::select("*")->join("cliente","cliente.IdPersona","=","persona.IdPersona")->get();
+
     }
 }

@@ -13,6 +13,7 @@ use App\Http\Controllers\promocioncontroller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\maestrocontroladorImpresion;
+use App\Http\Controllers\personacontroller;
 use App\Http\Controllers\slidercontroller;
 
 /*
@@ -40,9 +41,9 @@ Route::resource('trabajador',persona::class);
  Route::resource('cliente',persona::class);
 // Route::resource('pedido',pedidocontroller::class);
 // Route::resource('detalledelpago',detalledelpagocontroller::class);
-Route::get('gettrabajador', [persona::class,"getalltrabajador"]);
-Route::get('getcliente', [persona::class,"getallcliente"]);
-Route::get('getclientebusqueda', [persona::class,"getcliente"]);
+Route::get('gettrabajador', [personacontroller::class,"getalltrabajador"]);
+Route::get('getcliente', [personacontroller::class,"getallcliente"]);
+Route::get('getclientebusqueda', [personacontroller::class,"getcliente"]);
 // Route::get('getpedidobordado', [detalledelpedidocontroller::class,"getallpedidobordado"]);
 // Route::get('getpedidosublimacion', [detalledelpedidocontroller::class,"getallpedidosublimacion"]);
 // Route::get('getpedidoserigrafia', [detalledelpedidocontroller::class,"getallpedidoserigrafia"]);

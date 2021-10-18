@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\cliente;
-use App\Models\trabajador;
+use App\Models\User;
+use app\Models\persona;
 use Illuminate\Http\Request;
 
 class persona extends Controller
@@ -20,7 +21,7 @@ class persona extends Controller
 
        // return trabajador::where("rol","trabajador")->get();
 
-        return cliente::all();
+        return persona::all();
     }
 
     /**

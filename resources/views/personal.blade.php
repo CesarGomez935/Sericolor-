@@ -144,12 +144,12 @@
                     html +=
                         '<tr>' +
 
-                        '<td>' + '<a class="uk-button" href="/menu/menuadmon/personal/agregar_personal/' + trabajadores.IDpersona + '/edit">' + trabajadores.primer_nombre + " " + trabajadores.segundo_nombre + " " + trabajadores.primer_apellido + " " + trabajadores.segundo_apellido + '</td>' + '</a>' +
+                        '<td>' + '<a class="uk-button" href="/menu/menuadmon/personal/agregar_personal/' + trabajadores.IdPersona + '/edit">' + trabajadores.Primer_Nombre + " " + trabajadores.Segundo_Nombre + " " + trabajadores.Primer_Apellido + " " + trabajadores.Segundo_Apellido + '</td>' + '</a>' +
 
 
                         '<td>' + trabajadores.Rol + '</td>' +
 
-                        '<td>' + '<a href="/menu/menuadmon/personal/agregar_personal/' + trabajadores.IDpersona + '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a href="/menu/menuadmon/personal/' + trabajadores.IDpersona + '" action="" class=" " uk-icon="trash"></a>' + '</td>' +
+                        '<td>' + '<a href="/menu/menuadmon/personal/agregar_personal/' + trabajadores.IdPersona + '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a href="/menu/menuadmon/personal/' + trabajadores.IDpersona + '" action="" class=" " uk-icon="trash"></a>' + '</td>' +
 
 
 
