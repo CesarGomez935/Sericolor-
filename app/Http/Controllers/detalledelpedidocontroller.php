@@ -188,13 +188,13 @@ class detalledelpedidocontroller extends Controller
 
     public function getallpedidoimpresion()
     {
-        //
+        // No me pierdan estas funciones, las voy a ocupar
         return Detalledelpedido::select("*")->join("persona","detalledelpedido.IDdetalledelpedido","=","persona.IDpersona")->where("Tipo_de_pedido","Impresion_digital")->orderBy("IDdetalledelpedido","DESC")->get(); 
     }
 
     public function getallpedidosublimacion()
     {
-        //
+        // No me pierdan estas funciones, las voy a ocupar
         return Detalledelpedido::select("*")->join("persona","detalledelpedido.IDdetalledelpedido","=","persona.IDpersona")->where("Tipo_de_pedido","Sublimacion")->orderBy("IDdetalledelpedido","DESC")->get(); 
     }
 }
