@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\promocion;
+use Illuminate\Support\Facades\File;
+
 class promocioncontroller extends Controller
 {
     /**
@@ -13,8 +15,10 @@ class promocioncontroller extends Controller
      */
     public function index()
     {
-        //
-        return promocion::all();
+        $promocion= promocion::all();
+        // return promocion::all();
+        return view("promociones",compact("promocion"));
+        
         
     }
 
@@ -25,7 +29,7 @@ class promocioncontroller extends Controller
      */
     public function create()
     {
-        //
+        return view("promocionesadd");
     }
 
     /**
@@ -36,19 +40,21 @@ class promocioncontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $promocion=new promocion();
+       // $promocion->imagen=$request->input("imagen");
+        if($request->hasFile("imagen")){
 
+            $file=$request->file("imagen");
+            $extention=$file->getClientOriginalExtension();
+            $filename= time().".".$extention;
+            $file->move("uploads/promocion/",$filename);
+            $promocion->imagen=$filename;
+
+        }
+        $promocion->descripcion=$request->input("descripcion");
+        $promocion->save();
+        return redirect("/menu/menuadmon/promociones");
         
-
-
-            $promocion=new promocion();
-            $promocion->Imagen=$request->file('imagen');
-            $promocion->descripcion=$request->input('descripcion');
-            
-            return $promocion->save();
-
-            // 'Imagen'=>$request->imagen,
-            // 'descripcion'=>$request->descripcion,
             
           
 
@@ -76,7 +82,8 @@ class promocioncontroller extends Controller
      */
     public function edit($id)
     {
-        //
+        $promocion=promocion::find($id);
+        return view("promocionesedit",compact("promocion"));
     }
 
     /**
@@ -88,7 +95,24 @@ class promocioncontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $promocion=promocion::find($id);
+        if($request->hasFile("imagen")){
+
+            $destination="uploads/promocion/". $promocion->imagen;
+            if(File::exists($destination)){
+                File::delete($destination);
+            }
+            $file=$request->file("imagen");
+            $extention=$file->getClientOriginalExtension();
+            $filename= time().".".$extention;
+            $file->move("uploads/promocion/",$filename);
+            $promocion->imagen=$filename;
+
+        }
+        $promocion->descripcion=$request->input("descripcion");
+        $promocion->update();
+        return redirect("/menu/menuadmon/promociones");
+
     }
 
     /**
@@ -99,6 +123,12 @@ class promocioncontroller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $promocion=promocion::find($id);
+        $destination="uploads/promocion/".$promocion->imagen;
+        if(File::exists($destination)){
+            file::delete($destination);
+        }
+        $promocion->delete();
+        return redirect("/menu/menuadmon/promociones");
     }
 }

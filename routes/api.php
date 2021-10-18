@@ -13,7 +13,7 @@ use App\Http\Controllers\promocioncontroller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\maestrocontroladorImpresion;
-
+use App\Http\Controllers\slidercontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resource('pedido', maestrocontrolador::class);
 Route::resource('pedidoimp', maestrocontroladorImpresion::class);
-Route::resource('promocion',promocioncontroller::class);
+Route::resource('promocion',slidercontroller::class);
 
 // Route::resource('detalledelpedido',detalledelpedidocontroller::class);
 // Route::resource('administraciones',administracion::class);

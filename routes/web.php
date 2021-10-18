@@ -149,8 +149,12 @@ Route::put('/menu/menuadmon/clientes/agregar_clientes/{id}', [persona::class,"up
 
 Route::get('/menu/menuadmon/clientes/{id}', [persona::class,"destroycliente"])->name("cliente.destroy");
 
-Route::get('menu/menuadmon/promociones', function () {
-    return view('promociones');
-});
+Route::get('menu/menuadmon/promociones', [promocioncontroller::class,"index"]);
+Route::get('menu/menuadmon/promociones/create', [promocioncontroller::class,"create"]);
+Route::post('menu/menuadmon/promociones/create', [promocioncontroller::class,"store"]);
+Route::get("menu/menuadmon/promociones/edit/{id}",[promocioncontroller::class,"edit"]);
+Route::put("menu/menuadmon/promociones/edit/{id}",[promocioncontroller::class,"update"]);
+Route::get("menu/menuadmon/promociones/delete/{id}",[promocioncontroller::class,"destroy"]);
+
 
 

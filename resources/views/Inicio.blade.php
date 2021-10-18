@@ -22,6 +22,9 @@
 
     <link rel="stylesheet" href="/css/mapa.css">
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+
 
 
 
@@ -240,7 +243,26 @@
             </div>
             <div class="col">
                 <div class="">
-                    <img class="img-fluid" src="/img/promocion.jpg" alt="">
+
+                    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="min-height: 1; max-height: 200; animation: push; autoplay: true">
+
+
+
+
+                        <ul id="slider" class="uk-slideshow-items">
+                            {{-- <li>
+                                <img src="/img/promocion.jpg" alt="" uk-cover>
+
+                            </li> --}}
+
+                        </ul>
+
+                        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+                    </div>
+
+                    {{-- <img class="img-fluid" src="/img/promocion.jpg" alt=""> --}}
                 </div>
             </div>
         </div>
@@ -283,3 +305,79 @@
 
 
 </html>
+
+<script>
+    let pedido = [];
+
+    cargarpedido();
+
+    $('#guardar').click(function(e) {
+        guardarpedido();
+
+
+        alert("Se agrego su orden");
+
+    });
+
+    function peticionapi(data, method, onSucess) {
+        let url = '/api/promocion';
+        if (method == 'PUT' || method == 'DELETE') {
+            url += '/' + data.IdPromocion;
+        }
+        $.ajax({
+            url: url
+            , method: method
+            , data: data,
+            // error(ext) {
+            //     let error = e.responseJSON.errors;
+            //     let msj = error[Object.keys(error)[0]][0];
+            //     alert(msj);
+            // },
+            success(res) {
+                onSucess(res)
+
+            }
+        })
+    }
+
+    function guardarpedido() {
+
+        let data = {
+
+            imagen: $("#imagen").val()
+            , descripcion: $("#descripcion").val(),
+
+        };
+        peticionapi(data, 'POST', function(res) {
+            alert('Guardado con exito')
+        });
+    }
+
+
+
+
+
+    function cargarpedido() {
+        peticionapi({}, "GET", function(res) {
+            pedido = res;
+            console.log(pedido);
+            let html = '';
+            res.forEach(pedido => {
+                html += '<li>' + ' <img src="/uploads/promocion/' + pedido.Imagen + '" uk-cover>' +
+
+
+
+
+
+
+
+
+                    '</li>'
+
+
+            });
+            $("#slider").html(html);
+        });
+    }
+
+</script>
