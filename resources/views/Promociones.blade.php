@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base de datos</title>
+    <title>Promociones</title>
     <link rel="icon" href="/img/Icono.ico" type="image/ico" />
 
     <!-- UIkit CSS -->
@@ -79,62 +79,67 @@
 
     </nav>
 
-    <div class="uk-section uk-section-muted">
+    
+
+        <div class="uk-section uk-section-muted">
 
 
 
 
 
-        <div>
-            <div class="uk-div uk-padding">
-                <div class="uk-section-secondary uk-margin uk-padding" style="text-align: center;">
-                    <h1>Cargar Imagen promocional</h1>
-                    <div class="uk-margin" uk-margin>
-                        <div uk-form-custom="target: true">
-                            <input id="imagen" type="file">
-                            <input class="uk-input uk-form-width-medium" type="text" placeholder="Subir Imagen"
-                                disabled>
+            <div>
+                <div class="uk-div uk-padding">
+                    <div class="uk-section-secondary uk-margin uk-padding" style="text-align: center;">
+                        <h1>Cargar Imagen promocional</h1>
+                        <div class="uk-margin" uk-margin>
+                            <div uk-form-custom="target: true">
+                                <input accept="image/*" id="imagen" type="file">
+                                <input class="uk-input uk-form-width-medium" type="text" placeholder="Subir Imagen"
+                                    disabled>
+                            </div>
+                            <button id="guardar" type="submit" class="uk-button uk-button-default">Cargar Imagen Promocional</button>
+
+                            <textarea class="form-control" id="descripcion" placeholder="Descripción"
+                                rows="3"></textarea>
+
+
                         </div>
-                        <button id="guardar" class="uk-button uk-button-default">Cargar Imagen Promocional</button>
-
-                        <textarea class="form-control" id="descripcion" placeholder="Descripción" rows="3"></textarea>
-
 
                     </div>
+                </div>
+            </div>
+
+            <div class="uk-padding">
+                <table class="uk-table uk-table-hover uk-table-striped uk-table-divider uk-table-hover ">
+
+
+
+                    <thead>
+                        <th>Id</th>
+                        <th>Imagen</th>
+                        <th>Descripción</th>
+
+                    </thead>
+                    <tbody id="datos">
+
+                    </tbody>
+                </table>
+            </div>
+
+
+            <!-- Botón de atrás  -->
+            <div class="uk-padding-small uk-background-muted uk-padding">
+                <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
+
+                    <a href="/menu/menuadmon" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
+
 
                 </div>
             </div>
+
         </div>
 
-        <div class="uk-padding">
-            <table class="uk-table uk-table-hover uk-table-striped uk-table-divider uk-table-hover ">
-
-
-
-                <thead>
-                    <th>Id</th>
-                    <th>Imagen</th>
-                    <th>Descripción</th>
-
-                </thead>
-                <tbody id="datos">
-
-                </tbody>
-            </table>
-        </div>
-
-
-        <!-- Botón de atrás  -->
-        <div class="uk-padding-small uk-background-muted uk-padding">
-            <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-
-                <a href="/menu/menuadmon" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
-
-
-            </div>
-        </div>
-
-    </div>
+    
 
     {{-- insersion de las imagenes --}}
     <script>
@@ -144,7 +149,7 @@
 
         $('#guardar').click(function(e) {
             guardarpedido();
-            
+
 
             alert("Se agrego su orden");
 
@@ -159,12 +164,13 @@
                 url: url,
                 method: method,
                 data: data,
-                error(ext) {
-                    let error = e.responseJSON.errors;
-                    let msj = error[Object.keys(error)[0]][0];
-                    alert(msj);
-                },
+                // error(ext) {
+                //     let error = e.responseJSON.errors;
+                //     let msj = error[Object.keys(error)[0]][0];
+                //     alert(msj);
+                // },
                 success(res) {
+                    onSucess(res)
 
                 }
             })
@@ -183,15 +189,20 @@
             });
         }
 
+
+
+
+
         function cargarpedido() {
-            peticionapi({}, 'GET', function(res) {
+            peticionapi({}, "GET", function(res) {
                 pedido = res;
-  //              console.log(res);
+                console.log(pedido);
                 let html = '';
                 res.forEach(pedido => {
                     html += '<tr>' +
                         '<td>' + pedido.IdPromocion + '</td>' +
-                        '<td>' + pedido.imagen + '</td>' +
+                        '<td>' + '<img src=' + pedido.Imagen +
+                        ' alt="Girl in a jacket" width="500" height="600">' + '</td>' +
                         '<td>' + pedido.descripcion + '</td>' +
                         '<td><button onclick="editar(' + pedido.IdPromocion +
                         ')" class="uk-icon-button uk-margin-small-right" uk-icon="file-edit"></button></td>' +
@@ -204,7 +215,7 @@
         }
     </script>
 
-    
+
 
 
 

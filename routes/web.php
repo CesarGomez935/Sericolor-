@@ -5,6 +5,7 @@ use App\Http\Controllers\reporteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dbcontroller;
 use App\Http\Controllers\persona;
+use App\Http\Controllers\promocioncontroller;
 
 
 /*
@@ -151,3 +152,5 @@ Route::get('/menu/menuadmon/clientes/{id}', [persona::class,"destroycliente"])->
 Route::get('menu/menuadmon/promociones', function () {
     return view('promociones');
 });
+
+

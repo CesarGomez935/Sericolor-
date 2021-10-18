@@ -36,13 +36,13 @@ class promocioncontroller extends Controller
      */
     public function store(Request $request)
     {
-        //\
+        //
 
         
 
 
             $promocion=new promocion();
-            $promocion->Imagen=$request->input('imagen');
+            $promocion->Imagen=$request->file('imagen');
             $promocion->descripcion=$request->input('descripcion');
             
             return $promocion->save();

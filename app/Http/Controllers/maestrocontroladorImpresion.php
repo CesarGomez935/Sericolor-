@@ -63,8 +63,8 @@ class maestrocontroladorImpresion extends Controller
               
 
             ]);
-
-            // foreach($request as $requests){
+                $detalle=json_decode($request->detalle);
+             foreach($detalle as $fila){
 
                 
     
@@ -76,18 +76,20 @@ class maestrocontroladorImpresion extends Controller
                 $detalle=detalleimpresion::create([
     
                     
-                    'IdInsumos'=>$request->IdInsumos,
+                    'IdInsumos'=>$fila->IdInsumos,
                     'IdMaestro'=>$maestro->idmaestro,                
-                    'ancho'=>$request->ancho,
-                    'alto'=>$request->alto,
-                    'mt2'=>$request->mt2,
-                    'p/m'=>$request-> p_m,
-                    'costo'=>$request-> costo,  
-                    'cantidad'=>$request->cantidad,
-                    'total'=>$request->total,
-                    'observacion'=>$request->observacion,
+                    'ancho'=>$fila->ancho,
+                    'alto'=>$fila->alto,
+                    'mt2'=>$fila->mt2,
+                    'p/m'=>$fila-> p_m,
+                    'costo'=>$fila-> costo,  
+                    'cantidad'=>$fila->cantidad,
+                    'total'=>$fila->total,
+                    'observacion'=>$fila->observacion,
     
                 ]);
+
+            }
 
                 $recibo=recibo::create([
 
@@ -99,7 +101,7 @@ class maestrocontroladorImpresion extends Controller
 
                 ]);
 
-            // }
+            
             
             
 

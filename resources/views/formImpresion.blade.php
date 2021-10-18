@@ -610,10 +610,13 @@
     <script>
         let pedido = [];
 
+        const arreglo = [];
+
 
 
         $('#guardar').click(function(e) {
             guardarpedido();
+            cargar_detalle();
 
             alert("Se agrego su orden");
 
@@ -656,18 +659,20 @@
                 abono: $("#abono").val(),
                 codseguimiento: $("#tipo_de_pedido").val(),
 
-                IdInsumos: $("#cat").val(),
-                ancho: $("#alto").val(),
-                alto: $("#ancho").val(),
-                mt2: $("#mt2").val(),
-                p_m: $("#precio_mt2").val(),
-                costo: $("#costo").val(),
-                cantidad: $("#cantidad").val(),
-                total: $("#sub_total").val(),
-                observacion: $("#observacion").val(),
+                // IdInsumos: $("#cat").val(),
+                // ancho: $("#alto").val(),
+                // alto: $("#ancho").val(),
+                // mt2: $("#mt2").val(),
+                // p_m: $("#precio_mt2").val(),
+                // costo: $("#costo").val(),
+                // cantidad: $("#cantidad").val(),
+                // total: $("#sub_total").val(),
+                // observacion: $("#observacion").val(),
 
                 idmetodo:$("#cat").val(),
                 cod:$("#saldo").val(),
+
+                detalle:JSON.stringify(arreglo)
 
 
 
@@ -714,7 +719,7 @@
 
             console.log(filas);
 
-            const arreglo = [];
+           
 
 
 
@@ -791,9 +796,7 @@
 
             console.log(filas)
 
-            peticionapi(arreglo, 'POST', function(res) {
-                alert('Guardado con exito')
-            });
+            
 
 
 
