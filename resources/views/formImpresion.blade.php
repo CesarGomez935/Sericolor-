@@ -583,7 +583,7 @@
                 <select class="uk-select" id="tipo_de_pedido" disabled hidden>
                     <option value='Impresion_Digital'>Impresion_Digital</option>
                 </select>
-                
+
                 <select class="uk-select" id="cat" disabled hidden>
                     <option value='1'>Impresion_Digital</option>
                 </select>
@@ -611,8 +611,8 @@
         let pedido = [];
 
         const arreglo = [];
-   
 
+        cargarpedido();
 
 
         $('#guardar').click(function(e) {
@@ -624,7 +624,7 @@
         });
 
         function peticionapi(data, method, onSucess) {
-            let url = '/api/pedido';
+            let url = '/api/pedidoimp';
             if (method == 'PUT' || method == 'DELETE') {
                 url += '/' + data.idmaestro;
             }
@@ -646,7 +646,7 @@
         function guardarpedido() {
 
 
-            
+
 
             let data = {
 
@@ -661,11 +661,11 @@
                 codseguimiento: $("#tipo_de_pedido").val(),
 
 
-                idmetodo:$("#cat").val(),
-                cod:$("#saldo").val(),
+                idmetodo: $("#cat").val(),
+                cod: $("#saldo").val(),
 
                 //funcion que llama al ar
-                detalle:JSON.stringify(arreglo)
+                detalle: JSON.stringify(arreglo)
 
 
 
@@ -712,7 +712,7 @@
 
             console.log(filas);
 
-           
+
 
 
 
@@ -789,7 +789,7 @@
 
             console.log(filas)
 
-            
+
 
 
 

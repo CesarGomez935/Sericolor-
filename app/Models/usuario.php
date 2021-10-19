@@ -9,7 +9,9 @@ class usuario extends Model
 {
     use HasFactory;
     protected $table='usuario';
-    protected $fillable='IdUsuario';
+    protected $primaryKey='IdUsuario';
+    protected $fillable=['idpersona','Usuario','email_verified_at','password','remember_token','Privilegios','RolAsignado'];
+     public $timestamps = false;
 
     public function persona(){
 

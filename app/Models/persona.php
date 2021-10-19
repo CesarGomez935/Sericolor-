@@ -9,7 +9,9 @@ class persona extends Model
 {
     use HasFactory;
     protected $table='persona';
-    protected $fillable=['Rol','Primer_nombre','Segundo_nombre','Primer_apellido','Segundo_apellido','cedula','Telefono','Correo','Direccion'];
+    protected $primaryKey='IdPersona';
+    protected $fillable=['Primer_Nombre','Segundo_Nombre','Primer_Apellido','Segundo_Apellido','Cedula','Telefono','Correo','Direccion'];
+    public $timestamps = false;
     public function cliente(){
 
         return $this->HasMany(cliente::class);

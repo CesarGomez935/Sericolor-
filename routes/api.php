@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\maestrocontroladorImpresion;
 use App\Http\Controllers\personacontroller;
 use App\Http\Controllers\slidercontroller;
+use App\Http\Controllers\usuariocontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,7 @@ Route::resource('promocion',slidercontroller::class);
 
 // Route::resource('detalledelpedido',detalledelpedidocontroller::class);
 // Route::resource('administraciones',administracion::class);
-Route::resource('trabajador',personacontroller::class);
+Route::resource('trabajador',usuariocontroller::class);
  Route::resource('cliente',persona::class);
 // Route::resource('pedido',pedidocontroller::class);
 // Route::resource('detalledelpago',detalledelpagocontroller::class);
