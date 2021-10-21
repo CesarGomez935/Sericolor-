@@ -162,6 +162,7 @@ Route::get("menu/menuadmon/promociones/delete/{id}",[promocioncontroller::class,
 
 Route::post('/menu/menuadmon/clientes/agregar_cliente', [CrudClienteController::class,"store"])->name("cliente.store");
 Route::get('/menu/menuadmon/clientes/agregar_cliente/{id}/edit',[CrudClienteController::class,"edit"])->name("cliente.edit");
-
+Route::put('/menu/menuadmon/clientes/agregar_cliente/{id}', [CrudClienteController::class,"update"])->name("cliente.update");
+Route::get('/menu/menuadmon/clientes/{id}', [CrudClienteController::class,"destroy"])->name("cliente.destroy");
 
 

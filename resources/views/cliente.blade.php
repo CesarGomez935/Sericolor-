@@ -75,62 +75,80 @@
 
 
     <!-- Input para realizar busqueda de un cliente por nombre -->
-
-    <div class="uk-div uk-margin uk-padding">
-
+    <form action="">
 
 
 
+        <div class="uk-div uk-margin uk-padding">
 
-        <div class="uk-margin">
 
-            <b> <label id="buscar_cliente" for="form-stacked-text" oninput="cargarproductosbusqueda(buscar_cliente.value);" class="uk-form-label">Buscar Cliente</label> </b>
-            <div class="uk-inline uk-padding">
 
-                <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
-                <input class="uk-input uk-form-width-large" type="text">
+
+
+            <div class="uk-margin">
+
+                <b> <label id="buscar_cliente" for="form-stacked-text" oninput="cargarproductosbusqueda(buscar_cliente.value);" class="uk-form-label">Buscar Cliente</label> </b>
+                <div class="uk-inline uk-padding">
+
+                    <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
+                    <input class="uk-input uk-form-width-large" type="text">
+                </div>
+                <a href="/menu/menuadmon/clientes/agregar_cliente" class="uk-button-primary uk-button uk-margin uk-padding ">agregar Cliente</a>
             </div>
-            <a href="/menu/menuadmon/clientes/agregar_cliente" class="uk-button-primary uk-button uk-margin uk-padding ">agregar Cliente</a>
+
+
+
+            @method('delete')
+            @csrf
+
+
+
+            <!-- Tabla que muestra el listado de clientes con un hipervinculo a su detalle -->
+            <table class="uk-table uk-table-divider uk-table-striped uk-table-hover">
+                <thead>
+
+
+
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Opciones</th>
+
+
+                    </tr>
+                </thead>
+                <tbody id="tablaclientes">
+                    <tr>
+                        <u>
+
+                        </u>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
 
 
+        <div class="uk-padding uk-background-muted uk-padding  ">
+            <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
+                <a href="/menu/menuadmon" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
 
 
-        <!-- Tabla que muestra el listado de clientes con un hipervinculo a su detalle -->
-        <table class="uk-table uk-table-divider uk-table-striped uk-table-hover">
-            <thead>
-                <tr>
-                    <th>Cliente</th>
-                    <th>Opciones</th>
-
-
-                </tr>
-            </thead>
-            <tbody id="tablaclientes">
-                <tr>
-                    <u>
-
-                    </u>
-                </tr>
-
-            </tbody>
-        </table>
-
-        @method('delete')
-        @csrf
-
-
-
-    </div>
-
-
-    <div class="uk-padding uk-background-muted uk-padding  ">
-        <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-            <a href="/menu/menuadmon" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
-
-
+            </div>
         </div>
-    </div>
+    </form>
+
 
     <script>
         let trabajadores = [];
@@ -164,12 +182,13 @@
                     html +=
                         '<tr>' +
 
-                        '<td>' + '<a class="uk-button" href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IdCliente + '/edit">' + trabajadores.Primer_Nombre + " " + trabajadores.Segundo_Nombre + " " + trabajadores.Primer_Apellido + " " + trabajadores.Segundo_Apellido + '</td>' + '</a>' +
+                        '<td>' + '<a class="uk-button" href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IdPersona + '/edit">' + trabajadores.Primer_Nombre + " " + trabajadores.Segundo_Nombre + " " + trabajadores.Primer_Apellido + " " + trabajadores.Segundo_Apellido + '</td>' + '</a>' +
 
 
 
 
-                        '<td>' + '<a href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IdCliente + '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a href="/menu/menuadmon/clientes/' + trabajadores.IdCliente + '" action="" class=" " uk-icon="trash"></a>' + '</td>' +
+                        '<td>' + '<a href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IdPersona + '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a href="/menu/menuadmon/clientes/' + trabajadores.IdPersona + '" action="" class=" " uk-icon="trash"></a>' + '</td>' +
+
 
 
 

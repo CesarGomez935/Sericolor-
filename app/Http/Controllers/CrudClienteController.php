@@ -93,12 +93,12 @@ class CrudClienteController extends Controller
     public function edit($id)
     {
 
-       // $cliente=cliente::find($id);
-        $cliente= cliente::where("IdCliente",$id)->join("persona","persona.IdPersona","=","cliente.IdPersona")->firstorfail();
+       $cliente= persona::where("Persona.IdPersona",$id)->join("cliente","persona.IdPersona","=","cliente.IdPersona")->firstOrFail();
+       // $cliente= persona::where("persona.idpersona",$id)->join("cliente","cliente.IdPersona","=","cliente.IdPersona")->firstorfail();
          //$cliente=cliente::find($id);
 
 
-        return view("editarcliente",compact("cliente"));
+       // return view("editarcliente",compact("cliente"));
        // return $cliente;
 
     //    $cliente= cliente::find($id);
@@ -106,8 +106,8 @@ class CrudClienteController extends Controller
         
     //     return view("editarcliente", compact("cliente"));
     //    // return $id;
-    //     //return $cliente;
-    //    // return view("editarcliente", compact("cliente"));
+        // return $cliente;
+     return view("editarcliente", compact("cliente"));
     }
 
     /**
@@ -119,7 +119,52 @@ class CrudClienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        
+        $IdPersona=$request->IdPersona;
+
+      //  $cliente= persona::where("Persona.IdPersona",$id)->join("cliente","persona.IdPersona","=","cliente.IdPersona")->firstOrFail();
+        $cliente=cliente::where("IdPersona",$id)->firstorfail();
+        //return $request;
+
+        $persona= persona::where("IdPersona",$id)->firstorfail();
+
+       // return $cliente;
+       
+
+         
+                //$persona->IdPersona=$request->IdPersona;
+                $persona->Primer_Nombre=$request->primer_nombre;
+                $persona->Segundo_Nombre=$request->segundo_nombre;
+                $persona->Primer_Apellido=$request->primer_apellido;
+                $persona->Segundo_Apellido=$request->segundo_apellido;
+                $persona->Cedula=$request->cedula;
+                $persona->Telefono=$request->telefono;
+                $persona->Correo=$request->correo;
+                $persona->Direccion=$request->direccion;
+
+                $persona->save();
+                
+                
+
+            
+
+
+                $cliente-> IdPersona=$persona->IdPersona;
+                $cliente-> TipoDeCliente=$request->tipo_de_cliente;
+                $cliente-> Cargo=$request->cargo;
+                $cliente-> RUC=$request->ruc;
+                $cliente->save();
+                
+                
+                
+
+        
+           
+    
+
+       return redirect("/menu/menuadmon/clientes");
+        
     }
 
     /**
@@ -130,6 +175,14 @@ class CrudClienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cliente=cliente::where("IdPersona",$id)->firstorfail();
+        //return $request;
+
+        $persona= persona::where("IdPersona",$id)->firstorfail();
+
+        $cliente->delete();
+        $persona->delete();
+
+        return redirect("/menu/menuadmon/clientes");
     }
 }

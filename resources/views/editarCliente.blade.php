@@ -77,7 +77,7 @@
 <body onpageshow="cambiarselect();">
 
 
-    <form action="{{route("cliente.edit",$cliente)}}" method="POST">
+    <form action="{{route("cliente.update",$cliente)}}" method="POST">
 
 
 
@@ -105,6 +105,11 @@
                     <select class="uk-select" id="Rol" disabled hidden>
                         <option value='Cliente'>Cliente</option>
                     </select>
+
+                    <input name="IdCliente" value="{{$cliente->IdCliente}}" type="text">
+
+
+
                     <div class="uk-margin">
                         <label for="primer_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Primer Nombre</label>
                         <div class="uk-form-controls">
