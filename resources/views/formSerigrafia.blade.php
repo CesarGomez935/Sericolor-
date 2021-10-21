@@ -714,7 +714,7 @@
                 <option value='Bordado'>serigrafia</option>
             </select>
             <select class="uk-select" id="cat" disabled hidden>
-                <option value='1'>Impresion_Digital</option>
+                <option value='2'>Serigrafía</option>
             </select>
         </div>
     </form>
@@ -726,7 +726,7 @@
         $('#guardar').click(function(e) {
             cargar_detalle();
             guardarpedido();
-            
+
 
             alert("Se agrego su orden");
 
