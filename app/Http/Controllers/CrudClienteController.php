@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\cliente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\persona;
 
 class CrudClienteController extends Controller
 {
@@ -34,7 +37,38 @@ class CrudClienteController extends Controller
      */
     public function store(Request $request)
     {
-        
+       // return $request->all();
+
+       DB::transaction(function () use ($request) {
+
+         $persona=persona::create([
+
+                'Primer_Nombre'=>$request->primer_nombre,
+                'Segundo_Nombre'=>$request->segundo_nombre,
+                'Primer_Apellido'=>$request->primer_apellido,
+                'Segundo_Apellido'=>$request->segundo_apellido,
+                'Cedula'=>$request->cedula,
+                'Telefono'=>$request->telefono,
+                'Correo'=>$request->correo,
+                'Direccion'=>$request->direccion,
+                
+                
+
+            ]);
+            $cliente=cliente::create([
+
+
+                'IdPersona'=>$persona->IdPersona,
+                'TipoDeCliente'=>$request->tipo_de_cliente,
+                'Cargo'=>$request->cargo,
+                'RUC'=>$request->ruc,
+                
+                
+                
+
+            ]);
+           
+       });
     }
 
     /**

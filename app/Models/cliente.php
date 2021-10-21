@@ -11,6 +11,7 @@ class cliente extends Model
     protected $table='cliente';
     protected $primaryKey="IdCliente";
     protected $fillable=['IdPersona',"TipoDeCliente","Cargo","RUC"];
+    public $timestamps = false;
 
 
     public function persona(){

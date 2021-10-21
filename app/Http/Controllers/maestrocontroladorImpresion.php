@@ -9,7 +9,8 @@ use App\Models\detalleimpresion;
 use App\Models\Detalledelpedido;
 use App\Models\recibo;
 
-use DB;
+use Illuminate\Support\Facades\DB;
+//use DB;
 use App\Models\maestro;
 
 class maestrocontroladorImpresion extends Controller
