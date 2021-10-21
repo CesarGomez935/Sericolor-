@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CrudClienteController;
 use App\Http\Controllers\detalledelpedidocontroller;
 use App\Http\Controllers\reporteController;
 use Illuminate\Support\Facades\Route;
@@ -155,6 +156,11 @@ Route::post('menu/menuadmon/promociones/create', [promocioncontroller::class,"st
 Route::get("menu/menuadmon/promociones/edit/{id}",[promocioncontroller::class,"edit"]);
 Route::put("menu/menuadmon/promociones/edit/{id}",[promocioncontroller::class,"update"]);
 Route::get("menu/menuadmon/promociones/delete/{id}",[promocioncontroller::class,"destroy"]);
+
+
+//clientes
+
+Route::post('/menu/menuadmon/clientes/agregar_cliente', [CrudClienteController::class,"store"])->name("cliente.store");
 
 
 

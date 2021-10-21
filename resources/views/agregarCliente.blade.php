@@ -74,7 +74,12 @@
 
     <!-- Formulario para agregar cliente -->
 
-    <form>
+    <form action="{{route("cliente.store")}}" method="POST">
+
+
+        @csrf
+
+
 
         <div class="uk-padding-small uk-background-muted" style="padding-left: 300px;">
 
@@ -90,28 +95,31 @@
                     <div class="uk-margin">
                         <label for="primer_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Primer Nombre</label>
                         <div class="uk-form-controls">
-                            <input id="primer_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input name="primer_nombre" id="primer_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Primer Nombre">
                         </div>
                     </div>
 
                     <div class="uk-margin">
                         <label for="segundo_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Segundo Nombre</label>
                         <div class="uk-form-controls">
-                            <input id="segundo_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input name="segundo_nombre" id="segundo_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Segundo Nombre">
+
                         </div>
                     </div>
 
                     <div class="uk-margin">
                         <label for="primer_apellido_cliente" class="uk-form-label" for="form-horizontal-text">Primer Apellido</label>
                         <div class="uk-form-controls">
-                            <input id="primer_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input name="primer_apellido" id="primer_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Primer Apellido">
+
                         </div>
                     </div>
 
                     <div class="uk-margin">
                         <label for="segundo_apellido_cliente" class="uk-form-label" for="form-horizontal-text">Segundo Apellido</label>
                         <div class="uk-form-controls">
-                            <input id="segundo_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input name="segundo_apellido" id="segundo_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Segundo Apellido">
+
                         </div>
                     </div>
 
@@ -120,14 +128,14 @@
                     <div class="uk-margin">
                         <label for="telefono_cliente" class="uk-form-label" for="form-horizontal-text">Teléfono</label>
                         <div class="uk-form-controls">
-                            <input id="telefono_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input name="telefono" id="telefono_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Teléfono">
                         </div>
                     </div>
 
                     <div class="uk-margin">
                         <label for="cedula_cliente" class="uk-form-label" for="form-horizontal-text">Cédula</label>
                         <div class="uk-form-controls">
-                            <input id="cedula_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input name="cedula" id="cedula_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Cédula">
                         </div>
                     </div>
 
@@ -135,8 +143,8 @@
                         <label for="tipo_cliente" class="uk-form-label" for="form-horizontal-text">Tipo de Cliente</label>
                         <div class="uk-margin">
                             <div uk-form-custom="target: > * > span:first-child">
-                                <select id="tipo_cliente">
-                                    <option value="">Seleccionar</option>
+                                <select name="tipo_de_cliente" id="tipo_cliente">
+
                                     <option value="Persona_Natural">Persona Natural</option>
                                     <option value="Empresa">Empresa</option>
 
@@ -148,6 +156,35 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="uk-margin">
+                        <label for="Correo_cliente" class="uk-form-label" for="form-horizontal-text">Correo</label>
+                        <div class="uk-form-controls">
+                            <input name="correo" id="correo_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="email" placeholder="Correo">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="direccion_cliente" class="uk-form-label" for="form-horizontal-text">Dirección</label>
+                        <div class="uk-form-controls">
+                            <input name="direccion" id="direccion_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Dirección">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="cargo_cliente" class="uk-form-label" for="form-horizontal-text">Cargo</label>
+                        <div class="uk-form-controls">
+                            <input name="cargo" id="cargo_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Cargo">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="ruc_cliente" class="uk-form-label" for="form-horizontal-text">R.U.C.</label>
+                        <div class="uk-form-controls">
+                            <input name="ruc" id="ruc_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="R.U.C.">
+                        </div>
+                    </div>
+
 
 
                 </div>
@@ -164,7 +201,7 @@
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 
                 <a href="/menu/menuadmon/clientes" class="uk-button uk-button-primary  " style="margin-left: 100px">Atrás </a>
-                <button id="guardar" onclick="return confirm('¿Está seguro que desea continuar?')" class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
+                <button type="submit" id="guardar" onclick="return confirm('¿Está seguro que desea continuar?')" class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
 
 
             </div>
@@ -173,7 +210,7 @@
     </form>
 
 </body>
-<script>
+{{-- <script>
     let detallesdepedido = [];
 
     cargarcliente();
@@ -228,6 +265,6 @@
 
     }
 
-</script>
+</script> --}}
 
 </html>

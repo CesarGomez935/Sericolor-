@@ -42,11 +42,16 @@ Route::resource('trabajador',usuariocontroller::class);
  Route::resource('cliente',persona::class);
 // Route::resource('pedido',pedidocontroller::class);
 // Route::resource('detalledelpago',detalledelpagocontroller::class);
-Route::get('gettrabajador', [personacontroller::class,"getalltrabajador"]);
-Route::get('getcliente', [personacontroller::class,"getallcliente"]);
-Route::get('getclientebusqueda', [personacontroller::class,"getcliente"]);
+
 // Route::get('getpedidobordado', [detalledelpedidocontroller::class,"getallpedidobordado"]);
 // Route::get('getpedidosublimacion', [detalledelpedidocontroller::class,"getallpedidosublimacion"]);
 // Route::get('getpedidoserigrafia', [detalledelpedidocontroller::class,"getallpedidoserigrafia"]);
 // Route::get('getpedidoimpresion', [detalledelpedidocontroller::class,"getallpedidoimpresion"]);
  Route::get('descargarbasededatos', [dbcontroller::class,"descargar"]);
+
+
+ //Clientes y trabajadores
+
+Route::get('gettrabajador', [personacontroller::class,"getalltrabajador"]);
+Route::get('getcliente', [personacontroller::class,"getallcliente"]);
+Route::get('getclientebusqueda', [personacontroller::class,"getcliente"]);
