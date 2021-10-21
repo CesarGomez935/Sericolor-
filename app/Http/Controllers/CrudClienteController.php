@@ -69,6 +69,8 @@ class CrudClienteController extends Controller
             ]);
            
        });
+
+       return redirect("/menu/menuadmon/clientes");
     }
 
     /**
