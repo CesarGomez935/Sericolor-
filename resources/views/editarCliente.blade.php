@@ -23,63 +23,72 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
+<header>
+    <!-- NavBar que muestra los distintos elementos de la apliaciión web -->
+    <nav class="uk-navbar uk-navbar-container ">
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-toggle" href="#">
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Agregar Clientes</span>
+            </a>
+        </div>
+
+        <a href="#my-id" uk-toggle></a>
+
+        <!-- Off Canvas, Elemento desplegabe de uiKit -->
+        <div id="my-id" uk-offcanvas>
+            <div class="uk-offcanvas-bar">
+
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <a href="/menu">Menú</a>
+                <hr class="uk-divider-icon">
+
+                <ul class="uk-nav uk-parent">
+                    <li class="uk-parent"> <a href="/menu/menu_facturacion"> Facturación </a></li>
+                    <ul class="uk-nav-sub">
+                        <li> <a href="/menu/menu_facturacion/form_bordado">Bordado </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_sublimacion">Sublimación </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_serigrafia">Serigrafía </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_impresion_digital">Impresión digital </a></li>
+                    </ul>
+                    <hr class="uk-divider-icon">
+                    <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_serigrafia"> Pedidos Serigrafía </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital </a></li>
+                    <hr class="uk-divider-icon">
+                    <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
+
+                    <ul class="uk-nav-sub">
+                        <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
+                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                        <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
+                        <li> <a href="/menu/menuadmon/bd">Restaurar y generar Back-up</a></li>
+                        <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
+                    </ul>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+</header>
+
 <body onpageshow="cambiarselect();">
 
 
-    <form action="{{route("cliente.update",$cliente)}}" method="POST">
+    <form action="{{route("cliente.edit",$cliente)}}" method="POST">
+
+
+
+
 
         @csrf
 
         @method('put')
 
 
-        <!-- NavBar que muestra los distintos elementos de la apliaciión web -->
-        <nav class="uk-navbar uk-navbar-container ">
-            <div class="uk-navbar-left">
-                <a class="uk-navbar-toggle" href="#">
-                    <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Agregar Clientes</span>
-                </a>
-            </div>
 
-            <a href="#my-id" uk-toggle></a>
-
-            <!-- Off Canvas, Elemento desplegabe de uiKit -->
-            <div id="my-id" uk-offcanvas>
-                <div class="uk-offcanvas-bar">
-
-                    <button class="uk-offcanvas-close" type="button" uk-close></button>
-                    <a href="/menu">Menú</a>
-                    <hr class="uk-divider-icon">
-
-                    <ul class="uk-nav uk-parent">
-                        <li class="uk-parent"> <a href="/menu/menu_facturacion"> Facturación </a></li>
-                        <ul class="uk-nav-sub">
-                            <li> <a href="/menu/menu_facturacion/form_bordado">Bordado </a></li>
-                            <li> <a href="/menu/menu_facturacion/form_sublimacion">Sublimación </a></li>
-                            <li> <a href="/menu/menu_facturacion/form_serigrafia">Serigrafía </a></li>
-                            <li> <a href="/menu/menu_facturacion/form_impresion_digital">Impresión digital </a></li>
-                        </ul>
-                        <hr class="uk-divider-icon">
-                        <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
-                        <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
-                        <li class="uk-active"> <a href="/menu/pedidos_serigrafia"> Pedidos Serigrafía </a></li>
-                        <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital </a></li>
-                        <hr class="uk-divider-icon">
-                        <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
-
-                        <ul class="uk-nav-sub">
-                            <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
-                            <li> <a href="/menu/menuadmon/personal">Personal</a></li>
-                            <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
-                            <li> <a href="/menu/menuadmon/bd">Restaurar y generar Back-up</a></li>
-                            <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
-                        </ul>
-
-                    </ul>
-
-                </div>
-            </div>
-        </nav>
 
         <!-- Formulario para agregar cliente -->
 
@@ -99,8 +108,7 @@
                     <div class="uk-margin">
                         <label for="primer_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Primer Nombre</label>
                         <div class="uk-form-controls">
-                            <input name="primer_nombre_cliente" value="{{$cliente->primer_nombre}}" id="primer_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
-
+                            <input value="{{$cliente->Primer_Nombre}}" name="primer_nombre" id="primer_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Primer Nombre">
 
                         </div>
                     </div>
@@ -108,7 +116,7 @@
                     <div class="uk-margin">
                         <label for="segundo_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Segundo Nombre</label>
                         <div class="uk-form-controls">
-                            <input name="segundo_nombre_cliente" value="{{$cliente->segundo_nombre}}" id="segundo_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input value="{{$cliente->Segundo_Nombre}}" name="segundo_nombre" id="segundo_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Segundo Nombre">
 
 
                         </div>
@@ -117,7 +125,7 @@
                     <div class="uk-margin">
                         <label for="primer_apellido_cliente" class="uk-form-label" for="form-horizontal-text">Primer Apellido</label>
                         <div class="uk-form-controls">
-                            <input name="primer_apellido_cliente" value="{{$cliente->primer_apellido}}" id="primer_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input value="{{$cliente->Primer_Apellido}}" name="primer_apellido" id="primer_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Primer Apellido">
 
 
                         </div>
@@ -126,7 +134,7 @@
                     <div class="uk-margin">
                         <label for="segundo_apellido_cliente" class="uk-form-label" for="form-horizontal-text">Segundo Apellido</label>
                         <div class="uk-form-controls">
-                            <input name="segundo_apellido_cliente" value="{{$cliente->segundo_apellido}}" id="segundo_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
+                            <input value="{{$cliente->Segundo_Apellido}}" name="segundo_apellido" id="segundo_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Segundo Apellido">
 
 
                         </div>
@@ -137,8 +145,7 @@
                     <div class="uk-margin">
                         <label for="telefono_cliente" class="uk-form-label" for="form-horizontal-text">Teléfono</label>
                         <div class="uk-form-controls">
-                            <input name="telefono_cliente" value="{{$cliente->telefono}}" id="telefono_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
-
+                            <input value="{{$cliente->Telefono}}" name="telefono" id="telefono_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Teléfono">
 
                         </div>
                     </div>
@@ -146,8 +153,7 @@
                     <div class="uk-margin">
                         <label for="cedula_cliente" class="uk-form-label" for="form-horizontal-text">Cédula</label>
                         <div class="uk-form-controls">
-                            <input name="cedula_cliente" value="{{$cliente->cedula}}" id="cedula_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Some text...">
-
+                            <input value="{{$cliente->Cedula}}" name="cedula" id="cedula_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Cédula">
 
                         </div>
                     </div>
@@ -156,8 +162,9 @@
                         <label for="tipo_cliente" class="uk-form-label" for="form-horizontal-text">Tipo de Cliente</label>
                         <div class="uk-margin">
                             <div uk-form-custom="target: > * > span:first-child">
-                                <select name="tipo_cliente" id="tipo_cliente">
-                                    <option value="">Seleccionar</option>
+                                <select value="{{$cliente->TipoDePersona}}" name="tipo_de_cliente" id="tipo_cliente">
+
+
                                     <option value="Persona_Natural">Persona Natural</option>
                                     <option value="Empresa">Empresa</option>
 
@@ -169,6 +176,39 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="uk-margin">
+                        <label for="Correo_cliente" class="uk-form-label" for="form-horizontal-text">Correo</label>
+                        <div class="uk-form-controls">
+                            <input value="{{$cliente->Correo}}" name="correo" id="correo_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="email" placeholder="Correo">
+
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="direccion_cliente" class="uk-form-label" for="form-horizontal-text">Dirección</label>
+                        <div class="uk-form-controls">
+                            <input value="{{$cliente->Direccion}}" name="direccion" id="direccion_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Dirección">
+
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="cargo_cliente" class="uk-form-label" for="form-horizontal-text">Cargo</label>
+                        <div class="uk-form-controls">
+                            <input value="{{$cliente->cargo}}" name="cargo" id="cargo_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Cargo">
+
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="ruc_cliente" class="uk-form-label" for="form-horizontal-text">R.U.C.</label>
+                        <div class="uk-form-controls">
+                            <input value="{{$cliente->RUC}}" name="ruc" id="ruc_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="R.U.C.">
+
+                        </div>
+                    </div>
+
 
 
                 </div>
@@ -185,24 +225,24 @@
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 
                 <a href="/menu/menuadmon/clientes" class="uk-button uk-button-primary  " style="margin-left: 100px">Atrás </a>
-                <button id="guardar" onclick="return confirm('¿Está seguro que desea continuar?')" class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
+                <button type="submit" id="guardar" onclick="return confirm('¿Está seguro que desea continuar?')" class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
+
 
             </div>
         </div>
 
+
     </form>
 
 </body>
-<script>
+{{-- <script>
     function cambiarselect() {
 
         var val = "{{$cliente->tipodepersona}}";
 
-        // document.querySelector('#rol_asignado_trabajador [value="' + val + '"]').selected = true;
+// document.querySelector('#rol_asignado_trabajador [value="' + val + '"]').selected = true;
 
-        $('#tipo_cliente').val(val).change();
-
-
+$('#tipo_cliente').val(val).change();
 
 
 
@@ -210,9 +250,11 @@
 
 
 
-        // $('#rol_asignado_trabajador option:contains(' + val + ')').prop({
-        //     selected: true
-        // });
+
+
+// $('#rol_asignado_trabajador option:contains(' + val + ')').prop({
+// selected: true
+// });
 
 
 
@@ -220,13 +262,13 @@
 
 
 
-    }
+}
 
-    function alert() {
-        alert("está seguro que desea continuar?");
-    }
+function alert() {
+alert("está seguro que desea continuar?");
+}
 
-</script>
+</script> --}}
 
 
 </html>

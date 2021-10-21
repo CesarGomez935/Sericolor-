@@ -92,7 +92,22 @@ class CrudClienteController extends Controller
      */
     public function edit($id)
     {
-        //
+
+       // $cliente=cliente::find($id);
+        $cliente= cliente::where("IdCliente",$id)->join("persona","persona.IdPersona","=","cliente.IdPersona")->firstorfail();
+         //$cliente=cliente::find($id);
+
+
+        return view("editarcliente",compact("cliente"));
+       // return $cliente;
+
+    //    $cliente= cliente::find($id);
+    //    // $cliente=cliente::select("*")->where("IdCliente",$IdCliente)->join("persona","persona.IdPersona","=","cliente.IdPersona")->get();
+        
+    //     return view("editarcliente", compact("cliente"));
+    //    // return $id;
+    //     //return $cliente;
+    //    // return view("editarcliente", compact("cliente"));
     }
 
     /**

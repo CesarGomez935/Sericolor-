@@ -138,17 +138,17 @@ Route::get('menu/menuadmon/resumen_pedidos', function () {
 
 Route::get('/descargarbasededatos', [dbcontroller::class,"descargar"]);
 
-Route::get('/menu/menuadmon/personal/agregar_personal/{id}/edit', [persona::class,"edittrabajador"])->name("trabajador.edit");
+// Route::get('/menu/menuadmon/personal/agregar_personal/{id}/edit', [persona::class,"edittrabajador"])->name("trabajador.edit");
 
-Route::put('/menu/menuadmon/personal/agregar_personal/{id}', [persona::class,"updatetrabajador"])->name("trabajador.update");
+// Route::put('/menu/menuadmon/personal/agregar_personal/{id}', [persona::class,"updatetrabajador"])->name("trabajador.update");
 
-Route::get('/menu/menuadmon/personal/{id}', [persona::class,"destroytrabajador"])->name("trabajador.destroy");
+// Route::get('/menu/menuadmon/personal/{id}', [persona::class,"destroytrabajador"])->name("trabajador.destroy");
 
-Route::get('/menu/menuadmon/clientes/agregar_cliente/{id}/edit', [persona::class,"editcliente"])->name("cliente.edit");
+// Route::get('/menu/menuadmon/clientes/agregar_cliente/{id}/edit', [persona::class,"editcliente"])->name("cliente.edit");
 
-Route::put('/menu/menuadmon/clientes/agregar_clientes/{id}', [persona::class,"updatecliente"])->name("cliente.update");
+// Route::put('/menu/menuadmon/clientes/agregar_clientes/{id}', [persona::class,"updatecliente"])->name("cliente.update");
 
-Route::get('/menu/menuadmon/clientes/{id}', [persona::class,"destroycliente"])->name("cliente.destroy");
+// Route::get('/menu/menuadmon/clientes/{id}', [persona::class,"destroycliente"])->name("cliente.destroy");
 
 Route::get('menu/menuadmon/promociones', [promocioncontroller::class,"index"]);
 Route::get('menu/menuadmon/promociones/create', [promocioncontroller::class,"create"]);
@@ -161,6 +161,7 @@ Route::get("menu/menuadmon/promociones/delete/{id}",[promocioncontroller::class,
 //clientes
 
 Route::post('/menu/menuadmon/clientes/agregar_cliente', [CrudClienteController::class,"store"])->name("cliente.store");
+Route::get('/menu/menuadmon/clientes/agregar_cliente/{id}/edit',[CrudClienteController::class,"edit"])->name("cliente.edit");
 
 
 
