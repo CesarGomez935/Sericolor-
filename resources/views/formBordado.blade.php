@@ -602,6 +602,9 @@
 
 
                 }
+                function rand(){
+                    echo rand(1111111111,99999999);
+                }
             </script>
 
             </table>

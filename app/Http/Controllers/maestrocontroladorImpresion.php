@@ -8,7 +8,7 @@ use App\Models\categoria;
 use App\Models\detalleimpresion;
 use App\Models\Detalledelpedido;
 use App\Models\recibo;
-
+use App\Models\metodo_de_pago;
 use Illuminate\Support\Facades\DB;
 //use DB;
 use App\Models\maestro;
@@ -25,6 +25,7 @@ class maestrocontroladorImpresion extends Controller
         return maestro::all();        
         return categoria::all();
         return recibo::all();
+        return metodo_de_pago::all();
 
     }
 
