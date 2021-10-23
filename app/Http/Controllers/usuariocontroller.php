@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\persona;
 use App\Models\usuario;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class usuariocontroller extends Controller
 {
@@ -61,10 +61,10 @@ class usuariocontroller extends Controller
                 $usuario=usuario::create([                    
                     'idpersona'=>$persona->IdPersona,                
                     'Usuario'=>$request->usuario,
-                    'email_verified_at'=>$request->Contrasena,
+                    
                     'password'=>$request->Contrasena,
-                    'remember_token'=>$request->Contrasena,
-                    'Privilegios'=>$request->Contrasena,  
+                    
+                    'Privilegios'=>"Dependiente",  
                     'RolAsignado'=>$request->RolAsignado,
                               
                 ]);
