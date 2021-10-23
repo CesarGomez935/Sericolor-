@@ -165,4 +165,10 @@ class maestrocontroladorImpresion extends Controller
     {
         //
     }
+    public function getpedidosimpresion()
+    {
+
+    return maestro::select("*")->join("detalle-orden-imp","detalle-orden-imp.cantidad","=","maestro.idmaestro")->get();
+
+    }
 }
