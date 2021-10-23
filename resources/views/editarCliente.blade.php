@@ -167,11 +167,15 @@
                         <label for="tipo_cliente" class="uk-form-label" for="form-horizontal-text">Tipo de Cliente</label>
                         <div class="uk-margin">
                             <div uk-form-custom="target: > * > span:first-child">
-                                <select value="{{$cliente->TipoDePersona}}" name="tipo_de_cliente" id="tipo_cliente">
+                                <select name="tipo_de_cliente" id="tipo_cliente">
 
 
-                                    <option value="Persona_Natural">Persona Natural</option>
-                                    <option value="Empresa">Empresa</option>
+                                    <option @if($cliente->TipoDeCliente == "Persona_Natural") selected @endif value="Persona_Natural">Persona Natural</option>
+
+
+                                    <option @if($cliente->TipoDeCliente == "Empresa") selected @endif value="Empresa">Empresa</option>
+
+
 
                                 </select>
                                 <button class="uk-button uk-button-default" type="button" tabindex="-1">

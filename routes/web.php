@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CrudClienteController;
+use App\Http\Controllers\CrudTrabajadorController;
 use App\Http\Controllers\detalledelpedidocontroller;
 use App\Http\Controllers\reporteController;
 use Illuminate\Support\Facades\Route;
@@ -165,4 +166,9 @@ Route::get('/menu/menuadmon/clientes/agregar_cliente/{id}/edit',[CrudClienteCont
 Route::put('/menu/menuadmon/clientes/agregar_cliente/{id}', [CrudClienteController::class,"update"])->name("cliente.update");
 Route::get('/menu/menuadmon/clientes/{id}', [CrudClienteController::class,"destroy"])->name("cliente.destroy");
 
+//trabajadores
 
+Route::post('/menu/menuadmon/personal/agregar_personal', [CrudTrabajadorController::class,"store"])->name("trabajador.store");
+Route::get('/menu/menuadmon/personal/agregar_personal/{id}/edit',[CrudTrabajadorController::class,"edit"])->name("trabajador.edit");
+Route::put('/menu/menuadmon/personal/agregar_personal/{id}', [CrudTrabajadorController::class,"update"])->name("trabajador.update");
+Route::get('/menu/menuadmon/personal/{id}', [CrudTrabajadorController::class,"destroy"])->name("trabajador.destroy");
