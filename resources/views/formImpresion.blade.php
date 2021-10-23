@@ -516,23 +516,16 @@
                                     id="form-horizontal-text" type="text" placeholder="">
                             </div>
                         </div>
-                        <div class="uk-margin">
 
-                            <div class="uk-form-controls">
-
-                                <input class="uk-checkbox" id="form-horizontal-text" type="checkbox">
-                                Transferencia</label>
-                            </div>
-                        </div>
                         <div class="uk-margin uk-form-small">
-                            <label for="banco" class="uk-form-label" for="form-horizontal-text">Banco</label>
-                            <select class="uk-select uk-form-width-medium" id="Banco">
+                            <label for="banco" class="uk-form-label" for="form-horizontal-text">Metodo de pago</label>
+                            <select class="uk-select uk-form-width-large" id="Banco">
 
 
-                                <option value='BAC'>BAC</option>
-                                <option value='BDF'>BDF</option>
-                                <option value='BANPRO'>BANPRO</option>
-                                <option value='BANCENTRO'>LAFISE BANCENTRO</option>
+                                <option value='1'>Efectivo</option>
+                                <option value='2'>Tarjeta</option>
+                                <option value='3'>Transferencia Bancaria</option>
+                                <option value='4'>Movil</option>
                             </select>
                         </div>
 
@@ -661,7 +654,7 @@
                 codseguimiento: $("#tipo_de_pedido").val(),
 
 
-                idmetodo: $("#cat").val(),
+                idmetodo: $("#banco").val(),
                 cod: $("#saldo").val(),
 
                 //funcion que llama al ar
