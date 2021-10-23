@@ -110,7 +110,7 @@
                                 placeholder="Confirmar Contraseña">
                         </div>
 
-                        <a id="guardar" href="/login" class="uk-button uk-button-primary">Registrarse</a>
+                        <a id="guardar" class="uk-button uk-button-primary">Registrarse</a>
 
                     </fieldset>
 
