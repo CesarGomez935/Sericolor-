@@ -543,14 +543,18 @@
                             <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza
                                 Pedido</label>
                             <div class="uk-form-controls">
-                                <select class="uk-select uk-form-width-large" name="" id=""></select>
+                                <select class="uk-select uk-form-width-large" name="" id="autorizapedido">
+                                    <option value="">Seleccionar</option>
+                                </select>
                             </div>
                         </div>
                         <div class="uk-margin">
                             <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
                             <div class="uk-form-controls">
 
-                                <select class="uk-select uk-form-width-large" name="" id=""></select>
+                                <select class="uk-select uk-form-width-large" name="" id="recibepedido">
+                                    <option value="">Seleccionar</option>
+                                </select>
 
                             </div>
 
@@ -603,10 +607,13 @@
 
     <script>
         let pedido = [];
+        let usuarios = [];
 
         const arreglo = [];
 
         cargarpedido();
+        cargarusuario();
+        cargarcliente();
 
 
         $('#guardar').click(function(e) {
@@ -617,24 +624,77 @@
 
         });
 
-        function peticionapi2(data, method, onSucess) {
+        function peticionapi2(data, method, onSuccess) {
+
+
             let url = '/api/usuario';
             if (method == 'PUT' || method == 'DELETE') {
-                url += '/' + data.idmaestro;
+                url += '/' + data.id;
             }
             $.ajax({
                 url: url,
                 method: method,
                 data: data,
-                error(ext) {
-                    let error = e.responseJSON.errors;
-                    let msj = error[Object.keys(error)[0]][0];
-                    alert(msj);
-                },
+
                 success(res) {
+                    onSuccess(res);
 
                 }
+
             })
+        }
+
+        function peticionapi3(data, method, onSuccess) {
+
+
+            let url = '/api/getcliente';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.id;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+        }
+
+        function cargarusuario() {
+
+            peticionapi2({}, 'GET', function(res) {
+                usuarios = res;
+                console.log(res);
+                let html = '<option value=""> Seleccionar </option>';
+
+                res.forEach(usuarios => {
+                    html += '<option value="' + usuarios.IdUsuario + '">' + usuarios.Primer_Nombre + ' ' +
+                        usuarios.Segundo_Nombre + ' ' + usuarios.Primer_Apellido + ' ' + usuarios
+                        .Segundo_Apellido +
+                        '</option>'
+                });
+                $("#recibepedido").html(html);
+            });
+        }
+
+        function cargarcliente() {
+
+            peticionapi3({}, 'GET', function(res) {
+                cliente = res;
+                console.log(res);
+                let html = '<option value=""> Seleccionar </option>';
+                res.forEach(cliente => {
+                    html += '<option value="' + cliente.IdCliente + '">' + cliente.Primer_Nombre + ' ' +
+                        cliente.Segundo_Nombre + ' ' + cliente.Primer_Apellido + ' ' + cliente
+                        .Segundo_Apellido +
+                        '</option>'
+                });
+                $("#autorizapedido").html(html);
+            });
         }
 
         function peticionapi(data, method, onSucess) {
