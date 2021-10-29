@@ -60,10 +60,8 @@ class usuariocontroller extends Controller
                  
                 $usuario=usuario::create([                    
                     'idpersona'=>$persona->IdPersona,                
-                    'Usuario'=>$request->usuario,
-                    
-                    'password'=>$request->Contrasena,
-                    
+                    'Usuario'=>$request->usuario,                    
+                    'password'=>$request->Contrasena,                    
                     'Privilegios'=>"Dependiente",  
                     'RolAsignado'=>$request->RolAsignado,
                               
