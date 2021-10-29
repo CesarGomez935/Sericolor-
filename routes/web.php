@@ -172,3 +172,21 @@ Route::post('/menu/menuadmon/personal/agregar_personal', [CrudTrabajadorControll
 Route::get('/menu/menuadmon/personal/agregar_personal/{id}/edit',[CrudTrabajadorController::class,"edit"])->name("trabajador.edit");
 Route::put('/menu/menuadmon/personal/agregar_personal/{id}', [CrudTrabajadorController::class,"update"])->name("trabajador.update");
 Route::get('/menu/menuadmon/personal/{id}', [CrudTrabajadorController::class,"destroy"])->name("trabajador.destroy");
+
+
+Route::get('/editform_bordado', function () {
+    return view('EditarformBordado');
+});
+
+
+
+Route::get('/editform_sublimacion', function () {
+    return view('EditarformSublimacion');
+});
+Route::get('/editform_serigrafia', function () {
+    return view('EditarformSerigrafia');
+});
+
+Route::get('/editform_impresion_digital', function () {
+    return view('EditarformImpresion');
+});
