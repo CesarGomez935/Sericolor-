@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\Models\persona;
 use App\Models\usuario;
-use Illuminate\Support\Facades\DB;
 
-class usuariocontroller extends Controller
+use Illuminate\Http\Request;
+
+class llamadausuariocontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +15,9 @@ class usuariocontroller extends Controller
      */
     public function index()
     {
+     
+         return persona::select("*")->join("usuario","usuario.IdPersona","=","persona.IdPersona")->get();
         //
-        return usuario::all();
-         return persona::all();
-        // return usuario::all();
     }
 
     /**
@@ -41,41 +39,6 @@ class usuariocontroller extends Controller
     public function store(Request $request)
     {
         //
-        DB::transaction(function() use ($request)
-        {
-
-            $persona=persona::create([
-
-                'Primer_Nombre'=>$request->primer_nombre,
-                'Segundo_Nombre'=>$request->segundo_nombre,
-                'Primer_Apellido'=>$request->primer_apellido,
-                'Segundo_Apellido'=>$request->segundo_apellido,
-                'Cedula'=>$request->cedula,
-                'Telefono'=>$request->telefono,
-                'Direccion'=>$request->direccion,
-                'Correo'=>$request->correo,
-                
-
-            ]);
-                
-                 
-                $usuario=usuario::create([                    
-                    'idpersona'=>$persona->IdPersona,                
-                    'Usuario'=>$request->usuario,                    
-                    'password'=>$request->Contrasena,                    
-                    'Privilegios'=>"Dependiente",  
-                    'RolAsignado'=>$request->RolAsignado,
-                              
-                ]);
-
-            
-            
-                
-            
-            
-
-        });
-      
     }
 
     /**

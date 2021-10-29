@@ -543,16 +543,17 @@
                             <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza
                                 Pedido</label>
                             <div class="uk-form-controls">
-                                <input id="autoriza" name="Autoriza_pedido" class="uk-input uk-form-width-large"
-                                    id="form-horizontal-text" type="text" placeholder="">
+                                <select class="uk-select uk-form-width-large" name="" id=""></select>
                             </div>
                         </div>
                         <div class="uk-margin">
                             <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
                             <div class="uk-form-controls">
-                                <input id="recibe" name="recibe_pedido" class="uk-input uk-form-width-large"
-                                    id="form-horizontal-text" type="text" placeholder="">
+
+                                <select class="uk-select uk-form-width-large" name="" id=""></select>
+
                             </div>
+
                         </div>
                         <div class="uk-margin">
                             <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
@@ -615,6 +616,26 @@
             alert("Se agrego su orden");
 
         });
+
+        function peticionapi2(data, method, onSucess) {
+            let url = '/api/usuario';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.idmaestro;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+                error(ext) {
+                    let error = e.responseJSON.errors;
+                    let msj = error[Object.keys(error)[0]][0];
+                    alert(msj);
+                },
+                success(res) {
+
+                }
+            })
+        }
 
         function peticionapi(data, method, onSucess) {
             let url = '/api/pedidoimp';
