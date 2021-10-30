@@ -18,6 +18,7 @@ use App\Http\Controllers\slidercontroller;
 use App\Http\Controllers\llamadausuariocontroller;
 use App\Http\Controllers\llamadaclientecontroller;
 use App\Http\Controllers\usuariocontroller;
+use App\Http\Controllers\vistas;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,3 +59,8 @@ Route::resource('cliente',llamadaclientecontroller::class);
 Route::get('gettrabajador', [personacontroller::class,"getalltrabajador"]);
 Route::get('getcliente', [personacontroller::class,"getallcliente"]);
 Route::get('getclientebusqueda', [personacontroller::class,"getcliente"]);
+
+Route::get('getimpresion', [vistas::class,"mostrar_impresion"]);
+Route::get('getsublimacion', [vistas::class,"mostrar_sublimacion"]);
+Route::get('getserigrafia', [vistas::class,"mostrar_serigrafia"]);
+Route::get('getbordado', [vistas::class,"mostrar_bordado"]);

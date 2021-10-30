@@ -93,7 +93,7 @@
                     </div>
                     <div class="uk-inline uk-width-1-2 ">
                         <label for="fecha_ent">Nombre del cliente</label>
-                        <input id="cliente" name="nombre_cliente" class="uk-input" placeholder="Cliente">
+                        <select name="" class="uk-select uk-width-1-1" id="cliente"></select>
                     </div>
                 </div>
             </div>
@@ -258,7 +258,7 @@
 
                                                 <option value="Taza">Taza</option>
                                                 <option value="Lapicero">Lapiceros</option>
-                                                <option value="LLavero">Llaveros MDF</option>
+                                                <option value="Llavero">Llaveros MDF</option>
 
 
                                             </select>
@@ -702,24 +702,29 @@
                                 id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
-                    <div class="uk-margin">
-
+                    <div class="uk-margin uk-form-small">
+                        <label for="banco" class="uk-form-label" for="form-horizontal-text">Metodo de pago</label>
                         <div class="uk-form-controls">
+                            <select class="uk-select uk-form-width-large" id="Banco">
 
-                            <input class="uk-checkbox" id="form-horizontal-text" type="checkbox">
-                            Transferencia</label>
+
+                                <option value='1'>Efectivo</option>
+                                <option value='2'>Tarjeta</option>
+                                <option value='3'>Transferencia Bancaria</option>
+                                <option value='4'>Movil</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="uk-margin uk-form-small">
-                        <label for="banco" class="uk-form-label" for="form-horizontal-text">Banco</label>
-                        <select class="uk-select uk-form-width-medium" id="Banco">
+                    <div class="uk-margin">
+                        <label for="estado" class="uk-form-label" for="form-horizontal-text">Estado del Pedido</label>
+                        <div class="uk-form-controls">
+                            <select disabled class="uk-select uk-form-width-large" name="" id="estado">
+                                <option selected value="No Completado">No Completado</option>
+                                <option value="Completado">Completado</option>
 
+                            </select>
+                        </div>
 
-                            <option value='BAC'>BAC</option>
-                            <option value='BDF'>BDF</option>
-                            <option value='BANPRO'>BANPRO</option>
-                            <option value='BANCENTRO'>LAFISE BANCENTRO</option>
-                        </select>
                     </div>
 
 
@@ -732,17 +737,20 @@
                 <div class="uk-form-horizontal uk-margin-large">
 
                     <div class="uk-margin">
-                        <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza Pedido</label>
+                        <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza
+                            Pedido</label>
                         <div class="uk-form-controls">
-                            <input id="autoriza" name="Autoriza_pedido" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <select class="uk-select uk-form-width-large" name="" id="autorizapedido">
+                                <option value="">Seleccionar</option>
+                            </select>
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
                         <div class="uk-form-controls">
-                            <input id="recibe" name="recibe_pedido" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <select class="uk-select uk-form-width-large" name="" id="recibepedido">
+                                <option value="">Seleccionar</option>
+                            </select>
                         </div>
                     </div>
                     <div class="uk-margin">
@@ -773,8 +781,8 @@
 
 
             </div>
-            <select class="uk-select" id="tipo_de_pedido" disabled hidden>
-                <option value='Sublimacion'>Sublimacion</option>
+            <select class="uk-select" id="cat" disabled hidden>
+                <option value='1'>Sublimacion</option>
             </select>
         </div>
 
@@ -783,49 +791,285 @@
 
 
 </body>
-    {{-- script para ingresar datos en los formularios --}}
-    <script>
-        let pedido = [];
-        const arreglo = [];
-        cargarpedido();
-        $('#guardar').click(function(e) {
-            cargar_detalle();
-            guardarpedido();
-            
+{{-- script para ingresar datos en los formularios --}}
+<script type="text/javascript">
+    let pedido = [];
+    const arreglo = [];
+    cargarpedido();
+    cargarusuario();
+    cargarcliente();
+    $('#guardar').click(function(e) {
+        cargar_detalle();
+        guardarpedido();
 
-            alert("Se agrego su orden");
 
+        alert("Se agrego su orden");
+
+    });
+
+    function peticionapi(data, method, onSucess) {
+        let url = '/api/pedido';
+        if (method == 'PUT' || method == 'DELETE') {
+            url += '/' + data.idmaestro;
+        }
+        $.ajax({
+            url: url,
+            method: method,
+            data: data,
+            error(ext) {
+                let error = e.responseJSON.errors;
+                let msj = error[Object.keys(error)[0]][0];
+                alert(msj);
+            },
+            success(res) {
+
+            }
+        })
+    }
+
+    function peticionapi3(data, method, onSuccess) {
+
+
+        let url = '/api/getcliente';
+        if (method == 'PUT' || method == 'DELETE') {
+            url += '/' + data.id;
+        }
+        $.ajax({
+            url: url,
+            method: method,
+            data: data,
+
+            success(res) {
+                onSuccess(res);
+
+            }
+
+        })
+    }
+
+    function peticionapi2(data, method, onSuccess) {
+
+
+        let url = '/api/usuario';
+        if (method == 'PUT' || method == 'DELETE') {
+            url += '/' + data.id;
+        }
+        $.ajax({
+            url: url,
+            method: method,
+            data: data,
+
+            success(res) {
+                onSuccess(res);
+
+            }
+
+        })
+    }
+
+    function cargarusuario() {
+
+        peticionapi2({}, 'GET', function(res) {
+            usuarios = res;
+            console.log(res);
+            let html = '<option value=""> Seleccionar </option>';
+
+            res.forEach(usuarios => {
+                html += '<option value="' + usuarios.IdUsuario + '">' + usuarios.Primer_Nombre + ' ' +
+                    usuarios.Segundo_Nombre + ' ' + usuarios.Primer_Apellido + ' ' + usuarios
+                    .Segundo_Apellido +
+                    '</option>'
+            });
+            $("#recibepedido").html(html);
+        });
+    }
+
+    function cargarcliente() {
+
+        peticionapi3({}, 'GET', function(res) {
+            cliente = res;
+            console.log(res);
+            let html = '<option value=""> Seleccionar </option>';
+            res.forEach(cliente => {
+                html += '<option value="' + cliente.IdCliente + '">' + cliente.Primer_Nombre + ' ' +
+                    cliente.Segundo_Nombre + ' ' + cliente.Primer_Apellido + ' ' + cliente
+                    .Segundo_Apellido +
+                    '</option>'
+            });
+            $("#autorizapedido").html(html);
+            $("#cliente").html(html);
+        });
+    }
+
+    function guardarpedido() {
+
+
+
+
+        let data = {
+
+            IdCliente: $("#cliente").val(),
+            IdUsuario: $("#recibepedido").val(),
+            IdCategoria: $("#cat").val(),
+            fecha: $("#fecha_fact").val(),
+            notas: $("#notas").val(),
+            total_costo: $("#total").val(),
+            Saldo: $("#saldo").val(),
+            abono: $("#abono").val(),
+            codseguimiento: $("#tipo_de_pedido").val(),
+
+
+            idmetodo: $("#Banco").val(),
+            cod: $("#saldo").val(),
+            estado: $("#estado").val(),
+
+            //funcion que llama al arreglo que toma los datos
+            detalle: JSON.stringify(arreglo)
+
+
+
+
+        };
+
+        console.log(data);
+
+
+
+        peticionapi(data, 'POST', function(res) {
+            alert('Guardado con exito')
+        });
+    }
+
+    function cargarpedido() {
+        peticionapi({}, 'GET', function(res) {
+            console.log(res);
+            alert('respuesta satisfactoria');
         });
 
-        function peticionapi(data, method, onSucess) {
-            let url = '/api/pedido';
-            if (method == 'PUT' || method == 'DELETE') {
-                url += '/' + data.idmaestro;
-            }
-            $.ajax({
-                url: url,
-                method: method,
-                data: data,
-                error(ext) {
-                    let error = e.responseJSON.errors;
-                    let msj = error[Object.keys(error)[0]][0];
-                    alert(msj);
-                },
-                success(res) {
+    }
 
-                }
-            })
-        }
+    function cargar_detalle() {
 
-        function guardarpedido() {
+        var filas = document.querySelectorAll("#Tabla tbody tr");
+
+        var contador = 0;
+
+        const pecho_izq = [];
+        const pecho_der = [];
+        const manga_izq = [];
+        const manga_der = [];
+        const espalda = [];
+        const talla = [];
+        const insumo = [];
+        const cantidad = [];
+        const precio = [];
+        const totaldetalle = [];
+        const Observacion = [];
+
+        var total = document.getElementById("total").value;
+
+        console.log(filas);
 
 
 
 
-            let data = {
 
-                IdCliente: $("#cat").val(),
-                IdUsuario: $("#cat").val(),
+
+        filas.forEach(function(e) {
+
+
+            // obtenemos las columnas de cada fila
+            var columnas = e.querySelectorAll("td");
+
+
+
+            var pechoizq_ = columnas[0].textContent;
+            var pechoder_ = columnas[1].textContent;
+            var mangaizq_ = columnas[2].textContent;
+            var mangader_ = columnas[3].textContent;
+            var espalda_ = columnas[4].textContent;
+            var talla_ = columnas[5].textContent;
+            var cantidad_ = parseFloat(columnas[6].textContent);
+            var precio_ = parseFloat(columnas[7].textContent);
+            var totaldetalle_ = parseFloat(columnas[8].textContent);
+            var Observacion_ = columnas[9].textContent;
+
+            var Talla_val = 0;
+            if (talla_ == 2) {
+                Talla_val = 1;
+            } else if (talla_ == 4) {
+                Talla_val = 2;
+            } else
+            if (talla_ == 6) {
+                Talla_val = 3;
+            } else if (talla_ == 8) {
+                Talla_val = 4;
+            } else if (talla_ == 10) {
+                Talla_val = 5;
+            } else if (talla_ == 12) {
+                Talla_val = 6;
+            } else if (talla_ == 14) {
+                Talla_val = 7;
+            } else if (talla_ == 16) {
+                Talla_val = 8;
+            } else if (talla_ == 18) {
+                Talla_val = 9;
+            } else if (talla_ == "S Dama") {
+                Talla_val = 10;
+            } else if (talla_ == "S Caballero") {
+                Talla_val = 11;
+            } else if (talla_ == "M Dama") {
+                Talla_val = 12;
+            } else if (talla_ == "M Caballero") {
+                Talla_val = 13;
+            } else if (talla_ == "L Dama") {
+                Talla_val = 14;
+            } else if (talla_ == "L Caballero") {
+                Talla_val = 15;
+            } else if (talla_ == "XL Dama") {
+                Talla_val = 16;
+            } else if (talla_ == "XL Caballero") {
+                Talla_val = 17;
+            } else if (talla_ == "2XL Dama") {
+                Talla_val = 18;
+            } else if (talla_ == "2XL Caballero") {
+                Talla_val = 19;
+            } else if (talla_ == "3XL Dama") {
+                Talla_val = 20;
+            } else if (talla_ == "3XL Caballero") {
+                Talla_val = 21;
+            } else if (talla_ == "5XL Dama") {
+                Talla_val = 22;
+            } else if (talla_ == "5XL Caballero") {
+                Talla_val = 23;
+            } else if (talla_ == "Taza") {
+                Talla_val = 24;
+            } else if (talla_ == "Lapicero") {
+                Talla_val = 25;
+            } else if (talla_ == "Llavero") {
+                Talla_val = 26;
+            } else {}
+
+
+
+
+
+
+            pecho_izq[contador] = pechoizq_;
+            pecho_der[contador] = pechoder_;
+            manga_izq[contador] = mangaizq_;
+            manga_der[contador] = mangader_;
+            espalda[contador] = espalda_;
+            talla[contador] = talla_;
+            cantidad[contador] = cantidad_;
+            precio[contador] = precio_;
+            totaldetalle[contador] = totaldetalle_;
+            Observacion[contador] = Observacion_;
+
+            arreglo[contador] = {
+
+                IdCliente: $("#cliente").val(),
+                IdUsuario: $("#recibepedido").val(),
                 IdCategoria: $("#cat").val(),
                 fecha: $("#fecha_fact").val(),
                 notas: $("#notas").val(),
@@ -834,145 +1078,43 @@
                 abono: $("#abono").val(),
                 codseguimiento: $("#tipo_de_pedido").val(),
 
-
-                idmetodo: $("#cat").val(),
-                cod: $("#saldo").val(),
-
-                //funcion que llama al arreglo que toma los datos
-                detalle: JSON.stringify(arreglo)
-
-
+                IdInsumos: Talla_val,
+                pecho_izq: pechoizq_,
+                pecho_der: pechoder_,
+                manga_izq: mangaizq_,
+                manga_der: mangader_,
+                espalda: espalda_,
+                cantidad: cantidad_,
+                precio: precio_,
+                totaldetalle: totaldetalle_,
+                observacion: Observacion_,
 
 
             };
 
-            console.log(data);
 
 
 
-            peticionapi(data, 'POST', function(res) {
-                alert('Guardado con exito')
-            });
-        }
+            contador = contador + 1;
 
-        function cargarpedido() {
-            peticionapi({}, 'GET', function(res) {
-                console.log(res);
-                alert('respuesta satisfactoria');
-            });
 
-        }
+            console.log(arreglo)
 
-        function cargar_detalle() {
 
-            var filas = document.querySelectorAll("#Tabla tbody tr");
 
-            var contador = 0;
 
-            const pecho_izq = [];
-            const pecho_der = [];
-            const manga_izq = [];
-            const manga_der = [];
-            const espalda = [];
-            const talla = [];
-            const insumo = [];
-            const cantidad = [];
-            const precio = [];
-            const totaldetalle = [];
-            const Observacion = [];
+        })
 
-            var total = document.getElementById("total").value;
 
-            console.log(filas);
+        console.log(filas)
 
 
 
 
 
 
-            filas.forEach(function(e) {
-
-
-                // obtenemos las columnas de cada fila
-                var columnas = e.querySelectorAll("td");
-
-
-
-                var pechoizq_ = columnas[0].textContent;
-                var pechoder_ = columnas[1].textContent;
-                var mangaizq_ = columnas[2].textContent;
-                var mangader_ = columnas[3].textContent;
-                var espalda_ = columnas[4].textContent;
-                var talla_ = columnas[5].textContent;
-                var cantidad_ = parseFloat(columnas[6].textContent);
-                var precio_ = parseFloat(columnas[7].textContent);
-                var totaldetalle_ = parseFloat(columnas[8].textContent);
-                var Observacion_ = columnas[9].textContent;
-
-
-
-
-
-                pecho_izq[contador] = pechoizq_;
-                pecho_der[contador] = pechoder_;
-                manga_izq[contador] = mangaizq_;
-                manga_der[contador] = mangader_;
-                espalda[contador] = espalda_;
-                talla[contador] = talla_;
-                cantidad[contador] = cantidad_;
-                precio[contador] = precio_;
-                totaldetalle[contador] = totaldetalle_;
-                Observacion[contador] = Observacion_;
-
-                arreglo[contador] = {
-
-                    IdCliente: $("#cat").val(),
-                    IdUsuario: $("#cat").val(),
-                    IdCategoria: $("#cat").val(),
-                    fecha: $("#fecha_fact").val(),
-                    notas: $("#notas").val(),
-                    total_costo: $("#total").val(),
-                    Saldo: $("#saldo").val(),
-                    abono: $("#abono").val(),
-                    codseguimiento: $("#tipo_de_pedido").val(),
-
-                    IdInsumos: $("#cat").val(),
-                    pecho_izq: pechoizq_,
-                    pecho_der: pechoder_,
-                    manga_izq: mangaizq_,
-                    manga_der: mangader_,
-                    espalda: espalda_,
-                    cantidad: cantidad_,
-                    precio: precio_,
-                    totaldetalle: totaldetalle_,
-                    observacion: Observacion_,
-
-
-                };
-
-
-
-
-                contador = contador + 1;
-
-
-                console.log(arreglo)
-
-
-
-
-            })
-
-
-            console.log(filas)
-
-
-
-
-
-
-        }
-    </script>
+    }
+</script>
 
 
 

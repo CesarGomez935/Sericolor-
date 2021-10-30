@@ -25,10 +25,11 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
 </head>
 
 
-<body onpageshow="Validacion();fecha();">
+<body onpageshow="Validacion(); fecha();">
 
     <!-- Nav Bar-->
     <nav class="uk-navbar uk-navbar-container">
@@ -93,7 +94,7 @@
                     </div>
                     <div class="uk-inline uk-width-1-2 ">
                         <label for="">Nombre del cliente</label>
-                        <input id="cliente" name="nombre_cliente" class="uk-input" placeholder="Cliente">
+                        <select name="" class="uk-select uk-width-1-1" id="cliente"></select>
                     </div>
                 </div>
             </div>
@@ -345,6 +346,7 @@
 
 
                 function Validacion() {
+
                     var Tallas = document.getElementById("Tallas");
                     var Genero = document.getElementById("Genero");
 
@@ -602,9 +604,10 @@
 
 
                 }
-                function rand(){
-                    echo rand(1111111111,99999999);
-                }
+
+                // function rand() {
+                //     echo rand(1111111111, 99999999);
+                // }
             </script>
 
             </table>
@@ -620,56 +623,57 @@
 
                     <div class="uk-margin">
                         <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
-                        <div class="uk-form-controls">
-                            <input id="abono" min="0" name="Abono" onchange="abonos();"
-                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="number"
-                                placeholder="">
 
-                            <script>
-                                function abonos() {
-                                    var sub_total = document.getElementById("total").value;
-                                    var abono = document.getElementById("abono").value;
-                                    var total = 0;
+                        <input id="abono" min="0" name="Abono" onchange="abonos();" class="uk-input uk-form-width-large"
+                            id="form-horizontal-text" type="number" placeholder="">
 
-                                    total = sub_total - abono;
+                        <script>
+                            function abonos() {
+                                var sub_total = document.getElementById("total").value;
+                                var abono = document.getElementById("abono").value;
+                                var total = 0;
 
-                                    console.log(sub_total, abono, total); //
+                                total = sub_total - abono;
 
-
-                                    document.getElementById('saldo').value = total;
+                                console.log(sub_total, abono, total); //
 
 
+                                document.getElementById('saldo').value = total;
 
-                                }
-                            </script>
-                        </div>
+
+
+                            }
+                        </script>
+
                     </div>
 
                     <div class="uk-margin">
                         <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
-                        <div class="uk-form-controls">
-                            <input id="saldo" name="Saldo" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
-                        </div>
-                    </div>
-                    <div class="uk-margin">
 
-                        <div class="uk-form-controls">
+                        <input id="saldo" name="Saldo" class="uk-input uk-form-width-large" id="form-horizontal-text"
+                            type="text" placeholder="">
 
-                            <input class="uk-checkbox" id="form-horizontal-text" type="checkbox">
-                            Transferencia</label>
-                        </div>
                     </div>
                     <div class="uk-margin uk-form-small">
-                        <label for="banco" class="uk-form-label" for="form-horizontal-text">Banco</label>
-                        <select class="uk-select uk-form-width-medium" id="Banco">
+                        <label for="banco" class="uk-form-label" for="form-horizontal-text">Metodo de pago</label>
+                        <select class="uk-select uk-form-width-large" id="Banco">
 
 
-                            <option value='BAC'>BAC</option>
-                            <option value='BDF'>BDF</option>
-                            <option value='BANPRO'>BANPRO</option>
-                            <option value='BANCENTRO'>LAFISE BANCENTRO</option>
+                            <option value='1'>Efectivo</option>
+                            <option value='2'>Tarjeta</option>
+                            <option value='3'>Transferencia Bancaria</option>
+                            <option value='4'>Movil</option>
                         </select>
+                    </div>
+                    <div class="uk-margin">
+                        <label for="estado" class="uk-form-label" for="form-horizontal-text">Estado del Pedido</label>
+
+                        <select disabled class="uk-select uk-form-width-large" name="" id="estado">
+                            <option selected value="No Completado">No Completado</option>
+                            <option value="Completado">Completado</option>
+
+                        </select>
+
                     </div>
 
 
@@ -684,22 +688,24 @@
                     <div class="uk-margin">
                         <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza Pedido</label>
                         <div class="uk-form-controls">
-                            <input id="autoriza" name="Autoriza_pedido" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <select class="uk-select uk-form-width-large" name="" id="autorizapedido">
+                                <option value="">Seleccionar</option>
+                            </select>
                         </div>
                     </div>
 
                     <div class="uk-margin">
                         <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
                         <div class="uk-form-controls">
-                            <input id="recibe" name="recibe_pedido" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <select class="uk-select uk-form-width-large" name="" id="recibepedido">
+                                <option value="">Seleccionar</option>
+                            </select>
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
                         <div class="uk-form-controls">
-                            <input id="factura" name="num_factura" class="uk-input uk-form-width-large"
+                            <input disabled id="factura" name="num_factura" class="uk-input uk-form-width-large "
                                 id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
@@ -707,7 +713,7 @@
                         <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
                         <div class="uk-form-controls">
                             <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                                id="form-horizontal-text" type="text" placeholder="Numero de Factura">
                         </div>
                     </div>
                 </div>
@@ -738,10 +744,12 @@
 
     </form>
     {{-- script para ingresar datos en los formularios --}}
-    <script>
+    <script type="text/javascript">
         let pedido = [];
         const arreglo = [];
         cargarpedido();
+        cargarusuario();
+        cargarcliente();
         $('#guardar').click(function(e) {
             cargar_detalle();
             guardarpedido();
@@ -771,26 +779,109 @@
             })
         }
 
+        function peticionapi3(data, method, onSuccess) {
+
+
+            let url = '/api/getcliente';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.id;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+        }
+
+        function peticionapi2(data, method, onSuccess) {
+
+
+            let url = '/api/usuario';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.id;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+        }
+
+        function cargarusuario() {
+
+            peticionapi2({}, 'GET', function(res) {
+                usuarios = res;
+                console.log(res);
+                let html = '<option value=""> Seleccionar </option>';
+
+                res.forEach(usuarios => {
+                    html += '<option value="' + usuarios.IdUsuario + '">' + usuarios.Primer_Nombre + ' ' +
+                        usuarios.Segundo_Nombre + ' ' + usuarios.Primer_Apellido + ' ' + usuarios
+                        .Segundo_Apellido +
+                        '</option>'
+                });
+                $("#recibepedido").html(html);
+            });
+        }
+
+        function cargarcliente() {
+
+            peticionapi3({}, 'GET', function(res) {
+                cliente = res;
+                console.log(res);
+                let html = '<option value=""> Seleccionar </option>';
+                res.forEach(cliente => {
+                    html += '<option value="' + cliente.IdCliente + '">' + cliente.Primer_Nombre + ' ' +
+                        cliente.Segundo_Nombre + ' ' + cliente.Primer_Apellido + ' ' + cliente
+                        .Segundo_Apellido +
+                        '</option>'
+                });
+                $("#autorizapedido").html(html);
+                $("#cliente").html(html);
+            });
+        }
+
+
         function guardarpedido() {
+
+
+
+
 
 
 
 
             let data = {
 
-                IdCliente: $("#cat").val(),
-                IdUsuario: $("#cat").val(),
+                IdCliente: $("#cliente").val(),
+                IdUsuario: $("#autorizapedido").val(),
                 IdCategoria: $("#cat").val(),
                 fecha: $("#fecha_fact").val(),
                 notas: $("#notas").val(),
                 total_costo: $("#total").val(),
                 Saldo: $("#saldo").val(),
                 abono: $("#abono").val(),
-                codseguimiento: $("#tipo_de_pedido").val(),
+                // codseguimiento: $("#tipo_de_pedido").val(),
 
 
-                idmetodo: $("#cat").val(),
+                idmetodo: $("#banco").val(),
+                //codigo tiene que ser aleatorio
                 cod: $("#saldo").val(),
+                estado: $("#estado").val(),
+
+
 
                 //funcion que llama al arreglo que toma los datos
                 detalle: JSON.stringify(arreglo)
@@ -817,11 +908,29 @@
 
         }
 
+        function fecha() {
+            $(document).ready(function() {
+                var date = new Date();
+
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+
+                if (month < 10) month = "0" + month;
+                if (day < 10) day = "0" + day;
+                var today = year + "-" + month + "-" + day;
+                $("#fecha_fact").attr("value", today);
+            });
+        }
+
         function cargar_detalle() {
 
             var filas = document.querySelectorAll("#Tabla tbody tr");
 
             var contador = 0;
+
+
+
 
             const pecho_izq = [];
             const pecho_der = [];
@@ -837,7 +946,7 @@
 
             var total = document.getElementById("total").value;
 
-            console.log(filas);
+            //console.log(filas);
 
 
 
@@ -866,6 +975,68 @@
 
 
 
+                var Talla_val = 0;
+                if (talla_ == 2) {
+                    Talla_val = 1;
+                } else if (talla_ == 4) {
+                    Talla_val = 2;
+                } else
+                if (talla_ == 6) {
+                    Talla_val = 3;
+                } else if (talla_ == 8) {
+                    Talla_val = 4;
+                } else if (talla_ == 10) {
+                    Talla_val = 5;
+                } else if (talla_ == 12) {
+                    Talla_val = 6;
+                } else if (talla_ == 14) {
+                    Talla_val = 7;
+                } else if (talla_ == 16) {
+                    Talla_val = 8;
+                } else if (talla_ == 18) {
+                    Talla_val = 9;
+                } else if (talla_ == "S Dama") {
+                    Talla_val = 10;
+                } else if (talla_ == "S Caballero") {
+                    Talla_val = 11;
+                } else if (talla_ == "M Dama") {
+                    Talla_val = 12;
+                } else if (talla_ == "M Caballero") {
+                    Talla_val = 13;
+                } else if (talla_ == "L Dama") {
+                    Talla_val = 14;
+                } else if (talla_ == "L Caballero") {
+                    Talla_val = 15;
+                } else if (talla_ == "XL Dama") {
+                    Talla_val = 16;
+                } else if (talla_ == "XL Caballero") {
+                    Talla_val = 17;
+                } else if (talla_ == "2XL Dama") {
+                    Talla_val = 18;
+                } else if (talla_ == "2XL Caballero") {
+                    Talla_val = 19;
+                } else if (talla_ == "3XL Dama") {
+                    Talla_val = 20;
+                } else if (talla_ == "3XL Caballero") {
+                    Talla_val = 21;
+                } else if (talla_ == "5XL Dama") {
+                    Talla_val = 22;
+                } else if (talla_ == "5XL Caballero") {
+                    Talla_val = 23;
+                } else if (talla_ == "Taza") {
+                    Talla_val = 24;
+                } else if (talla_ == "Lapicero") {
+                    Talla_val = 25;
+                } else if (talla_ == "Llavero") {
+                    Talla_val = 26;
+                } else {}
+
+
+                console.log(Talla_val);
+
+
+
+
 
                 pecho_izq[contador] = pechoizq_;
                 pecho_der[contador] = pechoder_;
@@ -890,7 +1061,7 @@
                     abono: $("#abono").val(),
                     codseguimiento: $("#tipo_de_pedido").val(),
 
-                    IdInsumos: $("#cat").val(),
+                    IdInsumos: Talla_val,
                     pecho_izq: pechoizq_,
                     pecho_der: pechoder_,
                     manga_izq: mangaizq_,

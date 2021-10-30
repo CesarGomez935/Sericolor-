@@ -528,6 +528,17 @@
                                 <option value='4'>Movil</option>
                             </select>
                         </div>
+                        <div class="uk-margin">
+                            <label for="estado" class="uk-form-label" for="form-horizontal-text">Estado del
+                                Pedido</label>
+
+                            <select disabled class="uk-select uk-form-width-large" name="" id="estado">
+                                <option selected value="No Completado">No Completado</option>
+                                <option value="Completado">Completado</option>
+
+                            </select>
+
+                        </div>
 
 
 
@@ -737,6 +748,7 @@
 
                 idmetodo: $("#banco").val(),
                 cod: $("#saldo").val(),
+                estado: $("#estado").val(),
 
                 //funcion que llama al ar
                 detalle: JSON.stringify(arreglo)
@@ -823,8 +835,8 @@
 
                 arreglo[contador] = {
 
-                    IdCliente: $("#cat").val(),
-                    IdUsuario: $("#cat").val(),
+                    IdCliente: $("#cliente").val(),
+                    IdUsuario: $("#recibepedido").val(),
                     IdCategoria: $("#cat").val(),
                     fecha: $("#fecha_fact").val(),
                     notas: $("#notas").val(),

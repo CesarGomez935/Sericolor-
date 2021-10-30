@@ -64,6 +64,8 @@ class maestrocontrolador extends Controller
                 'saldo'=>$request->Saldo,
                 'CodSeguimiento'=>$request->codseguimiento,
                 'abono'=>$request->abono,
+                'Estado'=>$request->estado,
+
               
 
             ]);

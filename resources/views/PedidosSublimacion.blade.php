@@ -61,7 +61,8 @@
                     <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
                     <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
                     <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Serigrafía </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital </a>
+                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital
+                        </a>
                     </li>
                     <hr class="uk-divider-icon">
                     <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
@@ -90,6 +91,7 @@
                 <tr>
                     <th>Pedidos y Clientes</th>
                     <th>Estado</th>
+                    <th>Opciones</th>
 
                 </tr>
             </thead>
@@ -121,7 +123,7 @@
         function peticionapi(data, method, onSuccess) {
 
 
-            let url = '/api/getpedidosublimacion';
+            let url = '/api/getsublimacion';
             if (method == 'PUT' || method == 'DELETE') {
                 url += '/' + data.id;
             }
@@ -147,9 +149,15 @@
                         '<tr>' +
 
                         '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_sublimacion?' +
-                        pedido.IDdetalledelpedido + '">' + pedido.primer_nombre + '</td>' + '</a>' +
+                        pedido.idmaestro + '' +
+                        '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
+                        .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
 
-                        '<td>' + pedido.estado + '</td>' +
+                        '<td>' + pedido.Estado + '</td>' + '<td>' +
+                        '<a href="/menu/menu_facturacion/form_sublimacion/' + pedido
+                        .idmaestro +
+                        '" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a href="/menu/menu_facturacion/form_sublimacion/' +
+                        pedido.idmaestro + '/eliminar" action="" class=" " uk-icon="trash"></a>' + '</td>' +
 
                         '</tr>'
                 });

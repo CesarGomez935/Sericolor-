@@ -10,7 +10,7 @@ class maestro extends Model
     
     protected $table='maestro';
     protected $primaryKey='idmaestro';
-    protected $fillable=['IdCategoria','IdCliente','IdUsuario','fecha','Notas','total_costo','saldo','CodSeguimiento','abono'];
+    protected $fillable=['IdCategoria','IdCliente','IdUsuario','fecha','Notas','total_costo','saldo','CodSeguimiento','abono','Estado'];
     public $timestamps = false;
     public function categoria(){
 

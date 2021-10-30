@@ -92,7 +92,7 @@
                     </div>
                     <div class="uk-inline uk-width-1-2 ">
                         <label for="fecha_ent">Nombre del cliente</label>
-                        <input id="cliente" name="nombre_cliente" class="uk-input" placeholder="Cliente">
+                        <select name="" class="uk-select uk-width-1-1" id="cliente"></select>
                     </div>
                 </div>
             </div>
@@ -639,24 +639,26 @@
                                 id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
-                    <div class="uk-margin">
-
-                        <div class="uk-form-controls">
-
-                            <input class="uk-checkbox" id="form-horizontal-text" type="checkbox">
-                            Transferencia</label>
-                        </div>
-                    </div>
                     <div class="uk-margin uk-form-small">
-                        <label for="banco" class="uk-form-label" for="form-horizontal-text">Banco</label>
-                        <select class="uk-select uk-form-width-medium" id="Banco">
+                        <label for="banco" class="uk-form-label" for="form-horizontal-text">Metodo de pago</label>
+                        <select class="uk-select uk-form-width-large" id="Banco">
 
 
-                            <option value='BAC'>BAC</option>
-                            <option value='BDF'>BDF</option>
-                            <option value='BANPRO'>BANPRO</option>
-                            <option value='BANCENTRO'>LAFISE BANCENTRO</option>
+                            <option value='1'>Efectivo</option>
+                            <option value='2'>Tarjeta</option>
+                            <option value='3'>Transferencia Bancaria</option>
+                            <option value='4'>Movil</option>
                         </select>
+                    </div>
+                    <div class="uk-margin">
+                        <label for="estado" class="uk-form-label" for="form-horizontal-text">Estado del Pedido</label>
+
+                        <select disabled class="uk-select uk-form-width-large" name="" id="estado">
+                            <option selected value="No Completado">No Completado</option>
+                            <option value="Completado">Completado</option>
+
+                        </select>
+
                     </div>
 
 
@@ -671,15 +673,17 @@
                     <div class="uk-margin">
                         <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza Pedido</label>
                         <div class="uk-form-controls">
-                            <input id="autoriza" name="Autoriza_pedido" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <select class="uk-select uk-form-width-large" name="" id="autorizapedido">
+                                <option value="">Seleccionar</option>
+                            </select>
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
                         <div class="uk-form-controls">
-                            <input id="recibe" name="recibe_pedido" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <select class="uk-select uk-form-width-large" name="" id="recibepedido">
+                                <option value="">Seleccionar</option>
+                            </select>
                         </div>
                     </div>
                     <div class="uk-margin">
@@ -710,9 +714,7 @@
 
 
             </div>
-            <select class="uk-select" id="tipo_de_pedido" disabled hidden>
-                <option value='Bordado'>serigrafia</option>
-            </select>
+
             <select class="uk-select" id="cat" disabled hidden>
                 <option value='2'>Serigrafía</option>
             </select>
@@ -723,6 +725,8 @@
         let pedido = [];
         const arreglo = [];
         cargarpedido();
+        cargarusuario();
+        cargarcliente();
         $('#guardar').click(function(e) {
             cargar_detalle();
             guardarpedido();
@@ -731,6 +735,80 @@
             alert("Se agrego su orden");
 
         });
+
+        function peticionapi3(data, method, onSuccess) {
+
+
+            let url = '/api/getcliente';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.id;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+        }
+
+        function peticionapi2(data, method, onSuccess) {
+
+
+            let url = '/api/usuario';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.id;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+        }
+
+        function cargarusuario() {
+
+            peticionapi2({}, 'GET', function(res) {
+                usuarios = res;
+                console.log(res);
+                let html = '<option value=""> Seleccionar </option>';
+
+                res.forEach(usuarios => {
+                    html += '<option value="' + usuarios.IdUsuario + '">' + usuarios.Primer_Nombre + ' ' +
+                        usuarios.Segundo_Nombre + ' ' + usuarios.Primer_Apellido + ' ' + usuarios
+                        .Segundo_Apellido +
+                        '</option>'
+                });
+                $("#recibepedido").html(html);
+            });
+        }
+
+        function cargarcliente() {
+
+            peticionapi3({}, 'GET', function(res) {
+                cliente = res;
+                console.log(res);
+                let html = '<option value=""> Seleccionar </option>';
+                res.forEach(cliente => {
+                    html += '<option value="' + cliente.IdCliente + '">' + cliente.Primer_Nombre + ' ' +
+                        cliente.Segundo_Nombre + ' ' + cliente.Primer_Apellido + ' ' + cliente
+                        .Segundo_Apellido +
+                        '</option>'
+                });
+                $("#autorizapedido").html(html);
+                $("#cliente").html(html);
+            });
+        }
 
         function peticionapi(data, method, onSucess) {
             let url = '/api/pedido';
@@ -759,19 +837,20 @@
 
             let data = {
 
-                IdCliente: $("#cat").val(),
-                IdUsuario: $("#cat").val(),
+                IdCliente: $("#cliente").val(),
+                IdUsuario: $("#recibepedido").val(),
                 IdCategoria: $("#cat").val(),
                 fecha: $("#fecha_fact").val(),
                 notas: $("#notas").val(),
                 total_costo: $("#total").val(),
                 Saldo: $("#saldo").val(),
                 abono: $("#abono").val(),
-                codseguimiento: $("#tipo_de_pedido").val(),
+                codseguimiento: $("#abono").val(),
 
 
                 idmetodo: $("#cat").val(),
                 cod: $("#saldo").val(),
+                estado: $("#estado").val(),
 
                 //funcion que llama al arreglo que toma los datos
                 detalle: JSON.stringify(arreglo)
@@ -845,6 +924,63 @@
                 var Observacion_ = columnas[9].textContent;
 
 
+                var Talla_val = 0;
+                if (talla_ == 2) {
+                    Talla_val = 1;
+                } else if (talla_ == 4) {
+                    Talla_val = 2;
+                } else
+                if (talla_ == 6) {
+                    Talla_val = 3;
+                } else if (talla_ == 8) {
+                    Talla_val = 4;
+                } else if (talla_ == 10) {
+                    Talla_val = 5;
+                } else if (talla_ == 12) {
+                    Talla_val = 6;
+                } else if (talla_ == 14) {
+                    Talla_val = 7;
+                } else if (talla_ == 16) {
+                    Talla_val = 8;
+                } else if (talla_ == 18) {
+                    Talla_val = 9;
+                } else if (talla_ == "S Dama") {
+                    Talla_val = 10;
+                } else if (talla_ == "S Caballero") {
+                    Talla_val = 11;
+                } else if (talla_ == "M Dama") {
+                    Talla_val = 12;
+                } else if (talla_ == "M Caballero") {
+                    Talla_val = 13;
+                } else if (talla_ == "L Dama") {
+                    Talla_val = 14;
+                } else if (talla_ == "L Caballero") {
+                    Talla_val = 15;
+                } else if (talla_ == "XL Dama") {
+                    Talla_val = 16;
+                } else if (talla_ == "XL Caballero") {
+                    Talla_val = 17;
+                } else if (talla_ == "2XL Dama") {
+                    Talla_val = 18;
+                } else if (talla_ == "2XL Caballero") {
+                    Talla_val = 19;
+                } else if (talla_ == "3XL Dama") {
+                    Talla_val = 20;
+                } else if (talla_ == "3XL Caballero") {
+                    Talla_val = 21;
+                } else if (talla_ == "5XL Dama") {
+                    Talla_val = 22;
+                } else if (talla_ == "5XL Caballero") {
+                    Talla_val = 23;
+                } else if (talla_ == "Taza") {
+                    Talla_val = 24;
+                } else if (talla_ == "Lapicero") {
+                    Talla_val = 25;
+                } else if (talla_ == "Llavero") {
+                    Talla_val = 26;
+                } else {}
+
+
 
 
 
@@ -861,8 +997,8 @@
 
                 arreglo[contador] = {
 
-                    IdCliente: $("#cat").val(),
-                    IdUsuario: $("#cat").val(),
+                    IdCliente: $("#cliente").val(),
+                    IdUsuario: $("#recibepedido").val(),
                     IdCategoria: $("#cat").val(),
                     fecha: $("#fecha_fact").val(),
                     notas: $("#notas").val(),
@@ -871,7 +1007,7 @@
                     abono: $("#abono").val(),
                     codseguimiento: $("#tipo_de_pedido").val(),
 
-                    IdInsumos: $("#cat").val(),
+                    IdInsumos: Talla_val,
                     pecho_izq: pechoizq_,
                     pecho_der: pechoder_,
                     manga_izq: mangaizq_,
