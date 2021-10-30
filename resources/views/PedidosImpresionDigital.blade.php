@@ -33,8 +33,8 @@
     <nav class="uk-navbar uk-navbar-container uk-margin">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span
-                    class="uk-margin-small-left">Pedidos impresión digital</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Pedidos
+                    impresión digital</span>
             </a>
         </div>
 
@@ -60,7 +60,8 @@
                     <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
                     <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
                     <li class="uk-active"> <a href="/menu/pedidos_serigrafia"> Pedidos Serigrafía </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital </a>
+                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital
+                        </a>
                     </li>
                     <hr class="uk-divider-icon">
                     <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
@@ -89,6 +90,7 @@
                 <tr>
                     <th>Pedidos y Clientes</th>
                     <th>Estado</th>
+                    <th>opciones</th>
 
                 </tr>
             </thead>
@@ -120,7 +122,7 @@
         function peticionapi(data, method, onSuccess) {
 
 
-            let url = '/api/getpedidoimpresion';
+            let url = '/api/getimpresion';
             if (method == 'PUT' || method == 'DELETE') {
                 url += '/' + data.id;
             }
@@ -145,10 +147,16 @@
                     html +=
                         '<tr>' +
 
-                        '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_impresion?' +
-                        pedido.IDdetalledelpedido + '">' + pedido.primer_nombre + '</td>' + '</a>' +
+                        '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_sublimacion?' +
+                        pedido.idmaestro + '' +
+                        '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
+                        .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
 
-                        '<td>' + pedido.estado + '</td>' +
+                        '<td>' + pedido.Estado + '</td>' + '<td>' +
+                        '<a href="/menu/menu_facturacion/form_sublimacion/' + pedido
+                        .idmaestro +
+                        '" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a href="/menu/menu_facturacion/form_sublimacion/' +
+                        pedido.idmaestro + '/eliminar" action="" class=" " uk-icon="trash"></a>' + '</td>' +
 
                         '</tr>'
                 });

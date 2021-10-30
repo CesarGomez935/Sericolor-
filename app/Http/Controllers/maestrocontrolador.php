@@ -50,6 +50,7 @@ class maestrocontrolador extends Controller
      */
     public function store(Request $request)
     {
+         
         DB::transaction(function() use ($request)
         {
 
@@ -143,5 +144,8 @@ class maestrocontrolador extends Controller
     public function destroy($id)
     {
         //
+         $model=new maestro();
+        $model=maestro::find($id);
+        return $model->delete();
     }
 }
