@@ -117,7 +117,15 @@
 
     <script>
         let pedido = [];
+        cargarpedido2();
 
+        function cargarpedido2() {
+            peticionapi2({}, 'GET', function(res) {
+                console.log(res);
+
+            });
+
+        }
 
         function peticionapi(data, method, onSuccess) {
 
@@ -133,10 +141,44 @@
 
                 success(res) {
                     onSuccess(res);
+                    console.log(res);
 
                 }
 
             })
+        }
+
+        function peticionapi2(data, method, onSuccess) {
+
+
+            let url = '/api/pedido';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.idmaestro;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+        }
+
+        function eliminar(id) {
+            console.log(id);
+            peticionapi2({
+                idmaestro: id
+            }, 'DELETE', function(res) {
+                cargarproductos();
+            });
+
+
+
+
         }
 
         function cargarproductos() {
@@ -155,8 +197,8 @@
                         '<td>' + pedido.Estado + '</td>' + '<td>' +
                         '<a href="/menu/menu_facturacion/form_sublimacion/' + pedido
                         .idmaestro +
-                        '" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a href="/menu/menu_facturacion/form_sublimacion/' +
-                        pedido.idmaestro + '/eliminar" action="" class=" " uk-icon="trash"></a>' + '</td>' +
+                        '" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a  action=""  onclick="eliminar(' +
+                        pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
 
                         '</tr>'
                 });
