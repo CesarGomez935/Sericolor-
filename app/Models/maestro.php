@@ -36,7 +36,7 @@ class maestro extends Model
     public static function getpedidos(){
         $records= maestro::select("*")
         ->join("detalle-orden-sub,bor,ser","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro")
-        ->join("detalle-orden-imp","detalle-orden-imp.IdMaestro","=","maestro.idmaestro")
+        //->join("detalle-orden-imp","detalle-orden-imp.IdMaestro","=","maestro.idmaestro")
         ->join("cliente","cliente.IdPersona","=","maestro.IdCliente")
         ->join("persona","cliente.IdPersona","=","persona.IdPersona")
         ->join("insumos","detalle-orden-sub,bor,ser.IdInsumos","=","insumos.IdInsumo")
