@@ -528,6 +528,17 @@
                                 <option value='4'>Movil</option>
                             </select>
                         </div>
+                        <div class="uk-margin">
+                            <label for="estado" class="uk-form-label" for="form-horizontal-text">Estado del
+                                Pedido</label>
+
+                            <select disabled class="uk-select uk-form-width-large" name="" id="estado">
+                                <option selected value="No Completado">No Completado</option>
+                                <option value="Completado">Completado</option>
+
+                            </select>
+
+                        </div>
 
 
 
@@ -543,16 +554,21 @@
                             <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza
                                 Pedido</label>
                             <div class="uk-form-controls">
-                                <input id="autoriza" name="Autoriza_pedido" class="uk-input uk-form-width-large"
-                                    id="form-horizontal-text" type="text" placeholder="">
+                                <select class="uk-select uk-form-width-large" name="" id="autorizapedido">
+                                    <option value="">Seleccionar</option>
+                                </select>
                             </div>
                         </div>
                         <div class="uk-margin">
                             <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
                             <div class="uk-form-controls">
-                                <input id="recibe" name="recibe_pedido" class="uk-input uk-form-width-large"
-                                    id="form-horizontal-text" type="text" placeholder="">
+
+                                <select class="uk-select uk-form-width-large" name="" id="recibepedido">
+                                    <option value="">Seleccionar</option>
+                                </select>
+
                             </div>
+
                         </div>
                         <div class="uk-margin">
                             <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
@@ -602,10 +618,13 @@
 
     <script>
         let pedido = [];
+        let usuarios = [];
 
         const arreglo = [];
 
         cargarpedido();
+        cargarusuario();
+        cargarcliente();
 
 
         $('#guardar').click(function(e) {
@@ -615,6 +634,79 @@
             alert("Se agrego su orden");
 
         });
+
+        function peticionapi2(data, method, onSuccess) {
+
+
+            let url = '/api/usuario';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.id;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+        }
+
+        function peticionapi3(data, method, onSuccess) {
+
+
+            let url = '/api/getcliente';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.id;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+        }
+
+        function cargarusuario() {
+
+            peticionapi2({}, 'GET', function(res) {
+                usuarios = res;
+                console.log(res);
+                let html = '<option value=""> Seleccionar </option>';
+
+                res.forEach(usuarios => {
+                    html += '<option value="' + usuarios.IdUsuario + '">' + usuarios.Primer_Nombre + ' ' +
+                        usuarios.Segundo_Nombre + ' ' + usuarios.Primer_Apellido + ' ' + usuarios
+                        .Segundo_Apellido +
+                        '</option>'
+                });
+                $("#recibepedido").html(html);
+            });
+        }
+
+        function cargarcliente() {
+
+            peticionapi3({}, 'GET', function(res) {
+                cliente = res;
+                console.log(res);
+                let html = '<option value=""> Seleccionar </option>';
+                res.forEach(cliente => {
+                    html += '<option value="' + cliente.IdCliente + '">' + cliente.Primer_Nombre + ' ' +
+                        cliente.Segundo_Nombre + ' ' + cliente.Primer_Apellido + ' ' + cliente
+                        .Segundo_Apellido +
+                        '</option>'
+                });
+                $("#autorizapedido").html(html);
+            });
+        }
 
         function peticionapi(data, method, onSucess) {
             let url = '/api/pedidoimp';
@@ -656,6 +748,7 @@
 
                 idmetodo: $("#banco").val(),
                 cod: $("#saldo").val(),
+                estado: $("#estado").val(),
 
                 //funcion que llama al ar
                 detalle: JSON.stringify(arreglo)
@@ -742,8 +835,8 @@
 
                 arreglo[contador] = {
 
-                    IdCliente: $("#cat").val(),
-                    IdUsuario: $("#cat").val(),
+                    IdCliente: $("#cliente").val(),
+                    IdUsuario: $("#recibepedido").val(),
                     IdCategoria: $("#cat").val(),
                     fecha: $("#fecha_fact").val(),
                     notas: $("#notas").val(),
