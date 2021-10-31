@@ -90,7 +90,66 @@
                 </a>
             </div>
         </div>
-        <div>
+        <div class="uk-padding uk-width-1-1">
+
+            <div style="text-align: center">
+                <h3 class="uk-padding">
+                    Archivo Excel
+                </h3>
+            </div>
+
+
+
+            <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+                <div>
+
+                    <div class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-middle uk-flex-left uk-padding " style="background-color:white">
+
+                        <a onclick="return confirm('¿Está seguro que desea continuar?')" href="/api/descargarclientes" class="uk-button  uk-padding uk-button-secondary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:pull;ratio: 4">
+
+
+                            <h1 style="color:white">
+                                Descargar Clientes
+                            </h1>
+                        </a>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-middle uk-flex-left uk-padding " style="background-color:white">
+
+                        <a onclick="return confirm('¿Está seguro que desea continuar?')" href="/api/descargarusuarios" class="uk-button  uk-padding uk-button-primary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:pull;ratio: 4">
+
+
+                            <h1 style="color:white">
+                                Descargar Usuarios
+                            </h1>
+                        </a>
+                    </div>
+
+                </div>
+                <div>
+
+                    <div class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-middle uk-flex-left uk-padding " style="background-color:white">
+
+                        <a onclick="return confirm('¿Está seguro que desea continuar?')" href="/api/descargarpedidos" class="uk-button  uk-padding uk-button-secondary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:pull;ratio: 4">
+
+
+                            <h1 style="color:white">
+                                Descargar Pedidos
+                            </h1>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        {{-- <div>
             <div class="uk-div uk-padding">
                 <div class="uk-section-secondary uk-margin uk-padding" style="text-align: center;">
                     <h1>Restaurar Base de datos</h1>
@@ -103,7 +162,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
     <!-- Botón de atrás  -->

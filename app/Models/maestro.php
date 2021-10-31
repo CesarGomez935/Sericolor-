@@ -32,4 +32,18 @@ class maestro extends Model
 
         return $this->hasMany(Detalledelpedido::class,'IdMaestro');
     }
+
+    public static function getpedidos(){
+        $records= maestro::select("*")
+        ->join("detalle-orden-sub,bor,ser","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro")
+        ->join("detalle-orden-imp","detalle-orden-imp.IdMaestro","=","maestro.idmaestro")
+        ->join("cliente","cliente.IdPersona","=","maestro.IdCliente")
+        ->join("persona","cliente.IdPersona","=","persona.IdPersona")
+        ->join("insumos","detalle-orden-sub,bor,ser.IdInsumos","=","insumos.IdInsumo")
+        ->join("categoria","maestro.IdCategoria","=","categoria.idcategoria")
+        ->join("recibo","maestro.idmaestro","=","recibo.IdMaestro")
+        ->join("metodo_de_pago","recibo.Id_Metodo_de_Pago","=","metodo_de_pago.Id_Metodo_de_Pago")
+        ->get()->toArray();
+        return $records;
+    }
 }

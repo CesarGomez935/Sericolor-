@@ -52,6 +52,9 @@ Route::resource('cliente',llamadaclientecontroller::class);
 // Route::get('getpedidoserigrafia', [detalledelpedidocontroller::class,"getallpedidoserigrafia"]);
 // Route::get('getpedidoimpresion', [detalledelpedidocontroller::class,"getallpedidoimpresion"]);
  Route::get('descargarbasededatos', [dbcontroller::class,"descargar"]);
+ Route::get('descargarclientes', [dbcontroller::class,"Exportarclientes"]);
+ Route::get('descargarusuarios', [dbcontroller::class,"Exportarusuarios"]);
+  Route::get('descargarpedidos', [dbcontroller::class,"Exportarpedidos"]);
 
 
  //Clientes y trabajadores

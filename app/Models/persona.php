@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class persona extends Model
 {
-    use HasFactory;
+    use HasFactory; 
     protected $table='persona';
     protected $primaryKey='IdPersona';
     protected $fillable=['Primer_Nombre','Segundo_Nombre','Primer_Apellido','Segundo_Apellido','Cedula','Telefono','Correo','Direccion'];
@@ -19,5 +20,13 @@ class persona extends Model
     public function usuario(){
 
         return $this->HasMany(usuario::class);
+    }
+    public static function getclientes(){
+        $records= persona::select("*")->join("cliente","cliente.IdPersona","=","persona.IdPersona")->get()->toArray();
+        return $records;
+    }
+    public static function getusuarios(){
+        $records= persona::select("*")->join("usuario","usuario.IdPersona","=","persona.IdPersona")->get()->toArray();
+        return $records;
     }
 }
