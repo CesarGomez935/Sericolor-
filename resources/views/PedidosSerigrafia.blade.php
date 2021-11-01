@@ -195,9 +195,9 @@
                         .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
 
                         '<td>' + pedido.Estado + '</td>' + '<td>' +
-                        '<a href="/menu/menu_facturacion/form_sublimacion/' + pedido
+                        '<a href="/menu/menu_facturacion/form_serigrafia/' + pedido
                         .idmaestro +
-                        '" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a  action=""  onclick="eliminar(' +
+                        '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a  action=""  onclick="eliminar(' +
                         pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
 
                         '</tr>'

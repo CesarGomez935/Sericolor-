@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dbcontroller;
 use App\Http\Controllers\persona;
 use App\Http\Controllers\promocioncontroller;
+use App\Http\Controllers\maestrocontrolador;
 
 
 /*
@@ -177,7 +178,9 @@ Route::get('/menu/menuadmon/personal/{id}', [CrudTrabajadorController::class,"de
 // Route::get('/editform_bordado', function () {
 //     return view('EditarformBordado');
 // });
-
+//edidcion de formulario serigrafia
+Route::get('/menu/menu_facturacion/form_serigrafia/{id}/edit',[maestrocontrolador::class,"edit"])->name("maestro.edit");
+Route::put('/menu/menu_facturacion/form_serigrafia/{id}', [maestrocontrolador::class,"update"])->name("maestro.update");
 
 
 // Route::get('/editform_sublimacion', function () {

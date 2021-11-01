@@ -54,13 +54,13 @@
                     <ul class="uk-nav-sub">
                         <li> <a href="/menu/menu_facturacion/form_bordado">Bordado </a></li>
                         <li> <a href="/menu/menu_facturacion/form_sublimacion">Sublimación </a></li>
-                        <li> <a href="/menu/menu_facturacion/form_sublimacion">Serigrafía </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_serigrafia">Serigrafía </a></li>
                         <li> <a href="/menu/menu_facturacion/form_impresion_digital">Impresión digital </a></li>
                     </ul>
                     <hr class="uk-divider-icon">
                     <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
                     <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Serigrafía </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_serigrafia"> Pedidos Serigrafía </a></li>
                     <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital
                         </a>
                     </li>
