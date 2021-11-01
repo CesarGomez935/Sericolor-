@@ -9,6 +9,7 @@ use App\Http\Controllers\dbcontroller;
 use App\Http\Controllers\persona;
 use App\Http\Controllers\promocioncontroller;
 use App\Http\Controllers\maestrocontrolador;
+Use App\Http\Controllers\vistas;
 
 
 /*
@@ -181,6 +182,8 @@ Route::get('/menu/menuadmon/personal/{id}', [CrudTrabajadorController::class,"de
 //edidcion de formulario serigrafia
 Route::get('/menu/menu_facturacion/form_serigrafia/{id}/edit',[maestrocontrolador::class,"edit"])->name("maestro.edit");
 Route::put('/menu/menu_facturacion/form_serigrafia/{id}', [maestrocontrolador::class,"update"])->name("maestro.update");
+
+
 
 
 // Route::get('/editform_sublimacion', function () {

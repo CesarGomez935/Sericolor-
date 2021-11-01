@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\detalleimpresion;
 use App\Models\maestro;
+use App\Models\Detalledelpedido;
 
 class vistas extends Controller
 {
@@ -15,7 +16,7 @@ class vistas extends Controller
      */
     public function index()
     {
-        //
+       // return Detalledelpedido::all();
     }
 
     /**
@@ -96,6 +97,14 @@ class vistas extends Controller
 
     return maestro::select("*")->where("idcategoria",4)->join("detalle-orden-sub,bor,ser","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro")->join("cliente","cliente.IdPersona","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->get()
 ;        
+
+    }
+
+    public function getdetalles($id){
+
+       // $detalles=new Detalledelpedido();
+         return $detalles = Detalledelpedido::select("*")->where("IdMaestro",$id)->join("insumos","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")->get();
+            
 
     }
 

@@ -96,8 +96,7 @@
                     </div>
                     <div class="uk-inline uk-width-1-2 ">
                         <label for="fecha_ent">Nombre del cliente</label>
-                        <select name="" value="{{ $edit->IdCliente }}" class="uk-select uk-width-1-1"
-                            id="cliente"></select>
+                        <select name="" class="uk-select uk-width-1-1" id="cliente" value=""></select>
                     </div>
                 </div>
             </div>
@@ -254,8 +253,8 @@
                         <div>
 
 
-                            <input id="notas" value="{{ $edit->Notas }} " name="Notas" class="uk-textarea"
-                                placeholder="Notas"></input>
+                            <textarea id="notas" value=" " name="Notas" class="uk-textarea"
+                                placeholder="Notas">{{ $edit->Notas }} {{ $edit }}</textarea>
 
 
 
@@ -300,7 +299,7 @@
 
                         </tr>
                     </tfoot>
-                    <tbody>
+                    <tbody id="Tabladetalle">
                         {{-- <tr hidden>
                         <td>0</td>
                         <td>0</td>
@@ -654,10 +653,10 @@
                             <select class="uk-select uk-form-width-large" id="Banco">
 
 
-                                <option value='1'>Efectivo</option>
-                                <option value='2'>Tarjeta</option>
-                                <option value='3'>Transferencia Bancaria</option>
-                                <option value='4'>Movil</option>
+                                <option @if ($edit->Id_Metodo_de_Pago == '1') selected @endif value='1'>Efectivo</option>
+                                <option @if ($edit->Id_Metodo_de_Pago == '2') selected @endif value='2'>Tarjeta</option>
+                                <option @if ($edit->Id_Metodo_de_Pago == '3') selected @endif value='3'>Transferencia Bancaria</option>
+                                <option @if ($edit->Id_Metodo_de_Pago == '4') selected @endif value='4'>Movil</option>
                             </select>
                         </div>
                     </div>
@@ -734,12 +733,128 @@
         </div>
     </form>
     {{-- script para ingresar datos en los formularios --}}
+    formulario modal
+    <div class="uk-container">
+        <div id="formdetalles" class="uk-modal-full" uk-modal>
+            <div class="uk-modal-dialog">
+                <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                <div uk-height-viewport>
+                    <div class="uk-width-1-2 uk-align-center">
+                        <fieldset class="uk-fieldset">
+
+                            <legend class="uk-legend">Cambiar Detalles</legend>
+                            <div class="uk-margin">
+                                <label>IdTrabajador</label>
+                                <input class="uk-input" type="number" id="Id_trabajadores"
+                                    placeholder="IdTrabajador" disabled hidden>
+                            </div>
+                            <div class="uk-margin">
+                                <label>Pecho izquierda</label>
+                                <input class="uk-input" type="text" id="pechoizq1" placeholder="Manga Izquierda">
+                            </div>
+                            <div class="uk-margin">
+                                <label>Pecho Derecha</label>
+                                <input class="uk-input" type="text" id="pechoder1" placeholder="Pecho Derecho">
+                            </div>
+                            <div class="uk-margin">
+                                <label>Manga Izquierda</label>
+                                <input class="uk-input" type="text" id="mangaizq1" placeholder="Manga Izquierda">
+                            </div>
+                            <div class="uk-margin">
+                                <label>Manga Derecha</label>
+                                <input class="uk-input" type="text" id="mangader1" placeholder="Manga Derecha">
+                            </div>
+                            <div class="uk-margin">
+                                <label>Espalda</label>
+                                <input class="uk-input" type="text" id="espalda1" placeholder="Espalda">
+                            </div>
+                            <div class="uk-margin">
+                                <label>Cantidad</label>
+                                <input onchange="monto2();" type="number" class="uk-input monto2" type="text"
+                                    id="cantidad1" placeholder="Cantidad">
+                            </div>
+
+                            <div class="uk-margin">
+                                <label>Precio</label>
+                                <input onchange="monto2();" type="number" class="uk-input monto2" type="text"
+                                    id="precio1" placeholder="precio">
+                            </div>
+                            <div class="uk-margin">
+                                <label>Observacion</label>
+                                <input class="uk-input" type="text" id="observacioncambio"
+                                    placeholder="Observacion">
+                            </div>
+                            <div class="uk-margin">
+                                <label>Total</label>
+                                <input class="uk-input" type="number" id="sub_total2" disabled>
+                            </div>
+                            <label>Talla</label>
+                            <select class="uk-select" id="tallacambio">
+                                <option value="1">2</option>
+                                <option value="2">4</option>
+                                <option value="3">6</option>
+                                <option value="4">8</option>
+                                <option value="5">10</option>
+                                <option value="6">12</option>
+                                <option value="7">14</option>
+                                <option value="8">16</option>
+                                <option value="9">18</option>
+                                <option value="10">S Dama</option>
+                                <option value="11">S Caballero</option>
+                                <option value="12">M Dama</option>
+                                <option value="13">M Caballero</option>
+                                <option value="14">L Dama</option>
+                                <option value="15">L Caballero</option>
+                                <option value="16">XL Dama</option>
+                                <option value="17">XL Caballero</option>
+                                <option value="18">2XL Dama</option>
+                                <option value="19">2XL Caballero</option>
+                                <option value="20">3XL Dama</option>
+                                <option value="21">3XL Caballero</option>
+                                <option value="22">5XL Dama</option>
+                                <option value="23">5xL Caballero</option>
+
+                            </select>
+                            <br>
+
+                            <script>
+                                function monto2() {
+                                    var total = 1;
+                                    var change = false; //
+                                    $(".monto2").each(function() {
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change = true;
+                                            total *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    total = (change) ? total : 0;
+                                    document.getElementById('sub_total2').value = total;
+
+
+                                }
+                            </script>
+                    </div>
+                    <button class="uk-button uk-button-primary " id="guardar" class="uk-align-center">Guardar</button>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     <script>
         let pedido = [];
         const arreglo = [];
+        let detalle = [];
         cargarpedido();
         cargarusuario();
         cargarcliente();
+        //cargar_detalle_pedido();
+        cargardatosdetalle();
+
+
+
         $('#guardar').click(function(e) {
             cargar_detalle();
             guardarpedido();
@@ -789,6 +904,38 @@
             })
         }
 
+        function peticionapi4(data, method, onSuccess) {
+
+
+            let url = '/api/getdetalles/' + {{ $edit->idmaestro }} + '';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.id;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+
+        }
+
+        function cargar_detalle_pedido() {
+
+            peticionapi4({}, 'GET', function(res) {
+                detalle = res;
+                console.log(res);
+
+            });
+
+
+        }
+
         function cargarusuario() {
 
             peticionapi2({}, 'GET', function(res) {
@@ -797,13 +944,82 @@
                 let html = '<option value=""> Seleccionar </option>';
 
                 res.forEach(usuarios => {
-                    html += '<option value="' + usuarios.IdUsuario + '">' + usuarios.Primer_Nombre + ' ' +
+                    html += '<option  @if ('$edit->IdUsuario  == +usuarios.IdUsuario+') selected @endif value="' + usuarios.IdUsuario + '">' +
+                        usuarios.Primer_Nombre + ' ' +
                         usuarios.Segundo_Nombre + ' ' + usuarios.Primer_Apellido + ' ' + usuarios
                         .Segundo_Apellido +
                         '</option>'
                 });
                 $("#recibepedido").html(html);
             });
+        }
+
+        function cargardatosdetalle() {
+
+
+            peticionapi4({}, 'GET', function(res) {
+                detalle = res;
+                console.log(detalle);
+                let html = '';
+                res.forEach(detalle => {
+                    html +=
+                        '<tr>' +
+
+                        '<td>' + detalle.pecho_izquierdo + '</td>' +
+                        '<td>' + detalle.pecho_derecho + '</td>' +
+                        '<td>' + detalle.manga_izquierda + '</td>' +
+                        '<td>' + detalle.manga_derecha + '</td>' +
+                        '<td>' + detalle.espalda + '</td>' +
+                        '<td>' + detalle.Descripcion + '</td>' +
+                        '<td>' + detalle.Cantidad + '</td>' +
+                        '<td>' + detalle.precio + '</td>' +
+                        '<td>' + detalle.total + '</td>' +
+                        '<td>' + detalle.observacion + '</td>' +
+                        '<td>' +
+                        '<a onclick="editar(' + detalle.iddetalleordensu +
+                        ')"  class="uk-padding-small" uk-icon="pencil"></a> <span></> <a href="' +
+                        detalle.iddetalleordensu + '" action="" class=" " uk-icon="trash"></a>' + '</td>' +
+
+
+
+                        '</tr>'
+                });
+                $("#Tabladetalle").html(html);
+                calcular();
+            });
+
+
+
+
+
+
+
+
+
+
+        }
+
+        function editar(id) {
+            UIkit.modal('#formdetalles').show();
+            console.log(detalle);
+            let datos = detalle.filter(detalle => {
+                return detalle.iddetalleordensu == id;
+
+            })
+            console.log(id, datos);
+
+            $("#Id_trabajadores").val(datos[0].id),
+                $("#pechoizq1").val(datos[0].pecho_izquierdo),
+                $("#pechoder1").val(datos[0].pecho_derecho),
+                $("#mangaizq1").val(datos[0].manga_izquierda),
+                $("#mangader1").val(datos[0].manga_derecha),
+                $("#espalda1").val(datos[0].espalda),
+                $("#cantidad1").val(datos[0].Cantidad),
+                $("#precio1").val(datos[0].precio),
+                $("#observacioncambio").val(datos[0].observacion)
+            $("#tallacambio").val(datos[0].IdInsumos)
+            $("#sub_total2").val(datos[0].total)
+
         }
 
         function cargarcliente() {
@@ -813,7 +1029,9 @@
                 console.log(res);
                 let html = '<option value=""> Seleccionar </option>';
                 res.forEach(cliente => {
-                    html += '<option value="' + cliente.IdCliente + '">' + cliente.Primer_Nombre + ' ' +
+                    html += '<option  @if ('$edit->IdCliente  == +usuarios.IdCliente+') selected @endif value="' + cliente.IdCliente + '">' +
+                        cliente
+                        .Primer_Nombre + ' ' +
                         cliente.Segundo_Nombre + ' ' + cliente.Primer_Apellido + ' ' + cliente
                         .Segundo_Apellido +
                         '</option>'

@@ -122,14 +122,12 @@ class maestrocontrolador extends Controller
      */
     public function edit($id)
     {
-        $edit= maestro::where("idcategoria",2)->join("detalle-orden-sub,bor,ser","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro")
-        ->join("cliente","cliente.IdPersona","=","maestro.IdCliente")
-        ->join("usuario","usuario.IdUsuario","=","maestro.IdUsuario")
-        ->join("persona","cliente.IdPersona","=","persona.IdPersona")
-        ->join("persona as trabajador","usuario.IdPersona","=","trabajador.IdPersona")
-        ->select("maestro.*", "cliente.*", "usuario.*", "trabajador.idpersona as trabajadorid", "trabajador.primer_nombre as trabajador_primer_nombre", "trabajador.segundo_nombre as trabajador_segundo_nombre", "trabajador.primer_apellido as trabajador_primer_apellido", "trabajador.segundo_apellido as trabajador_segundo_apellido", "persona.*")
-        ->firstOrFail();
+        $edit= maestro::where("idcategoria",2)->join("detalle-orden-sub,bor,ser","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro")->join("cliente","cliente.IdPersona","=","maestro.IdCliente")->join("usuario","usuario.IdUsuario","=","maestro.IdUsuario")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("metodo_de_pago","metodo_de_pago.Id_Metodo_de_Pago","=","recibo.Id_Metodo_de_Pago")->join("persona as trabajador","usuario.IdPersona","=","trabajador.IdPersona")->select("maestro.*","recibo.*","metodo_de_pago.*", "cliente.*", "usuario.*", "trabajador.idpersona as trabajadorid", "trabajador.primer_nombre as trabajador_primer_nombre", "trabajador.segundo_nombre as trabajador_segundo_nombre", "trabajador.primer_apellido as trabajador_primer_apellido", "trabajador.segundo_apellido as trabajador_segundo_apellido", "persona.*")->firstorfail();
+        
+        
+
         return view("EditarformSerigrafia",compact('edit'));
+    // return ($edit);
         
     }
 
@@ -144,25 +142,10 @@ class maestrocontrolador extends Controller
     {
         //
         $IdPersona=$request->IdPersona;
-
         $usuario=usuario::where("IdUsuario",$id)->firstorfail();
         $persona= persona::where("IdPersona",$id)->firstorfail();
         $cliente=cliente::where("IdCliente",$id)->firstorfail();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
     }
 
     /**
