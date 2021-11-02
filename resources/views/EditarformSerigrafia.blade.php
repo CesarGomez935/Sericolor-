@@ -254,7 +254,7 @@
 
 
                             <textarea id="notas" value=" " name="Notas" class="uk-textarea"
-                                placeholder="Notas">{{ $edit->Notas }} {{ $edit }}</textarea>
+                                placeholder="Notas">{{ $edit->Notas }}</textarea>
 
 
 
@@ -733,7 +733,7 @@
         </div>
     </form>
     {{-- script para ingresar datos en los formularios --}}
-    formulario modal
+    {{-- formulario modal --}}
     <div class="uk-container">
         <div id="formdetalles" class="uk-modal-full" uk-modal>
             <div class="uk-modal-dialog">
@@ -744,9 +744,9 @@
 
                             <legend class="uk-legend">Cambiar Detalles</legend>
                             <div class="uk-margin">
-                                <label>IdTrabajador</label>
+                                <label>Numero de detalle</label>
                                 <input class="uk-input" type="number" id="Id_trabajadores"
-                                    placeholder="IdTrabajador" disabled hidden>
+                                    placeholder="Numero de detalle" disabled>
                             </div>
                             <div class="uk-margin">
                                 <label>Pecho izquierda</label>
@@ -836,7 +836,10 @@
                                 }
                             </script>
                     </div>
-                    <button class="uk-button uk-button-primary " id="guardar" class="uk-align-center">Guardar</button>
+                    <div style="text-align: center">
+                        <button class="uk-button uk-button-primary " id="guardar1"
+                            class="uk-align-center">Guardar</button>
+                    </div>
                     </fieldset>
                 </div>
             </div>
@@ -850,16 +853,27 @@
         cargarpedido();
         cargarusuario();
         cargarcliente();
+        cargarpedido3();
         //cargar_detalle_pedido();
         cargardatosdetalle();
 
 
 
         $('#guardar').click(function(e) {
-            cargar_detalle();
+
             guardarpedido();
+            cargardatosdetalle();
 
 
+            alert("Se agrego su orden");
+
+        });
+        $('#guardar1').click(function(e) {
+
+
+            updatedetalle();
+
+            cargardatosdetalle();
             alert("Se agrego su orden");
 
         });
@@ -909,7 +923,49 @@
 
             let url = '/api/getdetalles/' + {{ $edit->idmaestro }} + '';
             if (method == 'PUT' || method == 'DELETE') {
-                url += '/' + data.id;
+                url += '/' + data.iddetalleordensu;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+
+        }
+
+        function peticionapi5(data, method, onSuccess) {
+
+
+            let url = '/api/updatedetalles';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.iddetalleordensu;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+
+        }
+
+        function peticionapi6(data, method, onSuccess) {
+
+
+            let url = '/api/actualizar';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.iddetalleordensu;
             }
             $.ajax({
                 url: url,
@@ -1008,7 +1064,7 @@
             })
             console.log(id, datos);
 
-            $("#Id_trabajadores").val(datos[0].id),
+            $("#Id_trabajadores").val(datos[0].iddetalleordensu),
                 $("#pechoizq1").val(datos[0].pecho_izquierdo),
                 $("#pechoder1").val(datos[0].pecho_derecho),
                 $("#mangaizq1").val(datos[0].manga_izquierda),
@@ -1270,6 +1326,41 @@
 
 
 
+
+
+
+        }
+
+        function cargarpedido3() {
+            peticionapi6({}, 'GET', function(res) {
+                console.log(res);
+                alert('respuesta satisfactoria');
+            });
+
+        }
+
+        function updatedetalle() {
+
+            let datos = {
+                iddetalleordensu: $("#Id_trabajadores").val(),
+                pecho_izq: $("#pechoizq1").val(),
+                pecho_der: $("#pechoder1").val(),
+                manga_izq: $("#mangaizq1").val(),
+                manga_der: $("#mangader1").val(),
+                espalda: $("#espalda1").val(),
+                cantidad: $("#cantidad1").val(),
+                precio: $("#precio1").val(),
+                observacion: $("#observacioncambio").val(),
+                IdInsumos: $("#tallacambio").val(),
+                total: $("#sub_total2").val(),
+
+            };
+            let method1 = (datos.iddetalleordensu == '' ? 'POST' : 'PUT');
+            peticionapi6(datos, method1, function(res) {
+                // UIkit.modal('#formdetalle').hide();
+                //cargardatosdetalle();
+
+            });
 
 
 

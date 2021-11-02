@@ -108,6 +108,35 @@ class vistas extends Controller
 
     }
 
+    public function updatedetalles(Request $request, $id){
+
+       // $detalles=new Detalledelpedido();
+         return $model = Detalledelpedido::select("*")->where("IdMaestro",$id)->join("insumos","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")->get();
+            
+                            
+                   
+        $model->IdInsumos=$request->input('IdInsumos');
+        $model->pecho_izquierdo=$request->input('pecho_izq');
+        $model->pecho_derecho=$request->input('pecho_der');
+        $model->manga_izquierda=$request->input('manga_izq');
+        $model->manga_derecha=$request->input('manga_der');
+        $model->espalda=$request->input('espalda');
+        $model->Cantidad=$request->input('cantidad');
+        $model->observacion=$request->input('observacion');
+        $model->precio=$request->input('precio');
+        $model->total=$request->input('total');
+        
+        return $model->save();
+
+
+
+                  
+                    
+    
+           
+        
+    }
+
 
     /**
      * Update the specified resource in storage.

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+Use App\Models\Detalledelpedido;
 
 class editpedido1 extends Controller
 {
@@ -14,6 +15,8 @@ class editpedido1 extends Controller
     public function index()
     {
         //
+        return Detalledelpedido::all();
+
     }
 
     /**
@@ -69,6 +72,20 @@ class editpedido1 extends Controller
     public function update(Request $request, $id)
     {
         //
+         $model=new Detalledelpedido();
+         $model=Detalledelpedido::find($id);
+         $model->IdInsumos=$request->input('IdInsumos');
+        $model->pecho_izquierdo=$request->input('pecho_izq');
+        $model->pecho_derecho=$request->input('pecho_der');
+        $model->manga_izquierda=$request->input('manga_izq');
+        $model->manga_derecha=$request->input('manga_der');
+        $model->espalda=$request->input('espalda');
+        $model->Cantidad=$request->input('cantidad');
+        $model->observacion=$request->input('observacion');
+        $model->precio=$request->input('precio');
+        $model->total=$request->input('total');
+        
+        return $model->save();
     }
 
     /**
