@@ -254,7 +254,7 @@
 
 
                             <textarea id="notas" value=" " name="Notas" class="uk-textarea"
-                                placeholder="Notas">{{ $edit->Notas }}</textarea>
+                                placeholder="Notas">{{ $edit }}</textarea>
 
 
 
@@ -883,7 +883,7 @@
 
             let url = '/api/getcliente';
             if (method == 'PUT' || method == 'DELETE') {
-                url += '/' + data.id;
+                url += '/' + data.idmaestro;
             }
             $.ajax({
                 url: url,
@@ -903,7 +903,7 @@
 
             let url = '/api/usuario';
             if (method == 'PUT' || method == 'DELETE') {
-                url += '/' + data.id;
+                url += '/' + data.IdUsuario;
             }
             $.ajax({
                 url: url,
@@ -923,7 +923,7 @@
 
             let url = '/api/getdetalles/' + {{ $edit->idmaestro }} + '';
             if (method == 'PUT' || method == 'DELETE') {
-                url += '/' + data.iddetalleordensu;
+                url += '/' + data.idmaestro;
             }
             $.ajax({
                 url: url,
@@ -1083,9 +1083,9 @@
             peticionapi3({}, 'GET', function(res) {
                 cliente = res;
                 console.log(res);
-                let html = '<option value=""> Seleccionar </option>';
+                let html = '<option value="{{}}"> Seleccionar </option>';
                 res.forEach(cliente => {
-                    html += '<option  @if ('$edit->IdCliente  == +usuarios.IdCliente+') selected @endif value="' + cliente.IdCliente + '">' +
+                    html += '<option  @if ('$edit->IdCliente  == +cliente.IdCliente+') selected @endif value="' + cliente.IdCliente + '">' +
                         cliente
                         .Primer_Nombre + ' ' +
                         cliente.Segundo_Nombre + ' ' + cliente.Primer_Apellido + ' ' + cliente

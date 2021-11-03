@@ -132,7 +132,7 @@
 
             let url = '/api/getserigrafia';
             if (method == 'PUT' || method == 'DELETE') {
-                url += '/' + data.id;
+                url += '/' + data.idmaes;
             }
             $.ajax({
                 url: url,
