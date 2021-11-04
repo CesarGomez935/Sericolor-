@@ -64,7 +64,7 @@ class vistas extends Controller
 
     public function mostrar_impresion(){
 
-    return maestro::select("*")->where("idcategoria",3)->join("detalle-orden-sub,bor,ser","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro")->join("cliente","cliente.IdPersona","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->get()
+    return maestro::select("*")->where("idcategoria",3)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->get()
 
     
 ;        
@@ -75,7 +75,7 @@ class vistas extends Controller
 
    
 
-    return maestro::select("*")->where("idcategoria",1)->join("detalle-orden-sub,bor,ser","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro")->join("cliente","cliente.IdPersona","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->get()
+    return maestro::select("*")->where("idcategoria",1)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->get()
 ;        
 
     }
@@ -95,7 +95,7 @@ class vistas extends Controller
 
    
 
-    return maestro::select("*")->where("idcategoria",4)->join("detalle-orden-sub,bor,ser","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro")->join("cliente","cliente.IdPersona","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->get()
+    return maestro::select("*")->where("idcategoria",4)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->get()
 ;        
 
     }
