@@ -69,8 +69,10 @@
                         <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
                         <li> <a href="/menu/menuadmon/personal">Personal</a></li>
                         <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
-                        <li> <a href="/menu/menuadmon/bd">Restaurar y generar Back-up</a></li>
+                        <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
                         <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
+                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                        <li> <a href="/menu/menuadmon/promociones">Promociones</a></li>
                     </ul>
 
                 </ul>
@@ -134,21 +136,87 @@
                     </div>
 
                 </div>
-                <div>
 
+
+                <div hidden class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-middle uk-flex-left uk-padding " style="background-color:white">
+
+                    <a hidden onclick="descarga();" class="uk-button  uk-padding uk-button-secondary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:pull;ratio: 4">
+
+
+                        <h1 style="color:white">
+                            Descargar Pedidos
+                        </h1>
+                    </a>
+                </div>
+
+
+                <div>
                     <div class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-middle uk-flex-left uk-padding " style="background-color:white">
 
-                        <a onclick="descargas();"  class="uk-button  uk-padding uk-button-secondary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:pull;ratio: 4">
+                        <a id="descarga1" href="/api/descargarpedidos1" class="uk-button  uk-padding uk-button-secondary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:pull;ratio: 4">
+
 
 
                             <h1 style="color:white">
-                                Descargar Pedidos
+                                Descargar Sublimacion
                             </h1>
                         </a>
                     </div>
-
                 </div>
+
+
+
+
+
             </div>
+            <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+
+
+                <div>
+                    <div class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-middle uk-flex-left uk-padding " style="background-color:white">
+
+                        <a id="descarga2" href="/api/descargarpedidos2" class="uk-button  uk-padding uk-button-primary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:pull;ratio: 4">
+
+
+
+                            <h1 style="color:white">
+                                Descargar Serigrafia
+                            </h1>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-middle uk-flex-left uk-padding " style="background-color:white">
+
+                        <a id="descarga3" href="/api/descargarpedidos3" class="uk-button  uk-padding uk-button-secondary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:pull;ratio: 4">
+
+
+
+                            <h1 style="color:white">
+                                Descargar impresion
+                            </h1>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-middle uk-flex-left uk-padding " style="background-color:white">
+
+                        <a id="descarga4" href="/api/descargarpedidos4" class="uk-button  uk-padding uk-button-primary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:pull;ratio: 4">
+
+
+
+                            <h1 style="color:white">
+                                Descargar Bordado
+                            </h1>
+                        </a>
+                    </div>
+                </div>
+
+
+
+            </div>
+
 
         </div>
 
@@ -180,7 +248,11 @@
         </div>
     </div>
 
-     
+
 </body>
+
+<script>
+
+</script>
 
 </html>
