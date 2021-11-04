@@ -184,6 +184,14 @@ Route::get('/menu/menu_facturacion/form_serigrafia/{id}/edit',[maestrocontrolado
 Route::put('/menu/menu_facturacion/form_serigrafia/{id}', [maestrocontrolador::class,"update"])->name("maestro.update");
 
 
+//edicion de formulario de bordado
+
+Route::get('/menu/menu_facturacion/form_bordado/{id}/edit',[maestrocontrolador::class,"editbordado"])->name("maestro.editbordado");
+Route::put('/menu/menu_facturacion/form_bordado/{id}', [maestrocontrolador::class,"editbordado"])->name("maestro.updatebordado");
+
+//edicion de formulario de sublimacion
+
+
 
 
 // Route::get('/editform_sublimacion', function () {

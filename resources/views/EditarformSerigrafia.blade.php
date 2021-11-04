@@ -998,16 +998,23 @@
                 usuarios = res;
                 console.log(res);
                 let html = '<option value=""> Seleccionar </option>';
+                var valuecliente = "{{ $edit->IdUsuario }}";
 
                 res.forEach(usuarios => {
-                    html += '<option  @if ('$edit->IdUsuario  == +usuarios.IdUsuario+') selected @endif value="' + usuarios.IdUsuario + '">' +
+                    html += '<option   value="' + usuarios.IdUsuario + '">' +
                         usuarios.Primer_Nombre + ' ' +
                         usuarios.Segundo_Nombre + ' ' + usuarios.Primer_Apellido + ' ' + usuarios
                         .Segundo_Apellido +
                         '</option>'
                 });
                 $("#recibepedido").html(html);
+
+                cambiarvalueUsuario(valuecliente);
             });
+        }
+
+        function cambiarvalueUsuario(val) {
+            $("#recibepedido").val(val);
         }
 
         function cargardatosdetalle() {
@@ -1083,18 +1090,32 @@
             peticionapi3({}, 'GET', function(res) {
                 cliente = res;
                 console.log(res);
-                let html = '<option value="{{}}"> Seleccionar </option>';
+
+                var valuecliente = "{{ $edit->IdCliente }}";
+                // console.log(valuecliente);
+
+                let html = '<option > Seleccionar </option>';
                 res.forEach(cliente => {
-                    html += '<option  @if ('$edit->IdCliente  == +cliente.IdCliente+') selected @endif value="' + cliente.IdCliente + '">' +
+                    html += '<option   value="' + cliente.IdCliente + '">' +
                         cliente
                         .Primer_Nombre + ' ' +
                         cliente.Segundo_Nombre + ' ' + cliente.Primer_Apellido + ' ' + cliente
                         .Segundo_Apellido +
                         '</option>'
                 });
+                //console.log(valuecliente);
+
                 $("#autorizapedido").html(html);
                 $("#cliente").html(html);
+
+                cambiarvalue(valuecliente);
             });
+        }
+
+
+        function cambiarvalue(val) {
+            $("#cliente").val(val);
+            $("#autorizapedido").val(val);
         }
 
         function peticionapi(data, method, onSucess) {
