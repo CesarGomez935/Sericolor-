@@ -28,7 +28,7 @@
     <nav class="uk-navbar uk-navbar-container ">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Agregar Perosnl</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Agregar Perosonal</span>
             </a>
         </div>
 

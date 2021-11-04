@@ -624,7 +624,7 @@
                         </div>
                     </div>
                     <div class="uk-margin">
-                        <label for="banco" class="uk-form-label" for="form-horizontal-text">Metodo de pago</label>
+                        <label for="banco" class="uk-form-label" for="form-horizontal-text">Método de Pago</label>
                         <div class="uk-form-controls">
 
                             <select class="uk-select uk-form-width-large" id="Banco">
@@ -633,7 +633,7 @@
                                 <option value='1'>Efectivo</option>
                                 <option value='2'>Tarjeta</option>
                                 <option value='3'>Transferencia Bancaria</option>
-                                <option value='4'>Movil</option>
+                                <option value='4'>Móvil</option>
                             </select>
                         </div>
                     </div>

@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 Use App\Exports\ClienteExport;
 use App\Exports\pedidosExport;
+use App\Exports\serigrafiaExport;
+use App\Exports\ImpresionExport;
+use App\Exports\BordadoExport;
 use App\Exports\UsuarioExport;
 use Excel;
 
@@ -241,9 +244,27 @@ class dbcontroller extends Controller
     public function Exportarusuarios(){
         return Excel::download(new UsuarioExport,'usuariolist.xlsx');
     }
-    public function Exportarpedidos(){
-        return Excel::download(new pedidosExport,'pedidoslist.xlsx');
+    
+    public function Exportarpedidos1(){
+        return Excel::download(new pedidosExport,'pedidossublimacion.xlsx');
+       
     }
+    public function Exportarpedidos2(){
+        
+        return Excel::download(new serigrafiaExport,'pedidosserigrafia.xlsx');
+       
+    }
+    public function Exportarpedidos3(){
+        
+        return Excel::download(new ImpresionExport,'pedidosimpresion.xlsx');
+        
+    }
+    public function Exportarpedidos4(){
+        
+        return Excel::download(new BordadoExport,'pedidosbordado.xlsx');
+    }
+
+
 
 
 }

@@ -6,9 +6,9 @@ use App\Models\maestro;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class pedidosExport implements FromCollection,WithHeadings
+class BordadoExport implements FromCollection,WithHeadings
 {
-     public function headings():array{
+    public function headings():array{
         return[
             
         'idmaestro',
@@ -67,6 +67,6 @@ class pedidosExport implements FromCollection,WithHeadings
     public function collection()
     {
         //return persona::all();
-        return collect(maestro::getpedidossublimacion());
+        return collect(maestro::getpedidosbordado());
     }
 }

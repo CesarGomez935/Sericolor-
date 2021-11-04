@@ -647,7 +647,7 @@
                         </div>
                     </div>
                     <div class="uk-margin">
-                        <label for="banco" class="uk-form-label" for="form-horizontal-text">Metodo de pago</label>
+                        <label for="banco" class="uk-form-label" for="form-horizontal-text">Método de Pago</label>
                         <div class="uk-form-controls">
 
                             <select class="uk-select uk-form-width-large" id="Banco">
@@ -656,7 +656,7 @@
                                 <option @if ($edit->Id_Metodo_de_Pago == '1') selected @endif value='1'>Efectivo</option>
                                 <option @if ($edit->Id_Metodo_de_Pago == '2') selected @endif value='2'>Tarjeta</option>
                                 <option @if ($edit->Id_Metodo_de_Pago == '3') selected @endif value='3'>Transferencia Bancaria</option>
-                                <option @if ($edit->Id_Metodo_de_Pago == '4') selected @endif value='4'>Movil</option>
+                                <option @if ($edit->Id_Metodo_de_Pago == '4') selected @endif value='4'>Móvil</option>
                             </select>
                         </div>
                     </div>
