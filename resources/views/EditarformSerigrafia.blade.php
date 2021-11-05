@@ -254,7 +254,7 @@
 
 
                             <textarea id="notas" value=" " name="Notas" class="uk-textarea"
-                                placeholder="Notas">{{ $edit }}</textarea>
+                                placeholder="Notas">{{ $edit->idmaestro }}</textarea>
 
 
 
@@ -769,6 +769,10 @@
                                 <input class="uk-input" type="text" id="espalda1" placeholder="Espalda">
                             </div>
                             <div class="uk-margin">
+                                <input class="uk-input" disabled type="text" value="{{ $edit->idmaestro }}"
+                                    id="id" placeholder="nada">
+                            </div>
+                            <div class="uk-margin">
                                 <label>Cantidad</label>
                                 <input onchange="monto2();" type="number" class="uk-input monto2" type="text"
                                     id="cantidad1" placeholder="Cantidad">
@@ -1141,10 +1145,9 @@
         function guardarpedido() {
 
 
-
-
             let data = {
 
+                idmaestro: $("#id").val(),
                 IdCliente: $("#cliente").val(),
                 IdUsuario: $("#recibepedido").val(),
                 IdCategoria: $("#cat").val(),
@@ -1155,24 +1158,13 @@
                 abono: $("#abono").val(),
                 codseguimiento: $("#abono").val(),
 
-
-                idmetodo: $("#cat").val(),
-                cod: $("#saldo").val(),
-                estado: $("#estado").val(),
-
-                //funcion que llama al arreglo que toma los datos
-                detalle: JSON.stringify(arreglo)
-
-
-
-
             };
 
             console.log(data);
 
 
 
-            peticionapi(data, 'POST', function(res) {
+            peticionapi(data, 'PUT', function(res) {
                 alert('Guardado con exito')
             });
         }
@@ -1361,6 +1353,54 @@
         }
 
         function updatedetalle() {
+
+            let datos = {
+                iddetalleordensu: $("#Id_trabajadores").val(),
+                pecho_izq: $("#pechoizq1").val(),
+                pecho_der: $("#pechoder1").val(),
+                manga_izq: $("#mangaizq1").val(),
+                manga_der: $("#mangader1").val(),
+                espalda: $("#espalda1").val(),
+                cantidad: $("#cantidad1").val(),
+                precio: $("#precio1").val(),
+                observacion: $("#observacioncambio").val(),
+                IdInsumos: $("#tallacambio").val(),
+                total: $("#sub_total2").val(),
+
+            };
+            let method1 = (datos.iddetalleordensu == '' ? 'POST' : 'PUT');
+            peticionapi6(datos, method1, function(res) {
+                // UIkit.modal('#formdetalle').hide();
+                //cargardatosdetalle();
+
+            });
+
+
+
+        }
+
+        function peticionapi7(data, method, onSuccess) {
+
+
+            let url = '/api/actualizar';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.iddetalleordensu;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+
+        }
+
+        function agregarotrodetalle() {
 
             let datos = {
                 iddetalleordensu: $("#Id_trabajadores").val(),

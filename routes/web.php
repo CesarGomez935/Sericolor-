@@ -190,7 +190,8 @@ Route::get('/menu/menu_facturacion/form_bordado/{id}/edit',[maestrocontrolador::
 Route::put('/menu/menu_facturacion/form_bordado/{id}', [maestrocontrolador::class,"editbordado"])->name("maestro.updatebordado");
 
 //edicion de formulario de sublimacion
-
+Route::get('/menu/menu_facturacion/form_sublimacion/{id}/edit',[maestrocontrolador::class,"editsublimacion"])->name("maestro.editsublimacion");
+Route::put('/menu/menu_facturacion/form_sublimacion/{id}', [maestrocontrolador::class,"editsublimacion"])->name("maestro.editsublimacion");
 
 
 
