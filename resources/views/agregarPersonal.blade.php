@@ -28,7 +28,7 @@
     <nav class="uk-navbar uk-navbar-container ">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Agregar Perosnl</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Agregar Perosonal</span>
             </a>
         </div>
 
@@ -62,8 +62,10 @@
                         <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
                         <li> <a href="/menu/menuadmon/personal">Personal</a></li>
                         <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
-                        <li> <a href="/menu/menuadmon/bd">Restaurar y generar Back-up</a></li>
+                        <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
                         <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
+                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                        <li> <a href="/menu/menuadmon/promociones">Promociones</a></li>
                     </ul>
 
                 </ul>

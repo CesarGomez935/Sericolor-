@@ -89,8 +89,9 @@
                         </div>
                         <div class="uk-margin">
                             <select id="rol_asignado" class="uk-input" type="text" placeholder="Rol">
+                                <option disabled selected value="" >--Seleccionar Rol--</option>
                                 <option value="Impresion Digital">Impresion Digital</option>
-                                <option value="Bordado" selected>Bordado</option>
+                                <option value="Bordado" >Bordado</option>
                                 <option value="Sublimacion">Sublimacion</option>
                                 <option value="Serigrafia">Serigrafia</option>
                                 <option value="Recepcion">Recepcion</option>

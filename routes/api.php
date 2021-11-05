@@ -55,7 +55,11 @@ Route::resource('cliente',llamadaclientecontroller::class);
  Route::get('descargarbasededatos', [dbcontroller::class,"descargar"]);
  Route::get('descargarclientes', [dbcontroller::class,"Exportarclientes"]);
  Route::get('descargarusuarios', [dbcontroller::class,"Exportarusuarios"]);
-  Route::get('descargarpedidos', [dbcontroller::class,"Exportarpedidos"]);
+ 
+Route::get('descargarpedidos1', [dbcontroller::class,"Exportarpedidos1"]);
+Route::get('descargarpedidos2', [dbcontroller::class,"Exportarpedidos2"]);
+Route::get('descargarpedidos3', [dbcontroller::class,"Exportarpedidos3"]);
+Route::get('descargarpedidos4', [dbcontroller::class,"Exportarpedidos4"]);
 
 
  //Clientes y trabajadores

@@ -34,42 +34,30 @@ class pedidosExport implements FromCollection,WithHeadings
         'observacion',
         'precio',
         'total',
-        'iddetalleordenimp',
-        'IdInsumos',
-        'IdMaestro',
-        'ancho',
-        'alto',
-        'mt2',
-        'p/m',
-        'costo',
-        'cantidad',
-        'total',
-        'observacion',
-        'IdCliente',
+        'Categoria',
+        'Metodo de pago',
         'IdPersona',
-        'TipoDeCliente',
+        'Tipo de Cliente',
         'cargo',
         'RUC',
         'IdPersona',
-        'Primer_Nombre',
-        'Segundo_Nombre',
-        'Primer_Apellido',
-        'Segundo_Apellido',
-        'Cedula',
-        'Telefono',
-        'Correo',
-        'Direccion',
-        'IdInsumo',
-        'Tipo',
-        'Descripcion',
-        'idcategoria',
-        'descripcion',
-        'IdMaestro',
+        'IdTrabajador',
+        'Primer Nombre Trabajador',
+        'Segundo Nombre Trabajador',
+        'Primer Apellido Trabajador',
+        'Segundo Apellido Trabajador',
+        'Primer Nombre Cliente',
+        'Segundo Nombre Cliente',
+        'Primer Apellido Cliente',
+        'Segundo Apellido Cliente',
+        'Cedula Cliente',
+        'Telefono Cliente',
+        'Correo Cliente',
+        'Dirección Cliente',        
         'Id_Metodo_de_Pago',
-        'Fecha_de_pago',
-        'Cod-Recibo',
-        'Id_Metodo_de_Pago',
-        'Tipo_de_pago'	
+        'Fecha de pago',
+        'Cod-Recibo'
+        	
 
         ];
     }
@@ -79,6 +67,6 @@ class pedidosExport implements FromCollection,WithHeadings
     public function collection()
     {
         //return persona::all();
-        return collect(maestro::getpedidos());
+        return collect(maestro::getpedidossublimacion());
     }
 }

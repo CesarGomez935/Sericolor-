@@ -69,8 +69,10 @@
                         <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
                         <li> <a href="/menu/menuadmon/personal">Personal</a></li>
                         <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
-                        <li> <a href="/menu/menuadmon/bd">Restaurar y generar Back-up</a></li>
+                        <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
                         <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
+                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                        <li> <a href="/menu/menuadmon/promociones">Promociones</a></li>
                     </ul>
 
                 </ul>
@@ -647,7 +649,7 @@
                         </div>
                     </div>
                     <div class="uk-margin">
-                        <label for="banco" class="uk-form-label" for="form-horizontal-text">Metodo de pago</label>
+                        <label for="banco" class="uk-form-label" for="form-horizontal-text">Método de Pago</label>
                         <div class="uk-form-controls">
 
                             <select class="uk-select uk-form-width-large" id="Banco">
@@ -656,7 +658,7 @@
                                 <option @if ($edit->Id_Metodo_de_Pago == '1') selected @endif value='1'>Efectivo</option>
                                 <option @if ($edit->Id_Metodo_de_Pago == '2') selected @endif value='2'>Tarjeta</option>
                                 <option @if ($edit->Id_Metodo_de_Pago == '3') selected @endif value='3'>Transferencia Bancaria</option>
-                                <option @if ($edit->Id_Metodo_de_Pago == '4') selected @endif value='4'>Movil</option>
+                                <option @if ($edit->Id_Metodo_de_Pago == '4') selected @endif value='4'>Móvil</option>
                             </select>
                         </div>
                     </div>
@@ -925,7 +927,11 @@
         function peticionapi4(data, method, onSuccess) {
 
 
-            let url = '/api/getdetalles/' + {{ $edit->idmaestro }} + '';
+            let url = '/api/getdetalles/' + {
+                {
+                    $edit - > idmaestro
+                }
+            } + '';
             if (method == 'PUT' || method == 'DELETE') {
                 url += '/' + data.idmaestro;
             }
@@ -1075,15 +1081,11 @@
             })
             console.log(id, datos);
 
-            $("#Id_trabajadores").val(datos[0].iddetalleordensu),
-                $("#pechoizq1").val(datos[0].pecho_izquierdo),
-                $("#pechoder1").val(datos[0].pecho_derecho),
-                $("#mangaizq1").val(datos[0].manga_izquierda),
-                $("#mangader1").val(datos[0].manga_derecha),
-                $("#espalda1").val(datos[0].espalda),
-                $("#cantidad1").val(datos[0].Cantidad),
-                $("#precio1").val(datos[0].precio),
-                $("#observacioncambio").val(datos[0].observacion)
+            $("#Id_trabajadores").val(datos[0].iddetalleordensu), $("#pechoizq1").val(datos[0].pecho_izquierdo), $(
+                "#pechoder1").val(datos[0].pecho_derecho), $("#mangaizq1").val(datos[0].manga_izquierda), $(
+                "#mangader1").val(datos[0].manga_derecha), $("#espalda1").val(datos[0].espalda), $("#cantidad1").val(
+                datos[0].Cantidad), $("#precio1").val(datos[0].precio), $("#observacioncambio").val(datos[0]
+                .observacion)
             $("#tallacambio").val(datos[0].IdInsumos)
             $("#sub_total2").val(datos[0].total)
 

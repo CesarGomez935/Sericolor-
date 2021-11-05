@@ -23,6 +23,11 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -64,8 +69,10 @@
                         <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
                         <li> <a href="/menu/menuadmon/personal">Personal</a></li>
                         <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
-                        <li> <a href="/menu/menuadmon/bd">Restaurar y generar Back-up</a></li>
+                        <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
                         <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
+                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                        <li> <a href="/menu/menuadmon/promociones">Promociones</a></li>
                     </ul>
 
                 </ul>
@@ -129,21 +136,87 @@
                     </div>
 
                 </div>
-                <div>
 
+
+                <div hidden class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-middle uk-flex-left uk-padding " style="background-color:white">
+
+                    <a hidden onclick="descarga();" class="uk-button  uk-padding uk-button-secondary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:pull;ratio: 4">
+
+
+                        <h1 style="color:white">
+                            Descargar Pedidos
+                        </h1>
+                    </a>
+                </div>
+
+
+                <div>
                     <div class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-middle uk-flex-left uk-padding " style="background-color:white">
 
-                        <a onclick="return confirm('¿Está seguro que desea continuar?')" href="/api/descargarpedidos" class="uk-button  uk-padding uk-button-secondary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:pull;ratio: 4">
+                        <a id="descarga1" href="/api/descargarpedidos1" class="uk-button  uk-padding uk-button-secondary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:pull;ratio: 4">
+
 
 
                             <h1 style="color:white">
-                                Descargar Pedidos
+                                Descargar Sublimacion
                             </h1>
                         </a>
                     </div>
-
                 </div>
+
+
+
+
+
             </div>
+            <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+
+
+                <div>
+                    <div class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-middle uk-flex-left uk-padding " style="background-color:white">
+
+                        <a id="descarga2" href="/api/descargarpedidos2" class="uk-button  uk-padding uk-button-primary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:pull;ratio: 4">
+
+
+
+                            <h1 style="color:white">
+                                Descargar Serigrafia
+                            </h1>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-middle uk-flex-left uk-padding " style="background-color:white">
+
+                        <a id="descarga3" href="/api/descargarpedidos3" class="uk-button  uk-padding uk-button-secondary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:pull;ratio: 4">
+
+
+
+                            <h1 style="color:white">
+                                Descargar impresion
+                            </h1>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-middle uk-flex-left uk-padding " style="background-color:white">
+
+                        <a id="descarga4" href="/api/descargarpedidos4" class="uk-button  uk-padding uk-button-primary uuk-width-1-1 uk-margin-small-bottom" uk-icon="icon:pull;ratio: 4">
+
+
+
+                            <h1 style="color:white">
+                                Descargar Bordado
+                            </h1>
+                        </a>
+                    </div>
+                </div>
+
+
+
+            </div>
+
 
         </div>
 
@@ -175,27 +248,11 @@
         </div>
     </div>
 
-    {{-- <script type="text/javascript">
-        function peticionapi(data, method, onSucess) {
-            let url = '/api/descargarbasededatos';
-
-            $.ajax({
-                url: url
-                , method: method
-                , data: data
-                , error(ext) {
-                    let error = e.responseJSON.errors;
-                    let msj = error[Object.keys(error)[0]][0];
-                    alert(msj);
-                }
-                , success(res) {
-
-                }
-            })
-        }
-
-    </script> --}}
 
 </body>
+
+<script>
+
+</script>
 
 </html>
