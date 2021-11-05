@@ -93,7 +93,14 @@ class maestrocontrolador extends Controller
                 ]);
 
             }
-            
+            $recibo=recibo::create([
+
+                    'IdMaestro'=>$maestro->idmaestro,  
+                    'Id_Metodo_de_Pago'=>$request->idmetodo,
+                    'Fecha_de_pago'=>$request->fecha,
+                    'Cod-Recibo'=>$request->cod,
+
+                ]);
                 
             
             
@@ -201,7 +208,7 @@ class maestrocontrolador extends Controller
          $model1->saldo=$request->input('Saldo');
          $model1->CodSeguimiento=$request->input('codseguimiento');
          $model1->abono=$request->input('abono');
-        $model1->Estado=$request->input('IdCategoria');
+        $model1->Estado=$request->input('estado');
          $model1->total_costo=$request->input('total_costo');
         return $model1->save();
 

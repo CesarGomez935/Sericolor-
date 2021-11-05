@@ -855,8 +855,9 @@
                 codseguimiento: $("#abono").val(),
 
 
-                idmetodo: $("#cat").val(),
-                cod: $("#saldo").val(),
+                idmetodo: $("#Banco").val(),
+                cod: $("#factura").val(),
+
                 estado: $("#estado").val(),
 
                 //funcion que llama al arreglo que toma los datos
