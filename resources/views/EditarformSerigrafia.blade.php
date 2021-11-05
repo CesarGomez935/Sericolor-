@@ -1157,6 +1157,7 @@
                 Saldo: $("#saldo").val(),
                 abono: $("#abono").val(),
                 codseguimiento: $("#abono").val(),
+                estado: $("#estado").val(),
 
             };
 
