@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facturación|Serigrafía</title>
+    <title>Facturación|Sublimación</title>
     <link rel="icon" href="/img/Icono.ico" type="image/ico" />
 
     <!-- UIkit CSS -->
@@ -34,7 +34,7 @@
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
                 <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span
-                    class="uk-margin-small-left">Facturación Serigrafía</span>
+                    class="uk-margin-small-left">Facturación Sublimación</span>
 
             </a>
         </div>
