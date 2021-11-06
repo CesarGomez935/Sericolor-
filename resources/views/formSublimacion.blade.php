@@ -797,9 +797,11 @@
 <script type="text/javascript">
     let pedido = [];
     const arreglo = [];
+    var cod_seg_rand = 0;
     cargarpedido();
     cargarusuario();
     cargarcliente();
+    getRandom();
     $('#guardar').click(function(e) {
         cargar_detalle();
         guardarpedido();
@@ -903,6 +905,13 @@
         });
     }
 
+    function getRandom() {
+
+        cod_seg_rand = Math.floor((Math.random() * 10000000));
+        console.log(cod_seg_rand);
+
+    }
+
     function guardarpedido() {
 
 
@@ -918,11 +927,11 @@
             total_costo: $("#total").val(),
             Saldo: $("#saldo").val(),
             abono: $("#abono").val(),
-            codseguimiento: $("#tipo_de_pedido").val(),
+            codseguimiento: cod_seg_rand,
 
 
             idmetodo: $("#metodo_de_pago").val(),
-            cod: $("#saldo").val(),
+            cod: $("#factura").val(),
             estado: $("#estado").val(),
 
             //funcion que llama al arreglo que toma los datos

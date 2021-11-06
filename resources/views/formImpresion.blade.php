@@ -629,9 +629,9 @@
     <script>
         let pedido = [];
         let usuarios = [];
-
+        var cod_seg_rand = 0;
         const arreglo = [];
-
+        getRandom();
         cargarpedido();
         cargarusuario();
         cargarcliente();
@@ -755,6 +755,13 @@
             })
         }
 
+        function getRandom() {
+
+            cod_seg_rand = Math.floor((Math.random() * 10000000));
+            console.log(cod_seg_rand);
+
+        }
+
         function guardarpedido() {
 
 
@@ -762,19 +769,19 @@
 
             let data = {
 
-                IdCliente: $("#cat").val(),
-                IdUsuario: $("#cat").val(),
+                IdCliente: $("#cliente").val(),
+                IdUsuario: $("#recibepedido").val(),
                 IdCategoria: $("#cat").val(),
                 fecha: $("#fecha_fact").val(),
                 notas: $("#notas").val(),
                 total_costo: $("#total").val(),
                 Saldo: $("#saldo").val(),
                 abono: $("#abono").val(),
-                codseguimiento: $("#tipo_de_pedido").val(),
+                codseguimiento: cod_seg_rand,
 
 
-                idmetodo: $("#banco").val(),
-                cod: $("#saldo").val(),
+                idmetodo: $("#metodo_de_pago").val(),
+                cod: $("#factura").val(),
                 estado: $("#estado").val(),
 
                 //funcion que llama al ar
