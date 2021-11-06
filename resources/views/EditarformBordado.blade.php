@@ -711,7 +711,7 @@
                         <label for="banco" class="uk-form-label" for="form-horizontal-text">Método de Pago</label>
                         <div class="uk-form-controls">
 
-                            <select class="uk-select uk-form-width-large" id="Banco">
+                            <select class="uk-select uk-form-width-large" id="metodo_de_pago">
 
 
                                 <option @if ($edit->Id_Metodo_de_Pago == '1') selected @endif value='1'>Efectivo</option>

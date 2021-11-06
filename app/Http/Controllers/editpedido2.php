@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+Use App\Models\recibo;
 
 class editpedido2 extends Controller
 {
@@ -68,7 +69,13 @@ class editpedido2 extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $model=new recibo();
+        $model=recibo::find($id);
+        $model->Id_Metodo_de_Pago=$request->input('metodo_de_pago');
+        $model->Fecha_de_pago=$request->input('fecha');
+        $model->Cod_Recibo=$request->input('cod');
+        
+        return $model->save();
     }
 
     /**

@@ -102,6 +102,9 @@
             </div>
         </div>
 
+        <div style="text-align: center" class=" uk-background-muted">
+            <label class="uk-label" for="">Codigo de Seguimiento: {{ $edit->CodSeguimiento }}</label>
+        </div>
 
         <div class="uk-child-width-1-2 uk-text-center uk-background-muted uk-padding" uk-grid>
             <div>
@@ -313,7 +316,7 @@
 
 
                             <textarea id="notas" value=" " name="Notas" class="uk-textarea"
-                                placeholder="Notas">{{ $edit->idmaestro }}</textarea>
+                                placeholder="Notas">{{ $edit->Notas }}</textarea>
 
 
 
@@ -709,7 +712,7 @@
                         <label for="banco" class="uk-form-label" for="form-horizontal-text">Metodo de pago</label>
                         <div class="uk-form-controls">
 
-                            <select class="uk-select uk-form-width-large" id="Banco">
+                            <select class="uk-select uk-form-width-large" id="metodo_de_pago">
 
 
                                 <option @if ($edit->Id_Metodo_de_Pago == '1') selected @endif value='1'>Efectivo</option>
@@ -760,18 +763,22 @@
                     <div class="uk-margin">
                         <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
                         <div class="uk-form-controls">
-                            <input id="factura" name="num_factura" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input value="{{ $edit->Cod_Recibo }}" id="factura" name="num_factura"
+                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
+                                placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
                         <div class="uk-form-controls">
-                            <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input disabled value="{{ $edit->idmaestro }}" id="recibo" name="numero_recibo"
+                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
+                                placeholder="">
                         </div>
                     </div>
                 </div>
+
+
 
 
             </div>
@@ -1225,6 +1232,9 @@
                 codseguimiento: $("#abono").val(),
                 estado: $("#estado").val(),
 
+
+
+
             };
 
             console.log(data);
@@ -1234,6 +1244,8 @@
             peticionapi(data, 'PUT', function(res) {
                 alert('Guardado con exito')
             });
+
+            updaterecibo();
         }
 
         function cargarpedido() {
@@ -1446,12 +1458,33 @@
 
         }
 
+        function updaterecibo() {
+
+            let datos = {
+
+                idmaestro: $("#id").val(),
+                fecha: $("#fecha_fact").val(),
+                metodo_de_pago: $("#metodo_de_pago").val(),
+                cod: $("#factura").val(),
+
+            };
+            let method1 = (datos.idmaestro == '' ? 'POST' : 'PUT');
+            peticionapi7(datos, method1, function(res) {
+
+                //cargardatosdetalle();
+
+            });
+
+
+
+        }
+
         function peticionapi7(data, method, onSuccess) {
 
 
-            let url = '/api/actualizar';
+            let url = '/api/actualizarrecibo';
             if (method == 'PUT' || method == 'DELETE') {
-                url += '/' + data.iddetalleordensu;
+                url += '/' + data.idmaestro;
             }
             $.ajax({
                 url: url,

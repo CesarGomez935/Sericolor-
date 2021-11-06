@@ -707,7 +707,7 @@
                     <div class="uk-margin">
                         <label for="banco" class="uk-form-label" for="form-horizontal-text">Método de Pago</label>
                         <div class="uk-form-controls">
-                            <select class="uk-select uk-form-width-large" id="Banco">
+                            <select class="uk-select uk-form-width-large" id="metodo_de_pago">
 
 
                                 <option value='1'>Efectivo</option>
@@ -921,7 +921,7 @@
             codseguimiento: $("#tipo_de_pedido").val(),
 
 
-            idmetodo: $("#Banco").val(),
+            idmetodo: $("#metodo_de_pago").val(),
             cod: $("#saldo").val(),
             estado: $("#estado").val(),
 

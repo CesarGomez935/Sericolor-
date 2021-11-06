@@ -90,7 +90,7 @@ class maestrocontroladorImpresion extends Controller
                     'IdMaestro'=>$maestro->idmaestro,  
                     'Id_Metodo_de_Pago'=>$request->idmetodo,
                     'Fecha_de_pago'=>$request->fecha,
-                    'Cod-Recibo'=>$request->cod,
+                    'Cod_Recibo'=>$request->cod,
 
                 ]);
             

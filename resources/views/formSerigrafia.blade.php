@@ -645,7 +645,7 @@
                         <label for="banco" class="uk-form-label" for="form-horizontal-text">Método de Pago</label>
                         <div class="uk-form-controls">
 
-                            <select class="uk-select uk-form-width-large" id="Banco">
+                            <select class="uk-select uk-form-width-large" id="metodo_de_pago">
 
 
                                 <option value='1'>Efectivo</option>
@@ -731,9 +731,11 @@
     <script>
         let pedido = [];
         const arreglo = [];
+        var cod_seg_rand = 0;
         cargarpedido();
         cargarusuario();
         cargarcliente();
+        getRandom();
         $('#guardar').click(function(e) {
             cargar_detalle();
             guardarpedido();
@@ -837,6 +839,13 @@
             })
         }
 
+        function getRandom() {
+
+            cod_seg_rand = Math.floor((Math.random() * 10000000));
+            console.log(cod_seg_rand);
+
+        }
+
         function guardarpedido() {
 
 
@@ -852,10 +861,10 @@
                 total_costo: $("#total").val(),
                 Saldo: $("#saldo").val(),
                 abono: $("#abono").val(),
-                codseguimiento: $("#abono").val(),
+                codseguimiento: cod_seg_rand,
 
 
-                idmetodo: $("#Banco").val(),
+                idmetodo: $("#metodo_de_pago").val(),
                 cod: $("#factura").val(),
 
                 estado: $("#estado").val(),

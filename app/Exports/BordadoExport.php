@@ -56,7 +56,7 @@ class BordadoExport implements FromCollection,WithHeadings
         'Dirección Cliente',        
         'Id_Metodo_de_Pago',
         'Fecha de pago',
-        'Cod-Recibo'
+        'Cod_Recibo'
         	
 
         ];

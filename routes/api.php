@@ -20,6 +20,7 @@ use App\Http\Controllers\llamadaclientecontroller;
 use App\Http\Controllers\usuariocontroller;
 use App\Http\Controllers\vistas;
 use App\Http\Controllers\editpedido1;
+use App\Http\Controllers\editpedido2;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,3 +77,4 @@ Route::get('getbordado', [vistas::class,"mostrar_bordado"]);
 Route::get('/getdetalles/{id}', [vistas::class,"getdetalles"]);
 Route::put('/updatedetalles/{id}', [vistas::class,"updatedetalles"]);
 Route::resource('/actualizar', editpedido1::class);
+Route::resource('/actualizarrecibo', editpedido2::class);

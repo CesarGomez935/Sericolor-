@@ -10,17 +10,21 @@
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
 </head>
 
@@ -31,7 +35,8 @@
     <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Facturación Bordado</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span
+                    class="uk-margin-small-left">Facturación Bordado</span>
 
             </a>
         </div>
@@ -107,31 +112,36 @@
                     <div class="uk-margin">
                         <label for="pecho_izq" class="uk-form-label" for="form-horizontal-text">Pecho Izquierdo</label>
                         <div class="uk-form-controls">
-                            <input id="pecho_izq" name="pecho_izquierdo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="pecho_izq" name="pecho_izquierdo" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="pecho_der" class="uk-form-label" for="form-horizontal-text">Pecho Derecho</label>
                         <div class="uk-form-controls">
-                            <input id="pecho_der" name="pecho_derecho" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="pecho_der" name="pecho_derecho" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="manga_izq" class="uk-form-label" for="form-horizontal-text">Manga Izquierda</label>
                         <div class="uk-form-controls">
-                            <input id="manga_izq" name="manga_izquierda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="manga_izq" name="manga_izquierda" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="manga_der" class="uk-form-label" for="form-horizontal-text">Manga Derecha</label>
                         <div class="uk-form-controls">
-                            <input id="manga_der" name="manga_derecha" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="manga_der" name="manga_derecha" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="espalda" class="uk-form-label" for="form-horizontal-text">Espalda</label>
                         <div class="uk-form-controls">
-                            <input id="espalda" name="espalda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="espalda" name="espalda" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                 </div>
@@ -157,7 +167,8 @@
                                         <tr>
 
                                             <td>
-                                                <select onchange="Validacion();" name="Tallas" class="uk-select uk-form-width-xsmall" id="Tallas">
+                                                <select onchange="Validacion();" name="Tallas"
+                                                    class="uk-select uk-form-width-xsmall" id="Tallas">
 
 
                                                     <option value="2">2</option>
@@ -185,7 +196,8 @@
 
 
 
-                                                <select name="Genero" class="uk-select uk-form-width-xsmall" id="Genero">
+                                                <select name="Genero" class="uk-select uk-form-width-xsmall"
+                                                    id="Genero">
                                                     <option value="Dama">Dama</option>
                                                     <option value="Caballero">Caballero</option>
                                                 </select>
@@ -193,10 +205,12 @@
 
                                             </td>
                                             <td>
-                                                <input id="cantidad" onchange="monto();" type="number" min="0" class="uk-input uk-form-width-xsmall monto">
+                                                <input id="cantidad" onchange="monto();" type="number" min="0"
+                                                    class="uk-input uk-form-width-xsmall monto">
 
 
-                                                <input id="precio" onchange="monto();" type="number" min="0" class=" monto uk-input uk-form-width-small  ">
+                                                <input id="precio" onchange="monto();" type="number" min="0"
+                                                    class=" monto uk-input uk-form-width-small  ">
 
 
 
@@ -207,7 +221,8 @@
                                             </td>
 
                                             <td>
-                                                <textarea id="Observacion" name="Observacion" class="uk-input uk-form-width-1-1" type="text"> </textarea>
+                                                <textarea id="Observacion" name="Observacion"
+                                                    class="uk-input uk-form-width-1-1" type="text"> </textarea>
 
 
                                             </td>
@@ -219,7 +234,8 @@
                                                 <label for="sub_total" class="uk-label">Total</label>
                                             </td>
                                             <td>
-                                                <input disabled id="sub_total" type="number" min="0" class="uk-input uk-form-width-small ">
+                                                <input disabled id="sub_total" type="number" min="0"
+                                                    class="uk-input uk-form-width-small ">
                                             </td>
                                             <td>
                                                 <a class="uk-button uk-button-primary" onclick="insertar();">Insertar
@@ -594,7 +610,6 @@
                 // function rand() {
                 //     echo rand(1111111111, 99999999);
                 // }
-
             </script>
 
             </table>
@@ -612,7 +627,9 @@
                         <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                         <div class="uk-form-controls">
 
-                            <input id="abono" min="0" name="Abono" onchange="abonos();" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
+                            <input id="abono" min="0" name="Abono" onchange="abonos();"
+                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="number"
+                                placeholder="">
                         </div>
                         <script>
                             function abonos() {
@@ -630,7 +647,6 @@
 
 
                             }
-
                         </script>
 
                     </div>
@@ -639,14 +655,15 @@
                         <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
                         <div class="uk-form-controls">
 
-                            <input id="saldo" name="Saldo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="saldo" name="Saldo" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin ">
                         <label for="banco" class="uk-form-label" for="form-horizontal-text">Método de Pago</label>
                         <div class="uk-form-controls">
 
-                            <select class="uk-select uk-form-width-large" id="Banco">
+                            <select class="uk-select uk-form-width-large" id="metodo_de_pago">
 
 
                                 <option value='1'>Efectivo</option>
@@ -698,13 +715,15 @@
                     <div class="uk-margin">
                         <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
                         <div class="uk-form-controls">
-                            <input disabled id="factura" name="num_factura" class="uk-input uk-form-width-large " id="form-horizontal-text" type="text" placeholder="">
+                            <input disabled id="factura" name="num_factura" class="uk-input uk-form-width-large "
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
                         <div class="uk-form-controls">
-                            <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Numero de Factura">
+                            <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="Numero de Factura">
                         </div>
                     </div>
                 </div>
@@ -715,8 +734,11 @@
         <!-- Seccion que contiene los botones de atrás y guardar-->
         <div class="uk-padding uk-background-muted uk-padding " style="text-align: center;">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-                <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
-                <a onclick="return confirm('¿Está seguro que desea continuar?')" id="guardar" href="/menu/menu_facturacion/form_bordado" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
+                <a href="/menu/menu_facturacion" class="uk-button uk-button-primary "
+                    style="margin-left: 100px">Atrás</a>
+                <a onclick="return confirm('¿Está seguro que desea continuar?')" id="guardar"
+                    href="/menu/menu_facturacion/form_bordado" class="uk-button uk-button-secondary"
+                    style="margin-left: 100px">Guardar</a>
 
 
             </div>
@@ -751,15 +773,15 @@
                 url += '/' + data.idmaestro;
             }
             $.ajax({
-                url: url
-                , method: method
-                , data: data
-                , error(ext) {
+                url: url,
+                method: method,
+                data: data,
+                error(ext) {
                     let error = e.responseJSON.errors;
                     let msj = error[Object.keys(error)[0]][0];
                     alert(msj);
-                }
-                , success(res) {
+                },
+                success(res) {
 
                 }
             })
@@ -773,9 +795,9 @@
                 url += '/' + data.id;
             }
             $.ajax({
-                url: url
-                , method: method
-                , data: data,
+                url: url,
+                method: method,
+                data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -793,9 +815,9 @@
                 url += '/' + data.id;
             }
             $.ajax({
-                url: url
-                , method: method
-                , data: data,
+                url: url,
+                method: method,
+                data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -851,21 +873,21 @@
 
             let data = {
 
-                IdCliente: $("#cliente").val()
-                , IdUsuario: $("#autorizapedido").val()
-                , IdCategoria: $("#cat").val()
-                , fecha: $("#fecha_fact").val()
-                , notas: $("#notas").val()
-                , total_costo: $("#total").val()
-                , Saldo: $("#saldo").val()
-                , abono: $("#abono").val(),
+                IdCliente: $("#cliente").val(),
+                IdUsuario: $("#autorizapedido").val(),
+                IdCategoria: $("#cat").val(),
+                fecha: $("#fecha_fact").val(),
+                notas: $("#notas").val(),
+                total_costo: $("#total").val(),
+                Saldo: $("#saldo").val(),
+                abono: $("#abono").val(),
                 // codseguimiento: $("#tipo_de_pedido").val(),
 
 
                 idmetodo: $("#banco").val(),
                 //codigo tiene que ser aleatorio
-                cod: $("#saldo").val()
-                , estado: $("#estado").val(),
+                cod: $("#saldo").val(),
+                estado: $("#estado").val(),
 
 
 
@@ -1037,26 +1059,26 @@
 
                 arreglo[contador] = {
 
-                    IdCliente: $("#cat").val()
-                    , IdUsuario: $("#cat").val()
-                    , IdCategoria: $("#cat").val()
-                    , fecha: $("#fecha_fact").val()
-                    , notas: $("#notas").val()
-                    , total_costo: $("#total").val()
-                    , Saldo: $("#saldo").val()
-                    , abono: $("#abono").val()
-                    , codseguimiento: $("#tipo_de_pedido").val(),
+                    IdCliente: $("#cat").val(),
+                    IdUsuario: $("#cat").val(),
+                    IdCategoria: $("#cat").val(),
+                    fecha: $("#fecha_fact").val(),
+                    notas: $("#notas").val(),
+                    total_costo: $("#total").val(),
+                    Saldo: $("#saldo").val(),
+                    abono: $("#abono").val(),
+                    codseguimiento: $("#tipo_de_pedido").val(),
 
-                    IdInsumos: Talla_val
-                    , pecho_izq: pechoizq_
-                    , pecho_der: pechoder_
-                    , manga_izq: mangaizq_
-                    , manga_der: mangader_
-                    , espalda: espalda_
-                    , cantidad: cantidad_
-                    , precio: precio_
-                    , totaldetalle: totaldetalle_
-                    , observacion: Observacion_,
+                    IdInsumos: Talla_val,
+                    pecho_izq: pechoizq_,
+                    pecho_der: pechoder_,
+                    manga_izq: mangaizq_,
+                    manga_der: mangader_,
+                    espalda: espalda_,
+                    cantidad: cantidad_,
+                    precio: precio_,
+                    totaldetalle: totaldetalle_,
+                    observacion: Observacion_,
 
 
                 };
@@ -1083,7 +1105,6 @@
 
 
         }
-
     </script>
 
 </body>
