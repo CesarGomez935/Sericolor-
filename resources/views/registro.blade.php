@@ -172,6 +172,8 @@
                         </div>
 
                         <a id="guardar" class="uk-button uk-button-primary">Registrarse</a>
+                        <a hidden href="/login" id="redirect" class="uk-button uk-button-primary">redireccion</a>
+
 
                     </fieldset>
 
@@ -221,6 +223,8 @@
                 , success(res) {
 
                     alert("Guardado con exito")
+                    document.getElementById("redirect").click();
+
 
 
                 }
