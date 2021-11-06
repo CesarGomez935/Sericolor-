@@ -146,7 +146,7 @@
                     html +=
                         '<tr>' +
 
-                        '<td>' + '<a class="uk-button"  href="/menu/menu_facturacion/form_sublimacion' +
+                        '<td>' + '<a class="uk-button"  href="/menu/menu_facturacion/form_sublimacion/' +
                         pedido.idmaestro + '/edit' +
                         '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
                         .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
