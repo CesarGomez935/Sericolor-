@@ -315,7 +315,7 @@
 
 
                             <textarea id="notas" value=" " name="Notas" class="uk-textarea"
-                                placeholder="Notas">{{ $edit->notas }}</textarea>
+                                placeholder="Notas">{{ $edit->idmaestro }}</textarea>
 
 
 
@@ -1216,24 +1216,6 @@
 
             let data = {
 
-                <<
-                << << < HEAD
-                IdCliente: $("#cliente").val(),
-                IdUsuario: $("#recibepedido").val(),
-                IdCategoria: $("#cat").val(),
-                fecha: $("#fecha_fact").val(),
-                notas: $("#notas").val(),
-                total_costo: $("#total").val(),
-                Saldo: $("#saldo").val(),
-                abono: $("#abono").val(),
-                codseguimiento: $("#abono").val(),
-
-
-                idmetodo: $("#cat").val(),
-                cod: $("#saldo").val(),
-                estado: $("#estado").val(),
-                ===
-                === =
                 idmaestro: $("#id").val(),
                 IdCliente: $("#cliente").val(),
                 IdUsuario: $("#recibepedido").val(),
@@ -1245,8 +1227,6 @@
                 abono: $("#abono").val(),
                 codseguimiento: $("#abono").val(),
                 estado: $("#estado").val(),
-                >>>
-                >>> > comittte
 
             };
 
@@ -1469,30 +1449,26 @@
 
         }
 
-        <<
-        << << < HEAD
-            ===
-            === =
-            function peticionapi7(data, method, onSuccess) {
+        function peticionapi7(data, method, onSuccess) {
 
 
-                let url = '/api/actualizar';
-                if (method == 'PUT' || method == 'DELETE') {
-                    url += '/' + data.iddetalleordensu;
-                }
-                $.ajax({
-                    url: url,
-                    method: method,
-                    data: data,
-
-                    success(res) {
-                        onSuccess(res);
-
-                    }
-
-                })
-
+            let url = '/api/actualizar';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.iddetalleordensu;
             }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+
+        }
 
         function agregarotrodetalle() {
 
@@ -1546,8 +1522,7 @@
                 cargardatosdetalle();
             });
 
-        } >>>
-        >>> > comittte
+        }
     </script>
 
 
