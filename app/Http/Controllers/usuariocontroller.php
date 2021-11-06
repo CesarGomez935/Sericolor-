@@ -17,8 +17,8 @@ class usuariocontroller extends Controller
     public function index()
     {
         //
-        return usuario::all();
-         return persona::all();
+        // return usuario::all();
+        //  return persona::all();
         // return usuario::all();
     }
 
@@ -43,6 +43,23 @@ class usuariocontroller extends Controller
         //
         DB::transaction(function() use ($request)
         {
+            $request->validate([
+
+             'primer_nombre'=>'required',
+             'primer_apellido'=>'required',
+             'telefono'=>'required',
+             'correo'=>'required',
+             'cedula'=>'required',
+             'correo'=>'required',
+             'direccion'=>'required',
+
+             'usuario'=>'required',
+             'Contrasena'=>'required',
+             'RolAsignado'=>'required',
+                   
+                
+
+            ]);
 
             $persona=persona::create([
 
@@ -75,6 +92,7 @@ class usuariocontroller extends Controller
             
 
         });
+        return redirect("/login");
       
     }
 

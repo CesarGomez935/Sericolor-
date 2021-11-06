@@ -94,11 +94,21 @@
                     <select class="uk-select" id="Rol" disabled hidden>
                         <option value='Cliente'>Cliente</option>
                     </select>
+
+
                     <div class="uk-margin">
                         <label for="primer_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Primer Nombre</label>
                         <div class="uk-form-controls">
                             <input name="primer_nombre" id="primer_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Primer Nombre">
                         </div>
+
+                        @error('primer_nombre')
+
+
+                        <small>*{{$message}}</small>
+
+                        @enderror
+
                     </div>
 
                     <div class="uk-margin">
@@ -132,6 +142,14 @@
                         <div class="uk-form-controls">
                             <input name="telefono" id="telefono_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Teléfono">
                         </div>
+
+                        @error('telefono')
+
+
+                        <small>*{{$message}}</small>
+
+                        @enderror
+
                     </div>
 
                     <div class="uk-margin">
@@ -147,6 +165,7 @@
                             <div uk-form-custom="target: > * > span:first-child">
                                 <select name="tipo_de_cliente" id="tipo_cliente">
 
+                                    <option selected disabled value="">--Seleccionar--</option>
                                     <option value="Persona_Natural">Persona Natural</option>
                                     <option value="Empresa">Empresa</option>
 
@@ -157,6 +176,13 @@
                                 </button>
                             </div>
                         </div>
+                        @error('tipo_de_cliente')
+
+
+                        <small>*{{$message}}</small>
+
+                        @enderror
+
                     </div>
 
                     <div class="uk-margin">
@@ -164,6 +190,13 @@
                         <div class="uk-form-controls">
                             <input name="correo" id="correo_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="email" placeholder="Correo">
                         </div>
+                        @error('correo')
+
+
+                        <small>*{{$message}}</small>
+
+                        @enderror
+
                     </div>
 
                     <div class="uk-margin">

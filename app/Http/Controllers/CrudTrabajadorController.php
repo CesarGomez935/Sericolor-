@@ -33,10 +33,33 @@ class CrudTrabajadorController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
-     */
+     */ 
     public function store(Request $request)
     {
+
+        
+
          DB::transaction(function () use ($request) {
+
+            
+            $request->validate([
+
+             'primer_nombre'=>'required',
+             'primer_apellido'=>'required',
+             'telefono'=>'required',
+             'correo'=>'required',
+             'cedula'=>'required',
+             'correo'=>'required',
+             'direccion'=>'required',
+
+             'nombre_de_usuario'=>'required',
+             'password'=>'required',
+             'rol_asignado'=>'required',
+                   
+                
+
+        ]);
+
 
          $persona=persona::create([
 

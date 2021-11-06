@@ -41,6 +41,19 @@ class CrudClienteController extends Controller
 
        DB::transaction(function () use ($request) {
 
+        $request->validate([
+
+             'primer_nombre'=>'required',
+             
+             'telefono'=>'required',
+             'correo'=>'required',
+             'tipo_de_cliente'=>'required',
+             
+             
+                
+
+        ]);
+
          $persona=persona::create([
 
                 'Primer_Nombre'=>$request->primer_nombre,
