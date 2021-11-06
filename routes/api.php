@@ -21,6 +21,7 @@ use App\Http\Controllers\usuariocontroller;
 use App\Http\Controllers\vistas;
 use App\Http\Controllers\editpedido1;
 use App\Http\Controllers\editpedido2;
+use App\Http\Controllers\revisionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,3 +79,5 @@ Route::get('/getdetalles/{id}', [vistas::class,"getdetalles"]);
 Route::put('/updatedetalles/{id}', [vistas::class,"updatedetalles"]);
 Route::resource('/actualizar', editpedido1::class);
 Route::resource('/actualizarrecibo', editpedido2::class);
+
+Route::get('/revision/{id}', [revisionController::class,"show"]);

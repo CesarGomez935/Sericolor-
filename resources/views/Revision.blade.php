@@ -137,7 +137,7 @@
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
 
-                                    <form>
+                                    <div>
 
                                         <div class="d-flex align-items-center mb-3 pb-1">
                                             <i class="fas fa-cubes fa-2x me-3" style="color:palegreen"></i>
@@ -148,13 +148,15 @@
                                             que esta en su factura</h5>
 
                                         <div class="form-outline mb-4">
-                                            <input type="email" id="form2Example17" class="form-control form-control-lg" />
+                                            <input autofocus type="text" id="codigo_seg" class="form-control form-control-lg" />
+
                                             <label class="form-label" for="form2Example17">código</label>
                                         </div>
                                         <div class="pt-1 mb-4">
-                                            <button class="btn btn-dark btn-lg btn-block" type="button">Revisa</button>
+                                            <button id="revisar" onclick="cargarRevision();" class="btn btn-dark btn-lg btn-block" type="button">Revisar</button>
+
                                         </div>
-                                    </form>
+                                    </div>
 
                                 </div>
                             </div>
@@ -254,12 +256,51 @@
         </div>
 
     </div>
+
+    <div id="revision" uk-modal>
+        <div class="uk-modal-dialog">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-header">
+                <h2 class="uk-modal-title">revision del Pedido N°</h2>
+            </div>
+            <div class="uk-modal-body">
+
+                <div class="uk-form-horizontal">
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">Nombre</label>
+                        <div class="uk-form-controls">
+                            <input disabled class="uk-form-label uk-width-1-1 " id="Nombre" type="text" placeholder="">
+                        </div>
+
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">Estado</label>
+                        <div class="uk-form-controls">
+                            <input disabled class="uk-form-label uk-width-1-1 " id="Estado" type="text" placeholder="">
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+            <div class="uk-modal-footer">
+                <button class="uk-button uk-button-secondary uk-modal-close" type="button">Cerrar</button>
+
+            </div>
+        </div>
+    </div>
+
 </footer>
 
 </html>
 
 <script>
     let pedido = [];
+    let detalle = [];
+
 
     cargarpedido();
 
@@ -331,5 +372,87 @@
             $("#slider").html(html);
         });
     }
+
+
+
+
+    function cargarRevision() {
+
+        peticionapi2({}, 'GET', function(res) {
+            detalle = res;
+            console.log(res);
+            mostrar();
+
+
+        });
+
+
+
+    }
+
+    function peticionapi2(data, method, onSuccess) {
+
+        var cod = $("#codigo_seg").val();
+
+
+        console.log(cod);
+        let url = '/api/revision/' + cod + '';
+        if (method == 'PUT' || method == 'DELETE') {
+            url += '/' + data.idmaestro;
+        }
+        $.ajax({
+            url: url
+            , method: method
+            , data: data,
+
+            success(res) {
+                onSuccess(res);
+                //console.log(res);
+
+            }
+            , error(e) {
+                alert("El pedido no fue encontrado");
+            }
+
+        })
+
+    }
+
+    function mostrar(id) {
+        UIkit.modal('#revision').show();
+        console.log(detalle);
+        // let datos = detalle.filter(detalle => {
+        //     return detalle.idmaestro == id;
+
+        // })
+        console.log(id, detalle);
+
+
+        $("#Nombre").val(detalle.Primer_Nombre + " " + detalle.Segundo_Nombre + " " + detalle.Primer_Apellido + " " + detalle.Segundo_Apellido)
+            , $("#Estado").val(detalle.Estado)
+
+
+
+
+
+
+
+    }
+
+    // Get the input field
+    var input = document.getElementById("codigo_seg");
+
+
+    // Execute a function when the user releases a key on the keyboard
+    input.addEventListener("keyup", function(event) {
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            document.getElementById("revisar").click();
+
+        }
+    });
 
 </script>
