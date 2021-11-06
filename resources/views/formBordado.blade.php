@@ -25,12 +25,10 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-
 </head>
 
 
 <body onpageshow="Validacion(); fecha();">
-
     <!-- Nav Bar-->
     <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
@@ -95,7 +93,7 @@
                         <input id="fecha_fact" name="fecha_facturacion" type="date" class="uk-input">
                     </div>
                     <div class="uk-inline uk-width-1-2 ">
-                        <label for="">Nombre del cliente</label>
+                        <label for="fecha_ent">Nombre del cliente</label>
                         <select name="" class="uk-select uk-width-1-1" id="cliente"></select>
                     </div>
                 </div>
@@ -162,55 +160,52 @@
                                 </thead>
                                 <tbody>
 
-                                    <form action="" method="post">
+                                    <tr>
 
-                                        <tr>
-
-                                            <td>
-                                                <select onchange="Validacion();" name="Tallas"
-                                                    class="uk-select uk-form-width-xsmall" id="Tallas">
+                                        <td>
+                                            <select onchange="Validacion();" name="Tallas"
+                                                class="uk-select uk-form-width-xsmall" id="Tallas">
 
 
-                                                    <option value="2">2</option>
-                                                    <option value="4">4</option>
-                                                    <option value="6">6</option>
-                                                    <option value="8">8</option>
-                                                    <option value="10">10</option>
-                                                    <option value="12">12</option>
-                                                    <option value="14">14</option>
-                                                    <option value="16">16</option>
-                                                    <option value="18">18</option>
-                                                    <option value="S">S</option>
-                                                    <option value="M">M</option>
-                                                    <option value="L">L</option>
-                                                    <option value="XL">XL</option>
-                                                    <option value="2XL">2XL</option>
-                                                    <option value="3XL">3XL</option>
-                                                    <option value="5XL">5XL</option>
+                                                <option value="2">2</option>
+                                                <option value="4">4</option>
+                                                <option value="6">6</option>
+                                                <option value="8">8</option>
+                                                <option value="10">10</option>
+                                                <option value="12">12</option>
+                                                <option value="14">14</option>
+                                                <option value="16">16</option>
+                                                <option value="18">18</option>
+                                                <option value="S">S</option>
+                                                <option value="M">M</option>
+                                                <option value="L">L</option>
+                                                <option value="XL">XL</option>
+                                                <option value="2XL">2XL</option>
+                                                <option value="3XL">3XL</option>
+                                                <option value="5XL">5XL</option>
 
 
 
 
-                                                </select>
+                                            </select>
 
 
 
 
-                                                <select name="Genero" class="uk-select uk-form-width-xsmall"
-                                                    id="Genero">
-                                                    <option value="Dama">Dama</option>
-                                                    <option value="Caballero">Caballero</option>
-                                                </select>
+                                            <select name="Genero" class="uk-select uk-form-width-xsmall" id="Genero">
+                                                <option value="Dama">Dama</option>
+                                                <option value="Caballero">Caballero</option>
+                                            </select>
 
 
-                                            </td>
-                                            <td>
-                                                <input id="cantidad" onchange="monto();" type="number" min="0"
-                                                    class="uk-input uk-form-width-xsmall monto">
+                                        </td>
+                                        <td>
+                                            <input id="cantidad" onchange="monto();" type="number" min="0"
+                                                class="uk-input uk-form-width-xsmall monto">
 
 
-                                                <input id="precio" onchange="monto();" type="number" min="0"
-                                                    class=" monto uk-input uk-form-width-small  ">
+                                            <input id="precio" onchange="monto();" type="number" min="0"
+                                                class=" monto uk-input uk-form-width-small  ">
 
 
 
@@ -218,39 +213,38 @@
 
 
 
-                                            </td>
+                                        </td>
 
-                                            <td>
-                                                <textarea id="Observacion" name="Observacion"
-                                                    class="uk-input uk-form-width-1-1" type="text"> </textarea>
-
-
-                                            </td>
+                                        <td>
+                                            <textarea id="Observacion" name="Observacion"
+                                                class="uk-input uk-form-width-1-1" type="text"> </textarea>
 
 
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label for="sub_total" class="uk-label">Total</label>
-                                            </td>
-                                            <td>
-                                                <input disabled id="sub_total" type="number" min="0"
-                                                    class="uk-input uk-form-width-small ">
-                                            </td>
-                                            <td>
-                                                <a class="uk-button uk-button-primary" onclick="insertar();">Insertar
-                                                    Pedido</a>
-                                            </td>
+                                        </td>
 
 
-                                        </tr>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="sub_total" class="uk-label">Total</label>
+                                        </td>
+                                        <td>
+                                            <input disabled id="sub_total" type="number" min="0"
+                                                class="uk-input uk-form-width-small ">
+                                        </td>
+                                        <td>
+                                            <a class="uk-button uk-button-primary" onclick="insertar();">Insertar
+                                                Pedido</a>
+                                        </td>
+
+
+                                    </tr>
                                 </tbody>
                             </table>
 
+
                         </div>
                     </div>
-
-
                     <div class="uk-background-muted">
                         <h1 class="uk-text-center">Notas</h1>
 
@@ -262,7 +256,6 @@
 
                         </div>
                     </div>
-
 
 
                 </div>
@@ -280,6 +273,7 @@
                             <th>Manga Der.</th>
                             <th>Espalda</th>
                             <th>Talla</th>
+
                             <th>Cantidad</th>
                             <th>precio</th>
                             <th>Sub-Total</th>
@@ -348,7 +342,6 @@
 
 
                 function Validacion() {
-
                     var Tallas = document.getElementById("Tallas");
                     var Genero = document.getElementById("Genero");
 
@@ -368,8 +361,6 @@
 
                     } else {
                         Genero.style.visibility = "visible";
-                        Genero.value = "Caballero";
-
 
 
 
@@ -497,14 +488,31 @@
 
                     } else {
                         Genero.style.visibility = "visible";
-
+                        Genero.value = "Caballero";
 
 
 
 
                     }
 
+
                 }
+
+                function fecha() {
+                    $(document).ready(function() {
+                        var date = new Date();
+
+                        var day = date.getDate();
+                        var month = date.getMonth() + 1;
+                        var year = date.getFullYear();
+
+                        if (month < 10) month = "0" + month;
+                        if (day < 10) day = "0" + day;
+                        var today = year + "-" + month + "-" + day;
+                        $("#fecha_fact").attr("value", today);
+                    });
+                }
+
 
 
 
@@ -587,34 +595,10 @@
                     document.getElementById("total").value = total;
 
                 }
-
-                function fecha() {
-                    $(document).ready(function() {
-                        var date = new Date();
-
-                        var day = date.getDate();
-                        var month = date.getMonth() + 1;
-                        var year = date.getFullYear();
-
-                        if (month < 10) month = "0" + month;
-                        if (day < 10) day = "0" + day;
-                        var today = year + "-" + month + "-" + day;
-                        $("#fecha_fact").attr("value", today);
-
-                    });
-
-
-
-                }
-
-                // function rand() {
-                //     echo rand(1111111111, 99999999);
-                // }
             </script>
 
             </table>
         </div>
-
 
 
         <div class="uk-child-width-1-2 uk-text-center uk-background-muted uk-padding" uk-grid>
@@ -626,40 +610,38 @@
                     <div class="uk-margin">
                         <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                         <div class="uk-form-controls">
-
                             <input id="abono" min="0" name="Abono" onchange="abonos();"
                                 class="uk-input uk-form-width-large" id="form-horizontal-text" type="number"
                                 placeholder="">
+
+                            <script>
+                                function abonos() {
+                                    var sub_total = document.getElementById("total").value;
+                                    var abono = document.getElementById("abono").value;
+                                    var total = 0;
+
+                                    total = sub_total - abono;
+
+                                    console.log(sub_total, abono, total); //
+
+
+                                    document.getElementById('saldo').value = total;
+
+
+
+                                }
+                            </script>
                         </div>
-                        <script>
-                            function abonos() {
-                                var sub_total = document.getElementById("total").value;
-                                var abono = document.getElementById("abono").value;
-                                var total = 0;
-
-                                total = sub_total - abono;
-
-                                console.log(sub_total, abono, total); //
-
-
-                                document.getElementById('saldo').value = total;
-
-
-
-                            }
-                        </script>
-
                     </div>
 
                     <div class="uk-margin">
                         <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
                         <div class="uk-form-controls">
-
                             <input id="saldo" name="Saldo" class="uk-input uk-form-width-large"
                                 id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
-                    <div class="uk-margin ">
+                    <div class="uk-margin">
                         <label for="banco" class="uk-form-label" for="form-horizontal-text">Método de Pago</label>
                         <div class="uk-form-controls">
 
@@ -703,7 +685,6 @@
                             </select>
                         </div>
                     </div>
-
                     <div class="uk-margin">
                         <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
                         <div class="uk-form-controls">
@@ -715,7 +696,7 @@
                     <div class="uk-margin">
                         <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
                         <div class="uk-form-controls">
-                            <input disabled id="factura" name="num_factura" class="uk-input uk-form-width-large "
+                            <input id="factura" name="num_factura" class="uk-input uk-form-width-large"
                                 id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
@@ -723,7 +704,7 @@
                         <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
                         <div class="uk-form-controls">
                             <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="Numero de Factura">
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                 </div>
@@ -736,28 +717,25 @@
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
                 <a href="/menu/menu_facturacion" class="uk-button uk-button-primary "
                     style="margin-left: 100px">Atrás</a>
-                <a onclick="return confirm('¿Está seguro que desea continuar?')" id="guardar"
-                    href="/menu/menu_facturacion/form_bordado" class="uk-button uk-button-secondary"
-                    style="margin-left: 100px">Guardar</a>
+                <a id="guardar" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
 
 
             </div>
 
             <select class="uk-select" id="cat" disabled hidden>
-                <option value='4'>Impresion_Digital</option>
+                <option value='4'>Serigrafía</option>
             </select>
-
         </div>
-
-
     </form>
     {{-- script para ingresar datos en los formularios --}}
-    <script type="text/javascript">
+    <script>
         let pedido = [];
         const arreglo = [];
+        var cod_seg_rand = 0;
         cargarpedido();
         cargarusuario();
         cargarcliente();
+        getRandom();
         $('#guardar').click(function(e) {
             cargar_detalle();
             guardarpedido();
@@ -766,26 +744,6 @@
             alert("Se agrego su orden");
 
         });
-
-        function peticionapi(data, method, onSucess) {
-            let url = '/api/pedido';
-            if (method == 'PUT' || method == 'DELETE') {
-                url += '/' + data.idmaestro;
-            }
-            $.ajax({
-                url: url,
-                method: method,
-                data: data,
-                error(ext) {
-                    let error = e.responseJSON.errors;
-                    let msj = error[Object.keys(error)[0]][0];
-                    alert(msj);
-                },
-                success(res) {
-
-                }
-            })
-        }
 
         function peticionapi3(data, method, onSuccess) {
 
@@ -861,12 +819,34 @@
             });
         }
 
+        function peticionapi(data, method, onSucess) {
+            let url = '/api/pedido';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.idmaestro;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+                error(ext) {
+                    let error = e.responseJSON.errors;
+                    let msj = error[Object.keys(error)[0]][0];
+                    alert(msj);
+                },
+                success(res) {
+
+                }
+            })
+        }
+
+        function getRandom() {
+
+            cod_seg_rand = Math.floor((Math.random() * 10000000));
+            console.log(cod_seg_rand);
+
+        }
 
         function guardarpedido() {
-
-
-
-
 
 
 
@@ -874,22 +854,20 @@
             let data = {
 
                 IdCliente: $("#cliente").val(),
-                IdUsuario: $("#autorizapedido").val(),
+                IdUsuario: $("#recibepedido").val(),
                 IdCategoria: $("#cat").val(),
                 fecha: $("#fecha_fact").val(),
                 notas: $("#notas").val(),
                 total_costo: $("#total").val(),
                 Saldo: $("#saldo").val(),
                 abono: $("#abono").val(),
-                // codseguimiento: $("#tipo_de_pedido").val(),
+                codseguimiento: cod_seg_rand,
 
 
-                idmetodo: $("#banco").val(),
-                //codigo tiene que ser aleatorio
-                cod: $("#saldo").val(),
+                idmetodo: $("#metodo_de_pago").val(),
+                cod: $("#factura").val(),
+
                 estado: $("#estado").val(),
-
-
 
                 //funcion que llama al arreglo que toma los datos
                 detalle: JSON.stringify(arreglo)
@@ -916,29 +894,11 @@
 
         }
 
-        function fecha() {
-            $(document).ready(function() {
-                var date = new Date();
-
-                var day = date.getDate();
-                var month = date.getMonth() + 1;
-                var year = date.getFullYear();
-
-                if (month < 10) month = "0" + month;
-                if (day < 10) day = "0" + day;
-                var today = year + "-" + month + "-" + day;
-                $("#fecha_fact").attr("value", today);
-            });
-        }
-
         function cargar_detalle() {
 
             var filas = document.querySelectorAll("#Tabla tbody tr");
 
             var contador = 0;
-
-
-
 
             const pecho_izq = [];
             const pecho_der = [];
@@ -954,7 +914,7 @@
 
             var total = document.getElementById("total").value;
 
-            //console.log(filas);
+            console.log(filas);
 
 
 
@@ -979,8 +939,6 @@
                 var precio_ = parseFloat(columnas[7].textContent);
                 var totaldetalle_ = parseFloat(columnas[8].textContent);
                 var Observacion_ = columnas[9].textContent;
-
-
 
 
                 var Talla_val = 0;
@@ -1040,9 +998,6 @@
                 } else {}
 
 
-                console.log(Talla_val);
-
-
 
 
 
@@ -1059,8 +1014,8 @@
 
                 arreglo[contador] = {
 
-                    IdCliente: $("#cat").val(),
-                    IdUsuario: $("#cat").val(),
+                    IdCliente: $("#cliente").val(),
+                    IdUsuario: $("#recibepedido").val(),
                     IdCategoria: $("#cat").val(),
                     fecha: $("#fecha_fact").val(),
                     notas: $("#notas").val(),
@@ -1106,6 +1061,7 @@
 
         }
     </script>
+
 
 </body>
 

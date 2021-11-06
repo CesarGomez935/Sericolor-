@@ -187,7 +187,7 @@ class maestrocontrolador extends Controller
         ->join("recibo","recibo.Idmaestro","=","maestro.idmaestro")
         ->select("recibo.*","maestro.*","detalle-orden-sub,bor,ser.*", "cliente.*", "usuario.*", "trabajador.idpersona as trabajadorid", "trabajador.primer_nombre as trabajador_primer_nombre", "trabajador.segundo_nombre as trabajador_segundo_nombre", "trabajador.primer_apellido as trabajador_primer_apellido", "trabajador.segundo_apellido as trabajador_segundo_apellido", "persona.*")
         ->findOrFail($id);
-         return view("EditarformSublimacion",compact('edit'));
+         return view("EditarformImpresion",compact('edit'));
 
 
     }
