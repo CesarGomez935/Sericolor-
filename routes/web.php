@@ -10,6 +10,7 @@ use App\Http\Controllers\persona;
 use App\Http\Controllers\promocioncontroller;
 use App\Http\Controllers\maestrocontrolador;
 Use App\Http\Controllers\vistas;
+Use App\Http\Controllers\maestrocontroladorImpresion;
 
 
 /*
@@ -192,6 +193,11 @@ Route::put('/menu/menu_facturacion/form_bordado/{id}', [maestrocontrolador::clas
 //edicion de formulario de sublimacion
 Route::get('/menu/menu_facturacion/form_sublimacion/{id}/edit',[maestrocontrolador::class,"editsublimacion"])->name("maestro.editsublimacion");
 Route::put('/menu/menu_facturacion/form_sublimacion/{id}', [maestrocontrolador::class,"editsublimacion"])->name("maestro.editsublimacion");
+//edicion de formulario de impresion digital
+Route::get('/menu/menu_facturacion/form_impresion_digital/{id}/edit',[maestrocontroladorImpresion::class,"edit"])->name("maestro.edit");
+Route::put('/menu/menu_facturacion/form_impresion_digital/{id}', [maestrocontroladorImpresion::class,"update"])->name("maestro.update");
+
+
 
 
 

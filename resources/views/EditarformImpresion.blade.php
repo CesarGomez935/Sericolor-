@@ -27,7 +27,7 @@
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
-<body onpageshow="fecha();">
+<body onpageshow="">
 
     <!-- NavBar-->
     <nav class="uk-navbar uk-navbar-container ">
@@ -82,7 +82,10 @@
     </nav>
 
 
-    <form action="" method="">
+    <form action="{{ route('maestro.update', $edit) }}" method="post">
+        @csrf
+
+        @method('put')
         <div>
 
             <div class="uk-padding uk-background-muted">
@@ -756,9 +759,6 @@
         }
 
         function guardarpedido() {
-
-
-
 
             let data = {
 
