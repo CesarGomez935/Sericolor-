@@ -64,10 +64,7 @@ class vistas extends Controller
 
     public function mostrar_impresion(){
 
-    return maestro::select("*")->where("idcategoria",3)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("idmaestro","DESC")->get()
-
-    
-;        
+    return maestro::select("*")->where("idcategoria",3)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("idmaestro","DESC")->get();        
 
     }
 
@@ -75,8 +72,7 @@ class vistas extends Controller
 
    
 
-    return maestro::select("*")->where("idcategoria",1)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("idmaestro","DESC")->get()
-;        
+    return maestro::select("*")->where("idcategoria",1)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("idmaestro","DESC")->get();        
 
     }
 
@@ -86,8 +82,7 @@ class vistas extends Controller
 
   
       
-        return maestro::select("*")->where("idcategoria",2)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("idmaestro","DESC")->get()
-;        
+        return maestro::select("*")->where("idcategoria",2)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("idmaestro","DESC")->get();        
 
     }
 
@@ -95,8 +90,7 @@ class vistas extends Controller
 
    
 
-    return maestro::select("*")->where("idcategoria",4)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("idmaestro","DESC")->get()
-;        
+    return maestro::select("*")->where("idcategoria",4)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("idmaestro","DESC")->get();        
 
     }
 
@@ -105,6 +99,16 @@ class vistas extends Controller
        // $detalles=new Detalledelpedido();
          return $detalles = Detalledelpedido::select("*")->where("IdMaestro",$id)->join("insumos","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")->get();
             
+
+    }
+
+    public function getallpedidos(){
+
+   
+
+  
+      
+        return maestro::select("*")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();        
 
     }
 

@@ -74,6 +74,7 @@ Route::get('getimpresion', [vistas::class,"mostrar_impresion"]);
 Route::get('getsublimacion', [vistas::class,"mostrar_sublimacion"]);
 Route::get('getserigrafia', [vistas::class,"mostrar_serigrafia"]);
 Route::get('getbordado', [vistas::class,"mostrar_bordado"]);
+Route::get('getallpedidos', [vistas::class,"getallpedidos"]);
 
 Route::get('/getdetalles/{id}', [vistas::class,"getdetalles"]);
 Route::put('/updatedetalles/{id}', [vistas::class,"updatedetalles"]);
