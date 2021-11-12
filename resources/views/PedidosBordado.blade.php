@@ -89,6 +89,7 @@
             <thead>
                 <tr>
                     <th>Pedidos y Clientes</th>
+                    <th>Fecha</th>
                     <th>Estado</th>
                     <th>opciones</th>
 
@@ -193,7 +194,7 @@
                         pedido.idmaestro + '/edit' +
                         '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
                         .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
-
+                        '<td>' + pedido.fecha + '</td>' +
                         '<td>' + pedido.Estado + '</td>' + '<td>' +
                         '<a href="/menu/menu_facturacion/form_bordado/' + pedido
                         .idmaestro +
