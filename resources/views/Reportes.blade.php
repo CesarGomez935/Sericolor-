@@ -113,7 +113,8 @@
                                     </select>
                                 </td>
                                 <td>
-                                    <input class="uk-input uk-form-width-medium" type="date">
+                                    <input onchange="cambioFecha()" id="fecha_inicio" class="uk-input uk-form-width-medium" type="date">
+
                                 </td>
                                 <td>
                                     <div class="">
@@ -139,6 +140,7 @@
                                     <button class="uk-button uk-button-secondary" uk-icon="search"></button>
                                     <label for="">Descargar reporte</label>
                                     <a href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a>
+                                    <a id="pedidosdiario" class="uk-button uk-button-secondary" uk-icon="download"></a>
 
 
                                 </td>
@@ -184,3 +186,22 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+    function cambioFecha() {
+
+        var fecha = document.getElementById("fecha_inicio").value;
+
+        document.getElementById("pedidosdiario").href = "/api/pdf/pedidos_diarios/" + fecha + "/descargar";
+
+
+
+
+        console.log(fecha);
+
+
+
+
+    }
+
+</script>

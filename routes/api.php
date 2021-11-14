@@ -88,5 +88,5 @@ Route::get('/revision/{id}', [revisionController::class,"show"]);
 Route::get('/pdf/personal', [ReportesController::class,"getpersonal"]);
 Route::get('/pdf/personal/descargar', [ReportesController::class,"createPDFpersonal"]);
 
-Route::get('/pdf/pedidos_diarios', [ReportesController::class,"getpedidosdiarios"]);
-Route::get('/pdf/pedidos_diarios/descargar', [ReportesController::class,"createPDFpedidosdiarios"]);
+Route::get('/pdf/pedidos_diarios/{fecha}', [ReportesController::class,"getpedidosdiarios"]);
+Route::get('/pdf/pedidos_diarios/{fecha}/descargar', [ReportesController::class,"createPDFpedidosdiarios"]);

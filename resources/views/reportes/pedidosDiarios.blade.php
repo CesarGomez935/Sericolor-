@@ -14,7 +14,7 @@
     <div class="">
 
         {{-- <img style="position: fixed" src="{{ asset('img/ser.png') }}" width="150" alt=""> --}}
-        <h2 class="text-center mb-3">Reporte de Pedidos Fecha: Sericolor</h2>
+        <h2 class="text-center mb-3">Reporte de Pedidos Fecha: {{$fecha}}</h2>
 
 
 

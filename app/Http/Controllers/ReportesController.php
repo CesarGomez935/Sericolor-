@@ -105,23 +105,23 @@ class ReportesController extends Controller
       return $pdf->download('Reporte Trabajadores.pdf');
     }
 
-    public function getpedidosdiarios()
+    public function getpedidosdiarios($fecha)
     {
-        $pedidosdiarios= maestro::select("*")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
-        $suma=maestro::where("fecha","2021-11-14")->sum("total_costo");
-        return view('reportes.pedidosDiarios', compact('pedidosdiarios','suma'));
+        $pedidosdiarios= maestro::where("fecha",$fecha)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
+        $suma=maestro::where("fecha",$fecha)->sum("total_costo");
+        return view('reportes.pedidosDiarios', compact('pedidosdiarios','suma','fecha'));
     }
 
-    public function createPDFpedidosdiarios() 
+    public function createPDFpedidosdiarios($fecha) 
     {
       // retreive all records from db
-      $pedidosdiarios= maestro::select("*")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
-      $suma=maestro::where("fecha","2021-11-14")->sum("total_costo");
+      $pedidosdiarios= maestro::where("fecha",$fecha)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
+        $suma=maestro::where("fecha",$fecha)->sum("total_costo");
       
 
       // share data to view
-      view()->share('pedidosdiarios',compact('pedidosdiarios','suma'));
-      $pdf = PDF::loadView('reportes.pedidosDiarios',compact('pedidosdiarios','suma'))->setPaper('portrait', 'landscape');
+      view()->share('pedidosdiarios',compact('pedidosdiarios','suma','fecha'));
+      $pdf = PDF::loadView('reportes.pedidosDiarios',compact('pedidosdiarios','suma','fecha'))->setPaper('portrait', 'landscape');
       
 
       // download PDF file with download method
