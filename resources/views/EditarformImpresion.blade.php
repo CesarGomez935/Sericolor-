@@ -94,7 +94,8 @@
                 <div class="uk-grid-small" uk-grid>
                     <div class="uk-inline uk-width-1-2 ">
                         <label for="fecha_fact">Fecha de Facturación</label>
-                        <input id="fecha_fact" name="fecha_facturacion" type="date" class="uk-input">
+                        <input id="fecha_fact" name="fecha_facturacion" type="date" class="uk-input"
+                            value="{{ $edit->fecha }}">
                     </div>
                     <div class="uk-inline uk-width-1-2 ">
                         <label for="fecha_ent">Nombre del cliente</label>
@@ -246,7 +247,7 @@
 
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="Tabladetalle">
 
                             </tbody>
                             <tfoot>
@@ -475,7 +476,8 @@
 
                 <div>
 
-                    <textarea id="notas" name="Notas" class="uk-textarea" placeholder="Notas"></textarea>
+                    <textarea id="notas" name="Notas" class="uk-textarea"
+                        placeholder="Notas">{{ $edit->Notas }}</textarea>
 
 
 
@@ -494,7 +496,7 @@
                             <div class="uk-form-controls">
                                 <input id="abono" min="0" name="Abono" onchange="abonos();"
                                     class="uk-input uk-form-width-large" id="form-horizontal-text" type="number"
-                                    placeholder="">
+                                    value="{{ $edit->abono }}" placeholder="">
 
                                 <script>
                                     function abonos() {
@@ -520,7 +522,7 @@
                             <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
                             <div class="uk-form-controls">
                                 <input id="saldo" name="Saldo" class="uk-input uk-form-width-large"
-                                    id="form-horizontal-text" type="text" placeholder="">
+                                    id="form-horizontal-text" value="{{ $edit->saldo }}" type="text" placeholder="">
                             </div>
                         </div>
 
@@ -531,10 +533,10 @@
                                 <select class="uk-select uk-form-width-large" id="metodo_de_pago">
 
 
-                                    <option value='1'>Efectivo</option>
-                                    <option value='2'>Tarjeta</option>
-                                    <option value='3'>Transferencia Bancaria</option>
-                                    <option value='4'>Móvil</option>
+                                    <option @if ($edit->Id_Metodo_de_Pago == '1') selected @endif value='1'>Efectivo</option>
+                                    <option @if ($edit->Id_Metodo_de_Pago == '2') selected @endif value='2'>Tarjeta</option>
+                                    <option @if ($edit->Id_Metodo_de_Pago == '3') selected @endif value='3'>Transferencia Bancaria</option>
+                                    <option @if ($edit->Id_Metodo_de_Pago == '4') selected @endif value='4'>Movil</option>
                                 </select>
                             </div>
                         </div>
@@ -544,9 +546,9 @@
                             <div class="uk-form-controls">
 
 
-                                <select disabled class="uk-select uk-form-width-large" name="" id="estado">
-                                    <option selected value="No Completado">No Completado</option>
-                                    <option value="Completado">Completado</option>
+                                <select class="uk-select uk-form-width-large" name="" id="estado">
+                                    <option @if ($edit->Estado == 'No Completado') selected @endif value="No Completado">No Completado</option>
+                                    <option @if ($edit->Estado == 'Completado') selected @endif value="Completado">Completado</option>
 
                                 </select>
                             </div>
@@ -586,15 +588,17 @@
                         <div class="uk-margin">
                             <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
                             <div class="uk-form-controls">
-                                <input id="factura" name="num_factura" class="uk-input uk-form-width-large"
-                                    id="form-horizontal-text" type="text" placeholder="">
+                                <input value="{{ $edit->Cod_Recibo }}" id="factura" name="num_factura"
+                                    class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
+                                    placeholder="">
                             </div>
                         </div>
                         <div class="uk-margin">
                             <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
                             <div class="uk-form-controls">
-                                <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large"
-                                    id="form-horizontal-text" type="text" placeholder="">
+                                <input disabled value="{{ $edit->idmaestro }}" id="recibo" name="numero_recibo"
+                                    class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
+                                    placeholder="">
                             </div>
                         </div>
                     </div>
@@ -628,8 +632,96 @@
         </div>
 
     </form>
+    <div class="uk-container">
+        <div id="formdetalles" class="uk-modal-full" uk-modal>
+            <div class="uk-modal-dialog">
+                <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                <div uk-height-viewport>
+                    <div class="uk-width-1-2 uk-align-center">
+                        <fieldset class="uk-fieldset">
 
-    <script>
+                            <legend class="uk-legend">Cambiar Detalles</legend>
+                            <div class="uk-margin">
+                                <label>Numero de detalle</label>
+                                <input class="uk-input" type="number" id="Id_trabajadores"
+                                    placeholder="Numero de detalle" disabled>
+                            </div>
+                            <div class="uk-margin">
+                                <label>Pecho izquierda</label>
+                                <input class="uk-input" type="text" id="pechoizq1" placeholder="Manga Izquierda">
+                            </div>
+                            <div class="uk-margin">
+                                <label>Pecho Derecha</label>
+                                <input class="uk-input" type="text" id="pechoder1" placeholder="Pecho Derecho">
+                            </div>
+                            <div class="uk-margin">
+                                <label>Manga Izquierda</label>
+                                <input class="uk-input" type="text" id="mangaizq1" placeholder="Manga Izquierda">
+                            </div>
+                            <div class="uk-margin">
+                                <label>Manga Derecha</label>
+                                <input class="uk-input" type="text" id="mangader1" placeholder="Manga Derecha">
+                            </div>
+                            <div class="uk-margin">
+                                <label>Espalda</label>
+                                <input class="uk-input" type="text" id="espalda1" placeholder="Espalda">
+                            </div>
+                            <div class="uk-margin">
+                                <input class="uk-input" disabled type="text" value="{{ $edit->idmaestro }}"
+                                    id="id" placeholder="nada">
+                            </div>
+                            <div class="uk-margin">
+                                <label>Cantidad</label>
+                                <input onchange="monto2();" type="number" class="uk-input monto2" type="text"
+                                    id="cantidad1" placeholder="Cantidad">
+                            </div>
+
+                            <div class="uk-margin">
+                                <label>Precio</label>
+                                <input onchange="monto2();" type="number" class="uk-input monto2" type="text"
+                                    id="precio1" placeholder="precio">
+                            </div>
+                            <div class="uk-margin">
+                                <label>Observacion</label>
+                                <input class="uk-input" type="text" id="observacioncambio"
+                                    placeholder="Observacion">
+                            </div>
+                            <div class="uk-margin">
+                                <label>Total</label>
+                                <input class="uk-input" type="number" id="sub_total2" disabled>
+                            </div>
+                            <br>
+
+                            <script>
+                                function monto2() {
+                                    var total = 1;
+                                    var change = false; //
+                                    $(".monto2").each(function() {
+                                        if (!isNaN(parseFloat($(this).val()))) {
+                                            change = true;
+                                            total *= parseFloat($(this).val());
+                                        }
+                                    });
+                                    // Si se modifico el valor , retornamos la multiplicación
+                                    // caso contrario 0
+                                    total = (change) ? total : 0;
+                                    document.getElementById('sub_total2').value = total;
+
+
+                                }
+                            </script>
+                    </div>
+                    <div style="text-align: center">
+                        <button class="uk-button uk-button-primary " id="guardar1"
+                            class="uk-align-center">Guardar</button>
+                    </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- <script>
         let pedido = [];
         let usuarios = [];
 
@@ -673,7 +765,7 @@
 
             let url = '/api/getcliente';
             if (method == 'PUT' || method == 'DELETE') {
-                url += '/' + data.id;
+                url += '/' + data.idmaestro;
             }
             $.ajax({
                 url: url,
@@ -686,6 +778,63 @@
                 }
 
             })
+        }
+
+        function cargarusuario() {
+
+            peticionapi2({}, 'GET', function(res) {
+                usuarios = res;
+                console.log(res);
+                let html = '<option value=""> Seleccionar </option>';
+                var valuecliente = "{{ $edit->IdUsuario }}";
+
+                res.forEach(usuarios => {
+                    html += '<option   value="' + usuarios.IdUsuario + '">' +
+                        usuarios.Primer_Nombre + ' ' +
+                        usuarios.Segundo_Nombre + ' ' + usuarios.Primer_Apellido + ' ' + usuarios
+                        .Segundo_Apellido +
+                        '</option>'
+                });
+                $("#recibepedido").html(html);
+
+                cambiarvalueUsuario(valuecliente);
+            });
+        }
+
+        function cambiarvalueUsuario(val) {
+            $("#recibepedido").val(val);
+        }
+
+        function cargarcliente() {
+
+            peticionapi3({}, 'GET', function(res) {
+                cliente = res;
+                console.log(res);
+
+                var valuecliente = "{{ $edit->IdCliente }}";
+                // console.log(valuecliente);
+
+                let html = '<option > Seleccionar </option>';
+                res.forEach(cliente => {
+                    html += '<option   value="' + cliente.IdCliente + '">' +
+                        cliente
+                        .Primer_Nombre + ' ' +
+                        cliente.Segundo_Nombre + ' ' + cliente.Primer_Apellido + ' ' + cliente
+                        .Segundo_Apellido +
+                        '</option>'
+                });
+                //console.log(valuecliente);
+
+                $("#autorizapedido").html(html);
+                $("#cliente").html(html);
+
+                cambiarvalue(valuecliente);
+            });
+        }
+
+        function cambiarvalue(val) {
+            $("#cliente").val(val);
+            $("#autorizapedido").val(val);
         }
 
         function cargarusuario() {
@@ -778,10 +927,6 @@
                 estado: $("#estado").val(),
 
                 //funcion que llama al ar
-                detalle: JSON.stringify(arreglo)
-
-
-
 
             };
 
@@ -789,7 +934,7 @@
 
 
 
-            peticionapi(data, 'POST', function(res) {
+            peticionapi(data, 'PUT', function(res) {
                 alert('Guardado con exito')
             });
         }
@@ -908,7 +1053,643 @@
 
 
         }
+    </script> --}}
+    <script>
+        let pedido = [];
+        const arreglo = [];
+        let detalle = [];
+        cargarpedido();
+        cargarusuario();
+        cargarcliente();
+        cargarpedido3();
+        //cargar_detalle_pedido();
+        cargardatosdetalle();
+
+
+
+        $('#guardar').click(function(e) {
+
+            guardarpedido();
+            cargardatosdetalle();
+
+
+            alert("Se agrego su orden");
+
+        });
+
+        $('#guardarnuevodetalle').click(function(e) {
+
+            agregarotrodetalle();
+            cargardatosdetalle();
+
+        });
+
+        //guardarnuevodetalle
+        $('#guardar1').click(function(e) {
+
+
+            updatedetalle();
+
+            cargardatosdetalle();
+            alert("Se agrego su orden");
+
+        });
+
+        function peticionapi3(data, method, onSuccess) {
+
+
+            let url = '/api/getcliente';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.idmaestro;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+        }
+
+        function peticionapi2(data, method, onSuccess) {
+
+
+            let url = '/api/usuario';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.IdUsuario;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+        }
+
+        function peticionapi4(data, method, onSuccess) {
+
+
+            let url = '/api/getdetalles1/' + {{ $edit->idmaestro }} + '';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.idmaestro;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+
+        }
+
+        function peticionapi5(data, method, onSuccess) {
+
+
+            let url = '/api/updatedetalles';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.iddetalleordensu;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+
+        }
+
+        function peticionapi6(data, method, onSuccess) {
+
+
+            let url = '/api/actualizar';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.iddetalleordensu;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+
+        }
+
+        function cargar_detalle_pedido() {
+
+            peticionapi4({}, 'GET', function(res) {
+                detalle = res;
+                console.log(res);
+
+            });
+
+
+        }
+
+        function cargarusuario() {
+
+            peticionapi2({}, 'GET', function(res) {
+                usuarios = res;
+                console.log(res);
+                let html = '<option value=""> Seleccionar </option>';
+                var valuecliente = "{{ $edit->IdUsuario }}";
+
+                res.forEach(usuarios => {
+                    html += '<option   value="' + usuarios.IdUsuario + '">' +
+                        usuarios.Primer_Nombre + ' ' +
+                        usuarios.Segundo_Nombre + ' ' + usuarios.Primer_Apellido + ' ' + usuarios
+                        .Segundo_Apellido +
+                        '</option>'
+                });
+                $("#recibepedido").html(html);
+
+                cambiarvalueUsuario(valuecliente);
+            });
+        }
+
+        function cambiarvalueUsuario(val) {
+            $("#recibepedido").val(val);
+        }
+
+        function cargardatosdetalle() {
+
+
+            peticionapi4({}, 'GET', function(res) {
+                detalle = res;
+                console.log(detalle);
+                let html = '';
+                res.forEach(detalle => {
+                    html +=
+                        '<tr>' +
+                        '<td>' + detalle.ancho + '</td>' +
+                        '<td>' + detalle.alto + '</td>' +
+                        '<td>' + detalle.mt2 + '</td>' +
+                        '<td>' + detalle.p_m + '</td>' +
+                        '<td>' + detalle.costo + '</td>' +
+                        '<td>' + detalle.cantidad + '</td>' +
+                        '<td>' + detalle.total + '</td>' +
+                        '<td>' + detalle.observacion + '</td>' +
+                        '<td>' +
+                        '<a onclick="editar(' + detalle.iddetalleordenimp +
+                        ')"  class="uk-padding-small" uk-icon="pencil"></a> <span></> <a  action=""  onclick="eliminar(' +
+                        detalle.iddetalleordenimp + ');" class=" " uk-icon="trash"></a>' + '</td>' +
+
+                        '</tr>'
+                });
+                $("#Tabladetalle").html(html);
+                calcular();
+            });
+
+
+
+
+
+
+
+
+
+
+        }
+
+        function editar(id) {
+            UIkit.modal('#formdetalles').show();
+            console.log(detalle);
+            let datos = detalle.filter(detalle => {
+                return detalle.iddetalleordenimp == id;
+
+            })
+            console.log(id, datos);
+
+            $("#Id_trabajadores").val(datos[0].iddetalleordenimp),
+                $("#pechoizq1").val(datos[0].pecho_izquierdo),
+                $("#pechoder1").val(datos[0].pecho_derecho),
+                $("#mangaizq1").val(datos[0].manga_izquierda),
+                $("#mangader1").val(datos[0].manga_derecha),
+                $("#espalda1").val(datos[0].espalda),
+                $("#cantidad1").val(datos[0].Cantidad),
+                $("#precio1").val(datos[0].precio),
+                $("#observacioncambio").val(datos[0].observacion)
+            $("#tallacambio").val(datos[0].IdInsumos)
+            $("#sub_total2").val(datos[0].total)
+
+        }
+
+        function cargarcliente() {
+
+            peticionapi3({}, 'GET', function(res) {
+                cliente = res;
+                console.log(res);
+
+                var valuecliente = "{{ $edit->IdCliente }}";
+                // console.log(valuecliente);
+
+                let html = '<option > Seleccionar </option>';
+                res.forEach(cliente => {
+                    html += '<option   value="' + cliente.IdCliente + '">' +
+                        cliente
+                        .Primer_Nombre + ' ' +
+                        cliente.Segundo_Nombre + ' ' + cliente.Primer_Apellido + ' ' + cliente
+                        .Segundo_Apellido +
+                        '</option>'
+                });
+                //console.log(valuecliente);
+
+                $("#autorizapedido").html(html);
+                $("#cliente").html(html);
+
+                cambiarvalue(valuecliente);
+            });
+        }
+
+
+        function cambiarvalue(val) {
+            $("#cliente").val(val);
+            $("#autorizapedido").val(val);
+        }
+
+        function peticionapi(data, method, onSucess) {
+            let url = '/api/pedido';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.idmaestro;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+                error(ext) {
+                    let error = e.responseJSON.errors;
+                    let msj = error[Object.keys(error)[0]][0];
+                    alert(msj);
+                },
+                success(res) {
+
+                }
+            })
+        }
+
+        function guardarpedido() {
+
+
+            let data = {
+
+                idmaestro: $("#id").val(),
+                IdCliente: $("#cliente").val(),
+                IdUsuario: $("#recibepedido").val(),
+                IdCategoria: $("#cat").val(),
+                fecha: $("#fecha_fact").val(),
+                notas: $("#notas").val(),
+                total_costo: $("#total").val(),
+                Saldo: $("#saldo").val(),
+                abono: $("#abono").val(),
+                codseguimiento: $("#abono").val(),
+                estado: $("#estado").val(),
+
+
+
+
+            };
+
+            console.log(data);
+
+
+
+            peticionapi(data, 'PUT', function(res) {
+                alert('Guardado con exito')
+            });
+
+            updaterecibo();
+        }
+
+        function cargarpedido() {
+            peticionapi({}, 'GET', function(res) {
+                console.log(res);
+
+            });
+
+        }
+
+        function cargar_detalle() {
+
+            var filas = document.querySelectorAll("#Tabla tbody tr");
+
+            var contador = 0;
+
+            const pecho_izq = [];
+            const pecho_der = [];
+            const manga_izq = [];
+            const manga_der = [];
+            const espalda = [];
+            const talla = [];
+            const insumo = [];
+            const cantidad = [];
+            const precio = [];
+            const totaldetalle = [];
+            const Observacion = [];
+
+            var total = document.getElementById("total").value;
+
+            console.log(filas);
+
+
+
+
+
+
+            filas.forEach(function(e) {
+
+
+                // obtenemos las columnas de cada fila
+                var columnas = e.querySelectorAll("td");
+
+
+
+                var pechoizq_ = columnas[0].textContent;
+                var pechoder_ = columnas[1].textContent;
+                var mangaizq_ = columnas[2].textContent;
+                var mangader_ = columnas[3].textContent;
+                var espalda_ = columnas[4].textContent;
+                var talla_ = columnas[5].textContent;
+                var cantidad_ = parseFloat(columnas[6].textContent);
+                var precio_ = parseFloat(columnas[7].textContent);
+                var totaldetalle_ = parseFloat(columnas[8].textContent);
+                var Observacion_ = columnas[9].textContent;
+
+
+                var Talla_val = 0;
+                if (talla_ == 2) {
+                    Talla_val = 1;
+                } else if (talla_ == 4) {
+                    Talla_val = 2;
+                } else
+                if (talla_ == 6) {
+                    Talla_val = 3;
+                } else if (talla_ == 8) {
+                    Talla_val = 4;
+                } else if (talla_ == 10) {
+                    Talla_val = 5;
+                } else if (talla_ == 12) {
+                    Talla_val = 6;
+                } else if (talla_ == 14) {
+                    Talla_val = 7;
+                } else if (talla_ == 16) {
+                    Talla_val = 8;
+                } else if (talla_ == 18) {
+                    Talla_val = 9;
+                } else if (talla_ == "S Dama") {
+                    Talla_val = 10;
+                } else if (talla_ == "S Caballero") {
+                    Talla_val = 11;
+                } else if (talla_ == "M Dama") {
+                    Talla_val = 12;
+                } else if (talla_ == "M Caballero") {
+                    Talla_val = 13;
+                } else if (talla_ == "L Dama") {
+                    Talla_val = 14;
+                } else if (talla_ == "L Caballero") {
+                    Talla_val = 15;
+                } else if (talla_ == "XL Dama") {
+                    Talla_val = 16;
+                } else if (talla_ == "XL Caballero") {
+                    Talla_val = 17;
+                } else if (talla_ == "2XL Dama") {
+                    Talla_val = 18;
+                } else if (talla_ == "2XL Caballero") {
+                    Talla_val = 19;
+                } else if (talla_ == "3XL Dama") {
+                    Talla_val = 20;
+                } else if (talla_ == "3XL Caballero") {
+                    Talla_val = 21;
+                } else if (talla_ == "5XL Dama") {
+                    Talla_val = 22;
+                } else if (talla_ == "5XL Caballero") {
+                    Talla_val = 23;
+                } else if (talla_ == "Taza") {
+                    Talla_val = 24;
+                } else if (talla_ == "Lapicero") {
+                    Talla_val = 25;
+                } else if (talla_ == "Llavero") {
+                    Talla_val = 26;
+                } else {}
+
+
+
+
+
+                pecho_izq[contador] = pechoizq_;
+                pecho_der[contador] = pechoder_;
+                manga_izq[contador] = mangaizq_;
+                manga_der[contador] = mangader_;
+                espalda[contador] = espalda_;
+                talla[contador] = talla_;
+                cantidad[contador] = cantidad_;
+                precio[contador] = precio_;
+                totaldetalle[contador] = totaldetalle_;
+                Observacion[contador] = Observacion_;
+
+                arreglo[contador] = {
+
+                    IdCliente: $("#cliente").val(),
+                    IdUsuario: $("#recibepedido").val(),
+                    IdCategoria: $("#cat").val(),
+                    fecha: $("#fecha_fact").val(),
+                    notas: $("#notas").val(),
+                    total_costo: $("#total").val(),
+                    Saldo: $("#saldo").val(),
+                    abono: $("#abono").val(),
+                    codseguimiento: $("#tipo_de_pedido").val(),
+
+                    IdInsumos: Talla_val,
+                    pecho_izq: pechoizq_,
+                    pecho_der: pechoder_,
+                    manga_izq: mangaizq_,
+                    manga_der: mangader_,
+                    espalda: espalda_,
+                    cantidad: cantidad_,
+                    precio: precio_,
+                    totaldetalle: totaldetalle_,
+                    observacion: Observacion_,
+
+
+                };
+
+
+
+
+                contador = contador + 1;
+
+
+                console.log(arreglo)
+
+
+
+
+            })
+
+
+            console.log(filas)
+
+
+
+
+
+
+        }
+
+        function cargarpedido3() {
+            peticionapi6({}, 'GET', function(res) {
+                console.log(res);
+
+            });
+
+        }
+
+        function updatedetalle() {
+
+            let datos = {
+                iddetalleordensu: $("#Id_trabajadores").val(),
+                pecho_izq: $("#pechoizq1").val(),
+                pecho_der: $("#pechoder1").val(),
+                manga_izq: $("#mangaizq1").val(),
+                manga_der: $("#mangader1").val(),
+                espalda: $("#espalda1").val(),
+                cantidad: $("#cantidad1").val(),
+                precio: $("#precio1").val(),
+                observacion: $("#observacioncambio").val(),
+                IdInsumos: $("#tallacambio").val(),
+                total: $("#sub_total2").val(),
+
+            };
+            let method1 = (datos.iddetalleordensu == '' ? 'POST' : 'PUT');
+            peticionapi6(datos, method1, function(res) {
+                UIkit.modal('#formdetalles').hide();
+                //cargardatosdetalle();
+
+            });
+
+
+
+        }
+
+        function updaterecibo() {
+
+            let datos = {
+
+                idmaestro: $("#id").val(),
+                fecha: $("#fecha_fact").val(),
+                metodo_de_pago: $("#metodo_de_pago").val(),
+                cod: $("#factura").val(),
+
+            };
+            let method1 = (datos.idmaestro == '' ? 'POST' : 'PUT');
+            peticionapi7(datos, method1, function(res) {
+
+                //cargardatosdetalle();
+
+            });
+
+
+
+        }
+
+        function peticionapi7(data, method, onSuccess) {
+
+
+            let url = '/api/actualizarrecibo';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.idmaestro;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+
+        }
+
+        function agregarotrodetalle() {
+
+            let datos = {
+                idmaestro: $("#id").val(),
+                pecho_izq: $("#pecho_izq").val(),
+                pecho_der: $("#pecho_der").val(),
+                manga_izq: $("#manga_izq").val(),
+                manga_der: $("#manga_der").val(),
+                espalda: $("#espalda").val(),
+                cantidad: $("#cantidad").val(),
+                precio: $("#precio").val(),
+                observacion: $("#Observacion").val(),
+                IdInsumos: $("#tallacambio1").val(),
+                total: $("#sub_total").val(),
+
+            };
+            console.log(datos);
+
+
+            peticionapi6(datos, 'POST', function(res) {
+                //    UIkit.modal('#formdetalles').hide();
+                //cargardatosdetalle();
+                limpiardatos();
+            });
+            limpiardatos();
+
+        }
+
+        function limpiardatos() {
+
+
+            $("#pecho_izq").val(''),
+                $("#pecho_der").val(''),
+                $("#manga_izq").val(''),
+                $("#manga_der").val(''),
+                $("#espalda").val(''),
+                $("#cantidad").val(''),
+                $("#precio").val(''),
+                $("#Observacion").val(''),
+                $("#tallacambio1").val(''),
+                $("#sub_total").val('');
+
+        }
+
+        function eliminar(id) {
+            console.log(id);
+            peticionapi6({
+                iddetalleordensu: id
+            }, 'DELETE', function(res) {
+                cargardatosdetalle();
+            });
+
+        }
     </script>
+
 </body>
 
 </html>

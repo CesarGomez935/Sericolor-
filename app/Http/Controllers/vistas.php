@@ -7,6 +7,7 @@ use App\Models\detalleimpresion;
 use App\Models\maestro;
 use App\Models\Detalledelpedido;
 
+
 class vistas extends Controller
 {
     /**
@@ -101,6 +102,14 @@ class vistas extends Controller
             
 
     }
+    public function getdetalles1($id){
+
+       // $detalles=new Detalledelpedido();
+         return $detalles = detalleimpresion::select("*")->where("IdMaestro",$id)->get();
+            
+
+    }
+
 
     public function getallpedidos(){
 
