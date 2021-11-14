@@ -85,4 +85,7 @@ Route::resource('/actualizarrecibo', editpedido2::class);
 Route::get('/revision/{id}', [revisionController::class,"show"]);
 
 Route::get('/pdf/personal', [ReportesController::class,"getpersonal"]);
-Route::get('/pdf/personal/descargar', [ReportesController::class,"createPDF"]);
+Route::get('/pdf/personal/descargar', [ReportesController::class,"createPDFpersonal"]);
+
+Route::get('/pdf/pedidos_diarios', [ReportesController::class,"getpedidosdiarios"]);
+Route::get('/pdf/pedidos_diarios/descargar', [ReportesController::class,"createPDFpedidosdiarios"]);

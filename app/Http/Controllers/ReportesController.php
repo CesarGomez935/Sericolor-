@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\persona;
+use App\Models\maestro;
 use Barryvdh\DomPDF\Facade as PDF;
 
 class ReportesController extends Controller
@@ -86,20 +87,44 @@ class ReportesController extends Controller
 
     public function getpersonal()
     {
-        $personal= persona::select("*")->join("cliente","cliente.IdPersona","=","persona.IdPersona")->get();
+        $personal= persona::select("*")->join("usuario","usuario.IdPersona","=","persona.IdPersona")->get();
         return view('reportes.personal', compact('personal'));
     }
 
     public function createPDFpersonal() 
     {
       // retreive all records from db
-      $data = persona::select("*")->join("cliente","cliente.IdPersona","=","persona.IdPersona")->get();;
+      $data = persona::select("*")->join("usuario","usuario.IdPersona","=","persona.IdPersona")->get();;
 
       // share data to view
       view()->share('personal',$data);
-      $pdf = PDF::loadView('reportes.personal', $data);
+      $pdf = PDF::loadView('reportes.personal', $data)->setPaper('letter', 'landscape');
+      
 
       // download PDF file with download method
-      return $pdf->download('pdf_file.pdf');
+      return $pdf->download('Reporte Trabajadores.pdf');
+    }
+
+    public function getpedidosdiarios()
+    {
+        $pedidosdiarios= maestro::select("*")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
+        $suma=maestro::where("fecha","2021-11-14")->sum("total_costo");
+        return view('reportes.pedidosDiarios', compact('pedidosdiarios','suma'));
+    }
+
+    public function createPDFpedidosdiarios() 
+    {
+      // retreive all records from db
+      $pedidosdiarios= maestro::select("*")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
+      $suma=maestro::where("fecha","2021-11-14")->sum("total_costo");
+      
+
+      // share data to view
+      view()->share('pedidosdiarios',compact('pedidosdiarios','suma'));
+      $pdf = PDF::loadView('reportes.pedidosDiarios',compact('pedidosdiarios','suma'))->setPaper('portrait', 'landscape');
+      
+
+      // download PDF file with download method
+      return $pdf->download('Reporte pedidos diarios ~fecha~.pdf');
     }
 }

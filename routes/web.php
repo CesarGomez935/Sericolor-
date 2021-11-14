@@ -198,10 +198,10 @@ Route::put('/menu/menu_facturacion/form_sublimacion/{id}', [maestrocontrolador::
 Route::get('/menu/menu_facturacion/form_impresion_digital/{id}/edit',[maestrocontroladorImpresion::class,"edit"])->name("maestro.edit");
 Route::put('/menu/menu_facturacion/form_impresion_digital/{id}', [maestrocontroladorImpresion::class,"update"])->name("maestro.update");
 
-Route::get('/pdf', function () {
-  $pdf = PDF::loadView('reportes.personal');
-  return $pdf->download('pruebapdf.pdf');
-});
+// Route::get('/pdf', function () {
+//   $pdf = PDF::loadView('reportes.personal');
+//   return $pdf->download('pruebapdf.pdf');
+// });
 
 // Route::get('/pdf/personal', function () {
 //      return view('reportes.personal');
