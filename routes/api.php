@@ -78,6 +78,7 @@ Route::get('getbordado', [vistas::class,"mostrar_bordado"]);
 Route::get('getallpedidos', [vistas::class,"getallpedidos"]);
 
 Route::get('/getdetalles/{id}', [vistas::class,"getdetalles"]);
+Route::get('/getdetalles1/{id}', [vistas::class,"getdetalles1"]);
 Route::put('/updatedetalles/{id}', [vistas::class,"updatedetalles"]);
 Route::resource('/actualizar', editpedido1::class);
 Route::resource('/actualizarrecibo', editpedido2::class);

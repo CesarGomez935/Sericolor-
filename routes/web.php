@@ -195,8 +195,8 @@ Route::put('/menu/menu_facturacion/form_bordado/{id}', [maestrocontrolador::clas
 Route::get('/menu/menu_facturacion/form_sublimacion/{id}/edit',[maestrocontrolador::class,"editsublimacion"])->name("maestro.editsublimacion");
 Route::put('/menu/menu_facturacion/form_sublimacion/{id}', [maestrocontrolador::class,"editsublimacion"])->name("maestro.editsublimacion");
 //edicion de formulario de impresion digital
-Route::get('/menu/menu_facturacion/form_impresion_digital/{id}/edit',[maestrocontroladorImpresion::class,"edit"])->name("maestro.edit");
-Route::put('/menu/menu_facturacion/form_impresion_digital/{id}', [maestrocontroladorImpresion::class,"update"])->name("maestro.update");
+Route::get('/menu/menu_facturacion/form_impresion_digital/{id}/edit',[maestrocontrolador::class,"editimpresion"])->name("maestro.editimpresion");
+Route::put('/menu/menu_facturacion/form_impresion_digital/{id}', [maestrocontrolador::class,"editimpresion"])->name("maestro.update");
 
 Route::get('/pdf', function () {
   $pdf = PDF::loadView('reportes.personal');
