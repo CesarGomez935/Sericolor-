@@ -138,7 +138,8 @@
                                     <label for="">Ejecutar consulta</label>
                                     <button class="uk-button uk-button-secondary" uk-icon="search"></button>
                                     <label for="">Descargar reporte</label>
-                                    <button id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></button>
+                                    <a href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a>
+
 
                                 </td>
                             </tr>

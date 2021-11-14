@@ -21,6 +21,7 @@ use App\Http\Controllers\usuariocontroller;
 use App\Http\Controllers\vistas;
 use App\Http\Controllers\editpedido1;
 use App\Http\Controllers\editpedido2;
+use App\Http\Controllers\ReportesController;
 use App\Http\Controllers\revisionController;
 
 /*
@@ -82,3 +83,6 @@ Route::resource('/actualizar', editpedido1::class);
 Route::resource('/actualizarrecibo', editpedido2::class);
 
 Route::get('/revision/{id}', [revisionController::class,"show"]);
+
+Route::get('/pdf/personal', [ReportesController::class,"getpersonal"]);
+Route::get('/pdf/personal/descargar', [ReportesController::class,"createPDF"]);
