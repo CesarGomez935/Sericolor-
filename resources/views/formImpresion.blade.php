@@ -606,6 +606,9 @@
                 <select class="uk-select" id="cat" disabled hidden>
                     <option value='3'>Impresion_Digital</option>
                 </select>
+                <select class="uk-select" id="cat1" disabled hidden>
+                    <option value='27'>Impresion_Digital</option>
+                </select>
 
 
 
@@ -627,6 +630,14 @@
     </form>
 
     <script>
+        var cod_seg_rand = 0;
+
+        function getRandom() {
+
+            cod_seg_rand = Math.floor((Math.random() * 10000000));
+            console.log(cod_seg_rand);
+
+        }
         let pedido = [];
         let usuarios = [];
         var cod_seg_rand = 0;
@@ -879,7 +890,7 @@
                     abono: $("#abono").val(),
                     codseguimiento: $("#tipo_de_pedido").val(),
 
-                    IdInsumos: $("#cat").val(),
+                    IdInsumos: $("#cat1").val(),
                     ancho: ancho_,
                     alto: alto_,
                     mt2: mt2_,
