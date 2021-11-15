@@ -87,7 +87,6 @@
                     <th>Fecha</th>
                     <th>Area</th>
                     <th>Estado</th>
-                    <th>Categoria</th>
                     <th>Opciones</th>
 
 
@@ -200,6 +199,9 @@
                         '<td>' + pedido.fecha + '</td>' +
                         '<td>' + pedido.descripcion + '</td>' +
                         '<td>' + pedido.Estado + '</td>' + '<td>' +
+                        '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
+
+                        .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
                         '<a href="/menu/menu_facturacion/form_sublimacion/' + pedido
                         .idmaestro +
                         '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick="eliminar(' +
@@ -217,6 +219,11 @@
                         '<td>' + pedido.fecha + '</td>' +
                         '<td>' + pedido.descripcion + '</td>' +
                         '<td>' + pedido.Estado + '</td>' + '<td>' +
+
+                        '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
+
+                        .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
+
                         '<a href="/menu/menu_facturacion/form_serigrafia/' + pedido
                         .idmaestro +
                         '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick="eliminar(' +
@@ -234,6 +241,11 @@
                         '<td>' + pedido.fecha + '</td>' +
                         '<td>' + pedido.descripcion + '</td>' +
                         '<td>' + pedido.Estado + '</td>' + '<td>' +
+
+                        '<a target="_blank" href="/api/pdf/Factura_imp/' + pedido
+
+                        .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
+
                         '<a href="/menu/menu_facturacion/form_impresion_digital/' + pedido
 
                         .idmaestro +
@@ -251,6 +263,9 @@
                         '<td>' + pedido.fecha + '</td>' +
                         '<td>' + pedido.descripcion + '</td>' +
                         '<td>' + pedido.Estado + '</td>' + '<td>' +
+                        '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
+                        .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
+
                         '<a href="/menu/menu_facturacion/form_bordado/' + pedido
                         .idmaestro +
                         '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a  action=""  onclick="eliminar(' +
