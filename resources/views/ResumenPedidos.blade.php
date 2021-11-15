@@ -88,6 +88,8 @@
                     <th>Area</th>
                     <th>Estado</th>
                     <th>Categoria</th>
+                    <th>Opciones</th>
+
 
                 </tr>
             </thead>

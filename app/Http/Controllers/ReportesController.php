@@ -169,7 +169,7 @@ class ReportesController extends Controller
       
 
       // download PDF file with download method
-      return $pdf->download('Factura.pdf');
+      return $pdf->stream('Factura.pdf');
     }
 
      public function getfacturaImp($id)
@@ -209,6 +209,6 @@ class ReportesController extends Controller
       
 
       // download PDF file with download method
-      return $pdf->download('Factura.pdf');
+      return $pdf->stream('Factura.pdf');
     }
 }

@@ -21,7 +21,7 @@
         <div class="">
             <div class="row">
                 <div class="col-sm">
-                    {{-- <img style="position: fixed" src="{{ asset('img/ser.png') }}" width="150" alt=""> --}}
+                    {{-- <img style="position: fixed" src="{{ asset('img/ser.png') }}" width="150" height="150" alt=""> --}}
 
 
 
