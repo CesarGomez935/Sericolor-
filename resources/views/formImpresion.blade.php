@@ -630,6 +630,14 @@
     </form>
 
     <script>
+        var cod_seg_rand = 0;
+
+        function getRandom() {
+
+            cod_seg_rand = Math.floor((Math.random() * 10000000));
+            console.log(cod_seg_rand);
+
+        }
         let pedido = [];
         let usuarios = [];
         var cod_seg_rand = 0;

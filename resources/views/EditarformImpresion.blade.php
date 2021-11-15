@@ -105,6 +105,9 @@
                     </div>
                 </div>
             </div>
+              <div style="text-align: center" class=" uk-background-muted">
+            <label class="uk-label" for="">Codigo de Seguimiento: {{ $edit->CodSeguimiento }}</label>
+        </div>
             <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
             <div class="uk-div uk-background-muted uk-padding">
 
