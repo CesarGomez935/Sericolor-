@@ -90,3 +90,9 @@ Route::get('/pdf/personal/descargar', [ReportesController::class,"createPDFperso
 
 Route::get('/pdf/pedidos_diarios/{fecha}', [ReportesController::class,"getpedidosdiarios"]);
 Route::get('/pdf/pedidos_diarios/{fecha}/descargar', [ReportesController::class,"createPDFpedidosdiarios"]);
+
+Route::get('/pdf/Factura_sub/{id}', [ReportesController::class,"getfacturaSub"]);
+Route::get('/pdf/Factura_sub/{id}/descargar', [ReportesController::class,"createPDFfacturaSub"]);
+
+Route::get('/pdf/Factura_imp/{id}', [ReportesController::class,"getfacturaImp"]);
+Route::get('/pdf/Factura_imp/{id}/descargar', [ReportesController::class,"createPDFfacturaImp"]);
