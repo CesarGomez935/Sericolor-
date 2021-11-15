@@ -647,49 +647,45 @@
                                     placeholder="Numero de detalle" disabled>
                             </div>
                             <div class="uk-margin">
-                                <label>Pecho izquierda</label>
-                                <input class="uk-input" type="text" id="pechoizq1" placeholder="Manga Izquierda">
+                                <label>Alto</label>
+                                <input onchange="monto2();" type="number" class="uk-input monto2" type="text" id="alto1"
+                                    placeholder="Alto">
                             </div>
                             <div class="uk-margin">
-                                <label>Pecho Derecha</label>
-                                <input class="uk-input" type="text" id="pechoder1" placeholder="Pecho Derecho">
+                                <label>Ancho</label>
+                                <input onchange="monto2();" type="number" class="uk-input monto2" type="text"
+                                    id="Ancho1" placeholder="Ancho">
                             </div>
                             <div class="uk-margin">
-                                <label>Manga Izquierda</label>
-                                <input class="uk-input" type="text" id="mangaizq1" placeholder="Manga Izquierda">
+                                <label>Precio por metro cuadrado</label>
+                                <input onchange="monto2();" type="number" class="uk-input monto2" type="text" id="p/m2"
+                                    placeholder="P/M">
                             </div>
                             <div class="uk-margin">
-                                <label>Manga Derecha</label>
-                                <input class="uk-input" type="text" id="mangader1" placeholder="Manga Derecha">
-                            </div>
-                            <div class="uk-margin">
-                                <label>Espalda</label>
-                                <input class="uk-input" type="text" id="espalda1" placeholder="Espalda">
-                            </div>
-                            <div class="uk-margin">
-                                <input class="uk-input" disabled type="text" value="{{ $edit->idmaestro }}"
-                                    id="id" placeholder="nada">
+                                <label>Costo</label>
+                                <input onchange="monto2();" type="number" class="uk-input monto2" type="text"
+                                    id="Costo1" placeholder="Costo">
                             </div>
                             <div class="uk-margin">
                                 <label>Cantidad</label>
                                 <input onchange="monto2();" type="number" class="uk-input monto2" type="text"
                                     id="cantidad1" placeholder="Cantidad">
                             </div>
-
                             <div class="uk-margin">
-                                <label>Precio</label>
+                                <input class="uk-input" disabled hidden type="text"
+                                    value="{{ $edit->idmaestro }}" id="id" placeholder="nada">
+                            </div>
+                            <div class="uk-margin">
+                                <label>Subtotal</label>
                                 <input onchange="monto2();" type="number" class="uk-input monto2" type="text"
-                                    id="precio1" placeholder="precio">
+                                    id="cantidad1" placeholder="Subtotal">
                             </div>
                             <div class="uk-margin">
                                 <label>Observacion</label>
                                 <input class="uk-input" type="text" id="observacioncambio"
                                     placeholder="Observacion">
                             </div>
-                            <div class="uk-margin">
-                                <label>Total</label>
-                                <input class="uk-input" type="number" id="sub_total2" disabled>
-                            </div>
+
                             <br>
 
                             <script>
@@ -1283,17 +1279,8 @@
             })
             console.log(id, datos);
 
-            $("#Id_trabajadores").val(datos[0].iddetalleordenimp),
-                $("#pechoizq1").val(datos[0].pecho_izquierdo),
-                $("#pechoder1").val(datos[0].pecho_derecho),
-                $("#mangaizq1").val(datos[0].manga_izquierda),
-                $("#mangader1").val(datos[0].manga_derecha),
-                $("#espalda1").val(datos[0].espalda),
-                $("#cantidad1").val(datos[0].Cantidad),
-                $("#precio1").val(datos[0].precio),
-                $("#observacioncambio").val(datos[0].observacion)
-            $("#tallacambio").val(datos[0].IdInsumos)
-            $("#sub_total2").val(datos[0].total)
+            $("#Id_trabajadores").val(datos[0].iddetalleordenimp);
+
 
         }
 
@@ -1613,6 +1600,8 @@
 
 
         }
+
+
 
         function peticionapi7(data, method, onSuccess) {
 
