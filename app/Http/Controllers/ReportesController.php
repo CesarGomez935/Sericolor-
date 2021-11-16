@@ -127,7 +127,7 @@ class ReportesController extends Controller
       
 
       // download PDF file with download method
-      return $pdf->download('Reporte pedidos diarios ~fecha~.pdf');
+      return $pdf->stream('Reporte pedidos diarios ~fecha~.pdf');
     }
 
 
@@ -211,4 +211,29 @@ class ReportesController extends Controller
       // download PDF file with download method
       return $pdf->stream('Factura.pdf');
     }
+
+    public function getpedidosrango($fecha1,$fecha2)
+    {
+        $pedidosrango= maestro::whereBetween('fecha', [$fecha1, $fecha2])->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
+        $suma=maestro::whereBetween('fecha', [$fecha1, $fecha2])->sum("total_costo");
+        //return compact('pedidosdiarios','suma','fecha1','fecha2');
+        return view('reportes.pedidosrangodefecha', compact('pedidosrango','suma','fecha1','fecha2'));
+    }
+
+    public function createPDFpedidosrango($fecha1,$fecha2) 
+    {
+      // retreive all records from db
+      $pedidosrango= maestro::whereBetween('fecha', [$fecha1, $fecha2])->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
+        $suma=maestro::whereBetween('fecha', [$fecha1, $fecha2])->sum("total_costo");
+      
+
+      // share data to view
+      view()->share('pedidosrango',compact('pedidosrango','suma','fecha1','fecha2'));
+      $pdf = PDF::loadView('reportes.pedidosrangodefecha',compact('pedidosrango','suma','fecha1','fecha2'))->setPaper('letter', 'portrait');
+      
+
+      // download PDF file with download method
+      return $pdf->stream('Reporte pedidos Rango de fecha $fecha1 - $fecha2.pdf');
+    }
+
 }

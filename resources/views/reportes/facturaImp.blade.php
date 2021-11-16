@@ -5,117 +5,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Personal reporte</title>
+    <title>Factura Impresión Digital</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" /> --}}
 </head>
 
 <body>
+
+
+
     <div class="">
 
 
 
-        @foreach($maestro ?? '' as $Maestro)
+        @foreach ($maestro ?? '' as $Maestro)
 
 
-        <div class="">
-            <div class="row">
-                <div class="col-sm">
-                    {{-- <img style="position: fixed" src="{{ asset('img/ser.png') }}" width="150" height="150" alt=""> --}}
+            <div class="">
+                <img style="position: fixed" src="{{ public_path('img/Sericolor_ Logo.png') }}" height="50" alt="">
+
+                <div class="row">
+                    <div class="col-sm">
 
 
 
 
 
 
+
+
+                    </div>
+                    <div class="col-sm">
+                        <h6 class="text-center "><b>Codigo de Revision:</b> {{ $Maestro->CodSeguimiento }}</h6>
+                        <br>
+
+
+                    </div>
+
+                    <div class="col-sm">
+
+
+
+
+
+
+
+                    </div>
 
                 </div>
-                <div class="col-sm">
-                    <h6 class="text-center "><b>Codigo de Revision:</b> {{ $Maestro->CodSeguimiento}}</h6>
-                    <br>
 
+
+            </div>
+
+            <div class="">
+                <div class="row">
+                    <div class="col-sm">
+                        {{-- <img style="position: fixed" src="{{ asset('img/ser.png') }}" width="150" alt=""> --}}
+
+
+                        <br>
+
+                        <label class="text-center "><b>Cliente: </b>{{ $Maestro->Primer_Nombre }}
+                            {{ $Maestro->Segundo_Nombre }} {{ $Maestro->Primer_Apellido }}
+                            {{ $Maestro->Segundo_Apellido }}</label>
+                        <br>
+
+                        <label class="text-center "><b>Teléfono: </b>{{ $Maestro->Telefono }}</label>
+
+                        <br>
+                        <label class="text-center "><b>Trabajador: </b>{{ $Maestro->trabajador_primer_nombre }}
+                            {{ $Maestro->trabajador_segundo_nombre }} {{ $Maestro->trabajador_primer_apellido }}
+                            {{ $Maestro->trabajador_segundo_apellido }}</label>
+                        <br>
+
+
+
+
+
+
+
+
+
+                    </div>
+                    <div class="col-sm">
+
+
+                    </div>
+
+                    <div class="col-sm ">
+                        <h6 class="text-right "><b>Factura N°:</b> {{ $Maestro->idmaestro }}</h6>
+
+                        <h6 class="text-right"><b>Recibo N°:</b> {{ $Maestro->Cod_Recibo }}</h6>
+
+                        <h6 class="text-right "><b>Fecha:</b> {{ $Maestro->fecha }}</h6>
+
+
+
+
+
+
+
+                    </div>
 
                 </div>
+                <div class="row">
+                    <div class="col-sm">
 
-                <div class="col-sm">
+                    </div>
+                    <div class="col-sm">
+                        <h6 class="text-center  "><b>Notas:</b> {{ $Maestro->Notas }}</h6>
 
 
 
+                    </div>
+
+                    <div class="col-sm">
 
 
 
+                    </div>
 
                 </div>
 
             </div>
-
-
-        </div>
-
-        <div class="">
-            <div class="row">
-                <div class="col-sm">
-                    {{-- <img style="position: fixed" src="{{ asset('img/ser.png') }}" width="150" alt=""> --}}
-
-                    <label class="text-center "><b>Cliente: </b>{{ $Maestro->Primer_Nombre}} {{ $Maestro->Segundo_Nombre}} {{ $Maestro->Primer_Apellido}} {{ $Maestro->Segundo_Apellido}}</label>
-                    <br>
-
-                    <label class="text-center "><b>Teléfono: </b>{{ $Maestro->Telefono}}</label>
-
-                    <br>
-                    <label class="text-center "><b>Trabajador: </b>{{ $Maestro->trabajador_primer_nombre}} {{ $Maestro->trabajador_segundo_nombre}} {{ $Maestro->trabajador_primer_apellido}} {{ $Maestro->trabajador_segundo_apellido}}</label>
-                    <br>
-
-
-
-
-
-
-
-
-
-                </div>
-                <div class="col-sm">
-
-
-                </div>
-
-                <div class="col-sm ">
-                    <h6 class="text-right "><b>Factura N°:</b> {{ $Maestro->idmaestro}}</h6>
-
-                    <h6 class="text-right"><b>Recibo N°:</b> {{ $Maestro->Cod_Recibo}}</h6>
-
-                    <h6 class="text-right "><b>Fecha:</b> {{ $Maestro->fecha}}</h6>
-
-
-
-
-
-
-
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-sm">
-
-                </div>
-                <div class="col-sm">
-                    <h6 class="text-center  "><b>Notas:</b> {{ $Maestro->Notas}}</h6>
-
-
-
-                </div>
-
-                <div class="col-sm">
-
-
-
-                </div>
-
-            </div>
-
-        </div>
 
 
 
@@ -146,46 +158,42 @@
 
     </div> --}}
 
-    <div class="table-responsive-sm mt-1">
+        <div class="table-responsive-sm mt-1">
 
 
 
-        <table class="table table-sm table-bordered mb">
+            <table class="table table-sm table-bordered mb">
 
-            <thead class="thead-light">
+                <thead class="thead-light">
 
-                <tr>
+                    <tr>
 
-                    <th scope="col">Ancho</th>
-                    <th scope="col">Alto</th>
-                    <th scope="col">Metros Cuadrados</th>
-                    <th scope="col">Precio Por MT2</th>
-                    <th scope="col">Costo</th>
-                    <th scope="col">Cantidad</th>
+                        <th scope="col">Ancho</th>
+                        <th scope="col">Alto</th>
+                        <th scope="col">Metros Cuadrados</th>
+                        <th scope="col">Precio Por MT2</th>
+                        <th scope="col">Costo</th>
+                        <th scope="col">Cantidad</th>
 
-                    <th scope="col">Observacion</th>
-                    <th scope="col">Sub-Total</th>
-                </tr>
+                        <th scope="col">Observacion</th>
+                        <th scope="col">Sub-Total</th>
+                    </tr>
 
-            </thead>
-            <tbody>
-                @foreach($detalle ?? '' as $data)
-
-
-                <tr>
-
-                    <td>{{ $data->ancho}} </td>
-                    <td>{{ $data->alto}}</td>
-                    <td>{{ $data->mt2}}</td>
-                    <td>{{ $data->p_m}} </td>
-                    <td>{{ $data->costo}}</td>
-                    <td>{{ $data->cantidad}}</td>
-                    <td>{{ $data->observacion}} </td>
-                    <td>{{ $data->total}}</td>
+                </thead>
+                <tbody>
+                    @foreach ($detalle ?? '' as $data)
 
 
+                        <tr>
 
-
+                            <td>{{ $data->ancho }} </td>
+                            <td>{{ $data->alto }}</td>
+                            <td>{{ $data->mt2 }}</td>
+                            <td>{{ $data->p_m }} </td>
+                            <td>{{ $data->costo }}</td>
+                            <td>{{ $data->cantidad }}</td>
+                            <td>{{ $data->observacion }} </td>
+                            <td>{{ $data->total }}</td>
 
 
 
@@ -197,70 +205,74 @@
 
 
 
-                </tr>
-                @endforeach
-                @foreach($maestro ?? '' as $Maestro)
-                <tr class="table-active">
-
-
-                    <td colspan="7">Costo Total:</td>
-                    <td><b>{{$Maestro->total_costo}}</b></td>
-
-                </tr>
-                <tr class="table-active">
-
-
-                    <td colspan="7">Abono:</td>
-                    <td>{{$Maestro->abono}}</td>
-                </tr>
-                <tr class="table-active">
-
-
-                    <td colspan="7">Saldo Restante:</td>
-                    <td><b>{{$Maestro->saldo}}</b></td>
-
-                </tr>
-
-
-
-                @endforeach
 
 
 
 
-            </tbody>
-
-        </table>
-    </div>
-
-
-
-    <div class="fixed-bottom">
+                        </tr>
+                    @endforeach
+                    @foreach ($maestro ?? '' as $Maestro)
+                        <tr class="table-active">
 
 
-        <div class="">
+                            <td colspan="7">Costo Total:</td>
+                            <td><b>{{ $Maestro->total_costo }}</b></td>
 
-            <h6 class="text-center mb-3">
-                <b>Gracias por su preferencia!
-                    <br>
-                    <b>Les esperamos!</b>
+                        </tr>
+                        <tr class="table-active">
 
-                    <br>
-                    <b>. </b>
-                    <br>
-                </b>
 
-            </h6>
+                            <td colspan="7">Abono:</td>
+                            <td>{{ $Maestro->abono }}</td>
+                        </tr>
+                        <tr class="table-active">
+
+
+                            <td colspan="7">Saldo Restante:</td>
+                            <td><b>{{ $Maestro->saldo }}</b></td>
+
+                        </tr>
+
+
+
+                    @endforeach
+
+
+
+
+                </tbody>
+
+            </table>
+        </div>
+
+
+
+        <div class="fixed-bottom">
+
+
+            <div class="">
+
+                <h6 class="text-center mb-3">
+                    <b>Gracias por su preferencia!
+                        <br>
+                        <b>Les esperamos!</b>
+
+                        <br>
+                        <b>. </b>
+                        <br>
+                    </b>
+
+                </h6>
+
+
+            </div>
+
 
 
         </div>
 
 
-
-    </div>
-
-
-    {{-- <script src="{{ asset('js/app.js') }}" type="text/js"></script> --}}
+        {{-- <script src="{{ asset('js/app.js') }}" type="text/js"></script> --}}
 </body>
 
 </html>

@@ -11,20 +11,25 @@
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.xx.x/css/uikit.min.css" />
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.xx.x/css/uikit.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.xx.x/js/uikit.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> --}}
 
 </head>
 
@@ -33,7 +38,8 @@
     <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Reportes</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span
+                    class="uk-margin-small-left">Reportes</span>
             </a>
         </div>
 
@@ -59,7 +65,8 @@
                     <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
                     <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
                     <li class="uk-active"> <a href="/menu/pedidos_serigrafia"> Pedidos Serigrafía </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital
+                        </a></li>
                     <hr class="uk-divider-icon">
                     <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
 
@@ -99,21 +106,24 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <select class="uk-select uk-form-width-small" type="select" aria-placeholder="Ingresar categoria">
+                                    <select class="uk-select uk-form-width-small" type="select"
+                                        aria-placeholder="Ingresar categoria">
                                         <option>Sublimación</option>
                                         <option>Impresión digital</option>
                                         <option>Bordado</option>
                                         <option>Serigrafía</option>
                                     </select>
                                 </td>
-                                <td><select class="uk-select uk-form-width-small" type="select" aria-placeholder="Ingresar estado">
+                                <td><select class="uk-select uk-form-width-small" type="select"
+                                        aria-placeholder="Ingresar estado">
                                         <option>Completado</option>
                                         <option>No completado</option>
 
                                     </select>
                                 </td>
                                 <td>
-                                    <input onchange="cambioFecha()" id="fecha_inicio" class="uk-input uk-form-width-medium" type="date">
+                                    <input onchange="validarfechas()" id="fecha_inicio"
+                                        class="uk-input uk-form-width-medium" type="date">
 
                                 </td>
                                 <td>
@@ -126,21 +136,23 @@
                             <tr>
                                 <td></td>
                                 <td></td>
-                                <th>Fecha de entrega</th>
+                                <th>Fecha Final</th>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td></td>
                                 <td>
-                                    <input class="uk-input uk-form-width-medium" type="date">
+                                    <input onchange="validarfechas()" id="fecha_final"
+                                        class="uk-input uk-form-width-medium" type="date">
                                 </td>
                                 <td>
                                     <label for="">Ejecutar consulta</label>
                                     <button class="uk-button uk-button-secondary" uk-icon="search"></button>
                                     <label for="">Descargar reporte</label>
-                                    <a href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a>
-                                    <a id="pedidosdiario" class="uk-button uk-button-secondary" uk-icon="download"></a>
+                                    {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
+                                    <a target="_blank" id="pedidosdiario" class="uk-button uk-button-secondary"
+                                        uk-icon="download"></a>
 
 
                                 </td>
@@ -204,4 +216,25 @@
 
     }
 
+    function validarfechas() {
+
+
+        var fecha1 = document.getElementById("fecha_inicio").value;
+        var fecha2 = document.getElementById("fecha_final").value;
+
+        if (fecha1 && fecha2) {
+            console.log(fecha1, fecha2);
+            document.getElementById("pedidosdiario").href = "/api/pdf/pedidos_entre/" + fecha1 + "/" + fecha2 +
+                "/descargar";
+        } else {
+
+            document.getElementById("pedidosdiario").href = "/api/pdf/pedidos_diarios/" + fecha1 + "/descargar";
+            console.log(fecha1, fecha2);
+
+        }
+
+
+
+
+    }
 </script>
