@@ -15,7 +15,7 @@ class insumocontroller extends Controller
     public function index()
     {
         //
-        return insumos::select("*")->join("categoria","insumos.idcategoria","=","categoria.idcategoria")->get();
+        return insumos::select("*")->join("categoria","insumos.idcategoria","=","categoria.idcategoria")->orderBy("IdInsumo","ASC")->get();
     }
 
     /**
@@ -37,6 +37,19 @@ class insumocontroller extends Controller
     public function store(Request $request)
     {
         //
+
+        $model=new insumos();
+        $model->Tipo=$request->input('Tipo');
+        $model->Descripcion=$request->input('Descripcion');
+        $model->idcategoria=$request->input('idcategoria');
+        return $model->save();
+
+
+
+
+
+
+
     }
 
     /**
@@ -71,6 +84,13 @@ class insumocontroller extends Controller
     public function update(Request $request, $id)
     {
         //
+           $model=new insumos();
+            $model=insumos::find($id);
+        $model->Tipo=$request->input('Tipo1');
+        $model->Descripcion=$request->input('Descripcion1');
+        $model->idcategoria=$request->input('idcategoria1');
+        return $model->save();
+
     }
 
     /**
@@ -82,5 +102,9 @@ class insumocontroller extends Controller
     public function destroy($id)
     {
         //
+        $model=new insumos();
+        $model=insumos::find($id);
+        return $model->delete();
+
     }
 }

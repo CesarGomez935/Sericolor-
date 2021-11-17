@@ -72,13 +72,57 @@
 
 
                     </div>
-                    <button class="uk-button uk-button-primary " id="guardar" class="uk-align-center">Guardar</button>
+                    <button class="uk-button uk-button-primary uk-position-center " id="guardar"
+                        class="uk-align-center">Guardar</button>
                     </fieldset>
                 </div>
             </div>
         </div>
     </div>
     </div>
+    </div>
+    <div class="uk-container">
+        <div id="FormEditar" class="uk-modal-full" uk-modal>
+            <div class="uk-modal-dialog">
+                <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                <div uk-height-viewport>
+                    <div class="uk-width-1-2 uk-align-center">
+                        <fieldset class="uk-fieldset">
+
+                            <legend class="uk-legend">Ingresar nuevo Insumos</legend>
+
+                            <div class="uk-margin">
+                                <label>Tipo</label>
+                                <input class="uk-input" type="text" id="2Nombre1" placeholder="Tipo de Insumo">
+                            </div>
+                            <div class="uk-margin">
+                                <label>Descripcion</label>
+                                <input class="uk-input" type="text" id="Apellidos1" placeholder="Descripción">
+                            </div>
+
+                            <div class="uk-margin">
+                                <label>Categoria</label>
+                                <select class="uk-select" id="cat1">
+                                    <option value='1'>Sublimacion</option>
+                                    <option value='2'>Serigrafia</option>
+                                    <option value='3'>Impresion digital</option>
+                                    <option value='4'>Bordado</option>
+                                    <option value='5'>Multiple</option>
+
+                                </select>
+                                <br>
+                            </div>
+                            <div class="uk-margin">
+                                <input class="uk-input" type="text" id="id" disabled hidden
+                                    placeholder="Descripción">
+                            </div>
+                    </div>
+                    <button class="uk-button uk-button-primary uk-position-center " id="guardar1"
+                        class="uk-align-center">Guardar</button>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
     </div>
     <script>
         let trabajadores = [];
@@ -88,6 +132,12 @@
         cargarproductos();
         $('#guardar').click(function(e) {
             guardarproductos();
+        });
+
+        $("#guardar1").click(function(e) {
+
+            updateinsumo();
+
         });
 
         function peticionapi(data, method, onSuccess) {
@@ -116,11 +166,27 @@
                 Descripcion: $("#Apellidos").val(),
                 idcategoria: $("#cat").val(),
             };
-            let method1 = (data.id == '' ? 'POST' : 'PUT');
-            peticionapi(data, method1, function(res) {
+            peticionapi(data, 'POST', function(res) {
+                alert('Guardado con exito')
                 UIkit.modal('#FormTrabajadores').hide();
                 cargarproductos();
-                limpiardatos();
+            });
+            limpiardatos();
+        }
+
+        function updateinsumo() {
+
+            let data = {
+                IdInsumo: $("#id").val(),
+                Tipo1: $("#2Nombre1").val(),
+                Descripcion1: $("#Apellidos1").val(),
+                idcategoria1: $("#cat1").val(),
+            };
+
+            peticionapi(data, 'PUT', function(res) {
+                alert('Guardado con exito')
+                UIkit.modal('#FormEditar').hide();
+                cargarproductos();
             });
             limpiardatos();
         }
@@ -148,7 +214,7 @@
         }
 
         function editar(id) {
-            UIkit.modal('#FormTrabajadores').show();
+            UIkit.modal('#FormEditar').show();
 
             let data = trabajadores.filter(trabajadores => {
                 return trabajadores.IdInsumo == id;
@@ -156,9 +222,10 @@
 
             })
 
-            $("#2Nombre").val(data[0].Tipo),
-                $("#Apellidos").val(data[0].Descripcion),
-                $("#cat").val(data[0].idcategoria);
+            $("#id").val(data[0].IdInsumo),
+                $("#2Nombre1").val(data[0].Tipo),
+                $("#Apellidos1").val(data[0].Descripcion),
+                $("#cat1").val(data[0].idcategoria);
 
         }
 

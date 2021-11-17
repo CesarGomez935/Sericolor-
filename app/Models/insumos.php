@@ -12,6 +12,7 @@ class insumos extends Model
     protected $table='insumos';
     protected $primaryKey='IdInsumo';
     protected $fillable=['Tipo','Descripcion','idcategoria'];
+     public $timestamps = false;
     
     public function detalle(){
 
