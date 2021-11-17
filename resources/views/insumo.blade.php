@@ -64,6 +64,8 @@
                                     <option value='2'>Serigrafia</option>
                                     <option value='3'>Impresion digital</option>
                                     <option value='4'>Bordado</option>
+                                    <option value='5'>Multiple</option>
+
                                 </select>
                                 <br>
                             </div>
@@ -147,13 +149,16 @@
 
         function editar(id) {
             UIkit.modal('#FormTrabajadores').show();
+
             let data = trabajadores.filter(trabajadores => {
                 return trabajadores.IdInsumo == id;
+
+
             })
 
             $("#2Nombre").val(data[0].Tipo),
                 $("#Apellidos").val(data[0].Descripcion),
-                $("#cat").val(data[0].descripcion);
+                $("#cat").val(data[0].idcategoria);
 
         }
 
