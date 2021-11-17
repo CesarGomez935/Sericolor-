@@ -93,6 +93,7 @@ Route::get('/menu/menu_facturacion/form_bordado', function () {
 
 
 
+
 Route::get('/menu/menu_facturacion/form_sublimacion', function () {
     return view('formSublimacion');
 });
@@ -118,6 +119,10 @@ Route::get('menu/menuadmon/bd', function () {
 Route::get('menu/menuadmon/personal', function () {
     return view('personal');
 });
+Route::get('menu/menuadmon/insumo', function () {
+    return view('insumo');
+});
+
 
 Route::get('menu/menuadmon/personal/agregar_personal', function () {
     return view('agregarPersonal');
