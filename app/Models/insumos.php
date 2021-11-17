@@ -20,7 +20,7 @@ class insumos extends Model
     }
     public function categoria(){
 
-        return $this->belongsto(categoria::class);
+        return $this->belongsto(categoria::class,'idcategoria');
 
     }
 

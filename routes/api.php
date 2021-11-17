@@ -24,7 +24,7 @@ use App\Http\Controllers\editpedido2;
 use App\Http\Controllers\editpedido3;
 use App\Http\Controllers\ReportesController;
 use App\Http\Controllers\revisionController;
-
+use App\Http\Controllers\insumocontroller;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -41,6 +41,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('pedido', maestrocontrolador::class);
+Route::resource('insumo', insumocontroller::class);
 Route::resource('pedidoimp', maestrocontroladorImpresion::class);
 Route::resource('promocion',slidercontroller::class);
 
