@@ -116,7 +116,7 @@
                     <tr>
                         <td>{{$item->IdPromocion}}</td>
 
-                        <td><img src="{{asset('uploads/promocion/'.$item->Imagen)}}" alt="120" height="50" srcset=""> </td>
+                        <td><img src="{{asset('uploads/promocion/'.$item->Imagen)}}" width="400" height="200" srcset=""> </td>
 
                         <td>{{$item->descripcion}}</td>
 

@@ -119,7 +119,7 @@ Route::get('menu/menuadmon/bd', function () {
 Route::get('menu/menuadmon/personal', function () {
     return view('personal');
 });
-Route::get('menu/menuadmon/insumo', function () {
+Route::get('menu/menuadmon/insumos', function () {
     return view('insumo');
 });
 
