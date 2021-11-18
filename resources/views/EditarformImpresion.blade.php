@@ -105,9 +105,9 @@
                     </div>
                 </div>
             </div>
-              <div style="text-align: center" class=" uk-background-muted">
-            <label class="uk-label" for="">Codigo de Seguimiento: {{ $edit->CodSeguimiento }}</label>
-        </div>
+            <div style="text-align: center" class=" uk-background-muted">
+                <label class="uk-label" for="">Codigo de Seguimiento: {{ $edit->CodSeguimiento }}</label>
+            </div>
             <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
             <div class="uk-div uk-background-muted uk-padding">
 
@@ -628,7 +628,8 @@
                 <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
                     <a href="/menu/menu_facturacion" class="uk-button uk-button-primary "
                         style="margin-left: 100px">Atrás</a>
-                    <a id="guardar" class="uk-button uk-button-secondary guardar" style="margin-left: 100px">Guardar</a>
+                    <a id="guardar" href="/menu/pedidos_impresion_digital" class="uk-button uk-button-secondary guardar"
+                        style="margin-left: 100px">Guardar</a>
 
 
                 </div>
