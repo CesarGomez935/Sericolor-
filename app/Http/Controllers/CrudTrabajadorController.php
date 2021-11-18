@@ -49,7 +49,7 @@ class CrudTrabajadorController extends Controller
              'telefono'=>'required',
              'correo'=>'required',
              'cedula'=>'required',
-             'correo'=>'required',
+             'correo'=>'required', 
              'direccion'=>'required',
 
              'nombre_de_usuario'=>'required',

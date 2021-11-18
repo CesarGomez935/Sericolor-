@@ -101,3 +101,6 @@ Route::get('/pdf/Factura_sub/{id}/descargar', [ReportesController::class,"create
 
 Route::get('/pdf/Factura_imp/{id}', [ReportesController::class,"getfacturaImp"]);
 Route::get('/pdf/Factura_imp/{id}/descargar', [ReportesController::class,"createPDFfacturaImp"]);
+
+Route::get('/pdf/ventas_insumos/', [ReportesController::class,"getinsumos"]);
+//Route::get('/pdf/Factura_imp/{id}/descargar', [ReportesController::class,"createPDFfacturaImp"]);
