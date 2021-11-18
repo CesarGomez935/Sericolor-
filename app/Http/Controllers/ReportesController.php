@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Detalledelpedido;
 use App\Models\detalleimpresion;
+use App\Models\insumos;
 use Illuminate\Http\Request;
 use App\Models\persona;
 use App\Models\maestro;
 use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Support\Facades\DB;
 
 class ReportesController extends Controller
 {
@@ -237,12 +239,44 @@ class ReportesController extends Controller
     }
 
 
-     public function getinsumos()
+     public function getinsumos($fecha1,$fecha2)
     {
-        $consulta=maestro::select("*")->join("detalle-orden-sub,bor,ser","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro")->join("insumos","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")->groupBy("insumos.descripcion")->get();
+        $sublimacion=insumos::whereBetween('fecha', [$fecha1, $fecha2])
+        ->where("maestro.IdCategoria",1)
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->join("detalle-orden-sub,bor,ser","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")
+        ->join("maestro","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro") 
+        ->groupBy("insumos.descripcion")        
+        ->get();
+
+        $serigrafia=insumos::whereBetween('fecha', [$fecha1, $fecha2])
+        ->where("maestro.IdCategoria",2)
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->join("detalle-orden-sub,bor,ser","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")
+        ->join("maestro","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro") 
+        ->groupBy("insumos.descripcion")        
+        ->get();
+
+        $impresion=insumos::whereBetween('fecha', [$fecha1, $fecha2])
+        ->where("maestro.IdCategoria",3)
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->join("detalle-orden-imp","insumos.IdInsumo","=","detalle-orden-imp.IdInsumos")
+        ->join("maestro","detalle-orden-imp.IdMaestro","=","maestro.idmaestro") 
+        ->groupBy("insumos.descripcion")        
+        ->get();
+
+        $bordado=insumos::whereBetween('fecha', [$fecha1, $fecha2])
+        ->where("maestro.IdCategoria",4)
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->join("detalle-orden-sub,bor,ser","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")
+        ->join("maestro","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro") 
+        ->groupBy("insumos.descripcion")        
+        ->get();
+
+
 
                
-        return compact("maestro");
+        return compact("sublimacion","serigrafia","impresion","bordado");
         //return view('reportes.factura', compact("maestro","detalle"));
     }
 
