@@ -55,6 +55,24 @@ class maestrocontrolador extends Controller
          
         DB::transaction(function() use ($request)
         {
+            $request->validate([
+
+             'IdCategoria'=>'required',
+             'IdCliente'=>'required',
+             'IdUsuario'=>'required',
+             'fecha'=>'required',
+             'total_costo'=>'required',
+             'saldo'=>'required',
+             'CodSeguimiento'=>'required',
+             'abono'=>'required',
+             'Estado'=>'required',
+             'IdInsumos'=>'required',
+             'Id_Metodo_de_Pago'=>'required',
+             'Fecha_de_pago'=>'required',
+             'Cod_Recibo'=>'required',
+                   
+            ]);
+
 
             $maestro=Maestro::create([
 
@@ -67,7 +85,7 @@ class maestrocontrolador extends Controller
                 'saldo'=>$request->Saldo,
                 'CodSeguimiento'=>$request->codseguimiento,
                 'abono'=>$request->abono,
-                'Estado'=>$request->estado,
+                'Cod_Recibo'=>$request->estado,
 
               
 

@@ -40,9 +40,18 @@ class promocioncontroller extends Controller
      */
     public function store(Request $request)
     {
-        $promocion=new promocion();
+            $request->validate([
+
+             'imagen'=>'required',
+             'descripcion'=>'required',
+            ]);
+
+
+
+
+            $promocion=new promocion();
        // $promocion->imagen=$request->input("imagen");
-        if($request->hasFile("imagen")){
+            if($request->hasFile("imagen")){
 
             $file=$request->file("imagen");
             $extention=$file->getClientOriginalExtension();
@@ -51,9 +60,9 @@ class promocioncontroller extends Controller
             $promocion->imagen=$filename;
 
         }
-        $promocion->descripcion=$request->input("descripcion");
-        $promocion->save();
-        return redirect("/menu/menuadmon/promociones");
+            $promocion->descripcion=$request->input("descripcion");
+            $promocion->save();
+            return redirect("/menu/menuadmon/promociones");
         
             
           

@@ -652,7 +652,7 @@
             cargar_detalle();
             guardarpedido();
 
-            alert("Se agrego su orden");
+
 
         });
 
@@ -755,12 +755,13 @@
                 url: url,
                 method: method,
                 data: data,
-                error(ext) {
+                error(e) {
                     let error = e.responseJSON.errors;
                     let msj = error[Object.keys(error)[0]][0];
                     alert(msj);
                 },
                 success(res) {
+
 
                 }
             })
