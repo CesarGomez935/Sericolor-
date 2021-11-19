@@ -91,6 +91,11 @@
 
                 <div class="uk-section-secondary uk-margin uk-padding" style="text-align: center;">
                     <h1>Slider Principal</h1>
+                    <h6>¡Importante! Tamaño Recomendado: <br>
+                        Alto: 1600Px <br>
+                        Ancho: 5120Px
+                    </h6>
+
 
                     <div class="uk-div uk-padding">
                         <a href="/menu/menuadmon/slider/create" class="uk-button uk-button-primary">Agregar Nueva Imagen</a>
@@ -186,6 +191,11 @@
 
                 <div class="uk-section-secondary uk-margin uk-padding" style="text-align: center;">
                     <h1>Promociones</h1>
+                    <h6>¡Importante! Tamaño Recomendado: <br>
+                        Alto: 600Px <br>
+                        Ancho: 1700Px
+                    </h6>
+
 
                     <div class="uk-div uk-padding">
                         <a href="/menu/menuadmon/promociones/create" class="uk-button uk-button-primary">Agregar Imagen Promocional</a>
