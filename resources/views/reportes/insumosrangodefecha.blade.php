@@ -97,13 +97,14 @@
                     <th scope="col">Codigo-Insumo</th>
                     <th scope="col">Tipo</th>
                     <th scope="col">Descripción</th>
+                    <th scope="col">Cantidad</th>
                     <th scope="col">Ventas</th>
                 </tr>
 
             </thead>
             <tbody>
                 <tr>
-                    <th colspan="4">Sublimación</th>
+                    <th colspan="5">Sublimación</th>
 
 
                 </tr>
@@ -117,11 +118,13 @@
                     <td>{{ $data->IdInsumo }} </td>
                     <td>{{ $data->tipo }}</td>
                     <td>{{ $data->descripcion }}</td>
+                    <td>{{ $data->Cantidad }}</td>
+
                     <td>{{ $data->Total }} </td>
                 </tr>
                 @endforeach
                 <tr>
-                    <th colspan="4">Serigrafía</th>
+                    <th colspan="5">Serigrafía</th>
 
                 </tr>
 
@@ -134,11 +137,12 @@
                     <td>{{ $data->IdInsumo }} </td>
                     <td>{{ $data->tipo }}</td>
                     <td>{{ $data->descripcion }}</td>
+                    <td>{{ $data->Cantidad }}</td>
                     <td>{{ $data->Total }} </td>
                 </tr>
                 @endforeach
                 <tr>
-                    <th colspan="4">Impresión Digital</th>
+                    <th colspan="5">Impresión Digital</th>
 
                 </tr>
 
@@ -151,11 +155,12 @@
                     <td>{{ $data->IdInsumo }} </td>
                     <td>{{ $data->tipo }}</td>
                     <td>{{ $data->descripcion }}</td>
+                    <td>{{$data->Cantidad}}</td>
                     <td>{{ $data->Total }} </td>
                 </tr>
                 @endforeach
                 <tr>
-                    <th colspan="4">Bordado</th>
+                    <th colspan="5">Bordado</th>
 
                 </tr>
 
@@ -168,6 +173,8 @@
                     <td>{{ $data->IdInsumo }} </td>
                     <td>{{ $data->tipo }}</td>
                     <td>{{ $data->descripcion }}</td>
+                    <td>{{ $data->Cantidad }}</td>
+
                     <td>{{ $data->Total }} </td>
                 </tr>
                 @endforeach

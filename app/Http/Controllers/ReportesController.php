@@ -243,7 +243,7 @@ class ReportesController extends Controller
     {
         $sublimacion=insumos::whereBetween('fecha', [$fecha1, $fecha2])
         ->where("maestro.IdCategoria",1)
-        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"),DB::raw("sum(Cantidad) as Cantidad"))        
         ->join("detalle-orden-sub,bor,ser","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")
         ->join("maestro","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro") 
         ->groupBy("insumos.descripcion")        
@@ -251,7 +251,7 @@ class ReportesController extends Controller
 
         $serigrafia=insumos::whereBetween('fecha', [$fecha1, $fecha2])
         ->where("maestro.IdCategoria",2)
-        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"),DB::raw("sum(Cantidad) as Cantidad"))        
         ->join("detalle-orden-sub,bor,ser","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")
         ->join("maestro","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro") 
         ->groupBy("insumos.descripcion")        
@@ -259,7 +259,7 @@ class ReportesController extends Controller
 
         $impresion=insumos::whereBetween('fecha', [$fecha1, $fecha2])
         ->where("maestro.IdCategoria",3)
-        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"),DB::raw("sum(cantidad) as Cantidad"))        
         ->join("detalle-orden-imp","insumos.IdInsumo","=","detalle-orden-imp.IdInsumos")
         ->join("maestro","detalle-orden-imp.IdMaestro","=","maestro.idmaestro") 
         ->groupBy("insumos.descripcion")        
@@ -267,7 +267,7 @@ class ReportesController extends Controller
 
         $bordado=insumos::whereBetween('fecha', [$fecha1, $fecha2])
         ->where("maestro.IdCategoria",4)
-        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"),DB::raw("sum(Cantidad) as Cantidad"))        
         ->join("detalle-orden-sub,bor,ser","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")
         ->join("maestro","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro") 
         ->groupBy("insumos.descripcion")        
@@ -281,7 +281,7 @@ class ReportesController extends Controller
       // retreive all records from db
       $sublimacion=insumos::whereBetween('fecha', [$fecha1, $fecha2])
         ->where("maestro.IdCategoria",1)
-        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"),DB::raw("sum(Cantidad) as Cantidad"))        
         ->join("detalle-orden-sub,bor,ser","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")
         ->join("maestro","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro") 
         ->groupBy("insumos.descripcion")        
@@ -289,7 +289,7 @@ class ReportesController extends Controller
 
         $serigrafia=insumos::whereBetween('fecha', [$fecha1, $fecha2])
         ->where("maestro.IdCategoria",2)
-        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"),DB::raw("sum(Cantidad) as Cantidad"))        
         ->join("detalle-orden-sub,bor,ser","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")
         ->join("maestro","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro") 
         ->groupBy("insumos.descripcion")        
@@ -297,7 +297,7 @@ class ReportesController extends Controller
 
         $impresion=insumos::whereBetween('fecha', [$fecha1, $fecha2])
         ->where("maestro.IdCategoria",3)
-        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"),DB::raw("sum(cantidad) as Cantidad"))        
         ->join("detalle-orden-imp","insumos.IdInsumo","=","detalle-orden-imp.IdInsumos")
         ->join("maestro","detalle-orden-imp.IdMaestro","=","maestro.idmaestro") 
         ->groupBy("insumos.descripcion")        
@@ -305,11 +305,11 @@ class ReportesController extends Controller
 
         $bordado=insumos::whereBetween('fecha', [$fecha1, $fecha2])
         ->where("maestro.IdCategoria",4)
-        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"),DB::raw("sum(Cantidad) as Cantidad"))        
         ->join("detalle-orden-sub,bor,ser","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")
         ->join("maestro","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro") 
         ->groupBy("insumos.descripcion")        
-        ->get();
+        ->get(); 
 
 
       // share data to view
@@ -325,7 +325,7 @@ class ReportesController extends Controller
     {
         $detalle=insumos::whereBetween('fecha', [$fecha1, $fecha2])
         ->where("detalle-orden-sub,bor,ser.IdInsumos",$idinsumo)
-        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"),DB::raw("sum(Cantidad) as Cantidad"))        
         ->join("detalle-orden-sub,bor,ser","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")
         ->join("maestro","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro") 
         ->groupBy("insumos.descripcion")        
@@ -341,7 +341,7 @@ class ReportesController extends Controller
       // retreive all records from db
       $detalle=insumos::whereBetween('fecha', [$fecha1, $fecha2])
         ->where("detalle-orden-sub,bor,ser.IdInsumos",$idinsumo)
-        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"),DB::raw("sum(Cantidad) as Cantidad"))        
         ->join("detalle-orden-sub,bor,ser","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")
         ->join("maestro","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro") 
         ->groupBy("insumos.descripcion")        
@@ -361,7 +361,7 @@ class ReportesController extends Controller
     {
          $detalle=insumos::whereBetween('fecha', [$fecha1, $fecha2])
         ->where("detalle-orden-imp.IdInsumos",$idinsumo)
-        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"),DB::raw("sum(cantidad) as Cantidad"))        
         ->join("detalle-orden-imp","insumos.IdInsumo","=","detalle-orden-imp.IdInsumos")
         ->join("maestro","detalle-orden-imp.IdMaestro","=","maestro.idmaestro") 
         ->groupBy("insumos.descripcion")        
@@ -377,7 +377,7 @@ class ReportesController extends Controller
       // retreive all records from db
       $detalle=insumos::whereBetween('fecha', [$fecha1, $fecha2])
         ->where("detalle-orden-imp.IdInsumos",$idinsumo)
-        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"),DB::raw("sum(cantidad) as Cantidad"))        
         ->join("detalle-orden-imp","insumos.IdInsumo","=","detalle-orden-imp.IdInsumos")
         ->join("maestro","detalle-orden-imp.IdMaestro","=","maestro.idmaestro") 
         ->groupBy("insumos.descripcion")        

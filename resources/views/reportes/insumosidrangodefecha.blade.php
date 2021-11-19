@@ -103,6 +103,8 @@
                     <th scope="col">Codigo-Insumo</th>
                     <th scope="col">Tipo</th>
                     <th scope="col">Descripción</th>
+                    <th scope="col">Cantidad</th>
+
                     <th scope="col">Ventas</th>
                 </tr>
 
@@ -118,7 +120,9 @@
 
                     <td>{{ $data->IdInsumo }} </td>
                     <td>{{ $data->tipo }}</td>
-                    <td>{{ $data->descripcion }}</td>
+                    <td> {{ $data->descripcion }}</td>
+                    <td>{{ $data->Cantidad }}</td>
+
                     <td>{{ $data->Total }} </td>
                 </tr>
                 @endforeach
