@@ -11,6 +11,7 @@ use App\Http\Controllers\promocioncontroller;
 use App\Http\Controllers\maestrocontrolador;
 Use App\Http\Controllers\vistas;
 Use App\Http\Controllers\maestrocontroladorImpresion;
+use App\Http\Controllers\SliderPrincipalController;
 Use Barryvdh\DomPDF\Facade as PDF;
 
 
@@ -166,6 +167,13 @@ Route::post('menu/menuadmon/promociones/create', [promocioncontroller::class,"st
 Route::get("menu/menuadmon/promociones/edit/{id}",[promocioncontroller::class,"edit"]);
 Route::put("menu/menuadmon/promociones/edit/{id}",[promocioncontroller::class,"update"]);
 Route::get("menu/menuadmon/promociones/delete/{id}",[promocioncontroller::class,"destroy"]);
+
+
+Route::get('menu/menuadmon/slider/create', [SliderPrincipalController::class,"create"]);
+Route::post('menu/menuadmon/slider/create', [SliderPrincipalController::class,"store"]);
+Route::get("menu/menuadmon/slider/edit/{id}",[SliderPrincipalController::class,"edit"]);
+Route::put("menu/menuadmon/slider/edit/{id}",[SliderPrincipalController::class,"update"]);
+Route::get("menu/menuadmon/slider/delete/{id}",[SliderPrincipalController::class,"destroy"]);
 
 
 //clientes

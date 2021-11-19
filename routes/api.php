@@ -25,6 +25,8 @@ use App\Http\Controllers\editpedido3;
 use App\Http\Controllers\ReportesController;
 use App\Http\Controllers\revisionController;
 use App\Http\Controllers\insumocontroller;
+use App\Http\Controllers\SliderPrincipalController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -44,6 +46,7 @@ Route::resource('pedido', maestrocontrolador::class);
 Route::resource('insumo', insumocontroller::class);
 Route::resource('pedidoimp', maestrocontroladorImpresion::class);
 Route::resource('promocion',slidercontroller::class);
+Route::resource('slider',SliderPrincipalController::class);
 
 // Route::resource('detalledelpedido',detalledelpedidocontroller::class);
 // Route::resource('administraciones',administracion::class);
@@ -102,5 +105,5 @@ Route::get('/pdf/Factura_sub/{id}/descargar', [ReportesController::class,"create
 Route::get('/pdf/Factura_imp/{id}', [ReportesController::class,"getfacturaImp"]);
 Route::get('/pdf/Factura_imp/{id}/descargar', [ReportesController::class,"createPDFfacturaImp"]);
 
-Route::get('/pdf/ventas_insumos/{fecha1}/{fecha2}', [ReportesController::class,"getinsumos"]);
-//Route::get('/pdf/Factura_imp/{id}/descargar', [ReportesController::class,"createPDFfacturaImp"]);
+Route::get('/pdf/ventas_insumos/{fecha1}/{fecha2}', [ReportesController::class,"getinsumosrango"]);
+Route::get('/pdf/ventas_insumos/{fecha1}/{fecha2}/descargar', [ReportesController::class,"createPDFinsumos"]);

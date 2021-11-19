@@ -128,45 +128,19 @@
 
 
 
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="/img/Ima 1.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block ">
-                        <h3 class="fs-3"><b> </b></h3>
-                        <p class="fs-5 fuente"><b></b></p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="/img/Ima 2.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3 class="fs-3"><b> </b></h3>
-                        <p class="fs-5 fuente"><b> </b></p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="/img/Ima 3.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3 class="fs-3"><b> </b></h3>
-                        <p class="fs-5 fuente"><b> </b></p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="ratio: 6:1.9; animation: push;autoplay: true">
+
+
+            <ul id="sliderprincipal" class="uk-slideshow-items">
+
+            </ul>
+
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
 
         </div>
+
+
 
         <img src="\img\Barrita.jpg" class="" alt="...">
 
@@ -308,16 +282,14 @@
 
 <script>
     let pedido = [];
+    let slider = [];
+
 
     cargarpedido();
-
-    $('#guardar').click(function(e) {
-        guardarpedido();
+    cargarslider();
 
 
-        alert("Se agrego su orden");
 
-    });
 
     function peticionapi(data, method, onSucess) {
         let url = '/api/promocion';
@@ -340,23 +312,6 @@
         })
     }
 
-    function guardarpedido() {
-
-        let data = {
-
-            imagen: $("#imagen").val()
-            , descripcion: $("#descripcion").val(),
-
-        };
-        peticionapi(data, 'POST', function(res) {
-            alert('Guardado con exito')
-        });
-    }
-
-
-
-
-
     function cargarpedido() {
         peticionapi({}, "GET", function(res) {
             pedido = res;
@@ -377,6 +332,49 @@
 
             });
             $("#slider").html(html);
+        });
+    }
+
+    function peticionapi2(data, method, onSucess) {
+        let url = '/api/slider';
+        if (method == 'PUT' || method == 'DELETE') {
+            url += '/' + data.Idslider;
+        }
+        $.ajax({
+            url: url
+            , method: method
+            , data: data,
+            // error(ext) {
+            // let error = e.responseJSON.errors;
+            // let msj = error[Object.keys(error)[0]][0];
+            // alert(msj);
+            // },
+            success(res) {
+                onSucess(res)
+
+            }
+        })
+    }
+
+    function cargarslider() {
+        peticionapi2({}, "GET", function(res) {
+            slider = res;
+            console.log(slider);
+            let html = '';
+            res.forEach(slider => {
+                html += '<li>' + ' <img src="/uploads/slider/' + slider.Imagen + '" uk-cover>' +
+
+
+
+
+
+
+
+
+                    '</li>'
+
+            });
+            $("#sliderprincipal").html(html);
         });
     }
 

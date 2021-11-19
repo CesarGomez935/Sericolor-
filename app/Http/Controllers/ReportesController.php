@@ -239,7 +239,7 @@ class ReportesController extends Controller
     }
 
 
-     public function getinsumos($fecha1,$fecha2)
+     public function getinsumosrango($fecha1,$fecha2)
     {
         $sublimacion=insumos::whereBetween('fecha', [$fecha1, $fecha2])
         ->where("maestro.IdCategoria",1)
@@ -276,32 +276,53 @@ class ReportesController extends Controller
 
 
                
-        return compact("sublimacion","serigrafia","impresion","bordado");
-        //return view('reportes.factura', compact("maestro","detalle"));
+        //return compact("sublimacion","serigrafia","impresion","bordado");
+        return view('reportes.insumosrangodefecha', compact("sublimacion","serigrafia","impresion","bordado","fecha1","fecha2"));
     }
 
-    // public function createPDFinsumos($fecha1,$fecha2) 
-    // {
-    //   // retreive all records from db
-    //    $maestro= maestro::where("maestro.idmaestro",$id)
-    //     ->join("cliente","cliente.IdCliente","=","maestro.IdCliente")
-    //     ->join("usuario","usuario.IdUsuario","=","maestro.IdUsuario")
-    //     ->join("persona","persona.IdPersona","=","cliente.IdPersona")        
-    //     ->join("persona as trabajador","trabajador.IdPersona","=","usuario.IdPersona")
-    //     ->join("recibo","recibo.Idmaestro","=","maestro.idmaestro")
-    //     ->select("recibo.Id_Metodo_de_Pago","recibo.Fecha_de_pago","recibo.Cod_Recibo","maestro.*", "cliente.*", "usuario.*", "trabajador.idpersona as trabajadorid", "trabajador.primer_nombre as trabajador_primer_nombre", "trabajador.segundo_nombre as trabajador_segundo_nombre", "trabajador.primer_apellido as trabajador_primer_apellido", "trabajador.segundo_apellido as trabajador_segundo_apellido", "persona.*")
-    //     ->get();
+    public function createPDFinsumos($fecha1,$fecha2) 
+    {
+      // retreive all records from db
+      $sublimacion=insumos::whereBetween('fecha', [$fecha1, $fecha2])
+        ->where("maestro.IdCategoria",1)
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->join("detalle-orden-sub,bor,ser","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")
+        ->join("maestro","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro") 
+        ->groupBy("insumos.descripcion")        
+        ->get();
 
-    //     $detalle=Detalledelpedido::select("*")->where("IdMaestro",$id)->join("insumos","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")->get();
-        
+        $serigrafia=insumos::whereBetween('fecha', [$fecha1, $fecha2])
+        ->where("maestro.IdCategoria",2)
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->join("detalle-orden-sub,bor,ser","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")
+        ->join("maestro","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro") 
+        ->groupBy("insumos.descripcion")        
+        ->get();
 
-    //   // share data to view
-    //   view()->share('maestro',compact('maestro','detalle',));
-    //   $pdf = PDF::loadView('reportes.factura',compact('maestro','detalle'))->setPaper('letter', 'portrait');
+        $impresion=insumos::whereBetween('fecha', [$fecha1, $fecha2])
+        ->where("maestro.IdCategoria",3)
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->join("detalle-orden-imp","insumos.IdInsumo","=","detalle-orden-imp.IdInsumos")
+        ->join("maestro","detalle-orden-imp.IdMaestro","=","maestro.idmaestro") 
+        ->groupBy("insumos.descripcion")        
+        ->get();
+
+        $bordado=insumos::whereBetween('fecha', [$fecha1, $fecha2])
+        ->where("maestro.IdCategoria",4)
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->join("detalle-orden-sub,bor,ser","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")
+        ->join("maestro","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro") 
+        ->groupBy("insumos.descripcion")        
+        ->get();
+
+
+      // share data to view
+      view()->share( compact("sublimacion","serigrafia","impresion","bordado","fecha1","fecha2"));
+      $pdf = PDF::loadView('reportes.insumosrangodefecha', compact("sublimacion","serigrafia","impresion","bordado","fecha1","fecha2"))->setPaper('letter', 'portrait');
       
 
-    //   // download PDF file with download method
-    //   return $pdf->stream('Factura.pdf');
-    // }
+      // download PDF file with download method
+      return $pdf->stream('Insumos.pdf');
+    }
 
 }

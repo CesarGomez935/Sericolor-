@@ -30,7 +30,7 @@
     <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Promociones</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Página de Inicio</span>
             </a>
         </div>
 
@@ -76,6 +76,99 @@
 
     </nav>
 
+    <div class="uk-section uk-section-muted">
+
+
+
+
+
+
+
+
+        <div>
+            <div class="uk-div uk-padding">
+
+
+                <div class="uk-section-secondary uk-margin uk-padding" style="text-align: center;">
+                    <h1>Slider Principal</h1>
+
+                    <div class="uk-div uk-padding">
+                        <a href="/menu/menuadmon/slider/create" class="uk-button uk-button-primary">Agregar Nueva Imagen</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="uk-padding">
+            <table class="uk-table uk-table-hover uk-table-striped uk-table-divider uk-table-hover ">
+
+
+
+                <thead>
+                    <th>Id</th>
+                    <th>Imagen</th>
+                    <th>Descripción</th>
+                    <th>opciones</th>
+
+
+                </thead>
+                <tbody id="datos">
+                    @foreach ($slider as $item)
+
+
+                    <tr>
+                        <td>{{$item->Idslider}}</td>
+
+
+                        <td><img src="{{asset('uploads/slider/'.$item->Imagen)}}" width="400" height="200" srcset=""> </td>
+
+
+                        <td>{{$item->descripcion}}</td>
+
+                        <td>
+                            <a href="{{url("/menu/menuadmon/slider/edit/".$item->Idslider)}}" class="uk-icon-button  uk-margin-small-right" uk-icon="icon:pencil; ratio: 1.5"></a>
+
+
+
+
+
+                            <a onclick="return confirm('¿Está seguro que desea continuar?')" href="{{ url("/menu/menuadmon/slider/delete/".$item->Idslider)}}" class="uk-icon-button  uk-margin-small-right" uk-icon="icon:trash; ratio: 1.5"></a>
+
+
+
+                        </td>
+
+
+
+
+
+
+
+
+
+                    </tr>
+
+                    @endforeach
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- Botón de atrás  -->
+        <div class="uk-padding-small uk-background-muted uk-padding">
+            <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
+
+                <a href="/menu/menuadmon" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
+
+
+            </div>
+        </div>
+
+    </div>
 
 
     <div class="uk-section uk-section-muted">
@@ -84,9 +177,16 @@
 
 
 
+
+
+
         <div>
             <div class="uk-div uk-padding">
+
+
                 <div class="uk-section-secondary uk-margin uk-padding" style="text-align: center;">
+                    <h1>Promociones</h1>
+
                     <div class="uk-div uk-padding">
                         <a href="/menu/menuadmon/promociones/create" class="uk-button uk-button-primary">Agregar Imagen Promocional</a>
                     </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\promocion;
+use App\Models\slider;
 use Illuminate\Support\Facades\File;
 
 class promocioncontroller extends Controller
@@ -16,8 +17,9 @@ class promocioncontroller extends Controller
     public function index()
     {
         $promocion= promocion::all();
+        $slider= slider::all();
         // return promocion::all();
-        return view("promociones",compact("promocion"));
+        return view("promociones",compact("promocion","slider")); 
         
         
     }
