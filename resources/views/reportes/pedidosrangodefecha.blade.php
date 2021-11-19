@@ -34,10 +34,13 @@
                 <thead>
                     <tr class="table-danger">
 
+                        <th scope="col">N° Pedido</th>
                         <th scope="col">Nombre del cliente</th>
+                        <th scope="col">Categoria</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Costo</th>
-
+                        <th scope="col">Abono Recibido</th>
+                        <th scope="col">Saldo Restante</th>
 
 
 
@@ -51,25 +54,39 @@
                 <tbody>
                     @foreach ($pedidosrango ?? '' as $data)
 
-                        <tr>
-
-                            <td>{{ $data->Primer_Nombre }} {{ $data->Segundo_Nombre }}
-                                {{ $data->Primer_Apellido }} {{ $data->Segundo_Apellido }}</td>
-
-                            <td>{{ $data->fecha }}</td>
-                            <td>{{ $data->total_costo }}</td>
-
-
-
-
-
-                        </tr>
-                    @endforeach
                     <tr>
-                        <td colspan="2">Total:</td>
-                        <td>{{ $suma }}</td>
+                        <td>{{ $data->idmaestro }}
+                        </td>
+
+
+                        <td>{{ $data->Primer_Nombre }} {{ $data->Segundo_Nombre }}
+                            {{ $data->Primer_Apellido }} {{ $data->Segundo_Apellido }}</td>
+
+                        <td>{{ $data->descripcion }}</td>
+                        <td>{{ $data->fecha }}</td>
+                        <td>{{ $data->total_costo }}</td>
+                        <td>{{ $data->abono}}</td>
+                        <td>{{ $data->saldo}}</td>
+
+
+
+
+
+
 
                     </tr>
+                    @endforeach
+                    @foreach ($suma ?? '' as $data)
+
+                    <tr>
+                        <td colspan="4">Total:</td>
+                        <td>{{ $data->Total }}</td>
+                        <td>{{ $data->Abono }}</td>
+                        <td>{{ $data->Saldo }}</td>
+
+
+                    </tr>
+                    @endforeach
 
                 </tbody>
 

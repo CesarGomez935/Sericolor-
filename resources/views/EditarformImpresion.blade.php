@@ -1152,11 +1152,7 @@
         function peticionapi4(data, method, onSuccess) {
 
 
-            let url = '/api/getdetalles1/' + {
-                {
-                    $edit - > idmaestro
-                }
-            } + '';
+            let url = '/api/getdetalles1/' + '{{$edit -> idmaestro}}' + '';
             if (method == 'PUT' || method == 'DELETE') {
                 url += '/' + data.idmaestro;
             }

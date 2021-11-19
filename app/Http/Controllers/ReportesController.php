@@ -111,16 +111,16 @@ class ReportesController extends Controller
 
     public function getpedidosdiarios($fecha)
     {
-        $pedidosdiarios= maestro::where("fecha",$fecha)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
-        $suma=maestro::where("fecha",$fecha)->sum("total_costo");
+        $pedidosdiarios= maestro::select("maestro.*","cliente.*","persona.*","categoria.*")->where('fecha', $fecha)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
+        $suma=maestro::where("fecha",$fecha)->select(DB::raw("sum(total_costo) as Total"),DB::raw("sum(abono) as Total_Abono"),DB::raw("sum(saldo) as Total_Saldo"))->get();
         return view('reportes.pedidosDiarios', compact('pedidosdiarios','suma','fecha'));
     }
 
     public function createPDFpedidosdiarios($fecha) 
     {
       // retreive all records from db
-      $pedidosdiarios= maestro::where("fecha",$fecha)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
-        $suma=maestro::where("fecha",$fecha)->sum("total_costo");
+      $pedidosdiarios= maestro::select("maestro.*","cliente.*","persona.*","categoria.*")->where('fecha', $fecha)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
+        $suma=maestro::where("fecha",$fecha)->select(DB::raw("sum(total_costo) as Total"),DB::raw("sum(abono) as Total_Abono"),DB::raw("sum(saldo) as Total_Saldo"))->get();
       
 
       // share data to view
@@ -216,8 +216,8 @@ class ReportesController extends Controller
 
     public function getpedidosrango($fecha1,$fecha2)
     {
-        $pedidosrango= maestro::whereBetween('fecha', [$fecha1, $fecha2])->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
-        $suma=maestro::whereBetween('fecha', [$fecha1, $fecha2])->sum("total_costo");
+        $pedidosrango= maestro::select("maestro.*","cliente.*","persona.*","categoria.*")->whereBetween('fecha', [$fecha1, $fecha2])->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
+        $suma=maestro::whereBetween('fecha', [$fecha1, $fecha2])->select(DB::raw("sum(total_costo) as Total"),DB::raw("sum(abono) as Abono"),DB::raw("sum(saldo) as Saldo"))->get();
         //return compact('pedidosdiarios','suma','fecha1','fecha2');
         return view('reportes.pedidosrangodefecha', compact('pedidosrango','suma','fecha1','fecha2'));
     }
@@ -225,9 +225,9 @@ class ReportesController extends Controller
     public function createPDFpedidosrango($fecha1,$fecha2) 
     {
       // retreive all records from db
-      $pedidosrango= maestro::whereBetween('fecha', [$fecha1, $fecha2])->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
-        $suma=maestro::whereBetween('fecha', [$fecha1, $fecha2])->sum("total_costo");
-      
+       $pedidosrango= maestro::select("maestro.*","cliente.*","persona.*","categoria.*")->whereBetween('fecha', [$fecha1, $fecha2])->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
+        $suma=maestro::whereBetween('fecha', [$fecha1, $fecha2])->select(DB::raw("sum(total_costo) as Total"),DB::raw("sum(abono) as Abono"),DB::raw("sum(saldo) as Saldo"))->get();
+        
 
       // share data to view
       view()->share('pedidosrango',compact('pedidosrango','suma','fecha1','fecha2'));
@@ -235,11 +235,11 @@ class ReportesController extends Controller
       
 
       // download PDF file with download method
-      return $pdf->stream('Reporte pedidos Rango de fecha $fecha1 - $fecha2.pdf');
+      return $pdf->stream('Reporte pedidos Rango de fecha $fecha1-$fecha2.pdf');
     }
 
 
-     public function getinsumosrango($fecha1,$fecha2)
+    public function getinsumosrango($fecha1,$fecha2)
     {
         $sublimacion=insumos::whereBetween('fecha', [$fecha1, $fecha2])
         ->where("maestro.IdCategoria",1)
@@ -271,11 +271,7 @@ class ReportesController extends Controller
         ->join("detalle-orden-sub,bor,ser","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")
         ->join("maestro","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro") 
         ->groupBy("insumos.descripcion")        
-        ->get();
-
-
-
-               
+        ->get();               
         //return compact("sublimacion","serigrafia","impresion","bordado");
         return view('reportes.insumosrangodefecha', compact("sublimacion","serigrafia","impresion","bordado","fecha1","fecha2"));
     }
@@ -319,6 +315,78 @@ class ReportesController extends Controller
       // share data to view
       view()->share( compact("sublimacion","serigrafia","impresion","bordado","fecha1","fecha2"));
       $pdf = PDF::loadView('reportes.insumosrangodefecha', compact("sublimacion","serigrafia","impresion","bordado","fecha1","fecha2"))->setPaper('letter', 'portrait');
+      
+
+      // download PDF file with download method
+      return $pdf->stream('Insumos.pdf');
+    }
+
+    public function getinsumosrangoidsub($idinsumo,$fecha1,$fecha2)
+    {
+        $detalle=insumos::whereBetween('fecha', [$fecha1, $fecha2])
+        ->where("detalle-orden-sub,bor,ser.IdInsumos",$idinsumo)
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->join("detalle-orden-sub,bor,ser","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")
+        ->join("maestro","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro") 
+        ->groupBy("insumos.descripcion")        
+        ->get();
+
+        
+        //return compact("detalle","fecha1","fecha2");
+        return view('reportes.insumosidrangodefecha', compact("detalle","fecha1","fecha2"));
+    }
+
+    public function createPDFinsumosrangoidsub($idinsumo,$fecha1,$fecha2) 
+    {
+      // retreive all records from db
+      $detalle=insumos::whereBetween('fecha', [$fecha1, $fecha2])
+        ->where("detalle-orden-sub,bor,ser.IdInsumos",$idinsumo)
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->join("detalle-orden-sub,bor,ser","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")
+        ->join("maestro","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro") 
+        ->groupBy("insumos.descripcion")        
+        ->get();
+
+
+      // share data to view
+      view()->share( compact("detalle","fecha1","fecha2"));
+      $pdf = PDF::loadView('reportes.insumosidrangodefecha', compact("detalle","fecha1","fecha2"))->setPaper('letter', 'portrait');
+      
+
+      // download PDF file with download method
+      return $pdf->stream('Insumos.pdf');
+    }
+
+    public function getinsumosrangoidimp($idinsumo,$fecha1,$fecha2)
+    {
+         $detalle=insumos::whereBetween('fecha', [$fecha1, $fecha2])
+        ->where("detalle-orden-imp.IdInsumos",$idinsumo)
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->join("detalle-orden-imp","insumos.IdInsumo","=","detalle-orden-imp.IdInsumos")
+        ->join("maestro","detalle-orden-imp.IdMaestro","=","maestro.idmaestro") 
+        ->groupBy("insumos.descripcion")        
+        ->get();
+
+        
+        //return compact("detalle","fecha1","fecha2");
+        return view('reportes.insumosidrangodefecha', compact("detalle","fecha1","fecha2"));
+    }
+
+    public function createPDFinsumosrangoidimp($idinsumo,$fecha1,$fecha2) 
+    {
+      // retreive all records from db
+      $detalle=insumos::whereBetween('fecha', [$fecha1, $fecha2])
+        ->where("detalle-orden-imp.IdInsumos",$idinsumo)
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"))        
+        ->join("detalle-orden-imp","insumos.IdInsumo","=","detalle-orden-imp.IdInsumos")
+        ->join("maestro","detalle-orden-imp.IdMaestro","=","maestro.idmaestro") 
+        ->groupBy("insumos.descripcion")        
+        ->get();
+
+
+      // share data to view
+      view()->share( compact("detalle","fecha1","fecha2"));
+      $pdf = PDF::loadView('reportes.insumosidrangodefecha', compact("detalle","fecha1","fecha2"))->setPaper('letter', 'portrait');
       
 
       // download PDF file with download method

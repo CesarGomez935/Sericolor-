@@ -107,3 +107,9 @@ Route::get('/pdf/Factura_imp/{id}/descargar', [ReportesController::class,"create
 
 Route::get('/pdf/ventas_insumos/{fecha1}/{fecha2}', [ReportesController::class,"getinsumosrango"]);
 Route::get('/pdf/ventas_insumos/{fecha1}/{fecha2}/descargar', [ReportesController::class,"createPDFinsumos"]);
+
+Route::get('/pdf/ventas_insumos/{idinsumo}/{fecha1}/{fecha2}', [ReportesController::class,"getinsumosrangoidsub"]);
+Route::get('/pdf/ventas_insumos/{idinsumo}/{fecha1}/{fecha2}/descargar', [ReportesController::class,"createPDFinsumosrangoidsub"]);
+
+Route::get('/pdf/ventas_insumosimp/{idinsumo}/{fecha1}/{fecha2}', [ReportesController::class,"getinsumosrangoidimp"]);
+Route::get('/pdf/ventas_insumosimp/{idinsumo}/{fecha1}/{fecha2}/descargar', [ReportesController::class,"createPDFinsumosrangoidimp"]);
