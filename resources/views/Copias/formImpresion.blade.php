@@ -10,21 +10,17 @@
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -33,8 +29,7 @@
     <nav class="uk-navbar uk-navbar-container uk-margin">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span
-                    class="uk-margin-small-left">Facturación Impresión Digital</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Facturación Impresión Digital</span>
             </a>
         </div>
 
@@ -72,7 +67,7 @@
                         <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
                         <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
                         <li> <a href="/menu/menuadmon/personal">Personal</a></li>
-                        <li> <a href="/menu/menuadmon/promociones">Promociones</a></li>
+                        <li> <a href="/menu/menuadmon/promociones">Menú Principal</a></li>
                     </ul>
 
                 </ul>
@@ -147,69 +142,41 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input id="alto_1" oninput="area1();" class="uk-input area1" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="ancho_1" oninput="area1();" class="uk-input area1" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="mt2_1" oninput="costo1();" class="uk-input costo1" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="costo_1" oninput="costo1();" class="uk-input costo1" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="precio_mt2_1" oninput="multi1();" class="uk-input monto1" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="cantidad_1" oninput="multi1();" class="uk-input monto1" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="total_1" name="total_1" class="uk-input" min="0" value="" type="number"
-                                placeholder="0" value="0"></td>
+                        <td><input id="alto_1" oninput="area1();" class="uk-input area1" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="ancho_1" oninput="area1();" class="uk-input area1" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="mt2_1" oninput="costo1();" class="uk-input costo1" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="costo_1" oninput="costo1();" class="uk-input costo1" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="precio_mt2_1" oninput="multi1();" class="uk-input monto1" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="cantidad_1" oninput="multi1();" class="uk-input monto1" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="total_1" name="total_1" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"></td>
                     </tr>
                     <tr>
-                        <td><input id="alto_2" oninput="area2();" class="uk-input area2" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="ancho_2" oninput="area2();" class="uk-input area2" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="mt2_2" oninput="costo2();" class="uk-input costo2" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="costo_2" oninput="costo2();" class="uk-input costo2" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="precio_mt2_2" oninput="multi2();" class="uk-input monto2" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="cantidad_2" oninput="multi2();" class="uk-input monto2" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="total_2" name="total_2" class="uk-input" min="0" value="" type="number"
-                                placeholder="0" value="0"></td>
+                        <td><input id="alto_2" oninput="area2();" class="uk-input area2" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="ancho_2" oninput="area2();" class="uk-input area2" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="mt2_2" oninput="costo2();" class="uk-input costo2" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="costo_2" oninput="costo2();" class="uk-input costo2" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="precio_mt2_2" oninput="multi2();" class="uk-input monto2" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="cantidad_2" oninput="multi2();" class="uk-input monto2" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="total_2" name="total_2" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"></td>
                     </tr>
                     <tr>
-                        <td><input id="alto_3" oninput="area3();" class="uk-input area3" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="ancho_3" oninput="area3();" class="uk-input area3" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="mt2_3" oninput="costo3();" class="uk-input costo3" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="costo_3" oninput="costo3();" class="uk-input costo3" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="precio_mt2_3" oninput="multi3();" class="uk-input monto3" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="cantidad_3" oninput="multi3();" class="uk-input monto3" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="total_3" name="total_1" class="uk-input" min="0" value="" type="number"
-                                placeholder="0" value="0"></td>
+                        <td><input id="alto_3" oninput="area3();" class="uk-input area3" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="ancho_3" oninput="area3();" class="uk-input area3" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="mt2_3" oninput="costo3();" class="uk-input costo3" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="costo_3" oninput="costo3();" class="uk-input costo3" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="precio_mt2_3" oninput="multi3();" class="uk-input monto3" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="cantidad_3" oninput="multi3();" class="uk-input monto3" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="total_3" name="total_1" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"></td>
                     </tr>
                     <tr>
 
-                        <td><input id="alto_4" oninput="area4();" class="uk-input area4" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="ancho_4" oninput="area4();" class="uk-input area4" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="mt2_4" oninput="costo4();" class="uk-input costo4" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="costo_4" oninput="costo4();" class="uk-input costo4" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="precio_mt2_4" oninput="multi4();" class="uk-input monto4" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="cantidad_4" oninput="multi4();" class="uk-input monto4" min="0" type="number"
-                                placeholder="0" value="0"></td>
-                        <td><input id="total_4" name="total_4" class="uk-input" min="0" value="" type="number"
-                                placeholder="0" value="0"></td>
+                        <td><input id="alto_4" oninput="area4();" class="uk-input area4" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="ancho_4" oninput="area4();" class="uk-input area4" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="mt2_4" oninput="costo4();" class="uk-input costo4" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="costo_4" oninput="costo4();" class="uk-input costo4" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="precio_mt2_4" oninput="multi4();" class="uk-input monto4" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="cantidad_4" oninput="multi4();" class="uk-input monto4" min="0" type="number" placeholder="0" value="0"></td>
+                        <td><input id="total_4" name="total_4" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"></td>
                     </tr>
 
                 </tbody>
@@ -421,6 +388,7 @@
 
 
                 }
+
             </script>
         </div>
 
@@ -451,58 +419,46 @@
                             <tbody id="tabladetalle">
                                 <tr>
                                     <!--Agregar correcta impresión de datos-->
-                                    <td><input id="cantidad_pedido_1" min="0" oninput="calculo_pedido1();"
-                                            placeholder="0" class="uk-input calculo_pedido1" type="number" value="0">
+                                    <td><input id="cantidad_pedido_1" min="0" oninput="calculo_pedido1();" placeholder="0" class="uk-input calculo_pedido1" type="number" value="0">
                                     </td>
                                     <td><input id="especificaciones_pedido_1" class="uk-input" type="text"></td>
-                                    <td><input id="precio_und_pedido_1" min="0" oninput="calculo_pedido1();"
-                                            placeholder="0" class="uk-input calculo_pedido1" type="number" value="0">
+                                    <td><input id="precio_und_pedido_1" min="0" oninput="calculo_pedido1();" placeholder="0" class="uk-input calculo_pedido1" type="number" value="0">
                                     </td>
-                                    <td><input id="precio_pedido_1" onchange="pedido();" onclick="pedido();"
-                                            placeholder="0" min="0" class="uk-input pedido" type="number" value="0">
+                                    <td><input id="precio_pedido_1" onchange="pedido();" onclick="pedido();" placeholder="0" min="0" class="uk-input pedido" type="number" value="0">
                                     </td>
 
                                 </tr>
                                 <tr>
 
-                                    <td><input id="cantidad_pedido_2" min="0" oninput="calculo_pedido2();"
-                                            placeholder="0" class="uk-input calculo_pedido2" type="number" value="0">
+                                    <td><input id="cantidad_pedido_2" min="0" oninput="calculo_pedido2();" placeholder="0" class="uk-input calculo_pedido2" type="number" value="0">
                                     </td>
                                     <td><input id="especificaciones_pedido_2" class="uk-input" type="text"></td>
-                                    <td><input id="precio_und_pedido_2" min="0" oninput="calculo_pedido2();"
-                                            placeholder="0" class="uk-input calculo_pedido2" type="number" value="0">
+                                    <td><input id="precio_und_pedido_2" min="0" oninput="calculo_pedido2();" placeholder="0" class="uk-input calculo_pedido2" type="number" value="0">
                                     </td>
-                                    <td><input id="precio_pedido_2" onchange="pedido();" onclick="pedido();"
-                                            placeholder="0" min="0" class="uk-input pedido" type="number" value="0">
+                                    <td><input id="precio_pedido_2" onchange="pedido();" onclick="pedido();" placeholder="0" min="0" class="uk-input pedido" type="number" value="0">
                                     </td>
 
                                 </tr>
                                 <tr>
 
-                                    <td><input id="cantidad_pedido_3" min="0" oninput="calculo_pedido3();"
-                                            placeholder="0" class="uk-input calculo_pedido3" type="number" value="0">
+                                    <td><input id="cantidad_pedido_3" min="0" oninput="calculo_pedido3();" placeholder="0" class="uk-input calculo_pedido3" type="number" value="0">
                                     </td>
                                     <td><input id="especificaciones_pedido_3" class="uk-input" type="text"></td>
-                                    <td><input id="precio_und_pedido_3" min="0" oninput="calculo_pedido3();"
-                                            placeholder="0" class="uk-input calculo_pedido3" type="number" value="0">
+                                    <td><input id="precio_und_pedido_3" min="0" oninput="calculo_pedido3();" placeholder="0" class="uk-input calculo_pedido3" type="number" value="0">
                                     </td>
-                                    <td><input id="precio_pedido_3" onchange="pedido();" onclick="pedido();"
-                                            placeholder="0" min="0" class="uk-input pedido" type="number" value="0">
+                                    <td><input id="precio_pedido_3" onchange="pedido();" onclick="pedido();" placeholder="0" min="0" class="uk-input pedido" type="number" value="0">
                                     </td>
 
                                 </tr>
                                 <tr>
 
 
-                                    <td><input id="cantidad_pedido_4" min="0" oninput="calculo_pedido4();"
-                                            placeholder="0" class="uk-input calculo_pedido4" type="number" value="0">
+                                    <td><input id="cantidad_pedido_4" min="0" oninput="calculo_pedido4();" placeholder="0" class="uk-input calculo_pedido4" type="number" value="0">
                                     </td>
                                     <td><input id="especificaciones_pedido_4" class="uk-input" type="text"></td>
-                                    <td><input id="precio_und_pedido_4" min="0" oninput="calculo_pedido4();"
-                                            placeholder="0" class="uk-input calculo_pedido4" type="number" value="0">
+                                    <td><input id="precio_und_pedido_4" min="0" oninput="calculo_pedido4();" placeholder="0" class="uk-input calculo_pedido4" type="number" value="0">
                                     </td>
-                                    <td><input id="precio_pedido_4" onchange="pedido();" onclick="pedido();"
-                                            placeholder="0" min="0" class="uk-input pedido" type="number" value="0">
+                                    <td><input id="precio_pedido_4" onchange="pedido();" onclick="pedido();" placeholder="0" min="0" class="uk-input pedido" type="number" value="0">
                                     </td>
 
 
@@ -516,8 +472,7 @@
                                             <h1 class="uk-label" for="total_pedido">Total</h1>
                                         </div>
                                     </td>
-                                    <td><input id="total_pedido" type="number" value="0" class="uk-input"
-                                            disabled></td>
+                                    <td><input id="total_pedido" type="number" value="0" class="uk-input" disabled></td>
                                 </tr>
                             </tbody>
 
@@ -613,6 +568,7 @@
 
 
                                 }
+
                             </script>
                         </table>
                     </div>
@@ -631,15 +587,13 @@
                     <div class="uk-margin">
                         <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                         <div class="uk-form-controls">
-                            <input id="abono" name="Abono" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="abono" name="Abono" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
                         <div class="uk-form-controls">
-                            <input id="saldo" name="Saldo" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="saldo" name="Saldo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
@@ -675,29 +629,25 @@
                     <div class="uk-margin">
                         <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza Pedido</label>
                         <div class="uk-form-controls">
-                            <input id="autoriza" name="Autoriza_pedido" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="autoriza" name="Autoriza_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
                         <div class="uk-form-controls">
-                            <input id="recibe" name="recibe_pedido" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="recibe" name="recibe_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
                         <div class="uk-form-controls">
-                            <input id="factura" name="num_factura" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
                         <div class="uk-form-controls">
-                            <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                 </div>
@@ -715,11 +665,8 @@
         <!-- Botones atrás y actualizar-->
         <div class="uk-padding uk-background-muted uk-padding  ">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-                <a href="/menu/menu_facturacion" class="uk-button uk-button-primary "
-                    style="margin-left: 100px">Atrás</a>
-                <a onclick="return confirm('¿Está seguro que desea continuar?')" type="submit" id="guardar"
-                    href="/menu/menu_facturacion/form_impresion_digital" class="uk-button uk-button-secondary"
-                    style="margin-left: 100px">Guardar</a>
+                <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
+                <a onclick="return confirm('¿Está seguro que desea continuar?')" type="submit" id="guardar" href="/menu/menu_facturacion/form_impresion_digital" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
 
 
             </div>
@@ -743,15 +690,15 @@
             url += '/' + data.IDdetalledelpedido;
         }
         $.ajax({
-            url: url,
-            method: method,
-            data: data,
-            error(ext) {
+            url: url
+            , method: method
+            , data: data
+            , error(ext) {
                 let error = e.responseJSON.errors;
                 let msj = error[Object.keys(error)[0]][0];
                 alert(msj);
-            },
-            success(res) {
+            }
+            , success(res) {
 
             }
         })
@@ -759,57 +706,57 @@
 
     function guardarpedido() {
         let data = {
-            Tipo_de_pedido: $("#tipo_de_pedido").val(),
-            alto1: $("#alto_1").val(),
-            ancho1: $("#ancho_1").val(),
-            mtscuadrados1: $("#mt2_1").val(),
-            precioxmtscuadrados1: $("#costo_1").val(),
-            costo1: $("#precio_mt2_1").val(),
-            cantidad1: $("#cantidad_1").val(),
-            total1: $("#total_1").val(),
-            alto2: $("#alto_2").val(),
-            ancho2: $("#ancho_2").val(),
-            mtscuadrados2: $("#mt2_2").val(),
-            precioxmtscuadrados2: $("#costo_1").val(),
-            costo2: $("#precio_mt2_1").val(),
-            cantidad2: $("#cantidad_2").val(),
-            total2: $("#total_2").val(),
-            alto3: $("#alto_3").val(),
-            ancho3: $("#ancho_3").val(),
-            mtscuadrados3: $("#mt2_3").val(),
-            precioxmtscuadrados3: $("#costo_3").val(),
-            costo3: $("#precio_mt2_3").val(),
-            cantidad3: $("#cantidad_3").val(),
-            total3: $("#total_3").val(),
-            alto4: $("#alto_4").val(),
-            ancho4: $("#ancho_4").val(),
-            mtscuadrados4: $("#mt2_4").val(),
-            precioxmtscuadrados4: $("#costo_4").val(),
-            costo4: $("#precio_mt2_4").val(),
-            cantidad4: $("#cantidad_4").val(),
-            total4: $("#total_4").val(),
-            preciounitario1: $("#precio_und_pedido_1").val(),
-            preciounitario2: $("#precio_und_pedido_2").val(),
-            preciounitario3: $("#precio_und_pedido_3").val(),
-            preciounitario4: $("#precio_und_pedido_4").val(),
-            cantidadespe1: $("#cantidad_pedido_1").val(),
-            cantidadespe2: $("#cantidad_pedido_2").val(),
-            cantidadespe3: $("#cantidad_pedido_3").val(),
-            cantidadespe4: $("#cantidad_pedido_4").val(),
-            especifaciones1: $("#especifaciones_pedido_1").val(),
-            especifaciones2: $("#especifaciones_pedido_2").val(),
-            especifaciones3: $("#especifaciones_pedido_3").val(),
-            especifaciones4: $("#especifaciones_pedido_4").val(),
-            preciototal1: $("#precio_pedido_1").val(),
-            preciototal2: $("#precio_pedido_2").val(),
-            preciototal3: $("#precio_pedido_3").val(),
-            preciototal4: $("#precio_pedido_4").val(),
-            cantidadtotal: $("#total_pedido").val(),
-            nota: $("#notas").val(),
-            Nombredelcomprador: $("#nombre").val(),
-            Telefono: $("#telefono").val(),
-            NumeroRuc: $("#Ruc").val(),
-            fechadepedido: $("#fecha_fact").val(),
+            Tipo_de_pedido: $("#tipo_de_pedido").val()
+            , alto1: $("#alto_1").val()
+            , ancho1: $("#ancho_1").val()
+            , mtscuadrados1: $("#mt2_1").val()
+            , precioxmtscuadrados1: $("#costo_1").val()
+            , costo1: $("#precio_mt2_1").val()
+            , cantidad1: $("#cantidad_1").val()
+            , total1: $("#total_1").val()
+            , alto2: $("#alto_2").val()
+            , ancho2: $("#ancho_2").val()
+            , mtscuadrados2: $("#mt2_2").val()
+            , precioxmtscuadrados2: $("#costo_1").val()
+            , costo2: $("#precio_mt2_1").val()
+            , cantidad2: $("#cantidad_2").val()
+            , total2: $("#total_2").val()
+            , alto3: $("#alto_3").val()
+            , ancho3: $("#ancho_3").val()
+            , mtscuadrados3: $("#mt2_3").val()
+            , precioxmtscuadrados3: $("#costo_3").val()
+            , costo3: $("#precio_mt2_3").val()
+            , cantidad3: $("#cantidad_3").val()
+            , total3: $("#total_3").val()
+            , alto4: $("#alto_4").val()
+            , ancho4: $("#ancho_4").val()
+            , mtscuadrados4: $("#mt2_4").val()
+            , precioxmtscuadrados4: $("#costo_4").val()
+            , costo4: $("#precio_mt2_4").val()
+            , cantidad4: $("#cantidad_4").val()
+            , total4: $("#total_4").val()
+            , preciounitario1: $("#precio_und_pedido_1").val()
+            , preciounitario2: $("#precio_und_pedido_2").val()
+            , preciounitario3: $("#precio_und_pedido_3").val()
+            , preciounitario4: $("#precio_und_pedido_4").val()
+            , cantidadespe1: $("#cantidad_pedido_1").val()
+            , cantidadespe2: $("#cantidad_pedido_2").val()
+            , cantidadespe3: $("#cantidad_pedido_3").val()
+            , cantidadespe4: $("#cantidad_pedido_4").val()
+            , especifaciones1: $("#especifaciones_pedido_1").val()
+            , especifaciones2: $("#especifaciones_pedido_2").val()
+            , especifaciones3: $("#especifaciones_pedido_3").val()
+            , especifaciones4: $("#especifaciones_pedido_4").val()
+            , preciototal1: $("#precio_pedido_1").val()
+            , preciototal2: $("#precio_pedido_2").val()
+            , preciototal3: $("#precio_pedido_3").val()
+            , preciototal4: $("#precio_pedido_4").val()
+            , cantidadtotal: $("#total_pedido").val()
+            , nota: $("#notas").val()
+            , Nombredelcomprador: $("#nombre").val()
+            , Telefono: $("#telefono").val()
+            , NumeroRuc: $("#Ruc").val()
+            , fechadepedido: $("#fecha_fact").val(),
 
         };
         peticionapi(data, 'POST', function(res) {
@@ -824,6 +771,7 @@
         });
 
     }
+
 </script>
 
 </html>

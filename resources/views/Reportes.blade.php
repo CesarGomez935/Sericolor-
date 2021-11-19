@@ -11,18 +11,15 @@
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
 
@@ -38,8 +35,7 @@
     <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span
-                    class="uk-margin-small-left">Reportes</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Reportes</span>
             </a>
         </div>
 
@@ -77,7 +73,7 @@
                         <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
                         <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
                         <li> <a href="/menu/menuadmon/personal">Personal</a></li>
-                        <li> <a href="/menu/menuadmon/promociones">Promociones</a></li>
+                        <li> <a href="/menu/menuadmon/promociones">Menú Principal</a></li>
                     </ul>
 
                 </ul>
@@ -106,24 +102,21 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <select class="uk-select uk-form-width-small" type="select"
-                                        aria-placeholder="Ingresar categoria">
+                                    <select class="uk-select uk-form-width-small" type="select" aria-placeholder="Ingresar categoria">
                                         <option>Sublimación</option>
                                         <option>Impresión digital</option>
                                         <option>Bordado</option>
                                         <option>Serigrafía</option>
                                     </select>
                                 </td>
-                                <td><select class="uk-select uk-form-width-small" type="select"
-                                        aria-placeholder="Ingresar estado">
+                                <td><select class="uk-select uk-form-width-small" type="select" aria-placeholder="Ingresar estado">
                                         <option>Completado</option>
                                         <option>No completado</option>
 
                                     </select>
                                 </td>
                                 <td>
-                                    <input onchange="validarfechas()" id="fecha_inicio"
-                                        class="uk-input uk-form-width-medium" type="date">
+                                    <input onchange="validarfechas()" id="fecha_inicio" class="uk-input uk-form-width-medium" type="date">
 
                                 </td>
                                 <td>
@@ -143,16 +136,14 @@
                                 <td></td>
                                 <td></td>
                                 <td>
-                                    <input onchange="validarfechas()" id="fecha_final"
-                                        class="uk-input uk-form-width-medium" type="date">
+                                    <input onchange="validarfechas()" id="fecha_final" class="uk-input uk-form-width-medium" type="date">
                                 </td>
                                 <td>
                                     <label for="">Ejecutar consulta</label>
                                     <button class="uk-button uk-button-secondary" uk-icon="search"></button>
                                     <label for="">Descargar reporte</label>
                                     {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
-                                    <a target="_blank" id="pedidosdiario" class="uk-button uk-button-secondary"
-                                        uk-icon="download"></a>
+                                    <a target="_blank" id="pedidosdiario" class="uk-button uk-button-secondary" uk-icon="download"></a>
 
 
                                 </td>
@@ -237,4 +228,5 @@
 
 
     }
+
 </script>
