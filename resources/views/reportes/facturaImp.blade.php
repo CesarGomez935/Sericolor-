@@ -5,78 +5,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Factura Impresión Digital</title>
+    <title>Personal reporte</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" /> --}}
 </head>
 
-<body>
+<body style="font-size: 12px">
+
+    <style>
+        h6 {
+            font-size: 12px;
+            position: fixed;
+            text-align: right;
+            right: 0px;
+        }
+
+        thead {
+            font-size: 10px;
+
+        }
 
 
+        tbody {
+            font-size: 9px;
 
+        }
+
+    </style>
     <div class="">
 
 
 
-        @foreach ($maestro ?? '' as $Maestro)
+        @foreach($maestro ?? '' as $Maestro)
 
+        <div class="table-responsive-sm">
 
-            <div class="">
-                <img style="position: fixed" src="{{ public_path('img/Sericolor_ Logo.png') }}" height="50" alt="">
-
-                <div class="row">
-                    <div class="col-sm">
+            <table class="table table-sm table-borderless ">
 
 
 
 
+                <tbody>
 
 
 
-
-                    </div>
-                    <div class="col-sm">
-                        <h6 class="text-center "><b>Codigo de Revision:</b> {{ $Maestro->CodSeguimiento }}</h6>
-                        <br>
+                    <tr class="">
 
 
-                    </div>
-
-                    <div class="col-sm">
-
-
-
-
-
-
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-            <div class="">
-                <div class="row">
-                    <div class="col-sm">
-                        {{-- <img style="position: fixed" src="{{ asset('img/ser.png') }}" width="150" alt=""> --}}
-
-
-                        <br>
-
-                        <label class="text-center "><b>Cliente: </b>{{ $Maestro->Primer_Nombre }}
-                            {{ $Maestro->Segundo_Nombre }} {{ $Maestro->Primer_Apellido }}
-                            {{ $Maestro->Segundo_Apellido }}</label>
-                        <br>
-
-                        <label class="text-center "><b>Teléfono: </b>{{ $Maestro->Telefono }}</label>
-
-                        <br>
-                        <label class="text-center "><b>Trabajador: </b>{{ $Maestro->trabajador_primer_nombre }}
+                        <td class="col-sm-3">
+                            <b> Cliente: </b>{{ $Maestro->Primer_Nombre }} {{ $Maestro->Segundo_Nombre }} {{ $Maestro->Primer_Apellido }} {{ $Maestro->Segundo_Apellido }} <br>
+                            <b> Teléfono: </b>{{ $Maestro->Telefono }}<br>
+                            <b> Trabajador: </b>{{ $Maestro->trabajador_primer_nombre }}
                             {{ $Maestro->trabajador_segundo_nombre }} {{ $Maestro->trabajador_primer_apellido }}
-                            {{ $Maestro->trabajador_segundo_apellido }}</label>
-                        <br>
+                            {{ $Maestro->trabajador_segundo_apellido }}<br>
+                            <b> Notas: </b>{{ $Maestro->Notas }}
+
+
+
+
+
+
+                        </td>
+                        <td style="text-align: center" class="col-sm-3">
+                            <img src="{{ public_path('img/Sericolor_ Logo.png') }}" height="50" alt="">
+
+
+                        </td>
+                        <td style="text-align:right" class="col-sm-3">
+
+
+                            <b>Fecha:</b> {{$Maestro->fecha}}<br>
+                            <b>Factura N°:</b> {{ $Maestro->idmaestro }}<br>
+                            <b>Recibo N°:</b> {{ $Maestro->Cod_Recibo }} <br>
+                            <b>Código de Revision:</b> <i>{{ $Maestro->CodSeguimiento }}</i>
 
 
 
@@ -85,52 +86,18 @@
 
 
 
-
-                    </div>
-                    <div class="col-sm">
-
-
-                    </div>
-
-                    <div class="col-sm ">
-                        <h6 class="text-right "><b>Factura N°:</b> {{ $Maestro->idmaestro }}</h6>
-
-                        <h6 class="text-right"><b>Recibo N°:</b> {{ $Maestro->Cod_Recibo }}</h6>
-
-                        <h6 class="text-right "><b>Fecha:</b> {{ $Maestro->fecha }}</h6>
+                        </td>
 
 
 
 
+                    </tr>
 
 
+                </tbody>
 
-                    </div>
-
-                </div>
-                <div class="row">
-                    <div class="col-sm">
-
-                    </div>
-                    <div class="col-sm">
-                        <h6 class="text-center  "><b>Notas:</b> {{ $Maestro->Notas }}</h6>
-
-
-
-                    </div>
-
-                    <div class="col-sm">
-
-
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
+            </table>
+        </div>
 
 
 
@@ -158,86 +125,230 @@
 
     </div> --}}
 
-        <div class="table-responsive-sm mt-1">
+    <div class="table-responsive-sm">
+
+        <table class="table table-sm table-bordered ">
+
+            <tbody class="thead-light">
+
+                <tr>
+
+                    <th scope="col">Alto</th>
+                    <th scope="col">Ancho</th>
+                    <th scope="col">mt²</th>
+                    <th scope="col">Prec. x mt² </th>
+                    <th scope="col">Costo</th>
+                    <th scope="col">Insumo</th>
+                    <th scope="col">Cant.</th>
+                    <th scope="col">Observacion</th>
+                    <th scope="col">Sub-Total</th>
+                </tr>
+
+            </tbody>
+            <tbody>
+                @foreach($detalle ?? '' as $data)
+
+
+                <tr>
+
+                    <td>{{ $data->alto}} </td>
+                    <td>{{ $data->ancho}}</td>
+                    <td>{{ $data->mt2}}</td>
+                    <td>{{ $data->p_m}} </td>
+                    <td>{{ $data->costo}}</td>
+                    <td>{{ $data->Tipo}} {{ $data->Descripcion}}</td>
+                    <td>{{ $data->cantidad}}</td>
+                    <td>{{ $data->observacion}}</td>
+                    <td>{{ $data->total}} </td>
 
 
 
-            <table class="table table-sm table-bordered mb">
 
-                <thead class="thead-light">
 
-                    <tr>
 
-                        <th scope="col">Ancho</th>
-                        <th scope="col">Alto</th>
-                        <th scope="col">Metros Cuadrados</th>
-                        <th scope="col">Precio Por MT2</th>
-                        <th scope="col">Costo</th>
-                        <th scope="col">Cantidad</th>
 
-                        <th scope="col">Observacion</th>
-                        <th scope="col">Sub-Total</th>
-                    </tr>
 
-                </thead>
+
+
+
+
+
+                </tr>
+                @endforeach
+                @foreach($maestro ?? '' as $Maestro)
+                <tr class="table-active">
+
+
+                    <td colspan="8">Costo Total:</td>
+                    <td><b>{{$Maestro->total_costo}}</b></td>
+
+                </tr>
+                <tr class="table-active">
+
+
+                    <td colspan="8">Abono:</td>
+                    <td>{{$Maestro->abono}}</td>
+                </tr>
+                <tr class="table-active">
+
+
+                    <td colspan="8">Saldo Restante:</td>
+                    <td><b>{{$Maestro->saldo}}</b></td>
+
+                </tr>
+
+
+
+                @endforeach
+
+
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+    <div class="table-responsive-sm">
+
+        <table class="table table-sm table-borderless ">
+
+
+
+
+            <tbody>
+
+                <tr class="">
+
+
+                    <td style="text-align:center" class="col-sm-2">
+
+                        <b>Entregué Conforme:_____________________________</b>
+                    </td>
+
+                    <td style="text-align:center" class="col-sm-2">
+
+                        <b>Recibí Conforme:_______________________________</b>
+
+
+                    </td>
+
+
+
+
+                </tr>
+                <tr class="">
+
+
+                    <td colspan="2" style="text-align:center" class="col-sm-1">
+
+                        <b>¡Muchas Gracias Por Preferirnos!</b> <br>
+                        Le Esperamos Pronto.
+                    </td>
+
+
+
+
+
+
+                </tr>
+
+
+
+            </tbody>
+
+        </table>
+    </div>
+    <div class="table-responsive-sm">
+
+        <table class="table table-sm table-borderless ">
+
+
+
+
+            <tbody>
+
+                <tr class="">
+
+
+                    <td style="text-align:center" class="col-sm-1">
+
+                        *Cortar aquí* <br>
+                        _____________________________________________________________________________________________________________________________________________
+                    </td>
+
+
+
+
+
+
+                </tr>
+
+
+            </tbody>
+
+        </table>
+    </div>
+    <div class="">
+
+
+
+        @foreach($maestro ?? '' as $Maestro)
+
+        <div class="table-responsive-sm">
+
+            <table class="table table-sm table-borderless ">
+
+
+
+
                 <tbody>
-                    @foreach ($detalle ?? '' as $data)
-
-
-                        <tr>
-
-                            <td>{{ $data->ancho }} </td>
-                            <td>{{ $data->alto }}</td>
-                            <td>{{ $data->mt2 }}</td>
-                            <td>{{ $data->p_m }} </td>
-                            <td>{{ $data->costo }}</td>
-                            <td>{{ $data->cantidad }}</td>
-                            <td>{{ $data->observacion }} </td>
-                            <td>{{ $data->total }}</td>
 
 
 
+                    <tr class="">
+
+
+                        <td class="col-sm-3">
+                            <b> Cliente: </b>{{ $Maestro->Primer_Nombre }} {{ $Maestro->Segundo_Nombre }} {{ $Maestro->Primer_Apellido }} {{ $Maestro->Segundo_Apellido }} <br>
+                            <b> Teléfono: </b>{{ $Maestro->Telefono }}<br>
+                            <b> Trabajador: </b>{{ $Maestro->trabajador_primer_nombre }}
+                            {{ $Maestro->trabajador_segundo_nombre }} {{ $Maestro->trabajador_primer_apellido }}
+                            {{ $Maestro->trabajador_segundo_apellido }}<br>
+                            <b> Notas: </b>{{ $Maestro->Notas }}
 
 
 
 
 
 
+                        </td>
+                        <td style="text-align: center" class="col-sm-3">
+                            <img src="{{ public_path('img/Sericolor_ Logo.png') }}" height="50" alt="">
+
+
+                        </td>
+                        <td style="text-align:right" class="col-sm-3">
+
+
+                            <b>Fecha:</b> {{$Maestro->fecha}}<br>
+                            <b>Factura N°:</b> {{ $Maestro->idmaestro }}<br>
+                            <b>Recibo N°:</b> {{ $Maestro->Cod_Recibo }} <br>
+                            <b>Código de Revision:</b> <i>{{ $Maestro->CodSeguimiento }}</i>
 
 
 
 
 
 
-                        </tr>
-                    @endforeach
-                    @foreach ($maestro ?? '' as $Maestro)
-                        <tr class="table-active">
 
 
-                            <td colspan="7">Costo Total:</td>
-                            <td><b>{{ $Maestro->total_costo }}</b></td>
-
-                        </tr>
-                        <tr class="table-active">
-
-
-                            <td colspan="7">Abono:</td>
-                            <td>{{ $Maestro->abono }}</td>
-                        </tr>
-                        <tr class="table-active">
-
-
-                            <td colspan="7">Saldo Restante:</td>
-                            <td><b>{{ $Maestro->saldo }}</b></td>
-
-                        </tr>
+                        </td>
 
 
 
-                    @endforeach
 
-
+                    </tr>
 
 
                 </tbody>
@@ -247,32 +358,178 @@
 
 
 
-        <div class="fixed-bottom">
 
 
-            <div class="">
-
-                <h6 class="text-center mb-3">
-                    <b>Gracias por su preferencia!
-                        <br>
-                        <b>Les esperamos!</b>
-
-                        <br>
-                        <b>. </b>
-                        <br>
-                    </b>
-
-                </h6>
-
-
-            </div>
+        @endforeach
 
 
 
-        </div>
 
 
-        {{-- <script src="{{ asset('js/app.js') }}" type="text/js"></script> --}}
+
+
+
+
+
+
+
+
+
+        {{-- <div class="d-flex justify-content-end mb-4">
+            <a class="btn btn-primary" href="{{ URL::to('api/pdf/pedidos_diarios/descargar') }}">Export to PDF</a>
+
+
+
+    </div> --}}
+
+    <div class="table-responsive-sm">
+
+        <table class="table table-sm table-bordered ">
+
+            <tbody class="thead-light">
+
+                <tr>
+
+                    <th scope="col">Alto</th>
+                    <th scope="col">Ancho</th>
+                    <th scope="col">mt²</th>
+                    <th scope="col">Prec. x mt² </th>
+                    <th scope="col">Costo</th>
+                    <th scope="col">Insumo</th>
+                    <th scope="col">Cant.</th>
+                    <th scope="col">Observacion</th>
+                    <th scope="col">Sub-Total</th>
+                </tr>
+
+            </tbody>
+            <tbody>
+                @foreach($detalle ?? '' as $data)
+
+
+                <tr>
+
+                    <td>{{ $data->alto}} </td>
+                    <td>{{ $data->ancho}}</td>
+                    <td>{{ $data->mt2}}</td>
+                    <td>{{ $data->p_m}} </td>
+                    <td>{{ $data->costo}}</td>
+                    <td>{{ $data->Tipo}} {{ $data->Descripcion}}</td>
+                    <td>{{ $data->cantidad}}</td>
+                    <td>{{ $data->observacion}}</td>
+                    <td>{{ $data->total}} </td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </tr>
+                @endforeach
+                @foreach($maestro ?? '' as $Maestro)
+                <tr class="table-active">
+
+
+                    <td colspan="8">Costo Total:</td>
+                    <td><b>{{$Maestro->total_costo}}</b></td>
+
+                </tr>
+                <tr class="table-active">
+
+
+                    <td colspan="8">Abono:</td>
+                    <td>{{$Maestro->abono}}</td>
+                </tr>
+                <tr class="table-active">
+
+
+                    <td colspan="8">Saldo Restante:</td>
+                    <td><b>{{$Maestro->saldo}}</b></td>
+
+                </tr>
+
+
+
+                @endforeach
+
+
+
+
+            </tbody>
+
+        </table>
+    </div>
+    <div class="table-responsive-sm">
+
+        <table class="table table-sm table-borderless ">
+
+
+
+
+            <tbody>
+
+                <tr class="">
+
+
+                    <td style="text-align:center" class="col-sm-2">
+
+                        <b>Entregué Conforme:_____________________________</b>
+                    </td>
+
+                    <td style="text-align:center" class="col-sm-2">
+
+                        <b>Recibí Conforme:_______________________________</b>
+
+
+                    </td>
+
+
+
+
+                </tr>
+                <tr class="">
+
+
+                    <td colspan="2" style="text-align:center" class="col-sm-1">
+
+                        <b>¡Muchas Gracias Por Preferirnos!</b> <br>
+                        Le Esperamos Pronto.
+                    </td>
+
+
+
+
+
+
+                </tr>
+
+
+
+            </tbody>
+
+        </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
+
+
 
 </html>

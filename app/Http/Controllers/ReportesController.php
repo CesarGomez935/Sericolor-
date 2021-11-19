@@ -185,7 +185,7 @@ class ReportesController extends Controller
         ->select("recibo.Id_Metodo_de_Pago","recibo.Fecha_de_pago","recibo.Cod_Recibo","maestro.*", "cliente.*", "usuario.*", "trabajador.idpersona as trabajadorid", "trabajador.primer_nombre as trabajador_primer_nombre", "trabajador.segundo_nombre as trabajador_segundo_nombre", "trabajador.primer_apellido as trabajador_primer_apellido", "trabajador.segundo_apellido as trabajador_segundo_apellido", "persona.*")
         ->get();
 
-        $detalle=detalleimpresion::select("*")->where("IdMaestro",$id)->get();
+        $detalle=detalleimpresion::select("*")->where("IdMaestro",$id)->join("insumos","insumos.IdInsumo","=","detalle-orden-imp.IdInsumos")->get();
         
         //return compact("maestro","detalle");
         return view('reportes.facturaImp', compact("maestro","detalle"));
@@ -203,8 +203,8 @@ class ReportesController extends Controller
         ->select("recibo.Id_Metodo_de_Pago","recibo.Fecha_de_pago","recibo.Cod_Recibo","maestro.*", "cliente.*", "usuario.*", "trabajador.idpersona as trabajadorid", "trabajador.primer_nombre as trabajador_primer_nombre", "trabajador.segundo_nombre as trabajador_segundo_nombre", "trabajador.primer_apellido as trabajador_primer_apellido", "trabajador.segundo_apellido as trabajador_segundo_apellido", "persona.*")
         ->get();
 
-        $detalle=detalleimpresion::select("*")->where("IdMaestro",$id)->get();
-
+        $detalle=detalleimpresion::select("*")->where("IdMaestro",$id)->join("insumos","insumos.IdInsumo","=","detalle-orden-imp.IdInsumos")->get();
+        
       // share data to view
       view()->share('maestro',compact('maestro','detalle',));
       $pdf = PDF::loadView('reportes.facturaImp',compact('maestro','detalle'))->setPaper('letter', 'portrait');
