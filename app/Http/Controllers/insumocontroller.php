@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\insumos;
+use Illuminate\Support\Facades\DB;
 
 class insumocontroller extends Controller
 {
@@ -106,5 +107,11 @@ class insumocontroller extends Controller
         $model=insumos::find($id);
         return $model->delete();
 
+    }
+
+    public function getinsumobusqueda($id)
+    {
+     
+         return insumos::select("*")->join("categoria","insumos.idcategoria","=","categoria.idcategoria")->where(DB::raw("CONCAT(IdInsumo,' ',Tipo,' ',insumos.Descripcion,'',categoria.descripcion)"),"LIKE",'%'.$id.'%')->orderBy("IdInsumo","ASC")->get();
     }
 }

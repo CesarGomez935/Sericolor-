@@ -88,6 +88,7 @@
         <table class="uk-table uk-table-divider uk-table-striped uk-table-hover">
             <thead>
                 <tr>
+                    <th>N° Pedido</th>
                     <th>Pedidos y Clientes</th>
                     <th>Fecha</th>
                     <th>Estado</th>
@@ -188,7 +189,10 @@
                 let html = '';
                 res.forEach(pedido => {
                     html +=
-                        '<tr>' +
+                        '<tr>' + '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_bordado/' +
+                        pedido.idmaestro + '/edit' +
+                        '">' + pedido.idmaestro + '</td>' + '</a>' +
+
 
                         '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_bordado/' +
                         pedido.idmaestro + '/edit' +

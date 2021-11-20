@@ -45,6 +45,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('pedido', maestrocontrolador::class);
 
 Route::resource('insumo', insumocontroller::class);
+Route::get('getinsumobusqueda/{id}',[ insumocontroller::class,"getinsumobusqueda"]);
 Route::resource('pedidoimp', maestrocontroladorImpresion::class);
 Route::resource('promocion',slidercontroller::class);
 Route::resource('slider',SliderPrincipalController::class);
