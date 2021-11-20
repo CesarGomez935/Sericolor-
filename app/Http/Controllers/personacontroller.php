@@ -7,6 +7,7 @@ use App\Models\cliente;
 use App\Models\persona;
 use App\Models\usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class personacontroller extends Controller
 {
@@ -101,6 +102,13 @@ class personacontroller extends Controller
         
 
         return persona::select("*")->join("cliente","cliente.IdPersona","=","persona.IdPersona")->get();
+
+    }
+
+    public function getclientebusqueda($nombre)
+    {
+                return persona::select("*")->join("cliente","cliente.IdPersona","=","persona.IdPersona")->where(DB::raw("CONCAT(Primer_Nombre,' ',Segundo_Nombre,' ',Primer_Apellido,' ',Segundo_Apellido)"),"LIKE",'%'.$nombre.'%')->get();
+
 
     }
 }

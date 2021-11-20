@@ -43,6 +43,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('pedido', maestrocontrolador::class);
+
 Route::resource('insumo', insumocontroller::class);
 Route::resource('pedidoimp', maestrocontroladorImpresion::class);
 Route::resource('promocion',slidercontroller::class);
@@ -74,13 +75,14 @@ Route::get('descargarpedidos4', [dbcontroller::class,"Exportarpedidos4"]);
 
 Route::get('gettrabajador', [personacontroller::class,"getalltrabajador"]);
 Route::get('getcliente', [personacontroller::class,"getallcliente"]);
-Route::get('getclientebusqueda', [personacontroller::class,"getcliente"]);
+Route::get('getclientebusqueda/{nombre}', [personacontroller::class,"getclientebusqueda"]);
 
 Route::get('getimpresion', [vistas::class,"mostrar_impresion"]);
 Route::get('getsublimacion', [vistas::class,"mostrar_sublimacion"]);
 Route::get('getserigrafia', [vistas::class,"mostrar_serigrafia"]);
 Route::get('getbordado', [vistas::class,"mostrar_bordado"]);
 Route::get('getallpedidos', [vistas::class,"getallpedidos"]);
+Route::get('getallpedidosbusqueda/{id}', [vistas::class,"getallpedidosbusqueda"]);
 
 Route::get('/getdetalles/{id}', [vistas::class,"getdetalles"]);
 Route::get('/getdetalles1/{id}', [vistas::class,"getdetalles1"]);

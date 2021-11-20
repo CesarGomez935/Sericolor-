@@ -94,8 +94,10 @@
                 <b> <label id="buscar_cliente" for="form-stacked-text" oninput="cargarproductosbusqueda(buscar_cliente.value);" class="uk-form-label">Buscar Cliente</label> </b>
                 <div class="uk-inline uk-padding">
 
-                    <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
-                    <input class="uk-input uk-form-width-large" type="text">
+                    <a onclick="getnombre();" class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
+
+
+                    <input oninput="getnombre();" id="nombre_busqueda" class="uk-input uk-form-width-large" type="text">
                 </div>
                 <a href="/menu/menuadmon/clientes/agregar_cliente" class="uk-button-primary uk-button uk-margin uk-padding ">agregar Cliente</a>
             </div>
@@ -156,6 +158,7 @@
 
     <script>
         let trabajadores = [];
+        let Nombre = "";
 
 
         function peticionapi(data, method, onSuccess) {
@@ -193,18 +196,65 @@
 
                         '<td>' + '<a href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IdPersona + '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a href="/menu/menuadmon/clientes/' + trabajadores.IdPersona + '" action="" class=" " uk-icon="trash"></a>' + '</td>' +
 
+                        '</tr>'
+                });
+
+                $("#tablaclientes").html(html);
+            });
+        }
+
+        function getnombre() {
+
+            Nombre = document.getElementById("nombre_busqueda").value;
+
+
+
+            if (Nombre == "") {
+                cargarproductos();
+            } else {
+                console.log(Nombre);
+                cargarclientesbusqueda();
+
+
+            }
+
+        }
+
+        function peticionapi2(data, method, onSuccess) {
+
+
+            let url = '/api/getclientebusqueda/' + Nombre;
+
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.id;
+            }
+            $.ajax({
+                url: url
+                , method: method
+                , data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+        }
+
+        function cargarclientesbusqueda() {
+            peticionapi2({}, 'GET', function(res) {
+                trabajadores = res;
+                let html = '';
+                res.forEach(trabajadores => {
+                    html +=
+                        '<tr>' +
+
+                        '<td>' + '<a class="uk-button" href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IdPersona + '/edit">' + trabajadores.Primer_Nombre + " " + trabajadores.Segundo_Nombre + " " + trabajadores.Primer_Apellido + " " + trabajadores.Segundo_Apellido + '</td>' + '</a>' +
 
 
 
 
-
-
-
-
-
-
-
-
+                        '<td>' + '<a href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IdPersona + '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a href="/menu/menuadmon/clientes/' + trabajadores.IdPersona + '" action="" class=" " uk-icon="trash"></a>' + '</td>' +
 
                         '</tr>'
                 });

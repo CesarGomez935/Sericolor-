@@ -121,6 +121,16 @@ class vistas extends Controller
 
     }
 
+    public function getallpedidosbusqueda($id){
+
+   
+
+  
+      
+        return maestro::select("*")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->where("idmaestro","Like","%".$id."%")->orderBy("idmaestro","DESC")->get();        
+
+    }
+
     public function updatedetalles(Request $request, $id){
 
        // $detalles=new Detalledelpedido();

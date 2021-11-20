@@ -26,7 +26,7 @@
 
 <body>
 
-    <nav class="uk-navbar uk-navbar-container uk-margin">
+    <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
                 <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Resumen de Pedidos</span>
@@ -75,6 +75,25 @@
         </div>
     </nav>
 
+    <div class="uk-div  uk-padding uk-background-muted">
+
+
+        <div class="">
+
+            <b> <label id="buscar_cliente" for="form-stacked-text" class="uk-form-label">Buscar Por N° de Pedido</label> </b>
+            <div class="uk-inline uk-padding">
+
+                <a onclick="getid();" class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
+
+
+                <input oninput="getid();" id="id_busqueda" class="uk-input uk-form-width-large" type="text">
+            </div>
+
+        </div>
+
+    </div>
+
+
 
 
 
@@ -83,6 +102,7 @@
         <table class="uk-table uk-table-divider uk-table-striped uk-table-hover">
             <thead>
                 <tr>
+                    <th>N° Pedido</th>
                     <th>Pedidos y Clientes</th>
                     <th>Fecha</th>
                     <th>Area</th>
@@ -118,6 +138,7 @@
 
 <script>
     let pedido = [];
+    var id = "";
     cargarproductos();
 
     function cargarpedido2() {
@@ -182,6 +203,25 @@
 
     }
 
+
+    function getid() {
+
+        id = document.getElementById("id_busqueda").value;
+
+
+
+        if (id == "") {
+            cargarproductos();
+        } else {
+            console.log(id);
+            cargarpedidobusqueda();
+
+
+        }
+
+    }
+
+
     function cargarproductos() {
         peticionapi({}, 'GET', function(res) {
             pedido = res;
@@ -191,7 +231,10 @@
                 if (pedido.IdCategoria == 1) {
 
                     html +=
-                        '<tr>' +
+                        '<tr>' + '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_sublimacion/' +
+                        pedido.idmaestro + '/edit' +
+                        '">' + pedido.idmaestro + '</td>' + '</a>' +
+
                         '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_sublimacion/' +
                         pedido.idmaestro + '/edit' +
                         '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
@@ -211,7 +254,10 @@
 
 
                     html +=
-                        '<tr>' +
+                        '<tr>' + '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_serigrafia/' +
+                        pedido.idmaestro + '/edit' +
+                        '">' + pedido.idmaestro + '</td>' + '</a>' +
+
                         '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_serigrafia/' +
                         pedido.idmaestro + '/edit' +
                         '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
@@ -232,7 +278,11 @@
                 } else if (pedido.IdCategoria == 3) {
 
                     html +=
-                        '<tr>' +
+                        '<tr>' + '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_impresion_digital/' +
+
+                        pedido.idmaestro + '/edit' +
+                        '">' + pedido.idmaestro + '</td>' + '</a>' +
+
                         '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_impresion_digital/' +
 
                         pedido.idmaestro + '/edit' +
@@ -255,7 +305,10 @@
                 } else if (pedido.IdCategoria == 4) {
 
                     html +=
-                        '<tr>' +
+                        '<tr>' + '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_bordado/' +
+                        pedido.idmaestro + '/edit' +
+                        '">' + pedido.idmaestro + '</td>' + '</a>' +
+
                         '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_bordado/' +
                         pedido.idmaestro + '/edit' +
                         '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
@@ -276,6 +329,139 @@
 
             });
             $("#tablapedidos").html(html);
+        });
+    }
+
+    function peticionapi3(data, method, onSuccess) {
+
+
+        let url = '/api/getallpedidosbusqueda/' + id;
+
+
+        if (method == 'PUT' || method == 'DELETE') {
+            url += '/' + data.id;
+        }
+        $.ajax({
+            url: url
+            , method: method
+            , data: data,
+
+            success(res) {
+                onSuccess(res);
+
+            }
+
+        })
+    }
+
+    function cargarpedidobusqueda() {
+        peticionapi3({}, 'GET', function(res) {
+            pedido = res;
+            let html = '';
+            res.forEach(pedido => {
+
+                if (pedido.IdCategoria == 1) {
+
+                    html +=
+                        '<tr>' + '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_sublimacion/' +
+                        pedido.idmaestro + '/edit' +
+                        '">' + pedido.idmaestro + '</td>' + '</a>' +
+
+                        '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_sublimacion/' +
+                        pedido.idmaestro + '/edit' +
+                        '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
+                        .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
+                        '<td>' + pedido.fecha + '</td>' +
+                        '<td>' + pedido.descripcion + '</td>' +
+                        '<td>' + pedido.Estado + '</td>' + '<td>' +
+                        '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
+
+                        .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
+                        '<a href="/menu/menu_facturacion/form_sublimacion/' + pedido
+                        .idmaestro +
+                        '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick="eliminar(' +
+                        pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
+                        '</tr>'
+                } else if (pedido.IdCategoria == 2) {
+
+
+                    html +=
+                        '<tr>' + '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_serigrafia/' +
+                        pedido.idmaestro + '/edit' +
+                        '">' + pedido.idmaestro + '</td>' + '</a>' +
+
+                        '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_serigrafia/' +
+                        pedido.idmaestro + '/edit' +
+                        '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
+                        .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
+                        '<td>' + pedido.fecha + '</td>' +
+                        '<td>' + pedido.descripcion + '</td>' +
+                        '<td>' + pedido.Estado + '</td>' + '<td>' +
+
+                        '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
+
+                        .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
+
+                        '<a href="/menu/menu_facturacion/form_serigrafia/' + pedido
+                        .idmaestro +
+                        '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick="eliminar(' +
+                        pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
+                        '</tr>'
+                } else if (pedido.IdCategoria == 3) {
+
+                    html +=
+                        '<tr>' + '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_impresion_digital/' +
+
+                        pedido.idmaestro + '/edit' +
+                        '">' + pedido.idmaestro + '</td>' + '</a>' +
+
+                        '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_impresion_digital/' +
+
+                        pedido.idmaestro + '/edit' +
+                        '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
+                        .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
+                        '<td>' + pedido.fecha + '</td>' +
+                        '<td>' + pedido.descripcion + '</td>' +
+                        '<td>' + pedido.Estado + '</td>' + '<td>' +
+
+                        '<a target="_blank" href="/api/pdf/Factura_imp/' + pedido
+
+                        .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
+
+                        '<a href="/menu/menu_facturacion/form_impresion_digital/' + pedido
+
+                        .idmaestro +
+                        '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick="eliminar(' +
+                        pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
+                        '</tr>'
+                } else if (pedido.IdCategoria == 4) {
+
+                    html +=
+                        '<tr>' + '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_bordado/' +
+                        pedido.idmaestro + '/edit' +
+                        '">' + pedido.idmaestro + '</td>' + '</a>' +
+
+                        '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_bordado/' +
+                        pedido.idmaestro + '/edit' +
+                        '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
+                        .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
+                        '<td>' + pedido.fecha + '</td>' +
+                        '<td>' + pedido.descripcion + '</td>' +
+                        '<td>' + pedido.Estado + '</td>' + '<td>' +
+                        '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
+                        .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
+
+                        '<a href="/menu/menu_facturacion/form_bordado/' + pedido
+                        .idmaestro +
+                        '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick="eliminar(' +
+                        pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
+                        '</tr>'
+                }
+
+
+            });
+            $("#tablapedidos").html(html);
+
         });
     }
 
