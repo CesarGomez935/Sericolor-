@@ -327,7 +327,8 @@
                     '<div id="imagenpromocion' + pedido.IdPromocion + '" class="uk-flex-top" uk-modal>' +
                     '<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">' +
                     '<button class="uk-modal-close-outside" type="button" uk-close></button>' +
-                    ' <img src=" /uploads/promocion/' + pedido.Imagen + '" alt="">' +
+                    ' <img style=" z-index: 9999;" src=" /uploads/promocion/' + pedido.Imagen + '" alt="">' +
+
 
                     '</div>' +
                     '</div>' +
