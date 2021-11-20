@@ -46,7 +46,7 @@ class revisionController extends Controller
      */
     public function show($id)
     {
-        return maestro::select("*")->join("cliente","maestro.IdCliente","=","cliente.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->where("CodSeguimiento",$id)->firstOrFail();
+        return maestro::select("persona.Primer_Nombre","persona.Segundo_Nombre","persona.Primer_Apellido","persona.Segundo_Apellido","maestro.CodSeguimiento","maestro.Estado")->join("cliente","maestro.IdCliente","=","cliente.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->where("CodSeguimiento",$id)->firstOrFail();
     }
 
     /**
