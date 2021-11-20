@@ -393,4 +393,28 @@ class ReportesController extends Controller
       return $pdf->stream('Insumos.pdf');
     }
 
+    public function getpedidosrangoTipodepago($tipodepago,$fecha1,$fecha2)
+    {
+        $pedidosrango= maestro::select("maestro.*","cliente.*","persona.*","categoria.*")->whereBetween('fecha', [$fecha1, $fecha2])->where('tipodepago',$tipodepago)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
+        $suma=maestro::whereBetween('fecha', [$fecha1, $fecha2])->select(DB::raw("sum(total_costo) as Total"),DB::raw("sum(abono) as Abono"),DB::raw("sum(saldo) as Saldo"))->get();
+        //return compact('pedidosdiarios','suma','fecha1','fecha2');
+        return view('reportes.pedidosrangodefecha', compact('pedidosrango','suma','fecha1','fecha2'));
+    }
+
+    public function createPDFpedidosrangoTipodepago($tipodepago,$fecha1,$fecha2) 
+    {
+      // retreive all records from db
+        $pedidosrango= maestro::select("maestro.*","cliente.*","persona.*","categoria.*")->whereBetween('fecha', [$fecha1, $fecha2])->where('tipodepago',$tipodepago)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->orderBy("idmaestro","DESC")->get();
+        $suma=maestro::whereBetween('fecha', [$fecha1, $fecha2])->select(DB::raw("sum(total_costo) as Total"),DB::raw("sum(abono) as Abono"),DB::raw("sum(saldo) as Saldo"))->get();
+        
+
+      // share data to view
+      view()->share('pedidosrango',compact('pedidosrango','suma','fecha1','fecha2'));
+      $pdf = PDF::loadView('reportes.pedidosrangodefecha',compact('pedidosrango','suma','fecha1','fecha2'))->setPaper('letter', 'portrait');
+      
+
+      // download PDF file with download method
+      return $pdf->stream('Reporte pedidos Rango de fecha $fecha1-$fecha2.pdf');
+    }
+
 }
