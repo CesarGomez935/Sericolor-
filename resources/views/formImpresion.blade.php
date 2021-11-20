@@ -89,7 +89,7 @@
                         <input id="fecha_fact" name="fecha_facturacion" type="date" class="uk-input">
                     </div>
                     <div class="uk-inline uk-width-1-2 ">
-                        <label for="fecha_ent">Nombre del cliente</label>
+                        <label for="fecha_ent">Nombre del cliente <a href="/menu/menuadmon/clientes/agregar_cliente"> ¿Nuevo Cliente?</a></label>
                         <select id="cliente" name="cliente" class="uk-select" placeholder="Cliente">
 
                         </select>

@@ -89,8 +89,15 @@
                         <input id="fecha_fact" name="fecha_facturacion" type="date" class="uk-input">
                     </div>
                     <div class="uk-inline uk-width-1-2 ">
-                        <label for="fecha_ent">Nombre del cliente</label>
-                        <select name="" class="uk-select uk-width-1-1" id="cliente"></select>
+                        <label for="fecha_ent">Nombre del cliente <a href="/menu/menuadmon/clientes/agregar_cliente"> ¿Nuevo Cliente?</a></label>
+
+
+
+
+
+
+                        <select name="" class="uk-select uk-width-1-1" id="cliente"> </select>
+
                     </div>
                 </div>
             </div>
@@ -796,14 +803,15 @@
             url: url
             , method: method
             , data: data
-            , 
+
             , error(e) {
                 let error = e.responseJSON.errors;
                 let msj = error[Object.keys(error)[0]][0];
                 alert(msj);
             }
             , success(res) {
-                alert("Se agrego su orden");
+
+
 
             }
         })
