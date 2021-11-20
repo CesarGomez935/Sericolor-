@@ -318,7 +318,22 @@
             console.log(pedido);
             let html = '';
             res.forEach(pedido => {
-                html += '<li>' + ' <img src="/uploads/promocion/' + pedido.Imagen + '" uk-cover>' +
+                html += '<li>' + '<a uk-toggle href="#imagenpromocion' + pedido.IdPromocion + '"> <img " src=" /uploads/promocion/' + pedido.Imagen + '" uk-cover> </a>' +
+
+
+
+
+
+                    '<div id="imagenpromocion' + pedido.IdPromocion + '" class="uk-flex-top" uk-modal>' +
+                    '<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">' +
+                    '<button class="uk-modal-close-outside" type="button" uk-close></button>' +
+                    ' <img src=" /uploads/promocion/' + pedido.Imagen + '" alt="">' +
+
+                    '</div>' +
+                    '</div>' +
+
+
+
 
 
 
@@ -362,10 +377,18 @@
             console.log(slider);
             let html = '';
             res.forEach(slider => {
-                html += '<li>' + ' <img src="/uploads/slider/' + slider.Imagen + '" uk-cover>' +
+                html += '<li>' + ' <a uk-toggle href="#imagenslider' + slider.Idslider + '"> <img src="/uploads/slider/' + slider.Imagen + '" uk-cover> </a>' +
 
 
 
+
+                    '<div id="imagenslider' + slider.Idslider + '" class="uk-flex-top" uk-modal>' +
+                    '<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">' +
+                    '<button class="uk-modal-close-outside" type="button" uk-close></button>' +
+                    ' <img src=" /uploads/slider/' + slider.Imagen + '" alt="">' +
+
+                    '</div>' +
+                    '</div>' +
 
 
 
