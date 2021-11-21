@@ -719,6 +719,8 @@
                                 <option @if ($edit->Id_Metodo_de_Pago == '2') selected @endif value='2'>Tarjeta</option>
                                 <option @if ($edit->Id_Metodo_de_Pago == '3') selected @endif value='3'>Transferencia Bancaria</option>
                                 <option @if ($edit->Id_Metodo_de_Pago == '4') selected @endif value='4'>Movil</option>
+                                <option @if ($edit->Id_Metodo_de_Pago == '5') selected @endif value='5'>contado</option>
+                                <option @if ($edit->Id_Metodo_de_Pago == '6') selected @endif value='6'>Credito</option>
                             </select>
                         </div>
                     </div>
@@ -788,7 +790,8 @@
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
                 <a href="/menu/menu_facturacion" class="uk-button uk-button-primary "
                     style="margin-left: 100px">Atrás</a>
-                <a id="guardar" href="/menu/pedidos_bordado" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
+                <a id="guardar" href="/menu/pedidos_bordado" class="uk-button uk-button-secondary"
+                    style="margin-left: 100px">Guardar</a>
 
 
             </div>

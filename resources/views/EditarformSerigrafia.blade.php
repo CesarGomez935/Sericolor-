@@ -719,6 +719,8 @@
                                 <option @if ($edit->Id_Metodo_de_Pago == '2') selected @endif value='2'>Tarjeta</option>
                                 <option @if ($edit->Id_Metodo_de_Pago == '3') selected @endif value='3'>Transferencia Bancaria</option>
                                 <option @if ($edit->Id_Metodo_de_Pago == '4') selected @endif value='4'>Movil</option>
+                                <option @if ($edit->Id_Metodo_de_Pago == '5') selected @endif value='5'>contado</option>
+                                <option @if ($edit->Id_Metodo_de_Pago == '6') selected @endif value='6'>Credito</option>
                             </select>
                         </div>
                     </div>

@@ -536,6 +536,8 @@
                                     <option value='2'>Tarjeta</option>
                                     <option value='3'>Transferencia Bancaria</option>
                                     <option value='4'>Móvil</option>
+                                    <option value='5'>contado</option>
+                                    <option value='6'>Credito</option>
                                 </select>
                             </div>
                         </div>
@@ -940,7 +942,7 @@
                     abono: $("#abono").val(),
                     codseguimiento: $("#tipo_de_pedido").val(),
 
-                    IdInsumos: $("#cat1").val(),
+                    IdInsumos: $("#insumos").val(),
                     ancho: ancho_,
                     alto: alto_,
                     mt2: mt2_,
