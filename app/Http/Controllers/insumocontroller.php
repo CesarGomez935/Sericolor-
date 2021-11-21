@@ -19,6 +19,7 @@ class insumocontroller extends Controller
         return insumos::select("*")->join("categoria","insumos.idcategoria","=","categoria.idcategoria")->orderBy("IdInsumo","ASC")->get();
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
