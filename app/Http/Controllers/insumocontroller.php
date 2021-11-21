@@ -120,7 +120,7 @@ class insumocontroller extends Controller
         
 
 
-        return insumos::select("*")->where("idcategoria",3)->join("categoria","insumos.idcategoria","=","categoria.idcategoria")->get();
+        return insumos::select("*")->where("idcategoria",3)->get();
 
 
     }

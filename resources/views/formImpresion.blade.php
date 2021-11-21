@@ -650,6 +650,7 @@
         cargarpedido();
         cargarusuario();
         cargarcliente();
+        cargarinsumo();
 
 
         $('#guardar').click(function(e) {
@@ -702,7 +703,18 @@
 
         function cargarinsumo() {
 
+            peticionapimp({}, 'GET', function(res) {
+                usuarios = res;
+                console.log(res);
+                let html = '<option value=""> Insumos </option>';
 
+                res.forEach(usuarios => {
+                    html += '<option value="' + usuarios.IdInsumo + '">' + usuarios
+                        .Descripcion +
+                        '</option>'
+                });
+                $("#insumos").html(html);
+            });
 
 
 
@@ -711,6 +723,27 @@
 
 
         }
+
+        function peticionapimp(data, method, onSuccess) {
+
+
+            let url = '/api/getinsumoimpdigital';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.id;
+            }
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+
+                success(res) {
+                    onSuccess(res);
+
+                }
+
+            })
+        }
+
 
         function cargarusuario() {
 
