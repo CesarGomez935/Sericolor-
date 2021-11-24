@@ -639,15 +639,15 @@
                         </div>
                     </div>
                     <div class="uk-margin">
-                        <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
+                        <label for="pedido" class="uk-form-label" for="form-horizontal-text">N° Pedido</label>
                         <div class="uk-form-controls">
-                            <input id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input disabled id="pedido" name="num_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
-                        <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
+                        <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
                         <div class="uk-form-controls">
-                            <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                 </div>

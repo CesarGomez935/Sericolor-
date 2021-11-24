@@ -73,7 +73,10 @@ Route::get('descargarpedidos4', [dbcontroller::class,"Exportarpedidos4"]);
 
 
  //Clientes y trabajadores getinsumoimpdigital
- Route::get('getinsumoimpdigital',[insumocontroller::class,"getinsumoimpdigital"]);
+Route::get('getinsumoimpdigital',[insumocontroller::class,"getinsumoimpdigital"]);
+Route::get('getinsumosub',[insumocontroller::class,"getinsumosub"]);
+Route::get('getinsumoser',[insumocontroller::class,"getinsumoser"]);
+Route::get('getinsumobor',[insumocontroller::class,"getinsumobor"]);
 
 Route::get('gettrabajador', [personacontroller::class,"getalltrabajador"]);
 Route::get('getcliente', [personacontroller::class,"getallcliente"]);

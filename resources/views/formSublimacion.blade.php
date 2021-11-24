@@ -5,36 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facturación | Sublimacion</title>
+    <title>Facturación|Sublimación</title>
     <link rel="icon" href="/img/Icono.ico" type="image/ico" />
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
 
-<body onpageshow="Validacion(); fecha();">
+<body onpageshow="fecha();">
     <!-- Nav Bar-->
     <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span
-                    class="uk-margin-small-left">Facturación Sublimación</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Facturación Sublimación</span>
 
             </a>
         </div>
@@ -81,8 +76,7 @@
         </div>
     </nav>
 
-    <div>
-
+    <form action="" method="post">
         <div>
 
             <div class="uk-padding uk-background-muted">
@@ -96,14 +90,7 @@
                     <div class="uk-inline uk-width-1-2 ">
                         <label for="fecha_ent">Nombre del cliente <a href="/menu/menuadmon/clientes/agregar_cliente">
                                 ¿Nuevo Cliente?</a></label>
-
-
-
-
-
-
-                        <select name="" class="uk-select uk-width-1-1" id="cliente"> </select>
-
+                        <select name="" class="uk-select uk-width-1-1" id="cliente"></select>
                     </div>
                 </div>
             </div>
@@ -119,36 +106,31 @@
                     <div class="uk-margin">
                         <label for="pecho_izq" class="uk-form-label" for="form-horizontal-text">Pecho Izquierdo</label>
                         <div class="uk-form-controls">
-                            <input id="pecho_izq" name="pecho_izquierdo" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="pecho_izq" name="pecho_izquierdo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="pecho_der" class="uk-form-label" for="form-horizontal-text">Pecho Derecho</label>
                         <div class="uk-form-controls">
-                            <input id="pecho_der" name="pecho_derecho" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="pecho_der" name="pecho_derecho" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="manga_izq" class="uk-form-label" for="form-horizontal-text">Manga Izquierda</label>
                         <div class="uk-form-controls">
-                            <input id="manga_izq" name="manga_izquierda" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="manga_izq" name="manga_izquierda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="manga_der" class="uk-form-label" for="form-horizontal-text">Manga Derecha</label>
                         <div class="uk-form-controls">
-                            <input id="manga_der" name="manga_derecha" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="manga_der" name="manga_derecha" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="espalda" class="uk-form-label" for="form-horizontal-text">Espalda</label>
                         <div class="uk-form-controls">
-                            <input id="espalda" name="espalda" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="espalda" name="espalda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                 </div>
@@ -162,59 +144,82 @@
                             <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
                                 <thead>
                                     <tr>
-                                        <th>Talla</th>
+                                        <th>Insumo</th>
                                         <th>Cantidad | precio</th>
                                         <th>Observacion</th>
                                     </tr>
                                 </thead>
+
+                                <script>
+                                    cargarinsumo();
+
+                                    function cargarinsumo() {
+
+                                        peticionapisub({}, 'GET', function(res) {
+                                            usuarios = res;
+                                            console.log(res);
+                                            let html = '<option disabled selected value=""> Seleccionar Insumo </option>';
+
+                                            res.forEach(usuarios => {
+                                                html += '<option value="' + usuarios.IdInsumo + '">' + usuarios
+                                                    .Tipo + ' ' + usuarios
+
+                                                    .Descripcion +
+                                                    '</option>'
+                                            });
+                                            $("#insumos").html(html);
+                                        });
+
+
+
+
+
+
+
+                                    }
+
+                                    function peticionapisub(data, method, onSuccess) {
+
+
+                                        let url = '/api/getinsumosub';
+                                        if (method == 'PUT' || method == 'DELETE') {
+                                            url += '/' + data.id;
+                                        }
+                                        $.ajax({
+                                            url: url
+                                            , method: method
+                                            , data: data,
+
+                                            success(res) {
+                                                onSuccess(res);
+
+                                            }
+
+                                        })
+                                    }
+
+                                </script>
                                 <tbody>
 
                                     <tr>
 
                                         <td>
-                                            <select onchange="Validacion();" name="Tallas"
-                                                class="uk-select uk-form-width-xsmall" id="Tallas">
-
-
-                                                <option value="2">2</option>
-                                                <option value="4">4</option>
-                                                <option value="6">6</option>
-                                                <option value="8">8</option>
-                                                <option value="10">10</option>
-                                                <option value="12">12</option>
-                                                <option value="14">14</option>
-                                                <option value="16">16</option>
-                                                <option value="18">18</option>
-                                                <option value="S">S</option>
-                                                <option value="M">M</option>
-                                                <option value="L">L</option>
-                                                <option value="XL">XL</option>
-                                                <option value="2XL">2XL</option>
-                                                <option value="3XL">3XL</option>
-                                                <option value="5XL">5XL</option>
-
-
-
+                                            <select id="insumos" name="Tallas" class="uk-select uk-form-width-small">
 
                                             </select>
 
 
 
 
-                                            <select name="Genero" class="uk-select uk-form-width-xsmall " id="Genero">
-                                                <option value="Dama">Dama</option>
-                                                <option value="Caballero">Caballero</option>
-                                            </select>
+
 
 
                                         </td>
                                         <td>
-                                            <input id="cantidad" onchange="monto();" type="number" min="0"
-                                                class="uk-input uk-form-width-xsmall monto">
+                                            <input id="cantidad" onchange="monto();" type="number" min="0" class="uk-input uk-form-width-xsmall monto">
 
 
-                                            <input id="precio" onchange="monto();" type="number" min="0"
-                                                class=" monto uk-input uk-form-width-small  ">
+                                            <input id="precio" onchange="monto();" type="number" min="0" class=" monto uk-input uk-form-width-small  ">
 
 
 
@@ -225,8 +230,7 @@
                                         </td>
 
                                         <td>
-                                            <textarea id="Observacion" name="Observacion"
-                                                class="uk-input uk-form-width-1-1" type="text"> </textarea>
+                                            <textarea id="Observacion" name="Observacion" class="uk-input uk-form-width-1-1" type="text"> </textarea>
 
 
                                         </td>
@@ -238,8 +242,7 @@
                                             <label for="sub_total" class="uk-label">Total</label>
                                         </td>
                                         <td>
-                                            <input disabled id="sub_total" type="number" min="0"
-                                                class="uk-input uk-form-width-small ">
+                                            <input disabled id="sub_total" type="number" min="0" class="uk-input uk-form-width-small ">
                                         </td>
                                         <td>
                                             <a class="uk-button uk-button-primary" onclick="insertar();">Insertar
@@ -250,67 +253,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
-                                <thead>
-                                    <tr>
-                                        <th>Insumo</th>
-                                        <th>Cantidad</th>
-                                        <th>Especificaciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
 
-                                    <tr>
-
-                                        <td>
-                                            <select onchange="Validacion_tazas();" name="Insumos"
-                                                class="uk-select uk-form-width-small" id="Insumos">
-
-                                                <option value="Taza">Taza</option>
-                                                <option value="Lapicero">Lapiceros</option>
-                                                <option value="Llavero">Llaveros MDF</option>
-
-
-                                            </select>
-
-                                        </td>
-                                        <td>
-
-                                            <input id="cantidad_taza" onchange="monto_taza();" type="number" min="0"
-                                                class="monto_taza uk-input uk-form-width-xsmall ">
-                                            <input id="precio_taza" onchange="monto_taza();" type="number" min="0"
-                                                class=" monto_taza uk-input uk-form-width-small  ">
-
-
-                                        </td>
-
-                                        <td>
-                                            <textarea id="Observacion_taza" name="Observacion"
-                                                class="uk-input uk-form-width-1-1" type="text"> </textarea>
-
-
-                                        </td>
-                                    <tr>
-                                    <tr>
-                                        <td>
-                                            <label for="sub_total_taza" class="uk-label">Total</label>
-                                        </td>
-                                        <td>
-                                            <input disabled id="sub_total_taza" type="number" min="0"
-                                                class="uk-input uk-form-width-small ">
-                                        </td>
-                                        <td>
-                                            <a class="uk-button uk-button-primary" onclick="insertar_taza();">Insertar
-                                                Insumos</a>
-                                        </td>
-
-
-                                    </tr>
-
-                                    </tr>
-                                    </tr>
-                                </tbody>
-                            </table>
 
                         </div>
                     </div>
@@ -341,7 +284,7 @@
                             <th>Manga Izq.</th>
                             <th>Manga Der.</th>
                             <th>Espalda</th>
-                            <th>Talla</th>
+                            <th>IdInsumo</th>
                             <th>Insumo</th>
                             <th>Cantidad</th>
                             <th>precio</th>
@@ -409,49 +352,7 @@
 
                 }
 
-                function Validacion() {
-                    var Tallas = document.getElementById("Tallas");
-                    var Genero = document.getElementById("Genero");
 
-
-                    if (Tallas.value == "2" || Tallas.value == "4" || Tallas.value == "6" || Tallas.value == "8" || Tallas.value ==
-                        "10" || Tallas.value == "12" || Tallas.value == "14" || Tallas.value == "16" || Tallas.value == "18") {
-
-
-
-
-
-
-
-
-                        Genero.style.visibility = "hidden";
-                        Genero.value = "";
-
-                    } else {
-                        Genero.style.visibility = "visible";
-                        Genero.value = "Caballero";
-
-
-
-
-                    }
-
-                }
-
-                function fecha() {
-                    $(document).ready(function() {
-                        var date = new Date();
-
-                        var day = date.getDate();
-                        var month = date.getMonth() + 1;
-                        var year = date.getFullYear();
-
-                        if (month < 10) month = "0" + month;
-                        if (day < 10) day = "0" + day;
-                        var today = year + "-" + month + "-" + day;
-                        $("#fecha_fact").attr("value", today);
-                    });
-                }
 
 
 
@@ -466,8 +367,9 @@
                     var manga_izq = document.getElementById("manga_izq").value;
                     var manga_der = document.getElementById("manga_der").value;
                     var espalda = document.getElementById("espalda").value;
-                    var talla = document.getElementById("Tallas").value;
-                    var Genero = document.getElementById("Genero").value;
+                    var Idinsumo = document.getElementById("insumos").value;
+                    var insumoselect = document.getElementById("insumos");
+                    var insumo = insumoselect.options[insumoselect.selectedIndex].text;
                     var cant = document.getElementById("cantidad").value;
                     var precio = document.getElementById("precio").value;
                     var sub_total = document.getElementById("sub_total").value;
@@ -480,8 +382,8 @@
                         '<td>' + manga_izq + '</td>' +
                         '<td>' + manga_der + '</td>' +
                         '<td>' + espalda + '</td>' +
-                        '<td>' + talla + " " + Genero + '</td>' +
-                        '<td>' + '</td>' +
+                        '<td>' + Idinsumo + '</td>' +
+                        '<td>' + insumo + '</td>' +
                         '<td>' + cant + '</td>' +
                         '<td>' + precio + '</td>' +
                         '<td>' + sub_total + '</td>' +
@@ -501,8 +403,8 @@
                     document.getElementById("manga_izq").value = null;
                     document.getElementById("manga_der").value = null;
                     document.getElementById("espalda").value = null;
-                    document.getElementById("Tallas").value = null;
-                    document.getElementById("Genero").value = null;
+                    document.getElementById("insumos").value = null;
+
                     document.getElementById("cantidad").value = null;
                     document.getElementById("precio").value = null;
                     document.getElementById("sub_total").value = null;
@@ -533,103 +435,33 @@
 
                 }
 
-                function monto_taza() {
-                    var total = 1;
-                    var change = false; //
-                    $(".monto_taza").each(function() {
-                        if (!isNaN(parseFloat($(this).val()))) {
-                            change = true;
-                            total *= parseFloat($(this).val());
-                        }
+
+
+
+
+
+
+
+                function fecha() {
+                    $(document).ready(function() {
+                        var date = new Date();
+
+                        var day = date.getDate();
+                        var month = date.getMonth() + 1;
+                        var year = date.getFullYear();
+
+                        if (month < 10) month = "0" + month;
+                        if (day < 10) day = "0" + day;
+                        var today = year + "-" + month + "-" + day;
+                        $("#fecha_fact").attr("value", today);
                     });
-                    // Si se modifico el valor , retornamos la multiplicación
-                    // caso contrario 0
-                    total = (change) ? total : 0;
-                    document.getElementById('sub_total_taza').value = total;
-
-
                 }
 
 
 
 
 
-                function Validacion_taza() {
-                    var Tallas = document.getElementById("Tallas");
-                    var Genero = document.getElementById("Genero");
 
-
-                    if (Tallas.value == "2" || Tallas.value == "4" || Tallas.value == "6" || Tallas.value == "8" || Tallas.value ==
-                        "10" || Tallas.value == "12" || Tallas.value == "14" || Tallas.value == "16" || Tallas.value == "18") {
-
-
-
-
-
-
-
-
-                        Genero.style.visibility = "hidden";
-                        Genero.value = "";
-
-                    } else {
-                        Genero.style.visibility = "visible";
-
-
-
-                    }
-
-                }
-
-
-
-
-                function insertar_taza() {
-
-
-
-
-
-
-                    var Insumo = document.getElementById("Insumos").value;
-                    var cant = document.getElementById("cantidad_taza").value;
-                    var sub_total = document.getElementById("sub_total_taza").value;
-                    var obs = document.getElementById("Observacion_taza").value;
-                    var precio = document.getElementById("precio_taza").value;
-
-
-                    var htmlTags = '<tr>' +
-                        '<td>' + '</td>' +
-                        '<td>' + '</td>' +
-                        '<td>' + '</td>' +
-                        '<td>' + '</td>' +
-                        '<td>' + '</td>' +
-                        '<td>' + '</td>' +
-                        '<td>' + Insumo + '</td>' +
-                        '<td>' + cant + '</td>' +
-                        '<td>' + precio + '</td>' +
-                        '<td>' + sub_total + '</td>' +
-                        '<td>' + obs + '</td>' +
-                        '<td>' + '<a class="borrar uk-icon-button" onclick="borrar();" uk-icon="icon: trash; ratio: 0.9"></a>' +
-                        '</td>' +
-
-
-
-
-                        '</tr>';
-
-                    $('#Tabla tbody').append(htmlTags);
-
-                    calcular();
-
-                    document.getElementById("Insumos").value = null;
-                    document.getElementById("cantidad_taza").value = null;
-                    document.getElementById("sub_total_taza").value = null;
-                    document.getElementById("Observacion_taza").value = null;
-                    document.getElementById("precio_taza").value = null;
-
-
-                }
 
 
                 function calcular() {
@@ -663,10 +495,10 @@
                     console.log(total);
                     document.getElementById("total").value = total;
 
-
-
                 }
+
             </script>
+
             </table>
         </div>
 
@@ -680,11 +512,7 @@
                     <div class="uk-margin">
                         <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                         <div class="uk-form-controls">
-                            <input id="abono" min="0" onchange="abonos();" name="Abono"
-                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="number"
-                                placeholder="">
-
-
+                            <input id="abono" min="0" name="Abono" onchange="abonos();" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
 
                             <script>
                                 function abonos() {
@@ -694,7 +522,7 @@
 
                                     total = sub_total - abono;
 
-                                    console.log(sub_total, abono, total);
+                                    console.log(sub_total, abono, total); //
 
 
                                     document.getElementById('saldo').value = total;
@@ -702,19 +530,21 @@
 
 
                                 }
+
                             </script>
                         </div>
                     </div>
+
                     <div class="uk-margin">
                         <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
                         <div class="uk-form-controls">
-                            <input id="saldo" name="Saldo" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="saldo" name="Saldo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="banco" class="uk-form-label" for="form-horizontal-text">Método de Pago</label>
                         <div class="uk-form-controls">
+
                             <select class="uk-select uk-form-width-large" id="metodo_de_pago">
 
 
@@ -730,6 +560,7 @@
                     <div class="uk-margin">
                         <label for="estado" class="uk-form-label" for="form-horizontal-text">Estado del Pedido</label>
                         <div class="uk-form-controls">
+
                             <select disabled class="uk-select uk-form-width-large" name="" id="estado">
                                 <option selected value="No Completado">No Completado</option>
                                 <option value="Completado">Completado</option>
@@ -749,8 +580,7 @@
                 <div class="uk-form-horizontal uk-margin-large">
 
                     <div class="uk-margin">
-                        <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza
-                            Pedido</label>
+                        <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza Pedido</label>
                         <div class="uk-form-controls">
                             <select class="uk-select uk-form-width-large" name="" id="autorizapedido">
                                 <option value="">Seleccionar</option>
@@ -768,17 +598,17 @@
                     <div class="uk-margin">
                         <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
                         <div class="uk-form-controls">
-                            <input id="factura" name="num_factura" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
+
                     <div class="uk-margin">
-                        <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
+                        <label for="pedido" class="uk-form-label" for="form-horizontal-text">N° Pedido</label>
                         <div class="uk-form-controls">
-                            <input id="recibo" name="numero_recibo" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input disabled id="pedido" name="num_pedido" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
+
                 </div>
 
 
@@ -787,360 +617,296 @@
         <!-- Seccion que contiene los botones de atrás y guardar-->
         <div class="uk-padding uk-background-muted uk-padding " style="text-align: center;">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-                <a href="/menu/menu_facturacion" class="uk-button uk-button-primary "
-                    style="margin-left: 100px">Atrás</a>
+                <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
                 <a id="guardar" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
 
 
             </div>
+
             <select class="uk-select" id="cat" disabled hidden>
-                <option value='1'>Sublimacion</option>
+                <option value='1'>Sublimación</option>
             </select>
         </div>
+    </form>
+    {{-- script para ingresar datos en los formularios --}}
+    <script>
+        let pedido = [];
+        const arreglo = [];
+        var cod_seg_rand = 0;
+        cargarpedido();
+        cargarusuario();
+        cargarcliente();
+        getRandom();
+        $('#guardar').click(function(e) {
+            cargar_detalle();
+            guardarpedido();
 
 
-    </div>
+            alert("Se agrego su orden");
+
+        });
+
+        function peticionapi3(data, method, onSuccess) {
 
 
-</body>
-{{-- script para ingresar datos en los formularios --}}
-<script type="text/javascript">
-    let pedido = [];
-    const arreglo = [];
-    var cod_seg_rand = 0;
-    cargarpedido();
-    cargarusuario();
-    cargarcliente();
-    getRandom();
-    $('#guardar').click(function(e) {
-        cargar_detalle();
-        guardarpedido();
-
-
-
-
-    });
-
-    function peticionapi(data, method, onSucess) {
-        let url = '/api/pedido';
-        if (method == 'PUT' || method == 'DELETE') {
-            url += '/' + data.idmaestro;
-        }
-        $.ajax({
-            url: url,
-            method: method,
-            data: data
-
-                ,
-            error(e) {
-                let error = e.responseJSON.errors;
-                let msj = error[Object.keys(error)[0]][0];
-                alert(msj);
-            },
-            success(res) {
-
-
-
+            let url = '/api/getcliente';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.id;
             }
-        })
-    }
+            $.ajax({
+                url: url
+                , method: method
+                , data: data,
 
-    function peticionapi3(data, method, onSuccess) {
+                success(res) {
+                    onSuccess(res);
 
+                }
 
-        let url = '/api/getcliente';
-        if (method == 'PUT' || method == 'DELETE') {
-            url += '/' + data.id;
+            })
         }
-        $.ajax({
-            url: url,
-            method: method,
-            data: data,
 
-            success(res) {
-                onSuccess(res);
+        function peticionapi2(data, method, onSuccess) {
 
+
+            let url = '/api/usuario';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.id;
             }
+            $.ajax({
+                url: url
+                , method: method
+                , data: data,
 
-        })
-    }
+                success(res) {
+                    onSuccess(res);
 
-    function peticionapi2(data, method, onSuccess) {
+                }
 
-
-        let url = '/api/usuario';
-        if (method == 'PUT' || method == 'DELETE') {
-            url += '/' + data.id;
+            })
         }
-        $.ajax({
-            url: url,
-            method: method,
-            data: data,
 
-            success(res) {
-                onSuccess(res);
+        function cargarusuario() {
 
-            }
+            peticionapi2({}, 'GET', function(res) {
+                usuarios = res;
+                console.log(res);
+                let html = '<option value=""> Seleccionar </option>';
 
-        })
-    }
-
-    function cargarusuario() {
-
-        peticionapi2({}, 'GET', function(res) {
-            usuarios = res;
-            console.log(res);
-            let html = '<option value=""> Seleccionar </option>';
-
-            res.forEach(usuarios => {
-                html += '<option value="' + usuarios.IdUsuario + '">' + usuarios.Primer_Nombre + ' ' +
-                    usuarios.Segundo_Nombre + ' ' + usuarios.Primer_Apellido + ' ' + usuarios
-                    .Segundo_Apellido +
-                    '</option>'
+                res.forEach(usuarios => {
+                    html += '<option value="' + usuarios.IdUsuario + '">' + usuarios.Primer_Nombre + ' ' +
+                        usuarios.Segundo_Nombre + ' ' + usuarios.Primer_Apellido + ' ' + usuarios
+                        .Segundo_Apellido +
+                        '</option>'
+                });
+                $("#recibepedido").html(html);
             });
-            $("#recibepedido").html(html);
-        });
-    }
+        }
 
-    function cargarcliente() {
+        function cargarcliente() {
 
-        peticionapi3({}, 'GET', function(res) {
-            cliente = res;
-            console.log(res);
-            let html = '<option value=""> Seleccionar </option>';
-            res.forEach(cliente => {
-                html += '<option value="' + cliente.IdCliente + '">' + cliente.Primer_Nombre + ' ' +
-                    cliente.Segundo_Nombre + ' ' + cliente.Primer_Apellido + ' ' + cliente
-                    .Segundo_Apellido +
-                    '</option>'
+            peticionapi3({}, 'GET', function(res) {
+                cliente = res;
+                console.log(res);
+                let html = '<option value=""> Seleccionar </option>';
+                res.forEach(cliente => {
+                    html += '<option value="' + cliente.IdCliente + '">' + cliente.Primer_Nombre + ' ' +
+                        cliente.Segundo_Nombre + ' ' + cliente.Primer_Apellido + ' ' + cliente
+                        .Segundo_Apellido +
+                        '</option>'
+                });
+                $("#autorizapedido").html(html);
+                $("#cliente").html(html);
             });
-            $("#autorizapedido").html(html);
-            $("#cliente").html(html);
-        });
-    }
+        }
 
-    function getRandom() {
+        function peticionapi(data, method, onSucess) {
+            let url = '/api/pedido';
+            if (method == 'PUT' || method == 'DELETE') {
+                url += '/' + data.idmaestro;
+            }
+            $.ajax({
+                url: url
+                , method: method
+                , data: data
+                , error(ext) {
+                    let error = e.responseJSON.errors;
+                    let msj = error[Object.keys(error)[0]][0];
+                    alert(msj);
+                }
+                , success(res) {
 
-        cod_seg_rand = Math.floor((Math.random() * 10000000));
-        console.log(cod_seg_rand);
+                }
+            })
+        }
 
-    }
+        function getRandom() {
 
-    function guardarpedido() {
+            cod_seg_rand = Math.floor((Math.random() * 10000000));
+            console.log(cod_seg_rand);
 
+        }
 
-
-
-        let data = {
-
-            IdCliente: $("#cliente").val(),
-            IdUsuario: $("#recibepedido").val(),
-            IdCategoria: $("#cat").val(),
-            fecha: $("#fecha_fact").val(),
-            notas: $("#notas").val(),
-            total_costo: $("#total").val(),
-            Saldo: $("#saldo").val(),
-            abono: $("#abono").val(),
-            codseguimiento: cod_seg_rand,
-
-
-            idmetodo: $("#metodo_de_pago").val(),
-            cod: $("#factura").val(),
-            estado: $("#estado").val(),
-
-            //funcion que llama al arreglo que toma los datos
-            detalle: JSON.stringify(arreglo)
+        function guardarpedido() {
 
 
 
 
-        };
+            let data = {
 
-        console.log(data);
-
-
-
-        peticionapi(data, 'POST', function(res) {
-            alert('Guardado con exito')
-        });
-    }
-
-    function cargarpedido() {
-        peticionapi({}, 'GET', function(res) {
-            console.log(res);
-            alert('respuesta satisfactoria');
-        });
-
-    }
-
-    function cargar_detalle() {
-
-        var filas = document.querySelectorAll("#Tabla tbody tr");
-
-        var contador = 0;
-
-        const pecho_izq = [];
-        const pecho_der = [];
-        const manga_izq = [];
-        const manga_der = [];
-        const espalda = [];
-        const talla = [];
-        const insumo = [];
-        const cantidad = [];
-        const precio = [];
-        const totaldetalle = [];
-        const Observacion = [];
-
-        var total = document.getElementById("total").value;
-
-        console.log(filas);
+                IdCliente: $("#cliente").val()
+                , IdUsuario: $("#recibepedido").val()
+                , IdCategoria: $("#cat").val()
+                , fecha: $("#fecha_fact").val()
+                , notas: $("#notas").val()
+                , total_costo: $("#total").val()
+                , Saldo: $("#saldo").val()
+                , abono: $("#abono").val()
+                , codseguimiento: cod_seg_rand,
 
 
 
 
 
-
-        filas.forEach(function(e) {
-
-
-            // obtenemos las columnas de cada fila
-            var columnas = e.querySelectorAll("td");
+                idmetodo: $("#metodo_de_pago").val()
+                , cod: $("#factura").val(),
 
 
+                estado: $("#estado").val(),
 
-            var pechoizq_ = columnas[0].textContent;
-            var pechoder_ = columnas[1].textContent;
-            var mangaizq_ = columnas[2].textContent;
-            var mangader_ = columnas[3].textContent;
-            var espalda_ = columnas[4].textContent;
-            var talla_ = columnas[5].textContent;
-            var insumo_ = columnas[6].textContent;
-            var cantidad_ = parseFloat(columnas[7].textContent);
-            var precio_ = parseFloat(columnas[8].textContent);
-            var totaldetalle_ = parseFloat(columnas[9].textContent);
-            var Observacion_ = columnas[10].textContent;
-
-            var Talla_val = 0;
-            if (talla_ == 2) {
-                Talla_val = 1;
-            } else if (talla_ == 4) {
-                Talla_val = 2;
-            } else
-            if (talla_ == 6) {
-                Talla_val = 3;
-            } else if (talla_ == 8) {
-                Talla_val = 4;
-            } else if (talla_ == 10) {
-                Talla_val = 5;
-            } else if (talla_ == 12) {
-                Talla_val = 6;
-            } else if (talla_ == 14) {
-                Talla_val = 7;
-            } else if (talla_ == 16) {
-                Talla_val = 8;
-            } else if (talla_ == 18) {
-                Talla_val = 9;
-            } else if (talla_ == "S Dama") {
-                Talla_val = 10;
-            } else if (talla_ == "S Caballero") {
-                Talla_val = 11;
-            } else if (talla_ == "M Dama") {
-                Talla_val = 12;
-            } else if (talla_ == "M Caballero") {
-                Talla_val = 13;
-            } else if (talla_ == "L Dama") {
-                Talla_val = 14;
-            } else if (talla_ == "L Caballero") {
-                Talla_val = 15;
-            } else if (talla_ == "XL Dama") {
-                Talla_val = 16;
-            } else if (talla_ == "XL Caballero") {
-                Talla_val = 17;
-            } else if (talla_ == "2XL Dama") {
-                Talla_val = 18;
-            } else if (talla_ == "2XL Caballero") {
-                Talla_val = 19;
-            } else if (talla_ == "3XL Dama") {
-                Talla_val = 20;
-            } else if (talla_ == "3XL Caballero") {
-                Talla_val = 21;
-            } else if (talla_ == "5XL Dama") {
-                Talla_val = 22;
-            } else if (talla_ == "5XL Caballero") {
-                Talla_val = 23;
-            } else if (insumo_ == "Taza") {
-                Talla_val = 24;
-            } else if (insumo_ == "Lapicero") {
-                Talla_val = 25;
-            } else if (insumo_ == "Llavero") {
-                Talla_val = 26;
-            } else {}
+                //funcion que llama al arreglo que toma los datos
+                detalle: JSON.stringify(arreglo)
 
 
-
-
-
-
-            pecho_izq[contador] = pechoizq_;
-            pecho_der[contador] = pechoder_;
-            manga_izq[contador] = mangaizq_;
-            manga_der[contador] = mangader_;
-            espalda[contador] = espalda_;
-            talla[contador] = talla_;
-            cantidad[contador] = cantidad_;
-            precio[contador] = precio_;
-            totaldetalle[contador] = totaldetalle_;
-            Observacion[contador] = Observacion_;
-
-            arreglo[contador] = {
-
-                IdCliente: $("#cliente").val(),
-                IdUsuario: $("#recibepedido").val(),
-                IdCategoria: $("#cat").val(),
-                fecha: $("#fecha_fact").val(),
-                notas: $("#notas").val(),
-                total_costo: $("#total").val(),
-                Saldo: $("#saldo").val(),
-                abono: $("#abono").val(),
-                codseguimiento: $("#tipo_de_pedido").val(),
-
-                IdInsumos: Talla_val,
-                pecho_izq: pechoizq_,
-                pecho_der: pechoder_,
-                manga_izq: mangaizq_,
-                manga_der: mangader_,
-                espalda: espalda_,
-                cantidad: cantidad_,
-                precio: precio_,
-                totaldetalle: totaldetalle_,
-                observacion: Observacion_,
 
 
             };
 
+            console.log(data);
 
 
 
-            contador = contador + 1;
+            peticionapi(data, 'POST', function(res) {
+                alert('Guardado con exito')
+            });
+        }
+
+        function cargarpedido() {
+            peticionapi({}, 'GET', function(res) {
+                console.log(res);
+                alert('respuesta satisfactoria');
+            });
+
+        }
+
+        function cargar_detalle() {
+
+            var filas = document.querySelectorAll("#Tabla tbody tr");
+
+            var contador = 0;
+
+            const pecho_izq = [];
+            const pecho_der = [];
+            const manga_izq = [];
+            const manga_der = [];
+            const espalda = [];
+            const talla = [];
+            const insumo = [];
+            const cantidad = [];
+            const precio = [];
+            const totaldetalle = [];
+            const Observacion = [];
+
+            var total = document.getElementById("total").value;
+
+            console.log(filas);
 
 
-            console.log(arreglo)
 
 
 
 
-        })
+            filas.forEach(function(e) {
 
 
-        console.log(filas)
-
-
-
+                // obtenemos las columnas de cada fila
+                var columnas = e.querySelectorAll("td");
 
 
 
-    }
-</script>
+                var pechoizq_ = columnas[0].textContent;
+                var pechoder_ = columnas[1].textContent;
+                var mangaizq_ = columnas[2].textContent;
+                var mangader_ = columnas[3].textContent;
+                var espalda_ = columnas[4].textContent;
+                var insumo = columnas[5].textContent;
+                var cantidad_ = parseFloat(columnas[7].textContent);
+                var precio_ = parseFloat(columnas[8].textContent);
+                var totaldetalle_ = parseFloat(columnas[9].textContent);
+                var Observacion_ = columnas[10].textContent;
+
+
+
+
+
+
+
+
+
+
+                arreglo[contador] = {
+
+                    IdCliente: $("#cliente").val()
+                    , IdUsuario: $("#recibepedido").val()
+                    , IdCategoria: $("#cat").val()
+                    , fecha: $("#fecha_fact").val()
+                    , notas: $("#notas").val()
+                    , total_costo: $("#total").val()
+                    , Saldo: $("#saldo").val()
+                    , abono: $("#abono").val()
+                    , codseguimiento: $("#tipo_de_pedido").val(),
+
+                    IdInsumos: insumo
+                    , pecho_izq: pechoizq_
+                    , pecho_der: pechoder_
+                    , manga_izq: mangaizq_
+                    , manga_der: mangader_
+                    , espalda: espalda_
+                    , cantidad: cantidad_
+                    , precio: precio_
+                    , totaldetalle: totaldetalle_
+                    , observacion: Observacion_,
+
+
+                };
+
+
+
+
+                contador = contador + 1;
+
+
+                console.log(arreglo)
+
+
+
+
+            })
+
+
+            console.log(filas)
+
+
+
+
+
+
+        }
+
+    </script>
+
+
+</body>
 
 
 

@@ -14,9 +14,62 @@
     <!-- JQuery-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
+<header>
+    <!-- NavBar-->
+    <nav class="uk-navbar uk-navbar-container ">
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-toggle" href="#">
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Agregar Insumos</span>
+            </a>
+        </div>
+
+        <a href="#my-id" uk-toggle></a>
+
+        <!-- Off canvas, Elemento desplegable UiKit -->
+        <div id="my-id" uk-offcanvas>
+            <div class="uk-offcanvas-bar">
+
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <a href="/menu">Menú</a>
+                <hr class="uk-divider-icon">
+
+                <ul class="uk-nav uk-parent">
+                    <li class="uk-parent"> <a href="/menu/menu_facturacion"> Facturación </a></li>
+                    <ul class="uk-nav-sub">
+                        <li> <a href="/menu/menu_facturacion/form_bordado">Bordado </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_sublimacion">Sublimación </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_serigrafia">Serigrafía </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_impresion_digital">Impresión digital </a></li>
+                    </ul>
+                    <hr class="uk-divider-icon">
+                    <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_serigrafia"> Pedidos Serigrafía </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital
+                        </a></li>
+                    <hr class="uk-divider-icon">
+                    <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
+
+                    <ul class="uk-nav-sub">
+                        <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
+                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                        <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
+                        <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
+                        <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
+                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                        <li> <a href="/menu/menuadmon/promociones">Menú Principal</a></li>
+                    </ul>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+</header>
 
 <body>
-    <div class="uk-container">
+    <div class="uk-container"><br>
 
         <h3>Insumos para los servicios de Sericolor</h3>
 

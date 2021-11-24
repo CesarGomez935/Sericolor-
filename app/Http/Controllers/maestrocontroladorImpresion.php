@@ -63,7 +63,7 @@ class maestrocontroladorImpresion extends Controller
                 'Notas'=>$request->notas,
                 'total_costo'=>$request->total_costo,
                 'saldo'=>$request->Saldo,
-                'CodSeguimiento'=>$request->codseguimiento,
+                'CodSeguimiento'=>$request->cod,
                 'abono'=>$request->abono,
                 'Estado'=>$request->estado,
               

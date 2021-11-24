@@ -116,6 +116,32 @@ class insumocontroller extends Controller
          return insumos::select("*")->join("categoria","insumos.idcategoria","=","categoria.idcategoria")->where(DB::raw("CONCAT(IdInsumo,' ',Tipo,' ',insumos.Descripcion,'',categoria.descripcion)"),"LIKE",'%'.$id.'%')->orderBy("IdInsumo","ASC")->get();
 
     }
+    public function getinsumosub(){
+        
+
+
+                return insumos::select("*")->where("idcategoria",1)->Orwhere("idcategoria",5)->get();
+
+
+
+    }
+    public function getinsumoser(){
+        
+
+
+          return insumos::select("*")->where("idcategoria",2)->Orwhere("idcategoria",5)->get();
+
+
+
+    }
+    public function getinsumobor(){
+        
+
+
+        return insumos::select("*")->where("idcategoria",4)->Orwhere("idcategoria",5)->get();
+
+
+    }
     public function getinsumoimpdigital(){
         
 

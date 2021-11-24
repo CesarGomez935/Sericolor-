@@ -62,14 +62,14 @@ class maestrocontrolador extends Controller
              'IdUsuario'=>'required',
              'fecha'=>'required',
              'total_costo'=>'required',
-             'saldo'=>'required',
-             'CodSeguimiento'=>'required',
+             'Saldo'=>'required',
+             'codseguimiento'=>'required',
              'abono'=>'required',
-             'Estado'=>'required',
-             'IdInsumos'=>'required',
-             'Id_Metodo_de_Pago'=>'required',
-             'Fecha_de_pago'=>'required',
-             'Cod_Recibo'=>'required',
+             'estado'=>'required',
+             
+             'idmetodo'=>'required',
+             'fecha'=>'required',
+             'cod'=>'required',
                    
             ]);
 
@@ -85,7 +85,7 @@ class maestrocontrolador extends Controller
                 'saldo'=>$request->Saldo,
                 'CodSeguimiento'=>$request->codseguimiento,
                 'abono'=>$request->abono,
-                'Cod_Recibo'=>$request->estado,
+                'Estado'=>$request->estado,
 
               
 

@@ -163,7 +163,7 @@
             <thead>
                 <tr>
                     <th>Cliente</th>
-                    <th>N° Factura</th>
+                    <th>N° Pedido</th>
                     <th>Categoria</th>
                     <th>Fecha de recibido</th>
                     <th>Estado</th>

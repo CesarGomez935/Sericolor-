@@ -5,26 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facturación | Impresión Digital</title>
+    <title>Editar | Impresión Digital</title>
     <link rel="icon" href="/img/Icono.ico" type="image/ico" />
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
 <body onpageshow="">
@@ -33,8 +29,7 @@
     <nav class="uk-navbar uk-navbar-container ">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span
-                    class="uk-margin-small-left">Facturación Impresión Digital</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Facturación Impresión Digital</span>
             </a>
         </div>
 
@@ -94,8 +89,7 @@
                 <div class="uk-grid-small" uk-grid>
                     <div class="uk-inline uk-width-1-2 ">
                         <label for="fecha_fact">Fecha de Facturación</label>
-                        <input id="fecha_fact" name="fecha_facturacion" type="date" class="uk-input"
-                            value="{{ $edit->fecha }}">
+                        <input id="fecha_fact" name="fecha_facturacion" type="date" class="uk-input" value="{{ $edit->fecha }}">
                     </div>
                     <div class="uk-inline uk-width-1-2 ">
                         <label for="fecha_ent">Nombre del cliente</label>
@@ -122,44 +116,46 @@
                             <th>Alto</th>
                             <th>Ancho</th>
                             <th>Metros cuadrados</th>
-                            <th>Precio por metro cuadrado</th>
+                            <th>Precio Mt²</th>
+
+
                             <th>costo</th>
                             <th>cantidad</th>
                             <th>Total</th>
+
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input id="alto" oninput="area();" class="uk-input area" min="0" type="number"
-                                    placeholder="0" value="0"></td>
-                            <td><input id="ancho" oninput="area();" class="uk-input area" min="0" type="number"
-                                    placeholder="0" value="0"></td>
-                            <td><input id="mt2" oninput="costos();" class="uk-input costo" min="0" type="number"
-                                    placeholder="0" value="0"></td>
-                            <td><input id="precio_mt2" oninput="costos();" class="uk-input costo" min="0" type="number"
-                                    placeholder="0" value="0"></td>
-                            <td><input id="costo" oninput="multi();" class="uk-input monto" min="0" type="number"
-                                    placeholder="0" value="0"></td>
-                            <td><input id="cantidad" oninput="multi();" class="uk-input monto" min="0" type="number"
-                                    placeholder="0" value="0"></td>
-                            <td><input id="sub_total" name="sub_total" class="uk-input" min="0" value=""
-                                    type="number" placeholder="0" value="0"> </td>
+                            <td><input id="alto" oninput="area();" class="uk-input area" min="0" type="number" placeholder="0" value="0"></td>
+                            <td><input id="ancho" oninput="area();" class="uk-input area" min="0" type="number" placeholder="0" value="0"></td>
+                            <td><input id="mt2" oninput="costos();" class="uk-input costo" min="0" type="number" placeholder="0" value="0"></td>
+                            <td><input id="precio_mt2" oninput="costos();" class="uk-input costo" min="0" type="number" placeholder="0" value="0"></td>
+                            <td><input id="costo" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></td>
+                            <td><input id="cantidad" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></td>
+                            <td><input id="sub_total" name="sub_total" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"> </td>
 
 
                         </tr>
                         <tr>
-                            <td colspan="2"></td>
-                            <td colspan="3"><textarea type="number" id="observacion"
-                                    class="uk-input uk-form-width-large " placeholder="Observacion"></textarea></td>
+
+                            <td colspan="2"> <select class="uk-select" name="insumos de la tabla" id="insumos">
+                                    <option disabled value="">Insumos</option>
+                                </select>
+                            </td>
+                            <td colspan="3"><textarea type="number" id="observacion" class="uk-input uk-form-width-large " placeholder="Observacion"></textarea></td>
                             <td colspan="2"> <a class="uk-button uk-button-primary" id="guardar1">Ingresar
                                     Pedido</a></td>
 
                         </tr>
 
+
                     </tbody>
                 </table>
 
                 <script type="text/javascript">
+                    cargarinsumo();
+
                     function borrar() {
 
 
@@ -176,6 +172,52 @@
 
 
                     }
+
+                    function cargarinsumo() {
+
+                        peticionapimp({}, 'GET', function(res) {
+                            usuarios = res;
+                            console.log(res);
+                            let html = '<option disabled selected value=""> Seleccionar Insumo </option>';
+
+                            res.forEach(usuarios => {
+                                html += '<option value="' + usuarios.IdInsumo + '">' + usuarios
+                                    .Descripcion +
+                                    '</option>'
+                            });
+                            $("#insumos").html(html);
+                            $("#insumocambio").html(html);
+
+                        });
+
+
+
+
+
+
+
+                    }
+
+                    function peticionapimp(data, method, onSuccess) {
+
+
+                        let url = '/api/getinsumoimpdigital';
+                        if (method == 'PUT' || method == 'DELETE') {
+                            url += '/' + data.id;
+                        }
+                        $.ajax({
+                            url: url
+                            , method: method
+                            , data: data,
+
+                            success(res) {
+                                onSuccess(res);
+
+                            }
+
+                        })
+                    }
+
 
 
                     function area() {
@@ -229,6 +271,7 @@
 
 
                     }
+
                 </script>
 
                 <div class="uk-background-muted uk-padding">
@@ -241,11 +284,17 @@
                                     <th>Alto</th>
                                     <th>Ancho</th>
                                     <th>Metros cuadrados</th>
-                                    <th>Precio por metro cuadrado</th>
+                                    <th>Precio Mt²</th>
+
+                                    <th>IdInsumo</th>
+                                    <th>Insumo</th>
+
                                     <th>costo</th>
                                     <th>cantidad</th>
                                     <th>Sub-Total</th>
                                     <th>Observacion</th>
+                                    <th>Opciones</th>
+
 
 
                                 </tr>
@@ -256,7 +305,7 @@
                             <tfoot>
                                 <tr>
 
-                                    <td colspan="6"><label for="Total" class="uk-label">Total</label></td>
+                                    <td colspan="8"><label for="Total" class="uk-label">Total</label></td>
                                     <td><input class="uk-form-width-xsmall saldo" disabled id="total"></input></td>
 
 
@@ -437,7 +486,7 @@
 
 
 
-                                var importe = parseFloat(columnas[6].textContent);
+                                var importe = parseFloat(columnas[8].textContent);
 
                                 // mostramos el total por fila
                                 // columnas[12].textContent = (cantidad * importe).toFixed(2);
@@ -466,6 +515,7 @@
                                 $("#fecha_fact").attr("value", today);
                             });
                         }
+
                     </script>
                     </table>
                 </div>
@@ -479,8 +529,7 @@
 
                 <div>
 
-                    <textarea id="notas" name="Notas" class="uk-textarea"
-                        placeholder="Notas">{{ $edit->Notas }}</textarea>
+                    <textarea id="notas" name="Notas" class="uk-textarea" placeholder="Notas">{{ $edit->Notas }}</textarea>
 
 
 
@@ -497,9 +546,7 @@
                         <div class="uk-margin">
                             <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                             <div class="uk-form-controls">
-                                <input id="abono" min="0" name="Abono" onchange="abonos();"
-                                    class="uk-input uk-form-width-large" id="form-horizontal-text" type="number"
-                                    value="{{ $edit->abono }}" placeholder="">
+                                <input id="abono" min="0" name="Abono" onchange="abonos();" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" value="{{ $edit->abono }}" placeholder="">
 
                                 <script>
                                     function abonos() {
@@ -517,6 +564,7 @@
 
 
                                     }
+
                                 </script>
                             </div>
                         </div>
@@ -524,8 +572,7 @@
                         <div class="uk-margin">
                             <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
                             <div class="uk-form-controls">
-                                <input id="saldo" name="Saldo" class="uk-input uk-form-width-large"
-                                    id="form-horizontal-text" value="{{ $edit->saldo }}" type="text" placeholder="">
+                                <input id="saldo" name="Saldo" class="uk-input uk-form-width-large" id="form-horizontal-text" value="{{ $edit->saldo }}" type="text" placeholder="">
                             </div>
                         </div>
 
@@ -591,21 +638,18 @@
 
                         </div>
                         <div class="uk-margin">
-                            <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
+                            <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Pedido</label>
                             <div class="uk-form-controls">
-                                <input value="{{ $edit->Cod_Recibo }}" id="factura" name="num_factura"
-                                    class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
-                                    placeholder="">
+                                <input value="{{ $edit->Cod_Recibo }}" id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                             </div>
                         </div>
                         <div class="uk-margin">
-                            <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
+                            <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
                             <div class="uk-form-controls">
-                                <input disabled value="{{ $edit->idmaestro }}" id="recibo" name="numero_recibo"
-                                    class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
-                                    placeholder="">
+                                <input disabled value="{{ $edit->idmaestro }}" id="recibo" name="numero_recibo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                             </div>
                         </div>
+
                     </div>
 
 
@@ -628,17 +672,14 @@
             <!-- Botones atrás y actualizar-->
             <div class="uk-padding uk-background-muted uk-padding  ">
                 <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-                    <a href="/menu/menu_facturacion" class="uk-button uk-button-primary "
-                        style="margin-left: 100px">Atrás</a>
-                    <a id="guardar" href="/menu/pedidos_impresion_digital" class="uk-button uk-button-secondary guardar"
-                        style="margin-left: 100px">Guardar</a>
+                    <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
+                    <a id="guardar" href="/menu/pedidos_impresion_digital" class="uk-button uk-button-secondary guardar" style="margin-left: 100px">Guardar</a>
 
 
                 </div>
             </div>
             <div class="uk-margin">
-                <input class="uk-input" disabled hidden type="text" value="{{ $edit->idmaestro }}" id="idmaster"
-                    placeholder="nada">
+                <input class="uk-input" disabled hidden type="text" value="{{ $edit->idmaestro }}" id="idmaster" placeholder="nada">
             </div>
         </div>
 
@@ -654,52 +695,51 @@
                             <legend class="uk-legend">Cambiar Detalles</legend>
                             <div class="uk-margin">
                                 <label>Numero de detalle</label>
-                                <input class="uk-input" type="number" id="Id_trabajadores"
-                                    placeholder="Numero de detalle" disabled>
+                                <input class="uk-input" type="number" id="Id_trabajadores" placeholder="Numero de detalle" disabled>
                             </div>
                             <div class="uk-margin">
                                 <label>Alto</label>
-                                <input onchange="areaedit();" type="number" class="uk-input area1" type="text"
-                                    id="alto1" placeholder="Alto1">
+                                <input onchange="areaedit();" type="number" class="uk-input area1" type="text" id="alto1" placeholder="Alto1">
                             </div>
                             <div class="uk-margin">
                                 <label>Ancho</label>
-                                <input onchange="areaedit();" type="number" class="uk-input area1" type="text"
-                                    id="Ancho1" placeholder="Ancho1">
+                                <input onchange="areaedit();" type="number" class="uk-input area1" type="text" id="Ancho1" placeholder="Ancho1">
                             </div>
                             <div class="uk-margin">
                                 <label>Metros Cuadrados</label>
-                                <input onchange="costosedit();" disabled type="number" class="uk-input costo1"
-                                    type="text" id="mt21" placeholder="Metros Cuadrados">
+                                <input onchange="costosedit();" disabled type="number" class="uk-input costo1" type="text" id="mt21" placeholder="Metros Cuadrados">
                             </div>
                             <div class="uk-margin">
-                                <label>Precio por metro cuadrado</label>
-                                <input onchange="costosedit();" type="number" class="uk-input costo1" type="text"
-                                    id="p_m2" placeholder="P/M1">
+                                <label>Precio Mt²</label>
+
+                                <input onchange="costosedit();" type="number" class="uk-input costo1" type="text" id="p_m2" placeholder="P/M1">
                             </div>
                             <div class="uk-margin">
                                 <label>Costo</label>
-                                <input onchange="multiedit()" type="number" class="uk-input monto1" type="text"
-                                    id="Costo1" placeholder="Costo">
+                                <input onchange="multiedit()" type="number" class="uk-input monto1" type="text" id="Costo1" placeholder="Costo">
                             </div>
                             <div class="uk-margin">
                                 <label>Cantidad</label>
-                                <input onchange="multiedit()" type="number" class="uk-input monto1" type="text"
-                                    id="cantidad1" placeholder="Cantidad">
+                                <input onchange="multiedit()" type="number" class="uk-input monto1" type="text" id="cantidad1" placeholder="Cantidad">
                             </div>
                             <div class="uk-margin">
-                                <input class="uk-input" disabled hidden type="text"
-                                    value="{{ $edit->idmaestro }}" id="id" placeholder="nada">
+                                <input class="uk-input" disabled hidden type="text" value="{{ $edit->idmaestro }}" id="id" placeholder="nada">
                             </div>
                             <div class="uk-margin">
                                 <label>Subtotal</label>
-                                <input type="number" class="uk-input " disabled type="text" id="sub_total1"
-                                    placeholder="Subtotal">
+                                <input type="number" class="uk-input " disabled type="text" id="sub_total1" placeholder="Subtotal">
                             </div>
                             <div class="uk-margin">
                                 <label>Observacion</label>
-                                <input class="uk-input" type="text" id="observacioncambio"
-                                    placeholder="Observacion">
+                                <input class="uk-input" type="text" id="observacioncambio" placeholder="Observacion">
+                            </div>
+                            <div class="uk-margin">
+                                <label>Insumo</label>
+                                <select class="uk-select" name="insumos de la tabla" id="insumocambio">
+
+
+                                </select>
+
                             </div>
 
 
@@ -757,11 +797,11 @@
 
 
                                 }
+
                             </script>
                     </div>
                     <div style="text-align: center">
-                        <button class="uk-button uk-button-primary " id="guardar2"
-                            class="uk-align-center">Guardar</button>
+                        <button class="uk-button uk-button-primary " id="guardar2" class="uk-align-center">Guardar</button>
                     </div>
                     </fieldset>
                 </div>
@@ -1151,9 +1191,9 @@
                 url += '/' + data.idmaestro;
             }
             $.ajax({
-                url: url,
-                method: method,
-                data: data,
+                url: url
+                , method: method
+                , data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -1171,9 +1211,9 @@
                 url += '/' + data.IdUsuario;
             }
             $.ajax({
-                url: url,
-                method: method,
-                data: data,
+                url: url
+                , method: method
+                , data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -1191,9 +1231,9 @@
                 url += '/' + data.idmaestro;
             }
             $.ajax({
-                url: url,
-                method: method,
-                data: data,
+                url: url
+                , method: method
+                , data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -1212,9 +1252,9 @@
                 url += '/' + data.iddetalleordensu;
             }
             $.ajax({
-                url: url,
-                method: method,
-                data: data,
+                url: url
+                , method: method
+                , data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -1233,9 +1273,9 @@
                 url += '/' + data.iddetalleordenimp;
             }
             $.ajax({
-                url: url,
-                method: method,
-                data: data,
+                url: url
+                , method: method
+                , data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -1296,6 +1336,9 @@
                         '<td>' + detalle.alto + '</td>' +
                         '<td>' + detalle.mt2 + '</td>' +
                         '<td>' + detalle.p_m + '</td>' +
+                        '<td>' + detalle.IdInsumos + '</td>' +
+                        '<td>' + detalle.Descripcion + '</td>' +
+
                         '<td>' + detalle.costo + '</td>' +
                         '<td>' + detalle.cantidad + '</td>' +
                         '<td>' + detalle.total + '</td>' +
@@ -1340,6 +1383,8 @@
             $("#cantidad1").val(datos[0].cantidad);
             $("#sub_total1").val(datos[0].total);
             $("#observacioncambio").val(datos[0].observacion);
+            $("#insumocambio").val(datos[0].IdInsumos);
+
 
 
 
@@ -1384,15 +1429,15 @@
                 url += '/' + data.idmaestro;
             }
             $.ajax({
-                url: url,
-                method: method,
-                data: data,
-                error(ext) {
+                url: url
+                , method: method
+                , data: data
+                , error(ext) {
                     let error = e.responseJSON.errors;
                     let msj = error[Object.keys(error)[0]][0];
                     alert(msj);
-                },
-                success(res) {
+                }
+                , success(res) {
 
                 }
             })
@@ -1403,17 +1448,17 @@
 
             let data = {
 
-                idmaestro: $("#id").val(),
-                IdCliente: $("#cliente").val(),
-                IdUsuario: $("#recibepedido").val(),
-                IdCategoria: $("#cat").val(),
-                fecha: $("#fecha_fact").val(),
-                notas: $("#notas").val(),
-                total_costo: $("#total").val(),
-                Saldo: $("#saldo").val(),
-                abono: $("#abono").val(),
-                codseguimiento: $("#abono").val(),
-                estado: $("#estado").val(),
+                idmaestro: $("#id").val()
+                , IdCliente: $("#cliente").val()
+                , IdUsuario: $("#recibepedido").val()
+                , IdCategoria: $("#cat").val()
+                , fecha: $("#fecha_fact").val()
+                , notas: $("#notas").val()
+                , total_costo: $("#total").val()
+                , Saldo: $("#saldo").val()
+                , abono: $("#abono").val()
+                , codseguimiento: $("#abono").val()
+                , estado: $("#estado").val(),
 
 
 
@@ -1559,26 +1604,26 @@
 
                 arreglo[contador] = {
 
-                    IdCliente: $("#cliente").val(),
-                    IdUsuario: $("#recibepedido").val(),
-                    IdCategoria: $("#cat").val(),
-                    fecha: $("#fecha_fact").val(),
-                    notas: $("#notas").val(),
-                    total_costo: $("#total").val(),
-                    Saldo: $("#saldo").val(),
-                    abono: $("#abono").val(),
-                    codseguimiento: $("#tipo_de_pedido").val(),
+                    IdCliente: $("#cliente").val()
+                    , IdUsuario: $("#recibepedido").val()
+                    , IdCategoria: $("#cat").val()
+                    , fecha: $("#fecha_fact").val()
+                    , notas: $("#notas").val()
+                    , total_costo: $("#total").val()
+                    , Saldo: $("#saldo").val()
+                    , abono: $("#abono").val()
+                    , codseguimiento: $("#tipo_de_pedido").val(),
 
-                    IdInsumos: Talla_val,
-                    pecho_izq: pechoizq_,
-                    pecho_der: pechoder_,
-                    manga_izq: mangaizq_,
-                    manga_der: mangader_,
-                    espalda: espalda_,
-                    cantidad: cantidad_,
-                    precio: precio_,
-                    totaldetalle: totaldetalle_,
-                    observacion: Observacion_,
+                    IdInsumos: Talla_val
+                    , pecho_izq: pechoizq_
+                    , pecho_der: pechoder_
+                    , manga_izq: mangaizq_
+                    , manga_der: mangader_
+                    , espalda: espalda_
+                    , cantidad: cantidad_
+                    , precio: precio_
+                    , totaldetalle: totaldetalle_
+                    , observacion: Observacion_,
 
 
                 };
@@ -1617,17 +1662,17 @@
         function updatedetalle() {
 
             let datos = {
-                iddetalleordenimp: $("#Id_trabajadores").val(),
-                idmaestro: $("#idmaster").val(),
-                alto: $("#alto1").val(),
-                ancho: $("#Ancho1").val(),
-                mt2: $("#mt21").val(),
-                p_m: $("#p_m2").val(),
-                cantidad: $("#cantidad1").val(),
-                costo: $("#Costo1").val(),
-                observacion: $("#observacioncambio").val(),
-                IdInsumos: $("#cat1").val(),
-                total: $("#sub_total1").val(),
+                iddetalleordenimp: $("#Id_trabajadores").val()
+                , idmaestro: $("#idmaster").val()
+                , alto: $("#alto1").val()
+                , ancho: $("#Ancho1").val()
+                , mt2: $("#mt21").val()
+                , p_m: $("#p_m2").val()
+                , cantidad: $("#cantidad1").val()
+                , costo: $("#Costo1").val()
+                , observacion: $("#observacioncambio").val()
+                , IdInsumos: $("#insumocambio").val()
+                , total: $("#sub_total1").val(),
 
             };
             peticionapi6(datos, 'PUT', function(res) {
@@ -1644,10 +1689,10 @@
 
             let datos = {
 
-                idmaestro: $("#id").val(),
-                fecha: $("#fecha_fact").val(),
-                metodo_de_pago: $("#metodo_de_pago").val(),
-                cod: $("#factura").val(),
+                idmaestro: $("#id").val()
+                , fecha: $("#fecha_fact").val()
+                , metodo_de_pago: $("#metodo_de_pago").val()
+                , cod: $("#factura").val(),
 
             };
             let method1 = (datos.idmaestro == '' ? 'POST' : 'PUT');
@@ -1671,9 +1716,9 @@
                 url += '/' + data.idmaestro;
             }
             $.ajax({
-                url: url,
-                method: method,
-                data: data,
+                url: url
+                , method: method
+                , data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -1688,16 +1733,16 @@
 
             let datos = {
 
-                idmaestro: $("#idmaster").val(),
-                alto: $("#alto").val(),
-                ancho: $("#ancho").val(),
-                mt2: $("#mt2").val(),
-                p_m: $("#precio_mt2").val(),
-                cantidad: $("#cantidad").val(),
-                costo: $("#costo").val(),
-                observacion: $("#observacion").val(),
-                IdInsumos: $("#cat1").val(),
-                total: $("#sub_total").val(),
+                idmaestro: $("#idmaster").val()
+                , alto: $("#alto").val()
+                , ancho: $("#ancho").val()
+                , mt2: $("#mt2").val()
+                , p_m: $("#precio_mt2").val()
+                , cantidad: $("#cantidad").val()
+                , costo: $("#costo").val()
+                , observacion: $("#observacion").val()
+                , IdInsumos: $("#insumos").val()
+                , total: $("#sub_total").val(),
 
             };
             console.log(datos);
@@ -1729,6 +1774,7 @@
             });
 
         }
+
     </script>
 
 </body>

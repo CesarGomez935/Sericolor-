@@ -10,21 +10,17 @@
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
 
@@ -33,8 +29,7 @@
     <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span
-                    class="uk-margin-small-left">Facturación Serigrafía</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Facturación Serigrafía</span>
 
             </a>
         </div>
@@ -91,8 +86,7 @@
                 <div class="uk-grid-small" uk-grid>
                     <div class="uk-inline uk-width-1-2 ">
                         <label for="fecha_fact">Fecha de Facturación</label>
-                        <input id="fecha_fact" value="{{ $edit->fecha }}" name="fecha_facturacion" type="date"
-                            class="uk-input">
+                        <input id="fecha_fact" value="{{ $edit->fecha }}" name="fecha_facturacion" type="date" class="uk-input">
                     </div>
                     <div class="uk-inline uk-width-1-2 ">
                         <label for="fecha_ent">Nombre del cliente</label>
@@ -115,36 +109,31 @@
                     <div class="uk-margin">
                         <label for="pecho_izq" class="uk-form-label" for="form-horizontal-text">Pecho Izquierdo</label>
                         <div class="uk-form-controls">
-                            <input id="pecho_izq" name="pecho_izquierdo" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="pecho_izq" name="pecho_izquierdo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="pecho_der" class="uk-form-label" for="form-horizontal-text">Pecho Derecho</label>
                         <div class="uk-form-controls">
-                            <input id="pecho_der" name="pecho_derecho" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="pecho_der" name="pecho_derecho" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="manga_izq" class="uk-form-label" for="form-horizontal-text">Manga Izquierda</label>
                         <div class="uk-form-controls">
-                            <input id="manga_izq" name="manga_izquierda" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="manga_izq" name="manga_izquierda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="manga_der" class="uk-form-label" for="form-horizontal-text">Manga Derecha</label>
                         <div class="uk-form-controls">
-                            <input id="manga_der" name="manga_derecha" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="manga_der" name="manga_derecha" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="espalda" class="uk-form-label" for="form-horizontal-text">Espalda</label>
                         <div class="uk-form-controls">
-                            <input id="espalda" name="espalda" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                            <input id="espalda" name="espalda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                 </div>
@@ -226,32 +215,62 @@
 
 
                                             </select> --}}
-                                            <select class="uk-select" id="tallacambio1">
-                                                <option value="1">2</option>
-                                                <option value="2">4</option>
-                                                <option value="3">6</option>
-                                                <option value="4">8</option>
-                                                <option value="5">10</option>
-                                                <option value="6">12</option>
-                                                <option value="7">14</option>
-                                                <option value="8">16</option>
-                                                <option value="9">18</option>
-                                                <option value="10">S Dama</option>
-                                                <option value="11">S Caballero</option>
-                                                <option value="12">M Dama</option>
-                                                <option value="13">M Caballero</option>
-                                                <option value="14">L Dama</option>
-                                                <option value="15">L Caballero</option>
-                                                <option value="16">XL Dama</option>
-                                                <option value="17">XL Caballero</option>
-                                                <option value="18">2XL Dama</option>
-                                                <option value="19">2XL Caballero</option>
-                                                <option value="20">3XL Dama</option>
-                                                <option value="21">3XL Caballero</option>
-                                                <option value="22">5XL Dama</option>
-                                                <option value="23">5xL Caballero</option>
+                                            <select class="uk-select" id="insumocambio1">
 
                                             </select>
+
+                                            <script>
+                                                cargarinsumo();
+
+                                                function cargarinsumo() {
+
+                                                    peticionapiser({}, 'GET', function(res) {
+                                                        usuarios = res;
+                                                        console.log(res);
+                                                        let html = '<option disabled selected value=""> Seleccionar Insumo </option>';
+
+                                                        res.forEach(usuarios => {
+                                                            html += '<option value="' + usuarios.IdInsumo + '">' + usuarios
+                                                                .Tipo + ' ' + usuarios
+
+                                                                .Descripcion +
+                                                                '</option>'
+                                                        });
+                                                        $("#insumocambio1").html(html);
+                                                        $("#insumocambio").html(html);
+
+                                                    });
+
+
+
+
+
+
+
+                                                }
+
+                                                function peticionapiser(data, method, onSuccess) {
+
+
+                                                    let url = '/api/getinsumoser';
+                                                    if (method == 'PUT' || method == 'DELETE') {
+                                                        url += '/' + data.id;
+                                                    }
+                                                    $.ajax({
+                                                        url: url
+                                                        , method: method
+                                                        , data: data,
+
+                                                        success(res) {
+                                                            onSuccess(res);
+
+                                                        }
+
+                                                    })
+                                                }
+
+                                            </script>
+
 
 
 
@@ -263,12 +282,10 @@
 
                                         </td>
                                         <td>
-                                            <input id="cantidad" onchange="monto();" type="number" min="0"
-                                                class="uk-input uk-form-width-xsmall monto">
+                                            <input id="cantidad" onchange="monto();" type="number" min="0" class="uk-input uk-form-width-xsmall monto">
 
 
-                                            <input id="precio" onchange="monto();" type="number" min="0"
-                                                class=" monto uk-input uk-form-width-small  ">
+                                            <input id="precio" onchange="monto();" type="number" min="0" class=" monto uk-input uk-form-width-small  ">
 
 
 
@@ -279,8 +296,7 @@
                                         </td>
 
                                         <td>
-                                            <textarea id="Observacion" name="Observacion"
-                                                class="uk-input uk-form-width-1-1" type="text"> </textarea>
+                                            <textarea id="Observacion" name="Observacion" class="uk-input uk-form-width-1-1" type="text"> </textarea>
 
 
                                         </td>
@@ -292,12 +308,10 @@
                                             <label for="sub_total" class="uk-label">Total</label>
                                         </td>
                                         <td>
-                                            <input disabled id="sub_total" type="number" min="0"
-                                                class="uk-input uk-form-width-small ">
+                                            <input disabled id="sub_total" type="number" min="0" class="uk-input uk-form-width-small ">
                                         </td>
                                         <td>
-                                            <a class="uk-button uk-button-primary" id="guardarnuevodetalle"
-                                                onclick="insertar();">Insertar
+                                            <a class="uk-button uk-button-primary" id="guardarnuevodetalle">Insertar
                                                 Pedido</a>
                                         </td>
 
@@ -315,8 +329,7 @@
                         <div>
 
 
-                            <textarea id="notas" value=" " name="Notas" class="uk-textarea"
-                                placeholder="Notas">{{ $edit->Notas }}</textarea>
+                            <textarea id="notas" value=" " name="Notas" class="uk-textarea" placeholder="Notas">{{ $edit->Notas }}</textarea>
 
 
 
@@ -338,8 +351,8 @@
                             <th>Manga Izq.</th>
                             <th>Manga Der.</th>
                             <th>Espalda</th>
-                            <th>Talla</th>
-
+                            <th>IdInsumo</th>
+                            <th>Insumo</th>
                             <th>Cantidad</th>
                             <th>precio</th>
                             <th>Sub-Total</th>
@@ -354,7 +367,7 @@
                     <tfoot>
                         <tr>
 
-                            <td colspan="8"><label for="Total" class="uk-label">Total</label></td>
+                            <td colspan="9"><label for="Total" class="uk-label">Total</label></td>
                             <td><input class="uk-form-width-xsmall saldo" disabled id="total"></input></td>
 
 
@@ -446,12 +459,14 @@
                     var manga_izq = document.getElementById("manga_izq").value;
                     var manga_der = document.getElementById("manga_der").value;
                     var espalda = document.getElementById("espalda").value;
-                    var talla = document.getElementById("Tallas").value;
-                    var Genero = document.getElementById("Genero").value;
+                    var Idinsumo = document.getElementById("insumos").value;
+                    var insumoselect = document.getElementById("insumos");
+                    var insumo = insumoselect.options[insumoselect.selectedIndex].text;
                     var cant = document.getElementById("cantidad").value;
                     var precio = document.getElementById("precio").value;
                     var sub_total = document.getElementById("sub_total").value;
                     var obs = document.getElementById("Observacion").value;
+
 
 
                     var htmlTags = '<tr>' +
@@ -460,8 +475,8 @@
                         '<td>' + manga_izq + '</td>' +
                         '<td>' + manga_der + '</td>' +
                         '<td>' + espalda + '</td>' +
-                        '<td>' + talla + " " + Genero + '</td>' +
-
+                        '<td>' + Idinsumo + '</td>' +
+                        '<td>' + insumo + '</td>' +
                         '<td>' + cant + '</td>' +
                         '<td>' + precio + '</td>' +
                         '<td>' + sub_total + '</td>' +
@@ -475,6 +490,7 @@
                         '</tr>';
 
                     $('#Tabla tbody').append(htmlTags);
+
 
                     // document.getElementById("pecho_izq").value = null;
                     // document.getElementById("pecho_der").value = null;
@@ -647,7 +663,7 @@
 
 
 
-                        var importe = parseFloat(columnas[8].textContent);
+                        var importe = parseFloat(columnas[9].textContent);
 
                         // mostramos el total por fila
                         // columnas[12].textContent = (cantidad * importe).toFixed(2);
@@ -661,6 +677,7 @@
                     document.getElementById("total").value = total;
 
                 }
+
             </script>
 
             </table>
@@ -676,9 +693,7 @@
                     <div class="uk-margin">
                         <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                         <div class="uk-form-controls">
-                            <input id="abono" min="0" name="Abono" onchange="abonos();"
-                                class="uk-input uk-form-width-large" value="{{ $edit->abono }}"
-                                id="form-horizontal-text" type="number" placeholder="">
+                            <input id="abono" min="0" name="Abono" onchange="abonos();" class="uk-input uk-form-width-large" value="{{ $edit->abono }}" id="form-horizontal-text" type="number" placeholder="">
 
                             <script>
                                 function abonos() {
@@ -696,6 +711,7 @@
 
 
                                 }
+
                             </script>
                         </div>
                     </div>
@@ -703,9 +719,7 @@
                     <div class="uk-margin">
                         <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
                         <div class="uk-form-controls">
-                            <input id="saldo" name="Saldo" value="{{ $edit->saldo }}"
-                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
-                                placeholder="">
+                            <input id="saldo" name="Saldo" value="{{ $edit->saldo }}" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
@@ -763,19 +777,15 @@
                         </div>
                     </div>
                     <div class="uk-margin">
-                        <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
+                        <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Pedido</label>
                         <div class="uk-form-controls">
-                            <input value="{{ $edit->Cod_Recibo }}" id="factura" name="num_factura"
-                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
-                                placeholder="">
+                            <input value="{{ $edit->Cod_Recibo }}" id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
-                        <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Recibo</label>
+                        <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
                         <div class="uk-form-controls">
-                            <input disabled value="{{ $edit->idmaestro }}" id="recibo" name="numero_recibo"
-                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
-                                placeholder="">
+                            <input disabled value="{{ $edit->idmaestro }}" id="recibo" name="numero_recibo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                 </div>
@@ -788,10 +798,8 @@
         <!-- Seccion que contiene los botones de atrás y guardar-->
         <div class="uk-padding uk-background-muted uk-padding " style="text-align: center;">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-                <a href="/menu/menu_facturacion" class="uk-button uk-button-primary "
-                    style="margin-left: 100px">Atrás</a>
-                <a id="guardar" href="/menu/pedidos_serigrafia" class="uk-button uk-button-secondary"
-                    style="margin-left: 100px">Guardar</a>
+                <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
+                <a id="guardar" href="/menu/pedidos_serigrafia" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
 
 
             </div>
@@ -814,8 +822,7 @@
                             <legend class="uk-legend">Cambiar Detalles</legend>
                             <div class="uk-margin">
                                 <label>Numero de detalle</label>
-                                <input class="uk-input" type="number" id="Id_trabajadores"
-                                    placeholder="Numero de detalle" disabled>
+                                <input class="uk-input" type="number" id="Id_trabajadores" placeholder="Numero de detalle" disabled>
                             </div>
                             <div class="uk-margin">
                                 <label>Pecho izquierda</label>
@@ -838,54 +845,29 @@
                                 <input class="uk-input" type="text" id="espalda1" placeholder="Espalda">
                             </div>
                             <div class="uk-margin">
-                                <input class="uk-input" disabled type="text" value="{{ $edit->idmaestro }}"
-                                    id="id" placeholder="nada">
+                                <input class="uk-input" disabled type="text" value="{{ $edit->idmaestro }}" id="id" placeholder="nada">
                             </div>
                             <div class="uk-margin">
                                 <label>Cantidad</label>
-                                <input onchange="monto2();" type="number" class="uk-input monto2" type="text"
-                                    id="cantidad1" placeholder="Cantidad">
+                                <input onchange="monto2();" type="number" class="uk-input monto2" type="text" id="cantidad1" placeholder="Cantidad">
                             </div>
 
                             <div class="uk-margin">
                                 <label>Precio</label>
-                                <input onchange="monto2();" type="number" class="uk-input monto2" type="text"
-                                    id="precio1" placeholder="precio">
+                                <input onchange="monto2();" type="number" class="uk-input monto2" type="text" id="precio1" placeholder="precio">
                             </div>
                             <div class="uk-margin">
                                 <label>Observacion</label>
-                                <input class="uk-input" type="text" id="observacioncambio"
-                                    placeholder="Observacion">
+                                <input class="uk-input" type="text" id="observacioncambio" placeholder="Observacion">
                             </div>
                             <div class="uk-margin">
                                 <label>Total</label>
                                 <input class="uk-input" type="number" id="sub_total2" disabled>
                             </div>
-                            <label>Talla</label>
-                            <select class="uk-select" id="tallacambio">
-                                <option value="1">2</option>
-                                <option value="2">4</option>
-                                <option value="3">6</option>
-                                <option value="4">8</option>
-                                <option value="5">10</option>
-                                <option value="6">12</option>
-                                <option value="7">14</option>
-                                <option value="8">16</option>
-                                <option value="9">18</option>
-                                <option value="10">S Dama</option>
-                                <option value="11">S Caballero</option>
-                                <option value="12">M Dama</option>
-                                <option value="13">M Caballero</option>
-                                <option value="14">L Dama</option>
-                                <option value="15">L Caballero</option>
-                                <option value="16">XL Dama</option>
-                                <option value="17">XL Caballero</option>
-                                <option value="18">2XL Dama</option>
-                                <option value="19">2XL Caballero</option>
-                                <option value="20">3XL Dama</option>
-                                <option value="21">3XL Caballero</option>
-                                <option value="22">5XL Dama</option>
-                                <option value="23">5xL Caballero</option>
+                            <label>Insumo</label>
+                            <select class="uk-select" id="insumocambio">
+
+
 
                             </select>
                             <br>
@@ -907,11 +889,11 @@
 
 
                                 }
+
                             </script>
                     </div>
                     <div style="text-align: center">
-                        <button class="uk-button uk-button-primary " id="guardar1"
-                            class="uk-align-center">Guardar</button>
+                        <button class="uk-button uk-button-primary " id="guardar1" class="uk-align-center">Guardar</button>
                     </div>
                     </fieldset>
                 </div>
@@ -968,9 +950,9 @@
                 url += '/' + data.idmaestro;
             }
             $.ajax({
-                url: url,
-                method: method,
-                data: data,
+                url: url
+                , method: method
+                , data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -988,9 +970,9 @@
                 url += '/' + data.IdUsuario;
             }
             $.ajax({
-                url: url,
-                method: method,
-                data: data,
+                url: url
+                , method: method
+                , data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -1003,14 +985,14 @@
         function peticionapi4(data, method, onSuccess) {
 
 
-            let url = '/api/getdetalles/' + {{ $edit->idmaestro }} + '';
+            let url = '/api/getdetalles/' + '{{$edit -> idmaestro}}' + '';
             if (method == 'PUT' || method == 'DELETE') {
                 url += '/' + data.idmaestro;
             }
             $.ajax({
-                url: url,
-                method: method,
-                data: data,
+                url: url
+                , method: method
+                , data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -1029,9 +1011,9 @@
                 url += '/' + data.iddetalleordensu;
             }
             $.ajax({
-                url: url,
-                method: method,
-                data: data,
+                url: url
+                , method: method
+                , data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -1050,9 +1032,9 @@
                 url += '/' + data.iddetalleordensu;
             }
             $.ajax({
-                url: url,
-                method: method,
-                data: data,
+                url: url
+                , method: method
+                , data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -1115,7 +1097,8 @@
                         '<td>' + detalle.manga_izquierda + '</td>' +
                         '<td>' + detalle.manga_derecha + '</td>' +
                         '<td>' + detalle.espalda + '</td>' +
-                        '<td>' + detalle.Descripcion + '</td>' +
+                        '<td>' + detalle.IdInsumos + '</td>' +
+                        '<td>' + detalle.Tipo + ' ' + detalle.Descripcion + '</td>' +
                         '<td>' + detalle.Cantidad + '</td>' +
                         '<td>' + detalle.precio + '</td>' +
                         '<td>' + detalle.total + '</td>' +
@@ -1151,16 +1134,16 @@
             })
             console.log(id, datos);
 
-            $("#Id_trabajadores").val(datos[0].iddetalleordensu),
-                $("#pechoizq1").val(datos[0].pecho_izquierdo),
-                $("#pechoder1").val(datos[0].pecho_derecho),
-                $("#mangaizq1").val(datos[0].manga_izquierda),
-                $("#mangader1").val(datos[0].manga_derecha),
-                $("#espalda1").val(datos[0].espalda),
-                $("#cantidad1").val(datos[0].Cantidad),
-                $("#precio1").val(datos[0].precio),
-                $("#observacioncambio").val(datos[0].observacion)
-            $("#tallacambio").val(datos[0].IdInsumos)
+            $("#Id_trabajadores").val(datos[0].iddetalleordensu)
+                , $("#pechoizq1").val(datos[0].pecho_izquierdo)
+                , $("#pechoder1").val(datos[0].pecho_derecho)
+                , $("#mangaizq1").val(datos[0].manga_izquierda)
+                , $("#mangader1").val(datos[0].manga_derecha)
+                , $("#espalda1").val(datos[0].espalda)
+                , $("#cantidad1").val(datos[0].Cantidad)
+                , $("#precio1").val(datos[0].precio)
+                , $("#observacioncambio").val(datos[0].observacion)
+            $("#insumocambio").val(datos[0].IdInsumos)
             $("#sub_total2").val(datos[0].total)
 
         }
@@ -1204,15 +1187,15 @@
                 url += '/' + data.idmaestro;
             }
             $.ajax({
-                url: url,
-                method: method,
-                data: data,
-                error(ext) {
+                url: url
+                , method: method
+                , data: data
+                , error(ext) {
                     let error = e.responseJSON.errors;
                     let msj = error[Object.keys(error)[0]][0];
                     alert(msj);
-                },
-                success(res) {
+                }
+                , success(res) {
 
                 }
             })
@@ -1223,17 +1206,17 @@
 
             let data = {
 
-                idmaestro: $("#id").val(),
-                IdCliente: $("#cliente").val(),
-                IdUsuario: $("#recibepedido").val(),
-                IdCategoria: $("#cat").val(),
-                fecha: $("#fecha_fact").val(),
-                notas: $("#notas").val(),
-                total_costo: $("#total").val(),
-                Saldo: $("#saldo").val(),
-                abono: $("#abono").val(),
-                codseguimiento: $("#abono").val(),
-                estado: $("#estado").val(),
+                idmaestro: $("#id").val()
+                , IdCliente: $("#cliente").val()
+                , IdUsuario: $("#recibepedido").val()
+                , IdCategoria: $("#cat").val()
+                , fecha: $("#fecha_fact").val()
+                , notas: $("#notas").val()
+                , total_costo: $("#total").val()
+                , Saldo: $("#saldo").val()
+                , abono: $("#abono").val()
+                , codseguimiento: $("#abono").val()
+                , estado: $("#estado").val(),
 
 
 
@@ -1306,61 +1289,6 @@
                 var Observacion_ = columnas[9].textContent;
 
 
-                var Talla_val = 0;
-                if (talla_ == 2) {
-                    Talla_val = 1;
-                } else if (talla_ == 4) {
-                    Talla_val = 2;
-                } else
-                if (talla_ == 6) {
-                    Talla_val = 3;
-                } else if (talla_ == 8) {
-                    Talla_val = 4;
-                } else if (talla_ == 10) {
-                    Talla_val = 5;
-                } else if (talla_ == 12) {
-                    Talla_val = 6;
-                } else if (talla_ == 14) {
-                    Talla_val = 7;
-                } else if (talla_ == 16) {
-                    Talla_val = 8;
-                } else if (talla_ == 18) {
-                    Talla_val = 9;
-                } else if (talla_ == "S Dama") {
-                    Talla_val = 10;
-                } else if (talla_ == "S Caballero") {
-                    Talla_val = 11;
-                } else if (talla_ == "M Dama") {
-                    Talla_val = 12;
-                } else if (talla_ == "M Caballero") {
-                    Talla_val = 13;
-                } else if (talla_ == "L Dama") {
-                    Talla_val = 14;
-                } else if (talla_ == "L Caballero") {
-                    Talla_val = 15;
-                } else if (talla_ == "XL Dama") {
-                    Talla_val = 16;
-                } else if (talla_ == "XL Caballero") {
-                    Talla_val = 17;
-                } else if (talla_ == "2XL Dama") {
-                    Talla_val = 18;
-                } else if (talla_ == "2XL Caballero") {
-                    Talla_val = 19;
-                } else if (talla_ == "3XL Dama") {
-                    Talla_val = 20;
-                } else if (talla_ == "3XL Caballero") {
-                    Talla_val = 21;
-                } else if (talla_ == "5XL Dama") {
-                    Talla_val = 22;
-                } else if (talla_ == "5XL Caballero") {
-                    Talla_val = 23;
-                } else if (talla_ == "Taza") {
-                    Talla_val = 24;
-                } else if (talla_ == "Lapicero") {
-                    Talla_val = 25;
-                } else if (talla_ == "Llavero") {
-                    Talla_val = 26;
-                } else {}
 
 
 
@@ -1379,26 +1307,26 @@
 
                 arreglo[contador] = {
 
-                    IdCliente: $("#cliente").val(),
-                    IdUsuario: $("#recibepedido").val(),
-                    IdCategoria: $("#cat").val(),
-                    fecha: $("#fecha_fact").val(),
-                    notas: $("#notas").val(),
-                    total_costo: $("#total").val(),
-                    Saldo: $("#saldo").val(),
-                    abono: $("#abono").val(),
-                    codseguimiento: $("#tipo_de_pedido").val(),
+                    IdCliente: $("#cliente").val()
+                    , IdUsuario: $("#recibepedido").val()
+                    , IdCategoria: $("#cat").val()
+                    , fecha: $("#fecha_fact").val()
+                    , notas: $("#notas").val()
+                    , total_costo: $("#total").val()
+                    , Saldo: $("#saldo").val()
+                    , abono: $("#abono").val()
+                    , codseguimiento: $("#tipo_de_pedido").val(),
 
-                    IdInsumos: Talla_val,
-                    pecho_izq: pechoizq_,
-                    pecho_der: pechoder_,
-                    manga_izq: mangaizq_,
-                    manga_der: mangader_,
-                    espalda: espalda_,
-                    cantidad: cantidad_,
-                    precio: precio_,
-                    totaldetalle: totaldetalle_,
-                    observacion: Observacion_,
+                    IdInsumos: Talla_val
+                    , pecho_izq: pechoizq_
+                    , pecho_der: pechoder_
+                    , manga_izq: mangaizq_
+                    , manga_der: mangader_
+                    , espalda: espalda_
+                    , cantidad: cantidad_
+                    , precio: precio_
+                    , totaldetalle: totaldetalle_
+                    , observacion: Observacion_,
 
 
                 };
@@ -1437,17 +1365,17 @@
         function updatedetalle() {
 
             let datos = {
-                iddetalleordensu: $("#Id_trabajadores").val(),
-                pecho_izq: $("#pechoizq1").val(),
-                pecho_der: $("#pechoder1").val(),
-                manga_izq: $("#mangaizq1").val(),
-                manga_der: $("#mangader1").val(),
-                espalda: $("#espalda1").val(),
-                cantidad: $("#cantidad1").val(),
-                precio: $("#precio1").val(),
-                observacion: $("#observacioncambio").val(),
-                IdInsumos: $("#tallacambio").val(),
-                total: $("#sub_total2").val(),
+                iddetalleordensu: $("#Id_trabajadores").val()
+                , pecho_izq: $("#pechoizq1").val()
+                , pecho_der: $("#pechoder1").val()
+                , manga_izq: $("#mangaizq1").val()
+                , manga_der: $("#mangader1").val()
+                , espalda: $("#espalda1").val()
+                , cantidad: $("#cantidad1").val()
+                , precio: $("#precio1").val()
+                , observacion: $("#observacioncambio").val()
+                , IdInsumos: $("#insumocambio").val()
+                , total: $("#sub_total2").val(),
 
             };
             let method1 = (datos.iddetalleordensu == '' ? 'POST' : 'PUT');
@@ -1465,10 +1393,10 @@
 
             let datos = {
 
-                idmaestro: $("#id").val(),
-                fecha: $("#fecha_fact").val(),
-                metodo_de_pago: $("#metodo_de_pago").val(),
-                cod: $("#factura").val(),
+                idmaestro: $("#id").val()
+                , fecha: $("#fecha_fact").val()
+                , metodo_de_pago: $("#metodo_de_pago").val()
+                , cod: $("#factura").val(),
 
             };
             let method1 = (datos.idmaestro == '' ? 'POST' : 'PUT');
@@ -1490,9 +1418,9 @@
                 url += '/' + data.idmaestro;
             }
             $.ajax({
-                url: url,
-                method: method,
-                data: data,
+                url: url
+                , method: method
+                , data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -1506,17 +1434,17 @@
         function agregarotrodetalle() {
 
             let datos = {
-                idmaestro: $("#id").val(),
-                pecho_izq: $("#pecho_izq").val(),
-                pecho_der: $("#pecho_der").val(),
-                manga_izq: $("#manga_izq").val(),
-                manga_der: $("#manga_der").val(),
-                espalda: $("#espalda").val(),
-                cantidad: $("#cantidad").val(),
-                precio: $("#precio").val(),
-                observacion: $("#Observacion").val(),
-                IdInsumos: $("#tallacambio1").val(),
-                total: $("#sub_total").val(),
+                idmaestro: $("#id").val()
+                , pecho_izq: $("#pecho_izq").val()
+                , pecho_der: $("#pecho_der").val()
+                , manga_izq: $("#manga_izq").val()
+                , manga_der: $("#manga_der").val()
+                , espalda: $("#espalda").val()
+                , cantidad: $("#cantidad").val()
+                , precio: $("#precio").val()
+                , observacion: $("#Observacion").val()
+                , IdInsumos: $("#insumocambio1").val()
+                , total: $("#sub_total").val(),
 
             };
             console.log(datos);
@@ -1534,16 +1462,16 @@
         function limpiardatos() {
 
 
-            $("#pecho_izq").val(''),
-                $("#pecho_der").val(''),
-                $("#manga_izq").val(''),
-                $("#manga_der").val(''),
-                $("#espalda").val(''),
-                $("#cantidad").val(''),
-                $("#precio").val(''),
-                $("#Observacion").val(''),
-                $("#tallacambio1").val(''),
-                $("#sub_total").val('');
+            $("#pecho_izq").val('')
+                , $("#pecho_der").val('')
+                , $("#manga_izq").val('')
+                , $("#manga_der").val('')
+                , $("#espalda").val('')
+                , $("#cantidad").val('')
+                , $("#precio").val('')
+                , $("#Observacion").val('')
+                , $("#insumocambio1").val('')
+                , $("#sub_total").val('');
 
         }
 
@@ -1556,6 +1484,7 @@
             });
 
         }
+
     </script>
 
 

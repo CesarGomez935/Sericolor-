@@ -105,7 +105,7 @@ class vistas extends Controller
     public function getdetalles1($id){
 
        // $detalles=new Detalledelpedido();
-         return $detalles = detalleimpresion::select("*")->where("IdMaestro",$id)->get();
+         return $detalles = detalleimpresion::select("*")->where("IdMaestro",$id)->join("insumos","insumos.IdInsumo","=","detalle-orden-imp.IdInsumos")->get();
             
 
     }
