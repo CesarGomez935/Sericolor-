@@ -54,6 +54,7 @@
                         <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
                         <li> <a href="/menu/menuadmon/personal">Personal</a></li>
                         <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
+                        <li> <a href="/menu/menuadmon/insumos">Insumos</a></li>
                         <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
                         <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
                         <li> <a href="/menu/menuadmon/personal">Personal</a></li>
@@ -74,6 +75,8 @@
         <h3>Insumos para los servicios de Sericolor</h3>
 
 
+
+
         <div class="uk-margin">
 
             <b> <label id="buscar_cliente" for="form-stacked-text" class="uk-form-label">Buscar Insumo</label> </b>
@@ -87,6 +90,13 @@
             <button id="agregar" class="uk-button-primary uk-button uk-margin uk-padding ">Nuevo Insumo</button>
 
         </div>
+        <div class=" ">
+            <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
+                <a href="/menu/menuadmon" class="uk-button uk-button-primary " style="">Atrás</a>
+
+            </div>
+        </div>
+
 
         <!--Tablas de productos-->
         <table class="uk-table uk-table-hover uk-table-divider">
