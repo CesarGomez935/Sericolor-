@@ -160,7 +160,8 @@
 
                         </div>
                         <div class="uk-margin">
-                            <input id="password_personal" class="uk-input" type="password" placeholder="Contraseña">
+                            <input oninput="verificarPasswords()" id="password_personal" class="uk-input" type="password" placeholder="Contraseña">
+
 
 
 
@@ -168,10 +169,12 @@
 
 
                         <div class="uk-margin">
-                            <input id="password_personal_conf" class="uk-input" type="password" placeholder="Confirmar Contraseña">
+                            <input oninput="verificarPasswords()" id="password_personal_conf" class="uk-input" type="password" placeholder="Confirmar Contraseña">
+
                         </div>
 
-                        <a id="guardar" class="uk-button uk-button-primary">Registrarse</a>
+                        <a hidden id="guardar" class="uk-button uk-button-primary">Registrarse</a>
+
                         <a hidden href="/login" id="redirect" class="uk-button uk-button-primary">redireccion</a>
 
 
@@ -252,6 +255,35 @@
             peticionapi(data, 'POST', function(res) {
 
             });
+        }
+
+        function verificarPasswords() {
+
+            pass1 = document.getElementById('password_personal').value;
+
+
+            pass2 = document.getElementById('password_personal_conf').value;
+
+
+
+            if (pass1 != pass2) {
+                // window.alert("Las contraseñas no coinciden")
+                document.getElementById("guardar").hidden = true;
+
+
+
+            } else {
+
+                document.getElementById("guardar").hidden = false;
+
+
+            }
+
+            // console.log(pass1, pass2);
+
+
+
+
         }
 
     </script>
