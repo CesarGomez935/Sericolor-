@@ -251,6 +251,77 @@
         </div>
     </div>
 
+    <div class="uk-div uk-padding">
+        <div class="uk-section uk-section-primary uk-padding">
+            <div class="uk-container">
+
+
+
+                <table class="uk-table">
+                    <h4 class="uk-heading-line uk-text-center uk-padding-small">Reporte ventas por Tipo de pago</h4>
+
+                    <thead>
+                        <tr>
+                            <th>Fecha de Inicio</th>
+                            <th>Fecha Final </th>
+                            <th>Tipo de pago</th>
+                            <th>Descargar reporte</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            {{-- <td><select class="uk-select uk-form-width-small" type="select" aria-placeholder="Ingresar estado">
+                                        <option>Completado</option>
+                                        <option>No completado</option>
+
+                                    </select>
+                                </td> --}}
+                            <td>
+                                <input onchange="validarfechastipopago()" id="fecha_inicio_tipopago" class="uk-input uk-form-width-medium" type="date">
+
+
+                            </td>
+                            <td>
+                                <input onchange="validarfechastipopago()" id="fecha_final_tipopago" class="uk-input uk-form-width-medium" type="date">
+
+                            </td>
+                            <td>
+                                <select onchange="validarfechastipopago()" class="uk-select uk-form-width-1-1" name="" id="tipopago">
+
+                                    <option selected disabled value="">--Selecionar--</option>
+                                    <option value="2">Credito</option>
+                                    <option value="1">Contado</option>
+
+
+                                </select>
+
+
+
+                            </td>
+
+                            <td>
+
+                                {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
+                                <a target="_blank" id="pedidostipopago" class="uk-button uk-button-secondary" uk-icon="download"></a>
+
+
+                            </td>
+
+
+
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
 
 
     <div style="text-align: center;" class="uk-div">
@@ -287,21 +358,24 @@
 
     }
 
-    function validarfechasinsumos() {
+    function validarfechastipopago() {
 
 
-        var fecha1 = document.getElementById("fecha_inicio_insumos").value;
-        var fecha2 = document.getElementById("fecha_final_insumos").value;
-        var idinsumo = document.getElementById("insumos").value;
+        var fecha1 = document.getElementById("fecha_inicio_tipopago").value;
+        var fecha2 = document.getElementById("fecha_final_tipopago").value;
+        var idtipopago = document.getElementById("tipopago").value;
 
 
-        if (fecha1 && fecha2 && idinsumo) {
-            console.log(fecha1, fecha2, idinsumo);
-            document.getElementById("pedidosinsumo").href = "/api/pdf/ventas_insumos/" + idinsumo + "/" + fecha1 + "/" + fecha2 + "/descargar";
+
+        if (fecha1 && fecha2 && idtipopago) {
+
+            console.log(fecha1, fecha2, idtipopago);
+            document.getElementById("pedidostipopago").href = "/api/pdf/tipodepagoid_entre/" + idtipopago + "/" + fecha1 + "/" + fecha2 + "/descargar";
+
+
+
         } else {
-
-            console.log(fecha1, fecha2, idinsumo);
-            document.getElementById("pedidosinsumo").href = "/api/pdf/ventas_insumos/" + fecha1 + "/" + fecha2 + "/descargar";
+            document.getElementById("pedidostipopago").href = "/api/pdf/tipodepago_entre/" + fecha1 + "/" + fecha2 + "/descargar";
 
 
 

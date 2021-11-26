@@ -122,5 +122,5 @@ Route::get('/pdf/ventas_insumos/{idinsumo}/{fecha1}/{fecha2}/descargar', [Report
 Route::get('/pdf/ventas_insumosimp/{idinsumo}/{fecha1}/{fecha2}', [ReportesController::class,"getinsumosrangoidimp"]);
 Route::get('/pdf/ventas_insumosimp/{idinsumo}/{fecha1}/{fecha2}/descargar', [ReportesController::class,"createPDFinsumosrangoidimp"]);
 
-Route::get('/pdf/tipodepago_entre/{tipodepago}/{fecha1}/{fecha2}', [ReportesController::class,"getpedidosrangoTipodepago"]);
-Route::get('/pdf/tipodepago_entre/{tipodepago}/{fecha1}/{fecha2}/descargar', [ReportesController::class,"createPDFpedidosrangoTipodepago"]);
+Route::get('/pdf/tipodepagoid_entre/{tipodepago}/{fecha1}/{fecha2}', [ReportesController::class,"getpedidosrangoTipodepago"]);
+Route::get('/pdf/tipodepagoid_entre/{tipodepago}/{fecha1}/{fecha2}/descargar', [ReportesController::class,"createPDFpedidosrangoTipodepago"]);
