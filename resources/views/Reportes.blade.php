@@ -22,6 +22,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+
 
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.xx.x/css/uikit.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.xx.x/js/uikit.min.js"></script>
@@ -87,98 +90,168 @@
         <div class="uk-section uk-section-primary uk-padding">
             <div class="uk-container">
 
-                <form action="">
 
-                    <table class="uk-table">
-                        <h1 class="uk-heading-line uk-text-center uk-padding-small">Rango</h1>
 
-                        <thead>
-                            <tr>
-                                <th>Categoria</th>
-                                <th>Estado</th>
-                                <th>Fecha Inicio</th>
-                                <th>Cliente</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <select class="uk-select uk-form-width-small" type="select" aria-placeholder="Ingresar categoria">
-                                        <option>Sublimación</option>
-                                        <option>Impresión digital</option>
-                                        <option>Bordado</option>
-                                        <option>Serigrafía</option>
-                                    </select>
-                                </td>
-                                <td><select class="uk-select uk-form-width-small" type="select" aria-placeholder="Ingresar estado">
+                <table class="uk-table">
+                    <h4 class="uk-heading-line uk-text-center uk-padding-small">Pedidos diarios / Pedidos rango de fechas</h4>
+
+                    <thead>
+                        <tr>
+                            <th>Fecha de Inicio</th>
+                            <th>Fecha Final </th>
+                            <th>Descargar reporte</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            {{-- <td><select class="uk-select uk-form-width-small" type="select" aria-placeholder="Ingresar estado">
                                         <option>Completado</option>
                                         <option>No completado</option>
 
                                     </select>
-                                </td>
-                                <td>
-                                    <input onchange="validarfechas()" id="fecha_inicio" class="uk-input uk-form-width-medium" type="date">
+                                </td> --}}
+                            <td>
+                                <input onchange="validarfechaspedidos()" id="fecha_inicio" class="uk-input uk-form-width-medium" type="date">
 
-                                </td>
-                                <td>
-                                    <div class="">
-                                        <a class="uk-form-icon uk-form-icon-flip" href="" uk-icon="icon: search"></a>
-                                        <input class="uk-input" placeholder="Nombre">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <th>Fecha Final</th>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <input onchange="validarfechas()" id="fecha_final" class="uk-input uk-form-width-medium" type="date">
-                                </td>
-                                <td>
-                                    <label for="">Ejecutar consulta</label>
-                                    <button class="uk-button uk-button-secondary" uk-icon="search"></button>
-                                    <label for="">Descargar reporte</label>
-                                    {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
-                                    <a target="_blank" id="pedidosdiario" class="uk-button uk-button-secondary" uk-icon="download"></a>
+                            </td>
+                            <td>
+                                <input onchange="validarfechaspedidos()" id="fecha_final" class="uk-input uk-form-width-medium" type="date">
+                            </td>
+
+                            <td>
+
+                                {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
+                                <a target="_blank" id="pedidosdiario" class="uk-button uk-button-secondary" uk-icon="download"></a>
 
 
-                                </td>
-                            </tr>
+                            </td>
 
-                        </tbody>
-                    </table>
-                </form>
+
+
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+
             </div>
         </div>
     </div>
 
-    <div class="uk-div uk-margin uk-padding-small">
-
-        <table class="uk-table uk-table-hover uk-table-divider uk-table-striped">
-
-            <thead>
-                <tr>
-                    <th>Cliente</th>
-                    <th>N° Pedido</th>
-                    <th>Categoria</th>
-                    <th>Fecha de recibido</th>
-                    <th>Estado</th>
-                    <th>Fecha de entrega</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-            </tbody>
-        </table>
+    <div class="uk-div uk-padding">
+        <div class="uk-section uk-section-secondary uk-padding">
+            <div class="uk-container">
 
 
+
+                <table class="uk-table">
+                    <h4 class="uk-heading-line uk-text-center uk-padding-small">Reporte ventas por Insumos</h4>
+
+                    <thead>
+                        <tr>
+                            <th>Fecha de Inicio</th>
+                            <th>Fecha Final </th>
+                            <th>Insumo</th>
+                            <th>Descargar reporte</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            {{-- <td><select class="uk-select uk-form-width-small" type="select" aria-placeholder="Ingresar estado">
+                                        <option>Completado</option>
+                                        <option>No completado</option>
+
+                                    </select>
+                                </td> --}}
+                            <td>
+                                <input onchange="validarfechasinsumos()" id="fecha_inicio_insumos" class="uk-input uk-form-width-medium" type="date">
+
+                            </td>
+                            <td>
+                                <input onchange="validarfechasinsumos()" id="fecha_final_insumos" class="uk-input uk-form-width-medium" type="date">
+                            </td>
+                            <td>
+                                <select onchange="validarfechasinsumos()" class="uk-select uk-form-width-1-1" name="" id="insumos"></select>
+
+
+                                <script>
+                                    cargarinsumo();
+
+                                    function cargarinsumo() {
+
+                                        peticionapiser({}, 'GET', function(res) {
+                                            usuarios = res;
+                                            console.log(res);
+                                            let html = '<option disabled selected value=""> Seleccionar Insumo </option>';
+
+                                            res.forEach(usuarios => {
+                                                html += '<option value="' + usuarios.IdInsumo + '">' + usuarios
+                                                    .Tipo + ' ' + usuarios
+
+                                                    .Descripcion +
+                                                    '</option>'
+                                            });
+                                            $("#insumos").html(html);
+                                        });
+
+
+
+
+
+
+
+                                    }
+
+                                    function peticionapiser(data, method, onSuccess) {
+
+
+                                        let url = '/api/getallinsumos';
+
+                                        if (method == 'PUT' || method == 'DELETE') {
+                                            url += '/' + data.id;
+                                        }
+                                        $.ajax({
+                                            url: url
+                                            , method: method
+                                            , data: data,
+
+                                            success(res) {
+                                                onSuccess(res);
+
+                                            }
+
+                                        })
+                                    }
+
+                                </script>
+
+                            </td>
+
+                            <td>
+
+                                {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
+                                <a target="_blank" id="pedidosinsumo" class="uk-button uk-button-secondary" uk-icon="download"></a>
+
+
+                            </td>
+
+
+
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
     </div>
+
+
 
     <div style="text-align: center;" class="uk-div">
         <a class="uk-button uk-button-secondary" href="/menu/menuadmon">Atrás</a>
@@ -192,23 +265,7 @@
 </html>
 
 <script type="text/javascript">
-    function cambioFecha() {
-
-        var fecha = document.getElementById("fecha_inicio").value;
-
-        document.getElementById("pedidosdiario").href = "/api/pdf/pedidos_diarios/" + fecha + "/descargar";
-
-
-
-
-        console.log(fecha);
-
-
-
-
-    }
-
-    function validarfechas() {
+    function validarfechaspedidos() {
 
 
         var fecha1 = document.getElementById("fecha_inicio").value;
@@ -222,6 +279,31 @@
 
             document.getElementById("pedidosdiario").href = "/api/pdf/pedidos_diarios/" + fecha1 + "/descargar";
             console.log(fecha1, fecha2);
+
+        }
+
+
+
+
+    }
+
+    function validarfechasinsumos() {
+
+
+        var fecha1 = document.getElementById("fecha_inicio_insumos").value;
+        var fecha2 = document.getElementById("fecha_final_insumos").value;
+        var idinsumo = document.getElementById("insumos").value;
+
+
+        if (fecha1 && fecha2 && idinsumo) {
+            console.log(fecha1, fecha2, idinsumo);
+            document.getElementById("pedidosinsumo").href = "/api/pdf/ventas_insumos/" + idinsumo + "/" + fecha1 + "/" + fecha2 + "/descargar";
+        } else {
+
+            console.log(fecha1, fecha2, idinsumo);
+            document.getElementById("pedidosinsumo").href = "/api/pdf/ventas_insumos/" + fecha1 + "/" + fecha2 + "/descargar";
+
+
 
         }
 

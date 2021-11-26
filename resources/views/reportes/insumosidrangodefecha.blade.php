@@ -39,12 +39,35 @@
                 <div class="col-sm">
                     <br>
                     <br>
-                    <h6 class="text-center ">Ventas de insumos: @foreach($detalle ?? '' as $data)
+                    @foreach ($detalle ?? '' as $data)
 
-                        {{$data->descripcion}}
 
-                        @endforeach, entre: {{$fecha1}} y {{$fecha2}}</h6>
+                    <h6 class="text-center ">Ventas de insumos:
+
+                        {{$data->tipo}}: {{$data->descripcion}}
+
+
+                        , entre: {{$fecha1}} y {{$fecha2}}
+                    </h6>
+
+                    @endforeach
+                    @foreach ($detalle2 ?? '' as $data)
+
+
+                    <h6 class="text-center ">Ventas de insumos:
+
+                        {{$data->tipo}}: {{$data->descripcion}}
+
+
+                        , entre: {{$fecha1}} y {{$fecha2}}
+                    </h6>
+
+                    @endforeach
+
+
                     <br>
+
+
 
 
                 </div>
@@ -126,6 +149,22 @@
                     <td>{{ $data->Total }} </td>
                 </tr>
                 @endforeach
+
+                @foreach ($detalle2 ?? '' as $data)
+
+
+
+                <tr>
+
+                    <td>{{ $data->IdInsumo }} </td>
+                    <td>{{ $data->tipo }}</td>
+                    <td> {{ $data->descripcion }}</td>
+                    <td>{{ $data->Cantidad }}</td>
+
+                    <td>{{ $data->Total }} </td>
+                </tr>
+                @endforeach
+
 
             </tbody>
 

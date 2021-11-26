@@ -150,4 +150,13 @@ class insumocontroller extends Controller
 
 
     }
+
+     public function getallinsumos(){
+        
+
+
+        return insumos::all();
+
+
+    }
 }

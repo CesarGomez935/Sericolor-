@@ -331,9 +331,19 @@ class ReportesController extends Controller
         ->groupBy("insumos.descripcion")        
         ->get();
 
+         $detalle2=insumos::whereBetween('fecha', [$fecha1, $fecha2])
+        ->where("detalle-orden-imp.IdInsumos",$idinsumo)
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"),DB::raw("sum(cantidad) as Cantidad"))        
+        ->join("detalle-orden-imp","insumos.IdInsumo","=","detalle-orden-imp.IdInsumos")
+        ->join("maestro","detalle-orden-imp.IdMaestro","=","maestro.idmaestro") 
+        ->groupBy("insumos.descripcion")        
+        ->get();
+
+        
+
         
         //return compact("detalle","fecha1","fecha2");
-        return view('reportes.insumosidrangodefecha', compact("detalle","fecha1","fecha2"));
+        return view('reportes.insumosidrangodefecha', compact("detalle","detalle2","fecha1","fecha2"));
     }
 
     public function createPDFinsumosrangoidsub($idinsumo,$fecha1,$fecha2) 
@@ -347,10 +357,18 @@ class ReportesController extends Controller
         ->groupBy("insumos.descripcion")        
         ->get();
 
+        $detalle2=insumos::whereBetween('fecha', [$fecha1, $fecha2])
+        ->where("detalle-orden-imp.IdInsumos",$idinsumo)
+        ->select("insumos.IdInsumo","insumos.descripcion","insumos.tipo",DB::raw("sum(total) as Total"),DB::raw("sum(cantidad) as Cantidad"))        
+        ->join("detalle-orden-imp","insumos.IdInsumo","=","detalle-orden-imp.IdInsumos")
+        ->join("maestro","detalle-orden-imp.IdMaestro","=","maestro.idmaestro") 
+        ->groupBy("insumos.descripcion")        
+        ->get();
+
 
       // share data to view
-      view()->share( compact("detalle","fecha1","fecha2"));
-      $pdf = PDF::loadView('reportes.insumosidrangodefecha', compact("detalle","fecha1","fecha2"))->setPaper('letter', 'portrait');
+      view()->share( compact("detalle","detalle2","fecha1","fecha2"));
+      $pdf = PDF::loadView('reportes.insumosidrangodefecha', compact("detalle","detalle2","fecha1","fecha2"))->setPaper('letter', 'portrait');
       
 
       // download PDF file with download method
