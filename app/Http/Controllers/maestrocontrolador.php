@@ -117,6 +117,7 @@ class maestrocontrolador extends Controller
                     'Id_Metodo_de_Pago'=>$request->idmetodo,
                     'Fecha_de_pago'=>$request->fecha,
                     'Cod_Recibo'=>$request->cod,
+                    'idtipo_de_pago'->$request->tipodepago,
 
                 ]);
                 
