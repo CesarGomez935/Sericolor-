@@ -201,6 +201,9 @@
                         .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
                         '<td>' + pedido.fecha + '</td>' +
                         '<td>' + pedido.Estado + '</td>' + '<td>' +
+                        '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
+                        .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
+
                         '<a href="/menu/menu_facturacion/form_bordado/' + pedido
                         .idmaestro +
                         '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a  action=""  onclick="eliminar(' +
