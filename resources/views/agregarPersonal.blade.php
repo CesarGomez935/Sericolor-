@@ -146,9 +146,12 @@
                             <div uk-form-custom="target: > * > span:first-child">
                                 <select name="privilegios" id="privilegios">
 
-
+                                    <option disabled selected value="">--Selecionar--</option>
                                     <option value="Administrador">Administrador</option>
+                                    <option value="Gestor">Gestor</option>
                                     <option value="Dependiente">Dependiente</option>
+                                    <option value="Deshabilitado">Deshabilitado</option>
+
 
                                 </select>
                                 <button class="uk-button uk-button-default" type="button" tabindex="-1">

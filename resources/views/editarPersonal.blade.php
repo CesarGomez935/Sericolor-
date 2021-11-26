@@ -171,9 +171,15 @@
                                 <select name="privilegios" id="privilegios">
 
                                     <option @if($trabajador->Privilegios == "Administrador") selected @endif value="Administrador">Administrador</option>
+                                    <option @if($trabajador->Privilegios == "Gestor") selected @endif value="Gestor">Gestor</option>
+
 
 
                                     <option @if($trabajador->Privilegios == "Dependiente") selected @endif value="Dependiente">Dependiente</option>
+
+                                    <option @if($trabajador->Privilegios == "Deshabilitado") selected @endif value="Deshabilitado">Deshabilitado</option>
+
+
 
 
 
