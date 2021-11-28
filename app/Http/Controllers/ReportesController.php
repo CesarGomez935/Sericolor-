@@ -435,4 +435,32 @@ class ReportesController extends Controller
       return $pdf->stream('Reporte pedidos Rango de fecha $fecha1-$fecha2.pdf');
     }
 
+    public function getpedidoscliente($id,$fecha1,$fecha2){
+
+      $pedidosrango= maestro::select("maestro.*","cliente.*","persona.*","categoria.*")->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->whereBetween('fecha', [$fecha1, $fecha2])->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->where('maestro.IdCliente',$id)->orderBy("idmaestro","DESC")->get();
+        $suma=maestro::join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->whereBetween('fecha', [$fecha1, $fecha2])->where('maestro.IdCliente',$id)->where('maestro.IdCliente',$id)->select(DB::raw("sum(total_costo) as Total"),DB::raw("sum(abono) as Abono"),DB::raw("sum(saldo) as Saldo"))->get();
+        $nombre= maestro::select("cliente.*","persona.*")->whereBetween('fecha', [$fecha1, $fecha2])->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->where('maestro.IdCliente',$id)->groupBy("IdCliente")->get();
+        //return $nombre;
+        //return compact('pedidosrango','suma','fecha1','fecha2');
+        return view('reportes.rangodefechacliente', compact('pedidosrango','suma','fecha1','fecha2','nombre'));
+
+    }
+
+     public function createPDFpedidoscliente($id,$fecha1,$fecha2) 
+    {
+      // retreive all records from db
+        $pedidosrango= maestro::select("maestro.*","cliente.*","persona.*","categoria.*")->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->whereBetween('fecha', [$fecha1, $fecha2])->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->where('maestro.IdCliente',$id)->orderBy("idmaestro","DESC")->get();
+        $suma=maestro::join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->whereBetween('fecha', [$fecha1, $fecha2])->where('maestro.IdCliente',$id)->where('maestro.IdCliente',$id)->select(DB::raw("sum(total_costo) as Total"),DB::raw("sum(abono) as Abono"),DB::raw("sum(saldo) as Saldo"))->get();
+        $nombre= maestro::select("cliente.*","persona.*")->whereBetween('fecha', [$fecha1, $fecha2])->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->where('maestro.IdCliente',$id)->groupBy("IdCliente")->get();
+        
+
+      // share data to view
+      view()->share('pedidosrango',compact('pedidosrango','suma','fecha1','fecha2','nombre'));
+      $pdf = PDF::loadView('reportes.rangodefechacliente',compact('pedidosrango','suma','fecha1','fecha2','nombre'))->setPaper('letter', 'portrait');
+      
+
+      // download PDF file with download method
+      return $pdf->stream('Reporte pedidos Rango de fecha $fecha1-$fecha2.pdf');
+    }
+
 }

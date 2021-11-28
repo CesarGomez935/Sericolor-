@@ -321,6 +321,112 @@
         </div>
     </div>
 
+    <div class="uk-div uk-padding">
+        <div class="uk-section uk-section-secondary uk-padding">
+            <div class="uk-container">
+
+
+
+                <table class="uk-table">
+                    <h4 class="uk-heading-line uk-text-center uk-padding-small">Reporte ventas por Cliente</h4>
+
+                    <thead>
+                        <tr>
+                            <th>Fecha de Inicio</th>
+                            <th>Fecha Final </th>
+                            <th>Cliente</th>
+                            <th>Descargar reporte</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            {{-- <td><select class="uk-select uk-form-width-small" type="select" aria-placeholder="Ingresar estado">
+                                        <option>Completado</option>
+                                        <option>No completado</option>
+
+                                    </select>
+                                </td> --}}
+                            <td>
+                                <input onchange="validarfechascliente()" id="fecha_inicio_cliente" class="uk-input uk-form-width-medium" type="date">
+
+                            </td>
+                            <td>
+                                <input onchange="validarfechascliente()" id="fecha_final_cliente" class="uk-input uk-form-width-medium" type="date">
+
+                            </td>
+                            <td>
+                                <select onchange="validarfechascliente()" class="uk-select uk-form-width-1-1" name="" id="clientes"></select>
+
+
+
+                                <script>
+                                    cargarcliente();
+
+                                    function peticionapicliente(data, method, onSuccess) {
+
+
+                                        let url = '/api/getcliente';
+                                        if (method == 'PUT' || method == 'DELETE') {
+                                            url += '/' + data.id;
+                                        }
+                                        $.ajax({
+                                            url: url
+                                            , method: method
+                                            , data: data,
+
+                                            success(res) {
+                                                onSuccess(res);
+
+                                            }
+
+                                        })
+                                    }
+
+                                    function cargarcliente() {
+
+                                        peticionapicliente({}, 'GET', function(res) {
+                                            cliente = res;
+                                            console.log(res);
+                                            let html = '<option value=""> Seleccionar </option>';
+                                            res.forEach(cliente => {
+                                                html += '<option value="' + cliente.IdCliente + '">' + cliente.Primer_Nombre + ' ' +
+                                                    cliente.Segundo_Nombre + ' ' + cliente.Primer_Apellido + ' ' + cliente
+                                                    .Segundo_Apellido +
+                                                    '</option>'
+                                            });
+
+                                            $("#clientes").html(html);
+                                        });
+                                    }
+
+                                </script>
+
+                            </td>
+
+                            <td>
+
+                                {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
+                                <a target="_blank" id="pedidoscliente" class="uk-button uk-button-secondary" uk-icon="download"></a>
+
+
+
+                            </td>
+
+
+
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
 
 
 
@@ -384,6 +490,54 @@
 
 
 
+    }
+
+    function validarfechascliente() {
+
+
+        var fecha1 = document.getElementById("fecha_inicio_cliente").value;
+        var fecha2 = document.getElementById("fecha_final_cliente").value;
+        var idcliente = document.getElementById("clientes").value;
+
+
+        if (fecha1 && fecha2 && idcliente) {
+
+            console.log(fecha1, fecha2, idcliente);
+            document.getElementById("pedidoscliente").href = "/api/pdf/cliente_entre/" + idcliente + "/" + fecha1 + "/" + fecha2 + "/descargar";
+
+
+
+
+
+        }
+
+
+
+
+    }
+
+    function validarfechasinsumos() {
+
+
+        var fecha1 = document.getElementById("fecha_inicio_insumos").value;
+        var fecha2 = document.getElementById("fecha_final_insumos").value;
+        var idinsumo = document.getElementById("insumos").value;
+
+
+
+        if (fecha1 && fecha2 && idinsumo) {
+            console.log(fecha1, fecha2, idinsumo);
+            document.getElementById("pedidosinsumo").href = "/api/pdf/ventas_insumos/" + idinsumo + "/" + fecha1 + "/" + fecha2 + "/descargar";
+        } else {
+
+            console.log(fecha1, fecha2, idinsumo);
+            document.getElementById("pedidosinsumo").href = "/api/pdf/ventas_insumos/" + fecha1 + "/" + fecha2 + "/descargar";
+
+
+
+
+
+        }
     }
 
 </script>
