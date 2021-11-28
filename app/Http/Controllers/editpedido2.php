@@ -74,6 +74,7 @@ class editpedido2 extends Controller
         $model->Id_Metodo_de_Pago=$request->input('metodo_de_pago');
         $model->Fecha_de_pago=$request->input('fecha');
         $model->Cod_Recibo=$request->input('cod');
+        $model->idtipo_de_pago=$request->input("tipodepago");
         
         return $model->save();
     }

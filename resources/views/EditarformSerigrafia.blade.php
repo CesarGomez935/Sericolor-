@@ -97,6 +97,8 @@
         </div>
 
         <div style="text-align: center" class=" uk-background-muted">
+            <label class="uk-label" for="">N° Pedido: {{ $edit->idmaestro }}</label>
+            <br>
             <label class="uk-label" for="">Codigo de Seguimiento: {{ $edit->CodSeguimiento }}</label>
         </div>
 
@@ -311,7 +313,7 @@
                                             <input disabled id="sub_total" type="number" min="0" class="uk-input uk-form-width-small ">
                                         </td>
                                         <td>
-                                            <a class="uk-button uk-button-primary" id="guardarnuevodetalle">Insertar
+                                            <a class="uk-button uk-button-primary" onclick="abonos();" id="guardarnuevodetalle">Insertar
                                                 Pedido</a>
                                         </td>
 
@@ -693,7 +695,7 @@
                     <div class="uk-margin">
                         <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                         <div class="uk-form-controls">
-                            <input id="abono" min="0" name="Abono" onchange="abonos();" class="uk-input uk-form-width-large" value="{{ $edit->abono }}" id="form-horizontal-text" type="number" placeholder="">
+                            <input id="abono" min="0" name="Abono" oninput="abonos();" class="uk-input uk-form-width-large" value="{{ $edit->abono }}" id="form-horizontal-text" type="number" placeholder="">
 
                             <script>
                                 function abonos() {
@@ -777,17 +779,28 @@
                         </div>
                     </div>
                     <div class="uk-margin">
-                        <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Pedido</label>
+                        <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
                         <div class="uk-form-controls">
                             <input value="{{ $edit->Cod_Recibo }}" id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
-                        <label for="recibo" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
+                        <label for="pedido" class="uk-form-label" for="form-horizontal-text">Tipo de pago</label>
                         <div class="uk-form-controls">
-                            <input disabled value="{{ $edit->idmaestro }}" id="recibo" name="numero_recibo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <select class="uk-select uk-form-width-large" name="" id="tipodepago">
+                                <option @if ($edit->idtipo_de_pago == '1') selected @endif value="1">Contado</option>
+                                {{-- , tipodepago: $("#tipodepago").val(), --}}
+
+
+                                <option @if ($edit->idtipo_de_pago == '2') selected @endif value="2">Credito</option>
+
+
+                            </select>
+
+
                         </div>
                     </div>
+
                 </div>
 
 
@@ -1396,7 +1409,9 @@
                 idmaestro: $("#id").val()
                 , fecha: $("#fecha_fact").val()
                 , metodo_de_pago: $("#metodo_de_pago").val()
-                , cod: $("#factura").val(),
+                , cod: $("#factura").val()
+                , tipodepago: $("#tipodepago").val(),
+
 
             };
             let method1 = (datos.idmaestro == '' ? 'POST' : 'PUT');

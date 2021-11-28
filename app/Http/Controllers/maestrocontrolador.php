@@ -233,9 +233,12 @@ class maestrocontrolador extends Controller
          $model1->CodSeguimiento=$request->input('codseguimiento');
          
          $model1->abono=$request->input('abono');
-        $model1->Estado=$request->input('estado');
+         $model1->Estado=$request->input('estado');
          $model1->total_costo=$request->input('total_costo');
+         
         return $model1->save();
+
+        
 
         
 
