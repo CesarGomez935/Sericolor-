@@ -107,7 +107,7 @@
                 <div class="uk-form-horizontal uk-margin-large">
 
 
-                    <input name="IdUsuario" value="{{$trabajador->IdUsuario}}" type="text">
+                    <input hidden name="IdUsuario" value="{{$trabajador->IdUsuario}}" type="text">
 
 
 

@@ -93,7 +93,8 @@
                     <th>Pedidos y Clientes</th>
                     <th>Fecha</th>
                     <th>Estado</th>
-                    <th>opciones</th>
+                    <th>Tipo de Pago</th>
+                    <th>Opciones</th>
 
                 </tr>
             </thead>
@@ -200,7 +201,8 @@
                         '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
                         .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
                         '<td>' + pedido.fecha + '</td>' +
-                        '<td>' + pedido.Estado + '</td>' + '<td>' +
+                        '<td>' + pedido.Estado + '</td>' + '<td>' + pedido.Descripcion + '</td>' + '<td>' +
+
                         '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
                         .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
 

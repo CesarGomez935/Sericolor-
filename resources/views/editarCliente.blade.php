@@ -109,7 +109,7 @@
                         <option value='Cliente'>Cliente</option>
                     </select>
 
-                    <input name="IdCliente" value="{{$cliente->IdCliente}}" type="text">
+                    <input name="IdCliente" hidden value="{{$cliente->IdCliente}}" type="text">
 
 
 

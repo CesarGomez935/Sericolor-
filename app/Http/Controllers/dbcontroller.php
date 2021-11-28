@@ -115,10 +115,12 @@ class dbcontroller extends Controller
                             'usuario',
                             'cliente',                            
                             'maestro',
+                            "tipo_de_pago",
                             'recibo',
                             '`detalle-orden-sub,bor,ser`',
                             '`detalle-orden-imp`',
-                        "slider",); //here your tables...
+                        "slider",
+                    ); //here your tables...
 
         $connect = new \PDO("mysql:host=$mysqlHostName;dbname=$DbName;charset=utf8", "$mysqlUserName", "$mysqlPassword",array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
         $get_all_table_query = "SHOW TABLES";

@@ -63,17 +63,14 @@ class vistas extends Controller
         //
     }
 
-    public function mostrar_impresion(){
+    
 
-    return maestro::select("*")->where("idcategoria",3)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("idmaestro","DESC")->get();        
-
-    }
-
-    public function mostrar_sublimacion(){
+    public function mostrar_sublimacion()
+    {
 
    
 
-    return maestro::select("*")->where("idcategoria",1)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("idmaestro","DESC")->get();        
+        return maestro::select("*")->where("idcategoria",1)->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("maestro.idmaestro","DESC")->get();        
 
     }
 
@@ -83,7 +80,12 @@ class vistas extends Controller
 
   
       
-        return maestro::select("*")->where("idcategoria",2)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("idmaestro","DESC")->get();        
+        return maestro::select("*")->where("idcategoria",2)->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("maestro.idmaestro","DESC")->get();        
+
+    }
+    public function mostrar_impresion(){
+
+        return maestro::select("*")->where("idcategoria",3)->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("maestro.idmaestro","DESC")->get();        
 
     }
 
@@ -91,7 +93,7 @@ class vistas extends Controller
 
    
 
-    return maestro::select("*")->where("idcategoria",4)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("idmaestro","DESC")->get();        
+        return maestro::select("*")->where("idcategoria",4)->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("maestro.idmaestro","DESC")->get();        
 
     }
 
