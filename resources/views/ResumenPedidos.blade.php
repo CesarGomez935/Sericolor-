@@ -81,13 +81,14 @@
 
         <div class="">
 
-            <b> <label id="buscar_cliente" for="form-stacked-text" class="uk-form-label">Buscar Por N° de Pedido</label> </b>
+            <b> <label id="buscar_cliente" for="form-stacked-text" class="uk-form-label">Buscar </label> </b>
             <div class="uk-inline uk-padding">
 
                 <a onclick="getid();" class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
 
 
-                <input oninput="getid();" id="id_busqueda" class="uk-input uk-form-width-large" type="text">
+                <input oninput="getid();" placeholder="Por: N° de Pedido, Nombre o Tipo de pago" id="id_busqueda" class="uk-input uk-form-width-large" type="text">
+
             </div>
 
         </div>
@@ -107,6 +108,7 @@
                     <th>Pedidos y Clientes</th>
                     <th>Fecha</th>
                     <th>Area</th>
+                    <th>Tipo de pago</th>
                     <th>Estado</th>
                     <th>Opciones</th>
 
@@ -242,6 +244,8 @@
                         .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
                         '<td>' + pedido.fecha + '</td>' +
                         '<td>' + pedido.descripcion + '</td>' +
+                        '<td>' + pedido.Descripcion + '</td>' +
+
                         '<td>' + pedido.Estado + '</td>' + '<td>' +
                         '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
 
@@ -265,6 +269,8 @@
                         .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
                         '<td>' + pedido.fecha + '</td>' +
                         '<td>' + pedido.descripcion + '</td>' +
+                        '<td>' + pedido.Descripcion + '</td>' +
+
                         '<td>' + pedido.Estado + '</td>' + '<td>' +
 
                         '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
@@ -291,6 +297,8 @@
                         .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
                         '<td>' + pedido.fecha + '</td>' +
                         '<td>' + pedido.descripcion + '</td>' +
+                        '<td>' + pedido.Descripcion + '</td>' +
+
                         '<td>' + pedido.Estado + '</td>' + '<td>' +
 
                         '<a target="_blank" href="/api/pdf/Factura_imp/' + pedido
@@ -316,6 +324,8 @@
                         .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
                         '<td>' + pedido.fecha + '</td>' +
                         '<td>' + pedido.descripcion + '</td>' +
+                        '<td>' + pedido.Descripcion + '</td>' +
+
                         '<td>' + pedido.Estado + '</td>' + '<td>' +
                         '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
                         .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
@@ -374,6 +384,8 @@
                         .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
                         '<td>' + pedido.fecha + '</td>' +
                         '<td>' + pedido.descripcion + '</td>' +
+                        '<td>' + pedido.Descripcion + '</td>' +
+
                         '<td>' + pedido.Estado + '</td>' + '<td>' +
                         '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
 
@@ -397,6 +409,8 @@
                         .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
                         '<td>' + pedido.fecha + '</td>' +
                         '<td>' + pedido.descripcion + '</td>' +
+                        '<td>' + pedido.Descripcion + '</td>' +
+
                         '<td>' + pedido.Estado + '</td>' + '<td>' +
 
                         '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
@@ -423,6 +437,8 @@
                         .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
                         '<td>' + pedido.fecha + '</td>' +
                         '<td>' + pedido.descripcion + '</td>' +
+                        '<td>' + pedido.Descripcion + '</td>' +
+
                         '<td>' + pedido.Estado + '</td>' + '<td>' +
 
                         '<a target="_blank" href="/api/pdf/Factura_imp/' + pedido
@@ -448,6 +464,8 @@
                         .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
                         '<td>' + pedido.fecha + '</td>' +
                         '<td>' + pedido.descripcion + '</td>' +
+                        '<td>' + pedido.Descripcion + '</td>' +
+
                         '<td>' + pedido.Estado + '</td>' + '<td>' +
                         '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
                         .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
