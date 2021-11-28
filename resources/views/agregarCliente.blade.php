@@ -115,7 +115,8 @@
                     <div class="uk-margin">
                         <label for="segundo_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Segundo Nombre</label>
                         <div class="uk-form-controls">
-                            <input value=' ' name="segundo_nombre" id="segundo_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Segundo Nombre">
+                            <input value=' ' name="segundo_nombre" id="segundo_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Segundo Nombre">
+
 
 
                         </div>
@@ -124,7 +125,8 @@
                     <div class="uk-margin">
                         <label for="primer_apellido_cliente" class="uk-form-label" for="form-horizontal-text">Primer Apellido</label>
                         <div class="uk-form-controls">
-                            <input value=' ' name="primer_apellido" id="primer_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Primer Apellido">
+                            <input value=' ' name="primer_apellido" id="primer_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Primer Apellido">
+
 
 
                         </div>
@@ -133,7 +135,8 @@
                     <div class="uk-margin">
                         <label for="segundo_apellido_cliente" class="uk-form-label" for="form-horizontal-text">Segundo Apellido</label>
                         <div class="uk-form-controls">
-                            <input value=' ' name="segundo_apellido" id="segundo_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Segundo Apellido">
+                            <input value=' ' name="segundo_apellido" id="segundo_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Segundo Apellido">
+
 
 
                         </div>
