@@ -773,7 +773,7 @@
 
 
                 idmetodo: $("#metodo_de_pago").val()
-                , cod: $("#factura").val(),
+                , cod: $("#factura").val()
 
 
                 estado: $("#estado").val()

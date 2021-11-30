@@ -1227,7 +1227,7 @@
                 , total_costo: $("#total").val()
                 , Saldo: $("#saldo").val()
                 , abono: $("#abono").val()
-                , codseguimiento: $("#abono").val()
+                , codseguimiento: "{{$edit->CodSeguimiento}}"
                 , estado: $("#estado").val(),
 
 
@@ -1408,7 +1408,7 @@
                 idmaestro: $("#id").val()
                 , fecha: $("#fecha_fact").val()
                 , metodo_de_pago: $("#metodo_de_pago").val()
-                , cod: $("#factura").val()
+                , cod: cod_seg_rand
                 , tipodepago: $("#tipodepago").val(),
 
 

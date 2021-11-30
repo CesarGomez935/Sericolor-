@@ -277,8 +277,6 @@
                         '<td>' + trabajadores.descripcion + '</td>' +
                         '<td><button onclick="editar(' + trabajadores.IdInsumo +
                         ')" class="uk-icon-button uk-margin-small-right" uk-icon="file-edit"></button></td>' +
-                        '<td><button onclick="eliminar(' + trabajadores.IdInsumo +
-                        ')"class="uk-icon-button uk-margin-small-right" uk-icon="trash"></button></td></td>' +
                         '</tr>'
                 });
                 $("#tablatrabajadores").html(html);

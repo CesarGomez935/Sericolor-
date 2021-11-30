@@ -641,10 +641,10 @@
 
                         </div>
                         <div class="uk-margin">
-                            <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Pedido</label>
-                            <div class="uk-form-controls">
-                                <input value="{{ $edit->Cod_Recibo }}" id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
-                            </div>
+                            <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
+                                <div class="uk-form-controls">
+                                    <input value="{{ $edit->Cod_Recibo }}" id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                                </div>
                         </div>
                         <div class="uk-margin">
                             <label for="pedido" class="uk-form-label" for="form-horizontal-text">Tipo de pago</label>
@@ -1472,7 +1472,7 @@
                 , total_costo: $("#total").val()
                 , Saldo: $("#saldo").val()
                 , abono: $("#abono").val()
-                , codseguimiento: $("#abono").val()
+                , codseguimiento: "{{$edit->CodSeguimiento}}"
                 , estado: $("#estado").val()
                 , tipodepago: $("#tipodepago").val(),
 
