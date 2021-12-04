@@ -79,9 +79,10 @@ class usuariocontroller extends Controller
                 $usuario=usuario::create([                    
                     'idpersona'=>$persona->IdPersona,                
                     'Usuario'=>$request->usuario,                    
-                    'password'=>$request->Contrasena,                    
+                    'password'=>encrypt($request['contrasena']),                   
                     'Privilegios'=>"Dependiente",  
                     'RolAsignado'=>$request->RolAsignado,
+                    'estado'=>'1',
                               
                 ]);
 
@@ -92,7 +93,7 @@ class usuariocontroller extends Controller
             
 
         });
-        return redirect("/login");
+          return redirect("/login");
       
     }
 
