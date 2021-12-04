@@ -175,7 +175,7 @@
 
                         <a hidden id="guardar" class="uk-button uk-button-primary">Registrarse</a>
 
-                        <a hidden href="/login" id="redirect" class="uk-button uk-button-primary">redireccion</a>
+                        
 
 
                     </fieldset>
