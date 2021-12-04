@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\registro;
 use App\Models\persona;
 use App\Models\usuario;
 use Illuminate\Support\Facades\DB;
@@ -38,7 +39,7 @@ class usuariocontroller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(registro $request)
     {
         //
         DB::transaction(function() use ($request)
@@ -82,7 +83,7 @@ class usuariocontroller extends Controller
                     'password'=>encrypt($request['contrasena']),                   
                     'Privilegios'=>"Dependiente",  
                     'RolAsignado'=>$request->RolAsignado,
-                    'estado'=>'1',
+                    'estado'=>1,
                               
                 ]);
 
@@ -93,7 +94,9 @@ class usuariocontroller extends Controller
             
 
         });
+        return response()->json(["Mensaje"=>"Usuario Creado Satisfactoriamente"]);
           return redirect("/login");
+          
       
     }
 

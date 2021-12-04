@@ -10,7 +10,7 @@ class usuario extends Model
     use HasFactory;
     protected $table='usuario';
     protected $primaryKey='IdUsuario';
-    protected $fillable=['idpersona','Usuario','password','remember_token','Privilegios','RolAsignado'];
+    protected $fillable=['idpersona','Usuario','password','remember_token','Privilegios','RolAsignado','estado'];
      public $timestamps = false;
 
     public function persona(){
