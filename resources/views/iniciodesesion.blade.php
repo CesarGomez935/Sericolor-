@@ -50,7 +50,7 @@
                     <div class="text-center text-lg-start mt-4 pt-2">
                         <button type="button" class="btn btn-danger btn-lg"
                             style="padding-left: 2.5rem; padding-right: 2.5rem;">salir</button>
-                        <button type="button" class="btn btn-primary btn-lg"
+                        <button type="submit" class="btn btn-primary btn-lg"
                             style="padding-left: 2.5rem; padding-right: 2.5rem;">Ingresar</button>
                         <p class="small fw-bold mt-2 pt-1 mb-0">No tienes cuenta? <a href="/registro"
                                 class="link-danger">Registrarse</a></p>
@@ -85,3 +85,74 @@
         <!-- Right -->
     </div>
 </section>
+<script>
+    $(function() {
+        enviarlogin();
+
+    });
+    var enviarlogin = function() {
+
+        $("#frmlogin").on("submit", function(e) {
+
+            e.preventDefault();
+            $.ajax({
+
+
+                url: '{{}}',
+                method: 'POST',
+                dataType: 'json',
+                data: new FormData($("#frmlogin")[0]),
+                contentType: false,
+                processData: false,
+                beforesend: function() {
+                    $("#alertError").hide();
+                    $("#alertSuccess").hide();
+                    console.log("Enviando.....");
+
+                }
+                success: function(data) {
+                    let mensaje = data.mensaje;
+                    let usuario = data.usuario;
+                    $("#frmlogin")[0].reset();
+                    $("#msjExitoRegistro").html(data.mensaje);
+                    $("#alertSuccess").show();
+                }
+                error: function(data) {
+                    let errores = data.responseJson.errors;
+                    let msjError = '';
+                    object.value(errores).forEach(function(valor) {
+                        msjError += '<li>' + valor[0] + '</li>';
+
+                    });
+                    $("#listaErrores").html(msjError);
+                    $("#alertError").show();
+
+                }
+                complete: function() {
+                    console.log("completado");
+                }
+
+
+
+            })
+
+
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+</script>
