@@ -11,6 +11,7 @@ use App\Http\Controllers\promocioncontroller;
 use App\Http\Controllers\maestrocontrolador;
 Use App\Http\Controllers\vistas;
 Use App\Http\Controllers\maestrocontroladorImpresion;
+Use App\Http\Controllers\logincontroller;
 use App\Http\Controllers\SliderPrincipalController;
 Use Barryvdh\DomPDF\Facade as PDF;
 
@@ -73,7 +74,7 @@ Route::get('menu/pedidos_serigrafia', function () {
 Route::get('login', function () {
     return view('iniciodesesion');
 });
-
+Route::get('login1', [logincontroller::class,"index"]);
 Route::get('registro', function () {
     return view('registro');
 });

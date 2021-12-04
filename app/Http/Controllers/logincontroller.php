@@ -9,8 +9,15 @@ class logincontroller extends Controller
     //
     public function index(){
 
-
+        return view('iniciodesesion');
 
         
+    }
+
+    public function validarcredenciales(Request $request)
+    {
+
+            dd($request->all());
+
     }
 }
