@@ -39,7 +39,7 @@ class usuariocontroller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(registro $request)
+    public function store(Request $request)
     {
         //
         DB::transaction(function() use ($request)
@@ -54,7 +54,7 @@ class usuariocontroller extends Controller
              'correo'=>'required',
              'direccion'=>'required',
 
-             'usuario'=>'required',
+             'usuario'=>'required|max:255|unique:usuario,Usuario',
              'Contrasena'=>'required',
              'RolAsignado'=>'required',
                    
