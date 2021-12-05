@@ -74,7 +74,13 @@ Route::get('menu/pedidos_serigrafia', function () {
 Route::get('login', function () {
     return view('iniciodesesion');
 });
+//Inicio de sesion
 Route::get('login1', [logincontroller::class,"index"]);
+Route::post('login1/verificar', [logincontroller::class,"validarcredenciales"])->name("login.verificar");
+
+
+
+
 Route::get('registro', function () {
     return view('registro');
 });
