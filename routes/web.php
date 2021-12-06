@@ -51,10 +51,40 @@ Route::get('galeria', function () {
 
 
 /* Back-End */
-Route::get('menu', function () {
-    return view('menu');
-});
+Route::get('login', [logincontroller::class,"index"])->name('login.index');
+// Route::get('login1', [logincontroller::class,"index"]);
+Route::post('login1/verificar', [logincontroller::class,"validarcredenciales"])->name("login.verificar");
+Route::get('login/cerrar', [logincontroller::class,"cierredesesion"]);
 
+
+
+// Route::get('/pdf', function () {
+//   $pdf = PDF::loadView('reportes.personal');
+//   return $pdf->download('pruebapdf.pdf');
+// });
+
+// Route::get('/pdf/personal', function () {
+//      return view('reportes.personal');
+    
+// });
+
+
+
+// Route::get('/editform_sublimacion', function () {
+//     return view('EditarformSublimacion');
+// });
+// Route::get('/editform_serigrafia', function () {
+//     return view('EditarformSerigrafia');
+// });
+
+// Route::get('/editform_impresion_digital', function () {
+//     return view('EditarformImpresion');
+// });
+
+//Middleware que autentica todo el sistema
+Route::middleware(['autenticado'])->group(function(){
+    Route::get('menu', [pruebacontroller::class,"index"]);
+   
 
 Route::get('menu/pedidos_bordado', function () {
     return view('pedidosBordado');
@@ -75,9 +105,6 @@ Route::get('menu/pedidos_serigrafia', function () {
 // Route::get('login', function () {
 //     return view('iniciodesesion');
 // });
-Route::get('login', [logincontroller::class,"index"])->name('login.index');
-// Route::get('login1', [logincontroller::class,"index"]);
-Route::post('login1/verificar', [logincontroller::class,"validarcredenciales"])->name("login.verificar");
 
 
 Route::get('registro', function () {
@@ -99,9 +126,7 @@ Route::get('/menu/menu_facturacion/form_bordado', function () {
 });
 
 
-Route::get('menu', function () {
-    return view('menu');
-});
+
 
 Route::get('/menu/menu_facturacion/form_sublimacion', function () {
     return view('formSublimacion');
@@ -219,30 +244,26 @@ Route::put('/menu/menu_facturacion/form_sublimacion/{id}', [maestrocontrolador::
 Route::get('/menu/menu_facturacion/form_impresion_digital/{id}/edit',[maestrocontrolador::class,"editimpresion"])->name("maestro.editimpresion");
 Route::put('/menu/menu_facturacion/form_impresion_digital/{id}', [maestrocontrolador::class,"editimpresion"])->name("maestro.update");
 
-// Route::get('/pdf', function () {
-//   $pdf = PDF::loadView('reportes.personal');
-//   return $pdf->download('pruebapdf.pdf');
-// });
-
-// Route::get('/pdf/personal', function () {
-//      return view('reportes.personal');
-    
-// });
 
 
 
-// Route::get('/editform_sublimacion', function () {
-//     return view('EditarformSublimacion');
-// });
-// Route::get('/editform_serigrafia', function () {
-//     return view('EditarformSerigrafia');
-// });
 
-// Route::get('/editform_impresion_digital', function () {
-//     return view('EditarformImpresion');
-// });
 
-//prueba middleware
-Route::middleware(['autenticado'])->group(function(){
-    Route::get('miperfil', [pruebacontroller::class,"index"]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });

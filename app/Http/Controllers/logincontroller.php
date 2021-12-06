@@ -39,6 +39,7 @@ class logincontroller extends Controller
              $respuesta["usuario"]=$usuarioexistente;
 
            auth()->loginUsingId($usuarioexistente->IdUsuario,$recuerdame);
+             
 
              }else{
                   $respuesta["error"]=true;
@@ -53,5 +54,10 @@ class logincontroller extends Controller
           }
 
         return response()->json($respuesta);
+    }
+    public function cierredesesion(){
+      auth()->logout();
+      session()->flush();
+      return redirect()->route('login.index');
     }
 }
