@@ -171,6 +171,7 @@ class CrudTrabajadorController extends Controller
                 $usuario-> idpersona=$persona->IdPersona;             
                 
                 $usuario-> Privilegios=$request->privilegios;
+                 $usuario-> estado=$request->estado;
                 $usuario-> RolAsignado=$request->rol_asignado;
                 $usuario->save();
                 

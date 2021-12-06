@@ -10,17 +10,22 @@
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
     <!-- JQuery-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
 <header>
@@ -28,7 +33,8 @@
     <nav class="uk-navbar uk-navbar-container ">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Agregar Personal</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Agregar
+                    Personal</span>
             </a>
         </div>
 
@@ -54,7 +60,8 @@
                     <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
                     <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
                     <li class="uk-active"> <a href="/menu/pedidos_serigrafia"> Pedidos Serigrafía </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital
+                        </a></li>
                     <hr class="uk-divider-icon">
                     <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
 
@@ -80,7 +87,7 @@
 <body>
 
 
-    <form action="{{route("trabajador.update",$trabajador)}}" method="POST">
+    <form action="{{ route('trabajador.update', $trabajador) }}" method="POST">
 
 
 
@@ -100,47 +107,60 @@
         <div class="uk-padding-small uk-background-muted" style="padding-left: 300px;">
 
             <div style="text-align: center;" class="uk-padding">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png" alt="" width="300" height="300">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png" alt="" width="300"
+                    height="300">
             </div>
 
             <div style="text-align: center; " class="">
                 <div class="uk-form-horizontal uk-margin-large">
 
 
-                    <input hidden name="IdUsuario" value="{{$trabajador->IdUsuario}}" type="text">
+                    <input hidden name="IdUsuario" value="{{ $trabajador->IdUsuario }}" type="text">
 
 
 
                     <div class="uk-margin">
-                        <label for="primer_nombre_trabajador" class="uk-form-label" for="form-horizontal-text">Primer Nombre</label>
+                        <label for="primer_nombre_trabajador" class="uk-form-label" for="form-horizontal-text">Primer
+                            Nombre</label>
                         <div class="uk-form-controls">
-                            <input value="{{$trabajador->Primer_Nombre}}" name="primer_nombre" id="primer_nombre_trabajador" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Primer Nombre">
+                            <input value="{{ $trabajador->Primer_Nombre }}" name="primer_nombre"
+                                id="primer_nombre_trabajador" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="Primer Nombre">
 
                         </div>
                     </div>
 
                     <div class="uk-margin">
-                        <label for="segundo_nombre_trabajador" class="uk-form-label" for="form-horizontal-text">Segundo Nombre</label>
+                        <label for="segundo_nombre_trabajador" class="uk-form-label" for="form-horizontal-text">Segundo
+                            Nombre</label>
                         <div class="uk-form-controls">
-                            <input value="{{$trabajador->Segundo_Nombre}}" name="segundo_nombre" id="segundo_nombre_trabajador" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Segundo Nombre">
+                            <input value="{{ $trabajador->Segundo_Nombre }}" name="segundo_nombre"
+                                id="segundo_nombre_trabajador" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="Segundo Nombre">
 
 
                         </div>
                     </div>
 
                     <div class="uk-margin">
-                        <label for="primer_apellido_trabajador" class="uk-form-label" for="form-horizontal-text">Primer Apellido</label>
+                        <label for="primer_apellido_trabajador" class="uk-form-label" for="form-horizontal-text">Primer
+                            Apellido</label>
                         <div class="uk-form-controls">
-                            <input value="{{$trabajador->Primer_Apellido}}" name="primer_apellido" id="primer_apellido_trabajador" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Primer Apellido">
+                            <input value="{{ $trabajador->Primer_Apellido }}" name="primer_apellido"
+                                id="primer_apellido_trabajador" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="Primer Apellido">
 
 
                         </div>
                     </div>
 
                     <div class="uk-margin">
-                        <label for="segundo_apellido_trabajador" class="uk-form-label" for="form-horizontal-text">Segundo Apellido</label>
+                        <label for="segundo_apellido_trabajador" class="uk-form-label"
+                            for="form-horizontal-text">Segundo Apellido</label>
                         <div class="uk-form-controls">
-                            <input value="{{$trabajador->Segundo_Apellido}}" name="segundo_apellido" id="segundo_apellido_trabajador" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Segundo Apellido">
+                            <input value="{{ $trabajador->Segundo_Apellido }}" name="segundo_apellido"
+                                id="segundo_apellido_trabajador" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="Segundo Apellido">
 
 
                         </div>
@@ -149,9 +169,12 @@
 
 
                     <div class="uk-margin">
-                        <label for="telefono_trabajador" class="uk-form-label" for="form-horizontal-text">Teléfono</label>
+                        <label for="telefono_trabajador" class="uk-form-label"
+                            for="form-horizontal-text">Teléfono</label>
                         <div class="uk-form-controls">
-                            <input value="{{$trabajador->Telefono}}" name="telefono" id="telefono_trabajador" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Teléfono">
+                            <input value="{{ $trabajador->Telefono }}" name="telefono" id="telefono_trabajador"
+                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
+                                placeholder="Teléfono">
 
                         </div>
                     </div>
@@ -159,25 +182,45 @@
                     <div class="uk-margin">
                         <label for="cedula_trabajador" class="uk-form-label" for="form-horizontal-text">Cédula</label>
                         <div class="uk-form-controls">
-                            <input value="{{$trabajador->Cedula}}" name="cedula" id="cedula_trabajador" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Cédula">
+                            <input value="{{ $trabajador->Cedula }}" name="cedula" id="cedula_trabajador"
+                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
+                                placeholder="Cédula">
 
                         </div>
                     </div>
 
+                    <div class="uk-margin">
+                        <label for="privilegios" class="uk-form-label" for="form-horizontal-text">Estado del
+                            trabajador</label>
+                        <div class="uk-margin">
+                            <div uk-form-custom="target: > * > span:first-child">
+                                <select name="estado" id="estado">
+
+                                    <option @if ($trabajador->estado == '0') selected @endif value="0">Inactivo</option>
+                                    <option @if ($trabajador->estado == '1') selected @endif value="1">Activo</option>
+
+                                </select>
+                                <button class="uk-button uk-button-default" type="button" tabindex="-1">
+                                    <span></span>
+                                    <span uk-icon="icon: chevron-down"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="uk-margin">
                         <label for="privilegios" class="uk-form-label" for="form-horizontal-text">Privilegios</label>
                         <div class="uk-margin">
                             <div uk-form-custom="target: > * > span:first-child">
                                 <select name="privilegios" id="privilegios">
 
-                                    <option @if($trabajador->Privilegios == "Administrador") selected @endif value="Administrador">Administrador</option>
-                                    <option @if($trabajador->Privilegios == "Gestor") selected @endif value="Gestor">Gestor</option>
+                                    <option @if ($trabajador->Privilegios == 'Administrador') selected @endif value="Administrador">Administrador</option>
+                                    <option @if ($trabajador->Privilegios == 'Gestor') selected @endif value="Gestor">Gestor</option>
 
 
 
-                                    <option @if($trabajador->Privilegios == "Dependiente") selected @endif value="Dependiente">Dependiente</option>
+                                    <option @if ($trabajador->Privilegios == 'Dependiente') selected @endif value="Dependiente">Dependiente</option>
 
-                                    <option @if($trabajador->Privilegios == "Deshabilitado") selected @endif value="Deshabilitado">Deshabilitado</option>
+
 
 
 
@@ -195,15 +238,20 @@
                     <div class="uk-margin">
                         <label for="Correo_personal" class="uk-form-label" for="form-horizontal-text">Correo</label>
                         <div class="uk-form-controls">
-                            <input value="{{$trabajador->Correo}}" name="correo" id="correo_personal" class="uk-input uk-form-width-large" id="form-horizontal-text" type="email" placeholder="Correo">
+                            <input value="{{ $trabajador->Correo }}" name="correo" id="correo_personal"
+                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="email"
+                                placeholder="Correo">
 
                         </div>
                     </div>
 
                     <div class="uk-margin">
-                        <label for="direccion_personal" class="uk-form-label" for="form-horizontal-text">Dirección</label>
+                        <label for="direccion_personal" class="uk-form-label"
+                            for="form-horizontal-text">Dirección</label>
                         <div class="uk-form-controls">
-                            <input value="{{$trabajador->Direccion}}" name="direccion" id="direccion_personal" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Dirección">
+                            <input value="{{ $trabajador->Direccion }}" name="direccion" id="direccion_personal"
+                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
+                                placeholder="Dirección">
 
                         </div>
                     </div>
@@ -220,15 +268,16 @@
 
 
 
-                                    <option @if($trabajador->RolAsignado == "Impresion_Digital") selected @endif value="Impresion_Digital">Impresión Digital</option>
+                                    <option @if ($trabajador->RolAsignado == 'Impresion_Digital') selected @endif value="Impresion_Digital">Impresión Digital
+                                    </option>
 
-                                    <option @if($trabajador->RolAsignado == "Bordado") selected @endif value="Bordado">Bordado</option>
+                                    <option @if ($trabajador->RolAsignado == 'Bordado') selected @endif value="Bordado">Bordado</option>
 
-                                    <option @if($trabajador->RolAsignado == "Sublimacion") selected @endif value="Sublimacion">Sublimación</option>
+                                    <option @if ($trabajador->RolAsignado == 'Sublimacion') selected @endif value="Sublimacion">Sublimación</option>
 
-                                    <option @if($trabajador->RolAsignado == "Serigrafia") selected @endif value="Serigrafia">Serigrafía</option>
+                                    <option @if ($trabajador->RolAsignado == 'Serigrafia') selected @endif value="Serigrafia">Serigrafía</option>
 
-                                    <option @if($trabajador->RolAsignado == "Recepcion") selected @endif value="Recepcion">Recepción</option>
+                                    <option @if ($trabajador->RolAsignado == 'Recepcion') selected @endif value="Recepcion">Recepción</option>
 
 
 
@@ -261,8 +310,10 @@
         <div class="uk-padding-small uk-background-muted uk-padding">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 
-                <a href="/menu/menuadmon/personal" class="uk-button uk-button-primary  " style="margin-left: 100px">Atrás </a>
-                <button type="submit" id="guardar" onclick="return confirm('¿Está seguro que desea continuar?')" class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
+                <a href="/menu/menuadmon/personal" class="uk-button uk-button-primary  "
+                    style="margin-left: 100px">Atrás </a>
+                <button type="submit" id="guardar" onclick="return confirm('¿Está seguro que desea continuar?')"
+                    class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
 
 
             </div>
