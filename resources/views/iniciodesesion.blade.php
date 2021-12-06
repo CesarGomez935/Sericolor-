@@ -77,6 +77,8 @@
                             style="padding-left: 2.5rem; padding-right: 2.5rem;">salir</button>
                         <button type="submit" class="btn btn-success btn-lg"
                             style="padding-left: 2.5rem; padding-right: 2.5rem;">Ingresar</button>
+                        <p class="small fw-bold mt-2 pt-1 mb-0">No tienes cuenta? <a href="/registro"
+                                class="link-danger">Registrarse</a></p>
 
                     </div>
                 </form>

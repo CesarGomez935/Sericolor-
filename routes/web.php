@@ -55,6 +55,9 @@ Route::get('login', [logincontroller::class,"index"])->name('login.index');
 // Route::get('login1', [logincontroller::class,"index"]);
 Route::post('login1/verificar', [logincontroller::class,"validarcredenciales"])->name("login.verificar");
 Route::get('login/cerrar', [logincontroller::class,"cierredesesion"]);
+Route::get('registro', function () {
+    return view('registro');
+});
 
 
 
@@ -107,9 +110,7 @@ Route::get('menu/pedidos_serigrafia', function () {
 // });
 
 
-Route::get('registro', function () {
-    return view('registro');
-});
+
 
 Route::get('menu/menu_facturacion', function () {
     return view('menufacturacion');

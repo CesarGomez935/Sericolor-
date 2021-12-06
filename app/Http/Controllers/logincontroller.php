@@ -49,7 +49,7 @@ class logincontroller extends Controller
           }
           else{
              $respuesta["error"]=true;
-             $respuesta["mensaje"]="Este usuario no existe";
+             $respuesta["mensaje"]="Este usuario no existe o ha sido desactivado temporalmente";
 
           }
 

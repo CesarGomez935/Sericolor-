@@ -184,7 +184,7 @@
 
                         </div>
 
-                        <a hidden id="guardar" class="uk-button uk-button-primary">Registrarse</a>
+                        <a hidden id="guardar" href="/login" class="uk-button uk-button-primary">Registrarse</a>
 
 
 
@@ -218,8 +218,9 @@
 
 
         $('#guardar').click(function(res) {
-            guardarpedido();
 
+            guardarpedido();
+            alert("Guardado con exito");
         });
 
         function peticionapi(data, method, onSucess) {
@@ -238,8 +239,7 @@
                 },
                 success(res) {
 
-                    alert("Guardado con exito")
-                    document.getElementById("redirect").click();
+                    alert("Guardado con exito");
 
 
 

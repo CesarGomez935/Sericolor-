@@ -90,7 +90,7 @@ class usuariocontroller extends Controller
                    'password'=>encrypt($request->Contrasena),                   
                     'Privilegios'=>"Dependiente",  
                     'RolAsignado'=>$request->RolAsignado,
-                    'estado'=>1,
+                    'estado'=>0,
                     //  $contrasena=$request->input('Contrasena'),
                     //    $contrasenencriptada->password=encrypt($contrasena),
                     // //  $contrasenencriptada= new usuario(),
@@ -101,12 +101,12 @@ class usuariocontroller extends Controller
             
             
                 
-            
+            return redirect()->route('login.index');
             
 
         });
         return response()->json(["Mensaje"=>"Usuario Creado Satisfactoriamente"]);
-          return redirect("/login");
+       
           
       
     }
