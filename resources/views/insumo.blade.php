@@ -50,7 +50,7 @@
                     <hr class="uk-divider-icon">
                     <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
 
-                    <ul class="uk-nav-sub">
+                   <ul class="uk-nav-sub">
                         <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
                         <li> <a href="/menu/menuadmon/personal">Personal</a></li>
                         <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
@@ -60,6 +60,12 @@
                         <li> <a href="/menu/menuadmon/personal">Personal</a></li>
                         <li> <a href="/menu/menuadmon/promociones">Menú Principal</a></li>
                     </ul>
+                    <hr class="uk-divider-icon">
+
+                    <li class="uk-parent">  Sesión </li>
+                     <ul class="uk-nav-sub">      
+                          <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
+                     </ul>
 
                 </ul>
 

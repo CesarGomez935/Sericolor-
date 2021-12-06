@@ -26,30 +26,40 @@
                 <div class="container" style="">
                     <div class="row mt-5">
                         <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="row" id="alertSuccess" style="display:none">
-                                        <div class="col-12">
-                                            <div class="alert alert-success" role="alert">
-                                                <p id="msjExitoRegistro"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row" id="alertError" style="display:none">
-                                        <div class="col-12">
-                                            <div class="alert alert-danger" role="alert">
-                                                <ul id="listaErrores"></ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <div class="">
+                    <div class="card-body">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert" id="alertSuccess" style="display:none">
+
+                            <div class="col-12">
+                                
+                                    <p id="msjExitoRegistro"></p>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+                                
+                            </div>
+                        </div>
+
+                        
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alertError" style="display:none">
+
+                            <div class="col-12">
+                                
+                                    <ul id="listaErrores"></ul>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
                 <form id="frmlogin">
                     @csrf
                     <h1>Inicio de sesión</h1>
