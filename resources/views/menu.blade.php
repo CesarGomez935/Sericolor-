@@ -130,7 +130,8 @@
                                 Pedidos de Bordado
                             </a>
                         </td>
-                        <td style="padding-left: 100px;">
+                        <td  style="padding-left: 100px;">
+
                             <a href="/menu/menuadmon" class="btn btn-lg" style="background-color:transparent">
                                 <div style="text-align:center"><svg xmlns="http://www.w3.org/2000/svg" width="200"
                                         height="200" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
