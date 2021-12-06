@@ -23,6 +23,31 @@
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-md-9 col-lg-6 col-xl-5">
                 <img src="img/Logo_sericolor.png" width="400" height="300" class="img-fluid" alt="Sample image">
+                <div class="container" style="">
+                    <div class="row mt-5">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row" id="alertSuccess" style="display:none">
+                                        <div class="col-12">
+                                            <div class="alert alert-success" role="alert">
+                                                <p id="msjExitoRegistro"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="alertError" style="display:none">
+                                        <div class="col-12">
+                                            <div class="alert alert-danger" role="alert">
+                                                <ul id="listaErrores"></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                 <form id="frmlogin">
@@ -43,11 +68,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <!-- Checkbox -->
                         <div class="form-check mb-0">
-                            <input class="form-check-input me-2" type="checkbox" name="recuerdame" value="1"
-                                id="recuerdame" />
-                            <label class="form-check-label" for="recuerdame">
-                                Recuerdame
-                            </label>
+
                         </div>
 
                     </div>
@@ -62,31 +83,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row" id="alertSuccess" style="">
-                            <div class="col-12">
-                                <div class="alert alert-success" role="alert">
-                                    <p id="msjExitoRegistro"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="alertError" style="">
-                            <div class="col-12">
-                                <div class="alert alert-danger" role="alert">
-                                    <ul id="listaErrores"></ul>
-                                </div>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div
         class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
@@ -147,8 +144,10 @@
 
                         let mensaje = data.mensaje;
                         let usuario = data.usuario;
+                        $("#frmlogin")[0].reset();
                         $("#msjExitoRegistro").html(mensaje + "," + " " + "Dios te Bendiga");
                         $("#alertSuccess").show();
+                        window.location.href = '{{ route('login.menu') }}'
                     } else {
 
                         let mensaje = data.mensaje;
@@ -158,7 +157,7 @@
 
 
                     }
-                    window.location.href = '{{ route('login.menu') }}'
+
                 },
                 error: function(data) {
                     let errores = data.responseJson.errors;
