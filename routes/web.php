@@ -83,7 +83,7 @@ Route::get('login/cerrar', [logincontroller::class,"cierredesesion"]);
 
 //Middleware que autentica todo el sistema
 Route::middleware(['autenticado'])->group(function(){
-    Route::get('menu', [pruebacontroller::class,"index"]);
+    Route::get('menu', [pruebacontroller::class,"index"])->name("login.menu");
    
 
 Route::get('menu/pedidos_bordado', function () {

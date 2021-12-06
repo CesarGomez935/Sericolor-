@@ -49,15 +49,14 @@
                                 Recuerdame
                             </label>
                         </div>
-                        <a href="#!" class="text-body">Olvido su contraseña?</a>
+
                     </div>
                     <div class="text-center text-lg-start mt-4 pt-2">
                         <button type="button" class="btn btn-danger btn-lg"
                             style="padding-left: 2.5rem; padding-right: 2.5rem;">salir</button>
                         <button type="submit" class="btn btn-success btn-lg"
                             style="padding-left: 2.5rem; padding-right: 2.5rem;">Ingresar</button>
-                        <p class="small fw-bold mt-2 pt-1 mb-0">No tienes cuenta? <a href="/registro"
-                                class="link-danger">Registrarse</a></p>
+
                     </div>
                 </form>
             </div>
@@ -159,6 +158,7 @@
 
 
                     }
+                    window.location.href = '{{ route('login.menu') }}'
                 },
                 error: function(data) {
                     let errores = data.responseJson.errors;
