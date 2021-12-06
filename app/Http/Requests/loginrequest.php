@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+
 class loginrequest extends FormRequest
 {
     /**
@@ -13,7 +14,7 @@ class loginrequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,6 +25,9 @@ class loginrequest extends FormRequest
     public function rules()
     {
         return [
+
+            'usuario'=>'required|max:255',
+          //  'password'=>'required|max:50'
             //
         ];
     }

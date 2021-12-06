@@ -169,8 +169,8 @@
 
                         </div>
                         <div class="uk-margin">
-                            <input oninput="verificarPasswords()" id="password_personal" class="uk-input"
-                                type="password" placeholder="Contraseña">
+                            <input oninput="verificarPasswords()" name="password" id="password_personal"
+                                class="uk-input" type="password" placeholder="Contraseña">
 
 
 

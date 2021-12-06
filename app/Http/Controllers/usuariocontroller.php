@@ -7,6 +7,7 @@ use App\Http\Requests\registro;
 use App\Models\persona;
 use App\Models\usuario;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Crypt;
 
 class usuariocontroller extends Controller
 {
@@ -42,6 +43,12 @@ class usuariocontroller extends Controller
     public function store(Request $request)
     {
         //
+     
+
+        // $contrasena=$request->input('Contrasena');
+        // $contrasenencriptada= new usuario();
+        // $contrasenencriptada->password=encrypt($contrasena);
+
         DB::transaction(function() use ($request)
         {
             $request->validate([
@@ -79,11 +86,15 @@ class usuariocontroller extends Controller
                  
                 $usuario=usuario::create([                    
                     'idpersona'=>$persona->IdPersona,                
-                    'Usuario'=>$request->usuario,                    
-                    'password'=>encrypt($request['contrasena']),                   
+                    'Usuario'=>$request->usuario,             
+                   'password'=>encrypt($request->Contrasena),                   
                     'Privilegios'=>"Dependiente",  
                     'RolAsignado'=>$request->RolAsignado,
                     'estado'=>1,
+                    //  $contrasena=$request->input('Contrasena'),
+                    //    $contrasenencriptada->password=encrypt($contrasena),
+                    // //  $contrasenencriptada= new usuario(),
+                    // // $contrasenencriptada->password=encrypt($contrasena),
                               
                 ]);
 

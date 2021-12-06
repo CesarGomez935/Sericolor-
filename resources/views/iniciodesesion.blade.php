@@ -12,13 +12,12 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        //     < script src = "https://code.jquery.com/jquery-3.5.1.min.js"
-        //     integrity = "sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-        //     crossorigin = "anonymous" >
-        // 
+        < script src = "https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity = "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin = "anonymous" >
     </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
 
     <div class="container-fluid h-custom">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -37,7 +36,7 @@
                     </div>
                     <!-- Password input -->
                     <div class="form-outline mb-3">
-                        <input type="password" id="password" name="password" class="form-control form-control-lg"
+                        <input type="password" name="password" id="password" class="form-control form-control-lg"
                             placeholder="Ingresa tu contraseña" />
                         <label class="form-label" for="password">Contraseña</label>
                     </div>
@@ -54,7 +53,7 @@
                     <div class="text-center text-lg-start mt-4 pt-2">
                         <button type="button" class="btn btn-danger btn-lg"
                             style="padding-left: 2.5rem; padding-right: 2.5rem;">salir</button>
-                        <button type="submit" class="btn btn-primary btn-lg"
+                        <button type="submit" class="btn btn-success btn-lg"
                             style="padding-left: 2.5rem; padding-right: 2.5rem;">Ingresar</button>
                         <p class="small fw-bold mt-2 pt-1 mb-0">No tienes cuenta? <a href="/registro"
                                 class="link-danger">Registrarse</a></p>
@@ -137,33 +136,33 @@
                 contentType: false,
                 processData: false,
                 beforesend: function() {
-                    //   $("#alertError").hide();
-                    //   $("#alertSuccess").hide();
+                    // $("#alertError").hide();
+                    // $("#alertSuccess").hide();
                     console.log("Enviando.....");
 
                 },
                 success: function(data) {
                     console.log(data);
-                    /*   let mensaje = data.mensaje;
-                       let usuario = data.usuario;
-                       $("#frmlogin")[0].reset();
-                       $("#msjExitoRegistro").html(data.mensaje);
-                       $("#alertSuccess").show();*/
+                    // let mensaje = data.mensaje;
+                    // let usuario = data.usuario;
+                    // $("#frmlogin")[0].reset();
+                    // $("#msjExitoRegistro").html(data.mensaje);
+                    // $("#alertSuccess").show();
                 },
                 error: function(data) {
-                    /*   let errores = data.responseJson.errors;
-                       let msjError = '';
-                       object.value(errores).forEach(function(valor) {
-                           msjError += '<li>' + valor[0] + '</li>';
+                    // let errores = data.responseJson.errors;
+                    // let msjError = '';
+                    // object.value(errores).forEach(function(valor) {
+                    //     msjError += '<li>' + valor[0] + '</li>';
 
-                       });
-                       $("#listaErrores").html(msjError);
-                       $("#alertError").show();*/
+                    // });
+                    // $("#listaErrores").html(msjError);
+                    // $("#alertError").show();
 
                 },
                 complete: function() {
                     console.log("completado");
-                }
+                },
 
 
 
