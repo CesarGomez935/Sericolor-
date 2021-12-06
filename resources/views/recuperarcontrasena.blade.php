@@ -66,33 +66,20 @@
 
                 <form id="frmlogin">
                     @csrf
-                    <h1>Inicio de sesión</h1>
+                    <h1>Recuperar contraseña</h1>
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="usuario" name="usuario" class="form-control form-control-lg"
-                            placeholder="Introduce tu usuario" />
-                        <label class="form-label" for="usuario">Usuario</label>
+                        <input type="email" id="usuario" name="usuario" class="form-control form-control-lg"
+                            placeholder="Introduce tu correo" />
+                        <label class="form-label" for="usuario">Ingrese el correo de recuperacion</label>
                     </div>
                     <!-- Password input -->
-                    <div class="form-outline mb-3">
-                        <input type="password" name="password" id="password" class="form-control form-control-lg"
-                            placeholder="Ingresa tu contraseña" />
-                        <label class="form-label" for="password">Contraseña</label>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <!-- Checkbox -->
-                        <div class="form-check mb-0">
-
-                        </div>
-                        <a href="#!" class="text-body">Olvido su contraseña?</a>
-                    </div>
                     <div class="text-center text-lg-start mt-4 pt-2">
-                        <button type="button" class="btn btn-danger btn-lg"
-                            style="padding-left: 2.5rem; padding-right: 2.5rem;">salir</button>
+                        <a type="button" href="/login" class="btn btn-danger btn-lg"
+                            style="padding-left: 2.5rem; padding-right: 2.5rem;">Atras</a>
                         <button type="submit" class="btn btn-success btn-lg"
-                            style="padding-left: 2.5rem; padding-right: 2.5rem;">Ingresar</button>
-                        <p class="small fw-bold mt-2 pt-1 mb-0">No tienes cuenta? <a href="/registro"
-                                class="link-danger">Registrarse</a></p>
+                            style="padding-left: 2.5rem; padding-right: 2.5rem;">Recuperar</button>
+
 
                     </div>
                 </form>

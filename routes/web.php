@@ -37,7 +37,9 @@ Route::get('Inicio', function () {
 Route::get('acerca', function () {
     return view('Acerca');
 });
-
+Route::get('recuperar', function () {
+    return view('recuperarcontrasena');
+});
 Route::get('servicio', function () {
     return view('Servicios');
 });
