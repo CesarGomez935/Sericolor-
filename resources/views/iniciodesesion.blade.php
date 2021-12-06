@@ -43,7 +43,8 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <!-- Checkbox -->
                         <div class="form-check mb-0">
-                            <input class="form-check-input me-2" type="checkbox" value="" id="recuerdame" />
+                            <input class="form-check-input me-2" type="checkbox" name="recuerdame" value="1"
+                                id="recuerdame" />
                             <label class="form-check-label" for="recuerdame">
                                 Recuerdame
                             </label>
@@ -62,7 +63,7 @@
             </div>
         </div>
     </div>
-    <div class="container" hidden>
+    <div class="container">
         <div class="row mt-5">
             <div class="col-12">
                 <div class="card">
@@ -70,7 +71,6 @@
                         <div class="row" id="alertSuccess" style="">
                             <div class="col-12">
                                 <div class="alert alert-success" role="alert">
-                                    <h5>Bienvenido de nuevo</h5>
                                     <p id="msjExitoRegistro"></p>
                                 </div>
                             </div>
@@ -78,7 +78,6 @@
                         <div class="row" id="alertError" style="">
                             <div class="col-12">
                                 <div class="alert alert-danger" role="alert">
-                                    <p> Whoops! Ocurrieron algunos errores</p>
                                     <ul id="listaErrores"></ul>
                                 </div>
                             </div>
@@ -136,28 +135,40 @@
                 contentType: false,
                 processData: false,
                 beforesend: function() {
-                    // $("#alertError").hide();
-                    // $("#alertSuccess").hide();
+                    $("#alertError").hide();
+                    $("#alertSuccess").hide();
                     console.log("Enviando.....");
 
                 },
                 success: function(data) {
                     console.log(data);
-                    // let mensaje = data.mensaje;
-                    // let usuario = data.usuario;
-                    // $("#frmlogin")[0].reset();
-                    // $("#msjExitoRegistro").html(data.mensaje);
-                    // $("#alertSuccess").show();
+
+
+                    if (!data.error) {
+
+                        let mensaje = data.mensaje;
+                        let usuario = data.usuario;
+                        $("#msjExitoRegistro").html(mensaje + "," + " " + "Dios te Bendiga");
+                        $("#alertSuccess").show();
+                    } else {
+
+                        let mensaje = data.mensaje;
+                        $("#frmlogin")[0].reset();
+                        $("#listaErrores").html('<li>' + mensaje + '</li>');
+                        $("#alertError").show();
+
+
+                    }
                 },
                 error: function(data) {
-                    // let errores = data.responseJson.errors;
-                    // let msjError = '';
-                    // object.value(errores).forEach(function(valor) {
-                    //     msjError += '<li>' + valor[0] + '</li>';
+                    let errores = data.responseJson.errors;
+                    let msjError = '';
+                    object.value(errores).forEach(function(valor) {
+                        msjError += '<li>' + valor[0] + '</li>';
 
-                    // });
-                    // $("#listaErrores").html(msjError);
-                    // $("#alertError").show();
+                    });
+                    $("#listaErrores").html(msjError);
+                    $("#alertError").show();
 
                 },
                 complete: function() {

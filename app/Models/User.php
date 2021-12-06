@@ -9,35 +9,19 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory;
+    protected $table='usuario';
+    protected $primaryKey='IdUsuario';
+    protected $fillable=['idpersona','Usuario','password','remember_token','Privilegios','RolAsignado','estado'];
+     public $timestamps = false;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    public function persona(){
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+        return $this->belongsto(persona::class,'IdPersona');
+    }
+    public function maestro(){
+
+        return $this->HasMany(maestro::class);
+    }
 }

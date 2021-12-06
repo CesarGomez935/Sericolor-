@@ -22,26 +22,36 @@ class logincontroller extends Controller
     
          $usuario=$request->input('usuario');
          $password=$request->input('password');
+         $recuerdame=$request->input('recuerdame');
+         $respuesta=[];
 
          $usuarioexistente=DB::table('usuario')->where('Usuario',$usuario)->where('estado',1)->first();
 
         
 
            if(!empty($usuarioexistente)){
-
-            $passwordesencriptada = deCrypt($usuarioexistente->password);
-
-            
+              $passwordesencriptada = deCrypt($usuarioexistente->password);
+                          
             if($password == $passwordesencriptada){
 
-              dd($usuarioexistente);
+             $respuesta["error"]=false;
+             $respuesta["mensaje"]="usuario autenticado";
+             $respuesta["usuario"]=$usuarioexistente;
+
+           auth()->loginUsingId($usuarioexistente->IdUsuario,$recuerdame);
 
              }else{
-               dd("No existe este usuario");
+                  $respuesta["error"]=true;
+                  $respuesta["mensaje"]="contraseña incorrecta";
              }
 
           }
+          else{
+             $respuesta["error"]=true;
+             $respuesta["mensaje"]="Este usuario no existe";
 
-        
+          }
+
+        return response()->json($respuesta);
     }
 }
