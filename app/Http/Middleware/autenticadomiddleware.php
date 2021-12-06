@@ -16,6 +16,28 @@ class autenticadomiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+
+
+       if(auth()->check()){
+
+
         return $next($request);
+
+
+       }
+       else
+       {
+           return redirect()->route('login.index');
+       }
+
+
+
+
+
+
+
+
+
+        
     }
 }

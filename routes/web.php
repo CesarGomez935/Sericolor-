@@ -12,7 +12,8 @@ use App\Http\Controllers\maestrocontrolador;
 Use App\Http\Controllers\vistas;
 Use App\Http\Controllers\maestrocontroladorImpresion;
 Use App\Http\Controllers\logincontroller;
-use App\Http\Controllers\SliderPrincipalController;
+use App\Http\Controllers\pruebacontroller;
+use App\Http\Controllers\SliderPrincipalController; 
 Use Barryvdh\DomPDF\Facade as PDF;
 
 
@@ -71,10 +72,10 @@ Route::get('menu/pedidos_serigrafia', function () {
     return view('pedidosSerigrafia');
 });
 
-Route::get('login', function () {
-    return view('iniciodesesion');
-});
-Route::get('login1', [logincontroller::class,"index"]);
+// Route::get('login', function () {
+//     return view('iniciodesesion');
+// });
+Route::get('login', [logincontroller::class,"index"])->name('login.index');
 // Route::get('login1', [logincontroller::class,"index"]);
 Route::post('login1/verificar', [logincontroller::class,"validarcredenciales"])->name("login.verificar");
 
@@ -98,7 +99,9 @@ Route::get('/menu/menu_facturacion/form_bordado', function () {
 });
 
 
-
+Route::get('menu', function () {
+    return view('menu');
+});
 
 Route::get('/menu/menu_facturacion/form_sublimacion', function () {
     return view('formSublimacion');
@@ -238,3 +241,8 @@ Route::put('/menu/menu_facturacion/form_impresion_digital/{id}', [maestrocontrol
 // Route::get('/editform_impresion_digital', function () {
 //     return view('EditarformImpresion');
 // });
+
+//prueba middleware
+Route::middleware(['autenticado'])->group(function(){
+    Route::get('miperfil', [pruebacontroller::class,"index"]);
+});
