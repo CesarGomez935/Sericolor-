@@ -107,7 +107,7 @@ class personacontroller extends Controller
 
     public function getclientebusqueda($nombre)
     {
-                return persona::select("*")->join("cliente","cliente.IdPersona","=","persona.IdPersona")->where(DB::raw("CONCAT(Primer_Nombre,' ',Segundo_Nombre,' ',Primer_Apellido,' ',Segundo_Apellido)"),"LIKE",'%'.$nombre.'%')->get();
+                return persona::select("*")->join("cliente","cliente.IdPersona","=","persona.IdPersona")->where(DB::raw("CONCAT(cliente.IdPersona,' ',Primer_Nombre,' ',Segundo_Nombre,' ',Primer_Apellido,' ',Segundo_Apellido)"),"LIKE",'%'.$nombre.'%')->get();
 
 
     }

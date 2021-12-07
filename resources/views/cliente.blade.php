@@ -97,7 +97,7 @@
                     <a onclick="getnombre();" class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
 
 
-                    <input oninput="getnombre();" id="nombre_busqueda" class="uk-input uk-form-width-large" type="text">
+                    <input oninput="getnombre();" id="nombre_busqueda" placeholder="Busqueda por Código o Nombre" class="uk-input uk-form-width-large" type="text">
                 </div>
                 <a href="/menu/menuadmon/clientes/agregar_cliente" class="uk-button-primary uk-button uk-margin uk-padding ">agregar Cliente</a>
             </div>
@@ -248,19 +248,22 @@
             peticionapi2({}, 'GET', function(res) {
                 trabajadores = res;
                 let html = '';
-                res.forEach(trabajadores => {
-                    html +=
-                        '<tr>' +
-
-                        '<td>' + '<a class="uk-button" href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IdPersona + '/edit">' + trabajadores.Primer_Nombre + " " + trabajadores.Segundo_Nombre + " " + trabajadores.Primer_Apellido + " " + trabajadores.Segundo_Apellido + '</td>' + '</a>' +
-
+                 res.forEach(trabajadores => {
+                 html +=
+                 '<tr>' +
+                     '<td>' + trabajadores.IdPersona + '</td>' +
 
 
+                     '<td>' + '<a class="uk-button" href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IdPersona + '/edit">' + trabajadores.Primer_Nombre + " " + trabajadores.Segundo_Nombre + " " + trabajadores.Primer_Apellido + " " + trabajadores.Segundo_Apellido + '</td>' + '</a>' +
 
-                        '<td>' + '<a href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IdPersona + '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a href="/menu/menuadmon/clientes/' + trabajadores.IdPersona + '" action="" class=" " uk-icon="trash"></a>' + '</td>' +
 
-                        '</tr>'
-                });
+
+
+                     '<td>' + '<a href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IdPersona + '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a href="/menu/menuadmon/clientes/' + trabajadores.IdPersona + '" action="" class=" " uk-icon="trash"></a>' + '</td>' +
+
+                     '</tr>'
+                 });
+
 
                 $("#tablaclientes").html(html);
             });
