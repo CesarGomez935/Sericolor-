@@ -116,6 +116,7 @@
 
 
                     <tr>
+                        <th>Cod. Cliente</th>
                         <th>Cliente</th>
                         <th>Opciones</th>
 
@@ -188,6 +189,8 @@
                 res.forEach(trabajadores => {
                     html +=
                         '<tr>' +
+                            '<td>' +  trabajadores.IdPersona +  '</td>' +
+
 
                         '<td>' + '<a class="uk-button" href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IdPersona + '/edit">' + trabajadores.Primer_Nombre + " " + trabajadores.Segundo_Nombre + " " + trabajadores.Primer_Apellido + " " + trabajadores.Segundo_Apellido + '</td>' + '</a>' +
 
