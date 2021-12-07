@@ -58,7 +58,7 @@ class usuariocontroller extends Controller
              'telefono'=>'required',
              'correo'=>'required',
              'cedula'=>'required',
-             'correo'=>'required',
+             'correo'=>'required|unique:persona,Correo',
              'direccion'=>'required',
 
              'usuario'=>'required|max:255|unique:usuario,Usuario',
