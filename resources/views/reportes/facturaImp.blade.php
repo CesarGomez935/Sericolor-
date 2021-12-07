@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Personal reporte</title>
+    <title>Baucher</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" /> --}}
 </head>
@@ -159,7 +159,8 @@
                     <td>{{ $data->Tipo}} {{ $data->Descripcion}}</td>
                     <td>{{ $data->cantidad}}</td>
                     <td>{{ $data->observacion}}</td>
-                    <td>{{ $data->total}} </td>
+                    <td>{{ $data->total}} C$</td>
+
 
 
 
@@ -180,20 +181,23 @@
 
 
                     <td colspan="8">Costo Total:</td>
-                    <td><b>{{$Maestro->total_costo}}</b></td>
+                    <td><b>{{$Maestro->total_costo}} C$</b></td>
+
 
                 </tr>
                 <tr class="table-active">
 
 
                     <td colspan="8">Abono:</td>
-                    <td>{{$Maestro->abono}}</td>
+                    <td>{{$Maestro->abono}} C$</td>
+
                 </tr>
                 <tr class="table-active">
 
 
                     <td colspan="8">Saldo Restante:</td>
-                    <td><b>{{$Maestro->saldo}}</b></td>
+                    <td><b>{{$Maestro->saldo}} C$</b></td>
+
 
                 </tr>
 
@@ -416,7 +420,8 @@
                     <td>{{ $data->Tipo}} {{ $data->Descripcion}}</td>
                     <td>{{ $data->cantidad}}</td>
                     <td>{{ $data->observacion}}</td>
-                    <td>{{ $data->total}} </td>
+                    <td>{{ $data->total}} C$</td>
+
 
 
 
@@ -437,20 +442,23 @@
 
 
                     <td colspan="8">Costo Total:</td>
-                    <td><b>{{$Maestro->total_costo}}</b></td>
+                    <td><b>{{$Maestro->total_costo}} C$</b></td>
+
 
                 </tr>
                 <tr class="table-active">
 
 
                     <td colspan="8">Abono:</td>
-                    <td>{{$Maestro->abono}}</td>
+                    <td>{{$Maestro->abono}} C$</td>
+
                 </tr>
                 <tr class="table-active">
 
 
                     <td colspan="8">Saldo Restante:</td>
-                    <td><b>{{$Maestro->saldo}}</b></td>
+                    <td><b>{{$Maestro->saldo}} C$</b></td>
+
 
                 </tr>
 

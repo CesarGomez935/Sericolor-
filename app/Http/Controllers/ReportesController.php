@@ -129,7 +129,7 @@ class ReportesController extends Controller
       
 
       // download PDF file with download method
-      return $pdf->stream('Reporte pedidos diarios ~fecha~.pdf');
+      return $pdf->stream("Reporte pedidos diarios $$fecha.pdf");
     }
 
 
@@ -235,7 +235,7 @@ class ReportesController extends Controller
       
 
       // download PDF file with download method
-      return $pdf->stream('Reporte pedidos Rango de fecha $fecha1-$fecha2.pdf');
+      return $pdf->stream("Reporte pedidos Rango de fecha $fecha1 y $fecha2.pdf");
     }
 
 
@@ -318,7 +318,7 @@ class ReportesController extends Controller
       
 
       // download PDF file with download method
-      return $pdf->stream('Insumos.pdf');
+      return $pdf->stream("Ventas de todos los insumos entre: $fecha1 y $fecha2.pdf");
     }
 
     public function getinsumosrangoidsub($idinsumo,$fecha1,$fecha2)
@@ -372,7 +372,7 @@ class ReportesController extends Controller
       
 
       // download PDF file with download method
-      return $pdf->stream('Insumos.pdf');
+      return $pdf->stream("ventas de insmos entre: $fecha1 y $fecha2.pdf");
     }
 
     public function getinsumosrangoidimp($idinsumo,$fecha1,$fecha2)
@@ -408,7 +408,7 @@ class ReportesController extends Controller
       
 
       // download PDF file with download method
-      return $pdf->stream('Insumos.pdf');
+      return $pdf->stream("ventas de insumos entre: $fecha1 y $fecha2.pdf");
     }
 
     public function getpedidosrangoTipodepago($tipodepago,$fecha1,$fecha2)
@@ -432,7 +432,7 @@ class ReportesController extends Controller
       
 
       // download PDF file with download method
-      return $pdf->stream('Reporte pedidos Rango de fecha $fecha1-$fecha2.pdf');
+      return $pdf->stream("Reporte pedidos Rango de fecha $fecha1 y $fecha2.pdf");
     }
 
     public function getpedidoscliente($id,$fecha1,$fecha2){
@@ -460,7 +460,7 @@ class ReportesController extends Controller
       
 
       // download PDF file with download method
-      return $pdf->stream('Reporte pedidos Rango de fecha $fecha1-$fecha2.pdf');
+      return $pdf->stream("Reporte pedidos por: $nombre Rango de fecha: $fecha1 y $fecha2.pdf");
     }
 
 }

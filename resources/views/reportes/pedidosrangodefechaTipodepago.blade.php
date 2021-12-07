@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Personal reporte</title>
+    <title>pedidos en rango de fecha</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" /> --}}
 </head>
@@ -65,9 +65,12 @@
 
                         <td>{{ $data->descripcion }}</td>
                         <td>{{ $data->fecha }}</td>
-                        <td>{{ $data->total_costo }}</td>
-                        <td>{{ $data->abono}}</td>
-                        <td>{{ $data->saldo}}</td>
+                        <td>{{ $data->total_costo }} C$</td>
+
+                        <td>{{ $data->abono}} C$</td>
+
+                        <td>{{ $data->saldo}} C$</td>
+
 
 
 
@@ -81,9 +84,12 @@
 
                     <tr>
                         <td colspan="4">Total:</td>
-                        <td>{{ $data->Total }}</td>
-                        <td>{{ $data->Abono }}</td>
-                        <td>{{ $data->Saldo }}</td>
+                        <td>{{ $data->Total }} C$</td>
+
+                        <td>{{ $data->Abono }} C$</td>
+
+                        <td>{{ $data->Saldo }} C$</td>
+
 
 
                     </tr>

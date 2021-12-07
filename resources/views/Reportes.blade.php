@@ -191,7 +191,7 @@
                                         peticionapiser({}, 'GET', function(res) {
                                             usuarios = res;
                                             console.log(res);
-                                            let html = '<option disabled selected value=""> Seleccionar Insumo </option>';
+                                            let html = '<option disabled selected value=""> Seleccionar Insumo </option> <option selected value="t">Todos</option>';
 
                                             res.forEach(usuarios => {
                                                 html += '<option value="' + usuarios.IdInsumo + '">' + usuarios
@@ -531,7 +531,7 @@
 
 
 
-        if (fecha1 && fecha2 && idinsumo) {
+        if (fecha1 && fecha2 && idinsumo !=="t") {
             console.log(fecha1, fecha2, idinsumo);
             document.getElementById("pedidosinsumo").href = "/api/pdf/ventas_insumos/" + idinsumo + "/" + fecha1 + "/" + fecha2 + "/descargar";
         } else {
