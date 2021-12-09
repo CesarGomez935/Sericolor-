@@ -51,7 +51,23 @@ class maestrocontroladorImpresion extends Controller
         DB::transaction(function() use ($request)
         {
            
+            $request->validate([
 
+             'IdCategoria'=>'required',
+             'IdCliente'=>'required',
+             'IdUsuario'=>'required',
+             'fecha'=>'required',
+             'total_costo'=>'required',
+             'Saldo'=>'required',
+             'codseguimiento'=>'required',
+             'abono'=>'required',
+             'estado'=>'required',
+             
+             'idmetodo'=>'required',
+             'fecha'=>'required',
+             'cod'=>'required',
+                   
+            ]);
 
 
             $maestro=Maestro::create([
