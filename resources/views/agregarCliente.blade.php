@@ -131,9 +131,9 @@
 
 
                     <div class="uk-margin">
-                        <label for="primer_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Primer Nombre</label>
+                        <label for="primer_nombre_cliente" id="lbl_primernombre" class="uk-form-label" for="form-horizontal-text">Primer Nombre</label>
                         <div class="uk-form-controls">
-                            <input value="" name="primer_nombre" id="primer_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Primer Nombre">
+                            <input value="" name="primer_nombre" id="primer_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Nombre">
                         </div>
 
                         @error('primer_nombre')
@@ -273,6 +273,9 @@
             document.getElementById("segundo_nombre_cliente").value=" ";
             document.getElementById("primer_apellido_cliente").value=" ";
             document.getElementById("segundo_apellido_cliente").value=" ";
+            document.getElementById("lbl_primernombre").innerHTML="Nombre de la Empresa";
+
+
 
             document.getElementById("segundo_nombre_cliente").disabled=true;
             document.getElementById("primer_apellido_cliente").disabled=true;
