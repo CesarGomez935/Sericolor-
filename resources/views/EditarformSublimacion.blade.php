@@ -721,7 +721,7 @@
                     <div class="uk-margin">
                         <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
                         <div class="uk-form-controls">
-                            <input id="saldo" name="Saldo" value="{{ $edit->saldo }}" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="saldo" name="Saldo" value="{{ $edit->saldo }}" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">

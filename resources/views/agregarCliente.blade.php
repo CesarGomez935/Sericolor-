@@ -102,11 +102,38 @@
                         <option value='Cliente'>Cliente</option>
                     </select>
 
+                      <div class="uk-margin">
+                          <label for="tipo_cliente" class="uk-form-label" for="form-horizontal-text">Tipo de Cliente</label>
+                          <div class="uk-margin">
+                              <div uk-form-custom="target: > * > span:first-child">
+                                  <select onchange="validarcliente()" name="tipo_de_cliente" id="tipo_cliente">
+
+                                      <option selected disabled value="">--Seleccionar--</option>
+                                      <option value="Persona_Natural">Persona Natural</option>
+                                      <option value="Empresa">Empresa</option>
+
+                                  </select>
+                                  <button class="uk-button uk-button-default" type="button" tabindex="-1">
+                                      <span></span>
+                                      <span uk-icon="icon: chevron-down"></span>
+                                  </button>
+                              </div>
+                          </div>
+                          @error('tipo_de_cliente')
+
+
+                          <small>*{{$message}}</small>
+
+                          @enderror
+
+                      </div>
+
+
 
                     <div class="uk-margin">
                         <label for="primer_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Primer Nombre</label>
                         <div class="uk-form-controls">
-                            <input value=" " name="primer_nombre" id="primer_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Primer Nombre">
+                            <input value="" name="primer_nombre" id="primer_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Primer Nombre">
                         </div>
 
                         @error('primer_nombre')
@@ -121,7 +148,7 @@
                     <div class="uk-margin">
                         <label for="segundo_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Segundo Nombre</label>
                         <div class="uk-form-controls">
-                            <input value=' ' name="segundo_nombre" id="segundo_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Segundo Nombre">
+                            <input value='' name="segundo_nombre" id="segundo_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Segundo Nombre">
 
 
 
@@ -131,7 +158,7 @@
                     <div class="uk-margin">
                         <label for="primer_apellido_cliente" class="uk-form-label" for="form-horizontal-text">Primer Apellido</label>
                         <div class="uk-form-controls">
-                            <input value=' ' name="primer_apellido" id="primer_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Primer Apellido">
+                            <input value='' name="primer_apellido" id="primer_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Primer Apellido">
 
 
 
@@ -141,7 +168,7 @@
                     <div class="uk-margin">
                         <label for="segundo_apellido_cliente" class="uk-form-label" for="form-horizontal-text">Segundo Apellido</label>
                         <div class="uk-form-controls">
-                            <input value=' ' name="segundo_apellido" id="segundo_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Segundo Apellido">
+                            <input value='' name="segundo_apellido" id="segundo_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Segundo Apellido">
 
 
 
@@ -172,31 +199,7 @@
                         </div>
                     </div>
 
-                    <div class="uk-margin">
-                        <label for="tipo_cliente" class="uk-form-label" for="form-horizontal-text">Tipo de Cliente</label>
-                        <div class="uk-margin">
-                            <div uk-form-custom="target: > * > span:first-child">
-                                <select name="tipo_de_cliente" id="tipo_cliente">
-
-                                    <option selected disabled value="">--Seleccionar--</option>
-                                    <option value="Persona_Natural">Persona Natural</option>
-                                    <option value="Empresa">Empresa</option>
-
-                                </select>
-                                <button class="uk-button uk-button-default" type="button" tabindex="-1">
-                                    <span></span>
-                                    <span uk-icon="icon: chevron-down"></span>
-                                </button>
-                            </div>
-                        </div>
-                        @error('tipo_de_cliente')
-
-
-                        <small>*{{$message}}</small>
-
-                        @enderror
-
-                    </div>
+                   
 
                     <div class="uk-margin">
                         <label for="Correo_cliente" class="uk-form-label" for="form-horizontal-text">Correo</label>
@@ -258,6 +261,46 @@
     </form>
 
 </body>
+
+<script>
+    function validarcliente(){
+        var tipocliente= document.getElementById("tipo_cliente").value;
+
+
+
+        if (tipocliente=="Empresa")
+        {
+            document.getElementById("segundo_nombre_cliente").value=" ";
+            document.getElementById("primer_apellido_cliente").value=" ";
+            document.getElementById("segundo_apellido_cliente").value=" ";
+
+            document.getElementById("segundo_nombre_cliente").disabled=true;
+            document.getElementById("primer_apellido_cliente").disabled=true;
+            document.getElementById("segundo_apellido_cliente").disabled=true;
+            document.getElementById("ruc_cliente").disabled=false;
+            document.getElementById("cedula_cliente").disabled=true;
+
+
+
+
+
+        }else
+        {
+             document.getElementById("segundo_nombre_cliente").value="";
+             document.getElementById("primer_apellido_cliente").value="";
+             document.getElementById("segundo_apellido_cliente").value="";
+
+             document.getElementById("segundo_nombre_cliente").disabled=false;
+             document.getElementById("primer_apellido_cliente").disabled=false;
+             document.getElementById("segundo_apellido_cliente").disabled=false;
+             document.getElementById("ruc_cliente").disabled=true;
+             document.getElementById("cedula_cliente").disabled=false;
+
+
+
+        }
+    }
+</script>
 {{-- <script>
     let detallesdepedido = [];
 

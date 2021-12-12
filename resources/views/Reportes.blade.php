@@ -106,6 +106,7 @@
                             <th>Fecha de Inicio</th>
                             <th>Fecha Final </th>
                             <th>Descargar reporte</th>
+                            <th>Limpiar campos</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -129,9 +130,15 @@
 
                                 {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
                                 <a target="_blank" id="pedidosdiario" class="uk-button uk-button-secondary" uk-icon="download"></a>
+                                
+
+
+
 
 
                             </td>
+                            <td><a target="_blank" onclick="limpiarpedidosdiario()" id="limpiarpedidosdiario" class="uk-icon-button" uk-icon="trash"></a></td>
+
 
 
 
@@ -161,6 +168,7 @@
                             <th>Fecha Final </th>
                             <th>Insumo</th>
                             <th>Descargar reporte</th>
+                            <th>Limpiar campos</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -243,6 +251,9 @@
 
 
                             </td>
+                            <td><a target="_blank" onclick="limpiarpedidosinsumo()" id="limpiarpedidosinsumo" class="uk-icon-button" uk-icon="trash"></a></td>
+
+
 
 
 
@@ -272,6 +283,7 @@
                             <th>Fecha Final </th>
                             <th>Tipo de pago</th>
                             <th>Descargar reporte</th>
+                            <th>limpiar campos</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -313,6 +325,9 @@
 
 
                             </td>
+                            <td><a target="_blank" onclick="limpiarpedidostipopago()" id="limpiarpedidostipopago" class="uk-icon-button" uk-icon="trash"></a></td>
+
+
 
 
 
@@ -342,6 +357,7 @@
                             <th>Fecha Final </th>
                             <th>Cliente</th>
                             <th>Descargar reporte</th>
+                            <th>limpiar campos</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -418,6 +434,9 @@
 
 
                             </td>
+                            <td><a target="_blank" onclick="limpiarpedidoscliente()" id="limpiarpedidoscliente" class="uk-icon-button" uk-icon="trash"></a></td>
+
+
 
 
 
@@ -469,6 +488,15 @@
 
 
     }
+    function limpiarpedidosdiario(){
+
+         document.getElementById("fecha_inicio").value="";
+         document.getElementById("fecha_final").value="";
+         validarfechaspedidos();
+
+
+
+    }
 
     function validarfechastipopago() {
 
@@ -497,6 +525,15 @@
 
 
     }
+    function limpiarpedidostipopago(){
+
+        document.getElementById("fecha_inicio_tipopago").value="";
+        document.getElementById("fecha_final_tipopago").value="";
+        document.getElementById("tipopago").value="";
+        validarfechastipopago();
+
+
+    }
 
     function validarfechascliente() {
 
@@ -516,8 +553,24 @@
 
 
         }
+        else{
+             console.log(fecha1, fecha2, idcliente);
+             document.getElementById("pedidoscliente").href = "/api/pdf/cliente_entre/" + idcliente + "/" + fecha1 + "/" + fecha2 + "/descargar";
 
 
+
+        }
+
+
+
+
+    }
+    function limpiarpedidoscliente(){
+
+         document.getElementById("fecha_inicio_cliente").value="";
+         document.getElementById("fecha_final_cliente").value="";
+         document.getElementById("clientes").value="";
+         validarfechascliente();
 
 
     }
@@ -544,6 +597,16 @@
 
 
         }
+    }
+    function limpiarpedidosinsumo(){
+
+         document.getElementById("fecha_inicio_insumos").value="";
+         document.getElementById("fecha_final_insumos").value="";
+         document.getElementById("insumos").value="";
+
+         validarfechasinsumos();
+
+
     }
 
 </script>
