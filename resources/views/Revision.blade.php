@@ -353,7 +353,7 @@
     function cargarpedido() {
         peticionapi({}, "GET", function(res) {
             pedido = res;
-            console.log(pedido);
+            
             let html = '';
             res.forEach(pedido => {
                 html += '<li>' + ' <img src="/uploads/promocion/' + pedido.Imagen + '" uk-cover>' +
@@ -380,7 +380,7 @@
 
         peticionapi2({}, 'GET', function(res) {
             detalle = res;
-            console.log(res);
+            
             mostrar();
 
 
@@ -395,7 +395,7 @@
         var cod = $("#codigo_seg").val();
 
 
-        console.log(cod);
+        
         let url = '/api/revision/' + cod + '';
         if (method == 'PUT' || method == 'DELETE') {
             url += '/' + data.idmaestro;
@@ -420,12 +420,12 @@
 
     function mostrar(id) {
         UIkit.modal('#revision').show();
-        console.log(detalle);
+        
         // let datos = detalle.filter(detalle => {
         //     return detalle.idmaestro == id;
 
         // })
-        console.log(id, detalle);
+        
 
 
         $("#Nombre").val(detalle.Primer_Nombre + " " + detalle.Segundo_Nombre + " " + detalle.Primer_Apellido + " " + detalle.Segundo_Apellido)

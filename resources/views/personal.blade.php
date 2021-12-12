@@ -98,11 +98,21 @@
                 @csrf
                 <tr>
                     <th>Personal</th>
+                    <th>Estado 
+                        <span class="uk-icon-link " uk-icon="info"></span>
+
+                         
+                        
+                    </th>
+
+                    <th>Privilegios</th>
                     <th>Rol</th>
                     <th>Opciones</th>
 
                 </tr>
             </thead>
+
+           
             <tbody id="tablatrabajadores">
                 <tr>
 
@@ -159,6 +169,9 @@
                         trabajadores.idpersona + '/edit">' + trabajadores.Primer_Nombre + " " + trabajadores
                         .Segundo_Nombre + " " + trabajadores.Primer_Apellido + " " + trabajadores
                         .Segundo_Apellido + '</td>' + '</a>' +
+                        '<td>' + trabajadores.estado + '</td>' +
+
+                        '<td>' + trabajadores.Privilegios + '</td>' +
 
                         '<td>' + trabajadores.RolAsignado + '</td>' +
                         '<td>' + '<a href="/menu/menuadmon/personal/agregar_personal/' + trabajadores

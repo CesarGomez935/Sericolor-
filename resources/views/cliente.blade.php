@@ -197,7 +197,7 @@
 
 
 
-                        '<td>' + '<a href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IdPersona + '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a href="/menu/menuadmon/clientes/' + trabajadores.IdPersona + '" action="" class=" " uk-icon="trash"></a>' + '</td>' +
+                        '<td>' + '<a href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IdPersona + '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> ' + '</td>' +
 
                         '</tr>'
                 });
@@ -259,7 +259,7 @@
 
 
 
-                     '<td>' + '<a href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IdPersona + '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a href="/menu/menuadmon/clientes/' + trabajadores.IdPersona + '" action="" class=" " uk-icon="trash"></a>' + '</td>' +
+                     '<td>' + '<a href="/menu/menuadmon/clientes/agregar_cliente/' + trabajadores.IdPersona + '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></>  ' +'</td>' +
 
                      '</tr>'
                  });
