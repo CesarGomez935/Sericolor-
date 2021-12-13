@@ -627,13 +627,12 @@
                     <div class="uk-form-horizontal uk-margin-large">
 
                         <div class="uk-margin">
-                            <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza
-                                Pedido</label>
+                            <label for="autriza" class="uk-form-label" for="form-horizontal-text">Cod. Seguimiento</label>
                             <div class="uk-form-controls">
-                                <select class="uk-select uk-form-width-large" name="" id="autorizapedido">
-                                    <option value="">Seleccionar</option>
-                                </select>
+                                <input value="{{ $edit->CodSeguimiento }}" disabled id="cod_segi" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+
                             </div>
+
                         </div>
                         <div class="uk-margin">
                             <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
@@ -779,7 +778,8 @@
                                     // Si se modifico el valor , retornamos la multiplicación
                                     // caso contrario 0
                                     mt2 = (change) ? mt2 : 0;
-                                    document.getElementById('mt21').value = mt2;
+                                    document.getElementById('mt21').value = mt2.toFixed(2);
+
 
 
                                 }
@@ -796,7 +796,8 @@
                                     // Si se modifico el valor , retornamos la multiplicación
                                     // caso contrario 0
                                     costo = (change) ? costo : 0;
-                                    document.getElementById('Costo1').value = costo;
+                                    document.getElementById('Costo1').value = costo.toFixed(2);
+
 
 
                                 }
@@ -814,7 +815,8 @@
                                     // Si se modifico el valor , retornamos la multiplicación
                                     // caso contrario 0
                                     total = (change) ? total : 0;
-                                    document.getElementById('sub_total1').value = total;
+                                    document.getElementById('sub_total1').value = total.toFixed(2);
+
 
 
                                 }
@@ -934,7 +936,7 @@
     });
     //console.log(valuecliente);
 
-    $("#autorizapedido").html(html);
+     
     $("#cliente").html(html);
 
     cambiarvalue(valuecliente);
@@ -975,7 +977,7 @@
         .Segundo_Apellido +
         '</option>'
     });
-    $("#autorizapedido").html(html);
+     
     });
     }
 
@@ -1431,7 +1433,7 @@
                 });
                 //console.log(valuecliente);
 
-                $("#autorizapedido").html(html);
+                 
                 $("#cliente").html(html);
 
                 cambiarvalue(valuecliente);

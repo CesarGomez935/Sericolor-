@@ -66,7 +66,7 @@
 
                 <form id="frmlogin">
                     @csrf
-                    <h1>Inicio de sesión</h1>
+                    <h1>Inicio de Sesión</h1>
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <input type="text" id="usuario" name="usuario" class="form-control form-control-lg"
@@ -88,7 +88,7 @@
                     </div>
                     <div class="text-center text-lg-start mt-4 pt-2">
                         <button type="button" class="btn btn-danger btn-lg"
-                            style="padding-left: 2.5rem; padding-right: 2.5rem;">salir</button>
+                            style="padding-left: 2.5rem; padding-right: 2.5rem;">Salir</button>
                         <button type="submit" class="btn btn-success btn-lg"
                             style="padding-left: 2.5rem; padding-right: 2.5rem;">Ingresar</button>
                         <p class="small fw-bold mt-2 pt-1 mb-0">No tienes cuenta? <a href="/registro"

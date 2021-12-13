@@ -500,7 +500,8 @@
                     // mostramos la suma total
                     var filas = document.querySelectorAll("#Tabla tfoot tr td");
                     console.log(total);
-                    document.getElementById("total").value = total;
+                    document.getElementById("total").value = total.toFixed(2);
+
 
                 }
 
@@ -532,7 +533,8 @@
                                     console.log(sub_total, abono, total); //
 
 
-                                    document.getElementById('saldo').value = total;
+                                    document.getElementById('saldo').value = total.toFixed(2);
+
 
 
 
@@ -585,11 +587,9 @@
                 <div class="uk-form-horizontal uk-margin-large">
 
                     <div class="uk-margin">
-                        <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza Pedido</label>
+                        <label for="autriza" class="uk-form-label" for="form-horizontal-text">Cod. Seguimiento</label>
                         <div class="uk-form-controls">
-                            <select class="uk-select uk-form-width-large" name="" id="autorizapedido">
-                                <option value="">Seleccionar</option>
-                            </select>
+                            <input disabled id="cod_segi" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
@@ -725,7 +725,7 @@
                         .Segundo_Apellido +
                         '</option>'
                 });
-                $("#autorizapedido").html(html);
+                 
                 $("#cliente").html(html);
             });
         }
@@ -779,7 +779,7 @@
 
 
                 idmetodo: $("#metodo_de_pago").val()
-                , cod: $("#factura").val()
+                , cod: $("#factura").val(),
 
                 tipodepago: $("#tipodepago").val()
                 , estado: $("#estado").val(),

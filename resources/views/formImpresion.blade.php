@@ -183,7 +183,8 @@
                         // Si se modifico el valor , retornamos la multiplicación
                         // caso contrario 0
                         mt2 = (change) ? mt2 : 0;
-                        document.getElementById('mt2').value = mt2;
+                        document.getElementById('mt2').value = mt2.toFixed(2);
+
 
 
                     }
@@ -200,7 +201,8 @@
                         // Si se modifico el valor , retornamos la multiplicación
                         // caso contrario 0
                         costo = (change) ? costo : 0;
-                        document.getElementById('costo').value = costo;
+                        document.getElementById('costo').value = costo.toFixed(2);;
+
 
 
                     }
@@ -218,7 +220,8 @@
                         // Si se modifico el valor , retornamos la multiplicación
                         // caso contrario 0
                         total = (change) ? total : 0;
-                        document.getElementById('sub_total').value = total;
+                        document.getElementById('sub_total').value = total.toFixed(2);;
+
 
 
                     }
@@ -424,7 +427,8 @@
                             // mostramos la suma total
                             var filas = document.querySelectorAll("#Tabla tfoot tr td");
                             console.log(total);
-                            document.getElementById("total").value = total;
+                            document.getElementById("total").value = total.toFixed(2);;
+
 
                         }
 
@@ -486,7 +490,8 @@
                                         console.log(sub_total, abono, total); //
 
 
-                                        document.getElementById('saldo').value = total;
+                                        document.getElementById('saldo').value = total.toFixed(2);;
+
 
 
 
@@ -499,7 +504,13 @@
                         <div class="uk-margin">
                             <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
                             <div class="uk-form-controls">
-                                <input id="saldo" name="Saldo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
+                                <div class="uk-inline">
+
+                                    <span class="uk-form-icon">C$</span>
+
+                                    <input id="saldo" name="Saldo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
+                                </div>
+
                             </div>
                         </div>
 
@@ -543,13 +554,11 @@
                     <div class="uk-form-horizontal uk-margin-large">
 
                         <div class="uk-margin">
-                            <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza
-                                Pedido</label>
-                            <div class="uk-form-controls">
-                                <select class="uk-select uk-form-width-large" name="" id="autorizapedido">
-                                    <option value="">Seleccionar</option>
-                                </select>
-                            </div>
+                             <label for="autriza" class="uk-form-label" for="form-horizontal-text">Cod. Seguimiento</label>
+                             <div class="uk-form-controls">
+                                 <input disabled id="cod_segi" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                             </div>
+
                         </div>
                         <div class="uk-margin">
                             <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
@@ -761,7 +770,7 @@
                         '</option>'
                 });
                 $("#cliente").html(html);
-                $("#autorizapedido").html(html);
+                 
 
             });
         }

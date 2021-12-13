@@ -526,7 +526,8 @@
                     // Si se modifico el valor , retornamos la multiplicación
                     // caso contrario 0
                     total = (change) ? total : 0;
-                    document.getElementById('sub_total').value = total;
+                    document.getElementById('sub_total').value = total.toFixed(2);
+
 
 
                 }
@@ -543,7 +544,8 @@
                     // Si se modifico el valor , retornamos la multiplicación
                     // caso contrario 0
                     total = (change) ? total : 0;
-                    document.getElementById('sub_total_taza').value = total;
+                    document.getElementById('sub_total_taza').value = total.toFixed(2);
+
 
 
                 }
@@ -676,7 +678,8 @@
                     // mostramos la suma total
                     var filas = document.querySelectorAll("#Tabla tfoot tr td");
                     console.log(total);
-                    document.getElementById("total").value = total;
+                    document.getElementById("total").value = total.toFixed(2);
+
 
                 }
 
@@ -708,7 +711,8 @@
                                     console.log(sub_total, abono, total); //
 
 
-                                    document.getElementById('saldo').value = total;
+                                    document.getElementById('saldo').value = total.toFixed(2);
+
 
 
 
@@ -735,8 +739,7 @@
                                 <option @if ($edit->Id_Metodo_de_Pago == '2') selected @endif value='2'>Tarjeta</option>
                                 <option @if ($edit->Id_Metodo_de_Pago == '3') selected @endif value='3'>Transferencia Bancaria</option>
                                 <option @if ($edit->Id_Metodo_de_Pago == '4') selected @endif value='4'>Movil</option>
-                                <option @if ($edit->Id_Metodo_de_Pago == '5') selected @endif value='5'>contado</option>
-                                <option @if ($edit->Id_Metodo_de_Pago == '6') selected @endif value='6'>Credito</option>
+                                 
                             </select>
                         </div>
                     </div>
@@ -763,12 +766,12 @@
                 <div class="uk-form-horizontal uk-margin-large">
 
                     <div class="uk-margin">
-                        <label for="autriza" class="uk-form-label" for="form-horizontal-text">Autoriza Pedido</label>
-                        <div class="uk-form-controls">
-                            <select class="uk-select uk-form-width-large" name="" id="autorizapedido">
-                                <option value="">Seleccionar</option>
-                            </select>
-                        </div>
+                       <label for="autriza" class="uk-form-label" for="form-horizontal-text">Cod. Seguimiento</label>
+                       <div class="uk-form-controls">
+                           <input value="{{ $edit->CodSeguimiento }}" disabled id="cod_segi" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+
+                       </div>
+
                     </div>
                     <div class="uk-margin">
                         <label for="recibe" class="uk-form-label" for="form-horizontal-text">Recibe Pedido</label>
@@ -898,7 +901,8 @@
                                     // Si se modifico el valor , retornamos la multiplicación
                                     // caso contrario 0
                                     total = (change) ? total : 0;
-                                    document.getElementById('sub_total2').value = total;
+                                    document.getElementById('sub_total2').value = total.toFixed(2);
+
 
 
                                 }
@@ -1181,7 +1185,7 @@
                 });
                 //console.log(valuecliente);
 
-                $("#autorizapedido").html(html);
+                 
                 $("#cliente").html(html);
 
                 cambiarvalue(valuecliente);
