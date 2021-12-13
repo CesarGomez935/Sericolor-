@@ -130,10 +130,25 @@
                             <td><input id="alto" oninput="area();" class="uk-input area" min="0" type="number" placeholder="0" value="0"></td>
                             <td><input id="ancho" oninput="area();" class="uk-input area" min="0" type="number" placeholder="0" value="0"></td>
                             <td><input id="mt2" oninput="costos();" class="uk-input costo" min="0" type="number" placeholder="0" value="0"></td>
-                            <td><input id="precio_mt2" oninput="costos();" class="uk-input costo" min="0" type="number" placeholder="0" value="0"></td>
-                            <td><input id="costo" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></td>
+                            <td>
+                                <div class="uk-inline">
+
+                                    <span class="uk-form-icon">C$</span>
+
+<input id="precio_mt2" oninput="costos();" class="uk-input costo" min="0" type="number" placeholder="0" value="0"></div> </td>
+                            <td>
+                                <div class="uk-inline">
+
+                                    <span class="uk-form-icon">C$</span>
+
+<input id="costo" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></div></td>
                             <td><input id="cantidad" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></td>
-                            <td><input id="sub_total" name="sub_total" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"> </td>
+                            <td>
+                                <div class="uk-inline">
+
+                                    <span class="uk-form-icon">C$</span>
+
+<input id="sub_total" name="sub_total" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"></div> </td>
 
 
                         </tr>
@@ -257,7 +272,12 @@
                                 <tr>
 
                                     <td colspan="8"><label for="Total" class="uk-label">Total</label></td>
-                                    <td><input class="uk-form-width-xsmall saldo" disabled id="total"></input></td>
+                                    <td>
+                                        <div class="uk-inline">
+
+                                            <span class="uk-form-icon">C$</span>
+
+<input class="uk-form-width-small uk-input saldo" disabled id="total"></div></td>
 
 
 
@@ -477,8 +497,13 @@
                         <div class="uk-margin">
                             <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                             <div class="uk-form-controls">
-                                <input id="abono" min="0" name="Abono" oninput="abonos();" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
+                                 <div class="uk-inline">
 
+                                     <span class="uk-form-icon">C$</span>
+
+
+                                <input id="abono" min="0" name="Abono" oninput="abonos();" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
+                                 </div>
                                 <script>
                                     function abonos() {
                                         var sub_total = document.getElementById("total").value;

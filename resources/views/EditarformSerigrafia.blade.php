@@ -284,12 +284,16 @@
 
                                         </td>
                                         <td>
-                                            <input id="cantidad" onchange="monto();" type="number" min="0" class="uk-input uk-form-width-xsmall monto">
+                                            <input id="cantidad" onchange="monto();" type="number" min="0" class="uk-input uk-width-1-4 monto">
+
+ <div class="uk-inline">
+
+     <span class="uk-form-icon">C$</span>
 
 
                                             <input id="precio" onchange="monto();" type="number" min="0" class=" monto uk-input uk-form-width-small  ">
 
-
+ </div>
 
 
 
@@ -310,7 +314,13 @@
                                             <label for="sub_total" class="uk-label">Total</label>
                                         </td>
                                         <td>
-                                            <input disabled id="sub_total" type="number" min="0" class="uk-input uk-form-width-small ">
+                                             <div class="uk-inline">
+
+                                                 <span class="uk-form-icon">C$</span>
+
+
+                                            <input disabled id="sub_total" type="number" min="0" class="uk-input  uk-form-width-small ">
+                                             </div>
                                         </td>
                                         <td>
                                             <a class="uk-button uk-button-primary" onclick="abonos();" id="guardarnuevodetalle">Insertar
@@ -370,7 +380,12 @@
                         <tr>
 
                             <td colspan="9"><label for="Total" class="uk-label">Total</label></td>
-                            <td><input class="uk-form-width-xsmall saldo" disabled id="total"></input></td>
+                            <td>
+                                <div class="uk-inline">
+
+                                    <span class="uk-form-icon">C$</span>
+
+<input class="uk-form-width-small uk-input saldo" disabled id="total"></div></td>
 
 
 
@@ -698,8 +713,13 @@
                     <div class="uk-margin">
                         <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                         <div class="uk-form-controls">
-                            <input id="abono" min="0" name="Abono" oninput="abonos();" class="uk-input uk-form-width-large" value="{{ $edit->abono }}" id="form-horizontal-text" type="number" placeholder="">
+                             <div class="uk-inline">
 
+                                 <span class="uk-form-icon">C$</span>
+
+
+                            <input id="abono" min="0" name="Abono" oninput="abonos();" class="uk-input uk-form-width-large" value="{{ $edit->abono }}" id="form-horizontal-text" type="number" placeholder="">
+                             </div>
                             <script>
                                 function abonos() {
                                     var sub_total = document.getElementById("total").value;
@@ -725,7 +745,13 @@
                     <div class="uk-margin">
                         <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
                         <div class="uk-form-controls">
+                             <div class="uk-inline">
+
+                                 <span class="uk-form-icon">C$</span>
+
+
                             <input id="saldo" name="Saldo" value="{{ $edit->saldo }}" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
+                             </div>
                         </div>
                     </div>
                     <div class="uk-margin">
@@ -870,7 +896,13 @@
 
                             <div class="uk-margin">
                                 <label>Precio</label>
+                                 <div class="uk-inline">
+
+                                     <span class="uk-form-icon">C$</span>
+
+
                                 <input onchange="monto2();" type="number" class="uk-input monto2" type="text" id="precio1" placeholder="precio">
+                                 </div>
                             </div>
                             <div class="uk-margin">
                                 <label>Observacion</label>
@@ -878,7 +910,14 @@
                             </div>
                             <div class="uk-margin">
                                 <label>Total</label>
-                                <input class="uk-input" type="number" id="sub_total2" disabled>
+                                 <div class="uk-inline">
+
+                                     <span class="uk-form-icon">C$</span>
+
+
+
+                                     <input class="uk-input" type="number" id="sub_total2" disabled>
+                                 </div>
                             </div>
                             <label>Insumo</label>
                             <select class="uk-select" id="insumocambio">

@@ -139,10 +139,25 @@
                             <td><input id="alto" oninput="area();" class="uk-input area" min="0" type="number" placeholder="0" value="0"></td>
                             <td><input id="ancho" oninput="area();" class="uk-input area" min="0" type="number" placeholder="0" value="0"></td>
                             <td><input id="mt2" oninput="costos();" class="uk-input costo" min="0" type="number" placeholder="0" value="0"></td>
-                            <td><input id="precio_mt2" oninput="costos();" class="uk-input costo" min="0" type="number" placeholder="0" value="0"></td>
-                            <td><input id="costo" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></td>
+                            <td>
+                                <div class="uk-inline">
+
+                                    <span class="uk-form-icon">C$</span>
+
+<input id="precio_mt2" oninput="costos();" class="uk-input costo" min="0" type="number" placeholder="0" value="0"></div></td>
+                            <td>
+                                <div class="uk-inline">
+
+                                    <span class="uk-form-icon">C$</span>
+
+<input id="costo" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></div></td>
                             <td><input id="cantidad" oninput="multi();" class="uk-input monto" min="0" type="number" placeholder="0" value="0"></td>
-                            <td><input id="sub_total" name="sub_total" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"> </td>
+                            <td>
+                                <div class="uk-inline">
+
+                                    <span class="uk-form-icon">C$</span>
+
+<input id="sub_total" name="sub_total" class="uk-input" min="0" value="" type="number" placeholder="0" value="0"></div> </td>
 
 
                         </tr>
@@ -258,7 +273,7 @@
                         // Si se modifico el valor , retornamos la multiplicación
                         // caso contrario 0
                         costo = (change) ? costo : 0;
-                        document.getElementById('costo').value = costo;
+                        document.getElementById('costo').value = costo.toFixed(2);
 
 
                     }
@@ -276,7 +291,7 @@
                         // Si se modifico el valor , retornamos la multiplicación
                         // caso contrario 0
                         total = (change) ? total : 0;
-                        document.getElementById('sub_total').value = total;
+                        document.getElementById('sub_total').value = total.toFixed(2);
 
 
                     }
@@ -315,7 +330,12 @@
                                 <tr>
 
                                     <td colspan="8"><label for="Total" class="uk-label">Total</label></td>
-                                    <td><input class="uk-form-width-xsmall saldo" disabled id="total"></input></td>
+                                    <td>
+                                        <div class="uk-inline">
+
+                                            <span class="uk-form-icon">C$</span>
+
+<input class="uk-form-width-small uk-input saldo" disabled id="total"></div></td>
 
 
 
@@ -556,8 +576,13 @@
                         <div class="uk-margin">
                             <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                             <div class="uk-form-controls">
-                                <input id="abono" min="0" name="Abono" oninput="abonos();" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" value="{{ $edit->abono }}" placeholder="">
+                                 <div class="uk-inline">
 
+                                     <span class="uk-form-icon">C$</span>
+
+
+                                <input id="abono" min="0" name="Abono" oninput="abonos();" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" value="{{ $edit->abono }}" placeholder="">
+                                 </div>
                                 <script>
                                     function abonos() {
                                         var sub_total = document.getElementById("total").value;
@@ -582,7 +607,13 @@
                         <div class="uk-margin">
                             <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
                             <div class="uk-form-controls">
+                                <div class="uk-inline">
+
+                                    <span class="uk-form-icon">C$</span>
+
+
                                 <input id="saldo" name="Saldo" class="uk-input uk-form-width-large" id="form-horizontal-text" value="{{ $edit->saldo }}" type="number" placeholder="">
+                                </div>
                             </div>
                         </div>
 
@@ -727,16 +758,28 @@
                             </div>
                             <div class="uk-margin">
                                 <label>Metros Cuadrados</label>
+                                
                                 <input onchange="costosedit();" disabled type="number" class="uk-input costo1" type="text" id="mt21" placeholder="Metros Cuadrados">
                             </div>
                             <div class="uk-margin">
                                 <label>Precio Mt²</label>
+ <div class="uk-inline">
+
+     <span class="uk-form-icon">C$</span>
+
 
                                 <input onchange="costosedit();" type="number" class="uk-input costo1" type="text" id="p_m2" placeholder="P/M1">
+ </div>
                             </div>
                             <div class="uk-margin">
                                 <label>Costo</label>
+                                 <div class="uk-inline">
+
+                                     <span class="uk-form-icon">C$</span>
+
+
                                 <input onchange="multiedit()" type="number" class="uk-input monto1" type="text" id="Costo1" placeholder="Costo">
+                                 </div>
                             </div>
                             <div class="uk-margin">
                                 <label>Cantidad</label>
@@ -747,7 +790,13 @@
                             </div>
                             <div class="uk-margin">
                                 <label>Subtotal</label>
+                                 <div class="uk-inline">
+
+                                     <span class="uk-form-icon">C$</span>
+
+
                                 <input type="number" class="uk-input " disabled type="text" id="sub_total1" placeholder="Subtotal">
+                                 </div>
                             </div>
                             <div class="uk-margin">
                                 <label>Observacion</label>
