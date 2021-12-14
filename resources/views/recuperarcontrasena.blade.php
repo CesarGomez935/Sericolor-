@@ -64,13 +64,13 @@
                     </div>
                 </div>
 
-                <form id="frmlogin">
+                <form method="POST" id="frmlogin" class="my-login-validation">
                     @csrf
                     <h1>Recuperar contraseña</h1>
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <input type="email" id="usuario" name="usuario" class="form-control form-control-lg"
-                            placeholder="Introduce tu correo" />
+                            placeholder="Introduce tu correo" value="{{ old('email') }}" />
                         <label class="form-label" for="usuario">Ingrese el correo de recuperacion</label>
                     </div>
                     <!-- Password input -->
@@ -114,90 +114,3 @@
         <!-- Right -->
     </div>
 </section>
-<script>
-    $(function() {
-        enviarlogin();
-
-    });
-    var enviarlogin = function() {
-
-        $("#frmlogin").on("submit", function(e) {
-
-            e.preventDefault();
-            $.ajax({
-
-
-                url: '{{ route('login.verificar') }}',
-                method: 'POST',
-                dataType: 'json',
-                data: new FormData($("#frmlogin")[0]),
-                contentType: false,
-                processData: false,
-                beforesend: function() {
-                    $("#alertError").hide();
-                    $("#alertSuccess").hide();
-                    console.log("Enviando.....");
-
-                },
-                success: function(data) {
-                    console.log(data);
-
-
-                    if (!data.error) {
-
-                        let mensaje = data.mensaje;
-                        let usuario = data.usuario;
-                        $("#frmlogin")[0].reset();
-                        $("#msjExitoRegistro").html(mensaje + "," + " " + "Dios te Bendiga");
-                        $("#alertSuccess").show();
-                        window.location.href = '{{ route('login.menu') }}'
-                    } else {
-
-                        let mensaje = data.mensaje;
-                        $("#frmlogin")[0].reset();
-                        $("#listaErrores").html('<li>' + mensaje + '</li>');
-                        $("#alertError").show();
-
-
-                    }
-
-                },
-                error: function(data) {
-                    let errores = data.responseJson.errors;
-                    let msjError = '';
-                    object.value(errores).forEach(function(valor) {
-                        msjError += '<li>' + valor[0] + '</li>';
-
-                    });
-                    $("#listaErrores").html(msjError);
-                    $("#alertError").show();
-
-                },
-                complete: function() {
-                    console.log("completado");
-                },
-
-
-
-            })
-
-
-        })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    }
-</script>
