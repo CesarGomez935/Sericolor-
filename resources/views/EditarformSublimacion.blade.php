@@ -10,32 +10,37 @@
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
 
 <body onpageshow="">
     <!-- Nav Bar-->
-    <nav class="uk-navbar uk-navbar-container">
+    <nav class="uk-navbar uk-navbar-container ">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Facturación Sublimación</span>
-
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Agregar
+                    Clientes</span>
             </a>
         </div>
+
         <a href="#my-id" uk-toggle></a>
 
-        <!-- Off canvas, Elemento desplegable de UiKit -->
+        <!-- Off Canvas, Elemento desplegabe de uiKit -->
         <div id="my-id" uk-offcanvas>
             <div class="uk-offcanvas-bar">
 
@@ -64,8 +69,17 @@
                         <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
                         <li> <a href="/menu/menuadmon/personal">Personal</a></li>
                         <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
-                        <li> <a href="/menu/menuadmon/bd">Restaurar y generar Back-up</a></li>
+                        <li> <a href="/menu/menuadmon/insumos">Insumos</a></li>
+                        <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
                         <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
+                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                        <li> <a href="/menu/menuadmon/promociones">Menú Principal</a></li>
+                    </ul>
+                    <hr class="uk-divider-icon">
+
+                    <li class="uk-parent"> Sesión </li>
+                    <ul class="uk-nav-sub">
+                        <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
                     </ul>
 
                 </ul>
@@ -86,7 +100,8 @@
                 <div class="uk-grid-small" uk-grid>
                     <div class="uk-inline uk-width-1-2 ">
                         <label for="fecha_fact">Fecha de Facturación</label>
-                        <input id="fecha_fact" value="{{ $edit->fecha }}" name="fecha_facturacion" type="date" class="uk-input">
+                        <input id="fecha_fact" value="{{ $edit->fecha }}" name="fecha_facturacion" type="date"
+                            class="uk-input">
                     </div>
                     <div class="uk-inline uk-width-1-2 ">
                         <label for="fecha_ent">Nombre del cliente</label>
@@ -111,31 +126,36 @@
                     <div class="uk-margin">
                         <label for="pecho_izq" class="uk-form-label" for="form-horizontal-text">Pecho Izquierdo</label>
                         <div class="uk-form-controls">
-                            <input id="pecho_izq" name="pecho_izquierdo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="pecho_izq" name="pecho_izquierdo" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="pecho_der" class="uk-form-label" for="form-horizontal-text">Pecho Derecho</label>
                         <div class="uk-form-controls">
-                            <input id="pecho_der" name="pecho_derecho" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="pecho_der" name="pecho_derecho" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="manga_izq" class="uk-form-label" for="form-horizontal-text">Manga Izquierda</label>
                         <div class="uk-form-controls">
-                            <input id="manga_izq" name="manga_izquierda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="manga_izq" name="manga_izquierda" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="manga_der" class="uk-form-label" for="form-horizontal-text">Manga Derecha</label>
                         <div class="uk-form-controls">
-                            <input id="manga_der" name="manga_derecha" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="manga_der" name="manga_derecha" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="espalda" class="uk-form-label" for="form-horizontal-text">Espalda</label>
                         <div class="uk-form-controls">
-                            <input id="espalda" name="espalda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="espalda" name="espalda" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                 </div>
@@ -259,9 +279,9 @@
                                                         url += '/' + data.id;
                                                     }
                                                     $.ajax({
-                                                        url: url
-                                                        , method: method
-                                                        , data: data,
+                                                        url: url,
+                                                        method: method,
+                                                        data: data,
 
                                                         success(res) {
                                                             onSuccess(res);
@@ -270,7 +290,6 @@
 
                                                     })
                                                 }
-
                                             </script>
 
 
@@ -284,15 +303,17 @@
 
                                         </td>
                                         <td>
-                                            <input id="cantidad" onchange="monto();" type="number" min="0" class="uk-input uk-width-1-4 monto">
- <div class="uk-inline">
+                                            <input id="cantidad" onchange="monto();" type="number" min="0"
+                                                class="uk-input uk-width-1-4 monto">
+                                            <div class="uk-inline">
 
-     <span class="uk-form-icon">C$</span>
+                                                <span class="uk-form-icon">C$</span>
 
 
 
-                                            <input id="precio" onchange="monto();" type="number" min="0" class=" monto uk-input uk-form-width-small  ">
- </div>
+                                                <input id="precio" onchange="monto();" type="number" min="0"
+                                                    class=" monto uk-input uk-form-width-small  ">
+                                            </div>
 
 
 
@@ -302,7 +323,8 @@
                                         </td>
 
                                         <td>
-                                            <textarea id="Observacion" name="Observacion" class="uk-input uk-form-width-1-1" type="text"> </textarea>
+                                            <textarea id="Observacion" name="Observacion"
+                                                class="uk-input uk-form-width-1-1" type="text"> </textarea>
 
 
                                         </td>
@@ -311,20 +333,22 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            
+
                                             <label for="sub_total" class="uk-label">Total</label>
                                         </td>
                                         <td>
-                                             <div class="uk-inline">
+                                            <div class="uk-inline">
 
-                                                 <span class="uk-form-icon">C$</span>
+                                                <span class="uk-form-icon">C$</span>
 
 
-                                            <input disabled id="sub_total" type="number" min="0" class="uk-input uk-form-width-small ">
-                                             </div>
+                                                <input disabled id="sub_total" type="number" min="0"
+                                                    class="uk-input uk-form-width-small ">
+                                            </div>
                                         </td>
                                         <td>
-                                            <a class="uk-button uk-button-primary" onclick="abonos();" id="guardarnuevodetalle">Insertar
+                                            <a class="uk-button uk-button-primary" onclick="abonos();"
+                                                id="guardarnuevodetalle">Insertar
                                                 Pedido</a>
                                         </td>
 
@@ -342,7 +366,8 @@
                         <div>
 
 
-                            <textarea id="notas" value=" " name="Notas" class="uk-textarea" placeholder="Notas">{{ $edit->Notas }}</textarea>
+                            <textarea id="notas" value=" " name="Notas" class="uk-textarea"
+                                placeholder="Notas">{{ $edit->Notas }}</textarea>
 
 
 
@@ -386,7 +411,9 @@
 
                                     <span class="uk-form-icon">C$</span>
 
-<input class="uk-form-width-small uk-input saldo" disabled id="total"></DIV></td>
+                                    <input class="uk-form-width-small uk-input saldo" disabled id="total">
+                                </DIV>
+                            </td>
 
 
 
@@ -698,7 +725,6 @@
 
 
                 }
-
             </script>
 
             </table>
@@ -714,13 +740,15 @@
                     <div class="uk-margin">
                         <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                         <div class="uk-form-controls">
-                             <div class="uk-inline">
+                            <div class="uk-inline">
 
-                                 <span class="uk-form-icon">C$</span>
+                                <span class="uk-form-icon">C$</span>
 
 
-                            <input id="abono" min="0" name="Abono" onchange="abonos();" class="uk-input uk-form-width-large" value="{{ $edit->abono }}" id="form-horizontal-text" type="number" placeholder="">
-                             </div>
+                                <input id="abono" min="0" name="Abono" onchange="abonos();"
+                                    class="uk-input uk-form-width-large" value="{{ $edit->abono }}"
+                                    id="form-horizontal-text" type="number" placeholder="">
+                            </div>
                             <script>
                                 function abonos() {
                                     var sub_total = document.getElementById("total").value;
@@ -738,7 +766,6 @@
 
 
                                 }
-
                             </script>
                         </div>
                     </div>
@@ -746,13 +773,15 @@
                     <div class="uk-margin">
                         <label for="saldo" class="uk-form-label" for="form-horizontal-text">Saldo</label>
                         <div class="uk-form-controls">
-                             <div class="uk-inline">
+                            <div class="uk-inline">
 
-                                 <span class="uk-form-icon">C$</span>
+                                <span class="uk-form-icon">C$</span>
 
 
-                            <input id="saldo" name="Saldo" value="{{ $edit->saldo }}" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
-                             </div>
+                                <input id="saldo" name="Saldo" value="{{ $edit->saldo }}"
+                                    class="uk-input uk-form-width-large" id="form-horizontal-text" type="number"
+                                    placeholder="">
+                            </div>
                         </div>
                     </div>
                     <div class="uk-margin">
@@ -766,7 +795,7 @@
                                 <option @if ($edit->Id_Metodo_de_Pago == '2') selected @endif value='2'>Tarjeta</option>
                                 <option @if ($edit->Id_Metodo_de_Pago == '3') selected @endif value='3'>Transferencia Bancaria</option>
                                 <option @if ($edit->Id_Metodo_de_Pago == '4') selected @endif value='4'>Movil</option>
-                                 
+
                             </select>
                         </div>
                     </div>
@@ -795,7 +824,9 @@
                     <div class="uk-margin">
                         <label for="autriza" class="uk-form-label" for="form-horizontal-text">Cod. Seguimiento</label>
                         <div class="uk-form-controls">
-                            <input value="{{ $edit->CodSeguimiento }}" disabled id="cod_segi" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input value="{{ $edit->CodSeguimiento }}" disabled id="cod_segi" name="num_factura"
+                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
+                                placeholder="">
 
                         </div>
 
@@ -811,7 +842,9 @@
                     <div class="uk-margin">
                         <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
                         <div class="uk-form-controls">
-                            <input value="{{ $edit->Cod_Recibo }}" id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input value="{{ $edit->Cod_Recibo }}" id="factura" name="num_factura"
+                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
+                                placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
@@ -841,9 +874,13 @@
         <!-- Seccion que contiene los botones de atrás y guardar-->
         <div class="uk-padding uk-background-muted uk-padding " style="text-align: center;">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-                <a href="/menu/pedidos_sublimacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
+                <a href="/menu/pedidos_sublimacion" class="uk-button uk-button-primary "
+                    style="margin-left: 100px">Atrás</a>
 
-                <a id="guardar" href="/menu/pedidos_sublimacion" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
+                <a id="guardar" href="/menu/pedidos_sublimacion" class="uk-button uk-button-secondary"
+                    style="margin-left: 100px">Guardar</a>
+
+                <a hidden id="refrescar" onclick="cargardatosdetalle();">Refrescar</a>
 
 
             </div>
@@ -866,7 +903,8 @@
                             <legend class="uk-legend">Cambiar Detalles</legend>
                             <div class="uk-margin">
                                 <label>Numero de detalle</label>
-                                <input class="uk-input" type="number" id="Id_trabajadores" placeholder="Numero de detalle" disabled>
+                                <input class="uk-input" type="number" id="Id_trabajadores"
+                                    placeholder="Numero de detalle" disabled>
                             </div>
                             <div class="uk-margin">
                                 <label>Pecho izquierda</label>
@@ -889,36 +927,40 @@
                                 <input class="uk-input" type="text" id="espalda1" placeholder="Espalda">
                             </div>
                             <div class="uk-margin">
-                                <input class="uk-input" disabled type="text" value="{{ $edit->idmaestro }}" id="id" placeholder="nada">
+                                <input class="uk-input" disabled type="text" value="{{ $edit->idmaestro }}"
+                                    id="id" placeholder="nada">
                             </div>
                             <div class="uk-margin">
                                 <label>Cantidad</label>
-                                <input onchange="monto2();" type="number" class="uk-input monto2" type="text" id="cantidad1" placeholder="Cantidad">
+                                <input onchange="monto2();" type="number" class="uk-input monto2" type="text"
+                                    id="cantidad1" placeholder="Cantidad">
                             </div>
 
                             <div class="uk-margin">
                                 <label>Precio</label>
-                                 <div class="uk-inline">
+                                <div class="uk-inline">
 
-                                     <span class="uk-form-icon">C$</span>
+                                    <span class="uk-form-icon">C$</span>
 
 
-                                <input onchange="monto2();" type="number" class="uk-input monto2" type="text" id="precio1" placeholder="precio">
-                                 </div>
+                                    <input onchange="monto2();" type="number" class="uk-input monto2" type="text"
+                                        id="precio1" placeholder="precio">
+                                </div>
                             </div>
                             <div class="uk-margin">
                                 <label>Observacion</label>
-                                <input class="uk-input" type="text" id="observacioncambio" placeholder="Observacion">
+                                <input class="uk-input" type="text" id="observacioncambio"
+                                    placeholder="Observacion">
                             </div>
                             <div class="uk-margin">
                                 <label>Total</label>
-                                 <div class="uk-inline">
+                                <div class="uk-inline">
 
-                                     <span class="uk-form-icon">C$</span>
+                                    <span class="uk-form-icon">C$</span>
 
-<input class="uk-input" type="number" id="sub_total2" disabled>
-                                 </div>
-</div>
+                                    <input class="uk-input" type="number" id="sub_total2" disabled>
+                                </div>
+                            </div>
                             <label>Insumo</label>
                             <select class="uk-select" id="insumocambio">
 
@@ -945,11 +987,11 @@
 
 
                                 }
-
                             </script>
                     </div>
                     <div style="text-align: center">
-                        <button class="uk-button uk-button-primary " id="guardar1" class="uk-align-center">Guardar</button>
+                        <button class="uk-button uk-button-primary " id="guardar1"
+                            class="uk-align-center">Guardar</button>
                     </div>
                     </fieldset>
                 </div>
@@ -993,8 +1035,10 @@
 
             updatedetalle();
 
-            cargardatosdetalle();
-            alert("Se agrego su orden");
+            var pagebutton = document.getElementById("refrescar");
+            pagebutton.click();
+
+
 
         });
 
@@ -1006,9 +1050,9 @@
                 url += '/' + data.idmaestro;
             }
             $.ajax({
-                url: url
-                , method: method
-                , data: data,
+                url: url,
+                method: method,
+                data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -1026,9 +1070,9 @@
                 url += '/' + data.IdUsuario;
             }
             $.ajax({
-                url: url
-                , method: method
-                , data: data,
+                url: url,
+                method: method,
+                data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -1041,14 +1085,14 @@
         function peticionapi4(data, method, onSuccess) {
 
 
-            let url = '/api/getdetalles/' + '{{$edit -> idmaestro}}' + '';
+            let url = '/api/getdetalles/' + '{{ $edit->idmaestro }}' + '';
             if (method == 'PUT' || method == 'DELETE') {
                 url += '/' + data.idmaestro;
             }
             $.ajax({
-                url: url
-                , method: method
-                , data: data,
+                url: url,
+                method: method,
+                data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -1067,9 +1111,9 @@
                 url += '/' + data.iddetalleordensu;
             }
             $.ajax({
-                url: url
-                , method: method
-                , data: data,
+                url: url,
+                method: method,
+                data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -1088,9 +1132,9 @@
                 url += '/' + data.iddetalleordensu;
             }
             $.ajax({
-                url: url
-                , method: method
-                , data: data,
+                url: url,
+                method: method,
+                data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -1190,15 +1234,11 @@
             })
             console.log(id, datos);
 
-            $("#Id_trabajadores").val(datos[0].iddetalleordensu)
-                , $("#pechoizq1").val(datos[0].pecho_izquierdo)
-                , $("#pechoder1").val(datos[0].pecho_derecho)
-                , $("#mangaizq1").val(datos[0].manga_izquierda)
-                , $("#mangader1").val(datos[0].manga_derecha)
-                , $("#espalda1").val(datos[0].espalda)
-                , $("#cantidad1").val(datos[0].Cantidad)
-                , $("#precio1").val(datos[0].precio)
-                , $("#observacioncambio").val(datos[0].observacion)
+            $("#Id_trabajadores").val(datos[0].iddetalleordensu), $("#pechoizq1").val(datos[0].pecho_izquierdo), $(
+                "#pechoder1").val(datos[0].pecho_derecho), $("#mangaizq1").val(datos[0].manga_izquierda), $(
+                "#mangader1").val(datos[0].manga_derecha), $("#espalda1").val(datos[0].espalda), $("#cantidad1").val(
+                datos[0].Cantidad), $("#precio1").val(datos[0].precio), $("#observacioncambio").val(datos[0]
+                .observacion)
             $("#insumocambio").val(datos[0].IdInsumos)
             $("#sub_total2").val(datos[0].total)
 
@@ -1224,7 +1264,7 @@
                 });
                 //console.log(valuecliente);
 
-                 
+
                 $("#cliente").html(html);
 
                 cambiarvalue(valuecliente);
@@ -1243,15 +1283,15 @@
                 url += '/' + data.idmaestro;
             }
             $.ajax({
-                url: url
-                , method: method
-                , data: data
-                , error(ext) {
+                url: url,
+                method: method,
+                data: data,
+                error(ext) {
                     let error = e.responseJSON.errors;
                     let msj = error[Object.keys(error)[0]][0];
                     alert(msj);
-                }
-                , success(res) {
+                },
+                success(res) {
 
                 }
             })
@@ -1262,17 +1302,17 @@
 
             let data = {
 
-                idmaestro: $("#id").val()
-                , IdCliente: $("#cliente").val()
-                , IdUsuario: $("#recibepedido").val()
-                , IdCategoria: $("#cat").val()
-                , fecha: $("#fecha_fact").val()
-                , notas: $("#notas").val()
-                , total_costo: $("#total").val()
-                , Saldo: $("#saldo").val()
-                , abono: $("#abono").val()
-                , codseguimiento: "{{$edit->CodSeguimiento}}"
-                , estado: $("#estado").val(),
+                idmaestro: $("#id").val(),
+                IdCliente: $("#cliente").val(),
+                IdUsuario: $("#recibepedido").val(),
+                IdCategoria: $("#cat").val(),
+                fecha: $("#fecha_fact").val(),
+                notas: $("#notas").val(),
+                total_costo: $("#total").val(),
+                Saldo: $("#saldo").val(),
+                abono: $("#abono").val(),
+                codseguimiento: "{{ $edit->CodSeguimiento }}",
+                estado: $("#estado").val(),
 
 
 
@@ -1363,26 +1403,26 @@
 
                 arreglo[contador] = {
 
-                    IdCliente: $("#cliente").val()
-                    , IdUsuario: $("#recibepedido").val()
-                    , IdCategoria: $("#cat").val()
-                    , fecha: $("#fecha_fact").val()
-                    , notas: $("#notas").val()
-                    , total_costo: $("#total").val()
-                    , Saldo: $("#saldo").val()
-                    , abono: $("#abono").val()
-                    , codseguimiento: $("#tipo_de_pedido").val(),
+                    IdCliente: $("#cliente").val(),
+                    IdUsuario: $("#recibepedido").val(),
+                    IdCategoria: $("#cat").val(),
+                    fecha: $("#fecha_fact").val(),
+                    notas: $("#notas").val(),
+                    total_costo: $("#total").val(),
+                    Saldo: $("#saldo").val(),
+                    abono: $("#abono").val(),
+                    codseguimiento: $("#tipo_de_pedido").val(),
 
-                    IdInsumos: Talla_val
-                    , pecho_izq: pechoizq_
-                    , pecho_der: pechoder_
-                    , manga_izq: mangaizq_
-                    , manga_der: mangader_
-                    , espalda: espalda_
-                    , cantidad: cantidad_
-                    , precio: precio_
-                    , totaldetalle: totaldetalle_
-                    , observacion: Observacion_,
+                    IdInsumos: Talla_val,
+                    pecho_izq: pechoizq_,
+                    pecho_der: pechoder_,
+                    manga_izq: mangaizq_,
+                    manga_der: mangader_,
+                    espalda: espalda_,
+                    cantidad: cantidad_,
+                    precio: precio_,
+                    totaldetalle: totaldetalle_,
+                    observacion: Observacion_,
 
 
                 };
@@ -1421,17 +1461,17 @@
         function updatedetalle() {
 
             let datos = {
-                iddetalleordensu: $("#Id_trabajadores").val()
-                , pecho_izq: $("#pechoizq1").val()
-                , pecho_der: $("#pechoder1").val()
-                , manga_izq: $("#mangaizq1").val()
-                , manga_der: $("#mangader1").val()
-                , espalda: $("#espalda1").val()
-                , cantidad: $("#cantidad1").val()
-                , precio: $("#precio1").val()
-                , observacion: $("#observacioncambio").val()
-                , IdInsumos: $("#insumocambio").val()
-                , total: $("#sub_total2").val(),
+                iddetalleordensu: $("#Id_trabajadores").val(),
+                pecho_izq: $("#pechoizq1").val(),
+                pecho_der: $("#pechoder1").val(),
+                manga_izq: $("#mangaizq1").val(),
+                manga_der: $("#mangader1").val(),
+                espalda: $("#espalda1").val(),
+                cantidad: $("#cantidad1").val(),
+                precio: $("#precio1").val(),
+                observacion: $("#observacioncambio").val(),
+                IdInsumos: $("#insumocambio").val(),
+                total: $("#sub_total2").val(),
 
             };
             let method1 = (datos.iddetalleordensu == '' ? 'POST' : 'PUT');
@@ -1449,11 +1489,11 @@
 
             let datos = {
 
-                idmaestro: $("#id").val()
-                , fecha: $("#fecha_fact").val()
-                , metodo_de_pago: $("#metodo_de_pago").val()
-                , cod: cod_seg_rand
-                , tipodepago: $("#tipodepago").val(),
+                idmaestro: $("#id").val(),
+                fecha: $("#fecha_fact").val(),
+                metodo_de_pago: $("#metodo_de_pago").val(),
+                cod: cod_seg_rand,
+                tipodepago: $("#tipodepago").val(),
 
 
             };
@@ -1476,9 +1516,9 @@
                 url += '/' + data.idmaestro;
             }
             $.ajax({
-                url: url
-                , method: method
-                , data: data,
+                url: url,
+                method: method,
+                data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -1492,17 +1532,17 @@
         function agregarotrodetalle() {
 
             let datos = {
-                idmaestro: $("#id").val()
-                , pecho_izq: $("#pecho_izq").val()
-                , pecho_der: $("#pecho_der").val()
-                , manga_izq: $("#manga_izq").val()
-                , manga_der: $("#manga_der").val()
-                , espalda: $("#espalda").val()
-                , cantidad: $("#cantidad").val()
-                , precio: $("#precio").val()
-                , observacion: $("#Observacion").val()
-                , IdInsumos: $("#insumocambio1").val()
-                , total: $("#sub_total").val(),
+                idmaestro: $("#id").val(),
+                pecho_izq: $("#pecho_izq").val(),
+                pecho_der: $("#pecho_der").val(),
+                manga_izq: $("#manga_izq").val(),
+                manga_der: $("#manga_der").val(),
+                espalda: $("#espalda").val(),
+                cantidad: $("#cantidad").val(),
+                precio: $("#precio").val(),
+                observacion: $("#Observacion").val(),
+                IdInsumos: $("#insumocambio1").val(),
+                total: $("#sub_total").val(),
 
             };
             console.log(datos);
@@ -1520,16 +1560,9 @@
         function limpiardatos() {
 
 
-            $("#pecho_izq").val('')
-                , $("#pecho_der").val('')
-                , $("#manga_izq").val('')
-                , $("#manga_der").val('')
-                , $("#espalda").val('')
-                , $("#cantidad").val('')
-                , $("#precio").val('')
-                , $("#Observacion").val('')
-                , $("#insumocambio1").val('')
-                , $("#sub_total").val('');
+            $("#pecho_izq").val(''), $("#pecho_der").val(''), $("#manga_izq").val(''), $("#manga_der").val(''), $(
+                "#espalda").val(''), $("#cantidad").val(''), $("#precio").val(''), $("#Observacion").val(''), $(
+                "#insumocambio1").val(''), $("#sub_total").val('');
 
         }
 
@@ -1542,7 +1575,6 @@
             });
 
         }
-
     </script>
 
 
