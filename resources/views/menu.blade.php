@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-</head> 
+</head>
 <div
     class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
     <!-- Copyright -->
@@ -81,9 +81,12 @@
                         </td>
                         <td style="padding-left: 100px;">
                             <a href="/menu/pedidos_sublimacion" class="btn btn-lg uk-padding "
-                                style="background-color:transparent"> <div style="text-align:center">
+                                style="background-color:transparent">
+                                <div style="text-align:center">
 
-                                    <img width="200" height="200" src="https://ip-embroidery.com/wp-content/uploads/2020/11/ICONO1_Mesa-de-trabajo-1.png" alt="">
+                                    <img width="200" height="200"
+                                        src="https://ip-embroidery.com/wp-content/uploads/2020/11/ICONO1_Mesa-de-trabajo-1.png"
+                                        alt="">
 
                                 </div>
 
@@ -111,12 +114,14 @@
                                 <div style="text-align:center">
                                     <div style="text-align:center">
 
-                                        <img width="200" height="200" src="https://lh3.googleusercontent.com/proxy/HhyAQUEMdpECgUtuhpJu59Vponiaq72MW1Q1ze7WFE6DvwEtktCKZGNCqMJeVD2_iGal8nXpbWEzWjxZGBRe1zorPxxH7bwpMHIwOjZiyGdMSerY7K9F3WcYQ66dgZjq1x-D8Q" alt="">
+                                        <img width="200" height="200"
+                                            src="https://media.istockphoto.com/vectors/print-screen-icon-vector-id1032930760?k=20&m=1032930760&s=170667a&w=0&h=iFSdaaNPqgq7uMbr_YEc9Jd95rFINBdeI3C060hu4QQ="
+                                            alt="">
 
 
                                     </div>
 
-</div>
+                                </div>
                                 Pedidos de Serigrafía
                             </a>
                         </td>
@@ -124,16 +129,14 @@
                             <a href="/menu/pedidos_bordado" class="btn btn-lg" style="background-color:transparent">
                                 <div style="text-align:center">
 
-                                    <img width="200" height="200" src="https://library.kissclipart.com/20180918/gbq/kissclipart-icono-de-maquina-de-coser-png-clipart-la-maquina-d-6cc902fd23badb86.png"
-
-
-
+                                    <img width="200" height="200"
+                                        src="https://library.kissclipart.com/20180918/gbq/kissclipart-icono-de-maquina-de-coser-png-clipart-la-maquina-d-6cc902fd23badb86.png"
                                         alt="">
                                 </div>
                                 Pedidos de Bordado
                             </a>
                         </td>
-                        <td  style="padding-left: 100px;">
+                        <td style="padding-left: 100px;">
 
                             <a href="/menu/menuadmon" class="btn btn-lg" style="background-color:transparent">
                                 <div style="text-align:center"><svg xmlns="http://www.w3.org/2000/svg" width="200"
