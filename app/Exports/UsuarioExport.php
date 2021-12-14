@@ -11,23 +11,21 @@ class UsuarioExport implements FromCollection,WithHeadings
 
     public function headings():array{
         return[
-            
+
         'IdPersona'	,
-        'Primer_Nombre',	
-        'Segundo_Nombre',	
-        'Primer_Apellido',	
-        'Segundo_Apellido',	
-        'Cedula',	
-        'Telefono',	
-        'Correo',	
-        'Direccion',	
+        'Primer_Nombre',
+        'Segundo_Nombre',
+        'Primer_Apellido',
+        'Segundo_Apellido',
+        'Cedula',
+        'Telefono',
+        'Correo',
+        'Direccion',
         'IdUsuario',
-        'IdPersona',	
-        'Usuario',	
-        'Contraseña',	
-        'Token',
+        'Usuario',
         'Privilegios',
-        'RolAsignado'
+        'Rol Asignado',
+        'Estado'
 
         ];
     }
