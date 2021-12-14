@@ -11,20 +11,19 @@ class ClienteExport implements FromCollection,WithHeadings
 
     public function headings():array{
         return[
-            
+
         'IdPersona'	,
-        'Primer_Nombre',	
-        'Segundo_Nombre',	
-        'Primer_Apellido',	
-        'Segundo_Apellido',	
-        'Cedula',	
-        'Telefono',	
-        'Correo',	
-        'Direccion',	
+        'Primer Nombre',
+        'Segundo Nombre',
+        'Primer Apellido',
+        'Segundo Apellido',
+        'Cedula',
+        'Telefono',
+        'Correo',
+        'Direccion',
         'IdCliente',
-        'IdPersona',	
-        'TipoDeCliente',	
-        'cargo',	
+        'Tipo de Cliente',
+        'cargo',
         'RUC'
 
         ];
