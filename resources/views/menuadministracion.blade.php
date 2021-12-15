@@ -10,7 +10,11 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
 </head>
-<div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+<!-- JJajajaja no pusieron el body-->
+@if(auth()->user()->Privilegios!=='Administrador')
+    <script>window.location = "/menu";</script>
+@endif
+    <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
     <!-- Copyright -->
     <div class="text-white mb-3 mb-md-0">
 

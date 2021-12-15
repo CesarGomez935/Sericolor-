@@ -9,6 +9,18 @@ use App\Models\persona;
 
 class CrudClienteController extends Controller
 {
+
+    public function validarRol (Request $request)
+    {
+            $roleChecker=new CheckRoleController();
+            $roleChecker->check($request,[
+                'GET'=>['auth'=>true,'allowed'=>'all'], //GET SIGNIFICA LECTURA ESTA PERMITIDO PARA TODOS
+                'POST'=>['auth'=>true,'allowed'=>'Administrador,Dependiente'], //POST INVOCA A STORE SOLO PERMITIDO PARA EL ADMIN
+                'PUT'=>['auth'=>true,'allowed'=>'Administrador'],
+                'DELETE'=>['auth'=>true,'allowed'=>'Administrador'],
+            ],auth()->user());
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +28,7 @@ class CrudClienteController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -37,20 +49,19 @@ class CrudClienteController extends Controller
      */
     public function store(Request $request)
     {
-       // return $request->all();
-
+        $this->validarRol($request);
        DB::transaction(function () use ($request) {
 
         $request->validate([
 
              'primer_nombre'=>'required',
-             
+
              'telefono'=>'required',
              'correo'=>'required',
              'tipo_de_cliente'=>'required',
-             
-             
-                
+
+
+
 
         ]);
 
@@ -64,8 +75,8 @@ class CrudClienteController extends Controller
                 'Telefono'=>$request->telefono,
                 'Correo'=>$request->correo,
                 'Direccion'=>$request->direccion,
-                
-                
+
+
 
             ]);
             $cliente=cliente::create([
@@ -75,12 +86,12 @@ class CrudClienteController extends Controller
                 'TipoDeCliente'=>$request->tipo_de_cliente,
                 'Cargo'=>$request->cargo,
                 'RUC'=>$request->ruc,
-                
-                
-                
+
+
+
 
             ]);
-           
+
        });
 
        return redirect("/menu/menuadmon/clientes");
@@ -116,7 +127,7 @@ class CrudClienteController extends Controller
 
     //    $cliente= cliente::find($id);
     //    // $cliente=cliente::select("*")->where("IdCliente",$IdCliente)->join("persona","persona.IdPersona","=","cliente.IdPersona")->get();
-        
+
     //     return view("editarcliente", compact("cliente"));
     //    // return $id;
         // return $cliente;
@@ -133,7 +144,7 @@ class CrudClienteController extends Controller
     public function update(Request $request, $id)
     {
 
-        
+
         $IdPersona=$request->IdPersona;
 
       //  $cliente= persona::where("Persona.IdPersona",$id)->join("cliente","persona.IdPersona","=","cliente.IdPersona")->firstOrFail();
@@ -143,9 +154,9 @@ class CrudClienteController extends Controller
         $persona= persona::where("IdPersona",$id)->firstorfail();
 
        // return $cliente;
-       
 
-         
+
+
                 //$persona->IdPersona=$request->IdPersona;
                 $persona->Primer_Nombre=$request->primer_nombre;
                 $persona->Segundo_Nombre=$request->segundo_nombre;
@@ -157,10 +168,10 @@ class CrudClienteController extends Controller
                 $persona->Direccion=$request->direccion;
 
                 $persona->save();
-                
-                
 
-            
+
+
+
 
 
                 $cliente-> IdPersona=$persona->IdPersona;
@@ -168,16 +179,16 @@ class CrudClienteController extends Controller
                 $cliente-> Cargo=$request->cargo;
                 $cliente-> RUC=$request->ruc;
                 $cliente->save();
-                
-                
-                
 
-        
-           
-    
+
+
+
+
+
+
 
        return redirect("/menu/menuadmon/clientes");
-        
+
     }
 
     /**
