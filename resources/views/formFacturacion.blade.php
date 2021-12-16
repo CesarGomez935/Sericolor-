@@ -371,13 +371,13 @@
                                                     <span class="uk-form-icon">C$</span>
 
 
-                                                    <input disabled id="sub_total" type="number" min="0"
+                                                    <input disabled id="sub_total" value="0" type="number" min="0"
                                                         class="uk-input uk-form-width-small ">
                                                 </div>
                                             </td>
                                             <td>
                                                 <a class="uk-button uk-button-primary"
-                                                    onclick="insertar(); abonos();">Insertar
+                                                    onclick="insertar(); totalgen();">Insertar
                                                     Pedido</a>
                                             </td>
 
@@ -515,7 +515,7 @@
 
                                         <span class="uk-form-icon">C$</span>
 
-                                        <input class="uk-form-width-small uk-input saldo" disabled id="total">
+                                        <input class="uk-form-width-small uk-input saldo" value="0" disabled id="total">
                                     </div>
                                 </td>
 
@@ -790,10 +790,10 @@
                                 <option disabled value="">Insumos</option>
                             </select>
                         </td>
-                        <td colspan="3"><textarea type="number" id="observacion" class="uk-input uk-form-width-large "
-                                placeholder="Observacion"></textarea></td>
+                        <td colspan="3"><textarea type="number" id="observacionimp"
+                                class="uk-input uk-form-width-large " placeholder="Observacion"></textarea></td>
                         <td colspan="2"> <a class="uk-button uk-button-primary"
-                                onclick="insertarimp(); abonosimp();">Ingresar
+                                onclick="insertarimp(); totalgen();">Ingresar
                                 Pedido</a></td>
 
                     </tr>
@@ -949,7 +949,7 @@
                         <tfoot>
                             <tr>
 
-                                <td colspan="8"><label for="Total" class="uk-label">Total</label></td>
+                                <td colspan="8"><label for="Totalimp" class="uk-label">Total</label></td>
                                 <td>
                                     <div class="uk-inline">
 
@@ -980,10 +980,10 @@
                         var insumo = insumoselect.options[insumoselect.selectedIndex].text;
                         var IdInsumo = document.getElementById("insumosimp").value;
 
-                        var costo = document.getElementById("costo").value;
-                        var cant = document.getElementById("cantidad").value;
+                        var costo = document.getElementById("costoimp").value;
+                        var cant = document.getElementById("cantidadimp").value;
                         var sub_total = document.getElementById("sub_totalimp").value;
-                        var Observacion = document.getElementById("observacion").value;
+                        var Observacion = document.getElementById("observacionimp").value;
 
 
 
@@ -1017,7 +1017,7 @@
                         document.getElementById("sub_total").value = null;
                         document.getElementById("alto").value = null;
                         document.getElementById("ancho").value = null;
-                        document.getElementById("costo").value = null;
+                        document.getElementById("costoimp").value = null;
                         document.getElementById("insumosimp").value = null;
 
                         document.getElementById("precio_mt2").value = null;
@@ -1137,6 +1137,11 @@
                 </table>
             </div>
 
+
+
+
+        </div>
+        <div class="uk-div uk-background-muted uk-padding">
             <div class="uk-background-muted">
                 <h1 class="uk-text-center">Notas</h1>
 
@@ -1144,13 +1149,24 @@
 
                     <textarea id="notas" name="Notas" class="uk-textarea" placeholder="Notas"></textarea>
 
+                    <div class="uk-margin" style="text-align: center">
+                        <label for="total_gen" class="uk-form-label" for="form-horizontal-text">Total General</label>
+                        <div class="uk-form-controls">
+                            <div class="uk-inline">
 
+                                <span class="uk-form-icon">C$</span>
+
+                                <input value="0" disabled id="total_gen" name="total_gen"
+                                    class="uk-input uk-form-width-large" id="form-horizontal-text" type="number"
+                                    placeholder="">
+                            </div>
+
+                        </div>
+                    </div>
 
                 </div>
             </div>
-
         </div>
-
 
 
         <div class="uk-child-width-1-2 uk-text-center uk-background-muted uk-padding" uk-grid>
@@ -1172,8 +1188,26 @@
                                     placeholder="">
                             </div>
                             <script>
+                                function totalgen() {
+                                    var total_sub = 0;
+                                    var total_imp = 0;
+                                    var total = 0;
+
+                                    total_sub = parseFloat(document.getElementById("total").value);
+                                    total_imp = parseFloat(document.getElementById("totalimp").value);
+
+                                    total = total_imp + total_sub + 0;
+
+                                    console.log(total_sub, total_imp, total, "prueba tota"); //
+
+
+                                    document.getElementById('total_gen').value = total;
+                                    abonos();
+
+                                }
+
                                 function abonos() {
-                                    var sub_total = document.getElementById("total").value;
+                                    var sub_total = document.getElementById("total_gen").value;
                                     var abono = document.getElementById("abono").value;
                                     var total = 0;
 
@@ -1301,6 +1335,7 @@
     <script>
         let pedido = [];
         const arreglosub = [];
+        const arregloimp = [];
         var cod_seg_rand = 0;
 
 
@@ -1309,6 +1344,7 @@
             var chk = document.getElementById('chkimpresion').checked;
             var chkotros = document.getElementById('chkotros').checked;
 
+            console.log(chk);
 
             if (chkotros) {
                 document.getElementById("otros").hidden = false;
@@ -1337,26 +1373,24 @@
             var chkotros = document.getElementById('chkotros').checked;
 
 
-            if (chkotros) {
-                document.getElementById("otros").hidden = false;
-                cargar_detallesub();
-                guardarpedido();
-            } else {
-                document.getElementById("otros").hidden = true;
-            }
 
-            if (chk) {
-                document.getElementById("impresion").hidden = false;
-
-
-            } else {
-                document.getElementById("impresion").hidden = true;
-            }
 
             if (chkotros && chk) {
+                cargar_detallesub();
+                cargar_detalleimp();
+                guardarpedidoall();
 
 
+            } else if (chk && chkotros == "false") {
+                document.getElementById("impresion").hidden = false;
+                cargar_detalleimp();
+                guardarpedidoimp();
 
+
+            } else if (chkotros && chk == "false") {
+                document.getElementById("otros").hidden = false;
+                cargar_detallesub();
+                guardarpedidosub();
             }
 
         }
@@ -1511,7 +1545,15 @@
 
         }
 
-        function guardarpedido() {
+        function cargarpedidosub() {
+            peticionapi({}, 'GET', function(res) {
+                console.log(res);
+                alert('respuesta satisfactoria');
+            });
+
+        }
+        // Para solo sub y otros
+        function guardarpedidosub() {
 
 
 
@@ -1523,7 +1565,7 @@
                 IdCategoria: $("#cat").val(),
                 fecha: $("#fecha_fact").val(),
                 notas: $("#notas").val(),
-                total_costo: $("#total").val(),
+                total_costo: $("#total_gen").val(),
                 Saldo: $("#saldo").val(),
                 abono: $("#abono").val(),
                 codseguimiento: cod_seg_rand,
@@ -1555,13 +1597,7 @@
             });
         }
 
-        function cargarpedidosub() {
-            peticionapi({}, 'GET', function(res) {
-                console.log(res);
-                alert('respuesta satisfactoria');
-            });
 
-        }
 
         function cargar_detallesub() {
 
@@ -1625,7 +1661,7 @@
                     IdCategoria: $("#cat").val(),
                     fecha: $("#fecha_fact").val(),
                     notas: $("#notas").val(),
-                    total_costo: $("#total").val(),
+                    total_costo: $("#total_gen").val(),
                     Saldo: $("#saldo").val(),
                     abono: $("#abono").val(),
                     codseguimiento: $("#tipo_de_pedido").val(),
@@ -1666,6 +1702,207 @@
 
 
 
+        }
+        //------------------------------------
+
+        //Para solo Imp digital
+
+        function cargar_detalleimp() {
+
+            var filas = document.querySelectorAll("#Tablaimp tbody tr");
+
+            var contador = 0;
+
+            const alto = [];
+            const ancho = [];
+            const mt2 = [];
+            const prec_mt2 = [];
+            const costo = [];
+            const cantidad = [];
+            const sub_total = [];
+            const Observacion = [];
+
+            var total = document.getElementById("totalimp").value;
+
+            console.log(filas);
+
+
+
+
+
+
+            filas.forEach(function(e) {
+
+
+                // obtenemos las columnas de cada fila
+                var columnas = e.querySelectorAll("td");
+
+
+
+                var alto_ = columnas[0].textContent;
+                var ancho_ = columnas[1].textContent;
+                var mt2_ = columnas[2].textContent;
+                var Prec_mt2_ = columnas[3].textContent;
+                var insumo = columnas[4].textContent;
+
+                var costo_ = columnas[6].textContent;
+                var cantidad_ = parseFloat(columnas[7].textContent);
+                var sub_total_ = parseFloat(columnas[8].textContent);
+                var Observacion_ = columnas[9].textContent;
+
+
+
+
+
+                alto[contador] = alto_;
+                ancho[contador] = ancho_
+                mt2[contador] = mt2_;
+                prec_mt2[contador] = Prec_mt2_;
+                costo[contador] = costo_;
+
+                cantidad[contador] = cantidad_;
+                sub_total[contador] = sub_total_;
+                Observacion[contador] = Observacion_;
+
+                arregloimp[contador] = {
+
+                    IdCliente: $("#cliente").val(),
+                    IdUsuario: $("#recibepedido").val(),
+                    IdCategoria: $("#cat").val(),
+                    fecha: $("#fecha_fact").val(),
+                    notas: $("#notas").val(),
+                    total_costo: $("#total_gen").val(),
+                    Saldo: $("#saldo").val(),
+                    abono: $("#abono").val(),
+                    codseguimiento: $("#tipo_de_pedido").val(),
+
+                    IdCategoria: 3,
+                    IdInsumos: insumo,
+                    ancho: ancho_,
+                    alto: alto_,
+                    mt2: mt2_,
+                    p_m: Prec_mt2_,
+                    costo: costo_,
+                    cantidad: cantidad_,
+                    total: sub_total_,
+                    observacion: Observacion_,
+
+
+
+                };
+
+
+
+
+                contador = contador + 1;
+
+
+                console.log(arregloimp)
+
+
+
+
+            })
+
+
+            console.log(filas)
+
+
+
+
+
+
+        }
+
+        function guardarpedidoimp() {
+
+
+
+
+            let data = {
+
+                IdCliente: $("#cliente").val(),
+                IdUsuario: $("#recibepedido").val(),
+                IdCategoria: $("#cat").val(),
+                fecha: $("#fecha_fact").val(),
+                notas: $("#notas").val(),
+                total_costo: $("#total_gen").val(),
+                Saldo: $("#saldo").val(),
+                abono: $("#abono").val(),
+                codseguimiento: cod_seg_rand,
+
+
+                idmetodo: $("#metodo_de_pago").val(),
+                cod: $("#factura").val(),
+                estado: $("#estado").val(),
+                tipodepago: $("#tipodepago").val(),
+
+                //funcion que llama al ar
+                detalleimp: JSON.stringify(arregloimp)
+
+
+
+
+            };
+
+            console.log(data);
+
+
+
+            peticionapiimp(data, 'POST', function(res) {
+                alert('Guardado con exito')
+            });
+        }
+
+
+
+        // guardar todos
+
+
+
+        function guardarpedidoall() {
+
+
+
+
+            let data = {
+
+                IdCliente: $("#cliente").val(),
+                IdUsuario: $("#recibepedido").val(),
+                IdCategoria: $("#cat").val(),
+                fecha: $("#fecha_fact").val(),
+                notas: $("#notas").val(),
+                total_costo: $("#total_gen").val(),
+                Saldo: $("#saldo").val(),
+                abono: $("#abono").val(),
+                codseguimiento: cod_seg_rand,
+
+
+
+
+
+                idmetodo: $("#metodo_de_pago").val(),
+                cod: $("#factura").val(),
+
+                tipodepago: $("#tipodepago").val(),
+                estado: $("#estado").val(),
+
+                //funcion que llama al arreglo que toma los datos
+                detallesub: JSON.stringify(arreglosub),
+                detalleimp: JSON.stringify(arregloimp)
+
+
+
+
+            };
+
+            console.log(data);
+
+
+
+            peticionapiall(data, 'POST', function(res) {
+                alert('Guardado con exito')
+            });
         }
     </script>
 

@@ -112,6 +112,25 @@ class facturacioncontroller extends Controller
                 ]);
 
             }
+            $detalleimp=json_decode($request->detalleimp);
+             foreach($detalleimp as $fila){
+
+                $detalleimp=detalleimpresion::create([
+                    'IdInsumos'=>$fila->IdInsumos,
+                    'IdMaestro'=>$maestro->idmaestro,
+                    'IdCategoria'=>$fila->IdCategoria,
+                    'ancho'=>$fila->ancho,
+                    'alto'=>$fila->alto,
+                    'mt2'=>$fila->mt2,
+                    'p_m'=>$fila-> p_m,
+                    'costo'=>$fila-> costo,
+                    'cantidad'=>$fila->cantidad,
+                    'total'=>$fila->total,
+                    'observacion'=>$fila->observacion,
+
+                ]);
+
+            }
             $recibo=recibo::create([
 
                     'IdMaestro'=>$maestro->idmaestro,

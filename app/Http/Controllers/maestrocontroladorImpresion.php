@@ -22,7 +22,7 @@ class maestrocontroladorImpresion extends Controller
      */
     public function index()
     {
-        return maestro::all();        
+        return maestro::all();
         return categoria::all();
         return recibo::all();
         return metodo_de_pago::all();
@@ -36,7 +36,7 @@ class maestrocontroladorImpresion extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -47,10 +47,10 @@ class maestrocontroladorImpresion extends Controller
      */
     public function store(Request $request)
     {
-        
+
         DB::transaction(function() use ($request)
         {
-           
+
             $request->validate([
 
              'IdCategoria'=>'required',
@@ -62,11 +62,11 @@ class maestrocontroladorImpresion extends Controller
              'codseguimiento'=>'required',
              'abono'=>'required',
              'estado'=>'required',
-             
+
              'idmetodo'=>'required',
              'fecha'=>'required',
              'cod'=>'required',
-                   
+
             ]);
 
 
@@ -82,31 +82,32 @@ class maestrocontroladorImpresion extends Controller
                 'CodSeguimiento'=>$request->codseguimiento,
                 'abono'=>$request->abono,
                 'Estado'=>$request->estado,
-              
+
 
             ]);
-                $detalle=json_decode($request->detalle);
-             foreach($detalle as $fila){
-                 
-                $detalle=detalleimpresion::create([                    
+                $detalleimp=json_decode($request->detalleimp);
+             foreach($detalleimp as $fila){
+
+                $detalleimp=detalleimpresion::create([
                     'IdInsumos'=>$fila->IdInsumos,
-                    'IdMaestro'=>$maestro->idmaestro,                
+                    'IdMaestro'=>$maestro->idmaestro,
+                    'IdCategoria'=>$fila->IdCategoria,
                     'ancho'=>$fila->ancho,
                     'alto'=>$fila->alto,
                     'mt2'=>$fila->mt2,
                     'p_m'=>$fila-> p_m,
-                    'costo'=>$fila-> costo,  
+                    'costo'=>$fila-> costo,
                     'cantidad'=>$fila->cantidad,
                     'total'=>$fila->total,
                     'observacion'=>$fila->observacion,
-    
+
                 ]);
 
             }
-            
+
                 $recibo=recibo::create([
 
-                    'IdMaestro'=>$maestro->idmaestro,  
+                    'IdMaestro'=>$maestro->idmaestro,
                     'Id_Metodo_de_Pago'=>$request->idmetodo,
                     'Fecha_de_pago'=>$request->fecha,
                     'Cod_Recibo'=>$request->cod,
@@ -114,26 +115,26 @@ class maestrocontroladorImpresion extends Controller
 
 
                 ]);
-            
-            
+
+
 
         });
     }
 
     // public function insertarDetalle($maestro,$detalle)
-    // {   
+    // {
     //     foreach($detalles as $detalle)
     //     {
     //         $maestro->detalles()->insert(
     //             [
 
     //             'IdInsumos'=>$detalle->IdInsumos,
-    //             'IdMaestro'=>$maestro->id,                
+    //             'IdMaestro'=>$maestro->id,
     //             'ancho'=>$detalle->ancho,
     //             'alto'=>$detalle->alto,
     //             'mt2'=>$detalle->mt2,
     //             'p_m'=>$detalle-> p_m,
-    //             'costo'=>$detalle-> costo,  
+    //             'costo'=>$detalle-> costo,
     //             'cantidad'=>$detalle->cantidad,
     //             'total'=>$detalle->total,
     //             'observacion'=>$detalle->observacion,
@@ -195,7 +196,7 @@ class maestrocontroladorImpresion extends Controller
          $model1->Notas=$request->input('notas');
          $model1->saldo=$request->input('Saldo');
          $model1->CodSeguimiento=$request->input('codseguimiento');
-         
+
          $model1->abono=$request->input('abono');
         $model1->Estado=$request->input('estado');
          $model1->total_costo=$request->input('total_costo');
