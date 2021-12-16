@@ -15,6 +15,9 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 <header>
+    @if(auth()->user()->Privilegios!=='Administrador')
+        <script>window.location = "/menu";</script>
+@endif
     <!-- NavBar-->
     <nav class="uk-navbar uk-navbar-container ">
         <div class="uk-navbar-left">
@@ -76,9 +79,7 @@
 </header>
 
 <body>
-@if(auth()->user()->Privilegios!=='Administrador')
-    <script>window.location = "/menu";</script>
-@endif
+
     <div class="uk-container"><br>
 
         <h3>Insumos para los servicios de Sericolor</h3>
