@@ -58,22 +58,24 @@
                     <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital
                         </a></li>
                     <hr class="uk-divider-icon">
-                    <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
+                    @if (auth()->user()->Privilegios=='Administrador')
+                        <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
 
-                   <ul class="uk-nav-sub">
-                        <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
-                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
-                        <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
-                        <li> <a href="/menu/menuadmon/insumos">Insumos</a></li>
-                        <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
-                        <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
-                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
-                        <li> <a href="/menu/menuadmon/promociones">Menú Principal</a></li>
-                    </ul>
-                    <hr class="uk-divider-icon">
+                        <ul class="uk-nav-sub">
+                            <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
+                            <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
+                            <li> <a href="/menu/menuadmon/insumos">Insumos</a></li>
+                            <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
+                            <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
+                            <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                            <li> <a href="/menu/menuadmon/promociones">Menú Principal</a></li>
+                        </ul>
+
+                        <hr class="uk-divider-icon">
+                    @endif
 
                     <li class="uk-parent">  Sesión </li>
-                     <ul class="uk-nav-sub">      
+                     <ul class="uk-nav-sub">
                           <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
                      </ul>
 
@@ -250,7 +252,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            
+
                                             <label for="sub_total" class="uk-label">Total</label>
                                         </td>
                                         <td>
@@ -752,7 +754,7 @@
                         .Segundo_Apellido +
                         '</option>'
                 });
-                 
+
                 $("#cliente").html(html);
             });
         }
