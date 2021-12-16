@@ -24,7 +24,9 @@
 </head>
 
 <body onpageshow="cargarproductos();">
-
+@if(auth()->user()->Privilegios!=='Administrador')
+    <script>window.location = "/menu";</script>
+@endif
     <!-- Nav Bar -->
     <nav class="uk-navbar uk-navbar-container uk-margin">
         <div class="uk-navbar-left">

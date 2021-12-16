@@ -63,7 +63,7 @@
                     <hr class="uk-divider-icon">
 
                     <li class="uk-parent">  Sesión </li>
-                     <ul class="uk-nav-sub">      
+                     <ul class="uk-nav-sub">
                           <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
                      </ul>
 
@@ -76,6 +76,9 @@
 </header>
 
 <body>
+@if(auth()->user()->Privilegios!=='Administrador')
+    <script>window.location = "/menu";</script>
+@endif
     <div class="uk-container"><br>
 
         <h3>Insumos para los servicios de Sericolor</h3>
