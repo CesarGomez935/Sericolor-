@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\administracion;
+use App\Http\Controllers\categoriacontroller;
 use App\Http\Controllers\detalledelpagocontroller;
 use App\Http\Controllers\detalledelpedidocontroller;
 use App\Http\Controllers\pedidocontroller;
@@ -8,6 +9,7 @@ use App\Http\Controllers\persona;
 use App\Http\Controllers\reporteController;
 use App\Http\Controllers\dbcontroller;
 use App\Http\Controllers\maestrocontrolador;
+
 use App\Models\maestro;
 use App\Http\Controllers\promocioncontroller;
 use Illuminate\Http\Request;
@@ -22,6 +24,7 @@ use App\Http\Controllers\vistas;
 use App\Http\Controllers\editpedido1;
 use App\Http\Controllers\editpedido2;
 use App\Http\Controllers\editpedido3;
+use App\Http\Controllers\facturacioncontroller;
 use App\Http\Controllers\ReportesController;
 use App\Http\Controllers\revisionController;
 use App\Http\Controllers\insumocontroller;
@@ -42,11 +45,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('pedido', maestrocontrolador::class);
+Route::resource('pedidoall', facturacioncontroller::class);
+
+Route::resource('pedidosub', maestrocontrolador::class);
+Route::resource('pedidoimp', maestrocontroladorImpresion::class);
 
 Route::resource('insumo', insumocontroller::class);
 Route::get('getinsumobusqueda/{id}',[ insumocontroller::class,"getinsumobusqueda"]);
-Route::resource('pedidoimp', maestrocontroladorImpresion::class);
+
 Route::resource('promocion',slidercontroller::class);
 Route::resource('slider',SliderPrincipalController::class);
 
@@ -65,7 +71,7 @@ Route::resource('cliente',llamadaclientecontroller::class);
  Route::get('descargarbasededatos', [dbcontroller::class,"descargar"]);
  Route::get('descargarclientes', [dbcontroller::class,"Exportarclientes"]);
  Route::get('descargarusuarios', [dbcontroller::class,"Exportarusuarios"]);
- 
+
 Route::get('descargarpedidos1', [dbcontroller::class,"Exportarpedidos1"]);
 Route::get('descargarpedidos2', [dbcontroller::class,"Exportarpedidos2"]);
 Route::get('descargarpedidos3', [dbcontroller::class,"Exportarpedidos3"]);
@@ -78,6 +84,9 @@ Route::get('getinsumoimpdigital',[insumocontroller::class,"getinsumoimpdigital"]
 Route::get('getinsumosub',[insumocontroller::class,"getinsumosub"]);
 Route::get('getinsumoser',[insumocontroller::class,"getinsumoser"]);
 Route::get('getinsumobor',[insumocontroller::class,"getinsumobor"]);
+Route::get('getinsumomult',[insumocontroller::class,"getinsumomult"]);
+
+Route::get('getcategorias',[categoriacontroller::class,"getcategorias"]);
 
 Route::get('gettrabajador', [personacontroller::class,"getalltrabajador"]);
 Route::get('getcliente', [personacontroller::class,"getallcliente"]);

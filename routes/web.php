@@ -13,7 +13,7 @@ Use App\Http\Controllers\vistas;
 Use App\Http\Controllers\maestrocontroladorImpresion;
 Use App\Http\Controllers\logincontroller;
 use App\Http\Controllers\pruebacontroller;
-use App\Http\Controllers\SliderPrincipalController; 
+use App\Http\Controllers\SliderPrincipalController;
 Use Barryvdh\DomPDF\Facade as PDF;
 
 
@@ -70,7 +70,7 @@ Route::get('registro', function () {
 
 // Route::get('/pdf/personal', function () {
 //      return view('reportes.personal');
-    
+
 // });
 
 
@@ -89,7 +89,7 @@ Route::get('registro', function () {
 //Middleware que autentica todo el sistema
 Route::middleware(['autenticado'])->group(function(){
     Route::get('menu', [pruebacontroller::class,"index"])->name("login.menu");
-   
+
 
 Route::get('menu/pedidos_bordado', function () {
     return view('pedidosBordado');
@@ -128,7 +128,9 @@ Route::get('/menu/menu_facturacion/form_bordado', function () {
     return view('formBordado');
 });
 
-
+Route::get('/menu/facturacion', function () {
+    return view('formFacturacion');
+});
 
 
 Route::get('/menu/menu_facturacion/form_sublimacion', function () {

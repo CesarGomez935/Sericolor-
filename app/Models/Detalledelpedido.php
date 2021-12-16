@@ -10,9 +10,9 @@ class Detalledelpedido extends Model
 {
     protected $table='detalle-orden-sub,bor,ser';
     protected $primaryKey='iddetalleordensu';
-    protected $fillable=['IdInsumos','IdMaestro','pecho_izquierdo','pecho_derecho','manga_izquierda','manga_derecha','espalda','cantidad','observacion','precio','total'];
+    protected $fillable=['IdInsumos','IdMaestro','IdCategoria','pecho_izquierdo','pecho_derecho','manga_izquierda','manga_derecha','espalda','cantidad','observacion','precio','total'];
     public $timestamps = false;
-    
+
 
 
     public function insumos(){

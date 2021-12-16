@@ -112,12 +112,12 @@ class insumocontroller extends Controller
 
     public function getinsumobusqueda($id)
     {
-     
+
          return insumos::select("*")->join("categoria","insumos.idcategoria","=","categoria.idcategoria")->where(DB::raw("CONCAT(IdInsumo,' ',Tipo,' ',insumos.Descripcion,'',categoria.descripcion)"),"LIKE",'%'.$id.'%')->orderBy("IdInsumo","ASC")->get();
 
     }
     public function getinsumosub(){
-        
+
 
 
                 return insumos::select("*")->where("idcategoria",1)->Orwhere("idcategoria",5)->get();
@@ -126,7 +126,7 @@ class insumocontroller extends Controller
 
     }
     public function getinsumoser(){
-        
+
 
 
           return insumos::select("*")->where("idcategoria",2)->Orwhere("idcategoria",5)->get();
@@ -135,15 +135,23 @@ class insumocontroller extends Controller
 
     }
     public function getinsumobor(){
-        
+
 
 
         return insumos::select("*")->where("idcategoria",4)->Orwhere("idcategoria",5)->get();
 
 
     }
+    public function getinsumomult(){
+
+
+
+        return insumos::select("*")->where("idcategoria",1)->Orwhere("idcategoria",2)->Orwhere("idcategoria",4)->Orwhere("idcategoria",5)->get();
+
+
+    }
     public function getinsumoimpdigital(){
-        
+
 
 
         return insumos::select("*")->where("idcategoria",3)->get();
@@ -152,7 +160,7 @@ class insumocontroller extends Controller
     }
 
      public function getallinsumos(){
-        
+
 
 
         return insumos::all();

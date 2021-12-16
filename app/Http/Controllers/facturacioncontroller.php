@@ -16,7 +16,7 @@ use App\Models\recibo;
 //use DB;
 use App\Models\maestro;
 
-class maestrocontrolador extends Controller
+class facturacioncontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -50,7 +50,6 @@ class maestrocontrolador extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-
     public function store(Request $request)
     {
 
@@ -128,6 +127,7 @@ class maestrocontrolador extends Controller
 
         });
     }
+
 
 
     /**
