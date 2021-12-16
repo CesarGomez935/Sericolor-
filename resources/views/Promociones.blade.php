@@ -26,6 +26,9 @@
 </head>
 
 <body>
+@if(auth()->user()->Privilegios!=='Administrador')
+    <script>window.location = "/menu";</script>
+@endif
     <!-- Nav Bar -->
     <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
@@ -72,7 +75,7 @@
                     <hr class="uk-divider-icon">
 
                     <li class="uk-parent">  Sesión </li>
-                     <ul class="uk-nav-sub">      
+                     <ul class="uk-nav-sub">
                           <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
                      </ul>
 

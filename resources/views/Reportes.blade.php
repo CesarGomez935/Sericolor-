@@ -34,7 +34,9 @@
 </head>
 
 <body>
-
+@if(auth()->user()->Privilegios!=='Administrador')
+    <script>window.location = "/menu";</script>
+@endif
     <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
@@ -82,7 +84,7 @@
                     <hr class="uk-divider-icon">
 
                     <li class="uk-parent">  Sesión </li>
-                     <ul class="uk-nav-sub">      
+                     <ul class="uk-nav-sub">
                           <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
                      </ul>
 
@@ -130,7 +132,7 @@
 
                                 {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
                                 <a target="_blank" id="pedidosdiario" class="uk-button uk-button-secondary" uk-icon="download"></a>
-                                
+
 
 
 
