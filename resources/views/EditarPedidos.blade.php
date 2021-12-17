@@ -217,6 +217,7 @@
                                                                         '</option>'
                                                                 });
                                                                 $("#categorias").html(html);
+                                                                $("#categoria1").html(html);
                                                             });
 
 
@@ -1556,6 +1557,13 @@
                             <fieldset class="uk-fieldset">
 
                                 <legend class="uk-legend">Cambiar Detalles</legend>
+
+                                <label>Categoria</label>
+                                <select class="uk-select" id="categoria1">
+
+
+
+                                </select>
                                 <div class="uk-margin">
                                     <label>Numero de detalle</label>
                                     <div class="uk-margin">
@@ -2160,6 +2168,7 @@
                 datos[0].Cantidad), $("#precio1").val(datos[0].precio), $("#observacioncambio").val(datos[0]
                 .observacion)
             $("#insumocambio").val(datos[0].IdInsumos)
+            $("#categoria1").val(datos[0].IdCategoria)
             $("#sub_total2").val(datos[0].total)
 
         }
@@ -2390,6 +2399,7 @@
                 cantidad: $("#cantidad1").val(),
                 precio: $("#precio1").val(),
                 observacion: $("#observacioncambio").val(),
+                IdCategoria: $("#categoria1").val(),
                 IdInsumos: $("#insumocambio").val(),
                 total: $("#sub_total2").val(),
 

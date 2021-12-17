@@ -92,6 +92,7 @@ class editpedido1 extends Controller
          $model=new Detalledelpedido();
          $model=Detalledelpedido::find($id);
          $model->IdInsumos=$request->input('IdInsumos');
+         $model->IdCategoria=$request->input('IdCategoria');
         $model->pecho_izquierdo=$request->input('pecho_izq');
         $model->pecho_derecho=$request->input('pecho_der');
         $model->manga_izquierda=$request->input('manga_izq');
