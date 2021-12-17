@@ -177,7 +177,7 @@
                                     <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
                                         <thead>
                                             <tr>
-                                                <th>Talla</th>
+                                                <th>Categoria <br> Insumo</th>
                                                 <th>Cantidad | precio</th>
                                                 <th>Observacion</th>
                                             </tr>
@@ -188,12 +188,64 @@
 
                                                 <td>
 
-                                                    <select class="uk-select" id="insumocambio1">
+
+                                                    <select id="categorias" name="categorias"
+                                                        class="uk-select uk-form-width-small">
+
+                                                    </select>
+
+                                                    <select id="insumos" name="Tallas"
+                                                        class="uk-select uk-form-width-small">
 
                                                     </select>
 
                                                     <script>
                                                         cargarinsumosub();
+                                                        cargarcat();
+
+
+                                                        function cargarcat() {
+
+                                                            peticionapicat({}, 'GET', function(res) {
+                                                                cat = res;
+                                                                console.log(res);
+                                                                let html = '<option disabled selected value=""> Sel. Categoria </option>';
+
+                                                                res.forEach(cat => {
+                                                                    html += '<option value="' + cat.idcategoria + '">' + cat
+                                                                        .descripcion +
+                                                                        '</option>'
+                                                                });
+                                                                $("#categorias").html(html);
+                                                            });
+
+
+
+
+
+
+
+                                                        }
+
+                                                        function peticionapicat(data, method, onSuccess) {
+
+
+                                                            let url = '/api/getcategorias';
+                                                            if (method == 'PUT' || method == 'DELETE') {
+                                                                url += '/' + data.id;
+                                                            }
+                                                            $.ajax({
+                                                                url: url,
+                                                                method: method,
+                                                                data: data,
+
+                                                                success(res) {
+                                                                    onSuccess(res);
+
+                                                                }
+
+                                                            })
+                                                        }
 
                                                         function cargarinsumosub() {
 
@@ -209,7 +261,7 @@
                                                                         .Descripcion +
                                                                         '</option>'
                                                                 });
-                                                                $("#insumocambio1").html(html);
+                                                                $("#insumos").html(html);
                                                                 $("#insumocambio").html(html);
 
                                                             });
@@ -321,7 +373,91 @@
                     <table id="Tabla" class="uk-table uk-table-hover uk-table-divider uk-table-small">
                         <thead>
                             <tr>
-                                <th>Id Categoria</th>
+                                <th>
+                                    <div class="popup" onclick="myFunction()">Categoria <span
+                                            class="uk-margin-small-right" uk-icon="info"></span>
+
+                                        <span class="popuptext" id="myPopup">Categorias: <br> Sublimación=1 <br>
+                                            Serigrafía=2 <br> Bordado=4</span>
+                                    </div>
+                                    <script>
+                                        // When the user clicks on div, open the popup
+                                        function myFunction() {
+                                            var popup = document.getElementById("myPopup");
+                                            popup.classList.toggle("show");
+                                        }
+                                    </script>
+
+                                    <style>
+                                        /* Popup container - can be anything you want */
+                                        .popup {
+                                            position: relative;
+                                            display: inline-block;
+                                            cursor: pointer;
+                                            -webkit-user-select: none;
+                                            -moz-user-select: none;
+                                            -ms-user-select: none;
+                                            user-select: none;
+                                        }
+
+                                        /* The actual popup */
+                                        .popup .popuptext {
+                                            visibility: hidden;
+                                            width: 160px;
+                                            background-color: #555;
+                                            color: #fff;
+                                            text-align: center;
+                                            border-radius: 6px;
+                                            padding: 8px 0;
+                                            position: absolute;
+                                            z-index: 1;
+                                            bottom: 125%;
+                                            left: 50%;
+                                            margin-left: -80px;
+                                        }
+
+                                        /* Popup arrow */
+                                        .popup .popuptext::after {
+                                            content: "";
+                                            position: absolute;
+                                            top: 100%;
+                                            left: 50%;
+                                            margin-left: -5px;
+                                            border-width: 5px;
+                                            border-style: solid;
+                                            border-color: #555 transparent transparent transparent;
+                                        }
+
+                                        /* Toggle this class - hide and show the popup */
+                                        .popup .show {
+                                            visibility: visible;
+                                            -webkit-animation: fadeIn 1s;
+                                            animation: fadeIn 1s;
+                                        }
+
+                                        /* Add animation (fade in the popup) */
+                                        @-webkit-keyframes fadeIn {
+                                            from {
+                                                opacity: 0;
+                                            }
+
+                                            to {
+                                                opacity: 1;
+                                            }
+                                        }
+
+                                        @keyframes fadeIn {
+                                            from {
+                                                opacity: 0;
+                                            }
+
+                                            to {
+                                                opacity: 1;
+                                            }
+                                        }
+
+                                    </style>
+                                </th>
                                 <th>Pecho Izq.</th>
                                 <th>Pecho Der.</th>
                                 <th>Manga Izq.</th>
@@ -648,14 +784,14 @@
                                     placeholder="0" value="0"></td>
                             <td><input id="ancho" oninput="area();" class="uk-input area" min="0" type="number"
                                     placeholder="0" value="0"></td>
-                            <td><input id="mt2" oninput="costos();" class="uk-input costoimp" min="0" type="number"
+                            <td><input id="mt2" oninput="costosimp();" class="uk-input costoimp" min="0" type="number"
                                     placeholder="0" value="0"></td>
                             <td>
                                 <div class="uk-inline">
 
                                     <span class="uk-form-icon">C$</span>
 
-                                    <input id="precio_mt2" oninput="costosimo();" class="uk-input costoimp" min="0"
+                                    <input id="precio_mt2" oninput="costosimp();" class="uk-input costoimp" min="0"
                                         type="number" placeholder="0" value="0">
                                 </div>
                             </td>
@@ -709,16 +845,17 @@
 
                                 let datos = {
 
-                                    idmaestro: $("#idmaster").val(),
+                                    idmaestro: {{ $edit->idmaestro }},
                                     alto: $("#alto").val(),
                                     ancho: $("#ancho").val(),
                                     mt2: $("#mt2").val(),
                                     p_m: $("#precio_mt2").val(),
-                                    cantidad: $("#cantidad").val(),
-                                    costo: $("#costo").val(),
-                                    observacion: $("#observacion").val(),
-                                    IdInsumos: $("#insumos").val(),
-                                    total: $("#sub_total").val(),
+                                    cantidad: $("#cantidadimp").val(),
+                                    costo: $("#costoimp").val(),
+                                    observacion: $("#observacionimp").val(),
+                                    IdInsumos: $("#insumosimp").val(),
+                                    total: $("#sub_totalimp").val(),
+
 
                                 };
                                 console.log(datos);
@@ -727,9 +864,27 @@
                                 peticionapidetalleupdateimp(datos, 'POST', function(res) {
                                     //    UIkit.modal('#formdetalles').hide();
                                     //cargardatosdetalle();
-                                    limpiardatos();
+                                    limpiardatosimp();
                                 });
-                                limpiardatos();
+                                limpiardatosimp();
+
+                            }
+
+                            function limpiardatosimp() {
+
+
+                                $("#alto").val(''), $("#ancho").val(''), $("#mt2").val(''), $("#precio_mt2").val(''), $("#cantidad").val(''), $(
+                                    "#costo").val(''), $("#observacion").val(''), $("#sub_total").val('');
+
+                            }
+
+                            function eliminarimp(id) {
+                                console.log(id);
+                                peticionapidetalleupdateimp({
+                                    iddetalleordenimp: id
+                                }, 'DELETE', function(res) {
+                                    cargardatosdetalleimp();
+                                });
 
                             }
 
@@ -820,7 +975,7 @@
                                             '<td>' + detalleimp.observacion + '</td>' +
                                             '<td>' +
                                             '<a onclick="editar(' + detalleimp.iddetalleordenimp +
-                                            ')"  class="uk-padding-small" uk-icon="pencil"></a> <span></> <a  action=""  onclick="eliminar(' +
+                                            ')"  class="uk-padding-small" uk-icon="pencil"></a> <span></> <a  action=""  onclick="eliminarimp(' +
                                             detalleimp.iddetalleordenimp + ');" class=" " uk-icon="trash"></a>' + '</td>' +
 
                                             '</tr>'
@@ -846,7 +1001,8 @@
                 </table>
 
                 <script type="text/javascript">
-                    cargarinsumo();
+                    cargarinsumoimp();
+
 
                     function borrar() {
 
@@ -865,7 +1021,7 @@
 
                     }
 
-                    function cargarinsumo() {
+                    function cargarinsumoimp() {
 
                         peticionapimp({}, 'GET', function(res) {
                             usuarios = res;
@@ -877,8 +1033,9 @@
                                     .Descripcion +
                                     '</option>'
                             });
-                            $("#insumos").html(html);
+
                             $("#insumocambioimp").html(html);
+                            $("#insumosimp").html(html);
 
                         });
 
@@ -1665,8 +1822,7 @@
                 <a href="/menu/pedidos_sublimacion" class="uk-button uk-button-primary "
                     style="margin-left: 100px">Atrás</a>
 
-                <a id="guardar" href="/menu/pedidos_sublimacion" class="uk-button uk-button-secondary"
-                    style="margin-left: 100px">Guardar</a>
+                <a id="guardar" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
 
                 <a hidden id="refrescar" onclick="cargardatosdetalle();">Refrescar</a>
 
@@ -1738,13 +1894,14 @@
                         '<td>' + detalleimp.observacion + '</td>' +
                         '<td>' +
                         '<a onclick="editarimp(' + detalleimp.iddetalleordenimp +
-                        ')"  class="uk-padding-small" uk-icon="pencil"></a> <span></> <a  action=""  onclick="eliminar(' +
+                        ')"  class="uk-padding-small" uk-icon="pencil"></a> <span></> <a  action=""  onclick="eliminarimp(' +
                         detalleimp.iddetalleordenimp + ');" class=" " uk-icon="trash"></a>' + '</td>' +
 
                         '</tr>'
                 });
                 $("#Tabladetalleimp").html(html);
                 calcularimp();
+                totalgen();
             });
 
 
@@ -1974,6 +2131,7 @@
                 });
                 $("#Tabladetalle").html(html);
                 calcular();
+                totalgen();
             });
 
 
@@ -2254,7 +2412,7 @@
                 idmaestro: $("#id").val(),
                 fecha: $("#fecha_fact").val(),
                 metodo_de_pago: $("#metodo_de_pago").val(),
-                cod: cod_seg_rand,
+                cod: $("#factura").val(),
                 tipodepago: $("#tipodepago").val(),
 
 
@@ -2294,7 +2452,7 @@
         function agregarotrodetalle() {
 
             let datos = {
-                idmaestro: $("#id").val(),
+                idmaestro: {{ $edit->idmaestro }},
                 pecho_izq: $("#pecho_izq").val(),
                 pecho_der: $("#pecho_der").val(),
                 manga_izq: $("#manga_izq").val(),
@@ -2303,7 +2461,8 @@
                 cantidad: $("#cantidad").val(),
                 precio: $("#precio").val(),
                 observacion: $("#Observacion").val(),
-                IdInsumos: $("#insumocambio1").val(),
+                IdInsumos: $("#insumos").val(),
+                IdCategoria: $("#categorias").val(),
                 total: $("#sub_total").val(),
 
             };

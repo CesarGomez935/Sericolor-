@@ -40,6 +40,7 @@ class editpedido3 extends Controller
          $model=new detalleimpresion();
          $model->IdMaestro=$request->input('idmaestro');
          $model->IdInsumos=$request->input('IdInsumos');
+         $model->IdCategoria='3';
         $model->ancho=$request->input('ancho');
          $model->mt2=$request->input('mt2');
         $model->alto=$request->input('alto');
@@ -86,6 +87,7 @@ class editpedido3 extends Controller
         $model=new detalleimpresion();
         $model= detalleimpresion::find($id);
         $model->IdInsumos=$request->input('IdInsumos');
+        $model->IdCategoria='3';
         $model->ancho=$request->input('ancho');
         $model->mt2=$request->input('mt2');
         $model->alto=$request->input('alto');
