@@ -10,16 +10,21 @@
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
 
 </head>
@@ -29,7 +34,8 @@
     <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Resumen de Pedidos</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Resumen
+                    de Pedidos</span>
             </a>
         </div>
 
@@ -55,11 +61,12 @@
                     <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
                     <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
                     <li class="uk-active"> <a href="/menu/pedidos_serigrafia"> Pedidos Serigrafía </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital
+                        </a></li>
                     <hr class="uk-divider-icon">
                     <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
 
-                   <ul class="uk-nav-sub">
+                    <ul class="uk-nav-sub">
                         <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
                         <li> <a href="/menu/menuadmon/personal">Personal</a></li>
                         <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
@@ -71,10 +78,10 @@
                     </ul>
                     <hr class="uk-divider-icon">
 
-                    <li class="uk-parent">  Sesión </li>
-                     <ul class="uk-nav-sub">      
-                          <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
-                     </ul>
+                    <li class="uk-parent"> Sesión </li>
+                    <ul class="uk-nav-sub">
+                        <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
+                    </ul>
 
                 </ul>
 
@@ -93,7 +100,8 @@
                 <a onclick="getid();" class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
 
 
-                <input oninput="getid();" placeholder="Por: N° de Pedido, Nombre o Tipo de pago" id="id_busqueda" class="uk-input uk-form-width-large" type="text">
+                <input oninput="getid();" placeholder="Por: N° de Pedido, Nombre o Tipo de pago" id="id_busqueda"
+                    class="uk-input uk-form-width-large" type="text">
 
             </div>
 
@@ -166,9 +174,9 @@
             url += '/' + data.id;
         }
         $.ajax({
-            url: url
-            , method: method
-            , data: data,
+            url: url,
+            method: method,
+            data: data,
 
             success(res) {
                 onSuccess(res);
@@ -187,9 +195,9 @@
             url += '/' + data.idmaestro;
         }
         $.ajax({
-            url: url
-            , method: method
-            , data: data,
+            url: url,
+            method: method,
+            data: data,
 
             success(res) {
                 onSuccess(res);
@@ -236,112 +244,29 @@
             pedido = res;
             let html = '';
             res.forEach(pedido => {
+                html +=
+                    '<tr>' + '<td>' +
+                    '<a class="uk-button" href="/menu/facturacion/' +
+                    pedido.idmaestro + '/edit' +
+                    '">' + pedido.idmaestro + '</td>' + '</a>' +
 
-                if (pedido.IdCategoria == 1) {
+                    '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_sublimacion/' +
+                    pedido.idmaestro + '/edit' +
+                    '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
+                    .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
+                    '<td>' + pedido.fecha + '</td>' +
+                    '<td>' + pedido.descripcion + '</td>' +
+                    '<td>' + pedido.Descripcion + '</td>' +
 
-                    html +=
-                        '<tr>' + '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_sublimacion/' +
-                        pedido.idmaestro + '/edit' +
-                        '">' + pedido.idmaestro + '</td>' + '</a>' +
+                    '<td>' + pedido.Estado + '</td>' + '<td>' +
+                    '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
 
-                        '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_sublimacion/' +
-                        pedido.idmaestro + '/edit' +
-                        '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
-                        .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
-                        '<td>' + pedido.fecha + '</td>' +
-                        '<td>' + pedido.descripcion + '</td>' +
-                        '<td>' + pedido.Descripcion + '</td>' +
-
-                        '<td>' + pedido.Estado + '</td>' + '<td>' +
-                        '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
-
-                        .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
-                        '<a href="/menu/menu_facturacion/form_sublimacion/' + pedido
-                        .idmaestro +
-                        '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick="eliminar(' +
-                        pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
-                        '</tr>'
-                } else if (pedido.IdCategoria == 2) {
-
-
-                    html +=
-                        '<tr>' + '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_serigrafia/' +
-                        pedido.idmaestro + '/edit' +
-                        '">' + pedido.idmaestro + '</td>' + '</a>' +
-
-                        '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_serigrafia/' +
-                        pedido.idmaestro + '/edit' +
-                        '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
-                        .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
-                        '<td>' + pedido.fecha + '</td>' +
-                        '<td>' + pedido.descripcion + '</td>' +
-                        '<td>' + pedido.Descripcion + '</td>' +
-
-                        '<td>' + pedido.Estado + '</td>' + '<td>' +
-
-                        '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
-
-                        .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
-
-                        '<a href="/menu/menu_facturacion/form_serigrafia/' + pedido
-                        .idmaestro +
-                        '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick="eliminar(' +
-                        pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
-                        '</tr>'
-                } else if (pedido.IdCategoria == 3) {
-
-                    html +=
-                        '<tr>' + '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_impresion_digital/' +
-
-                        pedido.idmaestro + '/edit' +
-                        '">' + pedido.idmaestro + '</td>' + '</a>' +
-
-                        '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_impresion_digital/' +
-
-                        pedido.idmaestro + '/edit' +
-                        '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
-                        .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
-                        '<td>' + pedido.fecha + '</td>' +
-                        '<td>' + pedido.descripcion + '</td>' +
-                        '<td>' + pedido.Descripcion + '</td>' +
-
-                        '<td>' + pedido.Estado + '</td>' + '<td>' +
-
-                        '<a target="_blank" href="/api/pdf/Factura_imp/' + pedido
-
-                        .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
-
-                        '<a href="/menu/menu_facturacion/form_impresion_digital/' + pedido
-
-                        .idmaestro +
-                        '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick="eliminar(' +
-                        pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
-                        '</tr>'
-                } else if (pedido.IdCategoria == 4) {
-
-                    html +=
-                        '<tr>' + '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_bordado/' +
-                        pedido.idmaestro + '/edit' +
-                        '">' + pedido.idmaestro + '</td>' + '</a>' +
-
-                        '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_bordado/' +
-                        pedido.idmaestro + '/edit' +
-                        '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
-                        .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
-                        '<td>' + pedido.fecha + '</td>' +
-                        '<td>' + pedido.descripcion + '</td>' +
-                        '<td>' + pedido.Descripcion + '</td>' +
-
-                        '<td>' + pedido.Estado + '</td>' + '<td>' +
-                        '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
-                        .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
-
-                        '<a href="/menu/menu_facturacion/form_bordado/' + pedido
-                        .idmaestro +
-                        '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a  action=""  onclick="eliminar(' +
-                        pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
-                        '</tr>'
-                }
+                    .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
+                    '<a href="/menu/menu_facturacion/form_sublimacion/' + pedido
+                    .idmaestro +
+                    '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick="eliminar(' +
+                    pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
+                    '</tr>'
 
 
             });
@@ -359,9 +284,9 @@
             url += '/' + data.id;
         }
         $.ajax({
-            url: url
-            , method: method
-            , data: data,
+            url: url,
+            method: method,
+            data: data,
 
             success(res) {
                 onSuccess(res);
@@ -380,7 +305,8 @@
                 if (pedido.IdCategoria == 1) {
 
                     html +=
-                        '<tr>' + '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_sublimacion/' +
+                        '<tr>' + '<td>' +
+                        '<a class="uk-button" href="/menu/menu_facturacion/form_sublimacion/' +
                         pedido.idmaestro + '/edit' +
                         '">' + pedido.idmaestro + '</td>' + '</a>' +
 
@@ -405,7 +331,8 @@
 
 
                     html +=
-                        '<tr>' + '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_serigrafia/' +
+                        '<tr>' + '<td>' +
+                        '<a class="uk-button" href="/menu/menu_facturacion/form_serigrafia/' +
                         pedido.idmaestro + '/edit' +
                         '">' + pedido.idmaestro + '</td>' + '</a>' +
 
@@ -431,12 +358,14 @@
                 } else if (pedido.IdCategoria == 3) {
 
                     html +=
-                        '<tr>' + '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_impresion_digital/' +
+                        '<tr>' + '<td>' +
+                        '<a class="uk-button" href="/menu/menu_facturacion/form_impresion_digital/' +
 
                         pedido.idmaestro + '/edit' +
                         '">' + pedido.idmaestro + '</td>' + '</a>' +
 
-                        '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_impresion_digital/' +
+                        '<td>' +
+                        '<a class="uk-button" href="/menu/menu_facturacion/form_impresion_digital/' +
 
                         pedido.idmaestro + '/edit' +
                         '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
@@ -460,7 +389,8 @@
                 } else if (pedido.IdCategoria == 4) {
 
                     html +=
-                        '<tr>' + '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_bordado/' +
+                        '<tr>' + '<td>' +
+                        '<a class="uk-button" href="/menu/menu_facturacion/form_bordado/' +
                         pedido.idmaestro + '/edit' +
                         '">' + pedido.idmaestro + '</td>' + '</a>' +
 
@@ -489,5 +419,4 @@
 
         });
     }
-
 </script>

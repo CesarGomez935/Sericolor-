@@ -250,7 +250,9 @@ Route::get('/menu/menu_facturacion/form_impresion_digital/{id}/edit',[maestrocon
 Route::put('/menu/menu_facturacion/form_impresion_digital/{id}', [maestrocontrolador::class,"editimpresion"])->name("maestro.update");
 
 
-
+//edicion de pedidos
+Route::get('/menu/facturacion/{id}/edit',[maestrocontrolador::class,"editpedido"])->name("maestro.editpedido");
+Route::put('/menu/facturacion/{id}', [maestrocontrolador::class,"editpedido"])->name("maestro.editpedido");
 
 
 

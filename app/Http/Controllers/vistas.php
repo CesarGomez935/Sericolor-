@@ -63,37 +63,37 @@ class vistas extends Controller
         //
     }
 
-    
+
 
     public function mostrar_sublimacion()
     {
 
-   
 
-        return maestro::select("*")->where("idcategoria",1)->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("maestro.idmaestro","DESC")->get();        
+
+        return maestro::select("*")->where("maestro.IdCategoria",1)->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("maestro.idmaestro","DESC")->get();
 
     }
 
     public function mostrar_serigrafia(){
 
-   
 
-  
-      
-        return maestro::select("*")->where("idcategoria",2)->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("maestro.idmaestro","DESC")->get();        
+
+
+
+        return maestro::select("*")->where("idcategoria",2)->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("maestro.idmaestro","DESC")->get();
 
     }
     public function mostrar_impresion(){
 
-        return maestro::select("*")->where("idcategoria",3)->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("maestro.idmaestro","DESC")->get();        
+        return maestro::select("*")->where("idcategoria",3)->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("maestro.idmaestro","DESC")->get();
 
     }
 
     public function mostrar_bordado(){
 
-   
 
-        return maestro::select("*")->where("idcategoria",4)->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("maestro.idmaestro","DESC")->get();        
+
+        return maestro::select("*")->where("idcategoria",4)->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->orderBy("maestro.idmaestro","DESC")->get();
 
     }
 
@@ -101,35 +101,35 @@ class vistas extends Controller
 
        // $detalles=new Detalledelpedido();
          return $detalles = Detalledelpedido::select("*")->where("IdMaestro",$id)->join("insumos","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")->get();
-            
+
 
     }
     public function getdetalles1($id){
 
        // $detalles=new Detalledelpedido();
          return $detalles = detalleimpresion::select("*")->where("IdMaestro",$id)->join("insumos","insumos.IdInsumo","=","detalle-orden-imp.IdInsumos")->get();
-            
+
 
     }
 
 
     public function getallpedidos(){
 
-   
 
-  
-      
-        return maestro::select("*")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->orderBy("maestro.idmaestro","DESC")->get();        
+
+
+
+        return maestro::select("*")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->orderBy("maestro.idmaestro","DESC")->get();
 
     }
 
     public function getallpedidosbusqueda($id){
 
-   
 
-  
-      
-        return maestro::select("*")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->where(DB::raw("CONCAT(maestro.idmaestro,' ',Primer_Nombre,' ',Segundo_Nombre,' ',Primer_Apellido,' ',Segundo_Apellido,' ',tipo_de_pago.Descripcion)"),"Like","%".$id."%")->orderBy("maestro.idmaestro","DESC")->get();        
+
+
+
+        return maestro::select("*")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->where(DB::raw("CONCAT(maestro.idmaestro,' ',Primer_Nombre,' ',Segundo_Nombre,' ',Primer_Apellido,' ',Segundo_Apellido,' ',tipo_de_pago.Descripcion)"),"Like","%".$id."%")->orderBy("maestro.idmaestro","DESC")->get();
 
     }
 
@@ -137,9 +137,9 @@ class vistas extends Controller
 
        // $detalles=new Detalledelpedido();
          return $model = Detalledelpedido::select("*")->where("IdMaestro",$id)->join("insumos","insumos.IdInsumo","=","detalle-orden-sub,bor,ser.IdInsumos")->get();
-            
-                            
-                   
+
+
+
         $model->IdInsumos=$request->input('IdInsumos');
         $model->pecho_izquierdo=$request->input('pecho_izq');
         $model->pecho_derecho=$request->input('pecho_der');
@@ -150,16 +150,16 @@ class vistas extends Controller
         $model->observacion=$request->input('observacion');
         $model->precio=$request->input('precio');
         $model->total=$request->input('total');
-        
+
         return $model->save();
 
 
 
-                  
-                    
-    
-           
-        
+
+
+
+
+
     }
 
 

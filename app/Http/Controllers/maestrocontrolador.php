@@ -182,7 +182,7 @@ class maestrocontrolador extends Controller
 
 
 
-        $edit= maestro::where("IdCategoria",1)->join("detalle-orden-sub,bor,ser","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro")
+        $edit= maestro::where("maestro.IdCategoria",1)->join("detalle-orden-sub,bor,ser","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro")
         ->join("cliente","cliente.IdCliente","=","maestro.IdCliente")
         ->join("usuario","usuario.IdUsuario","=","maestro.IdUsuario")
         ->join("persona","persona.IdPersona","=","cliente.IdPersona")
@@ -238,6 +238,36 @@ class maestrocontrolador extends Controller
          $model1->total_costo=$request->input('total_costo');
 
         return $model1->save();
+
+
+
+
+
+
+    }
+
+    public function editpedido($id){
+
+
+
+        $edit= maestro::join("detalle-orden-sub,bor,ser","detalle-orden-sub,bor,ser.IdMaestro","=","maestro.idmaestro")
+        ->join("cliente","cliente.IdCliente","=","maestro.IdCliente")
+        ->join("usuario","usuario.IdUsuario","=","maestro.IdUsuario")
+        ->join("persona","persona.IdPersona","=","cliente.IdPersona")
+        ->join("persona as trabajador","trabajador.IdPersona","=","usuario.IdPersona")
+        ->join("recibo","recibo.Idmaestro","=","maestro.idmaestro")
+        ->select("recibo.*","maestro.*","detalle-orden-sub,bor,ser.*", "cliente.*", "usuario.*", "trabajador.idpersona as trabajadorid", "trabajador.primer_nombre as trabajador_primer_nombre", "trabajador.segundo_nombre as trabajador_segundo_nombre", "trabajador.primer_apellido as trabajador_primer_apellido", "trabajador.segundo_apellido as trabajador_segundo_apellido", "persona.*")
+        ->findOrFail($id);
+
+        $editimp= maestro::join("detalle-orden-imp","detalle-orden-imp.IdMaestro","=","maestro.idmaestro")
+        ->join("cliente","cliente.IdCliente","=","maestro.IdCliente")
+        ->join("usuario","usuario.IdUsuario","=","maestro.IdUsuario")
+        ->join("persona","persona.IdPersona","=","cliente.IdPersona")
+        ->join("persona as trabajador","trabajador.IdPersona","=","usuario.IdPersona")
+        ->join("recibo","recibo.Idmaestro","=","maestro.idmaestro")
+        ->select("recibo.*","maestro.*","detalle-orden-imp.*", "cliente.*", "usuario.*", "trabajador.idpersona as trabajadorid", "trabajador.primer_nombre as trabajador_primer_nombre", "trabajador.segundo_nombre as trabajador_segundo_nombre", "trabajador.primer_apellido as trabajador_primer_apellido", "trabajador.segundo_apellido as trabajador_segundo_apellido", "persona.*")
+        ->findOrFail($id);
+         return view("EditarPedidos",compact('edit','editimp'));
 
 
 

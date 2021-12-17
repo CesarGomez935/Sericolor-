@@ -384,6 +384,7 @@
                 <table id="Tabla" class="uk-table uk-table-hover uk-table-divider uk-table-small">
                     <thead>
                         <tr>
+                            <th>Id Categoria</th>
                             <th>Pecho Izq.</th>
                             <th>Pecho Der.</th>
                             <th>Manga Izq.</th>
