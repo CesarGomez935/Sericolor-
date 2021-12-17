@@ -1259,7 +1259,10 @@
 
                             <select disabled class="uk-select uk-form-width-large" name="" id="estado">
                                 <option selected value="No Completado">No Completado</option>
-                                <option value="Completado">Completado</option>
+                                <option value="En Proceso">En Proceso</option>
+                                <option value="Completado - No Entregado">Completado - No Entregado</option>
+                                <option value="Completado - Entregado">Completado</option>
+
 
                             </select>
                         </div>

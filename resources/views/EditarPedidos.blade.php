@@ -1758,6 +1758,9 @@
 
                             <select class="uk-select uk-form-width-large" name="" id="estado">
                                 <option @if ($edit->Estado == 'No Completado') selected @endif value="No Completado">No Completado</option>
+                                <option @if ($edit->Estado == 'En Proceso') selected @endif value="En Proceso">En Proceso</option>
+                                <option @if ($edit->Estado == 'Completado - No Entregado') selected @endif value="Completado - No Entregado">Completado - No
+                                    Entregado</option>
                                 <option @if ($edit->Estado == 'Completado') selected @endif value="Completado">Completado</option>
 
                             </select>
