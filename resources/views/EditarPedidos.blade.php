@@ -187,72 +187,15 @@
                                             <tr>
 
                                                 <td>
-                                                    {{-- <select onchange="Validacion();" name="Tallas"
-                                                class="uk-select uk-form-width-xsmall" id="Tallas">
 
-
-                                                <option value="2">2</option>
-                                                <option value="4">4</option>
-                                                <option value="6">6</option>
-                                                <option value="8">8</option>
-                                                <option value="10">10</option>
-                                                <option value="12">12</option>
-                                                <option value="14">14</option>
-                                                <option value="16">16</option>
-                                                <option value="18">18</option>
-                                                <option value="S">S</option>
-                                                <option value="M">M</option>
-                                                <option value="L">L</option>
-                                                <option value="XL">XL</option>
-                                                <option value="2XL">2XL</option>
-                                                <option value="3XL">3XL</option>
-                                                <option value="5XL">5XL</option>
-
-
-
-
-                                            </select>
-
-
-
-
-                                            <select name="Genero" class="uk-select uk-form-width-xsmall" id="Genero">
-                                                <option value="Dama">Dama</option>
-                                                <option value="Caballero">Caballero</option>
-                                            </select> --}}
-                                                    {{-- <select onchange="Validacion();" name="Tallas"
-                                                class="uk-select uk-form-width-xsmall" id="Tallas">
-
-
-                                                <option value="2">2</option>
-                                                <option value="4">4</option>
-                                                <option value="6">6</option>
-                                                <option value="8">8</option>
-                                                <option value="10">10</option>
-                                                <option value="12">12</option>
-                                                <option value="14">14</option>
-                                                <option value="16">16</option>
-                                                <option value="18">18</option>
-                                                <option value="S">S</option>
-                                                <option value="M">M</option>
-                                                <option value="L">L</option>
-                                                <option value="XL">XL</option>
-                                                <option value="2XL">2XL</option>
-                                                <option value="3XL">3XL</option>
-                                                <option value="5XL">5XL</option>
-
-
-
-
-                                            </select> --}}
                                                     <select class="uk-select" id="insumocambio1">
 
                                                     </select>
 
                                                     <script>
-                                                        cargarinsumo();
+                                                        cargarinsumosub();
 
-                                                        function cargarinsumo() {
+                                                        function cargarinsumosub() {
 
                                                             peticionapisub({}, 'GET', function(res) {
                                                                 usuarios = res;
@@ -300,13 +243,6 @@
                                                         }
                                                     </script>
 
-
-
-
-                                                    {{-- <select name="Genero" class="uk-select uk-form-width-xsmall" id="Genero">
-                                                <option value="Dama">Dama</option>
-                                                <option value="Caballero">Caballero</option>
-                                            </select> --}}
 
 
                                                 </td>
@@ -385,6 +321,7 @@
                     <table id="Tabla" class="uk-table uk-table-hover uk-table-divider uk-table-small">
                         <thead>
                             <tr>
+                                <th>Id Categoria</th>
                                 <th>Pecho Izq.</th>
                                 <th>Pecho Der.</th>
                                 <th>Manga Izq.</th>
@@ -406,7 +343,7 @@
                         <tfoot>
                             <tr>
 
-                                <td colspan="9"><label for="Total" class="uk-label">Total</label></td>
+                                <td colspan="10"><label for="Total" class="uk-label">Total</label></td>
                                 <td>
                                     <div class="uk-inline">
 
@@ -421,21 +358,7 @@
                             </tr>
                         </tfoot>
                         <tbody id="Tabladetalle">
-                            {{-- <tr hidden>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
 
-                    </tr> --}}
                         </tbody>
 
 
@@ -466,32 +389,7 @@
                     }
 
 
-                    // function Validacion() {
-                    //     var Tallas = document.getElementById("Tallas");
-                    //     var Genero = document.getElementById("Genero");
 
-
-                    //     if (Tallas.value == "2" || Tallas.value == "4" || Tallas.value == "6" || Tallas.value == "8" || Tallas.value ==
-                    //         "10" || Tallas.value == "12" || Tallas.value == "14" || Tallas.value == "16" || Tallas.value == "18") {
-
-
-
-
-
-
-
-
-                    //         Genero.style.visibility = "hidden";
-                    //         Genero.value = "";
-
-                    //     } else {
-                    //         Genero.style.visibility = "visible";
-
-
-
-                    //     }
-
-                    // }
 
 
                     function insertar(pecho_izq, pecho_der, manga_izq, manga_der, espalda, talla, cant, obs) {
@@ -538,17 +436,7 @@
                         $('#Tabla tbody').append(htmlTags);
 
 
-                        // document.getElementById("pecho_izq").value = null;
-                        // document.getElementById("pecho_der").value = null;
-                        // document.getElementById("manga_izq").value = null;
-                        // document.getElementById("manga_der").value = null;
-                        // document.getElementById("espalda").value = null;
-                        // document.getElementById("Tallas").value = null;
-                        // document.getElementById("Genero").value = null;
-                        // document.getElementById("cantidad").value = null;
-                        // document.getElementById("precio").value = null;
-                        // document.getElementById("sub_total").value = null;
-                        // document.getElementById("Observacion").value = null;
+
 
 
                         calcular();
@@ -711,7 +599,7 @@
 
 
 
-                            var importe = parseFloat(columnas[9].textContent);
+                            var importe = parseFloat(columnas[10].textContent);
 
                             // mostramos el total por fila
                             // columnas[12].textContent = (cantidad * importe).toFixed(2);
@@ -760,14 +648,14 @@
                                     placeholder="0" value="0"></td>
                             <td><input id="ancho" oninput="area();" class="uk-input area" min="0" type="number"
                                     placeholder="0" value="0"></td>
-                            <td><input id="mt2" oninput="costos();" class="uk-input costo" min="0" type="number"
+                            <td><input id="mt2" oninput="costos();" class="uk-input costoimp" min="0" type="number"
                                     placeholder="0" value="0"></td>
                             <td>
                                 <div class="uk-inline">
 
                                     <span class="uk-form-icon">C$</span>
 
-                                    <input id="precio_mt2" oninput="costos();" class="uk-input costo" min="0"
+                                    <input id="precio_mt2" oninput="costosimo();" class="uk-input costoimp" min="0"
                                         type="number" placeholder="0" value="0">
                                 </div>
                             </td>
@@ -776,18 +664,18 @@
 
                                     <span class="uk-form-icon">C$</span>
 
-                                    <input id="costo" oninput="multi();" class="uk-input monto" min="0" type="number"
-                                        placeholder="0" value="0">
+                                    <input id="costoimp" oninput="multiimp();" class="uk-input montoimp" min="0"
+                                        type="number" placeholder="0" value="0">
                                 </div>
                             </td>
-                            <td><input id="cantidad" oninput="multi();" class="uk-input monto" min="0" type="number"
-                                    placeholder="0" value="0"></td>
+                            <td><input id="cantidadimp" oninput="multiimp();" class="uk-input montoimp" min="0"
+                                    type="number" placeholder="0" value="0"></td>
                             <td>
                                 <div class="uk-inline">
 
                                     <span class="uk-form-icon">C$</span>
 
-                                    <input id="sub_total" name="sub_total" class="uk-input" min="0" value=""
+                                    <input id="sub_totalimp" name="sub_totalimp" class="uk-input" min="0" value=""
                                         type="number" placeholder="0" value="0">
                                 </div>
                             </td>
@@ -796,17 +684,162 @@
                         </tr>
                         <tr>
 
-                            <td colspan="2"> <select class="uk-select" name="insumos de la tabla" id="insumos">
+                            <td colspan="2"> <select class="uk-select" name="insumos de la tabla" id="insumosimp">
                                     <option disabled value="">Insumos</option>
                                 </select>
                             </td>
-                            <td colspan="3"><textarea type="number" id="observacion"
+                            <td colspan="3"><textarea type="number" id="observacionimp"
                                     class="uk-input uk-form-width-large " placeholder="Observacion"></textarea></td>
                             <td colspan="2"> <a class="uk-button uk-button-primary" onclick="abonos();"
-                                    id="guardar1">Ingresar
+                                    id="guardarimp1">Ingresar
                                     Pedido</a></td>
 
                         </tr>
+
+                        <script>
+                            $('#guardarimp1').click(function(e) {
+
+                                agregarotrodetalleimp();
+                                var pagebutton = document.getElementById("refrescar");
+                                pagebutton.click();
+
+                            });
+
+                            function agregarotrodetalleimp() {
+
+                                let datos = {
+
+                                    idmaestro: $("#idmaster").val(),
+                                    alto: $("#alto").val(),
+                                    ancho: $("#ancho").val(),
+                                    mt2: $("#mt2").val(),
+                                    p_m: $("#precio_mt2").val(),
+                                    cantidad: $("#cantidad").val(),
+                                    costo: $("#costo").val(),
+                                    observacion: $("#observacion").val(),
+                                    IdInsumos: $("#insumos").val(),
+                                    total: $("#sub_total").val(),
+
+                                };
+                                console.log(datos);
+
+
+                                peticionapidetalleupdateimp(datos, 'POST', function(res) {
+                                    //    UIkit.modal('#formdetalles').hide();
+                                    //cargardatosdetalle();
+                                    limpiardatos();
+                                });
+                                limpiardatos();
+
+                            }
+
+                            function actualizardetalesimp() {
+                                updatedetalleimp();
+
+                                cargardatosdetalleimp();
+
+                            }
+
+                            $('#guardarimp2').click(function(e) {
+
+
+
+
+
+                            });
+
+                            function peticionapidetalleupdateimp(data, method, onSuccess) {
+
+                                console.log(data.iddetalleordenimp);
+
+                                let url = '/api/actualizar1';
+                                if (method == 'PUT' || method == 'DELETE') {
+                                    url += '/' + data.iddetalleordenimp;
+                                }
+                                $.ajax({
+                                    url: url,
+                                    method: method,
+                                    data: data,
+
+                                    success(res) {
+                                        onSuccess(res);
+
+                                    }
+
+                                })
+                                cargardatosdetalleimp();
+
+                            }
+
+                            function updatedetalleimp() {
+
+                                let datos = {
+                                    iddetalleordenimp: $("#Id_ordenimp").val(),
+                                    idmaestro: $("#idmaster").val(),
+                                    alto: $("#alto1").val(),
+                                    ancho: $("#Ancho1").val(),
+                                    mt2: $("#mt21").val(),
+                                    p_m: $("#p_m2").val(),
+                                    cantidad: $("#cantidadimp1").val(),
+                                    costo: $("#Costoimp1").val(),
+                                    observacion: $("#observacioncambioimp").val(),
+                                    IdInsumos: $("#insumocambioimp").val(),
+                                    total: $("#sub_totalimp1").val(),
+
+                                };
+                                peticionapidetalleupdateimp(datos, 'PUT', function(res) {
+                                    UIkit.modal('#formdetallesimp').hide();
+                                    //cargardatosdetalle();
+
+                                });
+
+
+
+                            }
+
+                            function cargardatosdetalleimp() {
+
+
+                                peticionapi4({}, 'GET', function(res) {
+                                    detalleimp = res;
+                                    console.log(detalleimp);
+                                    let html = '';
+                                    res.forEach(detalleimp => {
+                                        html +=
+                                            '<tr>' +
+                                            '<td>' + detalleimp.ancho + '</td>' +
+                                            '<td>' + detalleimp.alto + '</td>' +
+                                            '<td>' + detalleimp.mt2 + '</td>' +
+                                            '<td>' + detalleimp.p_m + '</td>' +
+                                            '<td>' + detalleimp.IdInsumos + '</td>' +
+                                            '<td>' + detalleimp.Descripcion + '</td>' +
+
+                                            '<td>' + detalleimp.costo + '</td>' +
+                                            '<td>' + detalleimp.cantidad + '</td>' +
+                                            '<td>' + detalleimp.total + '</td>' +
+                                            '<td>' + detalleimp.observacion + '</td>' +
+                                            '<td>' +
+                                            '<a onclick="editar(' + detalleimp.iddetalleordenimp +
+                                            ')"  class="uk-padding-small" uk-icon="pencil"></a> <span></> <a  action=""  onclick="eliminar(' +
+                                            detalleimp.iddetalleordenimp + ');" class=" " uk-icon="trash"></a>' + '</td>' +
+
+                                            '</tr>'
+                                    });
+                                    $("#Tabladetalleimp").html(html);
+                                    calcular();
+                                });
+
+
+
+
+
+
+
+
+
+
+                            }
+                        </script>
 
 
                     </tbody>
@@ -845,7 +878,7 @@
                                     '</option>'
                             });
                             $("#insumos").html(html);
-                            $("#insumocambio").html(html);
+                            $("#insumocambioimp").html(html);
 
                         });
 
@@ -896,10 +929,10 @@
 
                     }
 
-                    function costos() {
+                    function costosimp() {
                         var costo = 1;
                         var change = false; //
-                        $(".costo").each(function() {
+                        $(".costoimp").each(function() {
                             if (!isNaN(parseFloat($(this).val()))) {
                                 change = true;
                                 costo *= parseFloat($(this).val());
@@ -908,16 +941,16 @@
                         // Si se modifico el valor , retornamos la multiplicación
                         // caso contrario 0
                         costo = (change) ? costo : 0;
-                        document.getElementById('costo').value = costo.toFixed(2);
+                        document.getElementById('costoimp').value = costo.toFixed(2);
 
 
                     }
 
 
-                    function multi() {
+                    function multiimp() {
                         var total = 1;
                         var change = false; //
-                        $(".monto").each(function() {
+                        $(".montoimp").each(function() {
                             if (!isNaN(parseFloat($(this).val()))) {
                                 change = true;
                                 total *= parseFloat($(this).val());
@@ -926,7 +959,7 @@
                         // Si se modifico el valor , retornamos la multiplicación
                         // caso contrario 0
                         total = (change) ? total : 0;
-                        document.getElementById('sub_total').value = total.toFixed(2);
+                        document.getElementById('sub_totalimp').value = total.toFixed(2);
 
 
                     }
@@ -935,7 +968,7 @@
                 <div class="uk-background-muted uk-padding">
 
                     <div class="uk-grid-small" uk-grid>
-                        <table id="Tabla" class="uk-table uk-table-hover uk-table-divider uk-table-small">
+                        <table id="Tablaimp" class="uk-table uk-table-hover uk-table-divider uk-table-small">
                             <thead>
                                 <tr>
 
@@ -984,57 +1017,30 @@
                     <script type="text/javascript">
                         function editarimp(id) {
                             UIkit.modal('#formdetallesimp').show();
-                            console.log(detalle);
-                            let datos = detalle.filter(detalle => {
-                                return detalle.iddetalleordenimp == id;
+                            console.log(detalleimp);
+                            let datos = detalleimp.filter(detalleimp => {
+                                return detalleimp.iddetalleordenimp == id;
 
                             })
                             console.log(id, datos);
 
-                            $("#Id_trabajadores").val(datos[0].iddetalleordenimp);
+                            $("#Id_ordenimp").val(datos[0].iddetalleordenimp);
                             $("#alto1").val(datos[0].alto);
                             $("#Ancho1").val(datos[0].ancho);
                             $("#mt21").val(datos[0].mt2);
                             $("#p_m2").val(datos[0].p_m);
-                            $("#Costo1").val(datos[0].costo);
-                            $("#cantidad1").val(datos[0].cantidad);
-                            $("#sub_total1").val(datos[0].total);
-                            $("#observacioncambio").val(datos[0].observacion);
-                            $("#insumocambio").val(datos[0].IdInsumos);
+                            $("#Costoimp1").val(datos[0].costo);
+                            $("#cantidadimp1").val(datos[0].cantidad);
+                            $("#sub_totalimp1").val(datos[0].total);
+                            $("#observacioncambioimp").val(datos[0].observacion);
+                            $("#insumocambioimp").val(datos[0].IdInsumos);
 
 
 
 
                         }
 
-                        function Validacion() {
-                            var Tallas = document.getElementById("Tallas");
-                            var Genero = document.getElementById("Genero");
 
-
-                            if (Tallas.value == "2" || Tallas.value == "4" || Tallas.value == "6" || Tallas.value == "8" || Tallas.value ==
-                                "10" || Tallas.value == "12" || Tallas.value == "14" || Tallas.value == "16" || Tallas.value == "18") {
-
-
-
-
-
-
-
-
-                                Genero.style.visibility = "hidden";
-                                Genero.value = "";
-
-                            } else {
-                                Genero.style.visibility = "visible";
-                                Genero.value = "Caballero";
-
-
-
-
-                            }
-
-                        }
 
 
                         function insertar() {
@@ -1090,7 +1096,7 @@
 
                         function Obtener_datos() {
 
-                            var filas = document.querySelectorAll("#Tabla tbody tr");
+                            var filas = document.querySelectorAll("#Tablaimp tbody tr");
 
                             var contador = 0;
 
@@ -1103,7 +1109,7 @@
                             const sub_total = [];
                             const Observacion = [];
 
-                            var total = document.getElementById("total").value;
+                            var total = document.getElementById("totalimp").value;
 
                             console.log(filas);
 
@@ -1158,9 +1164,9 @@
 
                         }
 
-                        function calcular() {
+                        function calcularimp() {
                             // obtenemos todas las filas del tbody
-                            var filas = document.querySelectorAll("#Tabla tbody tr");
+                            var filas = document.querySelectorAll("#Tablaimp tbody tr");
 
 
                             var total = 0;
@@ -1185,25 +1191,10 @@
                                 console.log(total);
                             })
                             // mostramos la suma total
-                            var filas = document.querySelectorAll("#Tabla tfoot tr td");
+                            var filas = document.querySelectorAll("#Tablaimp tfoot tr td");
                             console.log(total);
-                            document.getElementById("total").value = total;
+                            document.getElementById("totalimp").value = total;
 
-                        }
-
-                        function fecha() {
-                            $(document).ready(function() {
-                                var date = new Date();
-
-                                var day = date.getDate();
-                                var month = date.getMonth() + 1;
-                                var year = date.getFullYear();
-
-                                if (month < 10) month = "0" + month;
-                                if (day < 10) day = "0" + day;
-                                var today = year + "-" + month + "-" + day;
-                                $("#fecha_fact").attr("value", today);
-                            });
                         }
                     </script>
                     </table>
@@ -1224,6 +1215,22 @@
 
 
             </div>
+
+
+            <div class="uk-margin" style="text-align: center">
+                <label for="total_gen" class="uk-form-label" for="form-horizontal-text">Total General</label>
+                <div class="uk-form-controls">
+                    <div class="uk-inline">
+
+                        <span class="uk-form-icon">C$</span>
+
+                        <input value="{{ $edit->total_costo }}" disabled id="total_gen" name="total_gen"
+                            class="uk-input uk-form-width-large" id="form-horizontal-text" type="number"
+                            placeholder="">
+                    </div>
+
+                </div>
+            </div>
         </div>
 
         <div class="uk-container">
@@ -1237,7 +1244,7 @@
                                 <legend class="uk-legend">Cambiar Detalles</legend>
                                 <div class="uk-margin">
                                     <label>Numero de detalle</label>
-                                    <input class="uk-input" type="number" id="Id_trabajadores"
+                                    <input class="uk-input" type="number" id="Id_ordenimp"
                                         placeholder="Numero de detalle" disabled>
                                 </div>
                                 <div class="uk-margin">
@@ -1253,8 +1260,9 @@
                                 <div class="uk-margin">
                                     <label>Metros Cuadrados</label>
 
-                                    <input onchange="costosedit();" disabled type="number" class="uk-input costo1"
-                                        type="text" id="mt21" placeholder="Metros Cuadrados">
+                                    <input onchange="costosimpedit();" disabled type="number"
+                                        class="uk-input costoimp1" type="text" id="mt21"
+                                        placeholder="Metros Cuadrados">
                                 </div>
                                 <div class="uk-margin">
                                     <label>Precio Mt²</label>
@@ -1263,7 +1271,7 @@
                                         <span class="uk-form-icon">C$</span>
 
 
-                                        <input onchange="costosedit();" type="number" class="uk-input costo1"
+                                        <input onchange="costosimpedit();" type="number" class="uk-input costoimp1"
                                             type="text" id="p_m2" placeholder="P/M1">
                                     </div>
                                 </div>
@@ -1274,14 +1282,14 @@
                                         <span class="uk-form-icon">C$</span>
 
 
-                                        <input onchange="multiedit()" type="number" class="uk-input monto1" type="text"
-                                            id="Costo1" placeholder="Costo">
+                                        <input onchange="multiimpedit()" type="number" class="uk-input montoimp1"
+                                            type="text" id="Costoimp1" placeholder="Costo">
                                     </div>
                                 </div>
                                 <div class="uk-margin">
                                     <label>Cantidad</label>
-                                    <input onchange="multiedit()" type="number" class="uk-input monto1" type="text"
-                                        id="cantidad1" placeholder="Cantidad">
+                                    <input onchange="multiimpedit()" type="number" class="uk-input montoimp1"
+                                        type="text" id="cantidadimp1" placeholder="Cantidad">
                                 </div>
                                 <div class="uk-margin">
                                     <input class="uk-input" disabled hidden type="text"
@@ -1295,17 +1303,17 @@
 
 
                                         <input type="number" class="uk-input " disabled type="text"
-                                            id="sub_total1" placeholder="Subtotal">
+                                            id="sub_totalimp1" placeholder="Subtotal">
                                     </div>
                                 </div>
                                 <div class="uk-margin">
                                     <label>Observacion</label>
-                                    <input class="uk-input" type="text" id="observacioncambio"
+                                    <input class="uk-input" type="text" id="observacioncambioimp"
                                         placeholder="Observacion">
                                 </div>
                                 <div class="uk-margin">
                                     <label>Insumo</label>
-                                    <select class="uk-select" name="insumos de la tabla" id="insumocambio">
+                                    <select class="uk-select" name="insumos de la tabla" id="insumocambioimp">
 
 
                                     </select>
@@ -1334,10 +1342,10 @@
 
                                     }
 
-                                    function costosedit() {
+                                    function costosimpedit() {
                                         var costo = 1;
                                         var change = false; //
-                                        $(".costo1").each(function() {
+                                        $(".costoimp1").each(function() {
                                             if (!isNaN(parseFloat($(this).val()))) {
                                                 change = true;
                                                 costo *= parseFloat($(this).val());
@@ -1346,17 +1354,17 @@
                                         // Si se modifico el valor , retornamos la multiplicación
                                         // caso contrario 0
                                         costo = (change) ? costo : 0;
-                                        document.getElementById('Costo1').value = costo.toFixed(2);
+                                        document.getElementById('Costoimp1').value = costo.toFixed(2);
 
 
 
                                     }
 
 
-                                    function multiedit() {
+                                    function multiimpedit() {
                                         var total = 1;
                                         var change = false; //
-                                        $(".monto1").each(function() {
+                                        $(".montoimp1").each(function() {
                                             if (!isNaN(parseFloat($(this).val()))) {
                                                 change = true;
                                                 total *= parseFloat($(this).val());
@@ -1365,7 +1373,7 @@
                                         // Si se modifico el valor , retornamos la multiplicación
                                         // caso contrario 0
                                         total = (change) ? total : 0;
-                                        document.getElementById('sub_total1').value = total.toFixed(2);
+                                        document.getElementById('sub_totalimp1').value = total.toFixed(2);
 
 
 
@@ -1373,8 +1381,8 @@
                                 </script>
                         </div>
                         <div style="text-align: center">
-                            <button class="uk-button uk-button-primary " id="guardar2"
-                                class="uk-align-center">Guardar</button>
+                            <button class="uk-button uk-button-primary " onclick="actualizardetalesimp();"
+                                id="guardarimp2" class="uk-align-center">Guardar</button>
                         </div>
                         </fieldset>
                     </div>
@@ -1393,8 +1401,10 @@
                                 <legend class="uk-legend">Cambiar Detalles</legend>
                                 <div class="uk-margin">
                                     <label>Numero de detalle</label>
-                                    <input class="uk-input" type="number" id="Id_trabajadores"
-                                        placeholder="Numero de detalle" disabled>
+                                    <div class="uk-margin">
+                                        <input class="uk-input" disabled type="text" value="" id="Id_ordensub"
+                                            placeholder="nada">
+                                    </div>
                                 </div>
                                 <div class="uk-margin">
                                     <label>Pecho izquierda</label>
@@ -1420,10 +1430,7 @@
                                     <label>Espalda</label>
                                     <input class="uk-input" type="text" id="espalda1" placeholder="Espalda">
                                 </div>
-                                <div class="uk-margin">
-                                    <input class="uk-input" disabled type="text" value="{{ $edit->idmaestro }}"
-                                        id="id" placeholder="nada">
-                                </div>
+
                                 <div class="uk-margin">
                                     <label>Cantidad</label>
                                     <input onchange="monto2();" type="number" class="uk-input monto2" type="text"
@@ -1484,7 +1491,7 @@
                                 </script>
                         </div>
                         <div style="text-align: center">
-                            <button class="uk-button uk-button-primary " id="guardar1"
+                            <button class="uk-button uk-button-primary " onclick="actualizardetalle();" id="guardar1"
                                 class="uk-align-center">Guardar</button>
                         </div>
                         </fieldset>
@@ -1513,8 +1520,26 @@
                                     id="form-horizontal-text" type="number" placeholder="">
                             </div>
                             <script>
+                                function totalgen() {
+                                    var total_sub = 0;
+                                    var total_imp = 0;
+                                    var total = 0;
+
+                                    total_sub = parseFloat(document.getElementById("total").value);
+                                    total_imp = parseFloat(document.getElementById("totalimp").value);
+
+                                    total = total_imp + total_sub + 0;
+
+                                    console.log(total_sub, total_imp, total, "prueba tota"); //
+
+
+                                    document.getElementById('total_gen').value = total;
+                                    abonos();
+
+                                }
+
                                 function abonos() {
-                                    var sub_total = document.getElementById("total").value;
+                                    var sub_total = document.getElementById("total_gen").value;
                                     var abono = document.getElementById("abono").value;
                                     var total = 0;
 
@@ -1661,6 +1686,7 @@
         let pedido = [];
         const arreglo = [];
         let detalle = [];
+        let detalleimp = [];
         cargarpedido();
         cargarusuario();
         cargarcliente();
@@ -1693,32 +1719,32 @@
 
 
             peticionapidetalleimp({}, 'GET', function(res) {
-                detalle = res;
-                console.log(detalle);
+                detalleimp = res;
+                console.log(detalleimp);
                 let html = '';
-                res.forEach(detalle => {
+                res.forEach(detalleimp => {
                     html +=
                         '<tr>' +
-                        '<td>' + detalle.ancho + '</td>' +
-                        '<td>' + detalle.alto + '</td>' +
-                        '<td>' + detalle.mt2 + '</td>' +
-                        '<td>' + detalle.p_m + '</td>' +
-                        '<td>' + detalle.IdInsumos + '</td>' +
-                        '<td>' + detalle.Descripcion + '</td>' +
+                        '<td>' + detalleimp.ancho + '</td>' +
+                        '<td>' + detalleimp.alto + '</td>' +
+                        '<td>' + detalleimp.mt2 + '</td>' +
+                        '<td>' + detalleimp.p_m + '</td>' +
+                        '<td>' + detalleimp.IdInsumos + '</td>' +
+                        '<td>' + detalleimp.Descripcion + '</td>' +
 
-                        '<td>' + detalle.costo + '</td>' +
-                        '<td>' + detalle.cantidad + '</td>' +
-                        '<td>' + detalle.total + '</td>' +
-                        '<td>' + detalle.observacion + '</td>' +
+                        '<td>' + detalleimp.costo + '</td>' +
+                        '<td>' + detalleimp.cantidad + '</td>' +
+                        '<td>' + detalleimp.total + '</td>' +
+                        '<td>' + detalleimp.observacion + '</td>' +
                         '<td>' +
-                        '<a onclick="editarimp(' + detalle.iddetalleordenimp +
+                        '<a onclick="editarimp(' + detalleimp.iddetalleordenimp +
                         ')"  class="uk-padding-small" uk-icon="pencil"></a> <span></> <a  action=""  onclick="eliminar(' +
-                        detalle.iddetalleordenimp + ');" class=" " uk-icon="trash"></a>' + '</td>' +
+                        detalleimp.iddetalleordenimp + ');" class=" " uk-icon="trash"></a>' + '</td>' +
 
                         '</tr>'
                 });
                 $("#Tabladetalleimp").html(html);
-                calcular();
+                calcularimp();
             });
 
 
@@ -1754,6 +1780,18 @@
         }
 
         guardarnuevodetalle
+
+        function actualizardetalle() {
+
+
+            updatedetalle();
+
+            var pagebutton = document.getElementById("refrescar");
+            pagebutton.click();
+
+
+        }
+
         $('#guardar1').click(function(e) {
 
 
@@ -1915,7 +1953,7 @@
                 res.forEach(detalle => {
                     html +=
                         '<tr>' +
-
+                        '<td>' + detalle.IdCategoria + '</td>' +
                         '<td>' + detalle.pecho_izquierdo + '</td>' +
                         '<td>' + detalle.pecho_derecho + '</td>' +
                         '<td>' + detalle.manga_izquierda + '</td>' +
@@ -1958,7 +1996,7 @@
             })
             console.log(id, datos);
 
-            $("#Id_trabajadores").val(datos[0].iddetalleordensu), $("#pechoizq1").val(datos[0].pecho_izquierdo), $(
+            $("#Id_ordensub").val(datos[0].iddetalleordensu), $("#pechoizq1").val(datos[0].pecho_izquierdo), $(
                 "#pechoder1").val(datos[0].pecho_derecho), $("#mangaizq1").val(datos[0].manga_izquierda), $(
                 "#mangader1").val(datos[0].manga_derecha), $("#espalda1").val(datos[0].espalda), $("#cantidad1").val(
                 datos[0].Cantidad), $("#precio1").val(datos[0].precio), $("#observacioncambio").val(datos[0]
@@ -2002,7 +2040,7 @@
         }
 
         function peticionapi(data, method, onSucess) {
-            let url = '/api/pedido';
+            let url = '/api/pedidoall';
             if (method == 'PUT' || method == 'DELETE') {
                 url += '/' + data.idmaestro;
             }
@@ -2185,7 +2223,7 @@
         function updatedetalle() {
 
             let datos = {
-                iddetalleordensu: $("#Id_trabajadores").val(),
+                iddetalleordensu: $("#Id_ordensub").val(),
                 pecho_izq: $("#pechoizq1").val(),
                 pecho_der: $("#pechoder1").val(),
                 manga_izq: $("#mangaizq1").val(),

@@ -85,7 +85,6 @@ class editpedido3 extends Controller
         //
         $model=new detalleimpresion();
         $model= detalleimpresion::find($id);
-        $model->IdMaestro=$request->input('idmaestro');
         $model->IdInsumos=$request->input('IdInsumos');
         $model->ancho=$request->input('ancho');
         $model->mt2=$request->input('mt2');
