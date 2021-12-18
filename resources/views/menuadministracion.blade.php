@@ -322,13 +322,12 @@
             <div class="ribbon">BD</div>
         </a>
 
-        {{-- <a class="badge gold" href="/menu/menuadmon">
-            <div class="circle"> <i class="fa fa-cog"></i></div>
-            <div class="ribbon">Admin</div>
-        </a> --}}
+        <a class="badge gold" href="/menu">
+            <div class="circle"> <i class="fa fa-backward"></i></div>
+            <div class="ribbon">Menu</div>
+        </a>
 
     </div>
-    <a href="/menu" class="uk-button uk-button-primary " style="margin-left: 730px">Atrás</a>
 
     <footer>
 

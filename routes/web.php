@@ -90,7 +90,6 @@ Route::get('registro', function () {
 Route::middleware(['autenticado'])->group(function(){
     Route::get('menu', [pruebacontroller::class,"index"])->name("login.menu");
 
-
 Route::get('menu/pedidos_bordado', function () {
     return view('pedidosBordado');
 });
