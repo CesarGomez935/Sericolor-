@@ -1,204 +1,365 @@
 <head>
-    <title>Sericolor | Menú</title>
+
+    <meta charset="UTF-8">
+    <title>Sericolor-Menu</title>
+
+    <meta name="robots" content="noindex">
+
     <link rel="icon" href="/img/Icono.ico" type="image/ico" />
 
+
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
+
+    <style class="INLINE_PEN_STYLESHEET_ID">
+        body {
+            font-family: "Comfortaa", sans-serif;
+            background: rgb(248, 246, 246);
+        }
+
+        .main-wrapper {
+            width: 90%;
+            max-width: 900px;
+            margin: 3em auto;
+            text-align: center;
+        }
+
+        .badge {
+            position: relative;
+            margin: 1.5em 3em;
+            width: 8em;
+            height: 8em;
+            border-radius: 10px;
+            display: inline-block;
+            top: 0;
+            transition: all 0.2s ease;
+        }
+
+        .badge:before,
+        .badge:after {
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            border-radius: inherit;
+            background: inherit;
+            content: "";
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .badge:before {
+            transform: rotate(60deg);
+        }
+
+        .badge:after {
+            transform: rotate(-60deg);
+        }
+
+        .badge:hover {
+            top: -4px;
+        }
+
+        .badge .circle {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            background: #fff;
+            z-index: 10;
+            border-radius: 50%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .badge .circle i.fa {
+            font-size: 2em;
+            margin-top: 8px;
+        }
+
+        .badge .font {
+            display: inline-block;
+            margin-top: 1em;
+        }
+
+        .badge .ribbon {
+            position: absolute;
+            border-radius: 4px;
+            padding: 5px 5px 4px;
+            width: 110px;
+            z-index: 11;
+            color: #fff;
+            bottom: 12px;
+            left: 50%;
+            margin-left: -55px;
+            height: 15px;
+            font-size: 14px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.27);
+            text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+            background: linear-gradient(to bottom right, #555 0%, #333 100%);
+            cursor: default;
+        }
+
+        .yellow {
+            background: linear-gradient(to bottom right, #ffeb3b 0%, #fbc02d 100%);
+            color: #ffb300;
+        }
+
+        .orange {
+            background: linear-gradient(to bottom right, #ffc107 0%, #f57c00 100%);
+            color: #f68401;
+        }
+
+        .pink {
+            background: linear-gradient(to bottom right, #F48FB1 0%, #d81b60 100%);
+            color: #dc306f;
+        }
+
+        .red {
+            background: linear-gradient(to bottom right, #f4511e 0%, #b71c1c 100%);
+            color: #c62828;
+        }
+
+        .purple {
+            background: linear-gradient(to bottom right, #ab47bc 0%, #4527a0 100%);
+            color: #7127a8;
+        }
+
+        .teal {
+            background: linear-gradient(to bottom right, #4DB6AC 0%, #00796B 100%);
+            color: #34a297;
+        }
+
+        .blue {
+            background: linear-gradient(to bottom right, #4FC3F7 0%, #2196F3 100%);
+            color: #259af3;
+        }
+
+        .blue-dark {
+            background: linear-gradient(to bottom right, #1976D2 0%, #283593 100%);
+            color: #1c68c5;
+        }
+
+        .green {
+            background: linear-gradient(to bottom right, #cddc39 0%, #8bc34a 100%);
+            color: #7cb342;
+        }
+
+        .green-dark {
+            background: linear-gradient(to bottom right, #4CAF50 0%, #1B5E20 100%);
+            color: #00944a;
+        }
+
+        .silver {
+            background: linear-gradient(to bottom right, #E0E0E0 0%, #BDBDBD 100%);
+            color: #9e9e9e;
+        }
+
+        .gold {
+            background: linear-gradient(to bottom right, #e6ce6a 0%, #b7892b 100%);
+            color: #b7892b;
+        }
+
+        footer {
+            text-align: center;
+            margin: 5em auto;
+        }
+
+        footer a {
+            text-decoration: none;
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #111;
+            border: 0.5px dashed #f8f8f8;
+            color: #999;
+            margin: 5px;
+        }
+
+        footer a:hover {
+            background: #222;
+        }
+
+        footer a .icons {
+            margin-top: 12px;
+            display: inline-block;
+            font-size: 20px;
+        }
+
+    </style>
+
+
+    <script
+        src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-d0f3648046d2aaca07bd0037b9e061a26c74a8a999b75672ad6a638cca641472.js">
+    </script>
+    <script
+        src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js">
+    </script>
+    <script
+        src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js">
+    </script>
 </head>
-<div
-    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-    <!-- Copyright -->
-    <div class="text-white mb-3 mb-md-0">
+<header>
+    <div class="uk-flex uk-flex-column">
+        <div class="uk-card uk-card-default uk-card-body">
 
-        <label style="font-style: italic " for="">"Yo soy el buen pastor, y conozco mis ovejas y las mías me
-            conocen"</label>
+            <div class="text-white mb-3 mb-md-0">
 
+                <label style="font-style: italic " for="">
 
-    </div>
-    <!-- Copyright -->
+                    "Y me dijo: Tú eres mi siervo, Israel, en quien yo mostraré mi gloria."
 
-    <!-- Right -->
-    <div>
-        <a href="https://www.biblegateway.com/passage/?search=Juan%2010%3A14&version=RVR1960" class="text-white me-4">
-            <i class="fab fa-facebook-f"></i>
-            Juan 10:14
-        </a>
-        <a href="#!" class="text-white me-4">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#!" class="text-white me-4">
-            <i class="fab fa-google"></i>
-        </a>
-        <a href="#!" class="text-white">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-    </div>
-    <!-- Right -->
-</div>
-
-<body>
-    <div style="text-align: right;">
-        <button class="uk-button uk-padding-remove-bottom uk-form-blank" type="button"> Bienvenido
-            {{ $usuario->Usuario }} </button>
-        <div uk-dropdown="pos: bottom-justify">
-            <ul class="uk-nav uk-dropdown-nav">
-                <li class="uk-active"><a href="">Privilegios</li>
-                <li><a disabled>{{ $usuario->Privilegios }}</a></li>
-                <li class="uk-nav-divider"></li>
-
-
-                <li><a href="{{ 'login/cerrar' }}"><b> Cerrar Sesión </b></a></li>
-            </ul>
+                    <a href="https://www.biblegateway.com/passage/?search=+Isa%C3%ADas+49%3A3&version=RVR1960"
+                        class="uk-position-right uk-overlay uk-overlay-default uk-flex uk-flex-middle">
+                        Isaías 49:3
+                    </a>
+                </label>
+            </div>
         </div>
     </div>
-    <div style="text-align: center;">
-        <form class="uk-padding">
-            <table class="uk-table uk-padding  uk-margin">
-                <tbody>
-                    <tr>
-                        <td style="padding-left: 100px;">
-                            <a href="/menu/facturacion" class="btn btn-lg uk-padding"
-                                style="background-color:transparent">
-                                <div style="text-align:center"><svg xmlns="http://www.w3.org/2000/svg" width="200"
-                                        height="200" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z" />
-                                        <path
-                                            d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z" />
-                                        <path
-                                            d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z" />
-                                        <path
-                                            d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z" />
-                                    </svg></div>
-                                Facturación
-                            </a>
-                        </td>
-                        <td style="padding-left: 100px;">
-                            <a href="/menu/pedidos_sublimacion" class="btn btn-lg uk-padding "
-                                style="background-color:transparent">
-                                <div style="text-align:center">
+</header>
+<nav class="uk-navbar uk-navbar-container ">
+    <div class="uk-navbar-left">
+        <a class="uk-navbar-toggle" href="#">
+            <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu
+                Principal</span>
+        </a>
 
-                                    <img width="200" height="200"
-                                        src="https://ip-embroidery.com/wp-content/uploads/2020/11/ICONO1_Mesa-de-trabajo-1.png"
-                                        alt="">
-
-                                </div>
-
-                                Pedidos de Sublimación
-                            </a>
-                        </td>
-                        <td style="padding-left: 100px;">
-                            <a href="/menu/pedidos_impresion_digital" class="btn btn-lg"
-                                style="background-color:transparent">
-                                <div style="text-align:center"><svg xmlns="http://www.w3.org/2000/svg" width="200"
-                                        height="200" fill="currentColor" class="bi bi-printer-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z" />
-                                        <path
-                                            d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
-                                    </svg></div>
-                                Pedidos de Impresión Digital
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding-left: 100px;">
-                            <a href="/menu/pedidos_serigrafia" class="btn btn-lg"
-                                style="background-color:transparent">
-                                <div style="text-align:center">
-                                    <div style="text-align:center">
-
-                                        <img width="200" height="200"
-                                            src="https://media.istockphoto.com/vectors/print-screen-icon-vector-id1032930760?k=20&m=1032930760&s=170667a&w=0&h=iFSdaaNPqgq7uMbr_YEc9Jd95rFINBdeI3C060hu4QQ="
-                                            alt="">
-
-
-                                    </div>
-
-                                </div>
-                                Pedidos de Serigrafía
-                            </a>
-                        </td>
-                        <td style="padding-left: 100px;">
-                            <a href="/menu/pedidos_bordado" class="btn btn-lg" style="background-color:transparent">
-                                <div style="text-align:center">
-
-                                    <img width="200" height="200"
-                                        src="https://library.kissclipart.com/20180918/gbq/kissclipart-icono-de-maquina-de-coser-png-clipart-la-maquina-d-6cc902fd23badb86.png"
-                                        alt="">
-                                </div>
-                                Pedidos de Bordado
-                            </a>
-                        </td>
-                        <td style="padding-left: 100px;">
-
-                            @if (auth()->user()->Privilegios == 'Administrador')
-                                <a href="/menu/menuadmon" class="btn btn-lg" style="background-color:transparent">
-                                    <div style="text-align:center"><svg xmlns="http://www.w3.org/2000/svg" width="200"
-                                            height="200" fill="currentColor" class="bi bi-people-fill"
-                                            viewBox="0 0 16 16">
-                                            <path
-                                                d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                            <path fill-rule="evenodd"
-                                                d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
-                                            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
-                                        </svg></div>
-                                    Administración
-                                </a>
-                            @endif
-                        </td>
-                    </tr>
-
-                </tbody>
-            </table>
-        </form>
     </div>
+    <div class="uk-navbar-right">
+        <div style="text-align: right;">
+            <button class="uk-button uk-padding-remove-bottom uk-form-blank" type="button"> Bienvenido
+                {{ $usuario->Usuario }} </button>
+            <div uk-dropdown="pos: bottom-justify">
+                <ul class="uk-nav uk-dropdown-nav">
+                    <li class="uk-active"><a href="">Privilegios</li>
+                    <li><a disabled>{{ $usuario->Privilegios }}</a></li>
+                    <li class="uk-nav-divider"></li>
 
-    <div class="uk-padding uk-background-muted uk-padding ">
-        <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-            <a href="/Inicio" class="uk-button uk-button-primary " style="">Salir</a>
+
+                    <li><a href="{{ 'login/cerrar' }}"><b> Cerrar Sesión </b></a></li>
+                </ul>
+            </div>
         </div>
+
+        <a href="#my-id" uk-toggle></a>
+
+        <!-- Off Canvas, Elemento desplegable de UiKit -->
+        <div id="my-id" uk-offcanvas>
+            <div class="uk-offcanvas-bar">
+
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <a href="/menu">Menú</a>
+                <hr class="uk-divider-icon">
+
+                <ul class="uk-nav uk-parent">
+                    <li class="uk-parent"> <a href="/menu/menu_facturacion"> Facturación </a></li>
+                    <ul class="uk-nav-sub">
+                        <li> <a href="/menu/menu_facturacion/form_bordado">Bordado </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_sublimacion">Sublimación </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_serigrafia">Serigrafía </a></li>
+                        <li> <a href="/menu/menu_facturacion/form_impresion_digital">Impresión digital </a></li>
+                    </ul>
+                    <hr class="uk-divider-icon">
+                    <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_serigrafia"> Pedidos Serigrafía </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital
+                        </a>
+                    </li>
+                    <hr class="uk-divider-icon">
+                    <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
+
+                    <ul class="uk-nav-sub">
+                        <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
+                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                        <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
+                        <li> <a href="/menu/menuadmon/insumos">Insumos</a></li>
+                        <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
+                        <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
+                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                        <li> <a href="/menu/menuadmon/promociones">Menú Principal</a></li>
+                    </ul>
+                    <hr class="uk-divider-icon">
+
+                    <li class="uk-parent"> Sesión </li>
+                    <ul class="uk-nav-sub">
+                        <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
+                    </ul>
+
+                </ul>
+
+            </div>
+        </div>
+</nav>
+
+
+<body class="">
+
+
+    <div class="main-wrapper">
+        <a class="badge purple" href="/menu/facturacion">
+            <div class="circle"> <i class="fa fa-shopping-cart"></i></div>
+            <div class="ribbon">Facturación</div>
+        </a>
+        <a class="badge orange" href="/menu/menuadmon/resumen_pedidos">
+            <div class="circle"> <i class="fa fa-files-o"></i></div>
+            <div class=" ribbon">Pedidos</div>
+        </a>
+        <a class="badge pink" href="/menu/menuadmon/clientes">
+            <div class="circle"> <i class="fa fa-user-circle-o"></i></div>
+            <div class="ribbon">Clientes</div>
+        </a>
+        <a class="badge green-dark" href="/menu/menuadmon/insumos">
+            <div class="circle"> <i class="fa fa-cubes"></i></div>
+            <div class="ribbon">Insumos</div>
+        </a>
+        @if (auth()->user()->Privilegios == 'Administrador')
+            <a class="badge blue" href="/menu/menuadmon">
+                <div class="circle"> <i class="fa fa-cog"></i></div>
+                <div class="ribbon">Admin</div>
+            </a>
+        @endif
     </div>
+    <footer>
+
+    </footer>
+
+    <script
+        src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js">
+    </script>
+    <script src="https://cdpn.io/cp/internal/boomboom/pen.js?key=pen.js-01eb9f50-ee0d-6e47-8fef-92e1fb15103d"
+        crossorigin=""></script>
+
+    <td>
+        <tr>
+
+        </tr>
+    </td>
 </body>
 <footer>
-    <div
-        class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-        <!-- Copyright -->
-        <div class="text-white mb-3 mb-md-0">
-            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img
-                    alt="Licencia Creative Commons" style="border-width:0"
-                    src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />Esta obra está bajo una <a
-                rel="license" style="color: black" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Licencia
-                Creative Commons Atribución-NoComercial-SinDerivadas 4.0 Internacional</a>.
+    <div class="uk-flex uk-flex-column ">
+        <div class="uk-card uk-card-default uk-card-body">
+
+            <i class="fa fa-creative-commons"> <br>Esta obra está bajo una <br
+                    href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Licencia Creative Commons
+                Atribución-NoComercial-SinDerivadas 4.0 Internacional</br>.</i>
+
 
         </div>
-        <!-- Copyright -->
-
-        <!-- Right -->
-        <div>
-            <a href="#!" class="text-white me-4">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#!" class="text-white me-4">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#!" class="text-white me-4">
-                <i class="fab fa-google"></i>
-            </a>
-            <a href="#!" class="text-white">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-        </div>
-        <!-- Right -->
-
 
     </div>
-
 
 </footer>
