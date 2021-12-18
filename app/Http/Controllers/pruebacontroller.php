@@ -12,6 +12,6 @@ class pruebacontroller extends Controller
 
         $usuario= User::find(auth()->user()->IdUsuario);
       return view('menu')->with(compact('usuario'));
-        
+      
     }
 }

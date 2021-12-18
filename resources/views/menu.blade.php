@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <head>
 
     <meta charset="UTF-8">
@@ -229,82 +231,75 @@
             </div>
         </div>
     </div>
+
+    <nav class="uk-navbar uk-navbar-container ">
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-toggle" href="#">
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu
+                    Principal</span>
+            </a>
+
+        </div>
+        <div class="uk-navbar-right">
+            <div style="text-align: right;">
+                <button class="uk-button uk-padding-remove-bottom uk-form-blank" type="button"> Bienvenido
+                    {{ $usuario->Usuario }} </button>
+                <div uk-dropdown="pos: bottom-justify">
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li class="uk-active"><a href="">Privilegios</li>
+                        <li><a disabled>{{ $usuario->Privilegios }}</a></li>
+                        <li class="uk-nav-divider"></li>
+
+
+                        <li><a href="{{ 'login/cerrar' }}"><b> Cerrar Sesión </b></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <a href="#my-id" uk-toggle></a>
+
+            <!-- Off Canvas, Elemento desplegable de UiKit -->
+            <div id="my-id" uk-offcanvas>
+                <div class="uk-offcanvas-bar">
+
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                    <a href="/menu">Menú</a>
+                    <hr class="uk-divider-icon">
+
+                    <ul class="uk-nav uk-parent">
+                        <li class="uk-parent"> <a href="/menu/menu_facturacion"> Facturación </a></li>
+                        <ul class="uk-nav-sub">
+                            <li> <a href="/menu/menu_facturacion/form_bordado">Pedidos </a></li>
+                            <li> <a href="/menu/menu_facturacion/form_sublimacion">Clientes </a></li>
+                            <li> <a href="/menu/menu_facturacion/form_serigrafia">Insumos </a></li>
+                            <li> <a href="/menu/menu_facturacion/form_impresion_digital">Impresión digital </a></li>
+                        </ul>
+                        <hr class="uk-divider-icon">
+                        <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
+
+                        <ul class="uk-nav-sub">
+                            <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
+                            <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                            <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
+                            <li> <a href="/menu/menuadmon/insumos">Insumos</a></li>
+                            <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
+                            <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
+                            <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                            <li> <a href="/menu/menuadmon/promociones">Menú Principal</a></li>
+                        </ul>
+                        <hr class="uk-divider-icon">
+
+                        <li class="uk-parent"> Sesión </li>
+                        <ul class="uk-nav-sub">
+                            <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
+                        </ul>
+
+                    </ul>
+
+                </div>
+            </div>
+    </nav>
 </header>
-<nav class="uk-navbar uk-navbar-container ">
-    <div class="uk-navbar-left">
-        <a class="uk-navbar-toggle" href="#">
-            <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu
-                Principal</span>
-        </a>
-
-    </div>
-    <div class="uk-navbar-right">
-        <div style="text-align: right;">
-            <button class="uk-button uk-padding-remove-bottom uk-form-blank" type="button"> Bienvenido
-                {{ $usuario->Usuario }} </button>
-            <div uk-dropdown="pos: bottom-justify">
-                <ul class="uk-nav uk-dropdown-nav">
-                    <li class="uk-active"><a href="">Privilegios</li>
-                    <li><a disabled>{{ $usuario->Privilegios }}</a></li>
-                    <li class="uk-nav-divider"></li>
-
-
-                    <li><a href="{{ 'login/cerrar' }}"><b> Cerrar Sesión </b></a></li>
-                </ul>
-            </div>
-        </div>
-
-        <a href="#my-id" uk-toggle></a>
-
-        <!-- Off Canvas, Elemento desplegable de UiKit -->
-        <div id="my-id" uk-offcanvas>
-            <div class="uk-offcanvas-bar">
-
-                <button class="uk-offcanvas-close" type="button" uk-close></button>
-                <a href="/menu">Menú</a>
-                <hr class="uk-divider-icon">
-
-                <ul class="uk-nav uk-parent">
-                    <li class="uk-parent"> <a href="/menu/menu_facturacion"> Facturación </a></li>
-                    <ul class="uk-nav-sub">
-                        <li> <a href="/menu/menu_facturacion/form_bordado">Bordado </a></li>
-                        <li> <a href="/menu/menu_facturacion/form_sublimacion">Sublimación </a></li>
-                        <li> <a href="/menu/menu_facturacion/form_serigrafia">Serigrafía </a></li>
-                        <li> <a href="/menu/menu_facturacion/form_impresion_digital">Impresión digital </a></li>
-                    </ul>
-                    <hr class="uk-divider-icon">
-                    <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_serigrafia"> Pedidos Serigrafía </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital
-                        </a>
-                    </li>
-                    <hr class="uk-divider-icon">
-                    <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
-
-                    <ul class="uk-nav-sub">
-                        <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
-                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
-                        <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
-                        <li> <a href="/menu/menuadmon/insumos">Insumos</a></li>
-                        <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
-                        <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
-                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
-                        <li> <a href="/menu/menuadmon/promociones">Menú Principal</a></li>
-                    </ul>
-                    <hr class="uk-divider-icon">
-
-                    <li class="uk-parent"> Sesión </li>
-                    <ul class="uk-nav-sub">
-                        <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
-                    </ul>
-
-                </ul>
-
-            </div>
-        </div>
-</nav>
-
 
 <body class="">
 
@@ -319,7 +314,7 @@
             <div class=" ribbon">Pedidos</div>
         </a>
         <a class="badge pink" href="/menu/menuadmon/clientes">
-            <div class="circle"> <i class="fa fa-user-circle-o"></i></div>
+            <div class="circle"> <i class="fa fa-male"></i></div>
             <div class="ribbon">Clientes</div>
         </a>
         <a class="badge green-dark" href="/menu/menuadmon/insumos">
@@ -350,8 +345,8 @@
     </td>
 </body>
 <footer>
-    <div class="uk-flex uk-flex-column ">
-        <div class="uk-card uk-card-default uk-card-body">
+    <div>
+        <div>
 
             <i class="fa fa-creative-commons"> <br>Esta obra está bajo una <br
                     href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Licencia Creative Commons
@@ -363,3 +358,5 @@
     </div>
 
 </footer>
+
+</html>
