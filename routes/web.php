@@ -157,7 +157,7 @@ Route::get('menu/menuadmon/bd', function () {
 Route::get('menu/menuadmon/personal', function () {
     return view('personal');
 });
-Route::get('menu/menuadmon/insumos', function () {
+Route::get('menu/insumos', function () {
     return view('insumo');
 });
 
@@ -166,7 +166,7 @@ Route::get('menu/menuadmon/personal/agregar_personal', function () {
     return view('agregarPersonal');
 });
 
-Route::get('menu/menuadmon/clientes', function () {
+Route::get('menu/clientes', function () {
     return view('cliente');
 });
 

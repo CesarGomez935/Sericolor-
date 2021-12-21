@@ -12,68 +12,73 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
     <!-- JQuery-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 <header>
-    @if(auth()->user()->Privilegios!=='Administrador')
-        <script>window.location = "/menu";</script>
-@endif
+    @if (auth()->user()->Privilegios !== 'Administrador')
+        <script>
+            window.location = "/menu";
+        </script>
+    @endif
     <!-- NavBar-->
     <nav class="uk-navbar uk-navbar-container ">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Agregar Insumos</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu
+                    Principal</span>
             </a>
+
         </div>
+        <div class="uk-navbar-right">
 
-        <a href="#my-id" uk-toggle></a>
 
-        <!-- Off canvas, Elemento desplegable UiKit -->
-        <div id="my-id" uk-offcanvas>
-            <div class="uk-offcanvas-bar">
+            <a href="#my-id" uk-toggle></a>
 
-                <button class="uk-offcanvas-close" type="button" uk-close></button>
-                <a href="/menu">Menú</a>
-                <hr class="uk-divider-icon">
+            <!-- Off Canvas, Elemento desplegable de UiKit -->
+            <div id="my-id" uk-offcanvas>
+                <div class="uk-offcanvas-bar">
 
-                <ul class="uk-nav uk-parent">
-                    <li class="uk-parent"> <a href="/menu/menu_facturacion"> Facturación </a></li>
-                    <ul class="uk-nav-sub">
-                        <li> <a href="/menu/menu_facturacion/form_bordado">Bordado </a></li>
-                        <li> <a href="/menu/menu_facturacion/form_sublimacion">Sublimación </a></li>
-                        <li> <a href="/menu/menu_facturacion/form_serigrafia">Serigrafía </a></li>
-                        <li> <a href="/menu/menu_facturacion/form_impresion_digital">Impresión digital </a></li>
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                    <a href="/menu">Menú</a>
+                    <hr class="uk-divider-icon">
+
+                    <ul class="uk-nav uk-parent">
+
+                        <li class="uk-parent"> <a href="/menu">Menú</a></li>
+
+
+                        <ul class="uk-nav-sub">
+                            <li class="uk-parent"> <a href="/menu/facturacion"> Facturación </a></li>
+                            <li> <a href="/menu/resumen_pedidos">Pedidos </a></li>
+                            <li> <a href="/menu/clientes">Clientes </a></li>
+                            <li> <a href="/menu/insumos">Insumos </a></li>
+
+                        </ul>
+                        <hr class="uk-divider-icon">
+                        <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
+
+                        <ul class="uk-nav-sub">
+
+                            <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                            <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
+
+                            <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
+
+
+                            <li> <a href="/menu/menuadmon/promociones">Página de Inicio</a></li>
+                        </ul>
+                        <hr class="uk-divider-icon">
+
+                        <li class="uk-parent"> Sesión </li>
+                        <ul class="uk-nav-sub">
+                            <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
+                        </ul>
+
                     </ul>
-                    <hr class="uk-divider-icon">
-                    <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_serigrafia"> Pedidos Serigrafía </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital
-                        </a></li>
-                    <hr class="uk-divider-icon">
-                    <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
 
-                   <ul class="uk-nav-sub">
-                        <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
-                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
-                        <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
-                        <li> <a href="/menu/menuadmon/insumos">Insumos</a></li>
-                        <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
-                        <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
-                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
-                        <li> <a href="/menu/menuadmon/promociones">Menú Principal</a></li>
-                    </ul>
-                    <hr class="uk-divider-icon">
-
-                    <li class="uk-parent">  Sesión </li>
-                     <ul class="uk-nav-sub">
-                          <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
-                     </ul>
-
-                </ul>
-
+                </div>
             </div>
-        </div>
     </nav>
 
 </header>
@@ -95,14 +100,15 @@
                 <a onclick="getid();" class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
 
 
-                <input placeholder="Busqueda por Codigo, Tipo, Descripcion, Categoria" oninput="getid();" id="id_busqueda" class="uk-input uk-form-width-large" type="text">
+                <input placeholder="Busqueda por Codigo, Tipo, Descripcion, Categoria" oninput="getid();"
+                    id="id_busqueda" class="uk-input uk-form-width-large" type="text">
             </div>
             <button id="agregar" class="uk-button-primary uk-button uk-margin uk-padding ">Nuevo Insumo</button>
 
         </div>
         <div class=" ">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-                <a href="/menu/menuadmon" class="uk-button uk-button-primary " style="">Atrás</a>
+                <a href="/menu" class="uk-button uk-button-primary " style="">Atrás</a>
 
             </div>
         </div>
@@ -159,7 +165,8 @@
 
 
                     </div>
-                    <button class="uk-button uk-button-primary uk-position-center " id="guardar" class="uk-align-center">Guardar</button>
+                    <button class="uk-button uk-button-primary uk-position-center " id="guardar"
+                        class="uk-align-center">Guardar</button>
                     </fieldset>
                 </div>
             </div>
@@ -199,10 +206,12 @@
                                 <br>
                             </div>
                             <div class="uk-margin">
-                                <input class="uk-input" type="text" id="id" disabled hidden placeholder="Descripción">
+                                <input class="uk-input" type="text" id="id" disabled hidden
+                                    placeholder="Descripción">
                             </div>
                     </div>
-                    <button class="uk-button uk-button-primary uk-position-center " id="guardar1" class="uk-align-center">Guardar</button>
+                    <button class="uk-button uk-button-primary uk-position-center " id="guardar1"
+                        class="uk-align-center">Guardar</button>
                     </fieldset>
                 </div>
             </div>
@@ -230,15 +239,15 @@
                 url += '/' + data.IdInsumo;
             }
             $.ajax({
-                url: url
-                , method: method
-                , data: data
-                , error(e) {
+                url: url,
+                method: method,
+                data: data,
+                error(e) {
                     let error = e.responseJSON.errors;
                     let msj = error[Object.keys(error)[0]][0];
                     alert(msj);
-                }
-                , success(res) {
+                },
+                success(res) {
                     onSuccess(res);
                 }
             })
@@ -246,10 +255,10 @@
 
         function guardarproductos() {
             let data = {
-                Tipo: $("#2Nombre").val()
-                , Descripcion: $("#Apellidos").val()
-                , idcategoria: $("#cat").val()
-            , };
+                Tipo: $("#2Nombre").val(),
+                Descripcion: $("#Apellidos").val(),
+                idcategoria: $("#cat").val(),
+            };
             peticionapi(data, 'POST', function(res) {
                 alert('Guardado con exito')
                 UIkit.modal('#FormTrabajadores').hide();
@@ -261,11 +270,11 @@
         function updateinsumo() {
 
             let data = {
-                IdInsumo: $("#id").val()
-                , Tipo1: $("#2Nombre1").val()
-                , Descripcion1: $("#Apellidos1").val()
-                , idcategoria1: $("#cat1").val()
-            , };
+                IdInsumo: $("#id").val(),
+                Tipo1: $("#2Nombre1").val(),
+                Descripcion1: $("#Apellidos1").val(),
+                idcategoria1: $("#cat1").val(),
+            };
 
             peticionapi(data, 'PUT', function(res) {
                 alert('Guardado con exito')
@@ -304,10 +313,8 @@
 
             })
 
-            $("#id").val(data[0].IdInsumo)
-                , $("#2Nombre1").val(data[0].Tipo)
-                , $("#Apellidos1").val(data[0].Descripcion)
-                , $("#cat1").val(data[0].idcategoria);
+            $("#id").val(data[0].IdInsumo), $("#2Nombre1").val(data[0].Tipo), $("#Apellidos1").val(data[0].Descripcion), $(
+                "#cat1").val(data[0].idcategoria);
 
         }
 
@@ -321,9 +328,7 @@
 
         function limpiardatos() {
 
-            $("#2Nombre").val('')
-                , $("#Apellidos").val('')
-                , $("#cat").val('');
+            $("#2Nombre").val(''), $("#Apellidos").val(''), $("#cat").val('');
 
         }
 
@@ -355,9 +360,9 @@
                 url += '/' + data.id;
             }
             $.ajax({
-                url: url
-                , method: method
-                , data: data,
+                url: url,
+                method: method,
+                data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -387,7 +392,6 @@
 
             });
         }
-
     </script>
 </body>
 

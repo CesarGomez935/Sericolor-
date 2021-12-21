@@ -31,62 +31,63 @@
 
 <body>
 
-    <nav class="uk-navbar uk-navbar-container">
+    <nav class="uk-navbar uk-navbar-container ">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Resumen
-                    de Pedidos</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu
+                    Principal</span>
             </a>
+
         </div>
+        <div class="uk-navbar-right">
 
-        <a href="#my-id" uk-toggle></a>
 
-        <!-- Off Canvas, Elemento desplegable de UiKit -->
-        <div id="my-id" uk-offcanvas>
-            <div class="uk-offcanvas-bar">
+            <a href="#my-id" uk-toggle></a>
 
-                <button class="uk-offcanvas-close" type="button" uk-close></button>
-                <a href="/menu">Menú</a>
-                <hr class="uk-divider-icon">
+            <!-- Off Canvas, Elemento desplegable de UiKit -->
+            <div id="my-id" uk-offcanvas>
+                <div class="uk-offcanvas-bar">
 
-                <ul class="uk-nav uk-parent">
-                    <li class="uk-parent"> <a href="/menu/menu_facturacion"> Facturación </a></li>
-                    <ul class="uk-nav-sub">
-                        <li> <a href="/menu/menu_facturacion/form_bordado">Bordado </a></li>
-                        <li> <a href="/menu/menu_facturacion/form_sublimacion">Sublimación </a></li>
-                        <li> <a href="/menu/menu_facturacion/form_serigrafia">Serigrafía </a></li>
-                        <li> <a href="/menu/menu_facturacion/form_impresion_digital">Impresión digital </a></li>
-                    </ul>
-                    <hr class="uk-divider-icon">
-                    <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_serigrafia"> Pedidos Serigrafía </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital
-                        </a></li>
-                    <hr class="uk-divider-icon">
-                    <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
-
-                    <ul class="uk-nav-sub">
-                        <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
-                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
-                        <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
-                        <li> <a href="/menu/menuadmon/insumos">Insumos</a></li>
-                        <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
-                        <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
-                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
-                        <li> <a href="/menu/menuadmon/promociones">Menú Principal</a></li>
-                    </ul>
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                    <a href="/menu">Menú</a>
                     <hr class="uk-divider-icon">
 
-                    <li class="uk-parent"> Sesión </li>
-                    <ul class="uk-nav-sub">
-                        <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
+                    <ul class="uk-nav uk-parent">
+
+                        <li class="uk-parent"> <a href="/menu">Menú</a></li>
+
+
+                        <ul class="uk-nav-sub">
+                            <li class="uk-parent"> <a href="/menu/facturacion"> Facturación </a></li>
+                            <li> <a href="/menu/resumen_pedidos">Pedidos </a></li>
+                            <li> <a href="/menu/clientes">Clientes </a></li>
+                            <li> <a href="/menu/insumos">Insumos </a></li>
+
+                        </ul>
+                        <hr class="uk-divider-icon">
+                        <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
+
+                        <ul class="uk-nav-sub">
+
+                            <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                            <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
+
+                            <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
+
+
+                            <li> <a href="/menu/menuadmon/promociones">Página de Inicio</a></li>
+                        </ul>
+                        <hr class="uk-divider-icon">
+
+                        <li class="uk-parent"> Sesión </li>
+                        <ul class="uk-nav-sub">
+                            <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
+                        </ul>
+
                     </ul>
 
-                </ul>
-
+                </div>
             </div>
-        </div>
     </nav>
 
     <div class="uk-div  uk-padding uk-background-muted">

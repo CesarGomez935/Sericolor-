@@ -10,78 +10,83 @@
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
 
 <body onpageshow="fecha();">
     <!-- Nav Bar-->
-    <nav class="uk-navbar uk-navbar-container">
+    <nav class="uk-navbar uk-navbar-container ">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Facturación Sublimación</span>
-
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu
+                    Principal</span>
             </a>
+
         </div>
-        <a href="#my-id" uk-toggle></a>
+        <div class="uk-navbar-right">
 
-        <!-- Off canvas, Elemento desplegable de UiKit -->
-        <div id="my-id" uk-offcanvas>
-            <div class="uk-offcanvas-bar">
 
-                <button class="uk-offcanvas-close" type="button" uk-close></button>
-                <a href="/menu">Menú</a>
-                <hr class="uk-divider-icon">
+            <a href="#my-id" uk-toggle></a>
 
-                <ul class="uk-nav uk-parent">
-                    <li class="uk-parent"> <a href="/menu/menu_facturacion"> Facturación </a></li>
-                    <ul class="uk-nav-sub">
-                        <li> <a href="/menu/menu_facturacion/form_bordado">Bordado </a></li>
-                        <li> <a href="/menu/menu_facturacion/form_sublimacion">Sublimación </a></li>
-                        <li> <a href="/menu/menu_facturacion/form_serigrafia">Serigrafía </a></li>
-                        <li> <a href="/menu/menu_facturacion/form_impresion_digital">Impresión digital </a></li>
+            <!-- Off Canvas, Elemento desplegable de UiKit -->
+            <div id="my-id" uk-offcanvas>
+                <div class="uk-offcanvas-bar">
+
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                    <a href="/menu">Menú</a>
+                    <hr class="uk-divider-icon">
+
+                    <ul class="uk-nav uk-parent">
+
+                        <li class="uk-parent"> <a href="/menu">Menú</a></li>
+
+
+                        <ul class="uk-nav-sub">
+                            <li class="uk-parent"> <a href="/menu/facturacion"> Facturación </a></li>
+                            <li> <a href="/menu/resumen_pedidos">Pedidos </a></li>
+                            <li> <a href="/menu/clientes">Clientes </a></li>
+                            <li> <a href="/menu/insumos">Insumos </a></li>
+
+                        </ul>
+                        <hr class="uk-divider-icon">
+                        <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
+
+                        <ul class="uk-nav-sub">
+
+                            <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                            <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
+
+                            <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
+
+
+                            <li> <a href="/menu/menuadmon/promociones">Página de Inicio</a></li>
+                        </ul>
+                        <hr class="uk-divider-icon">
+
+                        <li class="uk-parent"> Sesión </li>
+                        <ul class="uk-nav-sub">
+                            <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
+                        </ul>
+
                     </ul>
-                    <hr class="uk-divider-icon">
-                    <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_serigrafia"> Pedidos Serigrafía </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital
-                        </a></li>
-                    <hr class="uk-divider-icon">
-                    @if (auth()->user()->Privilegios=='Administrador')
-                    <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
 
-                   <ul class="uk-nav-sub">
-                        <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
-                        <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
-                        <li> <a href="/menu/menuadmon/insumos">Insumos</a></li>
-                        <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
-                        <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
-                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
-                        <li> <a href="/menu/menuadmon/promociones">Menú Principal</a></li>
-                    </ul>
-
-                    <hr class="uk-divider-icon">
-                    @endif
-                    <li class="uk-parent">  Sesión </li>
-                     <ul class="uk-nav-sub">
-                          <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
-                     </ul>
-
-                </ul>
-
+                </div>
             </div>
-        </div>
     </nav>
 
     <form action="" method="post">
@@ -114,31 +119,36 @@
                     <div class="uk-margin">
                         <label for="pecho_izq" class="uk-form-label" for="form-horizontal-text">Pecho Izquierdo</label>
                         <div class="uk-form-controls">
-                            <input id="pecho_izq" name="pecho_izquierdo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="pecho_izq" name="pecho_izquierdo" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="pecho_der" class="uk-form-label" for="form-horizontal-text">Pecho Derecho</label>
                         <div class="uk-form-controls">
-                            <input id="pecho_der" name="pecho_derecho" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="pecho_der" name="pecho_derecho" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="manga_izq" class="uk-form-label" for="form-horizontal-text">Manga Izquierda</label>
                         <div class="uk-form-controls">
-                            <input id="manga_izq" name="manga_izquierda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="manga_izq" name="manga_izquierda" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="manga_der" class="uk-form-label" for="form-horizontal-text">Manga Derecha</label>
                         <div class="uk-form-controls">
-                            <input id="manga_der" name="manga_derecha" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="manga_der" name="manga_derecha" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label for="espalda" class="uk-form-label" for="form-horizontal-text">Espalda</label>
                         <div class="uk-form-controls">
-                            <input id="espalda" name="espalda" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="espalda" name="espalda" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                 </div>
@@ -194,9 +204,9 @@
                                             url += '/' + data.id;
                                         }
                                         $.ajax({
-                                            url: url
-                                            , method: method
-                                            , data: data,
+                                            url: url,
+                                            method: method,
+                                            data: data,
 
                                             success(res) {
                                                 onSuccess(res);
@@ -205,7 +215,6 @@
 
                                         })
                                     }
-
                                 </script>
                                 <tbody>
 
@@ -224,16 +233,18 @@
 
                                         </td>
                                         <td>
-                                            <input id="cantidad" onchange="monto();" type="number" min="0" class="uk-input uk-width-1-4 monto">
+                                            <input id="cantidad" onchange="monto();" type="number" min="0"
+                                                class="uk-input uk-width-1-4 monto">
 
- <div class="uk-inline">
+                                            <div class="uk-inline">
 
-     <span class="uk-form-icon">C$</span>
+                                                <span class="uk-form-icon">C$</span>
 
 
-                                            <input id="precio" onchange="monto();" type="number" min="0" class=" monto uk-input uk-form-width-small  ">
+                                                <input id="precio" onchange="monto();" type="number" min="0"
+                                                    class=" monto uk-input uk-form-width-small  ">
 
- </div>
+                                            </div>
 
 
 
@@ -242,7 +253,8 @@
                                         </td>
 
                                         <td>
-                                            <textarea id="Observacion" name="Observacion" class="uk-input uk-form-width-1-1" type="text"> </textarea>
+                                            <textarea id="Observacion" name="Observacion"
+                                                class="uk-input uk-form-width-1-1" type="text"> </textarea>
 
 
                                         </td>
@@ -255,16 +267,18 @@
                                             <label for="sub_total" class="uk-label">Total</label>
                                         </td>
                                         <td>
-                                             <div class="uk-inline">
+                                            <div class="uk-inline">
 
-                                                 <span class="uk-form-icon">C$</span>
+                                                <span class="uk-form-icon">C$</span>
 
 
-                                            <input disabled id="sub_total" type="number" min="0" class="uk-input uk-form-width-small ">
-                                             </div>
+                                                <input disabled id="sub_total" type="number" min="0"
+                                                    class="uk-input uk-form-width-small ">
+                                            </div>
                                         </td>
                                         <td>
-                                            <a class="uk-button uk-button-primary" onclick="insertar(); abonos();">Insertar
+                                            <a class="uk-button uk-button-primary"
+                                                onclick="insertar(); abonos();">Insertar
                                                 Pedido</a>
                                         </td>
 
@@ -325,7 +339,9 @@
 
                                     <span class="uk-form-icon">C$</span>
 
-<input class="uk-form-width-small uk-input saldo" disabled id="total"> </div></td>
+                                    <input class="uk-form-width-small uk-input saldo" disabled id="total">
+                                </div>
+                            </td>
 
 
 
@@ -521,7 +537,6 @@
 
 
                 }
-
             </script>
 
             </table>
@@ -537,13 +552,15 @@
                     <div class="uk-margin">
                         <label for="abono" class="uk-form-label" for="form-horizontal-text">Abono</label>
                         <div class="uk-form-controls">
-                             <div class="uk-inline">
+                            <div class="uk-inline">
 
-                                 <span class="uk-form-icon">C$</span>
+                                <span class="uk-form-icon">C$</span>
 
 
-                            <input id="abono" min="0" name="Abono" oninput="abonos();" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
-                             </div>
+                                <input id="abono" min="0" name="Abono" oninput="abonos();"
+                                    class="uk-input uk-form-width-large" id="form-horizontal-text" type="number"
+                                    placeholder="">
+                            </div>
                             <script>
                                 function abonos() {
                                     var sub_total = document.getElementById("total").value;
@@ -561,7 +578,6 @@
 
 
                                 }
-
                             </script>
                         </div>
                     </div>
@@ -573,7 +589,8 @@
 
                                 <span class="uk-form-icon">C$</span>
 
-                                <input id="saldo" name="Saldo" class="uk-input uk-form-width-large" id="form-horizontal-text" type="number" placeholder="">
+                                <input id="saldo" name="Saldo" class="uk-input uk-form-width-large"
+                                    id="form-horizontal-text" type="number" placeholder="">
                             </div>
 
                         </div>
@@ -617,7 +634,8 @@
                     <div class="uk-margin">
                         <label for="autriza" class="uk-form-label" for="form-horizontal-text">Cod. Seguimiento</label>
                         <div class="uk-form-controls">
-                            <input disabled id="cod_segi" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input disabled id="cod_segi" name="num_factura" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="uk-margin">
@@ -631,7 +649,8 @@
                     <div class="uk-margin">
                         <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
                         <div class="uk-form-controls">
-                            <input id="factura" name="num_factura" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="">
+                            <input id="factura" name="num_factura" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="">
                         </div>
                     </div>
 
@@ -655,8 +674,10 @@
         <!-- Seccion que contiene los botones de atrás y guardar-->
         <div class="uk-padding uk-background-muted uk-padding " style="text-align: center;">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-                <a href="/menu/menu_facturacion" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
-                <a id="guardar" href="/menu/pedidos_sublimacion" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
+                <a href="/menu/menu_facturacion" class="uk-button uk-button-primary "
+                    style="margin-left: 100px">Atrás</a>
+                <a id="guardar" href="/menu/pedidos_sublimacion" class="uk-button uk-button-secondary"
+                    style="margin-left: 100px">Guardar</a>
 
 
             </div>
@@ -692,9 +713,9 @@
                 url += '/' + data.id;
             }
             $.ajax({
-                url: url
-                , method: method
-                , data: data,
+                url: url,
+                method: method,
+                data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -712,9 +733,9 @@
                 url += '/' + data.id;
             }
             $.ajax({
-                url: url
-                , method: method
-                , data: data,
+                url: url,
+                method: method,
+                data: data,
 
                 success(res) {
                     onSuccess(res);
@@ -764,15 +785,15 @@
                 url += '/' + data.idmaestro;
             }
             $.ajax({
-                url: url
-                , method: method
-                , data: data
-                , error(ext) {
+                url: url,
+                method: method,
+                data: data,
+                error(ext) {
                     let error = e.responseJSON.errors;
                     let msj = error[Object.keys(error)[0]][0];
                     alert(msj);
-                }
-                , success(res) {
+                },
+                success(res) {
 
                 }
             })
@@ -792,25 +813,25 @@
 
             let data = {
 
-                IdCliente: $("#cliente").val()
-                , IdUsuario: $("#recibepedido").val()
-                , IdCategoria: $("#cat").val()
-                , fecha: $("#fecha_fact").val()
-                , notas: $("#notas").val()
-                , total_costo: $("#total").val()
-                , Saldo: $("#saldo").val()
-                , abono: $("#abono").val()
-                , codseguimiento: cod_seg_rand,
+                IdCliente: $("#cliente").val(),
+                IdUsuario: $("#recibepedido").val(),
+                IdCategoria: $("#cat").val(),
+                fecha: $("#fecha_fact").val(),
+                notas: $("#notas").val(),
+                total_costo: $("#total").val(),
+                Saldo: $("#saldo").val(),
+                abono: $("#abono").val(),
+                codseguimiento: cod_seg_rand,
 
 
 
 
 
-                idmetodo: $("#metodo_de_pago").val()
-                , cod: $("#factura").val(),
+                idmetodo: $("#metodo_de_pago").val(),
+                cod: $("#factura").val(),
 
-                tipodepago: $("#tipodepago").val()
-                , estado: $("#estado").val(),
+                tipodepago: $("#tipodepago").val(),
+                estado: $("#estado").val(),
 
                 //funcion que llama al arreglo que toma los datos
                 detalle: JSON.stringify(arreglo)
@@ -894,26 +915,26 @@
 
                 arreglo[contador] = {
 
-                    IdCliente: $("#cliente").val()
-                    , IdUsuario: $("#recibepedido").val()
-                    , IdCategoria: $("#cat").val()
-                    , fecha: $("#fecha_fact").val()
-                    , notas: $("#notas").val()
-                    , total_costo: $("#total").val()
-                    , Saldo: $("#saldo").val()
-                    , abono: $("#abono").val()
-                    , codseguimiento: $("#tipo_de_pedido").val(),
+                    IdCliente: $("#cliente").val(),
+                    IdUsuario: $("#recibepedido").val(),
+                    IdCategoria: $("#cat").val(),
+                    fecha: $("#fecha_fact").val(),
+                    notas: $("#notas").val(),
+                    total_costo: $("#total").val(),
+                    Saldo: $("#saldo").val(),
+                    abono: $("#abono").val(),
+                    codseguimiento: $("#tipo_de_pedido").val(),
 
-                    IdInsumos: insumo
-                    , pecho_izq: pechoizq_
-                    , pecho_der: pechoder_
-                    , manga_izq: mangaizq_
-                    , manga_der: mangader_
-                    , espalda: espalda_
-                    , cantidad: cantidad_
-                    , precio: precio_
-                    , totaldetalle: totaldetalle_
-                    , observacion: Observacion_,
+                    IdInsumos: insumo,
+                    pecho_izq: pechoizq_,
+                    pecho_der: pechoder_,
+                    manga_izq: mangaizq_,
+                    manga_der: mangader_,
+                    espalda: espalda_,
+                    cantidad: cantidad_,
+                    precio: precio_,
+                    totaldetalle: totaldetalle_,
+                    observacion: Observacion_,
 
 
                 };
@@ -940,7 +961,6 @@
 
 
         }
-
     </script>
 
 

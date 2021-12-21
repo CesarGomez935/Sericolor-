@@ -11,18 +11,22 @@
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
 
 
@@ -34,64 +38,68 @@
 </head>
 
 <body>
-@if(auth()->user()->Privilegios!=='Administrador')
-    <script>window.location = "/menu";</script>
-@endif
-    <nav class="uk-navbar uk-navbar-container">
+    @if (auth()->user()->Privilegios !== 'Administrador')
+        <script>
+            window.location = "/menu";
+        </script>
+    @endif
+    <nav class="uk-navbar uk-navbar-container ">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Reportes</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu
+                    Principal</span>
             </a>
+
         </div>
+        <div class="uk-navbar-right">
 
-        <a href="#my-id" uk-toggle></a>
 
-        <!-- Off Canvas, Elemento desplegable de UiKit -->
-        <div id="my-id" uk-offcanvas>
-            <div class="uk-offcanvas-bar">
+            <a href="#my-id" uk-toggle></a>
 
-                <button class="uk-offcanvas-close" type="button" uk-close></button>
-                <a href="/menu">Menú</a>
-                <hr class="uk-divider-icon">
+            <!-- Off Canvas, Elemento desplegable de UiKit -->
+            <div id="my-id" uk-offcanvas>
+                <div class="uk-offcanvas-bar">
 
-                <ul class="uk-nav uk-parent">
-                    <li class="uk-parent"> <a href="/menu/menu_facturacion"> Facturación </a></li>
-                    <ul class="uk-nav-sub">
-                        <li> <a href="/menu/menu_facturacion/form_bordado">Bordado </a></li>
-                        <li> <a href="/menu/menu_facturacion/form_sublimacion">Sublimación </a></li>
-                        <li> <a href="/menu/menu_facturacion/form_serigrafia">Serigrafía </a></li>
-                        <li> <a href="/menu/menu_facturacion/form_impresion_digital">Impresión digital </a></li>
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                    <a href="/menu">Menú</a>
+                    <hr class="uk-divider-icon">
+
+                    <ul class="uk-nav uk-parent">
+
+                        <li class="uk-parent"> <a href="/menu">Menú</a></li>
+
+
+                        <ul class="uk-nav-sub">
+                            <li class="uk-parent"> <a href="/menu/facturacion"> Facturación </a></li>
+                            <li> <a href="/menu/resumen_pedidos">Pedidos </a></li>
+                            <li> <a href="/menu/clientes">Clientes </a></li>
+                            <li> <a href="/menu/insumos">Insumos </a></li>
+
+                        </ul>
+                        <hr class="uk-divider-icon">
+                        <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
+
+                        <ul class="uk-nav-sub">
+
+                            <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                            <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
+
+                            <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
+
+
+                            <li> <a href="/menu/menuadmon/promociones">Página de Inicio</a></li>
+                        </ul>
+                        <hr class="uk-divider-icon">
+
+                        <li class="uk-parent"> Sesión </li>
+                        <ul class="uk-nav-sub">
+                            <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
+                        </ul>
+
                     </ul>
-                    <hr class="uk-divider-icon">
-                    <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_serigrafia"> Pedidos Serigrafía </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital
-                        </a></li>
-                    <hr class="uk-divider-icon">
-                    <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
 
-                   <ul class="uk-nav-sub">
-                        <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
-                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
-                        <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
-                        <li> <a href="/menu/menuadmon/insumos">Insumos</a></li>
-                        <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
-                        <li> <a href="/menu/menuadmon/clientes">Clientes</a></li>
-                        <li> <a href="/menu/menuadmon/personal">Personal</a></li>
-                        <li> <a href="/menu/menuadmon/promociones">Menú Principal</a></li>
-                    </ul>
-                    <hr class="uk-divider-icon">
-
-                    <li class="uk-parent">  Sesión </li>
-                     <ul class="uk-nav-sub">
-                          <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
-                     </ul>
-
-                </ul>
-
+                </div>
             </div>
-        </div>
     </nav>
 
     <div class="uk-div uk-padding">
@@ -101,7 +109,8 @@
 
 
                 <table class="uk-table">
-                    <h4 class="uk-heading-line uk-text-center uk-padding-small">Pedidos diarios / Pedidos rango de fechas</h4>
+                    <h4 class="uk-heading-line uk-text-center uk-padding-small">Pedidos diarios / Pedidos rango de
+                        fechas</h4>
 
                     <thead>
                         <tr>
@@ -121,17 +130,20 @@
                                     </select>
                                 </td> --}}
                             <td>
-                                <input onchange="validarfechaspedidos()" id="fecha_inicio" class="uk-input uk-form-width-medium" type="date">
+                                <input onchange="validarfechaspedidos()" id="fecha_inicio"
+                                    class="uk-input uk-form-width-medium" type="date">
 
                             </td>
                             <td>
-                                <input onchange="validarfechaspedidos()" id="fecha_final" class="uk-input uk-form-width-medium" type="date">
+                                <input onchange="validarfechaspedidos()" id="fecha_final"
+                                    class="uk-input uk-form-width-medium" type="date">
                             </td>
 
                             <td>
 
                                 {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
-                                <a target="_blank" id="pedidosdiario" class="uk-button uk-button-secondary" uk-icon="download"></a>
+                                <a target="_blank" id="pedidosdiario" class="uk-button uk-button-secondary"
+                                    uk-icon="download"></a>
 
 
 
@@ -139,7 +151,8 @@
 
 
                             </td>
-                            <td><a target="_blank" onclick="limpiarpedidosdiario()" id="limpiarpedidosdiario" class="uk-icon-button" uk-icon="trash"></a></td>
+                            <td><a target="_blank" onclick="limpiarpedidosdiario()" id="limpiarpedidosdiario"
+                                    class="uk-icon-button" uk-icon="trash"></a></td>
 
 
 
@@ -183,14 +196,17 @@
                                     </select>
                                 </td> --}}
                             <td>
-                                <input onchange="validarfechasinsumos()" id="fecha_inicio_insumos" class="uk-input uk-form-width-medium" type="date">
+                                <input onchange="validarfechasinsumos()" id="fecha_inicio_insumos"
+                                    class="uk-input uk-form-width-medium" type="date">
 
                             </td>
                             <td>
-                                <input onchange="validarfechasinsumos()" id="fecha_final_insumos" class="uk-input uk-form-width-medium" type="date">
+                                <input onchange="validarfechasinsumos()" id="fecha_final_insumos"
+                                    class="uk-input uk-form-width-medium" type="date">
                             </td>
                             <td>
-                                <select onchange="validarfechasinsumos()" class="uk-select uk-form-width-1-1" name="" id="insumos"></select>
+                                <select onchange="validarfechasinsumos()" class="uk-select uk-form-width-1-1" name=""
+                                    id="insumos"></select>
 
 
                                 <script>
@@ -201,7 +217,8 @@
                                         peticionapiser({}, 'GET', function(res) {
                                             usuarios = res;
                                             console.log(res);
-                                            let html = '<option disabled selected value=""> Seleccionar Insumo </option> <option selected value="t">Todos</option>';
+                                            let html =
+                                                '<option disabled selected value=""> Seleccionar Insumo </option> <option selected value="t">Todos</option>';
 
                                             res.forEach(usuarios => {
                                                 html += '<option value="' + usuarios.IdInsumo + '">' + usuarios
@@ -230,9 +247,9 @@
                                             url += '/' + data.id;
                                         }
                                         $.ajax({
-                                            url: url
-                                            , method: method
-                                            , data: data,
+                                            url: url,
+                                            method: method,
+                                            data: data,
 
                                             success(res) {
                                                 onSuccess(res);
@@ -241,7 +258,6 @@
 
                                         })
                                     }
-
                                 </script>
 
                             </td>
@@ -249,11 +265,13 @@
                             <td>
 
                                 {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
-                                <a target="_blank" id="pedidosinsumo" class="uk-button uk-button-secondary" uk-icon="download"></a>
+                                <a target="_blank" id="pedidosinsumo" class="uk-button uk-button-secondary"
+                                    uk-icon="download"></a>
 
 
                             </td>
-                            <td><a target="_blank" onclick="limpiarpedidosinsumo()" id="limpiarpedidosinsumo" class="uk-icon-button" uk-icon="trash"></a></td>
+                            <td><a target="_blank" onclick="limpiarpedidosinsumo()" id="limpiarpedidosinsumo"
+                                    class="uk-icon-button" uk-icon="trash"></a></td>
 
 
 
@@ -298,16 +316,19 @@
                                     </select>
                                 </td> --}}
                             <td>
-                                <input onchange="validarfechastipopago()" id="fecha_inicio_tipopago" class="uk-input uk-form-width-medium" type="date">
+                                <input onchange="validarfechastipopago()" id="fecha_inicio_tipopago"
+                                    class="uk-input uk-form-width-medium" type="date">
 
 
                             </td>
                             <td>
-                                <input onchange="validarfechastipopago()" id="fecha_final_tipopago" class="uk-input uk-form-width-medium" type="date">
+                                <input onchange="validarfechastipopago()" id="fecha_final_tipopago"
+                                    class="uk-input uk-form-width-medium" type="date">
 
                             </td>
                             <td>
-                                <select onchange="validarfechastipopago()" class="uk-select uk-form-width-1-1" name="" id="tipopago">
+                                <select onchange="validarfechastipopago()" class="uk-select uk-form-width-1-1" name=""
+                                    id="tipopago">
 
                                     <option selected disabled value="">--Selecionar--</option>
                                     <option value="2">Credito</option>
@@ -323,11 +344,13 @@
                             <td>
 
                                 {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
-                                <a target="_blank" id="pedidostipopago" class="uk-button uk-button-secondary" uk-icon="download"></a>
+                                <a target="_blank" id="pedidostipopago" class="uk-button uk-button-secondary"
+                                    uk-icon="download"></a>
 
 
                             </td>
-                            <td><a target="_blank" onclick="limpiarpedidostipopago()" id="limpiarpedidostipopago" class="uk-icon-button" uk-icon="trash"></a></td>
+                            <td><a target="_blank" onclick="limpiarpedidostipopago()" id="limpiarpedidostipopago"
+                                    class="uk-icon-button" uk-icon="trash"></a></td>
 
 
 
@@ -372,15 +395,18 @@
                                     </select>
                                 </td> --}}
                             <td>
-                                <input onchange="validarfechascliente()" id="fecha_inicio_cliente" class="uk-input uk-form-width-medium" type="date">
+                                <input onchange="validarfechascliente()" id="fecha_inicio_cliente"
+                                    class="uk-input uk-form-width-medium" type="date">
 
                             </td>
                             <td>
-                                <input onchange="validarfechascliente()" id="fecha_final_cliente" class="uk-input uk-form-width-medium" type="date">
+                                <input onchange="validarfechascliente()" id="fecha_final_cliente"
+                                    class="uk-input uk-form-width-medium" type="date">
 
                             </td>
                             <td>
-                                <select onchange="validarfechascliente()" class="uk-select uk-form-width-1-1" name="" id="clientes"></select>
+                                <select onchange="validarfechascliente()" class="uk-select uk-form-width-1-1" name=""
+                                    id="clientes"></select>
 
 
 
@@ -395,9 +421,9 @@
                                             url += '/' + data.id;
                                         }
                                         $.ajax({
-                                            url: url
-                                            , method: method
-                                            , data: data,
+                                            url: url,
+                                            method: method,
+                                            data: data,
 
                                             success(res) {
                                                 onSuccess(res);
@@ -423,7 +449,6 @@
                                             $("#clientes").html(html);
                                         });
                                     }
-
                                 </script>
 
                             </td>
@@ -431,12 +456,14 @@
                             <td>
 
                                 {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
-                                <a target="_blank" id="pedidoscliente" class="uk-button uk-button-secondary" uk-icon="download"></a>
+                                <a target="_blank" id="pedidoscliente" class="uk-button uk-button-secondary"
+                                    uk-icon="download"></a>
 
 
 
                             </td>
-                            <td><a target="_blank" onclick="limpiarpedidoscliente()" id="limpiarpedidoscliente" class="uk-icon-button" uk-icon="trash"></a></td>
+                            <td><a target="_blank" onclick="limpiarpedidoscliente()" id="limpiarpedidoscliente"
+                                    class="uk-icon-button" uk-icon="trash"></a></td>
 
 
 
@@ -490,11 +517,12 @@
 
 
     }
-    function limpiarpedidosdiario(){
 
-         document.getElementById("fecha_inicio").value="";
-         document.getElementById("fecha_final").value="";
-         validarfechaspedidos();
+    function limpiarpedidosdiario() {
+
+        document.getElementById("fecha_inicio").value = "";
+        document.getElementById("fecha_final").value = "";
+        validarfechaspedidos();
 
 
 
@@ -512,12 +540,14 @@
         if (fecha1 && fecha2 && idtipopago) {
 
             console.log(fecha1, fecha2, idtipopago);
-            document.getElementById("pedidostipopago").href = "/api/pdf/tipodepagoid_entre/" + idtipopago + "/" + fecha1 + "/" + fecha2 + "/descargar";
+            document.getElementById("pedidostipopago").href = "/api/pdf/tipodepagoid_entre/" + idtipopago + "/" +
+                fecha1 + "/" + fecha2 + "/descargar";
 
 
 
         } else {
-            document.getElementById("pedidostipopago").href = "/api/pdf/tipodepago_entre/" + fecha1 + "/" + fecha2 + "/descargar";
+            document.getElementById("pedidostipopago").href = "/api/pdf/tipodepago_entre/" + fecha1 + "/" + fecha2 +
+                "/descargar";
 
 
 
@@ -527,11 +557,12 @@
 
 
     }
-    function limpiarpedidostipopago(){
 
-        document.getElementById("fecha_inicio_tipopago").value="";
-        document.getElementById("fecha_final_tipopago").value="";
-        document.getElementById("tipopago").value="";
+    function limpiarpedidostipopago() {
+
+        document.getElementById("fecha_inicio_tipopago").value = "";
+        document.getElementById("fecha_final_tipopago").value = "";
+        document.getElementById("tipopago").value = "";
         validarfechastipopago();
 
 
@@ -548,16 +579,17 @@
         if (fecha1 && fecha2 && idcliente) {
 
             console.log(fecha1, fecha2, idcliente);
-            document.getElementById("pedidoscliente").href = "/api/pdf/cliente_entre/" + idcliente + "/" + fecha1 + "/" + fecha2 + "/descargar";
+            document.getElementById("pedidoscliente").href = "/api/pdf/cliente_entre/" + idcliente + "/" + fecha1 +
+                "/" + fecha2 + "/descargar";
 
 
 
 
 
-        }
-        else{
-             console.log(fecha1, fecha2, idcliente);
-             document.getElementById("pedidoscliente").href = "/api/pdf/cliente_entre/" + idcliente + "/" + fecha1 + "/" + fecha2 + "/descargar";
+        } else {
+            console.log(fecha1, fecha2, idcliente);
+            document.getElementById("pedidoscliente").href = "/api/pdf/cliente_entre/" + idcliente + "/" + fecha1 +
+                "/" + fecha2 + "/descargar";
 
 
 
@@ -567,12 +599,13 @@
 
 
     }
-    function limpiarpedidoscliente(){
 
-         document.getElementById("fecha_inicio_cliente").value="";
-         document.getElementById("fecha_final_cliente").value="";
-         document.getElementById("clientes").value="";
-         validarfechascliente();
+    function limpiarpedidoscliente() {
+
+        document.getElementById("fecha_inicio_cliente").value = "";
+        document.getElementById("fecha_final_cliente").value = "";
+        document.getElementById("clientes").value = "";
+        validarfechascliente();
 
 
     }
@@ -586,13 +619,15 @@
 
 
 
-        if (fecha1 && fecha2 && idinsumo !=="t") {
+        if (fecha1 && fecha2 && idinsumo !== "t") {
             console.log(fecha1, fecha2, idinsumo);
-            document.getElementById("pedidosinsumo").href = "/api/pdf/ventas_insumos/" + idinsumo + "/" + fecha1 + "/" + fecha2 + "/descargar";
+            document.getElementById("pedidosinsumo").href = "/api/pdf/ventas_insumos/" + idinsumo + "/" + fecha1 + "/" +
+                fecha2 + "/descargar";
         } else {
 
             console.log(fecha1, fecha2, idinsumo);
-            document.getElementById("pedidosinsumo").href = "/api/pdf/ventas_insumos/" + fecha1 + "/" + fecha2 + "/descargar";
+            document.getElementById("pedidosinsumo").href = "/api/pdf/ventas_insumos/" + fecha1 + "/" + fecha2 +
+                "/descargar";
 
 
 
@@ -600,15 +635,15 @@
 
         }
     }
-    function limpiarpedidosinsumo(){
 
-         document.getElementById("fecha_inicio_insumos").value="";
-         document.getElementById("fecha_final_insumos").value="";
-         document.getElementById("insumos").value="";
+    function limpiarpedidosinsumo() {
 
-         validarfechasinsumos();
+        document.getElementById("fecha_inicio_insumos").value = "";
+        document.getElementById("fecha_final_insumos").value = "";
+        document.getElementById("insumos").value = "";
+
+        validarfechasinsumos();
 
 
     }
-
 </script>
