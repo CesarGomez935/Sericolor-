@@ -309,7 +309,7 @@
             <div class="circle"> <i class="fa fa-shopping-cart"></i></div>
             <div class="ribbon">Facturación</div>
         </a>
-        <a class="badge orange" href="/menu/menuadmon/resumen_pedidos">
+        <a class="badge orange" href="/menu/resumen_pedidos">
             <div class="circle"> <i class="fa fa-files-o"></i></div>
             <div class=" ribbon">Pedidos</div>
         </a>

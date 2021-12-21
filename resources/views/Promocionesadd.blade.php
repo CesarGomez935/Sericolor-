@@ -10,18 +10,22 @@
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
 </head>
 
@@ -30,7 +34,8 @@
     <nav class="uk-navbar uk-navbar-container">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Promociones</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span
+                    class="uk-margin-small-left">Promociones</span>
             </a>
         </div>
 
@@ -59,7 +64,7 @@
                     <hr class="uk-divider-icon">
                     <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
 
-                   <ul class="uk-nav-sub">
+                    <ul class="uk-nav-sub">
                         <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
                         <li> <a href="/menu/menuadmon/personal">Personal</a></li>
                         <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
@@ -71,10 +76,10 @@
                     </ul>
                     <hr class="uk-divider-icon">
 
-                    <li class="uk-parent">  Sesión </li>
-                     <ul class="uk-nav-sub">      
-                          <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
-                     </ul>
+                    <li class="uk-parent"> Sesión </li>
+                    <ul class="uk-nav-sub">
+                        <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
+                    </ul>
 
                 </ul>
 
@@ -102,26 +107,37 @@
                             <div uk-form-custom="target: true">
                                 <input accept="image/*" name="imagen" id="imagen" type="file">
 
-                                <input class="uk-input uk-form-width-medium" name="imagen" type="text" placeholder="Subir Imagen" disabled>
+                                <script>
+                                    function logimagen() {
+
+                                        var imagen = document.getElementById("imagen").value;
+                                        console.log(imagen)
+                                    }
+                                </script>
+
+                                <input class="uk-input uk-form-width-medium" name="imagen" type="text"
+                                    placeholder="Subir Imagen" disabled>
                                 @error('imagen')
 
 
-                                <small>*{{ $message }}</small>
+                                    <small>*{{ $message }}</small>
 
                                 @enderror
 
                             </div>
 
 
-                            <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" rows="3"></textarea>
+                            <textarea class="form-control" id="descripcion" name="descripcion"
+                                placeholder="Descripción" rows="3"></textarea>
                             @error('descripcion')
 
 
-                            <small>*{{ $message }}</small>
+                                <small>*{{ $message }}</small>
 
                             @enderror
 
-                            <button onclick="return confirm('¿Está seguro que desea continuar?')" id="guardar" type="submit" class="uk-button uk-button-default">Cargar Imagen Promocional</button>
+                            <button onclick="return confirm('¿Está seguro que desea continuar?')" id="guardar"
+                                type="submit" class="uk-button uk-button-default">Cargar Imagen Promocional</button>
 
 
 
@@ -141,7 +157,8 @@
     <div class="uk-padding-small uk-background-muted uk-padding">
         <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 
-            <a href="/menu/menuadmon/promociones" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
+            <a href="/menu/menuadmon/promociones" class="uk-button uk-button-primary "
+                style="margin-left: 100px">Atrás</a>
 
 
         </div>

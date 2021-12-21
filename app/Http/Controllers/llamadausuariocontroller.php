@@ -15,8 +15,8 @@ class llamadausuariocontroller extends Controller
      */
     public function index()
     {
-     
-         return persona::select("*")->join("usuario","usuario.IdPersona","=","persona.IdPersona")->get();
+
+         return persona::select("*")->join("usuario","usuario.IdPersona","=","persona.IdPersona")->where("usuario.estado",1)->get();
         //
     }
 

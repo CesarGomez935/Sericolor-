@@ -19,9 +19,9 @@ class promocioncontroller extends Controller
         $promocion= promocion::all();
         $slider= slider::all();
         // return promocion::all();
-        return view("promociones",compact("promocion","slider")); 
-        
-        
+        return view("promociones",compact("promocion","slider"));
+
+
     }
 
     /**
@@ -65,11 +65,11 @@ class promocioncontroller extends Controller
             $promocion->descripcion=$request->input("descripcion");
             $promocion->save();
             return redirect("/menu/menuadmon/promociones");
-        
-            
-          
 
-        
+
+
+
+
 
 
     }

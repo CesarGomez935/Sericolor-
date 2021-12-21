@@ -10,17 +10,24 @@
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
     <!-- JQuery-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/RobinHerbots/Inputmask@5.x/dist/jquery.inputmask.js"></script>
 </head>
 
 <body>
@@ -28,7 +35,8 @@
     <nav class="uk-navbar uk-navbar-container ">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
-                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Agregar Perosonal</span>
+                <span uk-toggle="target: #my-id" uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Agregar
+                    Perosonal</span>
             </a>
         </div>
 
@@ -54,11 +62,12 @@
                     <li class="uk-active"> <a href="/menu/pedidos_bordado"> Pedidos Bordado </a></li>
                     <li class="uk-active"> <a href="/menu/pedidos_sublimacion"> Pedidos Sublimación </a></li>
                     <li class="uk-active"> <a href="/menu/pedidos_serigrafia"> Pedidos Serigrafía </a></li>
-                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital </a></li>
+                    <li class="uk-active"> <a href="/menu/pedidos_impresion_digital"> Pedidos Impresión digital
+                        </a></li>
                     <hr class="uk-divider-icon">
                     <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
 
-                   <ul class="uk-nav-sub">
+                    <ul class="uk-nav-sub">
                         <li> <a href="/menu/menuadmon/resumen_pedidos">Resumen de pedidos</a></li>
                         <li> <a href="/menu/menuadmon/personal">Personal</a></li>
                         <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
@@ -70,10 +79,10 @@
                     </ul>
                     <hr class="uk-divider-icon">
 
-                    <li class="uk-parent">  Sesión </li>
-                     <ul class="uk-nav-sub">      
-                          <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
-                     </ul>
+                    <li class="uk-parent"> Sesión </li>
+                    <ul class="uk-nav-sub">
+                        <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
+                    </ul>
 
                 </ul>
 
@@ -83,7 +92,7 @@
 
     <!-- Formulario para agregar personal -->
 
-    <form action="{{route("trabajador.store")}}" method="POST">
+    <form action="{{ route('trabajador.store') }}" method="POST">
 
 
         @csrf
@@ -93,39 +102,51 @@
         <div class="uk-padding-small uk-background-muted" style="padding-left: 300px;">
 
             <div style="text-align: center;" class="uk-padding">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png" alt="" width="300" height="300">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png" alt="" width="300"
+                    height="300">
             </div>
 
             <div style="text-align: center; " class="">
                 <div class="uk-form-horizontal uk-margin-large">
 
                     <div class="uk-margin">
-                        <label for="primer_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Primer Nombre</label>
+                        <label for="primer_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Primer
+                            Nombre</label>
                         <div class="uk-form-controls">
-                            <input name="primer_nombre" id="primer_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Primer Nombre">
+                            <input name="primer_nombre" id="primer_nombre_cliente" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="Primer Nombre">
                         </div>
                     </div>
 
                     <div class="uk-margin">
-                        <label for="segundo_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Segundo Nombre</label>
+                        <label for="segundo_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Segundo
+                            Nombre</label>
                         <div class="uk-form-controls">
-                            <input name="segundo_nombre" id="segundo_nombre_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Segundo Nombre">
+                            <input name="segundo_nombre" id="segundo_nombre_cliente"
+                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
+                                placeholder="Segundo Nombre">
 
                         </div>
                     </div>
 
                     <div class="uk-margin">
-                        <label for="primer_apellido_cliente" class="uk-form-label" for="form-horizontal-text">Primer Apellido</label>
+                        <label for="primer_apellido_cliente" class="uk-form-label" for="form-horizontal-text">Primer
+                            Apellido</label>
                         <div class="uk-form-controls">
-                            <input name="primer_apellido" id="primer_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Primer Apellido">
+                            <input name="primer_apellido" id="primer_apellido_cliente"
+                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
+                                placeholder="Primer Apellido">
 
                         </div>
                     </div>
 
                     <div class="uk-margin">
-                        <label for="segundo_apellido_cliente" class="uk-form-label" for="form-horizontal-text">Segundo Apellido</label>
+                        <label for="segundo_apellido_cliente" class="uk-form-label" for="form-horizontal-text">Segundo
+                            Apellido</label>
                         <div class="uk-form-controls">
-                            <input name="segundo_apellido" id="segundo_apellido_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Segundo Apellido">
+                            <input name="segundo_apellido" id="segundo_apellido_cliente"
+                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
+                                placeholder="Segundo Apellido">
 
                         </div>
                     </div>
@@ -135,15 +156,22 @@
                     <div class="uk-margin">
                         <label for="telefono_cliente" class="uk-form-label" for="form-horizontal-text">Teléfono</label>
                         <div class="uk-form-controls">
-                            <input type="number" name="telefono" id="telefono_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Teléfono">
+                            <input type="number" name="telefono" id="telefono_cliente"
+                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
+                                placeholder="Teléfono">
                         </div>
                     </div>
 
                     <div class="uk-margin">
                         <label for="cedula_cliente" class="uk-form-label" for="form-horizontal-text">Cédula</label>
                         <div class="uk-form-controls">
-                            <input name="cedula" id="cedula_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Cédula">
+                            <input name="cedula" id="cedula_cliente" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="Cédula">
                         </div>
+
+
+
+
                     </div>
 
                     <div class="uk-margin">
@@ -172,14 +200,17 @@
                     <div class="uk-margin">
                         <label for="Correo_cliente" class="uk-form-label" for="form-horizontal-text">Correo</label>
                         <div class="uk-form-controls">
-                            <input name="correo" id="correo_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="email" placeholder="Correo">
+                            <input name="correo" id="correo_cliente" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="email" placeholder="Correo">
                         </div>
                     </div>
 
                     <div class="uk-margin">
-                        <label for="direccion_cliente" class="uk-form-label" for="form-horizontal-text">Dirección</label>
+                        <label for="direccion_cliente" class="uk-form-label"
+                            for="form-horizontal-text">Dirección</label>
                         <div class="uk-form-controls">
-                            <input name="direccion" id="direccion_cliente" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Dirección">
+                            <input name="direccion" id="direccion_cliente" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="Dirección">
                         </div>
                     </div>
 
@@ -208,9 +239,11 @@
                     </div>
 
                     <div class="uk-margin">
-                        <label for="nombre_de_usuario" class="uk-form-label" for="form-horizontal-text">Nombre de Usuario</label>
+                        <label for="nombre_de_usuario" class="uk-form-label" for="form-horizontal-text">Nombre de
+                            Usuario</label>
                         <div class="uk-form-controls">
-                            <input name="nombre_de_usuario" id="nombre_de_usuario" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Nombre de Usuario">
+                            <input name="nombre_de_usuario" id="nombre_de_usuario" class="uk-input uk-form-width-large"
+                                id="form-horizontal-text" type="text" placeholder="Nombre de Usuario">
 
                         </div>
                     </div>
@@ -220,15 +253,21 @@
                     <div class="uk-margin">
                         <label for="pass_personal" class="uk-form-label" for="form-horizontal-text">Contraseña</label>
                         <div class="uk-form-controls">
-                            <input name="password" id="pass_personal" type="password" class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" placeholder="Contraseña">
+                            <input name="password" id="pass_personal" type="password"
+                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
+                                placeholder="Contraseña">
                         </div>
                     </div>
 
                     <div class="uk-margin">
-                        <label for="conf_pass_personal" class="uk-form-label" for="form-horizontal-text">Contraseña</label>
+                        <label for="conf_pass_personal" class="uk-form-label"
+                            for="form-horizontal-text">Contraseña</label>
                         <div class="uk-form-controls">
-                            <input name="conf_password" id="conf_pass_personal" type="password" class="uk-input uk-form-width-medium" id="form-horizontal-text" type="text" placeholder="Confirmar Contraseña">
-                            <a class="uk-button uk-button-primary" onclick="verificarPasswords()">verificar contraseñas</a>
+                            <input name="conf_password" id="conf_pass_personal" type="password"
+                                class="uk-input uk-form-width-medium" id="form-horizontal-text" type="text"
+                                placeholder="Confirmar Contraseña">
+                            <a class="uk-button uk-button-primary" onclick="verificarPasswords()">verificar
+                                contraseñas</a>
 
 
                         </div>
@@ -252,8 +291,11 @@
         <div class="uk-padding-small uk-background-muted uk-padding">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 
-                <a href="/menu/menuadmon/clientes" class="uk-button uk-button-primary  " style="margin-left: 100px">Atrás </a>
-                <button disabled type="submit" id="guardar" onclick="return confirm('¿Está seguro que desea continuar?')" class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
+                <a href="/menu/menuadmon/clientes" class="uk-button uk-button-primary  "
+                    style="margin-left: 100px">Atrás </a>
+                <button disabled type="submit" id="guardar"
+                    onclick="return confirm('¿Está seguro que desea continuar?')" class="uk-button uk-button-secondary"
+                    uk-icon="check" style="margin-left: 100px">Guardar </button>
 
 
             </div>
@@ -263,6 +305,8 @@
 
 </body>
 <script>
+    $('#cedula_cliente').inputmask("999-999999-9999a")
+
     function verificarPasswords() {
 
         pass1 = document.getElementById('pass_personal').value;
@@ -286,7 +330,6 @@
 
 
     }
-
 </script>
 
 </html>

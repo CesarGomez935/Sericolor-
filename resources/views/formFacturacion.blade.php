@@ -209,6 +209,7 @@
                                             <th>Categoria <br> Insumo</th>
                                             <th>Cantidad | precio</th>
                                             <th>Observacion</th>
+                                            <th>Imagen</th>
                                         </tr>
                                     </thead>
 
@@ -333,7 +334,7 @@
                                             </td>
                                             <td>
                                                 <input id="cantidad" onchange="monto();" type="number" min="0"
-                                                    class="uk-input uk-width-1-4 monto">
+                                                    class="uk-input uk-form-width-small monto" placeholder="Cantidad">
 
                                                 <div class="uk-inline">
 
@@ -355,6 +356,23 @@
                                                 <textarea id="Observacion" name="Observacion"
                                                     class="uk-input uk-form-width-1-1" type="text"> </textarea>
 
+
+                                            </td>
+
+                                            <td>
+                                                <div class="uk-margin">
+                                                    <span class="uk-text-middle"></span>
+                                                    <div uk-form-custom>
+                                                        <input accept="image/*" id="imagen" type="file">
+                                                        <span class="uk-link"><a href="" class="uk-icon-button"
+                                                                uk-icon="link"></a></span>
+                                                    </div>
+                                                </div>
+
+
+                                                <script>
+
+                                                </script>
 
                                             </td>
 
@@ -499,6 +517,7 @@
                                 <th>precio</th>
                                 <th>Sub-Total</th>
                                 <th>Observación</th>
+                                <th>Imagen</th>
                                 <th>Opciones</th>
 
 
@@ -590,6 +609,10 @@
                         var precio = document.getElementById("precio").value;
                         var sub_total = document.getElementById("sub_total").value;
                         var obs = document.getElementById("Observacion").value;
+                        var imagen_ = document.getElementById("imagen").value;
+
+
+
 
 
                         var htmlTags = '<tr>' +
@@ -605,6 +628,7 @@
                             '<td>' + precio + '</td>' +
                             '<td>' + sub_total + '</td>' +
                             '<td>' + obs + '</td>' +
+                            '<td>' + imagen_ + '</td>' +
                             '<td>' + '<a class="borrar uk-icon-button" onclick="borrar();" uk-icon="icon: trash; ratio: 0.9"></a>' +
                             '</td>' +
 
@@ -614,6 +638,8 @@
                             '</tr>';
 
                         $('#Tabla tbody').append(htmlTags);
+
+
 
                         document.getElementById("categorias").value = null;
                         document.getElementById("pecho_izq").value = null;
@@ -648,7 +674,7 @@
                         // Si se modifico el valor , retornamos la multiplicación
                         // caso contrario 0
                         total = (change) ? total : 0;
-                        document.getElementById('sub_total').value = total;
+                        document.getElementById('sub_total').value = total.toFixed(2);
 
 
                     }
@@ -1297,7 +1323,7 @@
                         <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
                         <div class="uk-form-controls">
                             <input id="factura" name="num_factura" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="">
+                                id="form-horizontal-text" type="number" placeholder="">
                         </div>
                     </div>
 
@@ -1321,9 +1347,24 @@
         <!-- Seccion que contiene los botones de atrás y guardar-->
         <div class="uk-padding uk-background-muted uk-padding " style="text-align: center;">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-                <a href="/menu" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
-                <a id="guardar" onclick="validarinsert();" class="uk-button uk-button-secondary"
+                <a href="/menu" id="atras" onclick=" " class="uk-button uk-button-primary "
+                    style="margin-left: 100px">Atrás</a>
+                <a id="guardar" href="/menu" onclick=" validarinsert();" class="uk-button uk-button-secondary"
                     style="margin-left: 100px">Guardar</a>
+
+                <script>
+                    $('#atras').click(function() {
+                        var clientes = document.getElementById("cliente").value;
+
+                        console.log(clientes)
+
+                        if (clientes) {
+                            confirm("¿Está seguro de volver al menú principal?");
+                        } else {
+
+                        }
+                    });
+                </script>
 
 
             </div>
@@ -1376,6 +1417,7 @@
 
 
 
+            console.log("chk:", chk, " Otros", chkotros);
 
             if (chkotros && chk) {
                 cargar_detallesub();
@@ -1383,17 +1425,22 @@
                 guardarpedidoall();
 
 
-            } else if (chk && chkotros == "false") {
+            }
+
+            if (chk && chkotros == false) {
                 document.getElementById("impresion").hidden = false;
                 cargar_detalleimp();
                 guardarpedidoimp();
 
 
-            } else if (chkotros && chk == "false") {
+            }
+            if (chkotros && chk == false) {
                 document.getElementById("otros").hidden = false;
                 cargar_detallesub();
                 guardarpedidosub();
             }
+
+
 
         }
 
@@ -1646,6 +1693,8 @@
                 var precio_ = parseFloat(columnas[9].textContent);
                 var totaldetalle_ = parseFloat(columnas[10].textContent);
                 var Observacion_ = columnas[11].textContent;
+                var imagen_ = columnas[12].innerHTML;
+
 
 
 
@@ -1668,6 +1717,8 @@
                     abono: $("#abono").val(),
                     codseguimiento: $("#tipo_de_pedido").val(),
 
+
+                    imagen: imagen_,
                     IdCategoria: idcat_,
                     IdInsumos: insumo,
                     pecho_izq: pechoizq_,

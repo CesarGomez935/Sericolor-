@@ -178,7 +178,7 @@ Route::get('menu/menuadmon/reportes', function () {
     return view('Reportes');
 });
 
-Route::get('menu/menuadmon/resumen_pedidos', function () {
+Route::get('menu/resumen_pedidos', function () {
     return view('ResumenPedidos');
 });
 
@@ -232,26 +232,26 @@ Route::get('/menu/menuadmon/personal/{id}', [CrudTrabajadorController::class,"de
 //     return view('EditarformBordado');
 // });
 //edidcion de formulario serigrafia
-Route::get('/menu/menu_facturacion/form_serigrafia/{id}/edit',[maestrocontrolador::class,"edit"])->name("maestro.edit");
-Route::put('/menu/menu_facturacion/form_serigrafia/{id}', [maestrocontrolador::class,"update"])->name("maestro.update");
+// Route::get('/menu/menu_facturacion/form_serigrafia/{id}/edit',[maestrocontrolador::class,"edit"])->name("maestro.edit");
+// Route::put('/menu/menu_facturacion/form_serigrafia/{id}', [maestrocontrolador::class,"update"])->name("maestro.update");
 
 
-//edicion de formulario de bordado
+// //edicion de formulario de bordado
 
-Route::get('/menu/menu_facturacion/form_bordado/{id}/edit',[maestrocontrolador::class,"editbordado"])->name("maestro.editbordado");
-Route::put('/menu/menu_facturacion/form_bordado/{id}', [maestrocontrolador::class,"editbordado"])->name("maestro.updatebordado");
+// Route::get('/menu/menu_facturacion/form_bordado/{id}/edit',[maestrocontrolador::class,"editbordado"])->name("maestro.editbordado");
+// Route::put('/menu/menu_facturacion/form_bordado/{id}', [maestrocontrolador::class,"editbordado"])->name("maestro.updatebordado");
 
-//edicion de formulario de sublimacion
-Route::get('/menu/menu_facturacion/form_sublimacion/{id}/edit',[maestrocontrolador::class,"editsublimacion"])->name("maestro.editsublimacion");
-Route::put('/menu/menu_facturacion/form_sublimacion/{id}', [maestrocontrolador::class,"editsublimacion"])->name("maestro.editsublimacion");
-//edicion de formulario de impresion digital
-Route::get('/menu/menu_facturacion/form_impresion_digital/{id}/edit',[maestrocontrolador::class,"editimpresion"])->name("maestro.editimpresion");
-Route::put('/menu/menu_facturacion/form_impresion_digital/{id}', [maestrocontrolador::class,"editimpresion"])->name("maestro.update");
+// //edicion de formulario de sublimacion
+// Route::get('/menu/menu_facturacion/form_sublimacion/{id}/edit',[maestrocontrolador::class,"editsublimacion"])->name("maestro.editsublimacion");
+// Route::put('/menu/menu_facturacion/form_sublimacion/{id}', [maestrocontrolador::class,"editsublimacion"])->name("maestro.editsublimacion");
+// //edicion de formulario de impresion digital
+// Route::get('/menu/menu_facturacion/form_impresion_digital/{id}/edit',[maestrocontrolador::class,"editimpresion"])->name("maestro.editimpresion");
+// Route::put('/menu/menu_facturacion/form_impresion_digital/{id}', [maestrocontrolador::class,"editimpresion"])->name("maestro.update");
 
 
 //edicion de pedidos
-Route::get('/menu/facturacion/{id}/edit',[maestrocontrolador::class,"editpedido"])->name("maestro.editpedido");
-Route::put('/menu/facturacion/{id}', [maestrocontrolador::class,"editpedido"])->name("maestro.editpedido");
+Route::get('/menu/facturacion/{id}/edit',[maestrocontrolador::class,"editpedido"])->name("maestro.edit");
+Route::put('/menu/facturacion/{id}', [maestrocontrolador::class,"update"])->name("maestro.update");
 
 
 

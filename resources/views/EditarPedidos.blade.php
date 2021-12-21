@@ -88,7 +88,7 @@
         </div>
     </nav>
 
-    <form action="{{ route('maestro.update', $edit, $editimp) }}" method="post">
+    <form action="{{ route('maestro.update', $edit) }}" method="post">
         @csrf
 
         @method('put')
@@ -1368,7 +1368,7 @@
 
 
                 <textarea id="notas" value=" " name="Notas" class="uk-textarea"
-                    placeholder="Notas">{{ $edit->Notas }} {{ $editimp }}</textarea>
+                    placeholder="Notas">{{ $edit->Notas }}</textarea>
 
 
 
@@ -1799,7 +1799,7 @@
                         <label for="factura" class="uk-form-label" for="form-horizontal-text">N° Factura</label>
                         <div class="uk-form-controls">
                             <input value="{{ $edit->Cod_Recibo }}" id="factura" name="num_factura"
-                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
+                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="number"
                                 placeholder="">
                         </div>
                     </div>
@@ -1830,10 +1830,11 @@
         <!-- Seccion que contiene los botones de atrás y guardar-->
         <div class="uk-padding uk-background-muted uk-padding " style="text-align: center;">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-                <a href="/menu/pedidos_sublimacion" class="uk-button uk-button-primary "
+                <a href="/menu/resumen_pedidos" class="uk-button uk-button-primary "
                     style="margin-left: 100px">Atrás</a>
 
-                <a id="guardar" class="uk-button uk-button-secondary" style="margin-left: 100px">Guardar</a>
+                <a id="guardar" href="/menu" class="uk-button uk-button-secondary"
+                    style="margin-left: 100px">Guardar</a>
 
                 <a hidden id="refrescar" onclick="cargardatosdetalle();">Refrescar</a>
 
@@ -2234,7 +2235,7 @@
 
             let data = {
 
-                idmaestro: $("#id").val(),
+                idmaestro: {{ $edit->idmaestro }},
                 IdCliente: $("#cliente").val(),
                 IdUsuario: $("#recibepedido").val(),
                 IdCategoria: $("#cat").val(),
@@ -2422,7 +2423,7 @@
 
             let datos = {
 
-                idmaestro: $("#id").val(),
+                idmaestro: {{ $edit->idmaestro }},
                 fecha: $("#fecha_fact").val(),
                 metodo_de_pago: $("#metodo_de_pago").val(),
                 cod: $("#factura").val(),
