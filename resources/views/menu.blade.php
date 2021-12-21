@@ -241,54 +241,69 @@
 
         </div>
         <div class="uk-navbar-right">
+            <div style="text-align: right;">
+                <button class="uk-button uk-padding-remove-bottom uk-form-blank" type="button"> Bienvenido
+                    {{ $usuario->Usuario }} </button>
+                <div uk-dropdown="pos: bottom-justify">
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li class="uk-active"><a href="">Privilegios</li>
+                        <li><a disabled>{{ $usuario->Privilegios }}</a></li>
+                        <li class="uk-nav-divider"></li>
 
 
-            <a href="#my-id" uk-toggle></a>
-
-            <!-- Off Canvas, Elemento desplegable de UiKit -->
-            <div id="my-id" uk-offcanvas>
-                <div class="uk-offcanvas-bar">
-
-                    <button class="uk-offcanvas-close" type="button" uk-close></button>
-                    <a href="/menu">Menú</a>
-                    <hr class="uk-divider-icon">
-
-                    <ul class="uk-nav uk-parent">
-
-                        <li class="uk-parent"> <a href="/menu">Menú</a></li>
-
-
-                        <ul class="uk-nav-sub">
-                            <li class="uk-parent"> <a href="/menu/facturacion"> Facturación </a></li>
-                            <li> <a href="/menu/resumen_pedidos">Pedidos </a></li>
-                            <li> <a href="/menu/clientes">Clientes </a></li>
-                            <li> <a href="/menu/insumos">Insumos </a></li>
-
-                        </ul>
-                        <hr class="uk-divider-icon">
-                        <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
-
-                        <ul class="uk-nav-sub">
-
-                            <li> <a href="/menu/menuadmon/personal">Personal</a></li>
-                            <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
-
-                            <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
-
-
-                            <li> <a href="/menu/menuadmon/promociones">Página de Inicio</a></li>
-                        </ul>
-                        <hr class="uk-divider-icon">
-
-                        <li class="uk-parent"> Sesión </li>
-                        <ul class="uk-nav-sub">
-                            <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
-                        </ul>
-
+                        <li><a href="{{ 'login/cerrar' }}"><b> Cerrar Sesión </b></a></li>
                     </ul>
-
                 </div>
             </div>
+            <div class="uk-navbar-right">
+
+
+                <a href="#my-id" uk-toggle></a>
+
+                <!-- Off Canvas, Elemento desplegable de UiKit -->
+                <div id="my-id" uk-offcanvas>
+                    <div class="uk-offcanvas-bar">
+
+                        <button class="uk-offcanvas-close" type="button" uk-close></button>
+                        <a href="/menu">Menú</a>
+                        <hr class="uk-divider-icon">
+
+                        <ul class="uk-nav uk-parent">
+
+                            <li class="uk-parent"> <a href="/menu">Menú</a></li>
+
+
+                            <ul class="uk-nav-sub">
+                                <li class="uk-parent"> <a href="/menu/facturacion"> Facturación </a></li>
+                                <li> <a href="/menu/resumen_pedidos">Pedidos </a></li>
+                                <li> <a href="/menu/clientes">Clientes </a></li>
+                                <li> <a href="/menu/insumos">Insumos </a></li>
+
+                            </ul>
+                            <hr class="uk-divider-icon">
+                            <li class="uk-parent"> <a href="/menu/menuadmon"> Administración </a></li>
+
+                            <ul class="uk-nav-sub">
+
+                                <li> <a href="/menu/menuadmon/personal">Personal</a></li>
+                                <li> <a href="/menu/menuadmon/reportes">Reportes</a></li>
+
+                                <li> <a href="/menu/menuadmon/bd">Base de Datos</a></li>
+
+
+                                <li> <a href="/menu/menuadmon/promociones">Página de Inicio</a></li>
+                            </ul>
+                            <hr class="uk-divider-icon">
+
+                            <li class="uk-parent"> Sesión </li>
+                            <ul class="uk-nav-sub">
+                                <li><a href="/login/cerrar"><b> Cerrar Sesión </b></a></li>
+                            </ul>
+
+                        </ul>
+
+                    </div>
+                </div>
     </nav>
 </header>
 
