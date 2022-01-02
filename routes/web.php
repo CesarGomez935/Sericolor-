@@ -13,6 +13,7 @@ Use App\Http\Controllers\vistas;
 Use App\Http\Controllers\maestrocontroladorImpresion;
 Use App\Http\Controllers\logincontroller;
 use App\Http\Controllers\pruebacontroller;
+use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\SliderPrincipalController;
 Use Barryvdh\DomPDF\Facade as PDF;
 
@@ -211,6 +212,14 @@ Route::post('menu/menuadmon/slider/create', [SliderPrincipalController::class,"s
 Route::get("menu/menuadmon/slider/edit/{id}",[SliderPrincipalController::class,"edit"]);
 Route::put("menu/menuadmon/slider/edit/{id}",[SliderPrincipalController::class,"update"]);
 Route::get("menu/menuadmon/slider/delete/{id}",[SliderPrincipalController::class,"destroy"]);
+
+
+Route::get('menu/menuadmon/servicios', [ServiciosController::class,"index"]);
+Route::get('menu/menuadmon/servicios/create', [ServiciosController::class,"create"]);
+Route::post('menu/menuadmon/servicios/create', [ServiciosController::class,"store"]);
+Route::get("menu/menuadmon/servicios/edit/{id}",[ServiciosController::class,"edit"]);
+Route::put("menu/menuadmon/servicios/edit/{id}",[ServiciosController::class,"update"]);
+Route::get("menu/menuadmon/servicios/delete/{id}",[ServiciosController::class,"destroy"]);
 
 
 //clientes

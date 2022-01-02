@@ -208,7 +208,7 @@
                                             <th>Categoria <br> Insumo</th>
                                             <th>Cantidad | precio</th>
                                             <th>Observacion</th>
-                                            <th>Imagen</th>
+
                                         </tr>
                                     </thead>
 
@@ -358,22 +358,7 @@
 
                                             </td>
 
-                                            <td>
-                                                <div class="uk-margin">
-                                                    <span class="uk-text-middle"></span>
-                                                    <div uk-form-custom>
-                                                        <input accept="image/*" id="imagen" type="file">
-                                                        <span class="uk-link"><a href="" class="uk-icon-button"
-                                                                uk-icon="link"></a></span>
-                                                    </div>
-                                                </div>
 
-
-                                                <script>
-
-                                                </script>
-
-                                            </td>
 
 
                                         </tr>
@@ -516,7 +501,7 @@
                                 <th>precio</th>
                                 <th>Sub-Total</th>
                                 <th>Observación</th>
-                                <th>Imagen</th>
+
                                 <th>Opciones</th>
 
 
@@ -608,7 +593,7 @@
                         var precio = document.getElementById("precio").value;
                         var sub_total = document.getElementById("sub_total").value;
                         var obs = document.getElementById("Observacion").value;
-                        var imagen_ = document.getElementById("imagen").value;
+
 
 
 
@@ -627,7 +612,7 @@
                             '<td>' + precio + '</td>' +
                             '<td>' + sub_total + '</td>' +
                             '<td>' + obs + '</td>' +
-                            '<td>' + imagen_ + '</td>' +
+
                             '<td>' + '<a class="borrar uk-icon-button" onclick="borrar();" uk-icon="icon: trash; ratio: 0.9"></a>' +
                             '</td>' +
 

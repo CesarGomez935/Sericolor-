@@ -168,8 +168,8 @@
         <div class="m-1 p-3">
             <h3 style="text-align: center" class="text-primary"> <b> Nuestros servicios </b></h3>
         </div>
-        <div class="row mx-auto">
-            <div class="col-3 col-md-2 mx-auto ">
+        <div id="serviciocontenedor" class="row mx-auto">
+            {{-- <div class="col-3 col-md-2 mx-auto ">
                 <a href="/servicio#serigrafia">
                     <img src="/img/Ser.png" alt="">
                 </a>
@@ -188,7 +188,8 @@
                 <a href="/servicio#bordado">
                     <img src="/img/Bor.png" alt="">
                 </a>
-            </div>
+            </div> --}}
+
 
         </div>
     </div>
@@ -310,9 +311,12 @@
     let pedido = [];
     let slider = [];
 
+    let servicios = [];
+
 
     cargarpedido();
     cargarslider();
+    cargarservicios();
 
 
 
@@ -445,6 +449,50 @@
 
             });
             $("#sliderprincipal").html(html);
+        });
+
+    }
+
+
+
+
+    function peticionapiservicios(data, method, onSucess) {
+        let url = '/api/servicios';
+        if (method == 'PUT' || method == 'DELETE') {
+            url += '/' + data.IdServicio;
+        }
+        $.ajax({
+            url: url,
+            method: method,
+            data: data,
+            // error(ext) {
+            // let error = e.responseJSON.errors;
+            // let msj = error[Object.keys(error)[0]][0];
+            // alert(msj);
+            // },
+            success(res) {
+                onSucess(res)
+
+            }
+        })
+    }
+
+    function cargarservicios() {
+        peticionapiservicios({}, "GET", function(res) {
+            servicios = res;
+            console.log(servicios);
+            let html = '';
+            res.forEach(servicios => {
+                html +=
+
+                    '<div class="col-3 col-md-2 mx-auto ">' +
+                    '<a href="/servicio#' + servicios.titulo + '">' +
+                    '<img src="/uploads/servicios/' + servicios.imagen + '" alt="">' +
+                    '</a>' +
+                    '</div>'
+
+            });
+            $("#serviciocontenedor").html(html);
         });
 
     }
