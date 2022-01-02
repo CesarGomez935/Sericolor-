@@ -65,7 +65,7 @@
 
 </header>
 
-<body>
+<body onload="scroll();">
 
 
 
@@ -86,7 +86,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/acerca"> <b> Conócenos </b></a>
                 </li>
-                <li class="nav-item">
+                <li id="catalogolink" class="nav-item">
                     <a class="nav-link" href="/resources/catalogo_2021.pdf" target="_blank"><b> Catálogo </b></a>
                 </li>
                 <li class="nav-item">
@@ -335,6 +335,10 @@
 <script>
     let pedido = [];
     let servicios = [];
+    let urlser = [];
+
+    let catalogo = [];
+    cargarcatalogo();
 
     cargarservicios();
 
@@ -452,7 +456,62 @@
                     '</div>'
 
             });
+
+
             $("#servicios").html(html);
+        });
+
+        urlser = window.location.href;
+        urlser = urlser.split('#');
+        urlser = urlser[1];
+
+
+
+        console.log(urlser);
+
+    }
+
+    function scroll() {
+        console.log(urlser);
+        var element_to_scroll_to = document.getElementById(urlser);
+        element_to_scroll_to.scrollIntoView();
+    }
+
+
+    function peticionapicatalogo(data, method, onSucess) {
+        let url = '/api/catalogo';
+        if (method == 'PUT' || method == 'DELETE') {
+            url += '/' + data.idcatalogo;
+        }
+        $.ajax({
+            url: url,
+            method: method,
+            data: data,
+            // error(ext) {
+            // let error = e.responseJSON.errors;
+            // let msj = error[Object.keys(error)[0]][0];
+            // alert(msj);
+            // },
+            success(res) {
+                onSucess(res)
+
+            }
+        })
+    }
+
+    function cargarcatalogo() {
+        peticionapicatalogo({}, "GET", function(res) {
+            catalogo = res;
+            console.log(catalogo);
+            let html = '';
+            res.forEach(catalogo => {
+                html +=
+
+                    '<a class="nav-link" href="/uploads/catalogo/' + catalogo.pdf +
+                    '" target="_blank"><b> Catálogo </b></a>'
+
+            });
+            $("#catalogolink").html(html);
         });
 
     }

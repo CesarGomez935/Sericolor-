@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\catalogoController;
 use App\Http\Controllers\CrudClienteController;
 use App\Http\Controllers\CrudTrabajadorController;
 use App\Http\Controllers\detalledelpedidocontroller;
@@ -220,6 +221,13 @@ Route::post('menu/menuadmon/servicios/create', [ServiciosController::class,"stor
 Route::get("menu/menuadmon/servicios/edit/{id}",[ServiciosController::class,"edit"]);
 Route::put("menu/menuadmon/servicios/edit/{id}",[ServiciosController::class,"update"]);
 Route::get("menu/menuadmon/servicios/delete/{id}",[ServiciosController::class,"destroy"]);
+
+
+Route::get('menu/menuadmon/catalogo/create', [catalogoController::class,"create"]);
+Route::post('menu/menuadmon/catalogo/create', [catalogoController::class,"store"]);
+Route::get("menu/menuadmon/catalogo/edit/{id}",[catalogoController::class,"edit"]);
+Route::put("menu/menuadmon/catalogo/edit/{id}",[catalogoController::class,"update"]);
+Route::get("menu/menuadmon/catalogo/delete/{id}",[catalogoController::class,"destroy"]);
 
 
 //clientes

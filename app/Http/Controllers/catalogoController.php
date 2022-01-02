@@ -4,12 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\catalogo;
 use Illuminate\Http\Request;
-use App\Models\promocion;
-use App\Models\servicios;
-use App\Models\slider;
 use Illuminate\Support\Facades\File;
 
-class promocioncontroller extends Controller
+class catalogoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,14 +15,7 @@ class promocioncontroller extends Controller
      */
     public function index()
     {
-        $servicios=servicios::all();
-        $promocion= promocion::all();
-        $slider= slider::all();
-        $catalogo=catalogo::all();
-        // return promocion::all();
-        return view("promociones",compact("promocion","slider","servicios","catalogo"));
-
-
+        return $catalogo=catalogo::all();
     }
 
     /**
@@ -35,7 +25,7 @@ class promocioncontroller extends Controller
      */
     public function create()
     {
-        return view("promocionesadd");
+        return view("catalogocreate");
     }
 
     /**
@@ -46,36 +36,29 @@ class promocioncontroller extends Controller
      */
     public function store(Request $request)
     {
-            $request->validate([
+        $request->validate([
 
-             'imagen'=>'required',
-             'descripcion'=>'required',
-            ]);
+            'pdf'=>'required',
 
-
-
-
-            $promocion=new promocion();
-       // $promocion->imagen=$request->input("imagen");
-            if($request->hasFile("imagen")){
-
-            $file=$request->file("imagen");
-            $extention=$file->getClientOriginalExtension();
-            $filename= time().".".$extention;
-            $file->move("uploads/promocion/",$filename);
-            $promocion->imagen=$filename;
-
-        }
-            $promocion->descripcion=$request->input("descripcion");
-            $promocion->save();
-            return redirect("/menu/menuadmon/promociones");
+           ]);
 
 
 
 
+           $catalogo=new catalogo();
+      // $catalogo->pdf=$request->input("pdf");
+           if($request->hasFile("pdf")){
 
+           $file=$request->file("pdf");
+           $extention=$file->getClientOriginalExtension();
+           $filename= time()."PDF.".$extention;
+           $file->move("uploads/catalogo/",$filename);
+           $catalogo->pdf=$filename;
 
-
+       }
+           $catalogo->descripcion=$request->input("descripcion");
+           $catalogo->save();
+           return redirect("/menu/menuadmon/promociones");
     }
 
     /**
@@ -97,8 +80,8 @@ class promocioncontroller extends Controller
      */
     public function edit($id)
     {
-        $promocion=promocion::find($id);
-        return view("promocionesedit",compact("promocion"));
+        $catalogo=catalogo::find($id);
+        return view("catalogoedit",compact("catalogo"));
     }
 
     /**
@@ -110,24 +93,23 @@ class promocioncontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        $promocion=promocion::find($id);
-        if($request->hasFile("imagen")){
+        $catalogo=catalogo::find($id);
+        if($request->hasFile("pdf")){
 
-            $destination="uploads/promocion/". $promocion->imagen;
+            $destination="uploads/catalogo/". $catalogo->pdf;
             if(File::exists($destination)){
                 File::delete($destination);
             }
-            $file=$request->file("imagen");
+            $file=$request->file("pdf");
             $extention=$file->getClientOriginalExtension();
-            $filename= time().".".$extention;
-            $file->move("uploads/promocion/",$filename);
-            $promocion->imagen=$filename;
+            $filename= time()."PDF.".$extention;
+            $file->move("uploads/catalogo/",$filename);
+            $catalogo->pdf=$filename;
 
         }
-        $promocion->descripcion=$request->input("descripcion");
-        $promocion->update();
+        $catalogo->descripcion=$request->input("descripcion");
+        $catalogo->update();
         return redirect("/menu/menuadmon/promociones");
-
     }
 
     /**
@@ -138,12 +120,12 @@ class promocioncontroller extends Controller
      */
     public function destroy($id)
     {
-        $promocion=promocion::find($id);
-        $destination="uploads/promocion/".$promocion->imagen;
+        $catalogo=catalogo::find($id);
+        $destination="uploads/catalogo/".$catalogo->pdf;
         if(File::exists($destination)){
             file::delete($destination);
         }
-        $promocion->delete();
+        $catalogo->delete();
         return redirect("/menu/menuadmon/promociones");
     }
 }

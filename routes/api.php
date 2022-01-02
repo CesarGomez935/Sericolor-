@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\administracion;
+use App\Http\Controllers\catalogoController;
 use App\Http\Controllers\categoriacontroller;
 use App\Http\Controllers\detalledelpagocontroller;
 use App\Http\Controllers\detalledelpedidocontroller;
@@ -57,6 +58,7 @@ Route::get('getinsumobusqueda/{id}',[ insumocontroller::class,"getinsumobusqueda
 Route::resource('promocion',slidercontroller::class);
 Route::resource('slider',SliderPrincipalController::class);
 Route::get('servicios',[ServiciosController::class,"showall"]);
+Route::get('catalogo',[catalogoController::class,"index"]);
 
 // Route::resource('detalledelpedido',detalledelpedidocontroller::class);
 // Route::resource('administraciones',administracion::class);

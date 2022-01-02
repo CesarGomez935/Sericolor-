@@ -186,6 +186,104 @@
             </table>
         </div>
 
+        <div>
+            <div class="uk-div uk-padding">
+
+
+                <div class="uk-section-secondary uk-margin uk-padding" style="text-align: center;">
+                    <h1>Servicios</h1>
+                    <h6>¡Importante! Tamaño Recomendado para Ícono: <br>
+                        Alto: 468Px <br>
+                        Ancho: 358Px
+                    </h6>
+                    <h5>-------------------</h5>
+                    <h6>¡Importante! Tamaño Recomendado para Representación: <br>
+                        Alto: 1800Px <br>
+                        Ancho: 1440Px
+                    </h6>
+
+
+                    <div class="uk-div uk-padding">
+                        <a href="/menu/menuadmon/servicios/create" class="uk-button uk-button-primary">Agregar Nueva
+                            Imagen</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="uk-padding">
+            <table class="uk-table uk-table-hover uk-table-striped uk-table-divider uk-table-hover ">
+
+
+
+                <thead>
+                    <th>Id</th>
+                    <th>Título</th>
+                    <th>Ícono</th>
+                    <th>Representación</th>
+                    <th>Descripción</th>
+                    <th>opciones</th>
+
+
+                </thead>
+                <tbody id="datos">
+                    @foreach ($servicios as $item)
+
+
+                        <tr>
+                            <td>{{ $item->IdServicio }}</td>
+                            <td>{{ $item->titulo }}</td>
+
+
+                            <td><img src="{{ asset('uploads/servicios/' . $item->imagen) }}" width="400" height="200"
+                                    srcset=""> </td>
+
+
+                            <td><img src="{{ asset('uploads/servicios/' . $item->imagenrep) }}" width="400"
+                                    height="200" srcset=""> </td>
+
+
+                            <td>{{ $item->descripcion }}</td>
+
+                            <td>
+                                <a href="{{ url('/menu/menuadmon/servicios/edit/' . $item->IdServicio) }}"
+                                    class="uk-icon-button  uk-margin-small-right" uk-icon="icon:pencil; ratio: 1.5"></a>
+
+
+
+
+
+                                <a onclick="return confirm('¿Está seguro que desea continuar?')"
+                                    href="{{ url('/menu/menuadmon/servicios/delete/' . $item->IdServicio) }}"
+                                    class="uk-icon-button  uk-margin-small-right" uk-icon="icon:trash; ratio: 1.5"></a>
+
+
+
+                            </td>
+
+
+
+
+
+
+
+
+
+                        </tr>
+
+                    @endforeach
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- Botón de atrás  -->
+
+
 
         <!-- Botón de atrás  -->
 
@@ -257,6 +355,82 @@
 
                                 <a onclick="return confirm('¿Está seguro que desea continuar?')"
                                     href="{{ url('/menu/menuadmon/promociones/delete/' . $item->IdPromocion) }}"
+                                    class="uk-icon-button  uk-margin-small-right" uk-icon="icon:trash; ratio: 1.5"></a>
+
+                            </td>
+
+
+
+
+
+
+
+
+
+                        </tr>
+
+                    @endforeach
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+        <div>
+            <div class="uk-div uk-padding">
+
+
+                <div class="uk-section-secondary uk-margin uk-padding" style="text-align: center;">
+                    <h1>Catalogo</h1>
+                    <h6>¡Importante! Solo 1 Archivo PDF
+                    </h6>
+
+
+                    <div class="uk-div uk-padding">
+                        <a href="/menu/menuadmon/catalogo/create" class="uk-button uk-button-primary">Agregar
+                            catálogo</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="uk-padding">
+            <table class="uk-table uk-table-hover uk-table-striped uk-table-divider uk-table-hover ">
+
+
+
+                <thead>
+                    <th>Id</th>
+                    <th>PDF</th>
+                    <th>Descripción</th>
+                    <th>opciones</th>
+
+
+                </thead>
+                <tbody id="datos">
+                    @foreach ($catalogo as $item)
+
+
+                        <tr>
+                            <td>{{ $item->idcatalogo }}</td>
+
+                            <td> <iframe src="{{ asset('uploads/catalogo/' . $item->pdf) }}" srcset=""> PDF
+                                </iframe>
+                            </td>
+
+                            <td>{{ $item->descripcion }}</td>
+
+                            <td>
+                                <a href="{{ url('/menu/menuadmon/catalogo/edit/' . $item->idcatalogo) }}"
+                                    class="uk-icon-button  uk-margin-small-right" uk-icon="icon:pencil; ratio: 1.5"></a>
+
+
+
+                                <a onclick="return confirm('¿Está seguro que desea continuar?')"
+                                    href="{{ url('/menu/menuadmon/catalogo/delete/' . $item->idcatalogo) }}"
                                     class="uk-icon-button  uk-margin-small-right" uk-icon="icon:trash; ratio: 1.5"></a>
 
                             </td>

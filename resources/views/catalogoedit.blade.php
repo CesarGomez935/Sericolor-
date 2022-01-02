@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios</title>
+    <title>Catálogo</title>
     <link rel="icon" href="/img/Icono.ico" type="image/ico" />
 
     <!-- UIkit CSS -->
@@ -91,7 +91,7 @@
     </nav>
 
 
-    <form action="{{ url('menu/menuadmon/servicios/edit/' . $servicios->IdServicio) }}" method="post"
+    <form action="{{ url('menu/menuadmon/catalogo/edit/' . $catalogo->idcatalogo) }}" method="post"
         enctype="multipart/form-data">
 
 
@@ -107,46 +107,33 @@
             <div>
                 <div class="uk-div uk-padding">
                     <div class="uk-section-secondary uk-margin uk-padding" style="text-align: center;">
-                        <h1>editar Servicio</h1>
+                        <h1>editar Imagen promocional</h1>
                         <div class="uk-margin" uk-margin>
-
-                            <h6>Ícono</h6>
                             <div uk-form-custom="target: true">
-                                <input accept="image/*" name="imagen" id="imagen" type="file">
-                                <input class="uk-input uk-form-width-medium" type="text" placeholder="Subir Imagen"
+                                <input accept="application/pdf" name="pdf" id="pdf" type="file">
+                                <input class="uk-input uk-form-width-medium" type="text" placeholder="Subir PDF"
                                     disabled>
+
                                 <div class="uk-padding">
-                                    <img src="{{ asset('uploads/servicios/' . $servicios->imagen) }}" alt="120"
-                                        height="50" srcset="">
+
                                 </div>
 
 
+
                             </div>
-
-                            <h6>Representación</h6>
-                            <div uk-form-custom="target: true">
-                                <input accept="image/*" name="imagenrep" id="imagenrep" type="file">
-                                <input class="uk-input uk-form-width-medium" type="text"
-                                    placeholder="Subir Representación" disabled>
-                                <div class="uk-padding">
-                                    <img src="{{ asset('uploads/servicios/' . $servicios->imagenrep) }}" alt="120"
-                                        height="50" srcset="">
-                                </div>
+                            <div class="uk-padding">
 
 
+                                <iframe src="{{ asset('uploads/catalogo/' . $catalogo->pdf) }}" srcset=""> PDF
+                                </iframe>
                             </div>
 
 
-                            <h6>Título</h6>
-                            <input value="{{ $servicios->titulo }}" class="form-control" id="descripcion"
-                                name="titulo" placeholder="Descripción" rows="3">
-
-                            <h6>Descripción</h6>
-                            <textarea value="" class="form-control" id="descripcion" name="descripcion"
-                                placeholder="Descripción" rows="3">{{ $servicios->descripcion }}</textarea>
+                            <input value="{{ $catalogo->descripcion }}" class="form-control" id="descripcion"
+                                name="descripcion" placeholder="Descripción" rows="3">
 
                             <button onclick="return confirm('¿Está seguro que desea continuar?')" id="guardar"
-                                type="submit" class="uk-button uk-button-default">actualizar Servicio</button>
+                                type="submit" class="uk-button uk-button-default">Actualizar Catálogo </button>
 
 
 

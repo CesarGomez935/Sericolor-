@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios</title>
+    <title>Catálogo</title>
     <link rel="icon" href="/img/Icono.ico" type="image/ico" />
 
     <!-- UIkit CSS -->
@@ -91,12 +91,9 @@
     </nav>
 
 
-    <form action="{{ url('menu/menuadmon/servicios/edit/' . $servicios->IdServicio) }}" method="post"
-        enctype="multipart/form-data">
-
+    <form action="{{ url('/menu/menuadmon/catalogo/create') }}" method="post" enctype="multipart/form-data">
 
         @csrf
-        @method('put')
 
         <div class="uk-section uk-section-muted">
 
@@ -107,47 +104,42 @@
             <div>
                 <div class="uk-div uk-padding">
                     <div class="uk-section-secondary uk-margin uk-padding" style="text-align: center;">
-                        <h1>editar Servicio</h1>
+                        <h1>Cargar catálogo</h1>
                         <div class="uk-margin" uk-margin>
-
-                            <h6>Ícono</h6>
                             <div uk-form-custom="target: true">
-                                <input accept="image/*" name="imagen" id="imagen" type="file">
-                                <input class="uk-input uk-form-width-medium" type="text" placeholder="Subir Imagen"
-                                    disabled>
-                                <div class="uk-padding">
-                                    <img src="{{ asset('uploads/servicios/' . $servicios->imagen) }}" alt="120"
-                                        height="50" srcset="">
-                                </div>
+                                <input accept="application/pdf" name="pdf" id="pdf" type="file">
+
+                                <script>
+                                    function logimagen() {
+
+                                        var imagen = document.getElementById("imagen").value;
+                                        console.log(imagen)
+                                    }
+                                </script>
+
+                                <input class="uk-input uk-form-width-medium" name="pdf" type="text"
+                                    placeholder="Subir Catálogo" disabled>
+                                @error('pdf')
 
 
-                            </div>
+                                    <small>*{{ $message }}</small>
 
-                            <h6>Representación</h6>
-                            <div uk-form-custom="target: true">
-                                <input accept="image/*" name="imagenrep" id="imagenrep" type="file">
-                                <input class="uk-input uk-form-width-medium" type="text"
-                                    placeholder="Subir Representación" disabled>
-                                <div class="uk-padding">
-                                    <img src="{{ asset('uploads/servicios/' . $servicios->imagenrep) }}" alt="120"
-                                        height="50" srcset="">
-                                </div>
-
+                                @enderror
 
                             </div>
 
 
-                            <h6>Título</h6>
-                            <input value="{{ $servicios->titulo }}" class="form-control" id="descripcion"
-                                name="titulo" placeholder="Descripción" rows="3">
+                            <textarea class="form-control" id="descripcion" name="descripcion"
+                                placeholder="Descripción" rows="3"></textarea>
+                            @error('descripcion')
 
-                            <h6>Descripción</h6>
-                            <textarea value="" class="form-control" id="descripcion" name="descripcion"
-                                placeholder="Descripción" rows="3">{{ $servicios->descripcion }}</textarea>
+
+                                <small>*{{ $message }}</small>
+
+                            @enderror
 
                             <button onclick="return confirm('¿Está seguro que desea continuar?')" id="guardar"
-                                type="submit" class="uk-button uk-button-default">actualizar Servicio</button>
-
+                                type="submit" class="uk-button uk-button-default">Cargar Catálogo</button>
 
 
 
