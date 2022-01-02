@@ -39,6 +39,8 @@ class catalogoController extends Controller
         $request->validate([
 
             'pdf'=>'required',
+            'telefono'=>'required',
+            'correo'=>'required',
 
            ]);
 
@@ -57,6 +59,8 @@ class catalogoController extends Controller
 
        }
            $catalogo->descripcion=$request->input("descripcion");
+           $catalogo->telefono=$request->input("telefono");
+           $catalogo->correo=$request->input("correo");
            $catalogo->save();
            return redirect("/menu/menuadmon/promociones");
     }
@@ -107,7 +111,10 @@ class catalogoController extends Controller
             $catalogo->pdf=$filename;
 
         }
+
         $catalogo->descripcion=$request->input("descripcion");
+        $catalogo->telefono=$request->input("telefono");
+        $catalogo->correo=$request->input("correo");
         $catalogo->update();
         return redirect("/menu/menuadmon/promociones");
     }

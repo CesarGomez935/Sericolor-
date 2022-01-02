@@ -377,7 +377,7 @@
         </div>
 
 
-        <div>
+        {{-- <div>
             <div class="uk-div uk-padding">
 
 
@@ -450,14 +450,94 @@
 
                 </tbody>
             </table>
+        </div> --}}
+
+        <div>
+            <div class="uk-div uk-padding">
+
+
+                <div class="uk-section-secondary uk-margin uk-padding" style="text-align: center;">
+                    <h1>Catalogo</h1>
+                    <h6>¡Importante! Solo 1 Archivo PDF
+                    </h6>
+
+
+                    <div class="uk-div uk-padding">
+                        <a href="/menu/menuadmon/catalogo/create" class="uk-button uk-button-primary">Agregar
+                            catálogo</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="uk-padding">
+            <table class="uk-table uk-table-hover uk-table-striped uk-table-divider uk-table-hover ">
+
+
+
+                <thead>
+                    <th>Id</th>
+                    <th>PDF</th>
+                    <th>Descripción</th>
+                    <th>Teléfono Empresarial</th>
+                    <th>Correo Empresarial</th>
+                    <th>opciones</th>
+
+
+                </thead>
+                <tbody id="datos">
+                    @foreach ($catalogo as $item)
+
+
+                        <tr>
+                            <td>{{ $item->idcatalogo }}</td>
+
+                            <td> <iframe src="{{ asset('uploads/catalogo/' . $item->pdf) }}" srcset=""> PDF
+                                </iframe>
+                            </td>
+
+                            <td>{{ $item->descripcion }}</td>
+
+                            <td>+505-{{ $item->telefono }}</td>
+                            <td>{{ $item->correo }}</td>
+
+                            <td>
+                                <a href="{{ url('/menu/menuadmon/catalogo/edit/' . $item->idcatalogo) }}"
+                                    class="uk-icon-button  uk-margin-small-right" uk-icon="icon:pencil; ratio: 1.5"></a>
+
+
+
+                                <a onclick="return confirm('¿Está seguro que desea continuar?')"
+                                    href="{{ url('/menu/menuadmon/catalogo/delete/' . $item->idcatalogo) }}"
+                                    class="uk-icon-button  uk-margin-small-right" uk-icon="icon:trash; ratio: 1.5"></a>
+
+                            </td>
+
+
+
+
+
+
+
+
+
+                        </tr>
+
+                    @endforeach
+
+
+                </tbody>
+            </table>
         </div>
 
 
         <!-- Botón de atrás  -->
-        <div class="uk-padding-small uk-background-muted uk-padding">
-            <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
+        <div class=" uk-background-muted uk-padding">
+            <div class="uk-div uk-margin .uk-padding-large" style="text-align: center;">
 
-                <a href="/menu/menuadmon" class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
+                <a href="/menu/menuadmon" class="uk-button uk-button-primary ">Atrás</a>
 
 
             </div>

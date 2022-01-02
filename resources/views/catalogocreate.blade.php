@@ -137,9 +137,32 @@
                                 <small>*{{ $message }}</small>
 
                             @enderror
+                            <br>
 
+                            <div>
+                                <h4>Información de la Empresa:</h4>
+                            </div>
+
+                            <div class="uk-form-stacked">
+
+                                <div class="uk-margin">
+                                    <label class="uk-form-label" for="form-stacked-text">Teléfono</label>
+                                    <div class="uk-form-controls">
+                                        <input name="telefono" class="uk-input" id="form-stacked-text"
+                                            type="number" placeholder="Teléfono">
+                                    </div>
+                                </div>
+
+                                <div class="uk-margin">
+                                    <label class="uk-form-label" for="form-stacked-text">Correo</label>
+                                    <div class="uk-form-controls">
+                                        <input name="correo" class="uk-input" id="form-stacked-text" type="email"
+                                            placeholder="Correo">
+                                    </div>
+                                </div>
+                            </div>
                             <button onclick="return confirm('¿Está seguro que desea continuar?')" id="guardar"
-                                type="submit" class="uk-button uk-button-default">Cargar Catálogo</button>
+                                type="submit" class="uk-button uk-button-default">Cargar Catálogo + Info</button>
 
 
 

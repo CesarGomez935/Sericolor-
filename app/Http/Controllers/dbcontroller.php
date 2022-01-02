@@ -113,13 +113,13 @@ class dbcontroller extends Controller
                             'promocion',
                             'metodo_de_pago',
                             'usuario',
-                            'cliente',                            
+                            'cliente',
                             'maestro',
                             "tipo_de_pago",
                             'recibo',
                             '`detalle-orden-sub,bor,ser`',
                             '`detalle-orden-imp`',
-                        "slider",
+                        "slider","catalogo",
                     ); //here your tables...
 
         $connect = new \PDO("mysql:host=$mysqlHostName;dbname=$DbName;charset=utf8", "$mysqlUserName", "$mysqlPassword",array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
@@ -247,23 +247,23 @@ class dbcontroller extends Controller
     public function Exportarusuarios(){
         return Excel::download(new UsuarioExport,'usuariolist.xlsx');
     }
-    
+
     public function Exportarpedidos1(){
         return Excel::download(new pedidosExport,'pedidossublimacion.xlsx');
-       
+
     }
     public function Exportarpedidos2(){
-        
+
         return Excel::download(new serigrafiaExport,'pedidosserigrafia.xlsx');
-       
+
     }
     public function Exportarpedidos3(){
-        
+
         return Excel::download(new ImpresionExport,'pedidosimpresion.xlsx');
-        
+
     }
     public function Exportarpedidos4(){
-        
+
         return Excel::download(new BordadoExport,'pedidosbordado.xlsx');
     }
 
