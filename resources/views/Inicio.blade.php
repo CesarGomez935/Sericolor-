@@ -102,7 +102,7 @@
 
 </header>
 
-<body onload="showpromo();">
+<body onload="setTimeout(showpromo, 1500);">
 
 
 
@@ -349,6 +349,7 @@
 
 
     function showpromo() {
+
         document.getElementById("imagenpromo").click();
     }
 

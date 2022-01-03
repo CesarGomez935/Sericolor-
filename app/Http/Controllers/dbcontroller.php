@@ -119,7 +119,7 @@ class dbcontroller extends Controller
                             'recibo',
                             '`detalle-orden-sub,bor,ser`',
                             '`detalle-orden-imp`',
-                        "slider","catalogo",
+                        "slider","catalogo","servicios",
                     ); //here your tables...
 
         $connect = new \PDO("mysql:host=$mysqlHostName;dbname=$DbName;charset=utf8", "$mysqlUserName", "$mysqlPassword",array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));

@@ -41,7 +41,7 @@
     <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 "
         style="background-color: #003399">
 
-        <div class="text-white mb-3 mb-md-0">
+        <div id="informacion" class="text-white mb-3 mb-md-0">
             <label uk-icon="receiver">
 
             </label>
@@ -52,6 +52,8 @@
             <label uk-icon="mail">
                 |
             </label>
+
+
             <a href="mailto:sericolorpublicidad@hotmail.com" class="text-white me-4">
                 sericolorpublicidad@hotmail.com
             </a>
@@ -358,14 +360,36 @@
             catalogo = res;
             console.log(catalogo);
             let html = '';
+            let html2 = '';
             res.forEach(catalogo => {
                 html +=
 
                     '<a class="nav-link" href="/uploads/catalogo/' + catalogo.pdf +
                     '" target="_blank"><b> Catálogo </b></a>'
 
+                html2 +=
+
+                    ' <label uk-icon="receiver">' +
+
+                    ' </label>' +
+                    '<a href="https://web.whatsapp.com/send?phone=+505+' + catalogo.telefono +
+                    '" target="_blank" class="text-white me-4">' +
+
+                    '  +505-' + catalogo.telefono + '' +
+                    ' </a>' +
+                    ' <label uk-icon="mail">' +
+                    '  |' +
+                    ' </label>' +
+
+
+                    ' <a href="mailto:' + catalogo.correo + '" class="text-white me-4">' +
+                    '' + catalogo.correo + '' +
+                    ' </a>'
+
             });
             $("#catalogolink").html(html);
+            $("#informacion").html(html2);
+
         });
 
     }
