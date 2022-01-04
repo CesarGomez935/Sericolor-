@@ -1760,9 +1760,10 @@
                             <select class="uk-select uk-form-width-large" name="" id="estado">
                                 <option @if ($edit->Estado == 'No Completado') selected @endif value="No Completado">No Completado</option>
                                 <option @if ($edit->Estado == 'En Proceso') selected @endif value="En Proceso">En Proceso</option>
-                                <option @if ($edit->Estado == 'Completado - No Entregado') selected @endif value="Completado - No Entregado">Completado - No
+                                <option @if ($edit->Estado == 'Realizado - No Entregado') selected @endif value="Realizado - No Entregado">Realizado - No
                                     Entregado</option>
-                                <option @if ($edit->Estado == 'Completado') selected @endif value="Completado">Completado</option>
+                                <option @if ($edit->Estado == 'Finalizado (Entregado)') selected @endif value="Finalizado (Entregado)">Finalizado (Entregado)
+                                </option>
 
                             </select>
                         </div>
@@ -2239,7 +2240,6 @@
                 idmaestro: {{ $edit->idmaestro }},
                 IdCliente: $("#cliente").val(),
                 IdUsuario: $("#recibepedido").val(),
-                IdCategoria: $("#cat").val(),
                 fecha: $("#fecha_fact").val(),
                 notas: $("#notas").val(),
                 total_costo: $("#total_gen").val(),

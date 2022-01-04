@@ -101,8 +101,8 @@
                 <a onclick="getid();" class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
 
 
-                <input oninput="getid();" placeholder="Por: N° de Pedido, Nombre o Tipo de pago" id="id_busqueda"
-                    class="uk-input uk-form-width-large" type="text">
+                <input oninput="getid();" placeholder="Por: N° de Pedido, Nombre , Tipo de pago o Estado"
+                    id="id_busqueda" class="uk-input uk-form-width-large" type="text">
 
             </div>
 
@@ -263,7 +263,7 @@
                     '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
 
                     .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
-                    '<a href="/menu/menu_facturacion/form_sublimacion/' + pedido
+                    '<a href="/menu/facturacion/' + pedido
                     .idmaestro +
                     '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick="eliminar(' +
                     pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
@@ -303,116 +303,31 @@
             let html = '';
             res.forEach(pedido => {
 
-                if (pedido.IdCategoria == 1) {
-
-                    html +=
-                        '<tr>' + '<td>' +
-                        '<a class="uk-button" href="/menu/menu_facturacion/form_sublimacion/' +
-                        pedido.idmaestro + '/edit' +
-                        '">' + pedido.idmaestro + '</td>' + '</a>' +
-
-                        '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_sublimacion/' +
-                        pedido.idmaestro + '/edit' +
-                        '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
-                        .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
-                        '<td>' + pedido.fecha + '</td>' +
-                        '<td>' + pedido.descripcion + '</td>' +
-                        '<td>' + pedido.Descripcion + '</td>' +
-
-                        '<td>' + pedido.Estado + '</td>' + '<td>' +
-                        '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
-
-                        .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
-                        '<a href="/menu/menu_facturacion/form_sublimacion/' + pedido
-                        .idmaestro +
-                        '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick="eliminar(' +
-                        pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
-                        '</tr>'
-                } else if (pedido.IdCategoria == 2) {
 
 
-                    html +=
-                        '<tr>' + '<td>' +
-                        '<a class="uk-button" href="/menu/menu_facturacion/form_serigrafia/' +
-                        pedido.idmaestro + '/edit' +
-                        '">' + pedido.idmaestro + '</td>' + '</a>' +
+                html +=
+                    '<tr>' + '<td>' +
+                    '<a class="uk-button" href="/menu/menu_facturacion/form_sublimacion/' +
+                    pedido.idmaestro + '/edit' +
+                    '">' + pedido.idmaestro + '</td>' + '</a>' +
 
-                        '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_serigrafia/' +
-                        pedido.idmaestro + '/edit' +
-                        '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
-                        .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
-                        '<td>' + pedido.fecha + '</td>' +
-                        '<td>' + pedido.descripcion + '</td>' +
-                        '<td>' + pedido.Descripcion + '</td>' +
+                    '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_sublimacion/' +
+                    pedido.idmaestro + '/edit' +
+                    '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
+                    .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
+                    '<td>' + pedido.fecha + '</td>' +
 
-                        '<td>' + pedido.Estado + '</td>' + '<td>' +
+                    '<td>' + pedido.Descripcion + '</td>' +
 
-                        '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
+                    '<td>' + pedido.Estado + '</td>' + '<td>' +
+                    '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
 
-                        .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
-
-                        '<a href="/menu/menu_facturacion/form_serigrafia/' + pedido
-                        .idmaestro +
-                        '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick="eliminar(' +
-                        pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
-                        '</tr>'
-                } else if (pedido.IdCategoria == 3) {
-
-                    html +=
-                        '<tr>' + '<td>' +
-                        '<a class="uk-button" href="/menu/menu_facturacion/form_impresion_digital/' +
-
-                        pedido.idmaestro + '/edit' +
-                        '">' + pedido.idmaestro + '</td>' + '</a>' +
-
-                        '<td>' +
-                        '<a class="uk-button" href="/menu/menu_facturacion/form_impresion_digital/' +
-
-                        pedido.idmaestro + '/edit' +
-                        '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
-                        .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
-                        '<td>' + pedido.fecha + '</td>' +
-                        '<td>' + pedido.descripcion + '</td>' +
-                        '<td>' + pedido.Descripcion + '</td>' +
-
-                        '<td>' + pedido.Estado + '</td>' + '<td>' +
-
-                        '<a target="_blank" href="/api/pdf/Factura_imp/' + pedido
-
-                        .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
-
-                        '<a href="/menu/menu_facturacion/form_impresion_digital/' + pedido
-
-                        .idmaestro +
-                        '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick="eliminar(' +
-                        pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
-                        '</tr>'
-                } else if (pedido.IdCategoria == 4) {
-
-                    html +=
-                        '<tr>' + '<td>' +
-                        '<a class="uk-button" href="/menu/menu_facturacion/form_bordado/' +
-                        pedido.idmaestro + '/edit' +
-                        '">' + pedido.idmaestro + '</td>' + '</a>' +
-
-                        '<td>' + '<a class="uk-button" href="/menu/menu_facturacion/form_bordado/' +
-                        pedido.idmaestro + '/edit' +
-                        '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
-                        .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
-                        '<td>' + pedido.fecha + '</td>' +
-                        '<td>' + pedido.descripcion + '</td>' +
-                        '<td>' + pedido.Descripcion + '</td>' +
-
-                        '<td>' + pedido.Estado + '</td>' + '<td>' +
-                        '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
-                        .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
-
-                        '<a href="/menu/menu_facturacion/form_bordado/' + pedido
-                        .idmaestro +
-                        '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick="eliminar(' +
-                        pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
-                        '</tr>'
-                }
+                    .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
+                    '<a href="/menu/menu_facturacion/form_sublimacion/' + pedido
+                    .idmaestro +
+                    '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick="eliminar(' +
+                    pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
+                    '</tr>'
 
 
             });

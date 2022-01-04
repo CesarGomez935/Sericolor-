@@ -53,7 +53,7 @@ class maestrocontroladorImpresion extends Controller
 
             $request->validate([
 
-             'IdCategoria'=>'required',
+
              'IdCliente'=>'required',
              'IdUsuario'=>'required',
              'fecha'=>'required',
@@ -72,7 +72,7 @@ class maestrocontroladorImpresion extends Controller
 
             $maestro=Maestro::create([
 
-                'IdCategoria'=>$request->IdCategoria,
+
                 'IdCliente'=>$request->IdCliente,
                 'IdUsuario'=>$request->IdUsuario,
                 'fecha'=>$request->fecha,
@@ -189,7 +189,7 @@ class maestrocontroladorImpresion extends Controller
         //
            $model1=new maestro();
          $model1=maestro::find($id);
-         $model1->IdCategoria=$request->input('IdCategoria');
+
          $model1->IdCliente =$request->input('IdCliente');
          $model1->IdUsuario=$request->input('IdUsuario');
          $model1->fecha=$request->input('fecha');

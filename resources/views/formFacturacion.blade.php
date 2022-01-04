@@ -1270,8 +1270,8 @@
                             <select disabled class="uk-select uk-form-width-large" name="" id="estado">
                                 <option selected value="No Completado">No Completado</option>
                                 <option value="En Proceso">En Proceso</option>
-                                <option value="Completado - No Entregado">Completado - No Entregado</option>
-                                <option value="Completado - Entregado">Completado</option>
+                                <option value="Realizado - No Entregado">Realizado - No Entregado</option>
+                                <option value="Finalizado (Entregado)">Finalizado (Entregado)</option>
 
 
                             </select>
@@ -1906,7 +1906,6 @@
 
                 IdCliente: $("#cliente").val(),
                 IdUsuario: $("#recibepedido").val(),
-                IdCategoria: $("#cat").val(),
                 fecha: $("#fecha_fact").val(),
                 notas: $("#notas").val(),
                 total_costo: $("#total_gen").val(),

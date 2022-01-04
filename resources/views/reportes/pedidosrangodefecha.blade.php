@@ -36,7 +36,6 @@
 
                         <th scope="col">N° Pedido</th>
                         <th scope="col">Nombre del cliente</th>
-                        <th scope="col">Categoria</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Costo</th>
                         <th scope="col">Abono Recibido</th>
@@ -54,44 +53,44 @@
                 <tbody>
                     @foreach ($pedidosrango ?? '' as $data)
 
-                    <tr>
-                        <td>{{ $data->idmaestro }}
-                        </td>
+                        <tr>
+                            <td>{{ $data->idmaestro }}
+                            </td>
 
 
-                        <td>{{ $data->Primer_Nombre }} {{ $data->Segundo_Nombre }}
-                            {{ $data->Primer_Apellido }} {{ $data->Segundo_Apellido }}</td>
-
-                        <td>{{ $data->descripcion }}</td>
-                        <td>{{ $data->fecha }}</td>
-                        <td>{{ $data->total_costo }} C$</td>
-
-                        <td>{{ $data->abono}} C$</td>
-
-                        <td>{{ $data->saldo}} C$</td>
+                            <td>{{ $data->Primer_Nombre }} {{ $data->Segundo_Nombre }}
+                                {{ $data->Primer_Apellido }} {{ $data->Segundo_Apellido }}</td>
 
 
+                            <td>{{ $data->fecha }}</td>
+                            <td>{{ $data->total_costo }} C$</td>
 
+                            <td>{{ $data->abono }} C$</td>
+
+                            <td>{{ $data->saldo }} C$</td>
 
 
 
 
 
-                    </tr>
+
+
+
+                        </tr>
                     @endforeach
                     @foreach ($suma ?? '' as $data)
 
-                    <tr>
-                        <td colspan="4">Total:</td>
-                        <td>{{ $data->Total }} C$</td>
+                        <tr>
+                            <td colspan="3">Total:</td>
+                            <td>{{ $data->Total }} C$</td>
 
-                        <td>{{ $data->Abono }} C$</td>
+                            <td>{{ $data->Abono }} C$</td>
 
-                        <td>{{ $data->Saldo }} C$</td>
+                            <td>{{ $data->Saldo }} C$</td>
 
 
 
-                    </tr>
+                        </tr>
                     @endforeach
 
                 </tbody>

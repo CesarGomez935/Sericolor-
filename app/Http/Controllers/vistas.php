@@ -119,7 +119,7 @@ class vistas extends Controller
 
 
 
-        return maestro::select("*")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->orderBy("maestro.idmaestro","DESC")->get();
+        return maestro::select("*")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->orderBy("maestro.idmaestro","DESC")->get();
 
     }
 
@@ -129,7 +129,7 @@ class vistas extends Controller
 
 
 
-        return maestro::select("*")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("categoria","categoria.IdCategoria","=","maestro.IdCategoria")->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->where(DB::raw("CONCAT(maestro.idmaestro,' ',Primer_Nombre,' ',Segundo_Nombre,' ',Primer_Apellido,' ',Segundo_Apellido,' ',tipo_de_pago.Descripcion)"),"Like","%".$id."%")->orderBy("maestro.idmaestro","DESC")->get();
+        return maestro::select("*")->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->join("tipo_de_pago","tipo_de_pago.idtipo_de_pago","=","recibo.idtipo_de_pago")->where(DB::raw("CONCAT(maestro.idmaestro,' ',persona.Primer_Nombre,' ',persona.Segundo_Nombre,' ',persona.Primer_Apellido,' ',persona.Segundo_Apellido,' ',tipo_de_pago.descripcion,' ',maestro.Estado)"),"Like","%".$id."%")->orderBy("maestro.idmaestro","DESC")->get();
 
     }
 
