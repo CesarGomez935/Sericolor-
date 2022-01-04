@@ -122,7 +122,7 @@
                     <th>N° Pedido</th>
                     <th>Pedidos y Clientes</th>
                     <th>Fecha</th>
-                    <th>Area</th>
+
                     <th>Tipo de pago</th>
                     <th>Estado</th>
                     <th>Opciones</th>
@@ -256,7 +256,7 @@
                     '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
                     .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
                     '<td>' + pedido.fecha + '</td>' +
-                    '<td>' + pedido.descripcion + '</td>' +
+
                     '<td>' + pedido.Descripcion + '</td>' +
 
                     '<td>' + pedido.Estado + '</td>' + '<td>' +

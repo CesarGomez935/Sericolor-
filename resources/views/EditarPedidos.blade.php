@@ -1834,7 +1834,7 @@
                 <a href="/menu/resumen_pedidos" class="uk-button uk-button-primary "
                     style="margin-left: 100px">Atrás</a>
 
-                <a id="guardar" href="/menu" class="uk-button uk-button-secondary"
+                <a id="guardar" href="/menu/resumen_pedidos" class="uk-button uk-button-secondary"
                     style="margin-left: 100px">Guardar</a>
 
                 <a hidden id="refrescar" onclick="cargardatosdetalle();">Refrescar</a>
@@ -2242,7 +2242,7 @@
                 IdCategoria: $("#cat").val(),
                 fecha: $("#fecha_fact").val(),
                 notas: $("#notas").val(),
-                total_costo: $("#total").val(),
+                total_costo: $("#total_gen").val(),
                 Saldo: $("#saldo").val(),
                 abono: $("#abono").val(),
                 codseguimiento: "{{ $edit->CodSeguimiento }}",
