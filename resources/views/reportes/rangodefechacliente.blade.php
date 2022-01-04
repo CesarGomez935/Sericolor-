@@ -37,7 +37,7 @@
 
                 </div>
                 <div class="col-sm">
-                    <h6 class="text-center ">Ventas de Cliente entre: {{$fecha1}} y {{$fecha2}}</h6>
+                    <h6 class="text-center ">Ventas de Cliente entre: {{ $fecha1 }} y {{ $fecha2 }}</h6>
                     <br>
 
 
@@ -80,13 +80,109 @@
 
     </div> --}}
 
-    <div class="table-responsive-sm mt-1">
+        <div class="table-responsive-sm mt-1">
 
-        <label class="" for="">Id Cliente: <b> @foreach ($nombre ?? '' as $data) {{$data->IdCliente}} @endforeach</b></label>
+            <label class="" for="">Id Cliente: <b> @foreach ($nombre ?? '' as $data) {{ $data->IdCliente }} @endforeach</b></label>
+            <br>
+            <label class="" for="">Cliente: <b> @foreach ($nombre ?? '' as $data) {{ $data->Primer_Nombre }} {{ $data->Segundo_Nombre }} {{ $data->Primer_Apellido }} {{ $data->Segundo_Apellido }} @endforeach</b></label>
+            <br>
+            <label class="" for="">Contacto: <b> @foreach ($nombre ?? '' as $data) {{ $data->Telefono }}, {{ $data->Correo }} @endforeach</b></label>
+
+
+
+
+
+
+
+
+
+
+
+            <table class="table table-sm table-bordered mb">
+
+                <thead class="thead-light">
+
+                    <tr>
+
+                        <th scope="col">N° Pedido</th>
+
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Estado</th>
+
+                        <th scope="col">Sub-Total</th>
+                        <th scope="col">Abono</th>
+                        <th scope="col">Saldo Restante</th>
+
+
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+
+                    @foreach ($pedidosrango ?? '' as $data)
+
+
+
+                        <tr>
+
+                            <td>{{ $data->idmaestro }} </td>
+
+                            <td>{{ $data->fecha }}</td>
+                            <td>{{ $data->Estado }}</td>
+
+                            <td>{{ $data->total_costo }} C$</td>
+
+                            <td>{{ $data->abono }} C$</td>
+
+                            <td>{{ $data->saldo }} C$</td>
+
+
+
+
+
+
+
+                        </tr>
+                    @endforeach
+                    @foreach ($suma ?? '' as $data)
+
+
+
+                        <tr>
+
+                            <td colspan="3"><b>Total:</b> </td>
+
+                            <td>{{ $data->Total }} C$</td>
+
+                            <td>{{ $data->Abono }} C$</td>
+
+                            <td>{{ $data->Saldo }} C$</td>
+
+
+
+
+
+
+
+                        </tr>
+                    @endforeach
+
+
+
+
+
+
+
+
+
+
+                </tbody>
+
+            </table>
+        </div>
         <br>
-        <label class="" for="">Cliente: <b> @foreach ($nombre ?? '' as $data) {{$data->Primer_Nombre}} {{$data->Segundo_Nombre}} {{$data->Primer_Apellido}} {{$data->Segundo_Apellido}} @endforeach</b></label>
-        <br>
-        <label class="" for="">Contacto: <b> @foreach ($nombre ?? '' as $data) {{$data->Telefono}}, {{$data->Correo}} @endforeach</b></label>
 
 
 
@@ -98,103 +194,7 @@
 
 
 
-        <table class="table table-sm table-bordered mb">
-
-            <thead class="thead-light">
-
-                <tr>
-
-                    <th scope="col">N° Pedido</th>
-                    <th scope="col">Area</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Estado</th>
-
-                    <th scope="col">Sub-Total</th>
-                    <th scope="col">Abono</th>
-                    <th scope="col">Saldo Restante</th>
-
-
-
-                </tr>
-
-            </thead>
-            <tbody>
-
-
-                @foreach ($pedidosrango ?? '' as $data)
-
-
-
-                <tr>
-
-                    <td>{{ $data->idmaestro }} </td>
-                    <td>{{ $data->descripcion }}</td>
-                    <td>{{ $data->fecha }}</td>
-                    <td>{{ $data->Estado }}</td>
-
-                    <td>{{ $data->total_costo }} C$</td>
-
-                    <td>{{ $data->abono }} C$</td>
-
-                    <td>{{ $data->saldo }} C$</td>
-
-
-
-
-
-
-
-                </tr>
-                @endforeach
-                @foreach ($suma ?? '' as $data)
-
-
-
-                <tr>
-
-                    <td colspan="4"><b>Total:</b> </td>
-
-                    <td>{{ $data->Total }} C$</td>
-
-                    <td>{{ $data->Abono }} C$</td>
-
-                    <td>{{ $data->Saldo }} C$</td>
-
-
-
-
-
-
-
-                </tr>
-                @endforeach
-
-
-
-
-
-
-
-
-
-
-            </tbody>
-
-        </table>
-    </div>
-    <br>
-
-
-
-
-
-
-
-
-
-
-
-    {{-- <script src="{{ asset('js/app.js') }}" type="text/js"></script> --}}
+        {{-- <script src="{{ asset('js/app.js') }}" type="text/js"></script> --}}
 </body>
 
 </html>
