@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -45,22 +45,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($personal ?? '' as $data)
-                    <tr>
+                    @foreach ($personal ?? '' as $data)
+                        <tr>
 
-                        <td>{{ $data->Primer_Nombre }} {{ $data->Segundo_Nombre }} {{ $data->Primer_Apellido }} {{ $data->Segundo_Apellido }}</td>
+                            <td>{{ $data->Primer_Nombre }} {{ $data->Segundo_Nombre }}
+                                {{ $data->Primer_Apellido }} {{ $data->Segundo_Apellido }}</td>
 
-                        <td>{{ $data->Cedula }}</td>
-                        <td>{{ $data->Telefono }}</td>
-                        <td>{{ $data->Correo }}</td>
-                        <td>{{ $data->Direccion }}</td>
-                        <td>{{ $data->RolAsignado }}</td>
-                        <td>{{ $data->Privilegios }}</td>
+                            <td>{{ $data->Cedula }}</td>
+                            <td>{{ $data->Telefono }}</td>
+                            <td>{{ $data->Correo }}</td>
+                            <td>{{ $data->Direccion }}</td>
+                            <td>{{ $data->RolAsignado }}</td>
+                            <td>{{ $data->Privilegios }}</td>
 
 
 
 
-                    </tr>
+                        </tr>
                     @endforeach
                 </tbody>
 

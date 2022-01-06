@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -67,7 +67,7 @@
 
 </header>
 
-<body onload="scroll();">
+<body onload="setTimeout(scroll, 500);">
 
 
 
