@@ -483,6 +483,7 @@
                     <th>Descripción</th>
                     <th>Teléfono Empresarial</th>
                     <th>Correo Empresarial</th>
+                    <th>Cita Bíblica</th>
                     <th>opciones</th>
 
 
@@ -502,6 +503,9 @@
 
                             <td>+505-{{ $item->telefono }}</td>
                             <td>{{ $item->correo }}</td>
+                            <td>{{ $item->cita }} <b><a
+                                        href='https://www.biblegateway.com/passage/?search={{ $item->versiculo }}&version=RVR1960'>{{ $item->versiculo }}</a>
+                                </b></td>
 
                             <td>
                                 <a href="{{ url('/menu/menuadmon/catalogo/edit/' . $item->idcatalogo) }}"

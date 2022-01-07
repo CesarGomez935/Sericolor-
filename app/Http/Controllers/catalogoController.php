@@ -61,6 +61,8 @@ class catalogoController extends Controller
            $catalogo->descripcion=$request->input("descripcion");
            $catalogo->telefono=$request->input("telefono");
            $catalogo->correo=$request->input("correo");
+           $catalogo->cita=$request->input("cita");
+           $catalogo->versiculo=$request->input("versiculo");
            $catalogo->save();
            return redirect("/menu/menuadmon/promociones");
     }
@@ -115,6 +117,8 @@ class catalogoController extends Controller
         $catalogo->descripcion=$request->input("descripcion");
         $catalogo->telefono=$request->input("telefono");
         $catalogo->correo=$request->input("correo");
+        $catalogo->cita=$request->input("cita");
+        $catalogo->versiculo=$request->input("versiculo");
         $catalogo->update();
         return redirect("/menu/menuadmon/promociones");
     }

@@ -159,6 +159,33 @@
                                 </div>
                             </div>
 
+                            <br>
+
+                            <div>
+                                <h4>Cita Bíblica</h4>
+                            </div>
+
+                            <div class="uk-form-stacked">
+
+                                <div class="uk-margin">
+                                    <label class="uk-form-label" for="form-stacked-text">cita</label>
+                                    <div class="uk-form-controls">
+                                        <input value="{{ $catalogo->cita }}" name="cita" class="uk-input"
+                                            id="form-stacked-text" type="text"
+                                            placeholder='Ej. "Y me dijo: Tú eres mi siervo, Israel, en quien yo mostraré mi gloria."'>
+                                    </div>
+                                </div>
+
+                                <div class="uk-margin">
+                                    <label class="uk-form-label" for="form-stacked-text">Versículo</label>
+                                    <div class="uk-form-controls">
+                                        <input value="{{ $catalogo->versiculo }}" name="versiculo"
+                                            class="uk-input" id="form-stacked-text" type="text"
+                                            placeholder="Ej. Isaías 49:3">
+                                    </div>
+                                </div>
+                            </div>
+
                             <button onclick="return confirm('¿Está seguro que desea continuar?')" id="guardar"
                                 type="submit" class="uk-button uk-button-default">Actualizar Catálogo + Info </button>
 
@@ -181,8 +208,7 @@
     <div class="uk-padding-small uk-background-muted uk-padding">
         <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 
-            <a href="/menu/menuadmon/promociones" class="uk-button uk-button-primary "
-                style="margin-left: 100px">Atrás</a>
+            <a href="/menu/menuadmon/promociones" class="uk-button uk-button-primary " style="">Atrás</a>
 
 
         </div>

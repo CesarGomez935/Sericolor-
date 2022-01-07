@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+
+
 
 
     <style class="INLINE_PEN_STYLESHEET_ID">
@@ -217,7 +222,7 @@
     <div class="uk-flex uk-flex-column">
         <div class="uk-card uk-card-default uk-card-body">
 
-            <div class="text-white mb-3 mb-md-0">
+            <div id="cita" class="text-white mb-3 mb-md-0">
 
                 <label style="font-style: italic " for="">
 
@@ -364,5 +369,59 @@
     </div>
 
 </footer>
+
+<script>
+    let catalogo = [];
+    cargarcatalogo();
+
+    function peticionapicatalogo(data, method, onSucess) {
+        let url = '/api/catalogo';
+        if (method == 'PUT' || method == 'DELETE') {
+            url += '/' + data.idcatalogo;
+        }
+        $.ajax({
+            url: url,
+            method: method,
+            data: data,
+            // error(ext) {
+            // let error = e.responseJSON.errors;
+            // let msj = error[Object.keys(error)[0]][0];
+            // alert(msj);
+            // },
+            success(res) {
+                onSucess(res)
+
+            }
+        })
+    }
+
+    function cargarcatalogo() {
+        peticionapicatalogo({}, "GET", function(res) {
+            catalogo = res;
+            console.log(catalogo);
+            let html = '';
+
+            res.forEach(catalogo => {
+                html +=
+
+
+                    '<label style="font-style: italic " for="">' + catalogo.cita + '' +
+                    '<a href="https://www.biblegateway.com/passage/?search=' + catalogo.versiculo +
+                    '&version=RVR1960"' +
+                    'class="uk-position-right uk-overlay uk-overlay-default uk-flex uk-flex-middle">' +
+                    catalogo.versiculo +
+                    '</a>' +
+                    '</label>'
+
+
+
+            });
+            $("#cita").html(html);
+
+
+        });
+
+    }
+</script>
 
 </html>

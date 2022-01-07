@@ -167,8 +167,7 @@
     <div class="uk-padding-small uk-background-muted uk-padding">
         <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 
-            <a href="/menu/menuadmon/promociones" class="uk-button uk-button-primary "
-                style="margin-left: 100px">Atrás</a>
+            <a href="/menu/menuadmon/promociones" class="uk-button uk-button-primary ">Atrás</a>
 
 
         </div>

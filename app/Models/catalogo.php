@@ -10,6 +10,6 @@ class catalogo extends Model
     use HasFactory;
     protected $table='catalogo';
     protected $primaryKey='idcatalogo';
-    protected $fillable=['pdf','descripcion','telefono','correo'];
+    protected $fillable=['pdf','descripcion','telefono','correo','cita','versiculo'];
     public $timestamps = false;
 }
