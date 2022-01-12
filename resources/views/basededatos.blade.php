@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -184,7 +184,7 @@
                 </div>
 
 
-                <div>
+                <div hidden>
                     <div class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-middle uk-flex-left uk-padding "
                         style="background-color:white">
 
@@ -206,7 +206,7 @@
 
 
             </div>
-            <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+            <div hidden class="uk-child-width-expand@s uk-text-center" uk-grid>
 
 
                 <div>

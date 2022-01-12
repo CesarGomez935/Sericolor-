@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -118,7 +118,7 @@
                             Cliente</label>
                         <div class="uk-margin">
                             <div uk-form-custom="target: > * > span:first-child">
-                                <select onchange="validarcliente()" name="tipo_de_cliente" id="tipo_cliente">
+                                <select required onchange="validarcliente()" name="tipo_de_cliente" id="tipo_cliente">
 
                                     <option selected disabled value="">--Seleccionar--</option>
                                     <option value="Persona_Natural">Persona Natural</option>
@@ -146,7 +146,7 @@
                         <label for="primer_nombre_cliente" id="lbl_primernombre" class="uk-form-label"
                             for="form-horizontal-text">Primer Nombre</label>
                         <div class="uk-form-controls">
-                            <input value="" name="primer_nombre" id="primer_nombre_cliente"
+                            <input required value="" name="primer_nombre" id="primer_nombre_cliente"
                                 class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
                                 placeholder="Nombre">
                         </div>
@@ -204,7 +204,7 @@
                     <div class="uk-margin">
                         <label for="telefono_cliente" class="uk-form-label" for="form-horizontal-text">Teléfono</label>
                         <div class="uk-form-controls">
-                            <input name="telefono" id="telefono_cliente" class="uk-input uk-form-width-large"
+                            <input required name="telefono" id="telefono_cliente" class="uk-input uk-form-width-large"
                                 id="form-horizontal-text" type="text" placeholder="Teléfono">
                         </div>
 
@@ -230,7 +230,7 @@
                     <div class="uk-margin">
                         <label for="Correo_cliente" class="uk-form-label" for="form-horizontal-text">Correo</label>
                         <div class="uk-form-controls">
-                            <input name="correo" id="correo_cliente" class="uk-input uk-form-width-large"
+                            <input required name="correo" id="correo_cliente" class="uk-input uk-form-width-large"
                                 id="form-horizontal-text" type="email" placeholder="Correo">
                         </div>
                         @error('correo')

@@ -58,7 +58,7 @@
                         <div class="uk-grid-small" uk-grid>
 
                             <div class="uk-width-1-2@s">
-                                <input id="primer_nombre_personal" class="uk-input" type="text"
+                                <input required id="primer_nombre_personal" class="uk-input" type="text"
                                     placeholder="Primer Nombre">
                                 @error('primer_nombre')
 
@@ -74,7 +74,8 @@
                             </div>
 
                             <div class="uk-width-1-2@s">
-                                <input id="primer_apellido_personal" class="uk-input" type="text"
+                                <input required id="primer_apellido_personal" class="uk-input" type="text"
+
                                     placeholder="Primer Apellido">
 
                                 @error('primer_apellido')
@@ -91,7 +92,8 @@
                             </div>
                         </div>
                         <div class="uk-margin">
-                            <input id="correo_personal" class="uk-input" type="email" placeholder="Correo">
+                            <input required id="correo_personal" class="uk-input" type="email" placeholder="Correo">
+
 
                             @error('correo')
 
@@ -103,7 +105,8 @@
 
                         </div>
                         <div class="uk-margin">
-                            <input id="telefono_personal" class="uk-input" type="number" placeholder="Teléfono">
+                            <input required id="telefono_personal" class="uk-input" type="number" placeholder="Teléfono">
+
 
                             @error('telefono')
 
@@ -114,7 +117,8 @@
 
                         </div>
                         <div class="uk-margin">
-                            <input id="cedula_personal" class="uk-input" type="text" placeholder="Cédula">
+                            <input required id="cedula_personal" class="uk-input" type="text" placeholder="Cédula">
+
 
                             @error('cedula')
 
@@ -126,7 +130,8 @@
 
                         </div>
                         <div class="uk-margin">
-                            <input id="direccion_peronal" class="uk-input" type="text" placeholder="Dirección">
+                            <input required id="direccion_peronal" class="uk-input" type="text" placeholder="Dirección">
+
 
                             @error('direccion')
 
@@ -138,7 +143,8 @@
 
                         </div>
                         <div class="uk-margin">
-                            <select id="rol_asignado" class="uk-input" type="text" placeholder="Rol">
+                            <select required id="rol_asignado" class="uk-input" type="text" placeholder="Rol">
+
                                 <option disabled selected value="">--Seleccionar Rol--</option>
                                 <option value="Impresion Digital">Impresion Digital</option>
                                 <option value="Bordado">Bordado</option>
@@ -157,7 +163,8 @@
 
                         </div>
                         <div class="uk-margin">
-                            <input id="usuario_personal" class="uk-input" type="text"
+                            <input required id="usuario_personal" class="uk-input" type="text"
+
                                 placeholder="Nombre de Usuario">
 
                             @error('usuario')
@@ -169,7 +176,8 @@
 
                         </div>
                         <div class="uk-margin">
-                            <input oninput="verificarPasswords()" name="password" id="password_personal"
+                            <input required oninput="verificarPasswords()" name="password" id="password_personal"
+
                                 class="uk-input" type="password" placeholder="Contraseña">
 
 

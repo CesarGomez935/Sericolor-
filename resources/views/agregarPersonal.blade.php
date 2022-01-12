@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -114,10 +114,17 @@
                         <label for="primer_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Primer
                             Nombre</label>
                         <div class="uk-form-controls">
-                            <input name="primer_nombre" id="primer_nombre_cliente" class="uk-input uk-form-width-large"
+                            <input required name="primer_nombre" id="primer_nombre_cliente" class="uk-input uk-form-width-large"
                                 id="form-horizontal-text" type="text" placeholder="Primer Nombre">
                         </div>
-                    </div>
+                          @error('primer_nombre')
+
+
+                          <small>*{{ $message }}</small>
+
+                          @enderror
+
+                    </div> 
 
                     <div class="uk-margin">
                         <label for="segundo_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Segundo
@@ -134,9 +141,17 @@
                         <label for="primer_apellido_cliente" class="uk-form-label" for="form-horizontal-text">Primer
                             Apellido</label>
                         <div class="uk-form-controls">
-                            <input name="primer_apellido" id="primer_apellido_cliente"
+                            <input required name="primer_apellido" id="primer_apellido_cliente"
+
                                 class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
                                 placeholder="Primer Apellido">
+                                 @error('primer_apellido')
+
+
+                                 <small>*{{ $message }}</small>
+
+                                 @enderror
+
 
                         </div>
                     </div>
@@ -157,17 +172,33 @@
                     <div class="uk-margin">
                         <label for="telefono_cliente" class="uk-form-label" for="form-horizontal-text">Teléfono</label>
                         <div class="uk-form-controls">
-                            <input type="number" name="telefono" id="telefono_cliente"
+                            <input required type="number" name="telefono" id="telefono_cliente"
+
                                 class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
                                 placeholder="Teléfono">
+                                 @error('telefono')
+
+
+                                 <small>*{{ $message }}</small>
+
+                                 @enderror
+
                         </div>
                     </div>
 
                     <div class="uk-margin">
                         <label for="cedula_cliente" class="uk-form-label" for="form-horizontal-text">Cédula</label>
                         <div class="uk-form-controls">
-                            <input name="cedula" id="cedula_cliente" class="uk-input uk-form-width-large"
+                            <input required name="cedula" id="cedula_cliente" class="uk-input uk-form-width-large"
+
                                 id="form-horizontal-text" type="text" placeholder="Cédula">
+                                 @error('cedula')
+
+
+                                 <small>*{{ $message }}</small>
+
+                                 @enderror
+
                         </div>
 
 
@@ -179,7 +210,8 @@
                         <label for="privilegios" class="uk-form-label" for="form-horizontal-text">Privilegios</label>
                         <div class="uk-margin">
                             <div uk-form-custom="target: > * > span:first-child">
-                                <select name="privilegios" id="privilegios">
+                                <select required name="privilegios" id="privilegios">
+
 
                                     <option disabled selected value="">--Selecionar--</option>
                                     <option value="Administrador">Administrador</option>
@@ -189,6 +221,8 @@
 
 
                                 </select>
+                                
+
                                 <button class="uk-button uk-button-default" type="button" tabindex="-1">
                                     <span></span>
                                     <span uk-icon="icon: chevron-down"></span>
@@ -199,10 +233,18 @@
 
 
                     <div class="uk-margin">
-                        <label for="Correo_cliente" class="uk-form-label" for="form-horizontal-text">Correo</label>
+                        <label required for="Correo_cliente" class="uk-form-label" for="form-horizontal-text">Correo</label>
+
                         <div class="uk-form-controls">
                             <input name="correo" id="correo_cliente" class="uk-input uk-form-width-large"
                                 id="form-horizontal-text" type="email" placeholder="Correo">
+                                 @error('correo')
+
+
+                                 <small>*{{ $message }}</small>
+
+                                 @enderror
+
                         </div>
                     </div>
 
@@ -210,8 +252,16 @@
                         <label for="direccion_cliente" class="uk-form-label"
                             for="form-horizontal-text">Dirección</label>
                         <div class="uk-form-controls">
-                            <input name="direccion" id="direccion_cliente" class="uk-input uk-form-width-large"
+                            <input required name="direccion" id="direccion_cliente" class="uk-input uk-form-width-large"
+
                                 id="form-horizontal-text" type="text" placeholder="Dirección">
+                                 @error('direccion')
+
+
+                                 <small>*{{ $message }}</small>
+
+                                 @enderror
+
                         </div>
                     </div>
 
@@ -219,7 +269,8 @@
                         <label for="privilegios" class="uk-form-label" for="form-horizontal-text">Rol Asignado</label>
                         <div class="uk-margin">
                             <div uk-form-custom="target: > * > span:first-child">
-                                <select name="rol_asignado" id="rol_asignado">
+                                <select required name="rol_asignado" id="rol_asignado">
+
 
 
                                     <option value="Impresion_Digital">Impresión Digital</option>
@@ -230,7 +281,16 @@
 
 
 
-                                </select>
+                                </select> 
+                                @error('RolAsignado')
+
+
+
+                                <small>*{{ $message }}</small>
+
+                                @enderror
+
+                                
                                 <button class="uk-button uk-button-default" type="button" tabindex="-1">
                                     <span></span>
                                     <span uk-icon="icon: chevron-down"></span>
@@ -243,8 +303,15 @@
                         <label for="nombre_de_usuario" class="uk-form-label" for="form-horizontal-text">Nombre de
                             Usuario</label>
                         <div class="uk-form-controls">
-                            <input name="nombre_de_usuario" id="nombre_de_usuario" class="uk-input uk-form-width-large"
+                            <input required name="nombre_de_usuario" id="nombre_de_usuario" class="uk-input uk-form-width-large"
+
                                 id="form-horizontal-text" type="text" placeholder="Nombre de Usuario">
+                                @error('usuario')
+
+
+                                <small>*{{ $message }}</small>
+
+                                @enderror
 
                         </div>
                     </div>
@@ -254,9 +321,17 @@
                     <div class="uk-margin">
                         <label for="pass_personal" class="uk-form-label" for="form-horizontal-text">Contraseña</label>
                         <div class="uk-form-controls">
-                            <input name="password" id="pass_personal" type="password"
+                            <input required name="password" id="pass_personal" type="password"
+
                                 class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
                                 placeholder="Contraseña">
+                                 @error('contrasena')
+
+
+                                 <small>*{{ $message }}</small>
+
+                                 @enderror
+
                         </div>
                     </div>
 
@@ -264,7 +339,8 @@
                         <label for="conf_pass_personal" class="uk-form-label"
                             for="form-horizontal-text">Contraseña</label>
                         <div class="uk-form-controls">
-                            <input name="conf_password" id="conf_pass_personal" type="password"
+                            <input required name="conf_password" id="conf_pass_personal" type="password"
+
                                 class="uk-input uk-form-width-medium" id="form-horizontal-text" type="text"
                                 placeholder="Confirmar Contraseña">
                             <a class="uk-button uk-button-primary" onclick="verificarPasswords()">verificar

@@ -57,8 +57,7 @@ class usuariocontroller extends Controller
              'primer_apellido'=>'required',
              'telefono'=>'required',
              'correo'=>'required',
-             'cedula'=>'required',
-             'correo'=>'required|unique:persona,Correo',
+             'cedula'=>'required',             
              'direccion'=>'required',
 
              'usuario'=>'required|max:255|unique:usuario,Usuario',
@@ -101,7 +100,7 @@ class usuariocontroller extends Controller
             
             
                 
-            return redirect()->route('login.index');
+            return redirect()->route('login.index'); 
             
 
         });

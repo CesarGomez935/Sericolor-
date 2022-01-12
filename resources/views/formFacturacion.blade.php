@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -111,7 +111,8 @@
                     <div class="uk-inline uk-width-1-2 ">
                         <label for="fecha_ent">Nombre del cliente <a href="/menu/menuadmon/clientes/agregar_cliente">
                                 ¿Nuevo Cliente?</a></label>
-                        <select name="" class="uk-select uk-width-1-1" id="cliente"></select>
+                        <select required name="" class="uk-select uk-width-1-1" id="cliente"></select>
+
                         <div style="text-align: center" class="uk-padding">
                             <label><input onchange="validarpedidosimp();" id="chkimpresion" class="uk-checkbox"
                                     type="checkbox"> <b> ¿Desea ingresar ordenes
@@ -1333,7 +1334,8 @@
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
                 <a href="/menu" id="atras" onclick=" " class="uk-button uk-button-primary "
                     style="margin-left: 100px">Atrás</a>
-                <a id="guardar" href="/menu" onclick=" validarinsert();" class="uk-button uk-button-secondary"
+                <a id="guardar" onclick=' validarinsert();' class="uk-button uk-button-secondary"
+
                     style="margin-left: 100px">Guardar</a>
 
                 <script>
@@ -1520,14 +1522,18 @@
                 url: url,
                 method: method,
                 data: data,
-                error(ext) {
-                    let error = e.responseJSON.errors;
-                    let msj = error[Object.keys(error)[0]][0];
-                    alert(msj);
-                },
-                success(res) {
+               error(e) {
+               let error = e.responseJSON.errors;
+               let msj = error[Object.keys(error)[0]][0];
+               alert(msj);
+               },
+               success(res) { 
+                    alert('Guardado con exito');
 
-                }
+               window.location.href = "/menu";
+
+               }
+
             })
         }
 
@@ -1540,12 +1546,15 @@
                 url: url,
                 method: method,
                 data: data,
-                error(ext) {
+                error(e) {
                     let error = e.responseJSON.errors;
                     let msj = error[Object.keys(error)[0]][0];
                     alert(msj);
                 },
                 success(res) {
+                     alert('Guardado con exito');
+
+                    window.location.href = "/menu";
 
                 }
             })
@@ -1560,12 +1569,16 @@
                 url: url,
                 method: method,
                 data: data,
-                error(ext) {
+                error(e) {
                     let error = e.responseJSON.errors;
                     let msj = error[Object.keys(error)[0]][0];
                     alert(msj);
                 },
                 success(res) {
+ alert('Guardado con exito');
+
+                    window.location.href = "/menu";
+
 
                 }
             })

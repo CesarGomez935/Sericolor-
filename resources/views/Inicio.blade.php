@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -258,7 +258,7 @@
                         <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
                             uk-slideshow-item="next"></a>
 
-                    </div>
+                    </div> 
 
                     {{-- <img class="img-fluid" src="/img/promocion.jpg" alt=""> --}}
                 </div>

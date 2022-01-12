@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -391,20 +391,11 @@
             pedido = res;
             console.log(pedido);
             let html = '';
-            res.forEach(pedido => {
-                html += '<li>' + ' <img src="/uploads/promocion/' + pedido.Imagen + '" uk-cover>' +
+           res.forEach(pedido => {
+           html += '<li>' + '<a id="imagenpromo" uk-toggle href="#imagenpromocion' + pedido
+                    .IdPromocion +
+                    '"> <img " src=" /uploads/promocion/' + pedido.Imagen + '" uk-cover> </a>' + '<div id="imagenpromocion' + pedido.IdPromocion + '" class="uk-flex-top" uk-modal>' + '<div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">' + '<button class="uk-modal-close-outside" type="button" uk-close></button>' + ' <img  style=" z-index: 9999;" src=" /uploads/promocion/' + pedido .Imagen + '" alt="">' + '</div>' + '</div>' + '</li>' });
 
-
-
-
-
-
-
-
-                    '</li>'
-
-
-            });
             $("#slider").html(html);
         });
     }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -421,6 +421,9 @@
 
                             <b>¡Muchas Gracias Por Preferirnos!</b> <br>
                             Le Esperamos Pronto.
+                            <br> RUC: 8881704900001T
+                            <br> Tel: +505-55038173
+
                         </td>
 
 
@@ -857,6 +860,9 @@
 
                                 <b>¡Muchas Gracias Por Preferirnos!</b> <br>
                                 Le Esperamos Pronto.
+                                <br> RUC: 8881704900001T
+                                <br> Tel: +505-55038173
+
                             </td>
 
 

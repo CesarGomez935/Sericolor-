@@ -28,7 +28,13 @@
         body {
 
             background: rgb(248, 246, 246);
+             height: 100%;
+
         }
+        html {
+        height: 100%;
+        }
+
 
         .main-wrapper {
             width: 90%;
@@ -183,7 +189,7 @@
             margin: 5em auto;
         }
 
-        footer a {
+        /* footer a {
             text-decoration: none;
             display: inline-block;
             width: 45px;
@@ -193,11 +199,11 @@
             border: 0.5px dashed #f8f8f8;
             color: #999;
             margin: 5px;
-        }
+        } */
 
-        footer a:hover {
+        /* footer a:hover {
             background: #222;
-        }
+        } */
 
         footer a .icons {
             margin-top: 12px;
@@ -359,14 +365,26 @@
     <div>
         <div>
 
-            <i class="fa fa-creative-commons"> <br>Esta obra está bajo una <br
-                    href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Licencia Creative Commons
-                Atribución-NoComercial-SinDerivadas 4.0 Internacional</br>.</i>
+            <a style="color: black" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" class="fa fa-creative-commons"> <br>Esta obra está bajo una <br> Licencia Creative Commons
+
+                Atribución-NoComercial-SinDerivadas 4.0 Internacional.</a>
+                <br>
+                <a target="_blank" href="/resources/Manual_de_Usuario.pdf">Descargar Manual de Usuario</a>
+
+
+                
+                
 
 
         </div>
+       
+
 
     </div>
+    
+    
+
+
 
 </footer>
 
