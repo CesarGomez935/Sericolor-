@@ -107,7 +107,7 @@
             <div>
                 <div class="uk-div uk-padding">
                     <div class="uk-section-secondary uk-margin uk-padding" style="text-align: center;">
-                        <h1>editar Imagen promocional</h1>
+                        <h1>editar Catálogo</h1>
                         <div class="uk-margin" uk-margin>
                             <div uk-form-custom="target: true">
                                 <input accept="application/pdf" name="pdf" id="pdf" type="file">

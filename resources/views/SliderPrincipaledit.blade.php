@@ -107,7 +107,7 @@
             <div>
                 <div class="uk-div uk-padding">
                     <div class="uk-section-secondary uk-margin uk-padding" style="text-align: center;">
-                        <h1>editar Imagen promocional</h1>
+                        <h1>Editar Slider</h1>
                         <div class="uk-margin" uk-margin>
                             <div uk-form-custom="target: true">
                                 <input accept="image/*" name="imagen" id="imagen" type="file">
@@ -127,7 +127,7 @@
                                 name="descripcion" placeholder="Descripción" rows="3"></input>
 
                             <button onclick="return confirm('¿Está seguro que desea continuar?')" id="guardar"
-                                type="submit" class="uk-button uk-button-default">actualizar Imagen Promocional</button>
+                                type="submit" class="uk-button uk-button-default">actualizar Imagen</button>
 
 
 
