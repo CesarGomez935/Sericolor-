@@ -268,6 +268,9 @@
                                 <a target="_blank" id="pedidosinsumo" class="uk-button uk-button-secondary"
                                     uk-icon="download"></a>
 
+                                     <a target="_blank" id="pedidosinsumografico" class="uk-button uk-button-secondary" uk-icon="image"></a>
+
+
 
                             </td>
                             <td><a target="_blank" onclick="limpiarpedidosinsumo()" id="limpiarpedidosinsumo"
@@ -623,11 +626,18 @@
             console.log(fecha1, fecha2, idinsumo);
             document.getElementById("pedidosinsumo").href = "/api/pdf/ventas_insumos/" + idinsumo + "/" + fecha1 + "/" +
                 fecha2 + "/descargar";
+
+                
+
         } else {
 
             console.log(fecha1, fecha2, idinsumo);
             document.getElementById("pedidosinsumo").href = "/api/pdf/ventas_insumos/" + fecha1 + "/" + fecha2 +
                 "/descargar";
+
+                document.getElementById("pedidosinsumografico").href = "/graficos/" + fecha1 + "/" + fecha2 +
+                "";
+
 
 
 

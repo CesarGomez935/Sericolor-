@@ -109,6 +109,8 @@
 
                     </tr>
 
+                    $sublimacion
+
                     @foreach ($sublimacion ?? '' as $data)
 
 
@@ -116,6 +118,7 @@
                         <tr>
 
                             <td>{{ $data->IdInsumo }} </td>
+
                             <td>{{ $data->tipo }}</td>
                             <td>{{ $data->descripcion }}</td>
                             <td>{{ $data->Cantidad }}</td>

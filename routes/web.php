@@ -7,6 +7,7 @@ use App\Http\Controllers\detalledelpedidocontroller;
 use App\Http\Controllers\reporteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dbcontroller;
+use App\Http\Controllers\graficocontroller;
 use App\Http\Controllers\persona;
 use App\Http\Controllers\promocioncontroller;
 use App\Http\Controllers\maestrocontrolador;
@@ -175,6 +176,8 @@ Route::get('menu/clientes', function () {
 Route::get('menu/menuadmon/clientes/agregar_cliente', function () {
     return view('agregarCliente');
 });
+
+Route::get('graficos/{fecha1}/{fecha2}', [graficocontroller::class, 'index']);
 
 Route::get('menu/menuadmon/reportes', function () {
     return view('Reportes');
