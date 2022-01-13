@@ -441,7 +441,7 @@ class ReportesController extends Controller
 
       $pedidosrango= maestro::select("maestro.*","cliente.*","persona.*")->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->whereBetween('fecha', [$fecha1, $fecha2])->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->where('maestro.IdCliente',$id)->orderBy("idmaestro","DESC")->get();
         $suma=maestro::join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->whereBetween('fecha', [$fecha1, $fecha2])->where('maestro.IdCliente',$id)->where('maestro.IdCliente',$id)->select(DB::raw("sum(total_costo) as Total"),DB::raw("sum(abono) as Abono"),DB::raw("sum(saldo) as Saldo"))->get();
-        $nombre= maestro::select("cliente.*","persona.*")->whereBetween('fecha', [$fecha1, $fecha2])->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->where('maestro.IdCliente',$id)->groupBy("IdCliente")->get();
+        $nombre= maestro::select("cliente.*","persona.Primer_Nombre","persona.Segundo_Nombre","persona.Primer_Apellido","persona.Segundo_Apellido","persona.Telefono","persona.Cedula")->whereBetween('fecha', [$fecha1, $fecha2])->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->where('maestro.IdCliente',$id)->groupBy("IdCliente")->get();
         //return $nombre;
         //return compact('pedidosrango','suma','fecha1','fecha2');
         return view('reportes.rangodefechacliente', compact('pedidosrango','suma','fecha1','fecha2','nombre'));
@@ -453,7 +453,7 @@ class ReportesController extends Controller
       // retreive all records from db
         $pedidosrango= maestro::select("maestro.*","cliente.*","persona.*")->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->whereBetween('fecha', [$fecha1, $fecha2])->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->where('maestro.IdCliente',$id)->orderBy("idmaestro","DESC")->get();
         $suma=maestro::join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->whereBetween('fecha', [$fecha1, $fecha2])->where('maestro.IdCliente',$id)->where('maestro.IdCliente',$id)->select(DB::raw("sum(total_costo) as Total"),DB::raw("sum(abono) as Abono"),DB::raw("sum(saldo) as Saldo"))->get();
-        $nombre= maestro::select("cliente.*","persona.*")->whereBetween('fecha', [$fecha1, $fecha2])->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->where('maestro.IdCliente',$id)->groupBy("IdCliente")->get();
+        $nombre= maestro::select("cliente.*","persona.Primer_Nombre","persona.Segundo_Nombre","persona.Primer_Apellido","persona.Segundo_Apellido","persona.Telefono","persona.Cedula")->whereBetween('fecha', [$fecha1, $fecha2])->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->where('maestro.IdCliente',$id)->groupBy("IdCliente")->get();
 
 
       // share data to view

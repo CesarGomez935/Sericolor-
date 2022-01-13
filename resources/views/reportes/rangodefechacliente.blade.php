@@ -39,6 +39,7 @@
                 <div class="col-sm">
                     <h6 class="text-center ">Ventas de Cliente entre: {{ $fecha1 }} y {{ $fecha2 }}</h6>
                     <br>
+                   
 
 
                 </div>
