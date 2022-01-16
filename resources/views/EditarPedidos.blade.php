@@ -345,7 +345,8 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <a class="uk-button uk-button-primary" onclick="abonos();"
+                                                    <a onclick="actualizardetalle();" class="uk-button uk-button-primary" onclick="abonos();"
+
                                                         id="guardarnuevodetalle">Insertar
                                                         Pedido</a>
                                                 </td>
@@ -828,7 +829,8 @@
                             </td>
                             <td colspan="3"><textarea type="number" id="observacionimp"
                                     class="uk-input uk-form-width-large " placeholder="Observacion"></textarea></td>
-                            <td colspan="2"> <a class="uk-button uk-button-primary" onclick="abonos();"
+                            <td colspan="2"> <a class="uk-button uk-button-primary" onclick="abonos(); actualizardetalle();"
+
                                     id="guardarimp1">Ingresar
                                     Pedido</a></td>
 

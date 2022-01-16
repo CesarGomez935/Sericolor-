@@ -191,7 +191,8 @@
     function peticionapi2(data, method, onSuccess) {
 
 
-        let url = '/api/pedido';
+        let url = '/api/pedidoall';
+
         if (method == 'PUT' || method == 'DELETE') {
             url += '/' + data.idmaestro;
         }
@@ -265,8 +266,10 @@
                     .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
                     '<a href="/menu/facturacion/' + pedido
                     .idmaestro +
-                    '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick="eliminar(' +
-                    pedido.idmaestro + ');" class=" " uk-icon="trash"></a>' + '</td>' +
+                    '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick=" var result = confirm(	&quot; ¿Está seguro que desea eliminar el pedido?  Esta acción no puede ser revertida.	&quot; ); if (result) { eliminar(' + pedido.idmaestro + '); } " class=" " uk-icon="trash"></a>' + '</td>' +
+
+
+
                     '</tr>'
 
 
