@@ -84,7 +84,7 @@
                         <div class="form-check mb-0">
 
                         </div>
-                     <label hidden href="" class="text-body">Olvido su contraseña?</label>
+                     <label  hidden href="" class="text-body">Olvido su contraseña?</label>
                     </div>
                     <div class="text-center text-lg-start mt-4 pt-2">
                         <button type="button" class="btn btn-danger btn-lg"
