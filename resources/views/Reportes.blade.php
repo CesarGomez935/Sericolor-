@@ -735,13 +735,12 @@
 
 
         }
-        //  else {
-        //     document.getElementById("pedidosestado").href = "/api/pdf/tipodepago_entre/" + fecha1 + "/" + fecha2 +
-        //         "/descargar";
+         else {
+            document.getElementById("pedidosestado").href = "/ /descargar";
 
 
 
-        // }
+        }
 
 
 

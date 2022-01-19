@@ -17,7 +17,8 @@
         <br>
 
         <br>
-        <h4 class="text-center mb-3">Reporte de Pedidos entre Fechas: {{ $fecha1 }} y {{ $fecha2 }}</h4>
+        <h4 class="text-center mb-3">Reporte de Pedidos entre Fechas: {{ $fecha1 }} y {{ $fecha2 }}, Estado: {{ $estado }} </h4>
+
 
 
 

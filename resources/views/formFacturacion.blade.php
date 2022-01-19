@@ -151,7 +151,8 @@
 
 
             <div class="uk-child-width-1-2 uk-text-center uk-background-muted uk-padding" uk-grid>
-                <div>
+                <div id="detallescamisa">
+
 
                     <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
 
@@ -211,6 +212,8 @@
                                             <th>Observacion</th>
 
                                         </tr>
+
+                                       
                                     </thead>
 
                                     <script>
@@ -319,10 +322,76 @@
 
                                                 </select>
 
-                                                <select id="insumos" name="Tallas"
+                                                <select onchange="validardetalles()" id="insumos" name="Tallas"
                                                     class="uk-select uk-form-width-small">
 
                                                 </select>
+
+                                                
+
+                                                 <script>
+                                                     function validardetalles() {
+
+                                                         var insumo = document.getElementById("insumos");
+                                                         var text= insumo.options[insumo.selectedIndex].text;
+
+                                                         text= text.split(/(\s+)/);
+
+
+
+                                                         console.log(text[0]);
+
+                                                         if(text[0]=="Camisa" || text[0]=="Camiseta"|| text[0]=="camiseta"|| text[0]=="camisa")
+
+
+                                                         {
+
+                                                            document.getElementById("pecho_izq").disabled = false;
+                                                            document.getElementById("pecho_der").disabled = false;
+                                                            document.getElementById("manga_izq").disabled = false;
+                                                            document.getElementById("manga_der").disabled = false;
+                                                            document.getElementById("espalda").disabled = false;
+
+
+
+
+                                                         } else {
+
+                                                            document.getElementById("pecho_izq").disabled = true;
+                                                            document.getElementById("pecho_der").disabled = true;
+
+                                                            document.getElementById("manga_izq").disabled = true;
+
+                                                            document.getElementById("manga_der").disabled = true;
+
+                                                            document.getElementById("espalda").disabled = true;
+
+                                                            //////////
+
+                                                            document.getElementById("pecho_izq").value = null;
+                                                            document.getElementById("pecho_der").value = null;
+
+                                                            document.getElementById("manga_izq").value = null;
+
+                                                            document.getElementById("manga_der").value = null;
+
+                                                            document.getElementById("espalda").value = null;
+
+
+
+
+
+
+                                                         }
+
+
+
+
+
+                                                     }
+
+                                                 </script>
+
 
 
 
