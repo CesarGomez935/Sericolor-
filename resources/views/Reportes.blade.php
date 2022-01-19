@@ -11,22 +11,18 @@
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
 
 
@@ -39,9 +35,10 @@
 
 <body>
     @if (auth()->user()->Privilegios !== 'Administrador')
-        <script>
-            window.location = "/menu";
-        </script>
+    <script>
+        window.location = "/menu";
+
+    </script>
     @endif
     <nav class="uk-navbar uk-navbar-container ">
         <div class="uk-navbar-left">
@@ -130,20 +127,17 @@
                                     </select>
                                 </td> --}}
                             <td>
-                                <input onchange="validarfechaspedidos()" id="fecha_inicio"
-                                    class="uk-input uk-form-width-medium" type="date">
+                                <input onchange="validarfechaspedidos()" id="fecha_inicio" class="uk-input uk-form-width-medium" type="date">
 
                             </td>
                             <td>
-                                <input onchange="validarfechaspedidos()" id="fecha_final"
-                                    class="uk-input uk-form-width-medium" type="date">
+                                <input onchange="validarfechaspedidos()" id="fecha_final" class="uk-input uk-form-width-medium" type="date">
                             </td>
 
                             <td>
 
                                 {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
-                                <a target="_blank" id="pedidosdiario" class="uk-button uk-button-secondary"
-                                    uk-icon="download"></a>
+                                <a target="_blank" id="pedidosdiario" class="uk-button uk-button-secondary" uk-icon="download"></a>
 
 
 
@@ -151,8 +145,7 @@
 
 
                             </td>
-                            <td><a target="_blank" onclick="limpiarpedidosdiario()" id="limpiarpedidosdiario"
-                                    class="uk-icon-button" uk-icon="trash"></a></td>
+                            <td><a target="_blank" onclick="limpiarpedidosdiario()" id="limpiarpedidosdiario" class="uk-icon-button" uk-icon="trash"></a></td>
 
 
 
@@ -196,17 +189,14 @@
                                     </select>
                                 </td> --}}
                             <td>
-                                <input onchange="validarfechasinsumos()" id="fecha_inicio_insumos"
-                                    class="uk-input uk-form-width-medium" type="date">
+                                <input onchange="validarfechasinsumos()" id="fecha_inicio_insumos" class="uk-input uk-form-width-medium" type="date">
 
                             </td>
                             <td>
-                                <input onchange="validarfechasinsumos()" id="fecha_final_insumos"
-                                    class="uk-input uk-form-width-medium" type="date">
+                                <input onchange="validarfechasinsumos()" id="fecha_final_insumos" class="uk-input uk-form-width-medium" type="date">
                             </td>
                             <td>
-                                <select onchange="validarfechasinsumos()" class="uk-select uk-form-width-1-1" name=""
-                                    id="insumos"></select>
+                                <select onchange="validarfechasinsumos()" class="uk-select uk-form-width-1-1" name="" id="insumos"></select>
 
 
                                 <script>
@@ -247,9 +237,9 @@
                                             url += '/' + data.id;
                                         }
                                         $.ajax({
-                                            url: url,
-                                            method: method,
-                                            data: data,
+                                            url: url
+                                            , method: method
+                                            , data: data,
 
                                             success(res) {
                                                 onSuccess(res);
@@ -258,6 +248,7 @@
 
                                         })
                                     }
+
                                 </script>
 
                             </td>
@@ -265,16 +256,14 @@
                             <td>
 
                                 {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
-                                <a target="_blank" id="pedidosinsumo" class="uk-button uk-button-secondary"
-                                    uk-icon="download"></a>
+                                <a target="_blank" id="pedidosinsumo" class="uk-button uk-button-secondary" uk-icon="download"></a>
 
-                                     <a target="_blank" id="pedidosinsumografico" class="uk-button uk-button-secondary" uk-icon="image"></a>
+                                <a target="_blank" id="pedidosinsumografico" class="uk-button uk-button-secondary" uk-icon="image"></a>
 
 
 
                             </td>
-                            <td><a target="_blank" onclick="limpiarpedidosinsumo()" id="limpiarpedidosinsumo"
-                                    class="uk-icon-button" uk-icon="trash"></a></td>
+                            <td><a target="_blank" onclick="limpiarpedidosinsumo()" id="limpiarpedidosinsumo" class="uk-icon-button" uk-icon="trash"></a></td>
 
 
 
@@ -319,19 +308,16 @@
                                     </select>
                                 </td> --}}
                             <td>
-                                <input onchange="validarfechastipopago()" id="fecha_inicio_tipopago"
-                                    class="uk-input uk-form-width-medium" type="date">
+                                <input onchange="validarfechastipopago()" id="fecha_inicio_tipopago" class="uk-input uk-form-width-medium" type="date">
 
 
                             </td>
                             <td>
-                                <input onchange="validarfechastipopago()" id="fecha_final_tipopago"
-                                    class="uk-input uk-form-width-medium" type="date">
+                                <input onchange="validarfechastipopago()" id="fecha_final_tipopago" class="uk-input uk-form-width-medium" type="date">
 
                             </td>
                             <td>
-                                <select onchange="validarfechastipopago()" class="uk-select uk-form-width-1-1" name=""
-                                    id="tipopago">
+                                <select onchange="validarfechastipopago()" class="uk-select uk-form-width-1-1" name="" id="tipopago">
 
                                     <option selected disabled value="">--Selecionar--</option>
                                     <option value="2">Credito</option>
@@ -347,13 +333,11 @@
                             <td>
 
                                 {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
-                                <a target="_blank" id="pedidostipopago" class="uk-button uk-button-secondary"
-                                    uk-icon="download"></a>
+                                <a target="_blank" id="pedidostipopago" class="uk-button uk-button-secondary" uk-icon="download"></a>
 
 
                             </td>
-                            <td><a target="_blank" onclick="limpiarpedidostipopago()" id="limpiarpedidostipopago"
-                                    class="uk-icon-button" uk-icon="trash"></a></td>
+                            <td><a target="_blank" onclick="limpiarpedidostipopago()" id="limpiarpedidostipopago" class="uk-icon-button" uk-icon="trash"></a></td>
 
 
 
@@ -398,18 +382,15 @@
                                     </select>
                                 </td> --}}
                             <td>
-                                <input onchange="validarfechascliente()" id="fecha_inicio_cliente"
-                                    class="uk-input uk-form-width-medium" type="date">
+                                <input onchange="validarfechascliente()" id="fecha_inicio_cliente" class="uk-input uk-form-width-medium" type="date">
 
                             </td>
                             <td>
-                                <input onchange="validarfechascliente()" id="fecha_final_cliente"
-                                    class="uk-input uk-form-width-medium" type="date">
+                                <input onchange="validarfechascliente()" id="fecha_final_cliente" class="uk-input uk-form-width-medium" type="date">
 
                             </td>
                             <td>
-                                <select onchange="validarfechascliente()" class="uk-select uk-form-width-1-1" name=""
-                                    id="clientes"></select>
+                                <select onchange="validarfechascliente()" class="uk-select uk-form-width-1-1" name="" id="clientes"></select>
 
 
 
@@ -424,9 +405,9 @@
                                             url += '/' + data.id;
                                         }
                                         $.ajax({
-                                            url: url,
-                                            method: method,
-                                            data: data,
+                                            url: url
+                                            , method: method
+                                            , data: data,
 
                                             success(res) {
                                                 onSuccess(res);
@@ -452,6 +433,7 @@
                                             $("#clientes").html(html);
                                         });
                                     }
+
                                 </script>
 
                             </td>
@@ -459,14 +441,89 @@
                             <td>
 
                                 {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
-                                <a target="_blank" id="pedidoscliente" class="uk-button uk-button-secondary"
-                                    uk-icon="download"></a>
+                                <a target="_blank" id="pedidoscliente" class="uk-button uk-button-secondary" uk-icon="download"></a>
 
 
 
                             </td>
-                            <td><a target="_blank" onclick="limpiarpedidoscliente()" id="limpiarpedidoscliente"
-                                    class="uk-icon-button" uk-icon="trash"></a></td>
+                            <td><a target="_blank" onclick="limpiarpedidoscliente()" id="limpiarpedidoscliente" class="uk-icon-button" uk-icon="trash"></a></td>
+
+
+
+
+
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-div uk-padding">
+        <div class="uk-section uk-section-primary uk-padding">
+            <div class="uk-container">
+
+
+
+                <table class="uk-table">
+                    <h4 class="uk-heading-line uk-text-center uk-padding-small">Reporte ventas por Estado del pedido</h4>
+
+                    <thead>
+                        <tr>
+                            <th>Fecha de Inicio</th>
+                            <th>Fecha Final </th>
+                            <th>Cliente</th>
+                            <th>Descargar reporte</th>
+                            <th>limpiar campos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            {{-- <td><select class="uk-select uk-form-width-small" type="select" aria-placeholder="Ingresar estado">
+                                        <option>Completado</option>
+                                        <option>No completado</option>
+
+                                    </select>
+                                </td> --}}
+                            <td>
+                                <input onchange="validarfechasestado()" id="fecha_inicio_estado" class="uk-input uk-form-width-medium" type="date">
+
+                            </td>
+                            <td>
+                                <input onchange="validarfechasestado()" id="fecha_final_estado" class="uk-input uk-form-width-medium" type="date">
+
+                            </td>
+                            <td>
+                                <select onchange="validarfechasestado()" class="uk-select uk-form-width-1-1" name="" id="estado">
+
+                                    <option selected value="No Completado">No Completado</option>
+                                    <option value="En Proceso">En Proceso</option>
+                                    <option value="Realizado - No Entregado">Realizado - No Entregado</option>
+                                    <option value="Finalizado (Entregado)">Finalizado (Entregado)</option>
+
+                                </select>
+
+
+
+
+
+                            </td>
+
+                            <td>
+
+                                {{-- <a  href="/pdf" id="descargar" class="uk-button uk-button-secondary" uk-icon="download"></a> --}}
+                                <a target="_blank" id="pedidosestado" class="uk-button uk-button-secondary" uk-icon="download"></a>
+
+
+
+                            </td>
+                            <td><a target="_blank" onclick="limpiarpedidosestado();" id="limpiarpedidosestado" class="uk-icon-button" uk-icon="trash"></a></td>
+
 
 
 
@@ -627,7 +684,7 @@
             document.getElementById("pedidosinsumo").href = "/api/pdf/ventas_insumos/" + idinsumo + "/" + fecha1 + "/" +
                 fecha2 + "/descargar";
 
-                
+
 
         } else {
 
@@ -635,7 +692,7 @@
             document.getElementById("pedidosinsumo").href = "/api/pdf/ventas_insumos/" + fecha1 + "/" + fecha2 +
                 "/descargar";
 
-                document.getElementById("pedidosinsumografico").href = "/graficos/" + fecha1 + "/" + fecha2 +
+            document.getElementById("pedidosinsumografico").href = "/graficos/" + fecha1 + "/" + fecha2 +
                 "";
 
 
@@ -656,4 +713,49 @@
 
 
     }
+
+
+
+
+    function validarfechasestado() {
+
+
+        var fecha1 = document.getElementById("fecha_inicio_estado").value;
+        var fecha2 = document.getElementById("fecha_final_estado").value;
+        var estado = document.getElementById("estado").value;
+
+
+
+        if (fecha1 && fecha2 && estado) {
+
+            console.log(fecha1, fecha2, estado);
+            document.getElementById("pedidosestado").href = "/api/pdf/estado_entre/" + estado + "/" +
+                fecha1 + "/" + fecha2 + "/descargar";
+
+
+
+        }
+        //  else {
+        //     document.getElementById("pedidosestado").href = "/api/pdf/tipodepago_entre/" + fecha1 + "/" + fecha2 +
+        //         "/descargar";
+
+
+
+        // }
+
+
+
+
+    }
+
+    function limpiarpedidosestado() {
+
+        document.getElementById("fecha_inicio_estado").value = "";
+        document.getElementById("fecha_final_estado").value = "";
+        document.getElementById("estado").value = "";
+        validarfechasestado();
+
+
+    }
+
 </script>

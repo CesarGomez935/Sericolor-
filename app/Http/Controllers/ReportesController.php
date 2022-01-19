@@ -465,4 +465,28 @@ class ReportesController extends Controller
       return $pdf->stream("Reporte pedidos por: $nombre Rango de fecha: $fecha1 y $fecha2.pdf");
     }
 
+
+    public function getpedidosrangoestado($estado,$fecha1,$fecha2)
+    {
+        $pedidosrango= maestro::select("maestro.*","cliente.*","persona.*","recibo.*","tipo_de_pago.*")->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->whereBetween('fecha', [$fecha1, $fecha2])->where('maestro.Estado',$estado)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("tipo_de_pago","recibo.idtipo_de_pago","=","tipo_de_pago.idtipo_de_pago")->orderBy("maestro.idmaestro","DESC")->get();
+        $suma=maestro::join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->whereBetween('fecha', [$fecha1, $fecha2])->where('Estado',$estado)->select(DB::raw("sum(total_costo) as Total"),DB::raw("sum(abono) as Abono"),DB::raw("sum(saldo) as Saldo"))->get();
+        //return compact('pedidosdiarios','suma','fecha1','fecha2');
+        return view('reportes.pedidosrangodefechaestado', compact('pedidosrango','suma','fecha1','fecha2'));
+    }
+
+    public function createPDFpedidosrangoestado($estado,$fecha1,$fecha2)
+    {
+      // retreive all records from db
+      $pedidosrango= maestro::select("maestro.*","cliente.*","persona.*","recibo.*","tipo_de_pago.*")->join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->whereBetween('fecha', [$fecha1, $fecha2])->where('maestro.Estado',$estado)->join("cliente","cliente.IdCliente","=","maestro.IdCliente")->join("persona","cliente.IdPersona","=","persona.IdPersona")->join("tipo_de_pago","recibo.idtipo_de_pago","=","tipo_de_pago.idtipo_de_pago")->orderBy("maestro.idmaestro","DESC")->get();
+      $suma=maestro::join("recibo","recibo.IdMaestro","=","maestro.idmaestro")->whereBetween('fecha', [$fecha1, $fecha2])->where('Estado',$estado)->select(DB::raw("sum(total_costo) as Total"),DB::raw("sum(abono) as Abono"),DB::raw("sum(saldo) as Saldo"))->get();
+
+
+      // share data to view
+      view()->share('pedidosrango',compact('pedidosrango','suma','fecha1','fecha2'));
+      $pdf = PDF::loadView('reportes.pedidosrangodefechaestado',compact('pedidosrango','suma','fecha1','fecha2'))->setPaper('letter', 'landscape');
+
+
+      // download PDF file with download method
+      return $pdf->stream("Reporte pedidos Rango de fecha $fecha1 y $fecha2.pdf");
+    }
 }
