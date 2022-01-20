@@ -270,8 +270,7 @@
                         '<td>' + trabajadores.RolAsignado + '</td>' +
                         '<td>' + '<a href="/menu/menuadmon/personal/agregar_personal/' + trabajadores
                         .idpersona +
-                        '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a href="/menu/menuadmon/personal/' +
-                        trabajadores.idpersona + '" action="" class=" " uk-icon="trash"></a>' + '</td>' +
+                        '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></>' + '</td>' +
                         '</tr>'
                 });
                 $("#tablatrabajadores").html(html);
