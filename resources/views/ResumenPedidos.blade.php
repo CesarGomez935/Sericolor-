@@ -266,7 +266,7 @@
                     .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
                     '<a href="/menu/facturacion/' + pedido
                     .idmaestro +
-                    '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick=" var result = confirm(	&quot; ¿Está seguro que desea eliminar el pedido?  Esta acción no puede ser revertida.	&quot; ); if (result) { eliminar(' + pedido.idmaestro + '); } " class=" " uk-icon="trash"></a>' + '</td>' +
+                    '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></>' + '</td>' +
 
 
 
@@ -304,35 +304,36 @@
         peticionapi3({}, 'GET', function(res) {
             pedido = res;
             let html = '';
-             res.forEach(pedido => {
-             html +=
-             '<tr>' + '<td>' +
-                     '<a class="uk-button" href="/menu/facturacion/' +
+            res.forEach(pedido => {
+                html +=
+                    '<tr>' + '<td>' +
+                    '<a class="uk-button" href="/menu/facturacion/' +
                     pedido.idmaestro + '/edit' +
                     '">' + pedido.idmaestro + '</td>' + '</a>' +
 
-                 '<td>' + '<a class="uk-button" href="/menu/facturacion/' +
+                    '<td>' + '<a class="uk-button" href="/menu/facturacion/' +
                     pedido.idmaestro + '/edit' +
                     '">' + pedido.Primer_Nombre + ' ' + pedido.Segundo_Nombre + ' ' + pedido
-                         .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
-                 '<td>' + pedido.fecha + '</td>' +
+                    .Primer_Apellido + ' ' + pedido.Segundo_Apellido + ' ' + '</td>' + '</a>' +
+                    '<td>' + pedido.fecha + '</td>' +
 
-                 '<td>' + pedido.Descripcion + '</td>' +
+                    '<td>' + pedido.Descripcion + '</td>' +
 
-                 '<td>' + pedido.Estado + '</td>' + '<td>' +
-                     '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
+                    '<td>' + pedido.Estado + '</td>' + '<td>' +
+                    '<a target="_blank" href="/api/pdf/Factura_sub/' + pedido
 
                     .idmaestro + '/descargar" class="uk-padding-small" uk-icon="print"></a>' +
-                     '<a href="/menu/facturacion/' + pedido
+                    '<a href="/menu/facturacion/' + pedido
                     .idmaestro +
-                    '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick=" var result = confirm(	&quot; ¿Está seguro que desea eliminar el pedido?  Esta acción no puede ser revertida.	&quot; ); if (result) { eliminar(' + pedido.idmaestro + '); } " class=" " uk-icon="trash"></a>' + '</td>' +
+                    '/edit" class="uk-padding-small" uk-icon="pencil"></a> <span></> <a action="" onclick=" var result = confirm(	&quot; ¿Está seguro que desea eliminar el pedido?  Esta acción no puede ser revertida.	&quot; ); if (result) { eliminar(' +
+                    pedido.idmaestro + '); } " class=" " uk-icon="trash"></a>' + '</td>' +
 
 
 
-                 '</tr>'
+                    '</tr>'
 
 
-             });
+            });
 
             $("#tablapedidos").html(html);
 
