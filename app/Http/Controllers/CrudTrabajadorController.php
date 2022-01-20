@@ -139,7 +139,9 @@ class CrudTrabajadorController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $IdPersona=$request->IdPersona;
+
+
+        try {   $IdPersona=$request->IdPersona;
 
       //  $cliente= persona::where("Persona.IdPersona",$id)->join("cliente","persona.IdPersona","=","cliente.IdPersona")->firstOrFail();
         $usuario=usuario::where("idpersona",$id)->firstorfail();
@@ -174,6 +176,18 @@ class CrudTrabajadorController extends Controller
                  $usuario-> estado=$request->estado;
                 $usuario-> RolAsignado=$request->rol_asignado;
                 $usuario->save();
+  
+    // Closures include ->first(), ->get(), ->pluck(), etc.
+} catch(\Illuminate\Database\QueryException $ex){ 
+
+    return redirect()->back()->with('alert', 'Error, No puede quedar el sistema sin usuarios activos' );
+
+    //dd($ex->getMessage())
+  
+  // Note any method of class PDOException can be called on $ex.
+}
+
+       
                 
                 
                 

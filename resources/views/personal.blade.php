@@ -34,6 +34,11 @@
             window.location = "/menu";
         </script>
     @endif
+    @if (auth()->user()->estado == '0')
+        <script>
+            window.location = "/login/cerrar";
+        </script>
+    @endif
     <nav class="uk-navbar uk-navbar-container ">
         <div class="uk-navbar-left">
             <a class="uk-navbar-toggle" href="#">
@@ -224,6 +229,12 @@
     </div>
 
     <script>
+        function validarestados() {
+
+
+
+        }
+
         let trabajadores = [];
 
 
@@ -248,10 +259,20 @@
         }
 
         function cargarproductos() {
+            var estado = "";
             peticionapi({}, 'GET', function(res) {
                 trabajadores = res;
                 let html = '';
                 res.forEach(trabajadores => {
+
+                    estado = trabajadores.estado;
+
+                    if (estado == "1") {
+                        estado = "Activo";
+                    } else {
+                        estado = "Inactivo";
+                    }
+
                     html +=
                         '<tr>' +
 
@@ -259,7 +280,7 @@
                         trabajadores.idpersona + '/edit">' + trabajadores.Primer_Nombre + " " + trabajadores
                         .Segundo_Nombre + " " + trabajadores.Primer_Apellido + " " + trabajadores
                         .Segundo_Apellido + '</td>' + '</a>' +
-                        '<td>' + trabajadores.estado + '</td>' +
+                        '<td>' + estado + '</td>' +
 
 
 

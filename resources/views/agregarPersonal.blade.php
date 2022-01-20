@@ -114,17 +114,18 @@
                         <label for="primer_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Primer
                             Nombre</label>
                         <div class="uk-form-controls">
-                            <input required name="primer_nombre" id="primer_nombre_cliente" class="uk-input uk-form-width-large"
-                                id="form-horizontal-text" type="text" placeholder="Primer Nombre">
+                            <input required name="primer_nombre" id="primer_nombre_cliente"
+                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
+                                placeholder="Primer Nombre">
                         </div>
-                          @error('primer_nombre')
+                        @error('primer_nombre')
 
 
-                          <small>*{{ $message }}</small>
+                            <small>*{{ $message }}</small>
 
-                          @enderror
+                        @enderror
 
-                    </div> 
+                    </div>
 
                     <div class="uk-margin">
                         <label for="segundo_nombre_cliente" class="uk-form-label" for="form-horizontal-text">Segundo
@@ -142,15 +143,14 @@
                             Apellido</label>
                         <div class="uk-form-controls">
                             <input required name="primer_apellido" id="primer_apellido_cliente"
-
                                 class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
                                 placeholder="Primer Apellido">
-                                 @error('primer_apellido')
+                            @error('primer_apellido')
 
 
-                                 <small>*{{ $message }}</small>
+                                <small>*{{ $message }}</small>
 
-                                 @enderror
+                            @enderror
 
 
                         </div>
@@ -173,15 +173,14 @@
                         <label for="telefono_cliente" class="uk-form-label" for="form-horizontal-text">Teléfono</label>
                         <div class="uk-form-controls">
                             <input required type="number" name="telefono" id="telefono_cliente"
-
                                 class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
                                 placeholder="Teléfono">
-                                 @error('telefono')
+                            @error('telefono')
 
 
-                                 <small>*{{ $message }}</small>
+                                <small>*{{ $message }}</small>
 
-                                 @enderror
+                            @enderror
 
                         </div>
                     </div>
@@ -190,14 +189,13 @@
                         <label for="cedula_cliente" class="uk-form-label" for="form-horizontal-text">Cédula</label>
                         <div class="uk-form-controls">
                             <input required name="cedula" id="cedula_cliente" class="uk-input uk-form-width-large"
-
                                 id="form-horizontal-text" type="text" placeholder="Cédula">
-                                 @error('cedula')
+                            @error('cedula')
 
 
-                                 <small>*{{ $message }}</small>
+                                <small>*{{ $message }}</small>
 
-                                 @enderror
+                            @enderror
 
                         </div>
 
@@ -221,7 +219,7 @@
 
 
                                 </select>
-                                
+
 
                                 <button class="uk-button uk-button-default" type="button" tabindex="-1">
                                     <span></span>
@@ -233,17 +231,18 @@
 
 
                     <div class="uk-margin">
-                        <label required for="Correo_cliente" class="uk-form-label" for="form-horizontal-text">Correo</label>
+                        <label required for="Correo_cliente" class="uk-form-label"
+                            for="form-horizontal-text">Correo</label>
 
                         <div class="uk-form-controls">
                             <input name="correo" id="correo_cliente" class="uk-input uk-form-width-large"
                                 id="form-horizontal-text" type="email" placeholder="Correo">
-                                 @error('correo')
+                            @error('correo')
 
 
-                                 <small>*{{ $message }}</small>
+                                <small>*{{ $message }}</small>
 
-                                 @enderror
+                            @enderror
 
                         </div>
                     </div>
@@ -253,14 +252,13 @@
                             for="form-horizontal-text">Dirección</label>
                         <div class="uk-form-controls">
                             <input required name="direccion" id="direccion_cliente" class="uk-input uk-form-width-large"
-
                                 id="form-horizontal-text" type="text" placeholder="Dirección">
-                                 @error('direccion')
+                            @error('direccion')
 
 
-                                 <small>*{{ $message }}</small>
+                                <small>*{{ $message }}</small>
 
-                                 @enderror
+                            @enderror
 
                         </div>
                     </div>
@@ -281,16 +279,16 @@
 
 
 
-                                </select> 
+                                </select>
                                 @error('RolAsignado')
 
 
 
-                                <small>*{{ $message }}</small>
+                                    <small>*{{ $message }}</small>
 
                                 @enderror
 
-                                
+
                                 <button class="uk-button uk-button-default" type="button" tabindex="-1">
                                     <span></span>
                                     <span uk-icon="icon: chevron-down"></span>
@@ -303,15 +301,15 @@
                         <label for="nombre_de_usuario" class="uk-form-label" for="form-horizontal-text">Nombre de
                             Usuario</label>
                         <div class="uk-form-controls">
-                            <input required name="nombre_de_usuario" id="nombre_de_usuario" class="uk-input uk-form-width-large"
-
-                                id="form-horizontal-text" type="text" placeholder="Nombre de Usuario">
-                                @error('usuario')
+                            <input required name="nombre_de_usuario" id="nombre_de_usuario"
+                                class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
+                                placeholder="Nombre de Usuario">
+                            @error('usuario')
 
 
                                 <small>*{{ $message }}</small>
 
-                                @enderror
+                            @enderror
 
                         </div>
                     </div>
@@ -322,15 +320,14 @@
                         <label for="pass_personal" class="uk-form-label" for="form-horizontal-text">Contraseña</label>
                         <div class="uk-form-controls">
                             <input required name="password" id="pass_personal" type="password"
-
                                 class="uk-input uk-form-width-large" id="form-horizontal-text" type="text"
                                 placeholder="Contraseña">
-                                 @error('contrasena')
+                            @error('contrasena')
 
 
-                                 <small>*{{ $message }}</small>
+                                <small>*{{ $message }}</small>
 
-                                 @enderror
+                            @enderror
 
                         </div>
                     </div>
@@ -340,7 +337,6 @@
                             for="form-horizontal-text">Contraseña</label>
                         <div class="uk-form-controls">
                             <input required name="conf_password" id="conf_pass_personal" type="password"
-
                                 class="uk-input uk-form-width-medium" id="form-horizontal-text" type="text"
                                 placeholder="Confirmar Contraseña">
                             <a class="uk-button uk-button-primary" onclick="verificarPasswords()">verificar
@@ -369,7 +365,7 @@
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 
                 <a href="/menu/menuadmon/personal" class="uk-button uk-button-primary  "
-                    style="margin-left: 100px">Atrás </a>
+                    onclick="return confirm('¿Está seguro que desea continuar?')" style="margin-left: 100px">Atrás </a>
                 <button disabled type="submit" id="guardar"
                     onclick="return confirm('¿Está seguro que desea continuar?')" class="uk-button uk-button-secondary"
                     uk-icon="check" style="margin-left: 100px">Guardar </button>

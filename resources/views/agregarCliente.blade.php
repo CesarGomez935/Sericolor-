@@ -282,7 +282,8 @@
         <div class="uk-padding-small uk-background-muted uk-padding">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
 
-                <a href="/menu/clientes" class="uk-button uk-button-primary  " style="margin-left: 100px">Atrás </a>
+                <a href="/menu/clientes" class="uk-button uk-button-primary  "
+                    onclick="return confirm('¿Está seguro que desea continuar?')" style="margin-left: 100px">Atrás </a>
                 <button type="submit" id="guardar" onclick="return confirm('¿Está seguro que desea continuar?')"
                     class="uk-button uk-button-secondary" uk-icon="check" style="margin-left: 100px">Guardar </button>
 

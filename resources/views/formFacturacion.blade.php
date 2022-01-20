@@ -150,13 +150,13 @@
         <div hidden id="otros">
 
 
-            <div class="uk-child-width-1-2 uk-text-center uk-background-muted uk-padding" uk-grid>
-                <div id="detallescamisa">
+            <div id="detallespedido" class="uk-child-width-1-2 uk-text-center uk-background-muted uk-padding" uk-grid>
+                <div>
 
 
                     <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
 
-                    <div class="uk-form-horizontal uk-margin-large">
+                    <div id="detallescamisa" class="uk-form-horizontal uk-margin-large">
                         <div class="uk-margin">
                             <label for="pecho_izq" class="uk-form-label" for="form-horizontal-text">Pecho
                                 Izquierdo</label>
@@ -199,7 +199,7 @@
                     </div>
 
                 </div>
-                <div>
+                <div id="detallesinsumo" class="uk-child-width-1-1 ">
                     <div class="uk-child-width-1-1 " uk-grid>
                         <div>
                             <!-- Formulario para el llenado de los campos requeridos por el pedido y el cliente-->
@@ -213,7 +213,7 @@
 
                                         </tr>
 
-                                       
+
                                     </thead>
 
                                     <script>
@@ -327,24 +327,24 @@
 
                                                 </select>
 
-                                                
-
-                                                 <script>
-                                                     function validardetalles() {
-
-                                                         var insumo = document.getElementById("insumos");
-                                                         var text= insumo.options[insumo.selectedIndex].text;
-
-                                                         text= text.split(/(\s+)/);
 
 
+                                                <script>
+                                                    function validardetalles() {
 
-                                                         console.log(text[0]);
+                                                        var insumo = document.getElementById("insumos");
+                                                        var text = insumo.options[insumo.selectedIndex].text;
 
-                                                         if(text[0]=="Camisa" || text[0]=="Camiseta"|| text[0]=="camiseta"|| text[0]=="camisa")
+                                                        text = text.split(/(\s+)/);
 
 
-                                                         {
+
+                                                        console.log(text[0]);
+
+                                                        if (text[0] == "Camisa" || text[0] == "Camiseta" || text[0] == "camiseta" || text[0] == "camisa")
+
+
+                                                        {
 
                                                             document.getElementById("pecho_izq").disabled = false;
                                                             document.getElementById("pecho_der").disabled = false;
@@ -352,10 +352,18 @@
                                                             document.getElementById("manga_der").disabled = false;
                                                             document.getElementById("espalda").disabled = false;
 
+                                                            document.getElementById("detallespedido").className =
+                                                                "uk-child-width-1-2 uk-text-center uk-background-muted uk-padding uk-grid";
+                                                            document.getElementById("detallescamisa").style.display = '';
+
+                                                            document.getElementById("detallescamisa").className =
+                                                                "uk-form-horizontal uk-margin-large";
 
 
 
-                                                         } else {
+
+
+                                                        } else {
 
                                                             document.getElementById("pecho_izq").disabled = true;
                                                             document.getElementById("pecho_der").disabled = true;
@@ -366,6 +374,9 @@
 
                                                             document.getElementById("espalda").disabled = true;
 
+                                                            document.getElementById("detallespedido").className =
+                                                                "uk-child-width-1-1 uk-text-center uk-background-muted uk-padding";
+                                                            document.getElementById("detallescamisa").style.display = 'none';
                                                             //////////
 
                                                             document.getElementById("pecho_izq").value = null;
@@ -382,15 +393,14 @@
 
 
 
-                                                         }
+                                                        }
 
 
 
 
 
-                                                     }
-
-                                                 </script>
+                                                    }
+                                                </script>
 
 
 
@@ -1404,7 +1414,6 @@
                 <a href="/menu" id="atras" onclick=" " class="uk-button uk-button-primary "
                     style="margin-left: 100px">Atrás</a>
                 <a id="guardar" onclick=' validarinsert();' class="uk-button uk-button-secondary"
-
                     style="margin-left: 100px">Guardar</a>
 
                 <script>
@@ -1591,17 +1600,17 @@
                 url: url,
                 method: method,
                 data: data,
-               error(e) {
-               let error = e.responseJSON.errors;
-               let msj = error[Object.keys(error)[0]][0];
-               alert(msj);
-               },
-               success(res) { 
+                error(e) {
+                    let error = e.responseJSON.errors;
+                    let msj = error[Object.keys(error)[0]][0];
+                    alert(msj);
+                },
+                success(res) {
                     alert('Guardado con exito');
 
-               window.location.href = "/menu";
+                    window.location.href = "/menu";
 
-               }
+                }
 
             })
         }
@@ -1621,7 +1630,7 @@
                     alert(msj);
                 },
                 success(res) {
-                     alert('Guardado con exito');
+                    alert('Guardado con exito');
 
                     window.location.href = "/menu";
 
@@ -1644,7 +1653,7 @@
                     alert(msj);
                 },
                 success(res) {
- alert('Guardado con exito');
+                    alert('Guardado con exito');
 
                     window.location.href = "/menu";
 
