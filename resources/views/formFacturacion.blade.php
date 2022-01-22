@@ -1411,8 +1411,8 @@
         <!-- Seccion que contiene los botones de atrás y guardar-->
         <div class="uk-padding uk-background-muted uk-padding " style="text-align: center;">
             <div class="uk-div uk-margin position-relative .uk-padding-large" style="text-align: center;">
-                <a href="/menu" id="atras" onclick=" " class="uk-button uk-button-primary "
-                    style="margin-left: 100px">Atrás</a>
+                <a href="/menu" onclick="return confirm('¿Está seguro que desea continuar?')" id="atras" onclick=" "
+                    class="uk-button uk-button-primary " style="margin-left: 100px">Atrás</a>
                 <a id="guardar" onclick=' validarinsert();' class="uk-button uk-button-secondary"
                     style="margin-left: 100px">Guardar</a>
 
