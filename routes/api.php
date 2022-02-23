@@ -142,4 +142,4 @@ Route::get('/pdf/estado_entre/{estado}/{fecha1}/{fecha2}', [ReportesController::
 Route::get('/pdf/estado_entre/{estado}/{fecha1}/{fecha2}/descargar', [ReportesController::class,"createPDFpedidosrangoestado"]);
 
 Route::get('/pdf/cliente_entre/{id}/{fecha1}/{fecha2}', [ReportesController::class,"getpedidoscliente"]);
-Route::get('/pdf/cliente_entre/{id}/{fecha1}/{fecha2}/descargar', [ReportesController::class,"createPDFpedidoscliente"]);
+Route::get('/pdf/cliente_entre/{id}/{fecha1}/{fecha2}/descargar', [ReportesController::class,"createPDFpedidoscliente"]); 

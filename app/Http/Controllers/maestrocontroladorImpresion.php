@@ -65,7 +65,7 @@ class maestrocontroladorImpresion extends Controller
 
              'idmetodo'=>'required',
              'fecha'=>'required',
-             'cod'=>'required',
+             
 
             ]);
 

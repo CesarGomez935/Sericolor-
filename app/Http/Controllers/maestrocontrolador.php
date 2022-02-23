@@ -70,7 +70,7 @@ class maestrocontrolador extends Controller
 
              'idmetodo'=>'required',
              'fecha'=>'required',
-             'cod'=>'required',
+             
 
             ]);
 
