@@ -1,0 +1,11 @@
+delimiter //
+create trigger Admins after UPDATE on usuario
+for each row 
+begin
+
+    if (select COUNT(estado) AS Usuarios from usuario WHERE estado=1)<1
+    then
+      SIGNAL sqlstate '45001' set message_text = "Error, Siempre debe de haber al menos un usuario en activo!";
+    end if ;
+
+end ;//
